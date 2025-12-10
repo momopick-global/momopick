@@ -1,119 +1,14 @@
 <!doctype html>
-<html lang="ko" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1220" />
-  <title>몽픽</title>
-
-  <!-- ✅ Open Graph (공유용) -->
-  <meta property="og:title" content="몽픽" />
-  <meta property="og:description" content="가볍게 해보는 몽픽형 심리/밈 테스트" />
-  <meta property="og:type" content="website" />
-
-  <!-- ✅ CSS 분리 -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <link href='/style.css' rel='stylesheet'>
 </head>
-
 <body>
-  <div class="app">
-    <header class="topbar">
-      <div class="topbar-inner">
-        <div class="brand">
-          <div class="logo" aria-label="브랜드">
-            <!-- ✅ P 마크 제거 → 몽픽 캐릭터로 교체 -->
-            <img
-              class="brand-character"
-              src="assets/img/mongpick-face.png"
-              alt="몽픽 캐릭터"
-              loading="eager"
-            />
-            <div class="brand-text">
-              <p class="brand-title">몽픽</p>
-              <p class="brand-sub">오늘의 밈 · 성격 · 연애 테스트</p>
-            </div>
-          </div>
-
-          <!-- ✅ 테마 토글(실제 기능) -->
-          <button class="chip" id="btnTheme" type="button" title="테마 토글" aria-label="테마 토글">
-            <span class="chip-emoji" aria-hidden="true">🌙</span>
-            <span class="chip-text">다크</span>
-          </button>
-        </div>
-
-        <div class="search">
-          <div class="searchbox">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <input id="q" type="search" placeholder="테스트 검색 (예: 연애, MBTI, 밈)" autocomplete="off" />
-          </div>
-          <button class="btn" id="btnRandom" type="button" aria-label="랜덤 테스트">🎲</button>
-        </div>
-      </div>
-    </header>
-
-    <main class="content">
-      <!-- ✅ Hero 배너: 더미 이미지 포함 -->
-      <section class="hero" aria-label="오늘의 추천">
-        <div class="hero-image">
-          <img src="assets/img/banner-dummy.jpg" alt="오늘의 추천 배너" onerror="this.style.display='none'">
-          <div class="hero-bubble" aria-hidden="true">오늘은 이거 어때? ✨</div>
-        </div>
-
-        <div class="hero-top">
-          <div>
-            <h2>오늘 뭐 해볼까?</h2>
-            <p>가볍게 1~2분. 결과 공유하고 친구 반응 보기 😎</p>
-          </div>
-          <span class="pill">NEW</span>
-        </div>
-        <div class="cta">
-          <button class="primary" id="btnStartTop" type="button">추천 테스트 시작</button>
-          <button class="secondary" id="btnShareTop" type="button">공유 링크</button>
-        </div>
-      </section>
-
-      <section class="section" aria-label="태그">
-        <div class="section-head">
-          <h3 class="section-title">카테고리</h3>
-          <a class="link" href="#" id="btnReset">전체</a>
-        </div>
-        <div class="tags" id="tags"></div>
-      </section>
-
-      <section class="section" aria-label="인기 테스트">
-        <div class="section-head">
-          <h3 class="section-title">🔥 인기 테스트</h3>
-          <a class="link" href="#" id="btnPopularMore">더보기</a>
-        </div>
-        <div class="grid" id="popularGrid"></div>
-      </section>
-
-      <section class="section" aria-label="최신 테스트">
-        <div class="section-head">
-          <h3 class="section-title">🆕 최신 업로드</h3>
-          <a class="link" href="#" id="btnLatestMore">더보기</a>
-        </div>
-        <div class="list" id="latestList"></div>
-        <button class="more" id="btnLoadMore" type="button">더 불러오기</button>
-      </section>
-
-      <div style="height: 18px;"></div>
-    </main>
-  </div>
-
-  <nav class="bottom" aria-label="하단 메뉴">
-    <div class="tabs">
-      <button class="tab active" data-tab="home" type="button"><span class="dot"></span>홈</button>
-      <button class="tab" data-tab="rank" type="button"><span class="dot"></span>랭킹</button>
-      <button class="tab" data-tab="make" type="button"><span class="dot"></span>만들기</button>
-      <button class="tab" data-tab="me" type="button"><span class="dot"></span>내정보</button>
-    </div>
-  </nav>
-
-  <!-- ✅ JS 분리 -->
-  <script src="assets/js/main.js"></script>
+  <h1>Hello, world!</h1>
+  <button onclick="console.log('hello');">Press me</button>
+  <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
