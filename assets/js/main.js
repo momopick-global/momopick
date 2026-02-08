@@ -1,0 +1,266 @@
+// ============================
+// 몽픽 메인 스크립트
+// ============================
+
+// ✅ 샘플 데이터 (이미지 더미는 id 기반으로 연결)
+const TESTS = [
+  { id:1, title:"내 연애가 망하는 이유 한 줄 요약", desc:"선택 10개로 연애 패턴이 딱 나옴", tag:"연애", minutes:2, plays:128430, badge:"🔥 HOT" },
+  { id:2, title:"내 MBTI가 화났을 때 하는 말", desc:"친구들이 제일 웃긴다고 함", tag:"MBTI", minutes:1, plays:95420, badge:"밈" },
+  { id:3, title:"회사에서 나는 어떤 캐릭터?", desc:"팀원들이 보는 나의 포지션", tag:"직장", minutes:2, plays:65110, badge:"추천" },
+  { id:4, title:"나의 숨겨진 T/F 수치", desc:"감정 vs 논리 밸런스 측정", tag:"성격", minutes:2, plays:50122, badge:"NEW" },
+  { id:5, title:"친구가 나를 싫어할 때 나오는 사인", desc:"나만 몰랐던 그 순간", tag:"관계", minutes:2, plays:88912, badge:"🔥" },
+  { id:6, title:"내가 귀여운 이유 테스트", desc:"근거를 데이터로 제시함(진짜임)", tag:"밈", minutes:1, plays:122001, badge:"ㅋㅋ" },
+  { id:7, title:"내가 돈을 못 모으는 이유", desc:"습관 1개만 바꿔도 달라짐", tag:"돈", minutes:3, plays:33010, badge:"실전" },
+  { id:8, title:"나랑 잘 맞는 여행 스타일", desc:"혼행/패키지/즉흥/계획형", tag:"여행", minutes:2, plays:28801, badge:"NEW" },
+  { id:9, title:"내가 먼저 연락 못 하는 이유", desc:"자존심? 불안? 그냥 바쁨?", tag:"연애", minutes:2, plays:71440, badge:"인기" },
+  { id:10, title:"나의 ‘찐’ 스트레스 해소법", desc:"나한테 맞는 방식만 골라줌", tag:"성격", minutes:2, plays:21990, badge:"추천" },
+];
+
+const TAGS = ["연애","MBTI","성격","밈","직장","관계","돈","여행"];
+
+const state = {
+  tag: null,
+  query: "",
+  latestPage: 1,
+  latestPageSize: 4,
+};
+
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+const formatPlays = (n) => {
+  if (n >= 1000000) return (n/1000000).toFixed(1) + "M";
+  if (n >= 1000) return (n/1000).toFixed(1) + "K";
+  return String(n);
+};
+
+function escapeHtml(str){
+  return String(str)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function filteredTests(){
+  let items = [...TESTS];
+
+  if (state.tag) items = items.filter(t => t.tag === state.tag);
+  if (state.query.trim()){
+    const q = state.query.trim().toLowerCase();
+    items = items.filter(t =>
+      t.title.toLowerCase().includes(q) ||
+      t.desc.toLowerCase().includes(q) ||
+      t.tag.toLowerCase().includes(q)
+    );
+  }
+  return items;
+}
+
+// ✅ 더미 이미지 경로 (id 기반)
+// assets/img/thumb-1.jpg ... thumb-10.jpg 필요
+function thumbSrc(id){
+  return `assets/img/thumb-${id}.jpg`;
+}
+
+// ---- render ----
+function renderTags(){
+  const root = $("#tags");
+  root.innerHTML = "";
+  TAGS.forEach(tag => {
+    const el = document.createElement("button");
+    el.className = "tag" + (state.tag === tag ? " active" : "");
+    el.type = "button";
+    el.textContent = "#" + tag;
+    el.onclick = () => {
+      state.tag = (state.tag === tag) ? null : tag;
+      state.latestPage = 1;
+      renderAll();
+    };
+    root.appendChild(el);
+  });
+}
+
+function renderPopular(){
+  const root = $("#popularGrid");
+  root.innerHTML = "";
+  const items = filteredTests()
+    .sort((a,b) => b.plays - a.plays)
+    .slice(0, 4);
+
+  items.forEach(t => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.onclick = () => goTest(t);
+
+    card.innerHTML = `
+      <div class="thumb">
+        <img src="${thumbSrc(t.id)}" alt="" onerror="this.style.display='none'">
+        <div class="badge">${escapeHtml(t.badge)}</div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">${escapeHtml(t.title)}</h4>
+        <div class="card-meta">
+          <span>${escapeHtml(t.tag)}</span>
+          <span class="pill">${t.minutes}분 · ${formatPlays(t.plays)}회</span>
+        </div>
+      </div>
+    `;
+    root.appendChild(card);
+  });
+}
+
+function renderLatest(){
+  const root = $("#latestList");
+  root.innerHTML = "";
+
+  const items = filteredTests()
+    .sort((a,b) => b.id - a.id);
+
+  const take = state.latestPage * state.latestPageSize;
+  const pageItems = items.slice(0, take);
+
+  pageItems.forEach(t => {
+    const row = document.createElement("article");
+    row.className = "row";
+    row.onclick = () => goTest(t);
+
+    row.innerHTML = `
+      <div class="mini">
+        <img src="${thumbSrc(t.id)}" alt="" onerror="this.style.display='none'">
+      </div>
+      <div style="min-width:0; flex:1;">
+        <h4>${escapeHtml(t.title)}</h4>
+        <p>${escapeHtml(t.desc)}</p>
+        <div class="row-meta">
+          <span class="pill">${escapeHtml(t.tag)}</span>
+          <span class="pill">${t.minutes}분</span>
+          <span class="pill">${formatPlays(t.plays)}회</span>
+        </div>
+      </div>
+    `;
+    root.appendChild(row);
+  });
+
+  const hasMore = pageItems.length < items.length;
+  $("#btnLoadMore").style.display = hasMore ? "block" : "none";
+}
+
+// ---- navigation (데모) ----
+function goTest(test){
+  alert(`테스트 이동: "${test.title}"\n(다음 단계에서 질문/결과 페이지로 연결하면 돼)`);
+}
+
+// ---- theme ----
+const THEME_KEY = "mongpick_theme";
+
+function setTheme(theme){
+  document.documentElement.setAttribute("data-theme", theme);
+
+  // theme-color도 함께 바꾸면 모바일 주소창 색이 자연스러움
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta){
+    meta.setAttribute("content", theme === "light" ? "#f6f7ff" : "#0b1220");
+  }
+
+  const btn = $("#btnTheme");
+  if (btn){
+    const emoji = btn.querySelector(".chip-emoji");
+    const text = btn.querySelector(".chip-text");
+    if (theme === "light"){
+      if (emoji) emoji.textContent = "☀️";
+      if (text) text.textContent = "라이트";
+    } else {
+      if (emoji) emoji.textContent = "🌙";
+      if (text) text.textContent = "다크";
+    }
+  }
+}
+
+function initTheme(){
+  const saved = localStorage.getItem(THEME_KEY);
+  const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+  const theme = saved || (prefersLight ? "light" : "dark");
+  setTheme(theme);
+
+  $("#btnTheme").addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") || "dark";
+    const next = cur === "dark" ? "light" : "dark";
+    localStorage.setItem(THEME_KEY, next);
+    setTheme(next);
+  });
+}
+
+// ---- events ----
+function bindEvents(){
+  $("#q").addEventListener("input", (e) => {
+    state.query = e.target.value;
+    state.latestPage = 1;
+    renderAll();
+  });
+
+  $("#btnLoadMore").onclick = () => {
+    state.latestPage += 1;
+    renderLatest();
+  };
+
+  $("#btnReset").onclick = (e) => {
+    e.preventDefault();
+    state.tag = null;
+    state.query = "";
+    $("#q").value = "";
+    state.latestPage = 1;
+    renderAll();
+  };
+
+  $("#btnRandom").onclick = () => {
+    const items = filteredTests();
+    const pick = items[Math.floor(Math.random()*items.length)] || TESTS[0];
+    goTest(pick);
+  };
+
+  $("#btnStartTop").onclick = () => {
+    const items = filteredTests().sort((a,b) => b.plays - a.plays);
+    goTest(items[0] || TESTS[0]);
+  };
+
+  // ✅ “푸망” → “몽픽”으로 이미 교체 완료 (공유 타이틀도 몽픽)
+  $("#btnShareTop").onclick = async () => {
+    const shareData = {
+      title: "몽픽",
+      text: "오늘의 밈/성격 테스트, 몽픽에서 해보자!",
+      url: location.href
+    };
+    try{
+      if (navigator.share) await navigator.share(shareData);
+      else {
+        await navigator.clipboard.writeText(shareData.url);
+        alert("링크를 클립보드에 복사했어!");
+      }
+    } catch(e){
+      // user cancelled - ignore
+    }
+  };
+
+  // bottom tabs demo
+  $$(".tab").forEach(btn => {
+    btn.onclick = () => {
+      $$(".tab").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const tab = btn.dataset.tab;
+      if (tab !== "home") alert(`"${tab}" 탭은 다음 단계에서 페이지 만들면 돼`);
+    };
+  });
+}
+
+function renderAll(){
+  renderTags();
+  renderPopular();
+  renderLatest();
+}
+
+// init
+initTheme();
+bindEvents();
+renderAll();
