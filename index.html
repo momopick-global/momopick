@@ -13,18 +13,19 @@
     (function () {
 
       const SUPPORTED = ["ko", "en", "ja", "es", "pt", "id"];
-      const FALLBACK = "en";
+      const FALLBACK = "ko";
+      const BASE = "ver1"; // ver1/ko/index.html, ver1/en/index.html ...
 
-      // 이미 언어 폴더로 들어온 경우 실행 안 함
+      // 이미 언어 페이지로 들어온 경우 실행 안 함 (ver1/ko/ 등)
       const path = location.pathname.replace(/^\/+/, "");
-      if (SUPPORTED.some(lang => path.startsWith(lang + "/") || path === lang)) {
+      if (path.startsWith(BASE + "/") && path.indexOf("/", BASE.length + 1) !== -1) {
         return;
       }
 
       // 1️⃣ 사용자가 직접 선택한 언어 우선
       const savedLang = localStorage.getItem("momopick_lang");
       if (savedLang && SUPPORTED.includes(savedLang)) {
-        location.replace("/" + savedLang + "/");
+        location.replace(BASE + "/" + savedLang + "/index.html");
         return;
       }
 
@@ -36,7 +37,7 @@
       function detectLanguage(list) {
         for (let lang of list) {
           if (!lang) continue;
-          const base = lang.toLowerCase().split("-")[0]; // pt-BR → pt
+          const base = lang.toLowerCase().split("-")[0]; // ko-KR → ko
           if (SUPPORTED.includes(base)) return base;
         }
         return FALLBACK;
@@ -44,7 +45,10 @@
 
       const selectedLang = detectLanguage(browserLangs);
 
-      location.replace("/" + selectedLang + "/");
+      // 지원하는 언어 폴더만 있음 (현재 ver1/ko/ 만 존재)
+      const HAS_LANG_PAGE = { ko: true };
+      const targetLang = HAS_LANG_PAGE[selectedLang] ? selectedLang : FALLBACK;
+      location.replace(BASE + "/" + targetLang + "/index.html");
 
     })();
   </script>
