@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ SEO: Title / Description -->
+  <title>모모픽(Momopick) | MBTI·연애·심리 테스트 & 재미 퀴즈</title>
+  <meta name="description" content="모모픽은 MBTI, 연애, 심리, 성격, 소셜, 스타일 등 다양한 퀴즈와 테스트를 빠르게 즐길 수 있는 사이트입니다. 친구와 공유하고 결과를 저장해보세요." />
+
+  <!-- ✅ SEO: Indexing -->
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ✅ Canonical -->
+  <link rel="canonical" href="https://momopick.com/ko/" />
+
+  <!-- ✅ hreflang (다국어 확장 대비) -->
+  <link rel="alternate" hreflang="ko" href="https://momopick.com/ko/" />
+  <link rel="alternate" hreflang="en" href="https://momopick.com/en/" />
+  <link rel="alternate" hreflang="ja" href="https://momopick.com/ja/" />
+  <link rel="alternate" hreflang="es" href="https://momopick.com/es/" />
+  <link rel="alternate" hreflang="pt" href="https://momopick.com/pt/" />
+  <link rel="alternate" hreflang="id" href="https://momopick.com/id/" />
+  <link rel="alternate" hreflang="x-default" href="https://momopick.com/" />
+
+  <!-- ✅ Open Graph / Twitter (대표 OG 이미지 경로는 실제 파일로 교체) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Momopick" />
+  <meta property="og:title" content="모모픽(Momopick) | MBTI·연애·심리 테스트 & 재미 퀴즈" />
+  <meta property="og:description" content="MBTI, 연애, 심리, 성격, 소셜, 스타일… 지금 바로 1분 퀴즈로 나를 알아보세요." />
+  <meta property="og:url" content="https://momopick.com/ko/" />
+  <meta property="og:image" content="https://momopick.com/assets/og/og-ko.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- ✅ Performance hints (선택) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+
+  <!-- ✅ Structured Data: WebSite + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Momopick",
+    "alternateName": "모모픽",
+    "url": "https://momopick.com/",
+    "inLanguage": "ko",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://momopick.com/ko/explore/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Momopick",
+    "url": "https://momopick.com/",
+    "logo": "https://momopick.com/assets/brand/logo.png",
+    "sameAs": [
+      "https://www.youtube.com/@YOUR_CHANNEL",
+      "https://www.instagram.com/YOUR_ID"
+    ]
+  }
+  </script>
+
+  <!-- ✅ FAQ Schema (검색결과에 FAQ 노출 가능) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "모모픽은 어떤 사이트인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "모모픽은 MBTI, 연애, 심리, 성격, 소셜, 스타일 등 다양한 퀴즈/테스트를 1~3분 안에 즐기고 결과를 공유할 수 있는 엔터테인먼트 테스트 사이트입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퀴즈 결과는 저장할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. 로그인 후 북마크/히스토리 기능으로 내가 했던 테스트를 다시 확인할 수 있도록 제공할 수 있습니다. (서비스 제공 범위에 따라 달라질 수 있어요.)"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "모모픽은 무료인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "기본 퀴즈는 무료로 즐길 수 있고, 일부 AI 기반 기능이나 추가 콘텐츠는 크레딧/구독 형태로 제공될 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --line: rgba(255,255,255,0.12);
+      --accent: #5A67F2; /* 모모픽 메인 포인트(예시) */
+      --radius: 18px;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", Arial;
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(90,103,242,0.25), transparent 55%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(255,107,154,0.18), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 80px; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 10px 0 18px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo {
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(90,103,242,1), rgba(255,107,154,1));
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+    .brand strong { font-size: 16px; letter-spacing: 0.2px; }
+    nav { display: flex; gap: 12px; flex-wrap: wrap; }
+    nav a { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+    nav a:hover { border-color: rgba(255,255,255,0.28); color: var(--text); }
+
+    .hero { padding: 22px 0 10px; }
+    .hero h1 { margin: 0; font-size: 38px; letter-spacing: -0.6px; }
+    .hero p { margin: 12px 0 18px; color: var(--muted); max-width: 720px; }
+    .cta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 14px; border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(90,103,242,1), rgba(255,107,154,1));
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+    }
+    .btn:hover { transform: translateY(-1px); transition: 160ms ease; }
+
+    .grid { margin-top: 26px; display: grid; gap: 12px; grid-template-columns: repeat(12, 1fr); }
+    .card {
+      grid-column: span 6;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      backdrop-filter: blur(8px);
+    }
+    .card h2 { margin: 2px 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    .pillrow { margin-top: 12px; display:flex; flex-wrap: wrap; gap: 8px; }
+    .pill { font-size: 13px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+
+    .section { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .section h2 { margin: 0 0 10px; font-size: 22px; }
+    .section p { margin: 0 0 14px; color: var(--muted); max-width: 850px; }
+
+    .cat { display: grid; gap: 10px; grid-template-columns: repeat(12, 1fr); }
+    .cat a {
+      grid-column: span 4;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255,255,255,0.03);
+    }
+    .cat a:hover { border-color: rgba(255,255,255,0.28); }
+    .cat b { display:block; margin-bottom: 6px; }
+    .cat small { color: var(--muted); }
+
+    .faq details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 10px;
+    }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 10px 0 0; color: var(--muted); }
+
+    footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
+    footer a { text-decoration: underline; }
+    @media (max-width: 860px) {
+      .card { grid-column: span 12; }
+      .cat a { grid-column: span 12; }
+      .hero h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/ko/" aria-label="모모픽 홈">
+        <span class="logo" aria-hidden="true"></span>
+        <strong>Momopick · 모모픽</strong>
+      </a>
+      <nav aria-label="주요 메뉴">
+        <a href="/ko/explore/">탐색</a>
+        <a href="/ko/tag/">태그</a>
+        <a href="/ko/notice/">공지</a>
+        <a href="/ko/app/login/">로그인</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ✅ H1은 1개만 -->
+      <section class="hero">
+        <h1>MBTI·연애·심리 테스트, 모모픽에서 1분 만에!</h1>
+        <p>
+          모모픽(Momopick)은 <strong>연애 테스트</strong>, <strong>성격/심리 테스트</strong>, <strong>소셜/관계 퀴즈</strong>,
+          <strong>스타일/취향 퀴즈</strong>를 빠르게 즐기고 결과를 공유할 수 있는 퀴즈 플랫폼입니다.
+          지금 바로 나에게 맞는 테스트를 찾아보세요.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="/ko/explore/">테스트 바로 시작하기</a>
+          <a class="btn" href="/ko/love/">연애 테스트</a>
+          <a class="btn" href="/ko/personality/">성격·심리</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="핵심 가치">
+        <article class="card">
+          <h2>✅ 검색에 강한 퀴즈 구조</h2>
+          <p>카테고리/태그/슬러그 기반으로 콘텐츠를 정리해, 구글에서 주제별로 잘 노출되도록 설계합니다.</p>
+          <div class="pillrow">
+            <span class="pill">카테고리 허브</span>
+            <span class="pill">태그 페이지</span>
+            <span class="pill">결과 페이지(SEO)</span>
+          </div>
+        </article>
+        <article class="card">
+          <h2>✅ 공유가 쉬운 결과 카드</h2>
+          <p>OG 이미지와 요약 문구를 최적화해 카카오톡/인스타/트위터 공유 시 클릭률을 높입니다.</p>
+          <div class="pillrow">
+            <span class="pill">OG 이미지</span>
+            <span class="pill">요약 문구</span>
+            <span class="pill">1~3분 완주</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="categories">
+        <h2>카테고리별로 빠르게 찾기</h2>
+        <p>
+          원하는 분위기에 따라 바로 이동할 수 있어요. 각 카테고리는 내부링크 허브 역할을 해서 SEO에도 도움이 됩니다.
+        </p>
+
+        <div class="cat" aria-label="카테고리 링크">
+          <a href="/ko/love/">
+            <b>💗 연애 테스트</b>
+            <small>썸/연인/소개팅/연애 심리 · 궁합 · 연애 유형</small>
+          </a>
+          <a href="/ko/personality/">
+            <b>🧠 성격·심리</b>
+            <small>MBTI, 성향, 감정, 자아 탐색 · 심리 퀴즈</small>
+          </a>
+          <a href="/ko/social/">
+            <b>🫶 소셜·관계</b>
+            <small>친구/동료/가족 관계 · 케미 · 대화 스타일</small>
+          </a>
+          <a href="/ko/style/">
+            <b>👗 스타일·취향</b>
+            <small>패션/라이프스타일/취향 · 나의 분위기 테스트</small>
+          </a>
+          <a href="/ko/fun/">
+            <b>🎉 재미 퀴즈</b>
+            <small>가볍게 웃고 즐기는 밈/상황/랜덤 퀴즈</small>
+          </a>
+          <a href="/ko/explore/">
+            <b>🔎 전체 탐색</b>
+            <small>최신/인기/추천 테스트를 한 번에</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="popular">
+        <h2>지금 인기 있는 테스트</h2>
+        <p>여기는 “고정 슬롯”으로 6~12개 정도만 배치해도 좋아요. (SEO + 전환율 둘 다 좋아짐)</p>
+
+        <!-- ✅ 실제 슬러그로 교체 -->
+        <div class="cat" aria-label="인기 테스트">
+          <a href="/ko/love/your-love-type/index.html"><b>내 연애 유형 테스트</b><small>나의 연애 패턴을 1분 분석</small></a>
+          <a href="/ko/personality/my-hidden-mbti/index.html"><b>숨은 MBTI 찾기</b><small>겉모습과 속마음의 차이</small></a>
+          <a href="/ko/social/friendship-chemistry/index.html"><b>친구 케미 테스트</b><small>우정 궁합은 몇 점?</small></a>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <h2>자주 묻는 질문</h2>
+
+        <details>
+          <summary>모모픽은 어떤 테스트가 많나요?</summary>
+          <p>연애/MBTI/심리/성격/관계/취향/재미 퀴즈까지, 가볍게 즐길 수 있는 짧은 테스트 중심으로 구성됩니다.</p>
+        </details>
+
+        <details>
+          <summary>검색(구글)에서 잘 나오게 하려면 뭐가 중요해요?</summary>
+          <p>
+            1) 카테고리 허브 + 태그 허브, 2) 슬러그(영문/한글 혼용 최소화), 3) OG/메타 설명,
+            4) 내부링크(관련 테스트 추천), 5) FAQ 스키마가 핵심입니다.
+          </p>
+        </details>
+
+        <details>
+          <summary>공지/로그인/북마크 같은 기능도 SEO에 영향 있나요?</summary>
+          <p>
+            직접적인 “키워드 노출”보다는 체류시간/재방문에 도움이 돼요. 다만 로그인 같은 페이지는
+            noindex 처리하는 게 보통 더 깔끔합니다. (예: /ko/app/*)
+          </p>
+        </details>
+      </section>
+
+      <section class="section" id="about">
+        <h2>모모픽 소개</h2>
+        <p>
+          모모픽은 “짧고 재밌게, 그런데 공유하고 싶게”를 목표로 하는 퀴즈 플랫폼입니다.
+          테스트를 만들고, 결과를 저장하고, 친구와 공유하면서 나를 더 잘 알게 되는 경험을 제공합니다.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="/ko/explore/">지금 시작하기</a>
+          <a class="btn" href="/ko/tag/">태그로 찾기</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Momopick. All rights reserved.</div>
+      <div style="margin-top:8px;">
+        <a href="/ko/notice/">공지사항</a> ·
+        <a href="/ko/policy/privacy/">개인정보처리방침</a> ·
+        <a href="/ko/policy/terms/">이용약관</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
