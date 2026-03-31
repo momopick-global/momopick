@@ -70,9 +70,12 @@
       display:flex; align-items:center; gap:12px; margin-bottom:10px;
     }
     .logo{
-      width:38px; height:38px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(90,103,242,.95), rgba(255,107,154,.85));
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      object-fit: cover;
       box-shadow: 0 10px 26px rgba(0,0,0,.18);
+      display:block;
     }
     h1{ font-size:22px; margin:0; letter-spacing:.2px; }
     p{ margin:8px 0 0; color:var(--muted); line-height:1.5; }
@@ -132,7 +135,7 @@
   <main class="wrap" aria-label="Momopick language gateway">
     <section class="card left">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <img class="logo" src="/src/momopick.png" alt="Momopick logo" />
         <div>
           <h1>Momopick</h1>
           <p>퀴즈로 나를 발견하는 시간. 언어를 선택하면 해당 버전으로 이동해요.</p>
