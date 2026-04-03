@@ -1,2 +1,10 @@
 firebase-debug.log
 .DS_Store
+.firebase/
+
+# Next.js (web/)
+web/node_modules/
+web/.next/
+web/out/
+web/.open-next/
+web/.env*.local

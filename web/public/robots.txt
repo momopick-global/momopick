@@ -1,0 +1,5 @@
+# 배포 시 /robots.txt 로 제공. Cloudflare 대시보드의 robots 관리가 켜져 있으면 플랫폼 정책에 따라 이 파일과 병합되거나 대체될 수 있음.
+Sitemap: https://momopick.com/sitemap.xml
+
+User-agent: *
+Allow: /
