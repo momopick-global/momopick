@@ -64,7 +64,7 @@ export default function KoHomePage() {
             <div className="hero-banner-wrap">
               <img
                 className="hero-banner"
-                src="/images/banners/ko/momopick-test-banner.png"
+                src="/images/banners/ko/momopick-test-banner.webp"
                 alt=""
                 width={1120}
                 height={360}
@@ -98,7 +98,7 @@ export default function KoHomePage() {
             <div className="rail" role="list">
               <Link className="rail-card" href="/ko/love/your-love-type/" role="listitem">
                 <img
-                  src="/images/banners/ko/rail-01.png"
+                  src="/images/banners/ko/rail-01.webp"
                   alt=""
                   width={168}
                   height={224}
@@ -112,7 +112,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/personality/my-hidden-mbti/" role="listitem">
                 <img
-                  src="/images/banners/ko/rail-02.png"
+                  src="/images/banners/ko/rail-02.webp"
                   alt=""
                   width={168}
                   height={224}
@@ -126,7 +126,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/social/friendship-chemistry/" role="listitem">
                 <img
-                  src="/images/banners/ko/rail-03.png"
+                  src="/images/banners/ko/rail-03.webp"
                   alt=""
                   width={168}
                   height={224}
@@ -140,7 +140,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/love/" role="listitem">
                 <img
-                  src="/images/banners/ko/rail-04.png"
+                  src="/images/banners/ko/rail-04.webp"
                   alt=""
                   width={168}
                   height={224}
@@ -154,7 +154,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/personality/" role="listitem">
                 <img
-                  src="/images/banners/ko/rail-05.png"
+                  src="/images/banners/ko/rail-05.webp"
                   alt=""
                   width={168}
                   height={224}
@@ -168,7 +168,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/fun/" role="listitem">
                 <img
-                  src="/images/banners/ko/rail-06.png"
+                  src="/images/banners/ko/rail-06.webp"
                   alt=""
                   width={168}
                   height={224}
@@ -199,7 +199,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">HOT</span>
                   <img
-                    src="/images/banners/ko/tile-love-01.png"
+                    src="/images/banners/ko/tile-love-01.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -216,7 +216,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">허브</span>
                   <img
-                    src="/images/banners/ko/tile-love-02.png"
+                    src="/images/banners/ko/tile-love-02.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -232,7 +232,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/explore/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-love-03.png"
+                    src="/images/banners/ko/tile-love-03.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -248,7 +248,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/tag/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-love-04.png"
+                    src="/images/banners/ko/tile-love-04.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -279,7 +279,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">1분</span>
                   <img
-                    src="/images/banners/ko/tile-mind-01.png"
+                    src="/images/banners/ko/tile-mind-01.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -295,7 +295,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/personality/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-mind-02.png"
+                    src="/images/banners/ko/tile-mind-02.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -311,7 +311,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/social/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-mind-03.png"
+                    src="/images/banners/ko/tile-mind-03.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -342,7 +342,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">SNACK</span>
                   <img
-                    src="/images/banners/ko/tile-snack-01.png"
+                    src="/images/banners/ko/tile-snack-01.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -358,7 +358,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/style/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-snack-02.png"
+                    src="/images/banners/ko/tile-snack-02.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -374,7 +374,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/explore/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-snack-03.png"
+                    src="/images/banners/ko/tile-snack-03.webp"
                     alt=""
                     width={320}
                     height={220}
@@ -422,25 +422,72 @@ export default function KoHomePage() {
               <h2>자주 묻는 질문</h2>
             </div>
             <details>
-              <summary>모모픽은 어떤 테스트가 많나요?</summary>
+              <summary>💔 왜 내 연애 테스트 결과가 이렇게 나왔나요?</summary>
+              <p>솔직히 말하면… 당신의 선택 패턴이 그대로 반영된 결과입니다.</p>
+              <p>무의식적으로 반복하는 연애 습관이 드러난 걸 수도 있어요.</p>
+            </details>
+            <details>
+              <summary>😳 이거… 진짜 맞는 거 아니에요?</summary>
+              <p>많은 사람들이 “소름 돋는다”라고 말합니다.</p>
               <p>
-                연애/MBTI/심리/성격/관계/취향/재미 퀴즈까지, 가볍게 즐길 수 있는 짧은 테스트
-                중심으로 구성됩니다.
+                완벽한 정답은 아니지만, 당신의 성향을 꽤 정확하게 짚어낼 수도 있어요.
               </p>
             </details>
             <details>
-              <summary>검색에서 잘 나오게 하려면?</summary>
-              <p>
-                카테고리·태그 허브, 슬러그 규칙, 메타·OG, 관련 테스트 내부링크, FAQ 구조화
-                데이터가 핵심입니다.
-              </p>
+              <summary>🤔 친구랑 똑같이 했는데 결과가 왜 달라요?</summary>
+              <p>같은 질문이라도 선택하는 순간의 감정, 생각이 다르기 때문이에요.</p>
+              <p>그래서 결과도 달라집니다. 그게 포인트죠.</p>
             </details>
             <details>
-              <summary>로그인 페이지는 검색에 노출되나요?</summary>
-              <p>
-                보통 <code>/ko/app/*</code> 류는 noindex로 두는 편이 깔끔합니다. 콘텐츠 페이지만
-                색인 대상으로 관리하세요.
-              </p>
+              <summary>🧠 이거 MBTI 기반인가요?</summary>
+              <p>일부 테스트는 MBTI 성향을 참고하지만,</p>
+              <p>모모픽만의 해석 방식으로 재구성되어 있습니다.</p>
+            </details>
+            <details>
+              <summary>😅 결과가 너무 팩폭인데요… 틀린 거죠?</summary>
+              <p>틀렸다기보다는… 듣기 싫은 부분일 가능성이 큽니다.</p>
+              <p>대부분의 사람은 여기서 살짝 찔립니다.</p>
+            </details>
+            <details>
+              <summary>💡 결과를 바꿀 수 있나요?</summary>
+              <p>물론 가능합니다.</p>
+              <p>다른 선택을 하면 전혀 다른 결과가 나올 수 있어요.</p>
+              <p>(근데… 그 선택을 진짜 할 수 있을까요?)</p>
+            </details>
+            <details>
+              <summary>📊 테스트 결과는 믿어도 되나요?</summary>
+              <p>100% 정답은 아니지만,</p>
+              <p>당신을 이해하는 하나의 힌트가 될 수 있습니다.</p>
+            </details>
+            <details>
+              <summary>🔒 로그인하면 뭐가 달라지나요?</summary>
+              <ul>
+                <li>내가 했던 테스트 기록 저장</li>
+                <li>다시 결과 확인 가능</li>
+                <li>개인 맞춤 추천 제공</li>
+              </ul>
+              <p>👉 그냥 안 하면 손해 보는 구조입니다.</p>
+            </details>
+            <details>
+              <summary>📱 왜 자꾸 사람들이 공유하나요?</summary>
+              <p>재밌기도 하지만…</p>
+              <p>“너 이거 해봐” 하고 보내고 싶어지는 결과 구조 때문입니다.</p>
+            </details>
+            <details>
+              <summary>📢 광고 왜 이렇게 많아요?</summary>
+              <p>무료로 서비스 운영하려면 돈은 어디선가 나와야 합니다.</p>
+              <p>광고는 생존 장치입니다. 참고 좀 해주세요.</p>
+            </details>
+            <details>
+              <summary>🚨 테스트가 안 돼요 (버그)</summary>
+              <p>기기, 브라우저 문제일 가능성이 큽니다.</p>
+              <p>그래도 안 되면 문의 주세요.</p>
+              <p>우리가 고치긴 합니다. 가끔은 빠르게.</p>
+            </details>
+            <details>
+              <summary>😶 이거 중독성 있는 거 정상인가요?</summary>
+              <p>네, 정상입니다.</p>
+              <p>그래서 계속 하게 되는 겁니다.</p>
             </details>
           </section>
 

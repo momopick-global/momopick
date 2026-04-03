@@ -530,6 +530,21 @@
   font-size: 14px;
 }
 
+.momopick-ko .faq ul {
+  margin: 10px 0 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.momopick-ko .faq ul li {
+  margin-top: 6px;
+}
+
+.momopick-ko .faq ul li:first-child {
+  margin-top: 0;
+}
+
 .momopick-ko footer.ko-ft {
   margin-top: 44px;
   padding-top: 24px;
@@ -562,4 +577,278 @@
 
 .momopick-ko .cta-bottom .cta {
   justify-content: center;
+}
+
+/* —— 스낵 테스트(연애 유형 등) —— */
+.momopick-ko .quiz-page {
+  padding-top: 8px;
+}
+
+.momopick-ko .quiz-breadcrumb {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.momopick-ko .quiz-breadcrumb a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.momopick-ko .quiz-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.momopick-ko .quiz-page-hd {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.momopick-ko .quiz-kicker {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.momopick-ko .quiz-page-hd h1 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .momopick-ko .quiz-page-hd h1 {
+    font-size: 28px;
+  }
+}
+
+.momopick-ko .quiz-lead {
+  margin: 0 auto 18px;
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.momopick-ko .quiz-cover {
+  max-width: 200px;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: linear-gradient(145deg, #e8e4f7, #fce8ef);
+}
+
+.momopick-ko .quiz-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.momopick-ko .quiz-section {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.momopick-ko .quiz-shell {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 18px 20px;
+  box-shadow: var(--shadow);
+}
+
+.momopick-ko .quiz-progress-wrap {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(90, 103, 242, 0.12);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.momopick-ko .quiz-progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.25s ease;
+}
+
+.momopick-ko .quiz-step-label {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.momopick-ko .quiz-q {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
+.momopick-ko .quiz-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.momopick-ko .quiz-opt {
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: rgba(90, 103, 242, 0.04);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.momopick-ko .quiz-opt:hover {
+  border-color: rgba(90, 103, 242, 0.45);
+  background: rgba(90, 103, 242, 0.08);
+  transform: translateY(-1px);
+}
+
+.momopick-ko .quiz-result-card {
+  text-align: center;
+}
+
+.momopick-ko .quiz-result-emoji {
+  margin: 0 0 12px;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.momopick-ko .quiz-result-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.momopick-ko .quiz-result-tagline {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.momopick-ko .quiz-result-body {
+  margin: 0 0 20px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.momopick-ko .quiz-result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.momopick-ko .quiz-footnote {
+  margin: 18px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.9;
+}
+
+/* —— 정책(개인정보처리방침 등) —— */
+.momopick-ko .policy-page {
+  padding-top: 8px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.momopick-ko .policy-page-hd h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.momopick-ko .policy-effective {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.momopick-ko .policy-intro {
+  margin: 0 0 28px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: rgba(90, 103, 242, 0.04);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.momopick-ko .policy-prose section {
+  margin-bottom: 26px;
+}
+
+.momopick-ko .policy-prose h2 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.momopick-ko .policy-prose p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.momopick-ko .policy-prose ul {
+  margin: 0 0 12px;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.momopick-ko .policy-prose li {
+  margin-bottom: 6px;
+}
+
+.momopick-ko .policy-prose a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.momopick-ko .policy-contact {
+  list-style: none;
+  padding-left: 0;
+}
+
+.momopick-ko .policy-foot {
+  margin: 32px 0 8px;
+}
+
+.momopick-ko .policy-foot .link-all {
+  font-size: 15px;
 }

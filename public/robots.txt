@@ -1,5 +1,11 @@
-# 배포 시 /robots.txt 로 제공. Cloudflare 대시보드의 robots 관리가 켜져 있으면 플랫폼 정책에 따라 이 파일과 병합되거나 대체될 수 있음.
-Sitemap: https://momopick.com/sitemap.xml
+# Momopick — https://momopick.com/
+# 정적 배포 시 /robots.txt 로 제공됩니다.
+# Cloudflare 등에서 별도 robots 정책을 켜 두면 이 파일과 충돌할 수 있으니 대시보드도 확인하세요.
 
 User-agent: *
 Allow: /
+
+# 앱·관리 영역이 생기면 아래처럼 막을 수 있음 (경로는 실제 라우트에 맞게 수정)
+# Disallow: /ko/app/
+
+Sitemap: https://momopick.com/sitemap.xml

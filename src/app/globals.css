@@ -7,3 +7,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* JS/CSS 로딩 지연·오류 시에도 완전 하얀 화면만 보이지 않도록 */
+html {
+  background-color: #f6f7fb;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f6f7fb;
+  color: #161022;
+}
