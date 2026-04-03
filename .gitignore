@@ -5,6 +5,7 @@ firebase-debug.log
 # Next.js (repo root)
 node_modules/
 .next/
+.next-dev/
 out/
 .open-next/
 .env*.local

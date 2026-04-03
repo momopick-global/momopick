@@ -16,14 +16,16 @@
 | 캐시 초기화 후 다시 빌드 | `npm run clean` → `npm run dev` 또는 `npm run build` |
 | Internal Server Error · `.next` 깨짐 복구 | **`npm run dev:reset`** (3040 종료 → `clean` → `dev` 한 번에) |
 
-**주의 (`.next` 공유):**
+**캐시 폴더:** `npm run dev` → **`.next-dev`**, `npm run build` → **`.next`** 로 나뉘어 있어서 예전처럼 빌드와 개발이 **같은 청크 폴더를 동시에 덮어쓰지는 않습니다.** (`npm run clean` 은 둘 다 지웁니다.)
 
-- `npm run dev`가 켜져 있는 동안 **`npm run clean`** 이나 **`npm run build`** 를 돌리지 마세요. 같은 `.next` 폴더를 건드리면 `ENOENT` / **Internal Server Error**가 납니다. 빌드 전에는 dev를 **Ctrl+C**로 끄세요.
+**주의:**
+
+- `npm run dev`가 켜져 있는 동안 **`npm run clean`** 을 돌리면 dev가 쓰는 **`.next-dev`가 삭제**되어 `ENOENT` / 500이 납니다. 정리 전에 dev를 **Ctrl+C**로 끄세요.
 - 더 빠른 번들이 필요하면 (실험용) `npm run dev:turbo` — 문제가 나면 일반 `npm run dev` 로 돌아오세요.
 
 ### `Cannot find module './NNN.js'` (로컬 개발)
 
-`.next` 캐시가 꼬인 경우입니다. `npm run clean` 후 개발 서버를 다시 띄우세요.
+여전히 나오면 `.next-dev` 가 꼬인 경우입니다. **`npm run dev:reset`** 또는 dev를 끈 뒤 `npm run clean` → `npm run dev` 하세요.
 
 ### 페이지가 **하얀 빈 화면**만 보일 때
 

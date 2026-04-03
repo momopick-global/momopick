@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "clean": "rm -rf .next out",
+    "clean": "rm -rf .next .next-dev out",
     "free:3040": "lsof -ti :3040 | xargs kill -9 2>/dev/null || true",
+    "dev:fresh": "npm run clean && next dev -p 3040",
     "dev:reset": "npm run free:3040 && npm run clean && npm run dev",
     "dev": "next dev -p 3040",
     "dev:turbo": "next dev -p 3040 --turbopack",
