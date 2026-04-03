@@ -16,7 +16,10 @@
 | 캐시 초기화 후 다시 빌드 | `npm run clean` → `npm run dev` 또는 `npm run build` |
 | Internal Server Error · `.next` 깨짐 복구 | **`npm run dev:reset`** (3040 종료 → `clean` → `dev` 한 번에) |
 
-**주의:** `npm run dev`가 돌아가는 동안에는 `npm run clean`을 실행하지 마세요. `.next`를 지우는 순간 서버가 참조하던 파일이 사라져 `ENOENT` / Internal Server Error가 납니다.
+**주의 (`.next` 공유):**
+
+- `npm run dev`가 켜져 있는 동안 **`npm run clean`** 이나 **`npm run build`** 를 돌리지 마세요. 같은 `.next` 폴더를 건드리면 `ENOENT` / **Internal Server Error**가 납니다. 빌드 전에는 dev를 **Ctrl+C**로 끄세요.
+- 더 빠른 번들이 필요하면 (실험용) `npm run dev:turbo` — 문제가 나면 일반 `npm run dev` 로 돌아오세요.
 
 ### `Cannot find module './NNN.js'` (로컬 개발)
 
@@ -25,7 +28,7 @@
 ### 페이지가 **하얀 빈 화면**만 보일 때
 
 서버가 500을 내면 Next가 잠깐 `body { display: none }` 을 걸어 두는데, 오류로 하이드레이션이 끝나지 않으면 **아무것도 안 보이는 것처럼** 보일 수 있습니다.  
-**3040 포트의 예전 `next dev`를 완전히 끄고** `npm run clean` → `npm run dev` 로 다시 시작하세요. (개발은 Webpack 대신 **Turbopack**을 쓰도록 설정해 두었습니다.)
+**3040 포트의 예전 `next dev`를 완전히 끄고** `npm run dev:reset` 또는 `npm run clean` → `npm run dev` 로 다시 시작하세요.
 
 ### 404 · “File not found”가 나올 때
 
