@@ -61,6 +61,17 @@ export default function KoHomePage() {
               <strong>MBTI·연애·심리·관계·취향</strong>까지. 모모픽에서 가볍게 즐기고, 결과는
               친구에게 바로 공유해 보세요.
             </p>
+            <div className="hero-banner-wrap">
+              <img
+                className="hero-banner"
+                src="/images/banners/ko/momopick-test-banner.png"
+                alt=""
+                width={1120}
+                height={360}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </section>
 
           <div className="login-hint">
@@ -87,7 +98,7 @@ export default function KoHomePage() {
             <div className="rail" role="list">
               <Link className="rail-card" href="/ko/love/your-love-type/" role="listitem">
                 <img
-                  src="https://picsum.photos/seed/momopick-love1/336/448"
+                  src="/images/banners/ko/rail-01.png"
                   alt=""
                   width={168}
                   height={224}
@@ -101,7 +112,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/personality/my-hidden-mbti/" role="listitem">
                 <img
-                  src="https://picsum.photos/seed/momopick-mbti2/336/448"
+                  src="/images/banners/ko/rail-02.png"
                   alt=""
                   width={168}
                   height={224}
@@ -115,7 +126,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/social/friendship-chemistry/" role="listitem">
                 <img
-                  src="https://picsum.photos/seed/momopick-social3/336/448"
+                  src="/images/banners/ko/rail-03.png"
                   alt=""
                   width={168}
                   height={224}
@@ -129,7 +140,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/love/" role="listitem">
                 <img
-                  src="https://picsum.photos/seed/momopick-love4/336/448"
+                  src="/images/banners/ko/rail-04.png"
                   alt=""
                   width={168}
                   height={224}
@@ -143,7 +154,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/personality/" role="listitem">
                 <img
-                  src="https://picsum.photos/seed/momopick-psy5/336/448"
+                  src="/images/banners/ko/rail-05.png"
                   alt=""
                   width={168}
                   height={224}
@@ -157,7 +168,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="rail-card" href="/ko/fun/" role="listitem">
                 <img
-                  src="https://picsum.photos/seed/momopick-fun6/336/448"
+                  src="/images/banners/ko/rail-06.png"
                   alt=""
                   width={168}
                   height={224}
@@ -188,7 +199,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">HOT</span>
                   <img
-                    src="https://picsum.photos/seed/mp-tile-love1/640/440"
+                    src="/images/banners/ko/tile-love-01.png"
                     alt=""
                     width={320}
                     height={220}
@@ -205,7 +216,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">허브</span>
                   <img
-                    src="https://picsum.photos/seed/mp-tile-love2/640/440"
+                    src="/images/banners/ko/tile-love-02.png"
                     alt=""
                     width={320}
                     height={220}
@@ -221,7 +232,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/explore/">
                 <div className="thumb">
                   <img
-                    src="https://picsum.photos/seed/mp-tile-love3/640/440"
+                    src="/images/banners/ko/tile-love-03.png"
                     alt=""
                     width={320}
                     height={220}
@@ -237,7 +248,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/tag/">
                 <div className="thumb">
                   <img
-                    src="https://picsum.photos/seed/mp-tile-love4/640/440"
+                    src="/images/banners/ko/tile-love-04.png"
                     alt=""
                     width={320}
                     height={220}
@@ -268,7 +279,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">1분</span>
                   <img
-                    src="https://picsum.photos/seed/mp-tile-mind1/640/440"
+                    src="/images/banners/ko/tile-mind-01.png"
                     alt=""
                     width={320}
                     height={220}
@@ -284,7 +295,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/personality/">
                 <div className="thumb">
                   <img
-                    src="https://picsum.photos/seed/mp-tile-mind2/640/440"
+                    src="/images/banners/ko/tile-mind-02.png"
                     alt=""
                     width={320}
                     height={220}
@@ -300,7 +311,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/social/">
                 <div className="thumb">
                   <img
-                    src="https://picsum.photos/seed/mp-tile-mind3/640/440"
+                    src="/images/banners/ko/tile-mind-03.png"
                     alt=""
                     width={320}
                     height={220}
@@ -331,7 +342,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">SNACK</span>
                   <img
-                    src="https://picsum.photos/seed/mp-snack1/640/440"
+                    src="/images/banners/ko/tile-snack-01.png"
                     alt=""
                     width={320}
                     height={220}
@@ -347,7 +358,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/style/">
                 <div className="thumb">
                   <img
-                    src="https://picsum.photos/seed/mp-snack2/640/440"
+                    src="/images/banners/ko/tile-snack-02.png"
                     alt=""
                     width={320}
                     height={220}
@@ -363,7 +374,7 @@ export default function KoHomePage() {
               <Link className="tile" href="/ko/explore/">
                 <div className="thumb">
                   <img
-                    src="https://picsum.photos/seed/mp-snack3/640/440"
+                    src="/images/banners/ko/tile-snack-03.png"
                     alt=""
                     width={320}
                     height={220}

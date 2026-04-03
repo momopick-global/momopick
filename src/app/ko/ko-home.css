@@ -189,6 +189,22 @@
   font-size: 15px;
 }
 
+.momopick-ko .hero-banner-wrap {
+  margin: 22px auto 0;
+  max-width: min(100%, 720px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.momopick-ko .hero-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
 .momopick-ko .login-hint {
   margin-top: 20px;
   padding: 14px 18px;
