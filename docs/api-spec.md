@@ -15,7 +15,7 @@
 
 ### 1.1 Cloudflare Pages Functions (엣지)
 
-Next `Route Handler`는 정적 export와 함께 쓰지 않고, **`web/functions/`** 에서 정의합니다.
+Next `Route Handler`는 정적 export와 함께 쓰지 않고, 루트 **`functions/`** 에서 정의합니다.
 
 | 메서드 | 경로 | 설명 |
 |--------|------|------|

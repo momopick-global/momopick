@@ -57,7 +57,7 @@
 - F3. 결과 저장·개인정보 최소화
 
 ### G. 인프라·배포
-- G1. **Cloudflare Pages**: Git 연동 빌드, 프리뷰 배포, `web/` 루트 + 출력 디렉터리 `out`
+- G1. **Cloudflare Pages**: Git 연동 빌드, 프리뷰 배포, **레포 루트** + 출력 디렉터리 `out`
 - G2. **Cloudflare(공통)**: DNS·SSL, 캐시, **Redirect**(대시보드 또는 `public/_redirects`), (선택) WAF
 - G3. **Pages Functions**: Next 정적 export로 커버 안 되는 **경량 API** (`functions/` → 예: `/api/health`)
 - G4. 환경 변수: Pages **Build / Production**에 `NEXT_PUBLIC_SUPABASE_*` 등 등록
@@ -122,7 +122,7 @@
 | **2차** | EN 본 페이지, 블로그 본격, 회원(저장·히스토리), 추천 로직 v1. |
 | **3차** | 추가 언어, UGC/댓글(검토 큐), 파트너십, 수익화 실험. |
 
-세부 일정은 리소스에 맞춰 `doc/`에 `roadmap.md`로 쪼개도 좋습니다.
+세부 일정은 리소스에 맞춰 `docs/`에 `roadmap.md`로 쪼개도 좋습니다.
 
 ---
 

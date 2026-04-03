@@ -75,6 +75,13 @@ export default function LanguageGateway() {
 
     if (bot) return;
 
+    /* 로컬 개발: 자동 이동 끔 → 예전 정적 HTML 캐시 + 리다이렉트 후 ERR_CONNECTION_REFUSED 혼동 방지 */
+    if (process.env.NODE_ENV === "development") {
+      setStatus("Dev mode: choose a language below (no auto redirect).");
+      setTarget("—");
+      return;
+    }
+
     const t = setTimeout(() => {
       setStatus("Redirecting…");
       router.replace(`/${pref.lang}/`);
