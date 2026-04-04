@@ -1,0 +1,85 @@
+{
+  "id": "your-love-type",
+  "locale": "en",
+  "resultKeys": ["spark", "care", "think", "free"],
+  "results": {
+    "spark": {
+      "emoji": "🔥",
+      "title": "Direct Romantic",
+      "tagline": "When you feel it, you move first",
+      "body": "You express affection openly and like to set the tone. You may prefer clear direction over endless “talking stages.” Your energy together is a big part of what draws people in."
+    },
+    "care": {
+      "emoji": "💗",
+      "title": "Care & Consideration",
+      "tagline": "You read the room and match their pace",
+      "body": "You notice tone, timing, and feelings. In conflict you tend to cool down, then talk things through. You want to be someone your partner can rely on."
+    },
+    "think": {
+      "emoji": "🧭",
+      "title": "Thoughtful Planner",
+      "tagline": "You want meaning and direction before you go deep",
+      "body": "Even with a crush, you pause and picture how things fit. Casual fun is fine, but you keep an eye on long-term fit."
+    },
+    "free": {
+      "emoji": "🌿",
+      "title": "Free & Easy",
+      "tagline": "You love at your own rhythm",
+      "body": "Close time is great, and solo time is fine too. You tend to treat love more like a shared adventure than a checklist."
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "title": "Blended Style",
+    "tagline": "Several sides show up evenly. Different moods may bring out different yous.",
+    "body": "Two or more styles tied for the top. That’s normal—people shift with context and relationship stage."
+  },
+  "questions": [
+    {
+      "prompt": "In the talking stage, what feels most like you?",
+      "options": [
+        { "label": "If I like them, I reach out first and warm things up", "key": "spark" },
+        { "label": "I match their pace and stay considerate", "key": "care" },
+        { "label": "I sort out my feelings and situation before I move", "key": "think" },
+        { "label": "I don’t rush—I let it unfold with ease", "key": "free" }
+      ]
+    },
+    {
+      "prompt": "When you and your partner strongly disagree, you tend to…",
+      "options": [
+        { "label": "Want to clear the air right there", "key": "spark" },
+        { "label": "Check their mood first", "key": "care" },
+        { "label": "Name the issue and talk calmly", "key": "think" },
+        { "label": "Take space so you can both reset", "key": "free" }
+      ]
+    },
+    {
+      "prompt": "When planning a date, you…",
+      "options": [
+        { "label": "Pick new spots or events for excitement", "key": "spark" },
+        { "label": "Prioritize what feels easy for them", "key": "care" },
+        { "label": "Like a rough plan and route in mind", "key": "think" },
+        { "label": "Go with the day’s vibe or improvise", "key": "free" }
+      ]
+    },
+    {
+      "prompt": "What gives you the most energy in dating?",
+      "options": [
+        { "label": "Immersive talks or physical closeness", "key": "spark" },
+        { "label": "Feeling cared for and appreciated", "key": "care" },
+        { "label": "Sensing shared values or future fit", "key": "think" },
+        { "label": "The spark when you reunite after your own days", "key": "free" }
+      ]
+    },
+    {
+      "prompt": "When the relationship feels a bit flat, you…",
+      "options": [
+        { "label": "Shake things up with dates or novelty", "key": "spark" },
+        { "label": "Talk and reconnect emotionally", "key": "care" },
+        { "label": "Sort out what’s off and reset direction", "key": "think" },
+        { "label": "Reset with solo time", "key": "free" }
+      ]
+    }
+  ],
+  "footnote": "For fun and self-reflection only—not a clinical assessment."
+}

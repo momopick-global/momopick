@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LoveTypeQuiz } from "./LoveTypeQuiz";
+import { SnackQuiz } from "@/components/quiz/SnackQuiz";
+import { koQuizYourLoveType } from "@/content/quiz/ko";
 
 export const metadata: Metadata = {
   title: "내 연애 유형 테스트 | 모모픽",
@@ -58,8 +59,8 @@ export default function YourLoveTypePage() {
               <img
                 src="/images/banners/ko/rail-01.webp"
                 alt=""
-                width={336}
-                height={448}
+                width={1120}
+                height={630}
                 loading="eager"
                 decoding="async"
               />
@@ -67,7 +68,7 @@ export default function YourLoveTypePage() {
           </header>
 
           <section className="quiz-section" aria-labelledby="quiz-title">
-            <LoveTypeQuiz />
+            <SnackQuiz definition={koQuizYourLoveType} locale="ko" />
           </section>
         </main>
 

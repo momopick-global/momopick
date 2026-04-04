@@ -100,8 +100,8 @@ export default function KoHomePage() {
                 <img
                   src="/images/banners/ko/rail-01.webp"
                   alt=""
-                  width={168}
-                  height={224}
+                  width={1536}
+                  height={1024}
                   loading="eager"
                   decoding="async"
                 />
@@ -114,8 +114,8 @@ export default function KoHomePage() {
                 <img
                   src="/images/banners/ko/rail-02.webp"
                   alt=""
-                  width={168}
-                  height={224}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                 />
@@ -128,8 +128,8 @@ export default function KoHomePage() {
                 <img
                   src="/images/banners/ko/rail-03.webp"
                   alt=""
-                  width={168}
-                  height={224}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                 />
@@ -142,8 +142,8 @@ export default function KoHomePage() {
                 <img
                   src="/images/banners/ko/rail-04.webp"
                   alt=""
-                  width={168}
-                  height={224}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                 />
@@ -156,8 +156,8 @@ export default function KoHomePage() {
                 <img
                   src="/images/banners/ko/rail-05.webp"
                   alt=""
-                  width={168}
-                  height={224}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                 />
@@ -170,8 +170,8 @@ export default function KoHomePage() {
                 <img
                   src="/images/banners/ko/rail-06.webp"
                   alt=""
-                  width={168}
-                  height={224}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                 />
@@ -201,8 +201,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-love-01.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -218,8 +218,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-love-02.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -234,8 +234,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-love-03.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -250,8 +250,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-love-04.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -281,8 +281,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-mind-01.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -297,8 +297,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-mind-02.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -313,8 +313,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-mind-03.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -344,8 +344,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-snack-01.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -360,8 +360,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-snack-02.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -376,8 +376,8 @@ export default function KoHomePage() {
                   <img
                     src="/images/banners/ko/tile-snack-03.webp"
                     alt=""
-                    width={320}
-                    height={220}
+                    width={1536}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
