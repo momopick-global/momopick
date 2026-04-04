@@ -315,7 +315,7 @@
 }
 
 .momopick-ko .rail-card {
-  flex: 0 0 150px;
+  flex: 0 0 300px;
   scroll-snap-align: start;
   background: var(--surface);
   border-radius: var(--radius-sm);
@@ -419,7 +419,7 @@
 }
 
 .momopick-ko .tile .thumb img {
-  width: 150px;
+  width: 300px;
   max-width: 100%;
   height: auto;
   display: block;
