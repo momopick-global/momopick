@@ -1,0 +1,210 @@
+{
+  "id": "relationship-balance-test",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "연애", "en": "love" },
+    { "ko": "관계", "en": "relationship" },
+    { "ko": "심리", "en": "psychology" }
+  ],
+
+  "title": {
+    "ko": "연애 중 나는 갑 vs 을?",
+    "en": "Are You the Dominant or the Soft One in Love?"
+  },
+  "subtitle": {
+    "ko": "관계 밸런스 분석",
+    "en": "Check your position in the relationship"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/relationship-balance-test/thumb.webp",
+    "og": "/images/quiz/relationship-balance-test/thumb.webp",
+    "start": "/images/quiz/relationship-balance-test/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "데이트·연락·의사결정 패턴으로 연애에서의 갑·을 성향을 점수로 알아보는 테스트",
+      "en": "See whether you lean dominant or accommodating in love—scored from everyday patterns"
+    },
+    "keywords": [
+      { "ko": "연애 테스트", "en": "love test" },
+      { "ko": "갑을", "en": "relationship dynamics" }
+    ],
+    "ogTitle": {
+      "ko": "연애 중 나는 갑 vs 을?",
+      "en": "Are You the Dominant or the Soft One in Love?"
+    },
+    "ogDescription": {
+      "ko": "관계에서 나의 위치는?",
+      "en": "What’s your position in the relationship?"
+    }
+  },
+
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "⚖️ 관계 밸런스",
+      "en": "⚖️ Relationship balance"
+    },
+    "image": "/images/quiz/relationship-balance-test/thumb.webp",
+    "railImage": "/images/banners/ko/rail-06.webp",
+    "priority": 89
+  },
+
+  "analytics": {
+    "eventKey": "relationship_balance_test",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": ["love-temperature-test", "confession-success-rate", "when-men-lose-interest"],
+
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 39,
+      "title": {
+        "ko": "을 80%",
+        "en": "Soft Role (80%)"
+      },
+      "desc": {
+        "ko": "관계에서 상대에게 많이 맞추는 편입니다. 감정적으로 더 투자하는 쪽일 가능성이 높아요.",
+        "en": "You tend to adapt and invest more emotionally in the relationship."
+      }
+    },
+    {
+      "min": 40,
+      "max": 69,
+      "title": {
+        "ko": "균형",
+        "en": "Balanced"
+      },
+      "desc": {
+        "ko": "서로 비슷한 위치에서 관계를 유지하는 건강한 균형 상태입니다.",
+        "en": "You maintain a healthy balance in the relationship."
+      }
+    },
+    {
+      "min": 70,
+      "max": 100,
+      "title": {
+        "ko": "갑 70%",
+        "en": "Dominant Role (70%)"
+      },
+      "desc": {
+        "ko": "관계를 주도하는 쪽에 가까운 타입입니다. 선택권과 여유가 있는 편입니다.",
+        "en": "You tend to lead and have more control in the relationship."
+      }
+    }
+  ],
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "데이트 계획은 누가 주로 세우나?",
+        "en": "Who usually plans dates?"
+      },
+      "options": [
+        { "label": { "ko": "내가 주도", "en": "I take the lead" }, "score": 15 },
+        { "label": { "ko": "서로 번갈아", "en": "We take turns" }, "score": 10 },
+        { "label": { "ko": "상대가 더 많이", "en": "They do more" }, "score": 5 },
+        { "label": { "ko": "거의 상대가 함", "en": "They do everything" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연락 빈도는?",
+        "en": "Who texts more?"
+      },
+      "options": [
+        { "label": { "ko": "내가 더 적게 함", "en": "I text less" }, "score": 15 },
+        { "label": { "ko": "비슷함", "en": "About equal" }, "score": 10 },
+        { "label": { "ko": "내가 더 많이 함", "en": "I text more" }, "score": 5 },
+        { "label": { "ko": "거의 내가 먼저", "en": "I always text first" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "싸움 후 먼저 다가가는 사람은?",
+        "en": "Who reaches out after a fight?"
+      },
+      "options": [
+        { "label": { "ko": "상대가 먼저", "en": "They do" }, "score": 15 },
+        { "label": { "ko": "서로 비슷", "en": "About equal" }, "score": 10 },
+        { "label": { "ko": "내가 더 자주", "en": "I usually do" }, "score": 5 },
+        { "label": { "ko": "거의 항상 나", "en": "Always me" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "의사결정 방식은?",
+        "en": "How are decisions made?"
+      },
+      "options": [
+        { "label": { "ko": "내 의견이 반영됨", "en": "My opinion leads" }, "score": 15 },
+        { "label": { "ko": "서로 조율", "en": "We compromise" }, "score": 10 },
+        { "label": { "ko": "상대 의견 위주", "en": "Mostly theirs" }, "score": 5 },
+        { "label": { "ko": "내 의견 거의 없음", "en": "I rarely matter" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "선물/이벤트는?",
+        "en": "Who puts more effort into gifts/events?"
+      },
+      "options": [
+        { "label": { "ko": "상대가 더 많이", "en": "They do more" }, "score": 15 },
+        { "label": { "ko": "비슷함", "en": "About equal" }, "score": 10 },
+        { "label": { "ko": "내가 더 많이", "en": "I do more" }, "score": 5 },
+        { "label": { "ko": "거의 내가 함", "en": "Mostly me" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "질투 상황에서 나는?",
+        "en": "When jealousy happens?"
+      },
+      "options": [
+        { "label": { "ko": "상대가 더 신경씀", "en": "They care more" }, "score": 15 },
+        { "label": { "ko": "비슷함", "en": "Equal" }, "score": 10 },
+        { "label": { "ko": "내가 더 예민", "en": "I’m more sensitive" }, "score": 5 },
+        { "label": { "ko": "내가 더 집착함", "en": "I get clingy" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "이 관계에서 나는?",
+        "en": "In this relationship, I feel..."
+      },
+      "options": [
+        { "label": { "ko": "여유 있음", "en": "Relaxed" }, "score": 15 },
+        { "label": { "ko": "안정적", "en": "Stable" }, "score": 10 },
+        { "label": { "ko": "조금 불안", "en": "A bit anxious" }, "score": 5 },
+        { "label": { "ko": "많이 불안", "en": "Very anxious" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대에게 맞추는 정도는?",
+        "en": "How much do you adjust to them?"
+      },
+      "options": [
+        { "label": { "ko": "거의 안 맞춤", "en": "Rarely adjust" }, "score": 15 },
+        { "label": { "ko": "적당히 맞춤", "en": "Sometimes adjust" }, "score": 10 },
+        { "label": { "ko": "많이 맞춤", "en": "Adjust a lot" }, "score": 5 },
+        { "label": { "ko": "거의 맞춰줌", "en": "Always adjust" }, "score": 0 }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

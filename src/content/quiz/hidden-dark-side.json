@@ -1,0 +1,300 @@
+{
+  "id": "hidden-dark-side",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "연애", "en": "love" },
+    { "ko": "성향", "en": "personality" },
+    { "ko": "심리", "en": "psychology" }
+  ],
+
+  "title": {
+    "ko": "나의 숨겨진 다크사이드",
+    "en": "What Is Your Hidden Dark Side?"
+  },
+  "subtitle": {
+    "ko": "아무도 모르는 내면",
+    "en": "The side of you no one knows"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/hidden-dark-side/thumb.webp",
+    "og": "/images/quiz/hidden-dark-side/thumb.webp",
+    "start": "/images/quiz/hidden-dark-side/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "화·상처·갈등에서 드러나는 나의 그림자 성향이 통제형·폭발형·냉소형 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether your hidden edge leans controlled, explosive, or detached"
+    },
+    "keywords": [
+      { "ko": "성향 테스트", "en": "personality test" },
+      { "ko": "다크사이드", "en": "dark side" }
+    ],
+    "ogTitle": {
+      "ko": "나의 숨겨진 다크사이드",
+      "en": "What Is Your Hidden Dark Side?"
+    },
+    "ogDescription": {
+      "ko": "아무도 모르는 내면의 패턴",
+      "en": "The side of you no one knows"
+    }
+  },
+
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🌑 내면 패턴",
+      "en": "🌑 Inner pattern"
+    },
+    "image": "/images/quiz/hidden-dark-side/thumb.webp",
+    "priority": 87
+  },
+
+  "resultKeys": ["A", "B", "C"],
+  "resultOrder": ["A", "B", "C"],
+
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+
+  "analytics": {
+    "eventKey": "hidden_dark_side",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": ["logical-or-emotional", "love-pattern-destroying-habit", "who-likes-you-type"],
+
+  "results": {
+    "A": {
+      "emoji": "🎭",
+      "scoreKey": "A",
+      "title": {
+        "ko": "통제형",
+        "en": "Control Type"
+      },
+      "tagline": {
+        "ko": "겉은 차분하게, 속으로 감정을 다루는 타입",
+        "en": "You hold emotions in and manage them internally"
+      },
+      "body": {
+        "ko": "감정을 밖으로 드러내기보다 내부에서 통제하는 타입입니다.\n겉은 평온하지만 속은 복잡할 수 있습니다.\n무시당했다고 느껴도 기억해 두거나, 겉으로는 웃으며 넘기는 경우가 많습니다.\n스트레스도 혼자 쌓다가 겉으로 괜찮은 척하는 패턴이 반복될 수 있어요.\n관계가 틀어져도 속으로 오래 끌고 가거나, 겉으로는 아무렇지 않은 척할 수 있습니다.\n‘진짜 감정’을 꺼내 보이는 연습이 부담스럽게 느껴질 수 있어요.",
+        "en": "You tend to control emotions internally rather than express them outwardly.\nYou may look calm outside while a lot moves underneath.\nWhen you feel slighted, you remember it—or smile it off on the surface.\nStress can pile up quietly while you act fine.\nWhen things break, you may hold on inside or pretend you are unaffected.\nShowing raw feelings can feel harder than holding them in."
+      },
+      "image": "/images/quiz/hidden-dark-side/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 숨겨진 다크사이드는 통제형",
+          "en": "My hidden dark side is the Control Type"
+        },
+        "description": {
+          "ko": "감정을 내부에서 통제하는 타입",
+          "en": "You manage emotions inside rather than showing them"
+        },
+        "image": "/images/quiz/hidden-dark-side/result-1.webp"
+      }
+    },
+
+    "B": {
+      "emoji": "🔥",
+      "scoreKey": "B",
+      "title": {
+        "ko": "폭발형",
+        "en": "Explosive Type"
+      },
+      "tagline": {
+        "ko": "감정을 세게 드러내는 타입",
+        "en": "You let emotions out loud and clear"
+      },
+      "body": {
+        "ko": "감정을 억누르기보다 강하게 표출하는 타입입니다.\n순간의 감정이 크게 드러나는 편입니다.\n화가 나면 한 번에 터뜨리거나, 싫으면 바로 티 내는 경우가 많습니다.\n상처받았을 때 감정적으로 크게 반응하고, 스트레스는 분노로 쏟아내기 쉬워요.\n관계가 틀어지면 한 번에 정리하려는 흐름도 나올 수 있습니다.\n에너지가 강하지만, 그만큼 주변에도 파장이 커질 수 있어요.",
+        "en": "You express emotions intensely rather than keeping them bottled up.\nWhat you feel tends to show in sharp bursts.\nAnger may explode at once; dislike shows right away.\nWhen hurt, you react strongly; stress may come out as anger.\nWhen a relationship breaks, you may end it in one dramatic sweep.\nYour energy runs hot—and it can hit others hard too."
+      },
+      "image": "/images/quiz/hidden-dark-side/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 숨겨진 다크사이드는 폭발형",
+          "en": "My hidden dark side is the Explosive Type"
+        },
+        "description": {
+          "ko": "감정을 강하게 표출하는 타입",
+          "en": "You express emotions with intensity"
+        },
+        "image": "/images/quiz/hidden-dark-side/result-2.webp"
+      }
+    },
+
+    "C": {
+      "emoji": "🌑",
+      "scoreKey": "C",
+      "title": {
+        "ko": "냉소형",
+        "en": "Detached Type"
+      },
+      "tagline": {
+        "ko": "거리 두기로 나를 지키는 타입",
+        "en": "You protect yourself by pulling away"
+      },
+      "body": {
+        "ko": "감정에서 한 발 떨어져 관계를 바라보는 타입입니다.\n거리두기로 자신을 보호합니다.\n갈등이 생기면 아예 피하거나, 조용히 선을 긋고 끊는 흐름이 나올 수 있어요.\n무시받았다고 느끼면 바로 반응하기보다 차갑게 거리를 두는 편입니다.\n겉으로는 냉정하게 선을 긋는 선택을 할 수 있습니다.\n가까워지는 것만큼, 멀어질 때도 단호하게 보일 수 있어요.",
+        "en": "You step back from emotion and view relationships with distance.\nPulling away is how you protect yourself.\nIn conflict you may avoid entirely—or quietly cut ties.\nIf you feel disrespected, you create space rather than explode.\nYou can draw a calm, cold line when needed.\nYou may seem sharp when you walk away—but it is often self-defense."
+      },
+      "image": "/images/quiz/hidden-dark-side/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 숨겨진 다크사이드는 냉소형",
+          "en": "My hidden dark side is the Detached Type"
+        },
+        "description": {
+          "ko": "거리 두기로 스스로를 지키는 타입",
+          "en": "You protect yourself by keeping emotional distance"
+        },
+        "image": "/images/quiz/hidden-dark-side/result-3.webp"
+      }
+    }
+  },
+
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "통제·폭발·거리두기가 섞인 그림자",
+      "en": "A mix of control, explosion, and distance"
+    },
+    "body": {
+      "ko": "한 가지 패턴으로만 정의되지 않을 수 있어요.\n어떤 날은 속으로 쌓고, 어떤 날은 터지고, 또 어떤 날은 조용히 거리를 두기도 합니다.\n상황과 상대에 따라 다른 면이 나온다면 그건 이상한 게 아니에요.\n자신에게 익숙한 반응이 무엇인지 아는 것부터가 도움이 됩니다.",
+      "en": "You may not fit one label.\nSome days you bottle up; other days you blow up; sometimes you quietly step back.\nDifferent sides can show depending on the situation—that is human.\nNoticing your default pattern is a good place to start."
+    },
+    "image": "/images/quiz/hidden-dark-side/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나의 다크사이드는 복합형",
+        "en": "My dark-side profile is mixed"
+      },
+      "description": {
+        "ko": "통제·폭발·냉소가 함께 작동할 수 있는 타입",
+        "en": "Control, explosion, and detachment can all show up"
+      },
+      "image": "/images/quiz/hidden-dark-side/thumb.webp"
+    }
+  },
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "화가 났을 때 나는?",
+        "en": "When I get angry, I..."
+      },
+      "options": [
+        { "label": { "ko": "속으로 쌓아둔다", "en": "Bottle it up" }, "key": "A" },
+        { "label": { "ko": "한 번에 터뜨린다", "en": "Explode all at once" }, "key": "B" },
+        { "label": { "ko": "냉정하게 선 긋는다", "en": "Cut people off calmly" }, "key": "C" },
+        { "label": { "ko": "아무렇지 않은 척한다", "en": "Pretend I’m fine" }, "key": "A" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "누군가 나를 무시했다고 느끼면?",
+        "en": "If I feel disrespected, I..."
+      },
+      "options": [
+        { "label": { "ko": "기억해둔다", "en": "Remember it" }, "key": "A" },
+        { "label": { "ko": "바로 반응한다", "en": "React immediately" }, "key": "B" },
+        { "label": { "ko": "거리 둔다", "en": "Create distance" }, "key": "C" },
+        { "label": { "ko": "겉으로 웃는다", "en": "Smile it off" }, "key": "A" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "갈등 상황에서 나는?",
+        "en": "In conflict situations, I..."
+      },
+      "options": [
+        { "label": { "ko": "참다가 한 번에 터짐", "en": "Hold it in then explode" }, "key": "B" },
+        { "label": { "ko": "아예 피한다", "en": "Avoid it completely" }, "key": "C" },
+        { "label": { "ko": "속으로 계속 생각함", "en": "Overthink internally" }, "key": "A" },
+        { "label": { "ko": "상대 차단", "en": "Cut them off" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상처받았을 때 나는?",
+        "en": "When I’m hurt, I..."
+      },
+      "options": [
+        { "label": { "ko": "혼자 끙끙 앓는다", "en": "Suffer alone" }, "key": "A" },
+        { "label": { "ko": "감정 폭발", "en": "React strongly" }, "key": "B" },
+        { "label": { "ko": "거리 둔다", "en": "Pull away" }, "key": "C" },
+        { "label": { "ko": "무시하려 한다", "en": "Try to ignore it" }, "key": "A" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "사람을 판단할 때 나는?",
+        "en": "When judging people, I..."
+      },
+      "options": [
+        { "label": { "ko": "겉으로는 괜찮은 척", "en": "Act nice outside" }, "key": "A" },
+        { "label": { "ko": "싫으면 바로 티냄", "en": "Show dislike instantly" }, "key": "B" },
+        { "label": { "ko": "조용히 거리 둔다", "en": "Distance quietly" }, "key": "C" },
+        { "label": { "ko": "속으로 평가함", "en": "Judge internally" }, "key": "A" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "스트레스 받을 때 나는?",
+        "en": "When stressed, I..."
+      },
+      "options": [
+        { "label": { "ko": "혼자 쌓는다", "en": "Keep it inside" }, "key": "A" },
+        { "label": { "ko": "분노로 표출", "en": "Release anger" }, "key": "B" },
+        { "label": { "ko": "사람 피함", "en": "Avoid people" }, "key": "C" },
+        { "label": { "ko": "겉으로 괜찮은 척", "en": "Act fine" }, "key": "A" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "관계가 틀어졌을 때 나는?",
+        "en": "When relationships break, I..."
+      },
+      "options": [
+        { "label": { "ko": "속으로 오래 끌고 감", "en": "Hold onto it" }, "key": "A" },
+        { "label": { "ko": "한 번에 정리", "en": "End it dramatically" }, "key": "B" },
+        { "label": { "ko": "조용히 끊는다", "en": "Fade away" }, "key": "C" },
+        { "label": { "ko": "겉으로 아무렇지 않음", "en": "Act unaffected" }, "key": "A" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "나의 진짜 모습은?",
+        "en": "My true self is..."
+      },
+      "options": [
+        { "label": { "ko": "겉과 속이 다름", "en": "Different inside" }, "key": "A" },
+        { "label": { "ko": "감정 기복이 큼", "en": "Emotionally intense" }, "key": "B" },
+        { "label": { "ko": "차갑고 거리 있음", "en": "Cold and distant" }, "key": "C" },
+        { "label": { "ko": "표현을 잘 안함", "en": "Hard to express" }, "key": "A" }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

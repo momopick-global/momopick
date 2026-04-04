@@ -1,0 +1,527 @@
+{
+    "id": "who-likes-you-type",
+    "locales": ["ko", "en"],
+    "category": "love",
+    "tags": [
+      { "ko": "연애", "en": "love" },
+      { "ko": "호감", "en": "crush" },
+      { "ko": "심리", "en": "psychology" }
+    ],
+  
+    "title": {
+      "ko": "나를 좋아하는 사람은 어떤 타입?",
+      "en": "What Type of Person Is Secretly Into You?"
+    },
+    "subtitle": {
+      "ko": "지금 내 주변에 있다?",
+      "en": "Someone near you might already like you"
+    },
+  
+    "images": {
+      "thumbnail": "/images/quiz/who-likes-you-type/ko/thumb.webp",
+      "og": "/images/quiz/who-likes-you-type/ko/thumb.webp",
+      "start": "/images/quiz/who-likes-you-type/ko/thumb.webp"
+    },
+  
+    "meta": {
+      "description": {
+        "ko": "나를 좋아하는 사람의 성향이 안정형인지, 집착형인지, 친구형인지, 장난형인지 알아보는 연애 테스트",
+        "en": "Find out whether the person who likes you is stable, clingy, friendly, or playful"
+      },
+      "keywords": [
+        { "ko": "연애 테스트", "en": "love test" },
+        { "ko": "호감 테스트", "en": "crush test" },
+        { "ko": "심리 테스트", "en": "psychology test" }
+      ],
+      "ogTitle": {
+        "ko": "나를 좋아하는 사람은 어떤 타입?",
+        "en": "What Type of Person Secretly Likes You?"
+      },
+      "ogDescription": {
+        "ko": "내 주변 그 사람의 호감 방식, 생각보다 티나고 있을지도 모른다",
+        "en": "The way someone likes you may already be more obvious than you think"
+      }
+    },
+  
+    "card": {
+      "theme": "love",
+      "kicker": {
+        "ko": "💘 호감 심리 테스트",
+        "en": "💘 Crush Psychology Test"
+      },
+      "image": "/images/quiz/who-likes-you-type/ko/thumb.webp",
+      "railImage": "/images/banners/ko/rail-01.webp",
+      "priority": 99
+    },
+  
+    "resultKeys": ["stable", "clingy", "friend", "playful"],
+    "resultOrder": ["stable", "clingy", "friend", "playful"],
+  
+    "logic": {
+      "type": "max-score",
+      "description": {
+        "ko": "각 문항에서 선택한 타입에 1점씩 가산합니다. 최고 득점 타입이 결과이며, 동점이면 복합형으로 안내합니다.",
+        "en": "Each answer adds 1 point to a type. The highest-scoring type becomes the result. If tied, a blended result is shown."
+      },
+      "blendOnTie": true
+    },
+  
+    "analytics": {
+      "eventKey": "who_likes_you_type",
+      "contentGroup": "love",
+      "funnel": {
+        "start": "quiz_start",
+        "complete": "quiz_complete",
+        "share": "quiz_share"
+      }
+    },
+  
+    "related": [
+      "love-pattern-destroying-habit",
+      "ambiguous-situationship-end",
+      "why-cant-you-text-first"
+    ],
+  
+    "results": {
+      "stable": {
+        "emoji": "💛",
+        "scoreKey": "stable",
+        "title": {
+          "ko": "안정형",
+          "en": "Stable Type"
+        },
+        "tagline": {
+          "ko": "조용하지만 오래, 진심으로 당신을 좋아하는 타입",
+          "en": "Quiet, steady, and sincerely into you"
+        },
+        "body": {
+          "ko": "이 사람은 감정을 크게 티내기보다 조용히 쌓아가는 편이다.\n괜히 들이대거나 분위기를 흔들기보다, 당신 곁에 자연스럽게 머무르며 신뢰를 만든다.\n눈에 띄게 표현하지 않아서 놓치기 쉽지만, 한번 마음이 생기면 꽤 오래 간다.\n작은 배려, 꾸준한 관심, 안정적인 태도가 이 사람의 신호다.\n화려하진 않아도 가장 건강하고 오래 가는 관계로 이어질 가능성이 높은 타입이다.",
+          "en": "This person doesn’t make a big show of their feelings.\nInstead, they stay close, build trust, and slowly grow attached.\nThey may be easy to miss because they are not loud about it, but once they like someone, it tends to last.\nSmall acts of care, consistency, and emotional steadiness are their signs.\nNot dramatic, but highly likely to lead to the healthiest and longest-lasting relationship."
+        },
+        "image": "/images/quiz/who-likes-you-type/ko/result-1.webp",
+        "share": {
+          "title": {
+            "ko": "나를 좋아하는 사람은 안정형",
+            "en": "The Person Who Likes You Is the Stable Type"
+          },
+          "description": {
+            "ko": "조용히 오래 좋아하는 진심형",
+            "en": "A sincere type who likes you quietly and consistently"
+          },
+          "image": "/images/quiz/who-likes-you-type/ko/result-1.webp"
+        }
+      },
+  
+      "clingy": {
+        "emoji": "🔥",
+        "scoreKey": "clingy",
+        "title": {
+          "ko": "집착형",
+          "en": "Clingy Type"
+        },
+        "tagline": {
+          "ko": "좋아하면 강하게 몰입하고 확인하고 싶어하는 타입",
+          "en": "Intense, attached, and always seeking reassurance"
+        },
+        "body": {
+          "ko": "이 사람은 당신에게 마음이 생기면 감정의 크기가 빠르게 커진다.\n그만큼 표현도 적극적이고, 당신의 반응에 예민하게 흔들릴 가능성도 크다.\n자주 연락하고, 작은 변화에도 의미를 두고, 당신의 마음을 확실히 알고 싶어 한다.\n처음에는 열정적이고 확실해서 매력적으로 느껴질 수 있지만, 속도가 너무 빠르면 부담이 될 수도 있다.\n사랑을 숨기지 못하는 타입이지만, 동시에 불안도 크게 느끼는 스타일이다.",
+          "en": "Once this person develops feelings for you, they get emotionally invested very quickly.\nThey express interest strongly, but they are also highly sensitive to your reactions.\nThey text often, notice small changes, and want clear reassurance about how you feel.\nAt first, their intensity can feel passionate and exciting, but if the pace gets too fast, it may become overwhelming.\nThey are the type who cannot hide love, but also cannot easily hide insecurity."
+        },
+        "image": "/images/quiz/who-likes-you-type/ko/result-2.webp",
+        "share": {
+          "title": {
+            "ko": "나를 좋아하는 사람은 집착형",
+            "en": "The Person Who Likes You Is the Clingy Type"
+          },
+          "description": {
+            "ko": "좋아하면 깊게 빠지고 확인하고 싶어하는 타입",
+            "en": "A type that falls hard and constantly wants reassurance"
+          },
+          "image": "/images/quiz/who-likes-you-type/ko/result-2.webp"
+        }
+      },
+  
+      "friend": {
+        "emoji": "🧸",
+        "scoreKey": "friend",
+        "title": {
+          "ko": "친구형",
+          "en": "Friendly Type"
+        },
+        "tagline": {
+          "ko": "친구처럼 편하게 다가오다 어느 순간 마음이 깊어지는 타입",
+          "en": "Starts as a friend, then slowly becomes something more"
+        },
+        "body": {
+          "ko": "이 사람은 처음부터 연애 분위기를 만들기보다 편한 관계를 먼저 만든다.\n그래서 호감이 있어도 쉽게 티가 안 나고, 본인도 친구와 호감의 경계를 오래 두는 편이다.\n당신과 웃고 떠들고, 자주 함께 있고, 자연스럽게 가까워지는 과정 속에서 감정이 커진다.\n문제는 너무 편해서 오히려 연애 신호를 놓치기 쉽다는 점이다.\n하지만 한번 확실히 마음을 정하면, 억지스럽지 않고 오래 가는 관계가 될 가능성이 크다.",
+          "en": "This person usually builds comfort before romance.\nBecause of that, their feelings can be hard to notice, and even they may stay in the gray area between friendship and attraction for a while.\nTheir feelings grow through shared time, easy conversations, and natural closeness.\nThe tricky part is that the connection can feel so casual that the romantic signals get missed.\nStill, once they become sure about their feelings, the relationship can develop in a natural and lasting way."
+        },
+        "image": "/images/quiz/who-likes-you-type/ko/result-3.webp",
+        "share": {
+          "title": {
+            "ko": "나를 좋아하는 사람은 친구형",
+            "en": "The Person Who Likes You Is the Friendly Type"
+          },
+          "description": {
+            "ko": "친구처럼 다가오지만 마음은 점점 커지는 타입",
+            "en": "A type that approaches like a friend but slowly falls deeper"
+          },
+          "image": "/images/quiz/who-likes-you-type/ko/result-3.webp"
+        }
+      },
+  
+      "playful": {
+        "emoji": "😏",
+        "scoreKey": "playful",
+        "title": {
+          "ko": "장난형",
+          "en": "Playful Type"
+        },
+        "tagline": {
+          "ko": "놀리면서 티내고, 웃기면서 가까워지는 타입",
+          "en": "Teases you, jokes with you, and shows interest playfully"
+        },
+        "body": {
+          "ko": "이 사람은 감정을 정면으로 말하기보다 장난스럽게 표현하는 편이다.\n괜히 놀리고, 자주 말을 걸고, 반응을 끌어내며 당신과의 분위기를 만든다.\n겉으로는 가벼워 보일 수 있지만, 사실은 당신에게 관심이 있으니까 더 그러는 경우가 많다.\n문제는 진심이 장난 속에 숨어 있어서 오해받기 쉽다는 것.\n하지만 반복해서 다가오고 유독 당신에게만 유난히 반응한다면, 그건 꽤 분명한 호감 신호일 가능성이 크다.",
+          "en": "This person tends to show feelings indirectly through teasing and playful behavior.\nThey joke with you, keep conversations going, and try to get a reaction from you.\nOn the surface, they may seem light or unserious, but often that is exactly how they express interest.\nThe downside is that their sincerity can be hidden behind humor and get misunderstood.\nBut if they keep coming back, keep teasing you, and react to you more than anyone else, it is probably a very real sign of attraction."
+        },
+        "image": "/images/quiz/who-likes-you-type/ko/result-4.webp",
+        "share": {
+          "title": {
+            "ko": "나를 좋아하는 사람은 장난형",
+            "en": "The Person Who Likes You Is the Playful Type"
+          },
+          "description": {
+            "ko": "놀리면서 티내는 직간접 호감형",
+            "en": "A playful type who shows attraction through teasing"
+          },
+          "image": "/images/quiz/who-likes-you-type/ko/result-4.webp"
+        }
+      }
+    },
+  
+    "blend": {
+      "emoji": "✨",
+      "scoreKey": "blend",
+      "title": {
+        "ko": "복합형",
+        "en": "Mixed Type"
+      },
+      "tagline": {
+        "ko": "한 가지 타입으로 딱 나누기 어려운 복합 호감 스타일",
+        "en": "A mixed attraction style that does not fit one type exactly"
+      },
+      "body": {
+        "ko": "당신을 좋아하는 사람은 한 가지 방식으로만 감정을 표현하지 않을 가능성이 크다.\n평소에는 친구처럼 편하게 다가오다가도, 어떤 순간에는 집착형처럼 강하게 반응하고, 또 어떤 순간에는 안정형처럼 조용히 챙길 수 있다.\n그래서 더 헷갈리고, 더 애매하게 느껴졌을 수 있다.\n이 경우 중요한 건 한 가지 행동이 아니라 반복되는 패턴이다.\n그 사람이 어떤 순간에 가장 솔직해지는지를 보면 진짜 마음의 방향이 보이기 시작한다.",
+        "en": "The person who likes you probably does not express feelings in just one way.\nThey may act like a friend most of the time, suddenly become intense in certain moments, and quietly show care in others.\nThat is exactly why they may have felt confusing or hard to read.\nIn this case, what matters is not one single action, but the pattern that repeats.\nWatch the moments when they become the most emotionally honest. That is where their real feelings show."
+      },
+      "image": "/images/quiz/who-likes-you-type/ko/thumb.webp",
+      "share": {
+        "title": {
+          "ko": "나를 좋아하는 사람은 복합형",
+          "en": "The Person Who Likes You Is a Mixed Type"
+        },
+        "description": {
+          "ko": "한 가지로 정의하기 어려운 복합 호감 패턴",
+          "en": "A mixed attraction pattern that does not fit just one category"
+        },
+        "image": "/images/quiz/who-likes-you-type/ko/thumb.webp"
+      }
+    },
+  
+    "questions": [
+      {
+        "prompt": {
+          "ko": "누가 나에게 호감을 보일 때 가장 먼저 느껴지는 건?",
+          "en": "What do you usually notice first when someone seems interested in you?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "편안하고 안정적인 분위기",
+              "en": "A calm and steady vibe"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "은근히 집요한 관심",
+              "en": "A slightly intense and persistent focus"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "그냥 친구 같은 편안함",
+              "en": "A very natural, friendly comfort"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "괜히 장난치고 반응을 유도함",
+              "en": "Teasing and trying to get a reaction"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "나를 좋아하는 사람이 가장 자주 할 것 같은 행동은?",
+          "en": "What is the most likely thing someone who likes you would do?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "조용히 챙기고 꾸준히 다가온다",
+              "en": "Quietly take care of you and stay consistent"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "자주 연락하고 반응을 확인한다",
+              "en": "Text often and check your reactions"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "친구처럼 계속 옆에 있다",
+              "en": "Stay around you like a close friend"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "놀리고 웃기면서 말을 건다",
+              "en": "Tease you and make jokes to talk to you"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "연락 스타일로 봤을 때 가장 가까운 건?",
+          "en": "Which texting style feels most familiar?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "꾸준하지만 부담스럽지 않다",
+              "en": "Consistent but not overwhelming"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "자주 오고 끊기면 신경 쓰인다",
+              "en": "Frequent, and you notice when it suddenly stops"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "가볍고 편하게 이어진다",
+              "en": "Easy, casual, and comfortable"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "쓸데없는 농담이 많다",
+              "en": "Full of random jokes and playful messages"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "누군가 나를 좋아할 때 가장 흔한 분위기는?",
+          "en": "What kind of overall vibe do you usually get from someone who likes you?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "차분하고 오래 가는 느낌",
+              "en": "Calm and long-term"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "강하고 빠르게 가까워지는 느낌",
+              "en": "Strong and fast-moving"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "친구 같은데 묘하게 더 챙겨주는 느낌",
+              "en": "Feels like friendship, but with extra care"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "장난 속에 관심이 숨어 있는 느낌",
+              "en": "Interest hidden inside playful teasing"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "상대가 질투를 느낄 때 가장 가까운 반응은?",
+          "en": "How would they most likely react when they feel jealous?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "티는 덜 내지만 태도가 살짝 달라진다",
+              "en": "They do not say much, but their attitude changes slightly"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "눈에 띄게 예민해지고 확인하려 한다",
+              "en": "They get visibly sensitive and want reassurance"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "괜히 더 자주 곁에 있으려 한다",
+              "en": "They just stay around you more often"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "놀리는 방식으로 티낸다",
+              "en": "They show it through teasing"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "주변 사람이 볼 때 그 사람은 어떤 타입 같을까?",
+          "en": "How would other people describe that person?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "착하고 믿음직한 사람",
+              "en": "Kind and dependable"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "한 번 빠지면 깊은 사람",
+              "en": "Someone who gets deeply attached"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "편하고 무해한 사람",
+              "en": "Comfortable and harmless"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "밝고 장난기 많은 사람",
+              "en": "Bright and playful"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "나와 잘 맞는 호감 표현 방식은?",
+          "en": "Which kind of romantic expression seems to match you best?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "꾸준히 행동으로 보여주는 것",
+              "en": "Showing care through steady actions"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "확실하고 적극적으로 표현하는 것",
+              "en": "Being direct and intense"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "친해지면서 자연스럽게 깊어지는 것",
+              "en": "Getting closer naturally over time"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "재미있고 설레게 다가오는 것",
+              "en": "Making things fun and exciting"
+            },
+            "key": "playful"
+          }
+        ]
+      },
+      {
+        "prompt": {
+          "ko": "결국 나를 좋아하는 사람이 가장 많이 남기는 인상은?",
+          "en": "In the end, what impression does the person who likes you leave the most?"
+        },
+        "options": [
+          {
+            "label": {
+              "ko": "조용한데 이상하게 오래 기억된다",
+              "en": "Quiet, but somehow unforgettable"
+            },
+            "key": "stable"
+          },
+          {
+            "label": {
+              "ko": "강렬하고 감정이 진하게 남는다",
+              "en": "Intense and emotionally strong"
+            },
+            "key": "clingy"
+          },
+          {
+            "label": {
+              "ko": "편해서 늦게 눈치채게 된다",
+              "en": "So comfortable that you realize it late"
+            },
+            "key": "friend"
+          },
+          {
+            "label": {
+              "ko": "웃기고 티 나게 다가온다",
+              "en": "Playful, obvious, and hard to ignore"
+            },
+            "key": "playful"
+          }
+        ]
+      }
+    ],
+  
+    "footnote": {
+      "ko": "이 결과는 재미·자기이해용 스낵 테스트이며, 심리 진단이 아닙니다.",
+      "en": "This result is for fun and self-reflection only, not a psychological diagnosis."
+    }
+  }

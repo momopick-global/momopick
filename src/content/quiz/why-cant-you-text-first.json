@@ -1,0 +1,442 @@
+{
+  "id": "why-cant-you-text-first",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "연애", "en": "love" },
+    { "ko": "연락", "en": "texting" },
+    { "ko": "심리", "en": "psychology" }
+  ],
+
+  "title": {
+    "ko": "나는 왜 먼저 연락을 못할까?",
+    "en": "Why Can't You Text First?"
+  },
+  "subtitle": {
+    "ko": "자존심일까 두려움일까",
+    "en": "Is it your pride or your fear?"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/why-cant-you-text-first/thumb.webp",
+    "og": "/images/quiz/why-cant-you-text-first/thumb.webp",
+    "start": "/images/quiz/why-cant-you-text-first/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "내가 먼저 연락하지 못하는 진짜 이유가 상처 회피인지, 자존심인지, 계산 때문인지 알아보는 테스트",
+      "en": "Find out whether your hesitation to text first comes from fear of getting hurt, pride, or calculation"
+    },
+    "keywords": [
+      { "ko": "연애 테스트", "en": "love test" },
+      { "ko": "연락 심리", "en": "texting psychology" },
+      { "ko": "썸 테스트", "en": "situationship test" }
+    ],
+    "ogTitle": {
+      "ko": "나는 왜 먼저 연락을 못할까?",
+      "en": "Why Can't You Text First?"
+    },
+    "ogDescription": {
+      "ko": "문제는 용기가 아니라 내 심리 패턴일 수 있다",
+      "en": "Maybe it’s not about courage, but your emotional pattern"
+    }
+  },
+
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "📱 연락 심리 테스트",
+      "en": "📱 Texting Psychology Test"
+    },
+    "image": "/images/quiz/why-cant-you-text-first/thumb.webp",
+    "railImage": "/images/banners/ko/rail-02.webp",
+    "priority": 96
+  },
+
+  "resultKeys": ["hurt_avoidant", "prideful", "calculated"],
+  "resultOrder": ["hurt_avoidant", "prideful", "calculated"],
+
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 타입에 1점씩 가산합니다. 최고 득점 타입이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds 1 point to a type. The highest-scoring type becomes the result. If tied, a blended result is shown."
+    },
+    "blendOnTie": true
+  },
+
+  "analytics": {
+    "eventKey": "why_cant_you_text_first",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": [
+    "ambiguous-situationship-end",
+    "who-likes-you-type",
+    "love-pattern-destroying-habit"
+  ],
+
+  "results": {
+    "hurt_avoidant": {
+      "emoji": "🩹",
+      "scoreKey": "hurt_avoidant",
+      "title": {
+        "ko": "상처회피형",
+        "en": "Hurt-Avoidant Type"
+      },
+      "tagline": {
+        "ko": "거절보다 상처가 더 무서워서 먼저 연락을 못하는 타입",
+        "en": "You avoid texting first because getting hurt feels too risky"
+      },
+      "body": {
+        "ko": "당신은 먼저 연락하는 행동 자체보다, 그 뒤에 올 수 있는 상처를 더 크게 느끼는 편이다.\n읽씹, 애매한 반응, 기대보다 차가운 답장이 당신에게는 생각보다 크게 남는다.\n그래서 마음이 있어도 먼저 다가가기보다 안전한 쪽을 택한다.\n문제는 그렇게 조심하는 동안 관계가 시작도 못 하고 끝날 수 있다는 것.\n당신은 무심해서가 아니라, 상처를 예상하는 속도가 너무 빠른 타입이다.\n먼저 연락하지 못하는 이유는 용기 부족이 아니라 감정 방어가 먼저 작동하기 때문이다.",
+        "en": "You do not fear texting first as much as you fear what might happen after.\nBeing ignored, getting a cold reply, or receiving a vague reaction hits you harder than most people realize.\nSo even when you care, you choose safety over action.\nThe problem is that relationships can end before they even begin.\nYou are not distant. You are simply too quick to expect emotional pain.\nThe real reason you cannot text first is that self-protection activates before courage does."
+      },
+      "image": "/images/quiz/why-cant-you-text-first/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나는 먼저 연락을 못하는 상처회피형",
+          "en": "I’m the Hurt-Avoidant Type When It Comes to Texting First"
+        },
+        "description": {
+          "ko": "거절보다 상처가 더 무서운 타입",
+          "en": "A type that fears emotional pain more than rejection itself"
+        },
+        "image": "/images/quiz/why-cant-you-text-first/result-1.webp"
+      }
+    },
+
+    "prideful": {
+      "emoji": "👑",
+      "scoreKey": "prideful",
+      "title": {
+        "ko": "자존심형",
+        "en": "Prideful Type"
+      },
+      "tagline": {
+        "ko": "먼저 다가가면 지는 것 같아서 연락을 못하는 타입",
+        "en": "You hesitate because texting first feels like losing"
+      },
+      "body": {
+        "ko": "당신은 감정이 없어서 연락을 안 하는 게 아니다.\n오히려 마음이 있을수록 먼저 움직이는 게 더 어렵다.\n먼저 연락하는 순간 관계의 주도권을 빼앗긴다고 느끼거나, 내가 더 좋아하는 사람처럼 보일까 봐 신경 쓴다.\n그래서 마음보다 자존심이 한 발 앞서 나간다.\n겉으로는 쿨해 보일 수 있지만, 실제로는 누구보다 반응에 민감한 편이다.\n당신이 먼저 연락하지 못하는 이유는 무관심이 아니라, 감정을 드러내는 순간 약해질까 봐 두렵기 때문이다.",
+        "en": "You do not stay silent because you do not care.\nIn fact, the more you care, the harder it becomes to make the first move.\nTexting first can feel like giving up control or looking like the one who likes more.\nSo your pride steps in before your feelings do.\nYou may look calm on the outside, but you are more sensitive to responses than people think.\nThe reason you cannot text first is not indifference. It is the fear of looking emotionally exposed."
+      },
+      "image": "/images/quiz/why-cant-you-text-first/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나는 먼저 연락을 못하는 자존심형",
+          "en": "I’m the Prideful Type When It Comes to Texting First"
+        },
+        "description": {
+          "ko": "마음보다 자존심이 먼저 움직이는 타입",
+          "en": "A type whose pride moves before feelings do"
+        },
+        "image": "/images/quiz/why-cant-you-text-first/result-2.webp"
+      }
+    },
+
+    "calculated": {
+      "emoji": "🧠",
+      "scoreKey": "calculated",
+      "title": {
+        "ko": "계산형",
+        "en": "Calculated Type"
+      },
+      "tagline": {
+        "ko": "타이밍과 반응을 너무 따지다 먼저 연락을 놓치는 타입",
+        "en": "You overcalculate timing and miss the moment to text first"
+      },
+      "body": {
+        "ko": "당신은 감정보다 상황을 먼저 읽으려는 편이다.\n지금 보내도 될지, 너무 빠른지, 상대가 어떻게 받아들일지를 머릿속에서 계속 계산한다.\n문제는 그 계산이 길어질수록 타이밍이 지나간다는 것.\n확실해지기 전에는 움직이지 않으려 하지만, 연애는 원래 어느 정도 애매한 상태에서 시작된다.\n당신은 성급하지 않다는 장점이 있지만, 때로는 너무 재다가 흐름을 놓친다.\n먼저 연락하지 못하는 이유는 용기 부족이 아니라 확신이 없으면 움직이지 않는 습관 때문이다.",
+        "en": "You tend to analyze the situation before acting on your feelings.\nYou think about whether this is the right time, whether it is too soon, and how the other person might interpret it.\nThe problem is that the more you calculate, the more likely you are to miss the right moment.\nYou want certainty before you move, but relationships usually begin in uncertainty.\nYou are not reckless, which is a strength, but you can easily lose momentum by overthinking.\nThe reason you cannot text first is not lack of courage. It is your habit of waiting for perfect certainty."
+      },
+      "image": "/images/quiz/why-cant-you-text-first/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나는 먼저 연락을 못하는 계산형",
+          "en": "I’m the Calculated Type When It Comes to Texting First"
+        },
+        "description": {
+          "ko": "타이밍을 너무 재다가 놓치는 타입",
+          "en": "A type that overthinks timing and misses the chance"
+        },
+        "image": "/images/quiz/why-cant-you-text-first/result-3.webp"
+      }
+    }
+  },
+
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "상처, 자존심, 계산이 섞여 먼저 연락하기 어려운 타입",
+      "en": "A mixed type held back by fear, pride, and overthinking"
+    },
+    "body": {
+      "ko": "당신은 한 가지 이유로만 먼저 연락을 못하는 사람이 아니다.\n상처받기 싫은 마음, 자존심을 지키고 싶은 마음, 타이밍을 계산하는 습관이 동시에 작동할 수 있다.\n그래서 스스로도 '내가 왜 이러지?' 하고 헷갈렸을 가능성이 크다.\n중요한 건 완벽한 타이밍을 기다리는 동안 관계는 멈춘다는 점이다.\n당신에게 필요한 건 정답을 찾는 계산이 아니라, 작은 용기를 먼저 꺼내는 연습이다.",
+      "en": "You are not held back by just one reason.\nFear of getting hurt, pride, and overthinking can all work together at the same time.\nThat is why you may have felt confused about your own behavior.\nThe important thing is that while you wait for the perfect moment, the relationship stays frozen.\nWhat you need is not a perfect answer, but practice making a small move before certainty arrives."
+    },
+    "image": "/images/quiz/why-cant-you-text-first/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나는 먼저 연락을 못하는 복합형",
+        "en": "I’m a Mixed Type When It Comes to Texting First"
+      },
+      "description": {
+        "ko": "상처, 자존심, 계산이 함께 작동하는 타입",
+        "en": "A type driven by fear, pride, and calculation at the same time"
+      },
+      "image": "/images/quiz/why-cant-you-text-first/thumb.webp"
+    }
+  },
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "먼저 연락하고 싶을 때 가장 먼저 드는 생각은?",
+        "en": "When you want to text first, what is your first thought?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "괜히 상처받으면 어쩌지",
+            "en": "What if I get hurt for no reason?"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "내가 먼저 하면 진 것 같아",
+            "en": "If I text first, it feels like I lose"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "지금 보내는 게 맞는 타이밍일까",
+            "en": "Is this really the right timing?"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 답을 늦게 하면 나는?",
+        "en": "If the other person replies late, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "역시 먼저 하지 말 걸 싶다",
+            "en": "I regret reaching out first"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "괜히 내가 더 좋아하는 사람 같아진다",
+            "en": "It makes me feel like I care more"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "상대 상황과 의미를 계속 분석한다",
+            "en": "I keep analyzing what it means"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연락을 망설이는 가장 큰 이유는?",
+        "en": "What is the biggest reason you hesitate to text?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "애매한 반응이 너무 싫다",
+            "en": "I hate vague or cold reactions"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "먼저 움직이는 내가 싫다",
+            "en": "I hate being the one who moves first"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "확신이 없으면 못 움직인다",
+            "en": "I can’t act without certainty"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "썸에서 가장 신경 쓰이는 건?",
+        "en": "What bothers you the most in a situationship?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "내가 상처받는 장면",
+            "en": "The possibility of getting hurt"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "내가 더 애타는 사람처럼 보이는 것",
+            "en": "Looking like I care more"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "흐름이 맞는지 아닌지 판단하는 것",
+            "en": "Figuring out whether the timing is right"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 먼저 연락을 안 하면 나는?",
+        "en": "If they don’t text first, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "그럼 나도 더 못 하겠다",
+            "en": "Then I feel even less able to do it"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "나도 절대 먼저 안 한다",
+            "en": "Then I definitely won’t text first either"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "의도를 계속 추측하게 된다",
+            "en": "I start guessing what it means"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내가 먼저 연락했을 때 가장 바라는 반응은?",
+        "en": "What reaction do you want most if you text first?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "따뜻하고 확실한 반응",
+            "en": "A warm and clearly positive response"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "내가 밀린 느낌이 없는 반응",
+            "en": "A response that doesn’t make me feel beneath them"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "내 선택이 맞았다는 확신",
+            "en": "Proof that my timing was right"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연락 문제로 연애가 꼬일 때 내 패턴은?",
+        "en": "When texting issues ruin a relationship, my pattern is..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "아무것도 안 하고 혼자 식는다",
+            "en": "I stay quiet and slowly give up"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "끝까지 먼저 안 해서 타이밍을 놓친다",
+            "en": "I refuse to reach out and miss the chance"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "생각만 하다가 흐름이 끊긴다",
+            "en": "I think too much and lose the flow"
+          },
+          "key": "calculated"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내가 먼저 연락을 못하는 진짜 이유에 가장 가까운 건?",
+        "en": "What is the real reason you can’t text first?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "거절보다 상처가 더 무섭다",
+            "en": "Emotional pain scares me more than rejection"
+          },
+          "key": "hurt_avoidant"
+        },
+        {
+          "label": {
+            "ko": "먼저 다가가면 내가 약해지는 것 같다",
+            "en": "Making the first move feels like becoming weaker"
+          },
+          "key": "prideful"
+        },
+        {
+          "label": {
+            "ko": "완벽한 타이밍이 아니면 못 하겠다",
+            "en": "I can’t do it unless the timing feels perfect"
+          },
+          "key": "calculated"
+        }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

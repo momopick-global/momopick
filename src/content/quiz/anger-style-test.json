@@ -1,0 +1,300 @@
+{
+  "id": "anger-style-test",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "감정", "en": "emotion" },
+    { "ko": "성향", "en": "personality" },
+    { "ko": "분노", "en": "anger" }
+  ],
+
+  "title": {
+    "ko": "MBTI가 화났을 때 나는?",
+    "en": "How Do You React When Angry?"
+  },
+  "subtitle": {
+    "ko": "분노 스타일 분석",
+    "en": "Your true anger style revealed"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/anger-style-test/thumb.webp",
+    "og": "/images/quiz/anger-style-test/thumb.webp",
+    "start": "/images/quiz/anger-style-test/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "화·갈등·말투에서 드러나는 분노 스타일이 폭발형·직진형·회피형 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether your anger style leans explosive, direct, or avoidant"
+    },
+    "keywords": [
+      { "ko": "분노 스타일", "en": "anger style" },
+      { "ko": "성향 테스트", "en": "personality test" }
+    ],
+    "ogTitle": {
+      "ko": "MBTI가 화났을 때 나는?",
+      "en": "How Do You React When Angry?"
+    },
+    "ogDescription": {
+      "ko": "분노 스타일 분석",
+      "en": "Your true anger style revealed"
+    }
+  },
+
+  "card": {
+    "theme": "personality",
+    "kicker": {
+      "ko": "😤 분노 스타일",
+      "en": "😤 Anger style"
+    },
+    "image": "/images/quiz/anger-style-test/thumb.webp",
+    "priority": 85
+  },
+
+  "resultKeys": ["A", "B", "C"],
+  "resultOrder": ["A", "B", "C"],
+
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+
+  "analytics": {
+    "eventKey": "anger_style_test",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": ["hidden-dark-side", "logical-or-emotional", "leader-or-supporter"],
+
+  "results": {
+    "A": {
+      "emoji": "🌋",
+      "scoreKey": "A",
+      "title": {
+        "ko": "폭발형",
+        "en": "Explosive Type"
+      },
+      "tagline": {
+        "ko": "쌓아두다가 한 번에 터뜨리는 타입",
+        "en": "You hold it in until it bursts"
+      },
+      "body": {
+        "ko": "감정을 쌓아두다가 한 번에 터뜨리는 타입입니다. 평소에는 참지만 임계점이 오면 크게 반응합니다.\n화가 날 때 참다가 터지고, 갈등에서도 쌓이다가 크게 터지는 흐름이 나올 수 있어요.\n상대가 건드리면 속으로 쌓고, 말투는 참다가 날카로워지기 쉽습니다.\n분노가 오래 쌓이고, 싸운 후에도 계속 곱씹는 편일 수 있어요.\n행동은 속으로 끝까지 돌려보는 쪽에 가깝습니다.",
+        "en": "You hold emotions in until they burst all at once.\nYou may seem fine until a limit is hit—then the reaction is big.\nWhen triggered, you bottle up; your tone can turn sharp after holding back.\nAnger may build over time, and after fights you keep replaying it.\nYou tend to process it internally before anything shows."
+      },
+      "image": "/images/quiz/anger-style-test/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 분노 스타일은 폭발형",
+          "en": "My anger style is Explosive Type"
+        },
+        "description": {
+          "ko": "쌓아두다가 한 번에 터뜨리는 타입",
+          "en": "You hold it in until it bursts"
+        },
+        "image": "/images/quiz/anger-style-test/result-1.webp"
+      }
+    },
+
+    "B": {
+      "emoji": "⚡",
+      "scoreKey": "B",
+      "title": {
+        "ko": "직진형",
+        "en": "Direct Type"
+      },
+      "tagline": {
+        "ko": "감정을 바로 표현하는 타입",
+        "en": "You say what you feel, right away"
+      },
+      "body": {
+        "ko": "감정을 바로 표현하는 타입입니다. 솔직하지만 때로는 강하게 보일 수 있습니다.\n화가 나면 그 자리에서 드러내고, 갈등에서도 바로 말하는 편이에요.\n건드리면 즉각 반응하고, 말투는 직설적일 수 있습니다.\n분노는 강하게 왔다가 빨리 사라지는 경우도 많고, 싸운 뒤에는 빨리 풀려고 하기도 합니다.\n화났을 때 말로 표현하는 쪽에 가깝습니다.",
+        "en": "You express anger directly and honestly.\nYou may show it on the spot and speak up fast in conflict.\nWhen triggered, you react instantly; your tone can be very direct.\nAnger may spike hard but fade quickly; after a fight you may try to fix it fast.\nVerbal expression is your default when you are mad."
+      },
+      "image": "/images/quiz/anger-style-test/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 분노 스타일은 직진형",
+          "en": "My anger style is Direct Type"
+        },
+        "description": {
+          "ko": "감정을 바로 표현하는 타입",
+          "en": "You express anger directly"
+        },
+        "image": "/images/quiz/anger-style-test/result-2.webp"
+      }
+    },
+
+    "C": {
+      "emoji": "🌫️",
+      "scoreKey": "C",
+      "title": {
+        "ko": "회피형",
+        "en": "Avoidant Type"
+      },
+      "tagline": {
+        "ko": "갈등을 피하고 거리 두는 타입",
+        "en": "You avoid conflict and pull back"
+      },
+      "body": {
+        "ko": "갈등을 피하고 감정을 거리 두는 타입입니다. 스스로를 보호하려는 경향이 있습니다.\n화가 나면 피하거나 겉으로 티 내지 않고, 갈등에서는 대화를 피하거나 거리를 둘 수 있어요.\n건드리면 무시하거나 자리를 피하고, 말투는 조용해지거나 단답형이 되기 쉽습니다.\n금방 잊거나 회피하려 하고, 싸운 뒤에는 거리를 두거나 아무 일 없는 척할 수 있어요.\n연락을 끊거나 혼자 있는 시간을 택하는 경우도 있습니다.",
+        "en": "You avoid conflict and distance yourself emotionally.\nWhen angry you may dodge or hide it; in conflict you may skip talk or create space.\nWhen triggered you ignore or walk away; your tone may go quiet or short.\nYou may move on fast—or avoid thinking about it; after a fight you may keep distance or act normal.\nCutting contact or staying alone can be how you cope."
+      },
+      "image": "/images/quiz/anger-style-test/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 분노 스타일은 회피형",
+          "en": "My anger style is Avoidant Type"
+        },
+        "description": {
+          "ko": "갈등을 피하고 거리 두는 타입",
+          "en": "You avoid conflict and distance yourself"
+        },
+        "image": "/images/quiz/anger-style-test/result-3.webp"
+      }
+    }
+  },
+
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "폭발·직진·회피가 섞인 분노 패턴",
+      "en": "A mix of explosive, direct, and avoidant anger"
+    },
+    "body": {
+      "ko": "한 가지 스타일로만 정의되지 않을 수 있어요.\n상황에 따라 쌓았다 터지기도 하고, 바로 말하기도 하며, 피하거나 거리 두기도 합니다.\n‘항상 이렇게만 한다’보다 ‘이럴 때 이렇게 된다’를 아는 것이 도움이 됩니다.",
+      "en": "You may not fit one anger style.\nSometimes you explode, sometimes you speak up, sometimes you avoid.\nNoticing your patterns by situation matters more than a single label."
+    },
+    "image": "/images/quiz/anger-style-test/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나의 분노 스타일은 복합형",
+        "en": "My anger style is mixed"
+      },
+      "description": {
+        "ko": "폭발·직진·회피 성향이 함께 나타날 수 있어요",
+        "en": "Explosive, direct, and avoidant sides can all show up"
+      },
+      "image": "/images/quiz/anger-style-test/thumb.webp"
+    }
+  },
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "화가 날 때 나는?",
+        "en": "When I get angry, I..."
+      },
+      "options": [
+        { "label": { "ko": "참다가 터진다", "en": "Hold it then explode" }, "key": "A" },
+        { "label": { "ko": "그 자리에서 표현", "en": "Express immediately" }, "key": "B" },
+        { "label": { "ko": "그냥 피한다", "en": "Avoid it" }, "key": "C" },
+        { "label": { "ko": "겉으로 티 안냄", "en": "Hide it" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "갈등 상황에서 나는?",
+        "en": "In conflicts, I..."
+      },
+      "options": [
+        { "label": { "ko": "쌓이다가 크게 터짐", "en": "Explode after buildup" }, "key": "A" },
+        { "label": { "ko": "바로 말한다", "en": "Speak right away" }, "key": "B" },
+        { "label": { "ko": "대화를 피한다", "en": "Avoid conversation" }, "key": "C" },
+        { "label": { "ko": "거리 둔다", "en": "Create distance" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 나를 건드렸을 때 나는?",
+        "en": "If someone triggers me, I..."
+      },
+      "options": [
+        { "label": { "ko": "속으로 쌓는다", "en": "Bottle it up" }, "key": "A" },
+        { "label": { "ko": "바로 반응한다", "en": "React instantly" }, "key": "B" },
+        { "label": { "ko": "무시한다", "en": "Ignore it" }, "key": "C" },
+        { "label": { "ko": "피해버린다", "en": "Walk away" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "화가 났을 때 말투는?",
+        "en": "My tone when angry is..."
+      },
+      "options": [
+        { "label": { "ko": "참다가 날카로워짐", "en": "Sharp after holding back" }, "key": "A" },
+        { "label": { "ko": "직설적임", "en": "Very direct" }, "key": "B" },
+        { "label": { "ko": "조용해짐", "en": "Go quiet" }, "key": "C" },
+        { "label": { "ko": "단답형", "en": "Short answers" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "화가 오래 가는 편인가?",
+        "en": "How long does your anger last?"
+      },
+      "options": [
+        { "label": { "ko": "오래 쌓인다", "en": "Builds up over time" }, "key": "A" },
+        { "label": { "ko": "강하게 왔다가 빨리 사라짐", "en": "Intense but short" }, "key": "B" },
+        { "label": { "ko": "금방 잊는다", "en": "Forget quickly" }, "key": "C" },
+        { "label": { "ko": "그냥 회피함", "en": "Avoid thinking about it" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "싸운 후 나는?",
+        "en": "After a fight, I..."
+      },
+      "options": [
+        { "label": { "ko": "계속 생각함", "en": "Keep thinking about it" }, "key": "A" },
+        { "label": { "ko": "바로 풀려고 함", "en": "Try to resolve quickly" }, "key": "B" },
+        { "label": { "ko": "거리 둔다", "en": "Keep distance" }, "key": "C" },
+        { "label": { "ko": "아무 일 없는 척", "en": "Act normal" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "화났을 때 행동은?",
+        "en": "When angry, I..."
+      },
+      "options": [
+        { "label": { "ko": "속으로 계속 곱씹음", "en": "Replay it in my head" }, "key": "A" },
+        { "label": { "ko": "말로 표현", "en": "Express verbally" }, "key": "B" },
+        { "label": { "ko": "연락 끊음", "en": "Cut off contact" }, "key": "C" },
+        { "label": { "ko": "혼자 있음", "en": "Stay alone" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내 분노 스타일은?",
+        "en": "My anger style is..."
+      },
+      "options": [
+        { "label": { "ko": "쌓아두는 타입", "en": "Accumulating" }, "key": "A" },
+        { "label": { "ko": "바로 터지는 타입", "en": "Explosive" }, "key": "B" },
+        { "label": { "ko": "회피하는 타입", "en": "Avoidant" }, "key": "C" },
+        { "label": { "ko": "거리 두는 타입", "en": "Detached" }, "key": "C" }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용이며, MBTI와 무관한 일반 성향 분석입니다.",
+    "en": "This test is for fun and self-reflection; it is not an MBTI assessment."
+  }
+}

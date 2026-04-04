@@ -1,0 +1,369 @@
+{
+  "id": "when-men-lose-interest",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "연애", "en": "love" },
+    { "ko": "썸", "en": "situationship" },
+    { "ko": "심리", "en": "psychology" }
+  ],
+
+  "title": {
+    "ko": "남자가 나에게 식는 순간",
+    "en": "When Do Men Start Losing Interest in You?"
+  },
+  "subtitle": {
+    "ko": "혹시 이 행동?",
+    "en": "Are you doing this without realizing?"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/when-men-lose-interest/thumb.webp",
+    "og": "/images/quiz/when-men-lose-interest/thumb.webp",
+    "start": "/images/quiz/when-men-lose-interest/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "남자가 당신에게 식는 진짜 이유가 무심함, 부담, 과속 때문인지 알아보는 테스트",
+      "en": "Find out whether people lose interest because of distance, pressure, or moving too fast"
+    },
+    "keywords": [
+      { "ko": "연애 테스트", "en": "love test" },
+      { "ko": "썸 테스트", "en": "situationship test" }
+    ],
+    "ogTitle": {
+      "ko": "남자가 나에게 식는 순간",
+      "en": "When Do They Lose Interest in You?"
+    },
+    "ogDescription": {
+      "ko": "문제는 타이밍이 아니라 행동일 수 있다",
+      "en": "It might not be timing, but your pattern"
+    }
+  },
+
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "💔 썸·연애 패턴",
+      "en": "💔 Dating patterns"
+    },
+    "image": "/images/quiz/when-men-lose-interest/thumb.webp",
+    "railImage": "/images/banners/ko/rail-03.webp",
+    "priority": 94
+  },
+
+  "resultKeys": ["indifferent", "pressure", "too_fast"],
+  "resultOrder": ["indifferent", "pressure", "too_fast"],
+
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 타입에 1점씩 가산합니다. 최고 득점 타입이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds 1 point to a type. The highest-scoring type becomes the result. If tied, a blended result is shown."
+    },
+    "blendOnTie": true
+  },
+
+  "analytics": {
+    "eventKey": "when_men_lose_interest",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": [
+    "why-cant-you-text-first",
+    "who-likes-you-type",
+    "ideal-type-reality-test"
+  ],
+
+  "results": {
+    "indifferent": {
+      "emoji": "🧊",
+      "scoreKey": "indifferent",
+      "title": {
+        "ko": "무심형",
+        "en": "Indifferent Type"
+      },
+      "tagline": {
+        "ko": "감정 표현이 부족해서 상대가 식는 타입",
+        "en": "Lack of emotional expression makes people lose interest"
+      },
+      "body": {
+        "ko": "당신은 감정이 없어서가 아니라 표현이 부족한 타입이다.\n상대 입장에서는 관심이 있는지 없는지 헷갈릴 수 있다.\n반응이 적고, 표현이 적고, 리액션이 약하면 상대는 점점 확신을 잃는다.\n그래서 관계가 깊어지기도 전에 흐름이 끊긴다.\n당신은 안정적인 스타일이지만, 연애 초반에는 조금 더 드러내는 것이 필요하다.\n조용한 매력은 시간이 필요하지만, 상대는 그 전에 포기할 수 있다.",
+        "en": "You are not emotionless, but you don’t express it enough.\nFrom the other person’s perspective, it becomes unclear whether you are interested or not.\nLow reaction, low expression, and minimal feedback make them lose confidence.\nSo the connection fades before it even deepens.\nYou are stable, but early-stage relationships need visible signals.\nYour quiet charm takes time, but they may leave before they see it."
+      },
+      "image": "/images/quiz/when-men-lose-interest/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나는 무심형 — 상대가 식기 쉬운 패턴",
+          "en": "I’m the Indifferent Type — easy to misread"
+        },
+        "description": {
+          "ko": "감정 표현이 부족해서 상대가 식는 타입",
+          "en": "Lack of emotional expression makes people lose interest"
+        },
+        "image": "/images/quiz/when-men-lose-interest/result-1.webp"
+      }
+    },
+
+    "pressure": {
+      "emoji": "⚖️",
+      "scoreKey": "pressure",
+      "title": {
+        "ko": "부담형",
+        "en": "Pressure Type"
+      },
+      "tagline": {
+        "ko": "감정이 깊어지는 속도가 상대에게 부담이 되는 타입",
+        "en": "Emotional weight becomes too much too soon"
+      },
+      "body": {
+        "ko": "당신은 감정이 생기면 자연스럽게 표현하는 편이다.\n하지만 그 속도가 상대에게는 부담으로 느껴질 수 있다.\n자주 확인하고, 감정을 묻고, 관계를 정의하려는 순간 상대는 압박을 느낀다.\n처음에는 좋았던 관심이 점점 무거워지는 것이다.\n당신은 진심이 빠른 타입이지만, 상대는 준비가 안 됐을 수 있다.\n연애는 감정의 크기보다 속도가 더 중요한 경우가 많다.",
+        "en": "When you develop feelings, you express them naturally.\nBut your pace can feel overwhelming to the other person.\nChecking often, asking about feelings, or defining the relationship too early creates pressure.\nWhat felt like care at first becomes emotional weight.\nYou are sincere, just faster than most.\nIn dating, timing matters more than intensity."
+      },
+      "image": "/images/quiz/when-men-lose-interest/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나는 부담형 — 속도가 부담이 될 수 있는 패턴",
+          "en": "I’m the Pressure Type — intensity can feel heavy"
+        },
+        "description": {
+          "ko": "감정이 깊어지는 속도가 상대에게 부담이 되는 타입",
+          "en": "Emotional weight becomes too much too soon"
+        },
+        "image": "/images/quiz/when-men-lose-interest/result-2.webp"
+      }
+    },
+
+    "too_fast": {
+      "emoji": "🔥",
+      "scoreKey": "too_fast",
+      "title": {
+        "ko": "과속형",
+        "en": "Too-Fast Type"
+      },
+      "tagline": {
+        "ko": "관계를 너무 빨리 진행해서 식는 타입",
+        "en": "Moving too fast kills the attraction"
+      },
+      "body": {
+        "ko": "당신은 관계가 시작되면 속도를 조절하기보다 빠르게 몰입하는 편이다.\n금방 가까워지고, 금방 익숙해지고, 금방 편해진다.\n문제는 그 과정에서 설렘이 빠르게 소모된다는 것.\n상대 입장에서는 더 이상 새로운 자극이 없다고 느낄 수 있다.\n연애는 어느 정도의 거리와 긴장감이 유지될 때 더 오래 간다.\n당신은 관계를 빠르게 만들지만, 그만큼 빠르게 식게 만들 가능성도 있다.",
+        "en": "Once a relationship starts, you move fast instead of pacing it.\nYou get close quickly, become comfortable quickly, and skip stages.\nThe problem is that excitement burns out just as fast.\nFrom their perspective, the spark disappears too soon.\nAttraction lasts longer when there is some distance and tension.\nYou build relationships quickly, but that speed can also end them just as fast."
+      },
+      "image": "/images/quiz/when-men-lose-interest/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나는 과속형 — 빠르게 가까워지면 설렘이 빨리 사라질 수 있어요",
+          "en": "I’m the Too-Fast Type — momentum can burn out fast"
+        },
+        "description": {
+          "ko": "관계를 너무 빨리 진행해서 식는 타입",
+          "en": "Moving too fast kills the attraction"
+        },
+        "image": "/images/quiz/when-men-lose-interest/result-3.webp"
+      }
+    }
+  },
+
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "무심·부담·과속이 섞여 흐름이 흔들리기 쉬운 타입",
+      "en": "A mix of distance, pressure, and speed"
+    },
+    "body": {
+      "ko": "당신은 한 가지 패턴으로만 정의되지 않을 수 있다.\n표현이 적을 때도 있고, 감정이 빨리 커질 때도 있고, 관계를 빠르게 몰입할 때도 있다.\n그래서 상대 입장에서는 일관되지 않다고 느끼거나, 타이밍을 놓칠 수 있다.\n중요한 건 ‘내가 주로 어디에 기울어 있는지’를 아는 것이다.\n한 번에 완벽할 필요는 없고, 상황에 맞게 속도와 표현을 조절하는 연습이 도움이 된다.",
+      "en": "You may not fit one label.\nSometimes you hold back, sometimes feelings surge, sometimes you rush in.\nThat can feel inconsistent to the other person, or throw off timing.\nWhat helps is noticing which pattern you lean toward most.\nYou do not need to be perfect—practice pacing and expression to match the moment."
+    },
+    "image": "/images/quiz/when-men-lose-interest/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나는 관심이 식기 쉬운 복합형 패턴",
+        "en": "My pattern is mixed — interest can fade for several reasons"
+      },
+      "description": {
+        "ko": "무심·부담·과속이 함께 작동할 수 있는 타입",
+        "en": "Distance, pressure, and speed can all play a role"
+      },
+      "image": "/images/quiz/when-men-lose-interest/thumb.webp"
+    }
+  },
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "연애 초반 나는 어떤 편인가?",
+        "en": "At the beginning of dating, I am..."
+      },
+      "options": [
+        {
+          "label": { "ko": "표현이 적고 차분한 편", "en": "calm and not very expressive" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "감정을 솔직하게 표현하는 편", "en": "open with my feelings" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "빠르게 가까워지는 편", "en": "get close quickly" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대 반응이 애매할 때 나는?",
+        "en": "When their reaction is unclear, I..."
+      },
+      "options": [
+        {
+          "label": { "ko": "나도 크게 반응하지 않는다", "en": "don’t react much either" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "확인하려고 한다", "en": "try to clarify feelings" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "더 다가간다", "en": "push forward more" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연락 스타일은?",
+        "en": "My texting style is..."
+      },
+      "options": [
+        {
+          "label": { "ko": "필요한 말만 한다", "en": "minimal and simple" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "감정도 함께 표현한다", "en": "emotionally expressive" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "자주 빠르게 이어간다", "en": "fast and frequent" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 나를 좋아하는 것 같을 때 나는?",
+        "en": "When they seem interested in me, I..."
+      },
+      "options": [
+        {
+          "label": { "ko": "크게 티 내지 않는다", "en": "don’t show much reaction" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "더 확실히 알고 싶어진다", "en": "want clarity" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "바로 가까워진다", "en": "get closer immediately" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연애에서 가장 중요한 건?",
+        "en": "What matters most in dating?"
+      },
+      "options": [
+        {
+          "label": { "ko": "편안함", "en": "comfort" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "확실한 감정", "en": "clear feelings" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "빠른 발전", "en": "quick progress" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연애가 꼬일 때 나는?",
+        "en": "When things go wrong, I..."
+      },
+      "options": [
+        {
+          "label": { "ko": "조용히 멀어진다", "en": "pull away quietly" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "문제를 해결하려 한다", "en": "try to fix it" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "더 몰입한다", "en": "invest more emotionally" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대 입장에서 나를 보면?",
+        "en": "From their perspective, I am..."
+      },
+      "options": [
+        {
+          "label": { "ko": "무슨 생각인지 잘 모르겠다", "en": "hard to read" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "감정이 깊다", "en": "emotionally intense" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "속도가 빠르다", "en": "moving too fast" },
+          "key": "too_fast"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내 연애 패턴은?",
+        "en": "My dating pattern is..."
+      },
+      "options": [
+        {
+          "label": { "ko": "천천히 시작하고 흐려진다", "en": "slow then fades" },
+          "key": "indifferent"
+        },
+        {
+          "label": { "ko": "처음엔 좋다가 부담이 된다", "en": "good at first then heavy" },
+          "key": "pressure"
+        },
+        {
+          "label": { "ko": "빠르게 시작하고 빨리 식는다", "en": "fast start, fast end" },
+          "key": "too_fast"
+        }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

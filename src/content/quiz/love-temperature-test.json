@@ -1,0 +1,215 @@
+{
+  "id": "love-temperature-test",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "연애", "en": "love" },
+    { "ko": "성향", "en": "personality" },
+    { "ko": "심리", "en": "psychology" }
+  ],
+
+  "title": {
+    "ko": "나는 어떤 연애 온도일까?",
+    "en": "What Is Your Love Temperature?"
+  },
+  "subtitle": {
+    "ko": "차가움 vs 뜨거움",
+    "en": "Cold or passionate, where do you stand?"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/love-temperature-test/thumb.webp",
+    "og": "/images/quiz/love-temperature-test/thumb.webp",
+    "start": "/images/quiz/love-temperature-test/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "연애에서의 몰입·표현 스타일을 점수로 환산해 나의 연애 온도를 알아보는 테스트",
+      "en": "See how hot or cool your dating style runs, scored and mapped to a love temperature"
+    },
+    "keywords": [
+      { "ko": "연애 테스트", "en": "love test" },
+      { "ko": "연애 온도", "en": "love temperature" }
+    ],
+    "ogTitle": {
+      "ko": "나는 어떤 연애 온도일까?",
+      "en": "What Is Your Love Temperature?"
+    },
+    "ogDescription": {
+      "ko": "차가움 vs 뜨거움, 나는 어디에 가까울까?",
+      "en": "Cold or passionate — where do you stand?"
+    }
+  },
+
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🌡️ 연애 온도",
+      "en": "🌡️ Love temperature"
+    },
+    "image": "/images/quiz/love-temperature-test/thumb.webp",
+    "railImage": "/images/banners/ko/rail-05.webp",
+    "priority": 91
+  },
+
+  "analytics": {
+    "eventKey": "love_temperature_test",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": ["confession-success-rate", "ideal-type-reality-test", "when-men-lose-interest"],
+
+  "resultDisplay": "temperature",
+
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 39,
+      "displayDegree": 20,
+      "title": {
+        "ko": "차가운 연애 (20°)",
+        "en": "Cold Love (20°)"
+      },
+      "desc": {
+        "ko": "감정보다 거리와 독립을 중요하게 여기는 타입입니다.",
+        "en": "You value distance and independence over emotional intensity."
+      }
+    },
+    {
+      "min": 40,
+      "max": 69,
+      "displayDegree": 50,
+      "title": {
+        "ko": "균형 잡힌 연애 (50°)",
+        "en": "Balanced Love (50°)"
+      },
+      "desc": {
+        "ko": "감정과 현실 사이에서 균형을 잘 유지하는 타입입니다.",
+        "en": "You maintain a healthy balance between emotion and logic."
+      }
+    },
+    {
+      "min": 70,
+      "max": 100,
+      "displayDegree": 90,
+      "title": {
+        "ko": "뜨거운 연애 (90°)",
+        "en": "Passionate Love (90°)"
+      },
+      "desc": {
+        "ko": "감정 표현이 풍부하고 사랑에 깊게 몰입하는 타입입니다.",
+        "en": "You love deeply and express your emotions intensely."
+      }
+    }
+  ],
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "연애를 시작하면 나는?",
+        "en": "When I start dating, I..."
+      },
+      "options": [
+        { "label": { "ko": "완전 올인", "en": "Go all in" }, "score": 15 },
+        { "label": { "ko": "적당히 몰입", "en": "Stay balanced" }, "score": 10 },
+        { "label": { "ko": "천천히 다가감", "en": "Take it slow" }, "score": 5 },
+        { "label": { "ko": "거리 유지", "en": "Keep distance" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연락 스타일은?",
+        "en": "How do you text?"
+      },
+      "options": [
+        { "label": { "ko": "수시로 연락", "en": "Constant texting" }, "score": 15 },
+        { "label": { "ko": "자주 하지만 여유있게", "en": "Frequent but chill" }, "score": 10 },
+        { "label": { "ko": "필요할 때만", "en": "Only when needed" }, "score": 5 },
+        { "label": { "ko": "거의 안함", "en": "Rarely text" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 보고 싶을 때 나는?",
+        "en": "When I miss them, I..."
+      },
+      "options": [
+        { "label": { "ko": "바로 만나자고 함", "en": "Ask to meet immediately" }, "score": 15 },
+        { "label": { "ko": "슬쩍 티냄", "en": "Drop hints" }, "score": 10 },
+        { "label": { "ko": "참는다", "en": "Hold it in" }, "score": 5 },
+        { "label": { "ko": "생각 안하려 함", "en": "Ignore the feeling" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "질투가 날 때 나는?",
+        "en": "When I feel jealous, I..."
+      },
+      "options": [
+        { "label": { "ko": "솔직하게 표현", "en": "Express it openly" }, "score": 15 },
+        { "label": { "ko": "살짝 티냄", "en": "Show it subtly" }, "score": 10 },
+        { "label": { "ko": "속으로만 느낌", "en": "Keep it inside" }, "score": 5 },
+        { "label": { "ko": "신경 안씀", "en": "Don’t care" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연애에서 가장 중요한 건?",
+        "en": "What matters most in a relationship?"
+      },
+      "options": [
+        { "label": { "ko": "감정과 애정", "en": "Emotion & affection" }, "score": 15 },
+        { "label": { "ko": "균형과 안정", "en": "Balance & stability" }, "score": 10 },
+        { "label": { "ko": "자유와 거리", "en": "Freedom & space" }, "score": 5 },
+        { "label": { "ko": "간섭 없음", "en": "No interference" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "싸웠을 때 나는?",
+        "en": "After a fight, I..."
+      },
+      "options": [
+        { "label": { "ko": "바로 풀려고 함", "en": "Try to fix it immediately" }, "score": 15 },
+        { "label": { "ko": "시간 두고 대화", "en": "Talk after cooling down" }, "score": 10 },
+        { "label": { "ko": "회피함", "en": "Avoid it" }, "score": 5 },
+        { "label": { "ko": "그냥 무시", "en": "Ignore it" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "스킨십에 대한 태도는?",
+        "en": "How do you feel about physical affection?"
+      },
+      "options": [
+        { "label": { "ko": "중요함", "en": "Very important" }, "score": 15 },
+        { "label": { "ko": "좋은 요소", "en": "Nice to have" }, "score": 10 },
+        { "label": { "ko": "크게 중요하지 않음", "en": "Not that important" }, "score": 5 },
+        { "label": { "ko": "불편함", "en": "Uncomfortable" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "이별 후 나는?",
+        "en": "After a breakup, I..."
+      },
+      "options": [
+        { "label": { "ko": "오래 힘들어함", "en": "Struggle for a long time" }, "score": 15 },
+        { "label": { "ko": "시간 지나면 괜찮아짐", "en": "Recover over time" }, "score": 10 },
+        { "label": { "ko": "빨리 털어냄", "en": "Move on quickly" }, "score": 5 },
+        { "label": { "ko": "별 감정 없음", "en": "Feel nothing" }, "score": 0 }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

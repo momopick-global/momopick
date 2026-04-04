@@ -1,0 +1,300 @@
+{
+  "id": "leader-or-supporter",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "팀", "en": "team" },
+    { "ko": "성향", "en": "personality" },
+    { "ko": "리더십", "en": "leadership" }
+  ],
+
+  "title": {
+    "ko": "나는 리더형인가 조력자형인가?",
+    "en": "Are You a Leader or a Supporter?"
+  },
+  "subtitle": {
+    "ko": "팀에서의 포지션",
+    "en": "What role do you play in a team?"
+  },
+
+  "images": {
+    "thumbnail": "/images/quiz/leader-or-supporter/thumb.webp",
+    "og": "/images/quiz/leader-or-supporter/thumb.webp",
+    "start": "/images/quiz/leader-or-supporter/start.webp"
+  },
+
+  "meta": {
+    "description": {
+      "ko": "프로젝트·갈등·의사결정에서 나는 리더형, 전략가형, 서포터형 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether you lean leader, strategist, or supporter in teams"
+    },
+    "keywords": [
+      { "ko": "팀워크 테스트", "en": "team role test" },
+      { "ko": "리더십", "en": "leadership" }
+    ],
+    "ogTitle": {
+      "ko": "나는 리더형인가 조력자형인가?",
+      "en": "Are You a Leader or a Supporter?"
+    },
+    "ogDescription": {
+      "ko": "팀에서의 포지션",
+      "en": "What role do you play in a team?"
+    }
+  },
+
+  "card": {
+    "theme": "personality",
+    "kicker": {
+      "ko": "🤝 팀 포지션",
+      "en": "🤝 Team role"
+    },
+    "image": "/images/quiz/leader-or-supporter/thumb.webp",
+    "priority": 86
+  },
+
+  "resultKeys": ["A", "B", "C"],
+  "resultOrder": ["A", "B", "C"],
+
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+
+  "analytics": {
+    "eventKey": "leader_or_supporter",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+
+  "related": ["hidden-dark-side", "logical-or-emotional", "dating-expert-or-beginner"],
+
+  "results": {
+    "A": {
+      "emoji": "🎯",
+      "scoreKey": "A",
+      "title": {
+        "ko": "리더",
+        "en": "Leader"
+      },
+      "tagline": {
+        "ko": "방향을 제시하고 팀을 이끄는 타입",
+        "en": "You set direction and take the lead"
+      },
+      "body": {
+        "ko": "방향을 제시하고 팀을 이끄는 타입입니다. 책임감과 추진력이 강한 편입니다.\n프로젝트를 시작할 때 먼저 방향을 잡고, 문제가 생기면 바로 해결하려는 흐름이 나올 수 있어요.\n의사결정에서 결론을 내리고, 갈등에서는 결론을 이끄는 역할을 맡는 경우가 많습니다.\n일할 때 전체를 보고, 성과를 낼 때도 주도적으로 만드는 편입니다.\n앞에서 이끄는 자리가 더 편하게 느껴질 수 있어요.",
+        "en": "You lead, set direction, and take responsibility.\nYou may set direction first when a project starts and move fast when problems appear.\nIn decisions you make the call; in conflict you drive toward a conclusion.\nYou tend to see the big picture and lead outcomes.\nBeing up front may feel more natural than staying in the background."
+      },
+      "image": "/images/quiz/leader-or-supporter/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 팀 포지션은 리더형",
+          "en": "My team role is Leader"
+        },
+        "description": {
+          "ko": "방향을 제시하고 팀을 이끄는 타입",
+          "en": "You lead and take responsibility"
+        },
+        "image": "/images/quiz/leader-or-supporter/result-1.webp"
+      }
+    },
+
+    "B": {
+      "emoji": "🧭",
+      "scoreKey": "B",
+      "title": {
+        "ko": "전략가",
+        "en": "Strategist"
+      },
+      "tagline": {
+        "ko": "흐름을 읽고 조율하는 타입",
+        "en": "You read the flow and coordinate"
+      },
+      "body": {
+        "ko": "전체 흐름을 읽고 조율하는 타입입니다. 균형과 판단력이 뛰어납니다.\n문제가 생기면 원인을 분석하고, 의사결정에서는 여러 의견을 정리하거나 중간에서 다리를 놓는 역할이 잘 맞을 수 있어요.\n팀원과의 관계에서 조율자로 서고, 일할 때는 구조를 만드는 쪽에 강점이 있습니다.\n갈등에서는 중재하고, 성과는 전략적으로 설계하는 흐름이 나올 수 있어요.\n앞과 뒤 사이, 중간에서 균형을 잡는 자리가 편할 수 있습니다.",
+        "en": "You analyze and balance situations with strong judgment.\nWhen problems arise you dig into causes; in decisions you organize views or bridge sides.\nYou often mediate with teammates and build structure in how work gets done.\nIn conflict you mediate; with results you plan strategically.\nCoordinating from the middle may feel like your sweet spot."
+      },
+      "image": "/images/quiz/leader-or-supporter/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 팀 포지션은 전략가형",
+          "en": "My team role is Strategist"
+        },
+        "description": {
+          "ko": "전체 흐름을 읽고 조율하는 타입",
+          "en": "You analyze and coordinate"
+        },
+        "image": "/images/quiz/leader-or-supporter/result-2.webp"
+      }
+    },
+
+    "C": {
+      "emoji": "🤝",
+      "scoreKey": "C",
+      "title": {
+        "ko": "서포터",
+        "en": "Supporter"
+      },
+      "tagline": {
+        "ko": "팀을 안정적으로 돕는 타입",
+        "en": "You keep the team steady through support"
+      },
+      "body": {
+        "ko": "팀을 안정적으로 유지시키는 타입입니다. 배려와 협력이 강점입니다.\n프로젝트 시작 때 필요한 역할을 찾거나 분위기를 보며, 문제가 생기면 주변을 돕는 쪽으로 움직일 수 있어요.\n의사결정에서는 다른 사람 의견을 따르거나 중간을 선택하고, 팀원과는 도와주는·편한 동료 역할에 가깝습니다.\n실행을 돕고 요청받은 일에 집중하는 흐름, 갈등에서는 뒤에서 돕거나 피하는 선택도 나올 수 있어요.\n뒤에서 지원하거나 눈에 덜 띄는 자리가 더 편하게 느껴질 수 있습니다.",
+        "en": "You support others and keep the team stable.\nWhen projects start you find where you can help or read the room; when trouble hits you lift others up.\nIn decisions you may follow the group or pick the middle path; with teammates you are helpful and easy to work with.\nYou help execution, focus on assigned work, and in conflict you may support quietly or step back.\nSupporting from behind or staying low-key can feel most comfortable."
+      },
+      "image": "/images/quiz/leader-or-supporter/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 팀 포지션은 서포터형",
+          "en": "My team role is Supporter"
+        },
+        "description": {
+          "ko": "팀을 안정적으로 돕는 타입",
+          "en": "You support and collaborate"
+        },
+        "image": "/images/quiz/leader-or-supporter/result-3.webp"
+      }
+    }
+  },
+
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "리더십·전략·서포트가 함께 섞인 포지션",
+      "en": "A mix of lead, strategy, and support"
+    },
+    "body": {
+      "ko": "한 가지 역할로만 정의되지 않을 수 있어요.\n상황에 따라 앞에서 이끌기도 하고, 중간에서 조율하기도 하며, 뒤에서 돕기도 합니다.\n팀과 과제마다 다른 면이 나온다면 그건 자연스러운 일이에요.\n‘지금 내가 가장 자주 서는 위치’를 떠올려 보는 것도 도움이 됩니다.",
+      "en": "You may not fit one label.\nSometimes you lead, sometimes you coordinate, sometimes you support.\nDifferent sides can show depending on the team and task—that is normal.\nNoticing where you usually stand is a good start."
+    },
+    "image": "/images/quiz/leader-or-supporter/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나의 팀 포지션은 복합형",
+        "en": "My team role is mixed"
+      },
+      "description": {
+        "ko": "리더·전략가·서포터 성향이 함께 나타날 수 있어요",
+        "en": "Lead, strategy, and support can all show up"
+      },
+      "image": "/images/quiz/leader-or-supporter/thumb.webp"
+    }
+  },
+
+  "questions": [
+    {
+      "prompt": {
+        "ko": "팀 프로젝트를 시작할 때 나는?",
+        "en": "When starting a team project, I..."
+      },
+      "options": [
+        { "label": { "ko": "방향을 먼저 잡는다", "en": "Set direction first" }, "key": "A" },
+        { "label": { "ko": "전략을 고민한다", "en": "Think about strategy" }, "key": "B" },
+        { "label": { "ko": "필요한 역할을 찾는다", "en": "Find where I can help" }, "key": "C" },
+        { "label": { "ko": "분위기를 본다", "en": "Observe first" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "문제가 생기면 나는?",
+        "en": "When a problem arises, I..."
+      },
+      "options": [
+        { "label": { "ko": "바로 해결하려 한다", "en": "Try to solve it immediately" }, "key": "A" },
+        { "label": { "ko": "원인을 분석한다", "en": "Analyze the cause" }, "key": "B" },
+        { "label": { "ko": "도움을 준다", "en": "Support others" }, "key": "C" },
+        { "label": { "ko": "상황을 지켜본다", "en": "Wait and see" }, "key": "B" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "의사결정 상황에서 나는?",
+        "en": "In decision-making, I..."
+      },
+      "options": [
+        { "label": { "ko": "결정을 내린다", "en": "Make the call" }, "key": "A" },
+        { "label": { "ko": "여러 의견을 정리한다", "en": "Organize opinions" }, "key": "B" },
+        { "label": { "ko": "다른 사람 의견을 따른다", "en": "Follow others" }, "key": "C" },
+        { "label": { "ko": "중간 역할을 한다", "en": "Bridge opinions" }, "key": "B" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "팀원들과의 관계는?",
+        "en": "My relationship with teammates is..."
+      },
+      "options": [
+        { "label": { "ko": "이끄는 역할", "en": "Leading role" }, "key": "A" },
+        { "label": { "ko": "조율하는 역할", "en": "Mediator role" }, "key": "B" },
+        { "label": { "ko": "도와주는 역할", "en": "Support role" }, "key": "C" },
+        { "label": { "ko": "편한 동료", "en": "Easygoing member" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "일할 때 나는?",
+        "en": "When working, I..."
+      },
+      "options": [
+        { "label": { "ko": "전체를 본다", "en": "See the big picture" }, "key": "A" },
+        { "label": { "ko": "구조를 만든다", "en": "Build structure" }, "key": "B" },
+        { "label": { "ko": "실행을 돕는다", "en": "Help execution" }, "key": "C" },
+        { "label": { "ko": "요청받은 일 중심", "en": "Do assigned tasks" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "갈등 상황에서 나는?",
+        "en": "In conflicts, I..."
+      },
+      "options": [
+        { "label": { "ko": "결론을 낸다", "en": "Drive a conclusion" }, "key": "A" },
+        { "label": { "ko": "중재한다", "en": "Mediate" }, "key": "B" },
+        { "label": { "ko": "뒤에서 돕는다", "en": "Support quietly" }, "key": "C" },
+        { "label": { "ko": "피한다", "en": "Avoid it" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "성과를 낼 때 나는?",
+        "en": "When achieving results, I..."
+      },
+      "options": [
+        { "label": { "ko": "주도적으로 만든다", "en": "Lead the result" }, "key": "A" },
+        { "label": { "ko": "전략적으로 만든다", "en": "Plan strategically" }, "key": "B" },
+        { "label": { "ko": "도와서 만든다", "en": "Support the result" }, "key": "C" },
+        { "label": { "ko": "팀에 따라간다", "en": "Follow the team" }, "key": "C" }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내가 더 편한 위치는?",
+        "en": "Where am I most comfortable?"
+      },
+      "options": [
+        { "label": { "ko": "앞에서 이끄는 자리", "en": "Leading upfront" }, "key": "A" },
+        { "label": { "ko": "중간에서 조율", "en": "Coordinating" }, "key": "B" },
+        { "label": { "ko": "뒤에서 지원", "en": "Supporting behind" }, "key": "C" },
+        { "label": { "ko": "눈에 안 띄는 자리", "en": "Staying low-key" }, "key": "C" }
+      ]
+    }
+  ],
+
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

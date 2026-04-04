@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { getKoHomeRailSorted } from "@/lib/content/homeRail";
 
 const year = new Date().getFullYear();
+
+const homeRailKo = getKoHomeRailSorted("ko");
+const featuredQuiz = homeRailKo[0];
 
 export default function KoHomePage() {
   return (
@@ -23,31 +27,31 @@ export default function KoHomePage() {
       </header>
 
       <nav className="cat-bar" aria-label="카테고리 빠른 이동">
-        <Link className="chip" href="/ko/" aria-current="true">
+        <Link className="chip chip--default" href="/ko/" aria-current="true">
           전체
         </Link>
-        <Link className="chip" href="/ko/love/">
+        <Link className="chip chip--love" href="/ko/love/">
           연애
         </Link>
-        <Link className="chip" href="/ko/personality/">
+        <Link className="chip chip--personality" href="/ko/personality/">
           성격·심리
         </Link>
-        <Link className="chip" href="/ko/social/">
+        <Link className="chip chip--social" href="/ko/social/">
           소셜
         </Link>
-        <Link className="chip" href="/ko/style/">
+        <Link className="chip chip--style" href="/ko/style/">
           스타일
         </Link>
-        <Link className="chip" href="/ko/fun/">
+        <Link className="chip chip--fun" href="/ko/fun/">
           재미
         </Link>
-        <Link className="chip" href="/ko/explore/">
+        <Link className="chip chip--default" href="/ko/explore/">
           탐색
         </Link>
-        <Link className="chip" href="/ko/tag/">
+        <Link className="chip chip--default" href="/ko/tag/">
           태그
         </Link>
-        <Link className="chip" href="/ko/notice/">
+        <Link className="chip chip--default" href="/ko/notice/">
           공지
         </Link>
       </nav>
@@ -64,10 +68,10 @@ export default function KoHomePage() {
             <div className="hero-banner-wrap">
               <img
                 className="hero-banner"
-                src="/images/banners/ko/momopick-test-banner.webp"
+                src={featuredQuiz?.image || "/images/banners/ko/rail-01.webp"}
                 alt=""
-                width={1120}
-                height={360}
+                width={480}
+                height={320}
                 loading="eager"
                 decoding="async"
               />
@@ -96,94 +100,31 @@ export default function KoHomePage() {
               </Link>
             </div>
             <div className="rail" role="list">
-              <Link className="rail-card" href="/ko/love/your-love-type/" role="listitem">
-                <img
-                  src="/images/banners/ko/rail-01.webp"
-                  alt=""
-                  width={1536}
-                  height={1024}
-                  loading="eager"
-                  decoding="async"
-                />
-                <div className="cap">
-                  <b>내 연애 유형</b>
-                  <small>썸부터 연인까지, 나의 패턴은?</small>
-                </div>
-              </Link>
-              <Link className="rail-card" href="/ko/personality/my-hidden-mbti/" role="listitem">
-                <img
-                  src="/images/banners/ko/rail-02.webp"
-                  alt=""
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="cap">
-                  <b>숨은 MBTI</b>
-                  <small>겉과 속이 다른 이유</small>
-                </div>
-              </Link>
-              <Link className="rail-card" href="/ko/social/friendship-chemistry/" role="listitem">
-                <img
-                  src="/images/banners/ko/rail-03.webp"
-                  alt=""
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="cap">
-                  <b>친구 케미</b>
-                  <small>우정 궁합 몇 점?</small>
-                </div>
-              </Link>
-              <Link className="rail-card" href="/ko/love/" role="listitem">
-                <img
-                  src="/images/banners/ko/rail-04.webp"
-                  alt=""
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="cap">
-                  <b>연애 허브</b>
-                  <small>썸·궁합·유형 한곳에</small>
-                </div>
-              </Link>
-              <Link className="rail-card" href="/ko/personality/" role="listitem">
-                <img
-                  src="/images/banners/ko/rail-05.webp"
-                  alt=""
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="cap">
-                  <b>성격·심리</b>
-                  <small>MBTI·감정·자아 탐색</small>
-                </div>
-              </Link>
-              <Link className="rail-card" href="/ko/fun/" role="listitem">
-                <img
-                  src="/images/banners/ko/rail-06.webp"
-                  alt=""
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="cap">
-                  <b>재미 스낵</b>
-                  <small>5분 컷 밈 퀴즈</small>
-                </div>
-              </Link>
+              {homeRailKo.map((item, i) => (
+                <Link
+                  key={item.href}
+                  className={`rail-card rail-card--${item.railTheme}`}
+                  href={item.href}
+                  role="listitem"
+                >
+                  <img
+                    src={item.image || "/images/banners/ko/rail-01.webp"}
+                    alt=""
+                    width={480}
+                    height={320}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                  <div className="cap">
+                    <b>{item.title}</b>
+                    <small>{item.subtitleLine}</small>
+                  </div>
+                </Link>
+              ))}
             </div>
           </section>
 
-          <section className="section" id="love" aria-labelledby="sec-love">
+          <section className="section section--love" id="love" aria-labelledby="sec-love">
             <div className="sec-hd">
               <h2 id="sec-love">💌 썸·연애, 일단 들어와 봐요</h2>
               <Link className="link-all" href="/ko/love/">
@@ -195,11 +136,11 @@ export default function KoHomePage() {
               교체하면 됩니다.
             </p>
             <div className="tile-grid">
-              <Link className="tile" href="/ko/love/your-love-type/">
+              <Link className="tile tile--love" href={featuredQuiz?.href || "/ko/love/"}>
                 <div className="thumb">
                   <span className="badge">HOT</span>
                   <img
-                    src="/images/banners/ko/tile-love-01.webp"
+                    src={featuredQuiz?.image || "/images/banners/ko/tile-love-01.webp"}
                     alt=""
                     width={1536}
                     height={1024}
@@ -208,11 +149,11 @@ export default function KoHomePage() {
                   />
                 </div>
                 <div className="body">
-                  <b>내 연애 유형 테스트</b>
-                  <small>나의 연애 패턴을 1분 분석</small>
+                  <b>{featuredQuiz?.title ?? "연애 테스트"}</b>
+                  <small>{featuredQuiz?.subtitleOnly ?? ""}</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/love/">
+              <Link className="tile tile--love" href="/ko/love/">
                 <div className="thumb">
                   <span className="badge">허브</span>
                   <img
@@ -229,7 +170,7 @@ export default function KoHomePage() {
                   <small>썸·연인·소개팅 스토리별</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/explore/">
+              <Link className="tile tile--love" href="/ko/explore/">
                 <div className="thumb">
                   <img
                     src="/images/banners/ko/tile-love-03.webp"
@@ -245,7 +186,7 @@ export default function KoHomePage() {
                   <small>실시간 큐레이션 자리</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/tag/">
+              <Link className="tile tile--love" href="/ko/tag/">
                 <div className="thumb">
                   <img
                     src="/images/banners/ko/tile-love-04.webp"
@@ -264,7 +205,7 @@ export default function KoHomePage() {
             </div>
           </section>
 
-          <section className="section" id="mind" aria-labelledby="sec-mind">
+          <section className="section section--personality" id="mind" aria-labelledby="sec-mind">
             <div className="sec-hd">
               <h2 id="sec-mind">🧠 성격·심리, 오늘의 나는 누구?</h2>
               <Link className="link-all" href="/ko/personality/">
@@ -275,7 +216,7 @@ export default function KoHomePage() {
               MBTI·성향·감정 퀴즈. 진단이 아닌 ‘재미+자기이해’ 톤으로 구성하는 것을 권장합니다.
             </p>
             <div className="tile-grid">
-              <Link className="tile" href="/ko/personality/my-hidden-mbti/">
+              <Link className="tile tile--personality" href="/ko/personality/my-hidden-mbti/">
                 <div className="thumb">
                   <span className="badge">1분</span>
                   <img
@@ -292,7 +233,7 @@ export default function KoHomePage() {
                   <small>겉모습과 속마음의 차이</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/personality/">
+              <Link className="tile tile--personality" href="/ko/personality/">
                 <div className="thumb">
                   <img
                     src="/images/banners/ko/tile-mind-02.webp"
@@ -308,7 +249,7 @@ export default function KoHomePage() {
                   <small>테스트 더 둘러보기</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/social/">
+              <Link className="tile tile--social" href="/ko/social/">
                 <div className="thumb">
                   <img
                     src="/images/banners/ko/tile-mind-03.webp"
@@ -327,7 +268,7 @@ export default function KoHomePage() {
             </div>
           </section>
 
-          <section className="section" id="snack" aria-labelledby="sec-snack">
+          <section className="section section--fun" id="snack" aria-labelledby="sec-snack">
             <div className="sec-hd">
               <h2 id="sec-snack">🍿 심심할 때 5분 스낵 퀴즈</h2>
               <Link className="link-all" href="/ko/fun/">
@@ -338,7 +279,7 @@ export default function KoHomePage() {
               밈·상황·랜덤. 청월당의 ‘스낵 사주’처럼 가볍게 즐기는 코너입니다.
             </p>
             <div className="tile-grid">
-              <Link className="tile" href="/ko/fun/">
+              <Link className="tile tile--fun" href="/ko/fun/">
                 <div className="thumb">
                   <span className="badge">SNACK</span>
                   <img
@@ -355,7 +296,7 @@ export default function KoHomePage() {
                   <small>웃고 나가는 테스트</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/style/">
+              <Link className="tile tile--style" href="/ko/style/">
                 <div className="thumb">
                   <img
                     src="/images/banners/ko/tile-snack-02.webp"
@@ -371,7 +312,7 @@ export default function KoHomePage() {
                   <small>분위기·패션 성향</small>
                 </div>
               </Link>
-              <Link className="tile" href="/ko/explore/">
+              <Link className="tile tile--fun" href="/ko/explore/">
                 <div className="thumb">
                   <img
                     src="/images/banners/ko/tile-snack-03.webp"

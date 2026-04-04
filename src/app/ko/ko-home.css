@@ -7,9 +7,21 @@
   --line: rgba(90, 103, 242, 0.14);
   --accent: #5a67f2;
   --accent-2: #e85a8c;
+  /* 카테고리별 CTR 대비 팔레트 */
+  --ctr-love-a: #ff3d8c;
+  --ctr-love-b: #8b1458;
+  --ctr-mind-a: #2563eb;
+  --ctr-mind-b: #6d28d9;
+  --ctr-social-a: #0f2744;
+  --ctr-social-b: #14b8a6;
+  --ctr-style-a: #e8dcc8;
+  --ctr-style-b: #0f0f0f;
+  --ctr-fun-a: #dc2626;
+  --ctr-fun-b: #facc15;
   --radius: 20px;
   --radius-sm: 14px;
   --max: 1120px;
+  --quiz-col: 520px;
   --shadow: 0 8px 32px rgba(45, 30, 80, 0.08);
   --shadow-hover: 0 14px 40px rgba(45, 30, 80, 0.12);
   min-height: 100vh;
@@ -152,7 +164,72 @@
   background: linear-gradient(135deg, var(--accent), #7b6df0);
 }
 
-.momopick-ko .chip:hover:not([aria-current="true"]) {
+.momopick-ko .chip--default[aria-current="true"] {
+  background: linear-gradient(135deg, var(--accent), #7b6df0);
+}
+
+/* 💗 Love — 핫핑크 + 다크핑크 */
+.momopick-ko .chip--love:hover:not([aria-current="true"]) {
+  border-color: rgba(255, 61, 140, 0.45);
+  color: var(--ctr-love-b);
+  background: rgba(255, 61, 140, 0.06);
+}
+.momopick-ko .chip--love[aria-current="true"] {
+  background: linear-gradient(135deg, var(--ctr-love-a), var(--ctr-love-b));
+  color: #fff;
+}
+
+/* 🧠 Personality — 블루 + 퍼플 */
+.momopick-ko .chip--personality:hover:not([aria-current="true"]) {
+  border-color: rgba(37, 99, 235, 0.45);
+  color: var(--ctr-mind-b);
+  background: rgba(37, 99, 235, 0.06);
+}
+.momopick-ko .chip--personality[aria-current="true"] {
+  background: linear-gradient(135deg, var(--ctr-mind-a), var(--ctr-mind-b));
+  color: #fff;
+}
+
+/* 💼 Social — 네이비 + 민트 */
+.momopick-ko .chip--social:hover:not([aria-current="true"]) {
+  border-color: rgba(15, 39, 68, 0.4);
+  color: var(--ctr-social-a);
+  background: rgba(20, 184, 166, 0.1);
+}
+.momopick-ko .chip--social[aria-current="true"] {
+  background: linear-gradient(135deg, var(--ctr-social-a), var(--ctr-social-b));
+  color: #fff;
+}
+
+/* 🎨 Style — 베이지 + 블랙 포인트 */
+.momopick-ko .chip--style {
+  background: #f4ebe3;
+  border-color: rgba(15, 15, 15, 0.35);
+  color: var(--ctr-style-b);
+}
+.momopick-ko .chip--style:hover:not([aria-current="true"]) {
+  border-color: var(--ctr-style-b);
+  background: var(--ctr-style-a);
+  color: #000;
+}
+.momopick-ko .chip--style[aria-current="true"] {
+  background: linear-gradient(135deg, #141414, #2c2c2c);
+  color: var(--ctr-style-a);
+}
+
+/* 🔮 Fun — 레드 + 옐로 고채도 */
+.momopick-ko .chip--fun:hover:not([aria-current="true"]) {
+  border-color: rgba(220, 38, 38, 0.45);
+  color: #b91c1c;
+  background: rgba(250, 204, 21, 0.12);
+}
+.momopick-ko .chip--fun[aria-current="true"] {
+  background: linear-gradient(135deg, var(--ctr-fun-a), var(--ctr-fun-b));
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.momopick-ko .chip--default:hover:not([aria-current="true"]) {
   border-color: rgba(90, 103, 242, 0.35);
   color: var(--text);
 }
@@ -304,6 +381,27 @@
   text-decoration: underline;
 }
 
+.momopick-ko .section--love .link-all {
+  color: var(--ctr-love-a);
+}
+.momopick-ko .section--love .link-all:hover {
+  color: var(--ctr-love-b);
+}
+
+.momopick-ko .section--personality .link-all {
+  color: var(--ctr-mind-a);
+}
+.momopick-ko .section--personality .link-all:hover {
+  color: var(--ctr-mind-b);
+}
+
+.momopick-ko .section--fun .link-all {
+  color: var(--ctr-fun-a);
+}
+.momopick-ko .section--fun .link-all:hover {
+  color: #b45309;
+}
+
 .momopick-ko .rail {
   display: flex;
   gap: 14px;
@@ -349,6 +447,50 @@
   font-size: 11px;
   color: var(--muted);
   line-height: 1.35;
+}
+
+.momopick-ko .rail-card--love {
+  border-color: rgba(255, 61, 140, 0.22);
+}
+.momopick-ko .rail-card--love img {
+  background: linear-gradient(145deg, #ffe0f0, #ffc2dc);
+}
+.momopick-ko .rail-card--love:hover {
+  border-color: rgba(139, 20, 88, 0.45);
+  box-shadow: 0 12px 36px rgba(255, 61, 140, 0.18);
+}
+
+.momopick-ko .rail-card--personality {
+  border-color: rgba(37, 99, 235, 0.22);
+}
+.momopick-ko .rail-card--personality img {
+  background: linear-gradient(145deg, #dbeafe, #ede9fe);
+}
+.momopick-ko .rail-card--personality:hover {
+  border-color: rgba(109, 40, 217, 0.45);
+  box-shadow: 0 12px 36px rgba(37, 99, 235, 0.2);
+}
+
+.momopick-ko .rail-card--social {
+  border-color: rgba(15, 39, 68, 0.22);
+}
+.momopick-ko .rail-card--social img {
+  background: linear-gradient(145deg, #e0f7f4, #c7f0eb);
+}
+.momopick-ko .rail-card--social:hover {
+  border-color: rgba(20, 184, 166, 0.55);
+  box-shadow: 0 12px 36px rgba(15, 39, 68, 0.18);
+}
+
+.momopick-ko .rail-card--fun {
+  border-color: rgba(220, 38, 38, 0.22);
+}
+.momopick-ko .rail-card--fun img {
+  background: linear-gradient(145deg, #fee2e2, #fef9c3);
+}
+.momopick-ko .rail-card--fun:hover {
+  border-color: rgba(220, 38, 38, 0.45);
+  box-shadow: 0 12px 36px rgba(250, 204, 21, 0.22);
 }
 
 .momopick-ko .section {
@@ -409,6 +551,27 @@
   transform: translateY(-2px);
 }
 
+.momopick-ko .tile--love:hover {
+  border-color: rgba(255, 61, 140, 0.4);
+  box-shadow: 0 14px 40px rgba(255, 61, 140, 0.12);
+}
+.momopick-ko .tile--personality:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 14px 40px rgba(37, 99, 235, 0.12);
+}
+.momopick-ko .tile--social:hover {
+  border-color: rgba(20, 184, 166, 0.45);
+  box-shadow: 0 14px 40px rgba(15, 39, 68, 0.12);
+}
+.momopick-ko .tile--style:hover {
+  border-color: rgba(15, 15, 15, 0.45);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+.momopick-ko .tile--fun:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+  box-shadow: 0 14px 40px rgba(250, 204, 21, 0.18);
+}
+
 .momopick-ko .tile .thumb {
   position: relative;
   display: flex;
@@ -416,6 +579,22 @@
   align-items: flex-start;
   overflow: hidden;
   background: linear-gradient(145deg, #dfd8f5, #ffd8e8);
+}
+
+.momopick-ko .tile--love .thumb {
+  background: linear-gradient(145deg, #ffe0f0, #ffc8e4);
+}
+.momopick-ko .tile--personality .thumb {
+  background: linear-gradient(145deg, #dbeafe, #e9d5ff);
+}
+.momopick-ko .tile--social .thumb {
+  background: linear-gradient(145deg, #e0f7f4, #ccfbf1);
+}
+.momopick-ko .tile--style .thumb {
+  background: linear-gradient(145deg, #f4ebe3, #e8e0d5);
+}
+.momopick-ko .tile--fun .thumb {
+  background: linear-gradient(145deg, #fee2e2, #fef08a);
 }
 
 .momopick-ko .tile .thumb img {
@@ -437,6 +616,26 @@
   color: #fff;
   background: rgba(22, 16, 34, 0.55);
   backdrop-filter: blur(6px);
+}
+
+.momopick-ko .tile--love .badge {
+  background: linear-gradient(135deg, var(--ctr-love-a), var(--ctr-love-b));
+  color: #fff;
+}
+.momopick-ko .tile--personality .badge {
+  background: linear-gradient(135deg, var(--ctr-mind-a), var(--ctr-mind-b));
+}
+.momopick-ko .tile--social .badge {
+  background: linear-gradient(135deg, var(--ctr-social-a), var(--ctr-social-b));
+}
+.momopick-ko .tile--style .badge {
+  background: linear-gradient(135deg, var(--ctr-style-b), #3f3f3f);
+  color: var(--ctr-style-a);
+}
+.momopick-ko .tile--fun .badge {
+  background: linear-gradient(135deg, var(--ctr-fun-a), #eab308);
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .momopick-ko .tile .body {
@@ -631,14 +830,14 @@
 
 .momopick-ko .quiz-cover {
   width: 100%;
-  max-width: 100%;
+  max-width: var(--quiz-col);
   margin: 4px auto 0;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   background: linear-gradient(145deg, #e8e4f7, #fce8ef);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
 }
 
 .momopick-ko .quiz-cover img {
@@ -650,7 +849,7 @@
 }
 
 .momopick-ko .quiz-section {
-  max-width: 520px;
+  max-width: var(--quiz-col);
   margin: 0 auto;
 }
 
@@ -674,7 +873,7 @@
   height: 100%;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  transition: width 0.25s ease;
+  transition: width 0.35s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .momopick-ko .quiz-step-label {
@@ -682,6 +881,21 @@
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);
+}
+
+.momopick-ko .quiz-q-visual {
+  margin: 0 0 14px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(90, 103, 242, 0.04);
+}
+
+.momopick-ko .quiz-q-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 .momopick-ko .quiz-q {
@@ -702,6 +916,8 @@
 }
 
 .momopick-ko .quiz-opt {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   text-align: left;
   padding: 14px 16px;
@@ -717,20 +933,158 @@
   transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.momopick-ko .quiz-opt:hover {
+.momopick-ko .quiz-opt-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(90, 103, 242, 0.42),
+    rgba(232, 90, 140, 0.32)
+  );
+  transition: width 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.momopick-ko .quiz-opt-fill--full {
+  width: 100%;
+}
+
+.momopick-ko .quiz-opt-label {
+  position: relative;
+  z-index: 1;
+}
+
+.momopick-ko .quiz-opt--picking {
+  border-color: rgba(90, 103, 242, 0.35);
+}
+
+.momopick-ko .quiz-opt:hover:not(:disabled) {
   border-color: rgba(90, 103, 242, 0.45);
   background: rgba(90, 103, 242, 0.08);
   transform: translateY(-1px);
+}
+
+.momopick-ko .quiz-opt:disabled {
+  cursor: progress;
+  opacity: 0.72;
 }
 
 .momopick-ko .quiz-result-card {
   text-align: center;
 }
 
+.momopick-ko .quiz-result-visual {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 16px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #e8e4f7, #fce8ef);
+  aspect-ratio: 3 / 2;
+}
+
+.momopick-ko .quiz-result-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .momopick-ko .quiz-result-emoji {
   margin: 0 0 12px;
   font-size: 48px;
   line-height: 1;
+}
+
+.momopick-ko .quiz-result-percent-wrap {
+  margin: 0 0 16px;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+}
+
+.momopick-ko .quiz-result-percent {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.momopick-ko .quiz-result-percent-suffix {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: -0.02em;
+}
+
+.momopick-ko .quiz-result-body--percent {
+  text-align: center;
+}
+
+.momopick-ko .quiz-result-submetric {
+  margin: -8px 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.momopick-ko .quiz-result-dual {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  margin: 0 0 18px;
+  max-width: 100%;
+}
+
+.momopick-ko .quiz-result-dual-item {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.momopick-ko .quiz-result-dual-label {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: -0.02em;
+}
+
+.momopick-ko .quiz-result-dual-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1;
+}
+
+.momopick-ko .quiz-result-dual-row .quiz-result-percent {
+  font-size: 44px;
+}
+
+.momopick-ko .quiz-result-dual-row .quiz-result-percent-suffix {
+  font-size: 22px;
+}
+
+.momopick-ko .quiz-result-dual-divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 8px 0;
+  background: var(--line);
+  flex-shrink: 0;
 }
 
 .momopick-ko .quiz-result-title {
@@ -753,6 +1107,80 @@
   font-size: 15px;
   color: var(--muted);
   line-height: 1.65;
+  white-space: pre-line;
+}
+
+.momopick-ko .quiz-share {
+  margin: 0 0 20px;
+  padding: 16px 0 4px;
+  border-top: 1px solid var(--line);
+}
+
+.momopick-ko .quiz-share-title {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.momopick-ko .quiz-share-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.momopick-ko .quiz-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.momopick-ko .quiz-share-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(45, 30, 80, 0.12);
+}
+
+.momopick-ko .quiz-share-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.momopick-ko .quiz-share-btn-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.momopick-ko .quiz-share-btn-inner--link {
+  color: var(--accent);
+}
+
+.momopick-ko .quiz-share-btn-inner--x {
+  background: #0f1419;
+  color: #fff;
+  border-color: rgba(15, 20, 25, 0.35);
+}
+
+.momopick-ko .quiz-share-hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .momopick-ko .quiz-result-actions {
@@ -760,6 +1188,12 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+/* 다시 하기: 기본 .btn.sm 대비 약 1.5배 (패딩·글자 크기) */
+.momopick-ko .quiz-result-actions .btn.sm {
+  padding: 15px 21px;
+  font-size: 20px;
 }
 
 .momopick-ko .quiz-footnote {

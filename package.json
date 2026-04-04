@@ -7,12 +7,15 @@
     "free:3040": "lsof -ti :3040 | xargs kill -9 2>/dev/null || true",
     "dev:fresh": "npm run clean && next dev -p 3040",
     "dev:reset": "npm run free:3040 && npm run clean && npm run dev",
+    "fix": "npm run dev:reset",
     "dev": "next dev -p 3040",
     "dev:turbo": "next dev -p 3040 --turbopack",
     "build": "next build",
+    "deploy:pages": "npm run build && npx wrangler pages deploy out",
     "preview": "serve out -l 3040",
     "lint": "next lint",
-    "lint:all": "eslint ."
+    "lint:all": "eslint .",
+    "check:quiz-images": "node tools/check-quiz-images.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
