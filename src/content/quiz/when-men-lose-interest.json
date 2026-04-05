@@ -1,13 +1,25 @@
 {
   "id": "when-men-lose-interest",
-  "locales": ["ko", "en"],
+  "slug": "when-men-lose-interest",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "썸", "en": "situationship" },
-    { "ko": "심리", "en": "psychology" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "썸",
+      "en": "situationship"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
   ],
-
   "title": {
     "ko": "남자가 나에게 식는 순간",
     "en": "When Do Men Start Losing Interest in You?"
@@ -16,21 +28,24 @@
     "ko": "혹시 이 행동?",
     "en": "Are you doing this without realizing?"
   },
-
   "images": {
     "thumbnail": "/images/quiz/when-men-lose-interest/thumb.webp",
-    "og": "/images/quiz/when-men-lose-interest/thumb.webp",
-    "start": "/images/quiz/when-men-lose-interest/start.webp"
+    "og": "/images/quiz/when-men-lose-interest/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "남자가 당신에게 식는 진짜 이유가 무심함, 부담, 과속 때문인지 알아보는 테스트",
       "en": "Find out whether people lose interest because of distance, pressure, or moving too fast"
     },
     "keywords": [
-      { "ko": "연애 테스트", "en": "love test" },
-      { "ko": "썸 테스트", "en": "situationship test" }
+      {
+        "ko": "연애 테스트",
+        "en": "love test"
+      },
+      {
+        "ko": "썸 테스트",
+        "en": "situationship test"
+      }
     ],
     "ogTitle": {
       "ko": "남자가 나에게 식는 순간",
@@ -41,7 +56,6 @@
       "en": "It might not be timing, but your pattern"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
@@ -49,13 +63,18 @@
       "en": "💔 Dating patterns"
     },
     "image": "/images/quiz/when-men-lose-interest/thumb.webp",
-    "railImage": "/images/banners/ko/rail-03.webp",
     "priority": 94
   },
-
-  "resultKeys": ["indifferent", "pressure", "too_fast"],
-  "resultOrder": ["indifferent", "pressure", "too_fast"],
-
+  "resultKeys": [
+    "indifferent",
+    "pressure",
+    "too_fast"
+  ],
+  "resultOrder": [
+    "indifferent",
+    "pressure",
+    "too_fast"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -64,7 +83,6 @@
     },
     "blendOnTie": true
   },
-
   "analytics": {
     "eventKey": "when_men_lose_interest",
     "contentGroup": "love",
@@ -74,13 +92,11 @@
       "share": "quiz_share"
     }
   },
-
   "related": [
     "why-cant-you-text-first",
     "who-likes-you-type",
-    "ideal-type-reality-test"
+    "love-pattern-destroying-habit"
   ],
-
   "results": {
     "indifferent": {
       "emoji": "🧊",
@@ -110,7 +126,6 @@
         "image": "/images/quiz/when-men-lose-interest/result-1.webp"
       }
     },
-
     "pressure": {
       "emoji": "⚖️",
       "scoreKey": "pressure",
@@ -139,7 +154,6 @@
         "image": "/images/quiz/when-men-lose-interest/result-2.webp"
       }
     },
-
     "too_fast": {
       "emoji": "🔥",
       "scoreKey": "too_fast",
@@ -169,7 +183,6 @@
       }
     }
   },
-
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
@@ -198,7 +211,6 @@
       "image": "/images/quiz/when-men-lose-interest/thumb.webp"
     }
   },
-
   "questions": [
     {
       "prompt": {
@@ -207,15 +219,24 @@
       },
       "options": [
         {
-          "label": { "ko": "표현이 적고 차분한 편", "en": "calm and not very expressive" },
+          "label": {
+            "ko": "표현이 적고 차분한 편",
+            "en": "calm and not very expressive"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "감정을 솔직하게 표현하는 편", "en": "open with my feelings" },
+          "label": {
+            "ko": "감정을 솔직하게 표현하는 편",
+            "en": "open with my feelings"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "빠르게 가까워지는 편", "en": "get close quickly" },
+          "label": {
+            "ko": "빠르게 가까워지는 편",
+            "en": "get close quickly"
+          },
           "key": "too_fast"
         }
       ]
@@ -227,15 +248,24 @@
       },
       "options": [
         {
-          "label": { "ko": "나도 크게 반응하지 않는다", "en": "don’t react much either" },
+          "label": {
+            "ko": "나도 크게 반응하지 않는다",
+            "en": "don’t react much either"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "확인하려고 한다", "en": "try to clarify feelings" },
+          "label": {
+            "ko": "확인하려고 한다",
+            "en": "try to clarify feelings"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "더 다가간다", "en": "push forward more" },
+          "label": {
+            "ko": "더 다가간다",
+            "en": "push forward more"
+          },
           "key": "too_fast"
         }
       ]
@@ -247,15 +277,24 @@
       },
       "options": [
         {
-          "label": { "ko": "필요한 말만 한다", "en": "minimal and simple" },
+          "label": {
+            "ko": "필요한 말만 한다",
+            "en": "minimal and simple"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "감정도 함께 표현한다", "en": "emotionally expressive" },
+          "label": {
+            "ko": "감정도 함께 표현한다",
+            "en": "emotionally expressive"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "자주 빠르게 이어간다", "en": "fast and frequent" },
+          "label": {
+            "ko": "자주 빠르게 이어간다",
+            "en": "fast and frequent"
+          },
           "key": "too_fast"
         }
       ]
@@ -267,15 +306,24 @@
       },
       "options": [
         {
-          "label": { "ko": "크게 티 내지 않는다", "en": "don’t show much reaction" },
+          "label": {
+            "ko": "크게 티 내지 않는다",
+            "en": "don’t show much reaction"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "더 확실히 알고 싶어진다", "en": "want clarity" },
+          "label": {
+            "ko": "더 확실히 알고 싶어진다",
+            "en": "want clarity"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "바로 가까워진다", "en": "get closer immediately" },
+          "label": {
+            "ko": "바로 가까워진다",
+            "en": "get closer immediately"
+          },
           "key": "too_fast"
         }
       ]
@@ -287,15 +335,24 @@
       },
       "options": [
         {
-          "label": { "ko": "편안함", "en": "comfort" },
+          "label": {
+            "ko": "편안함",
+            "en": "comfort"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "확실한 감정", "en": "clear feelings" },
+          "label": {
+            "ko": "확실한 감정",
+            "en": "clear feelings"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "빠른 발전", "en": "quick progress" },
+          "label": {
+            "ko": "빠른 발전",
+            "en": "quick progress"
+          },
           "key": "too_fast"
         }
       ]
@@ -307,15 +364,24 @@
       },
       "options": [
         {
-          "label": { "ko": "조용히 멀어진다", "en": "pull away quietly" },
+          "label": {
+            "ko": "조용히 멀어진다",
+            "en": "pull away quietly"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "문제를 해결하려 한다", "en": "try to fix it" },
+          "label": {
+            "ko": "문제를 해결하려 한다",
+            "en": "try to fix it"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "더 몰입한다", "en": "invest more emotionally" },
+          "label": {
+            "ko": "더 몰입한다",
+            "en": "invest more emotionally"
+          },
           "key": "too_fast"
         }
       ]
@@ -327,15 +393,24 @@
       },
       "options": [
         {
-          "label": { "ko": "무슨 생각인지 잘 모르겠다", "en": "hard to read" },
+          "label": {
+            "ko": "무슨 생각인지 잘 모르겠다",
+            "en": "hard to read"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "감정이 깊다", "en": "emotionally intense" },
+          "label": {
+            "ko": "감정이 깊다",
+            "en": "emotionally intense"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "속도가 빠르다", "en": "moving too fast" },
+          "label": {
+            "ko": "속도가 빠르다",
+            "en": "moving too fast"
+          },
           "key": "too_fast"
         }
       ]
@@ -347,21 +422,29 @@
       },
       "options": [
         {
-          "label": { "ko": "천천히 시작하고 흐려진다", "en": "slow then fades" },
+          "label": {
+            "ko": "천천히 시작하고 흐려진다",
+            "en": "slow then fades"
+          },
           "key": "indifferent"
         },
         {
-          "label": { "ko": "처음엔 좋다가 부담이 된다", "en": "good at first then heavy" },
+          "label": {
+            "ko": "처음엔 좋다가 부담이 된다",
+            "en": "good at first then heavy"
+          },
           "key": "pressure"
         },
         {
-          "label": { "ko": "빠르게 시작하고 빨리 식는다", "en": "fast start, fast end" },
+          "label": {
+            "ko": "빠르게 시작하고 빨리 식는다",
+            "en": "fast start, fast end"
+          },
           "key": "too_fast"
         }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다.",
     "en": "This test is for fun and self-reflection only."

@@ -1,11 +1,14 @@
 import type { PercentageQuizDefinition } from "@/components/quiz/percentageTypes";
 import { pickQuizText } from "@/components/quiz/types";
+import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import type { SnackQuizDefinition } from "@/components/quiz/types";
 import { koQuizCatalogForHome } from "@/content/quiz";
-import { snackQuizHref } from "./quizRoutes";
+import { quizPathSegment, snackQuizHref } from "./quizRoutes";
 
 export type KoHomeRailItem = {
   href: string;
+  /** URL 경로 세그먼트 (`/{lang}/{cat}/{slug}/`) — 툴팁·디버그용 */
+  slug: string;
   title: string;
   /** 레일 카드 하단 한 줄 (부제 · N문항) */
   subtitleLine: string;
@@ -29,20 +32,25 @@ function toRailItem(
   locale: string,
 ): KoHomeRailItem {
   const cat = def.category?.trim() || "love";
-  const href = snackQuizHref(locale, cat, def.id);
+  const slug = quizPathSegment(def);
+  const href = snackQuizHref(locale, cat, slug);
   const title = pickQuizText(locale, def.title);
   const subtitle = pickQuizText(locale, def.subtitle);
   const n = def.questions.length;
   const subtitleLine = subtitle ? `${subtitle} · ${n}문항` : `${n}문항`;
-  const image = (
+  const imageRaw = (
     def.card?.railImage ||
     def.card?.image ||
     def.images?.thumbnail ||
     ""
   ).trim();
+  const image = imageRaw.startsWith("/images/quiz/")
+    ? quizAssetUrl(imageRaw, locale)
+    : imageRaw;
   return {
     href,
-    title: title || def.id,
+    slug,
+    title: title || String(def.id),
     subtitleLine,
     subtitleOnly: subtitle,
     image,
@@ -54,6 +62,21 @@ function toRailItem(
 /** `koQuizCatalogForHome` 기준, `card.priority` 내림차순 */
 export function getKoHomeRailSorted(locale: string): KoHomeRailItem[] {
   return koQuizCatalogForHome
+    .map((d) => toRailItem(d, locale))
+    .sort((a, b) => b.priority - a.priority);
+}
+
+function isLoveCategory(def: SnackQuizDefinition | PercentageQuizDefinition): boolean {
+  return def.category?.trim() === "love";
+}
+
+/**
+ * JSON `category: "love"` 인 퀴즈만 — 메인 `썸·연애` 섹션 타일용.
+ * 정렬은 홈 레일과 동일하게 `card.priority` 내림차순.
+ */
+export function getKoLoveQuizzesSorted(locale: string): KoHomeRailItem[] {
+  return koQuizCatalogForHome
+    .filter(isLoveCategory)
     .map((d) => toRailItem(d, locale))
     .sort((a, b) => b.priority - a.priority);
 }

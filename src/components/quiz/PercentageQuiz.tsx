@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizResultShare } from "./QuizResultShare";
 import { pickQuizText } from "./types";
@@ -192,6 +193,12 @@ export function PercentageQuiz({
   }
 
   const q = questions[step];
+  const shareTextInProgress = (() => {
+    const t = pickQuizText(locale, definition.title) || "Quiz";
+    const sub = definition.subtitle ? pickQuizText(locale, definition.subtitle) : "";
+    return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
+  })();
+
   return (
     <div className="quiz-shell">
       <div className="quiz-progress-wrap" aria-hidden="true">
@@ -201,7 +208,7 @@ export function PercentageQuiz({
       {q.image ? (
         <div className="quiz-q-visual">
           <img
-            src={q.image}
+            src={quizAssetUrl(q.image, locale)}
             alt=""
             width={480}
             height={320}
@@ -233,6 +240,9 @@ export function PercentageQuiz({
           );
         })}
       </ul>
+      <div className="quiz-share-wrap quiz-share-wrap--during">
+        <QuizResultShare ui={ui} shareText={shareTextInProgress} />
+      </div>
     </div>
   );
 }

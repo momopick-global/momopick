@@ -1,13 +1,25 @@
 {
   "id": "love-temperature-test",
-  "locales": ["ko", "en"],
+  "slug": "love-temperature-test",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "성향", "en": "personality" },
-    { "ko": "심리", "en": "psychology" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
   ],
-
   "title": {
     "ko": "나는 어떤 연애 온도일까?",
     "en": "What Is Your Love Temperature?"
@@ -16,21 +28,24 @@
     "ko": "차가움 vs 뜨거움",
     "en": "Cold or passionate, where do you stand?"
   },
-
   "images": {
     "thumbnail": "/images/quiz/love-temperature-test/thumb.webp",
-    "og": "/images/quiz/love-temperature-test/thumb.webp",
-    "start": "/images/quiz/love-temperature-test/start.webp"
+    "og": "/images/quiz/love-temperature-test/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "연애에서의 몰입·표현 스타일을 점수로 환산해 나의 연애 온도를 알아보는 테스트",
       "en": "See how hot or cool your dating style runs, scored and mapped to a love temperature"
     },
     "keywords": [
-      { "ko": "연애 테스트", "en": "love test" },
-      { "ko": "연애 온도", "en": "love temperature" }
+      {
+        "ko": "연애 테스트",
+        "en": "love test"
+      },
+      {
+        "ko": "연애 온도",
+        "en": "love temperature"
+      }
     ],
     "ogTitle": {
       "ko": "나는 어떤 연애 온도일까?",
@@ -41,7 +56,6 @@
       "en": "Cold or passionate — where do you stand?"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
@@ -49,10 +63,8 @@
       "en": "🌡️ Love temperature"
     },
     "image": "/images/quiz/love-temperature-test/thumb.webp",
-    "railImage": "/images/banners/ko/rail-05.webp",
     "priority": 91
   },
-
   "analytics": {
     "eventKey": "love_temperature_test",
     "contentGroup": "love",
@@ -62,11 +74,12 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["confession-success-rate", "ideal-type-reality-test", "when-men-lose-interest"],
-
+  "related": [
+    "confession-success-rate",
+    "dating-expert-or-beginner",
+    "when-men-lose-interest"
+  ],
   "resultDisplay": "temperature",
-
   "resultRanges": [
     {
       "min": 0,
@@ -108,7 +121,6 @@
       }
     }
   ],
-
   "questions": [
     {
       "prompt": {
@@ -116,10 +128,34 @@
         "en": "When I start dating, I..."
       },
       "options": [
-        { "label": { "ko": "완전 올인", "en": "Go all in" }, "score": 15 },
-        { "label": { "ko": "적당히 몰입", "en": "Stay balanced" }, "score": 10 },
-        { "label": { "ko": "천천히 다가감", "en": "Take it slow" }, "score": 5 },
-        { "label": { "ko": "거리 유지", "en": "Keep distance" }, "score": 0 }
+        {
+          "label": {
+            "ko": "완전 올인",
+            "en": "Go all in"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "적당히 몰입",
+            "en": "Stay balanced"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "천천히 다가감",
+            "en": "Take it slow"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "거리 유지",
+            "en": "Keep distance"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -128,10 +164,34 @@
         "en": "How do you text?"
       },
       "options": [
-        { "label": { "ko": "수시로 연락", "en": "Constant texting" }, "score": 15 },
-        { "label": { "ko": "자주 하지만 여유있게", "en": "Frequent but chill" }, "score": 10 },
-        { "label": { "ko": "필요할 때만", "en": "Only when needed" }, "score": 5 },
-        { "label": { "ko": "거의 안함", "en": "Rarely text" }, "score": 0 }
+        {
+          "label": {
+            "ko": "수시로 연락",
+            "en": "Constant texting"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "자주 하지만 여유있게",
+            "en": "Frequent but chill"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "필요할 때만",
+            "en": "Only when needed"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "거의 안함",
+            "en": "Rarely text"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -140,10 +200,34 @@
         "en": "When I miss them, I..."
       },
       "options": [
-        { "label": { "ko": "바로 만나자고 함", "en": "Ask to meet immediately" }, "score": 15 },
-        { "label": { "ko": "슬쩍 티냄", "en": "Drop hints" }, "score": 10 },
-        { "label": { "ko": "참는다", "en": "Hold it in" }, "score": 5 },
-        { "label": { "ko": "생각 안하려 함", "en": "Ignore the feeling" }, "score": 0 }
+        {
+          "label": {
+            "ko": "바로 만나자고 함",
+            "en": "Ask to meet immediately"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "슬쩍 티냄",
+            "en": "Drop hints"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "참는다",
+            "en": "Hold it in"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "생각 안하려 함",
+            "en": "Ignore the feeling"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -152,10 +236,34 @@
         "en": "When I feel jealous, I..."
       },
       "options": [
-        { "label": { "ko": "솔직하게 표현", "en": "Express it openly" }, "score": 15 },
-        { "label": { "ko": "살짝 티냄", "en": "Show it subtly" }, "score": 10 },
-        { "label": { "ko": "속으로만 느낌", "en": "Keep it inside" }, "score": 5 },
-        { "label": { "ko": "신경 안씀", "en": "Don’t care" }, "score": 0 }
+        {
+          "label": {
+            "ko": "솔직하게 표현",
+            "en": "Express it openly"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "살짝 티냄",
+            "en": "Show it subtly"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "속으로만 느낌",
+            "en": "Keep it inside"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "신경 안씀",
+            "en": "Don’t care"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -164,10 +272,34 @@
         "en": "What matters most in a relationship?"
       },
       "options": [
-        { "label": { "ko": "감정과 애정", "en": "Emotion & affection" }, "score": 15 },
-        { "label": { "ko": "균형과 안정", "en": "Balance & stability" }, "score": 10 },
-        { "label": { "ko": "자유와 거리", "en": "Freedom & space" }, "score": 5 },
-        { "label": { "ko": "간섭 없음", "en": "No interference" }, "score": 0 }
+        {
+          "label": {
+            "ko": "감정과 애정",
+            "en": "Emotion & affection"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "균형과 안정",
+            "en": "Balance & stability"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "자유와 거리",
+            "en": "Freedom & space"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "간섭 없음",
+            "en": "No interference"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -176,10 +308,34 @@
         "en": "After a fight, I..."
       },
       "options": [
-        { "label": { "ko": "바로 풀려고 함", "en": "Try to fix it immediately" }, "score": 15 },
-        { "label": { "ko": "시간 두고 대화", "en": "Talk after cooling down" }, "score": 10 },
-        { "label": { "ko": "회피함", "en": "Avoid it" }, "score": 5 },
-        { "label": { "ko": "그냥 무시", "en": "Ignore it" }, "score": 0 }
+        {
+          "label": {
+            "ko": "바로 풀려고 함",
+            "en": "Try to fix it immediately"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "시간 두고 대화",
+            "en": "Talk after cooling down"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "회피함",
+            "en": "Avoid it"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "그냥 무시",
+            "en": "Ignore it"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -188,10 +344,34 @@
         "en": "How do you feel about physical affection?"
       },
       "options": [
-        { "label": { "ko": "중요함", "en": "Very important" }, "score": 15 },
-        { "label": { "ko": "좋은 요소", "en": "Nice to have" }, "score": 10 },
-        { "label": { "ko": "크게 중요하지 않음", "en": "Not that important" }, "score": 5 },
-        { "label": { "ko": "불편함", "en": "Uncomfortable" }, "score": 0 }
+        {
+          "label": {
+            "ko": "중요함",
+            "en": "Very important"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "좋은 요소",
+            "en": "Nice to have"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "크게 중요하지 않음",
+            "en": "Not that important"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "불편함",
+            "en": "Uncomfortable"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -200,14 +380,37 @@
         "en": "After a breakup, I..."
       },
       "options": [
-        { "label": { "ko": "오래 힘들어함", "en": "Struggle for a long time" }, "score": 15 },
-        { "label": { "ko": "시간 지나면 괜찮아짐", "en": "Recover over time" }, "score": 10 },
-        { "label": { "ko": "빨리 털어냄", "en": "Move on quickly" }, "score": 5 },
-        { "label": { "ko": "별 감정 없음", "en": "Feel nothing" }, "score": 0 }
+        {
+          "label": {
+            "ko": "오래 힘들어함",
+            "en": "Struggle for a long time"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "시간 지나면 괜찮아짐",
+            "en": "Recover over time"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "빨리 털어냄",
+            "en": "Move on quickly"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "별 감정 없음",
+            "en": "Feel nothing"
+          },
+          "score": 0
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다.",
     "en": "This test is for fun and self-reflection only."

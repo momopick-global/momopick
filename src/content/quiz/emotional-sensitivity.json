@@ -1,0 +1,508 @@
+{
+  "id": "emotional-sensitivity",
+  "slug": "emotional-sensitivity",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "예민함",
+      "en": "sensitivity"
+    },
+    {
+      "ko": "감정",
+      "en": "emotion"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
+  ],
+  "title": {
+    "ko": "나는 왜 예민할까?",
+    "en": "Why Are You So Sensitive?"
+  },
+  "subtitle": {
+    "ko": "감정 민감도 테스트",
+    "en": "Understanding your emotional triggers"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/emotional-sensitivity/thumb.webp",
+    "og": "/images/quiz/emotional-sensitivity/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "사소한 말·갈등·스트레스에서의 반응으로 공감형·균형형·과해석형 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether you lean empathetic, balanced, or overthinking in sensitivity"
+    },
+    "keywords": [
+      {
+        "ko": "예민함 테스트",
+        "en": "sensitivity test"
+      },
+      {
+        "ko": "HSP",
+        "en": "emotional sensitivity"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나는 왜 예민할까?",
+      "en": "Why Are You So Sensitive?"
+    },
+    "ogDescription": {
+      "ko": "감정 민감도 테스트",
+      "en": "Understanding your emotional triggers"
+    }
+  },
+  "card": {
+    "theme": "personality",
+    "kicker": {
+      "ko": "🫧 감정 민감도",
+      "en": "🫧 Emotional sensitivity"
+    },
+    "image": "/images/quiz/emotional-sensitivity/thumb.webp",
+    "priority": 83
+  },
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "emotional_sensitivity",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "mental-strength-test",
+    "anger-style-test",
+    "hidden-dark-side"
+  ],
+  "results": {
+    "A": {
+      "emoji": "💗",
+      "scoreKey": "A",
+      "title": {
+        "ko": "공감형",
+        "en": "Empathetic Type"
+      },
+      "tagline": {
+        "ko": "타인의 감정을 섬세하게 느끼는 타입",
+        "en": "You feel others’ emotions with depth"
+      },
+      "body": {
+        "ko": "타인의 감정을 잘 느끼는 섬세한 타입입니다. 예민함이 아니라 공감 능력이 높은 것입니다.\n사소한 말에도 이해하려 하고, 다른 사람 감정에 같이 느껴지는 편이에요.\n갈등에서는 상대 입장을 많이 생각하고, 내 감정은 섬세하고 깊게 느껴질 수 있습니다.\n타인의 반응을 세심하게 읽고, 스트레스에서도 공감하며 이해하려 합니다.\n사람을 대할 때 상대 감정을 우선하는 흐름이 나오기 쉽고, 예민함의 뿌리를 ‘공감’으로 설명하기도 합니다.",
+        "en": "Your sensitivity comes from strong empathy and awareness.\nYou try to understand small comments; others’ feelings can feel like your own.\nIn conflict you consider the other side deeply; your emotions may feel delicate and rich.\nYou read reactions carefully and under stress you still reach for understanding.\nYou often prioritize others’ feelings—your edge is empathy, not weakness."
+      },
+      "image": "/images/quiz/emotional-sensitivity/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 예민함 유형은 공감형",
+          "en": "My sensitivity type is Empathetic"
+        },
+        "description": {
+          "ko": "공감 능력이 높은 섬세한 타입",
+          "en": "Strong empathy and emotional awareness"
+        },
+        "image": "/images/quiz/emotional-sensitivity/result-1.webp"
+      }
+    },
+    "B": {
+      "emoji": "⚖️",
+      "scoreKey": "B",
+      "title": {
+        "ko": "균형형",
+        "en": "Balanced Type"
+      },
+      "tagline": {
+        "ko": "감정과 거리를 적절히 유지하는 타입",
+        "en": "You keep emotion and distance in balance"
+      },
+      "body": {
+        "ko": "감정과 이성을 적절히 유지하는 타입입니다. 예민함을 잘 조절하는 편입니다.\n사소한 말에 조금 신경 쓰이거나 금방 잊기도 하고, 다른 사람 감정에는 어느 정도 공감하되 큰 영향 없이 넘기기도 합니다.\n갈등에서는 적당히 거리를 두고, 내 감정은 비교적 안정적으로 느껴질 수 있어요.\n타인의 반응은 적당히 신경 쓰거나 별로 신경 쓰지 않기도 합니다.\n스트레스에서는 조절하려 하고, 사람을 대할 때는 적당히 거리를 유지하거나 편하게 대하는 편입니다.",
+        "en": "You maintain a balanced emotional state.\nSmall comments may sting a little or fade fast; you empathize somewhat without drowning in it.\nIn conflict you keep some distance; your feelings stay relatively steady.\nYou notice others’ reactions in moderation—or let them go.\nUnder stress you try to manage; with people you balance closeness and ease."
+      },
+      "image": "/images/quiz/emotional-sensitivity/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 예민함 유형은 균형형",
+          "en": "My sensitivity type is Balanced"
+        },
+        "description": {
+          "ko": "감정을 적절히 조절하는 타입",
+          "en": "You regulate sensitivity well"
+        },
+        "image": "/images/quiz/emotional-sensitivity/result-2.webp"
+      }
+    },
+    "C": {
+      "emoji": "🌀",
+      "scoreKey": "C",
+      "title": {
+        "ko": "과해석형",
+        "en": "Overthinking Type"
+      },
+      "tagline": {
+        "ko": "작은 신호를 크게 받아들이는 타입",
+        "en": "Small signals feel big in your mind"
+      },
+      "body": {
+        "ko": "작은 신호도 크게 받아들이는 타입입니다. 생각이 깊은 만큼 쉽게 흔들릴 수 있습니다.\n사소한 말이 계속 생각나고, 다른 사람 감정을 보면 내 감정이 더 커질 수 있어요.\n갈등에서 혼자 계속 생각하거나 감정이 커지고, 내 감정은 기복이 심하거나 작은 것에도 흔들리기 쉽습니다.\n타인의 반응을 과하게 해석하고, 스트레스에서는 감정에 깊게 빠지거나 회피하려 할 수 있어요.\n사람을 대할 때 눈치를 많이 보며, 예민함을 ‘과한 해석’이나 ‘감정 기복’으로 느끼기도 합니다.",
+        "en": "You tend to overanalyze and amplify emotions.\nSmall comments can loop in your head; others’ feelings may intensify your own.\nIn conflict you may overthink alone or feel overwhelmed.\nYour emotions may swing hard or shake at small things.\nYou may overread reactions; under stress you dive deep or want to escape.\nWith people you watch for cues a lot—sensitivity shows up as interpretation and mood swings."
+      },
+      "image": "/images/quiz/emotional-sensitivity/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 예민함 유형은 과해석형",
+          "en": "My sensitivity type is Overthinking"
+        },
+        "description": {
+          "ko": "작은 신호를 크게 받아들이는 타입",
+          "en": "You amplify and overanalyze emotional signals"
+        },
+        "image": "/images/quiz/emotional-sensitivity/result-3.webp"
+      }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "공감·균형·과해석이 섞인 민감도",
+      "en": "A mix of empathy, balance, and overthinking"
+    },
+    "body": {
+      "ko": "한 가지 유형으로만 정의되지 않을 수 있어요.\n상황에 따라 공감이 크게 나오기도 하고, 거리를 두기도 하며, 생각이 커지기도 합니다.\n‘나는 항상 예민하다’보다 ‘이럴 때 이렇게 반응한다’를 아는 것이 도움이 됩니다.",
+      "en": "You may not fit one label.\nSometimes empathy leads, sometimes balance, sometimes overthinking.\nNoticing your patterns by situation matters more than a single score."
+    },
+    "image": "/images/quiz/emotional-sensitivity/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나의 예민함 유형은 복합형",
+        "en": "My sensitivity profile is mixed"
+      },
+      "description": {
+        "ko": "공감·균형·과해석 성향이 함께 나타날 수 있어요",
+        "en": "Empathy, balance, and overthinking can all show up"
+      },
+      "image": "/images/quiz/emotional-sensitivity/thumb.webp"
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "사소한 말에도 나는?",
+        "en": "When hearing small comments, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "계속 생각난다",
+            "en": "Keep thinking about it"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "조금 신경 쓰인다",
+            "en": "Feel slightly affected"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "공감하려 한다",
+            "en": "Try to understand"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "금방 잊는다",
+            "en": "Forget quickly"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "다른 사람 감정을 보면 나는?",
+        "en": "When I see others' emotions, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "같이 느껴진다",
+            "en": "Feel it too"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "어느 정도 공감",
+            "en": "Somewhat empathize"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "큰 영향 없음",
+            "en": "Not affected much"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "내 감정이 더 커짐",
+            "en": "My feelings intensify"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "갈등 상황에서 나는?",
+        "en": "In conflicts, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "상대 입장을 많이 생각",
+            "en": "Consider others deeply"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "적당히 거리 둠",
+            "en": "Keep some distance"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "혼자 계속 생각함",
+            "en": "Overthink alone"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "감정이 커짐",
+            "en": "Feel overwhelmed"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내 감정은?",
+        "en": "My emotions are..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "섬세하고 깊다",
+            "en": "Deep and delicate"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "안정적인 편",
+            "en": "Relatively stable"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "기복이 심하다",
+            "en": "Up and down"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "작은 것에도 흔들림",
+            "en": "Easily shaken"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "타인의 반응에 나는?",
+        "en": "When others react, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "세심하게 읽는다",
+            "en": "Read it carefully"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "적당히 신경쓴다",
+            "en": "Notice somewhat"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "과하게 해석한다",
+            "en": "Overinterpret"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "별로 신경 안쓴다",
+            "en": "Don’t care much"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "스트레스 상황에서 나는?",
+        "en": "Under stress, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "감정에 깊게 빠짐",
+            "en": "Dive into feelings"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "공감하며 이해하려 함",
+            "en": "Try to understand"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "조절하려 한다",
+            "en": "Try to manage"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "회피하려 한다",
+            "en": "Avoid it"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "사람을 대할 때 나는?",
+        "en": "When dealing with people, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "상대 감정을 우선",
+            "en": "Prioritize feelings"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "적당히 거리 유지",
+            "en": "Keep balance"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "눈치를 많이 본다",
+            "en": "Overthink reactions"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "편하게 대한다",
+            "en": "Stay relaxed"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "나의 예민함은?",
+        "en": "My sensitivity is..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "공감에서 나온다",
+            "en": "From empathy"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "상황에 따라 다름",
+            "en": "Depends on context"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "과한 해석에서 나온다",
+            "en": "From overthinking"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "감정 기복 때문이다",
+            "en": "From emotional swings"
+          },
+          "key": "C"
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다. 임상적 진단이 아닙니다.",
+    "en": "This test is for fun and self-reflection only; it is not a clinical assessment."
+  }
+}

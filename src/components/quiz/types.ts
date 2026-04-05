@@ -2,7 +2,7 @@
  * 스낵 퀴즈(다지선다 득표 → 최다 득표 결과) JSON 스키마 — CRM/API와 동일 구조로 주고받기 쉽게 유지.
  *
  * 다국어: 문항·결과 문구는 로케일별 JSON 한 벌이거나, 동일 JSON 안에 `{ ko, en }` 인라인 필드로 둘 수 있다.
- * 동일 테스트는 `id`를 맞추고, `resultKeys`·옵션 `key`는 모든 언어에서 동일하게 두는 것을 권장(통계·A/B·CRM 연동).
+ * 동일 테스트는 `id`(보통 `slug`와 동일)를 맞추고, `resultKeys`·옵션 `key`는 모든 언어에서 동일하게 두는 것을 권장(통계·A/B·CRM 연동).
  */
 
 /** JSON 내 사용자 문구 (언어별 키) */
@@ -33,7 +33,7 @@ export type SnackQuizResult = {
   title: SnackQuizText;
   tagline: SnackQuizText;
   body: SnackQuizText;
-  /** 결과 화면 상단에 노출할 이미지 URL (선택, 예: `/images/quiz/{slug}/result-1.webp`) */
+  /** 결과 화면 상단 이미지 (JSON 경로는 로케일 세그먼트 없이 `/images/quiz/{slug}/…`) */
   image?: string;
   share?: SnackQuizResultShare;
 };
@@ -65,11 +65,10 @@ export type SnackQuizPackMeta = {
   ogDescription?: SnackQuizText;
 };
 
+/** 경로는 `/images/quiz/{slug}/…파일` 로만 적고, 실제 에셋은 `public/…/{slug}/{locale}/` 에 둠 (`quizAssetUrl`). */
 export type SnackQuizPackImages = {
   thumbnail?: string;
   og?: string;
-  /** 시작(커버) 화면 이미지 */
-  start?: string;
 };
 
 /** 퀴즈 목록·레일 카드용 요약 정보 (경로는 `snackQuizHref` 등으로 생성) */
@@ -117,8 +116,10 @@ export type SnackQuizAnalytics = {
 export type SnackQuizLocalized = Partial<Record<string, string>>;
 
 export type SnackQuizDefinition = {
-  /** 식별용 (로깅·CRM 연동). 번역본마다 동일 id 권장 */
+  /** 카탈로그 식별자 (URL `slug`와 동일 권장) */
   id: string;
+  /** URL 경로 세그먼트 `/{lang}/{cat}/{slug}/` */
+  slug: string;
   /** UI·검증용 언어 코드 목록 (`SnackQuizText`에 `en` 등이 있으면 여기에도 포함 권장) */
   locales?: string[];
   /** 목록·URL용 카테고리 슬러그 (선택) */
@@ -145,7 +146,7 @@ export type SnackQuizDefinition = {
   logic?: SnackQuizLogic;
   /** 분석용 식별자·속성 (선택) */
   analytics?: SnackQuizAnalytics;
-  /** 연관 퀴즈 id 목록 (다른 팩의 `id`와 동일한 슬러그) */
+  /** 연관 퀴즈 — 대상 퀴즈의 `slug` */
   related?: string[];
   results: Record<string, SnackQuizResult>;
   /** 최고 득표가 2개 이상일 때 */

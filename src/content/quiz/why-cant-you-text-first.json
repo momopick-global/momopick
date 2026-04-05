@@ -1,13 +1,25 @@
 {
   "id": "why-cant-you-text-first",
-  "locales": ["ko", "en"],
+  "slug": "why-cant-you-text-first",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "연락", "en": "texting" },
-    { "ko": "심리", "en": "psychology" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "연락",
+      "en": "texting"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
   ],
-
   "title": {
     "ko": "나는 왜 먼저 연락을 못할까?",
     "en": "Why Can't You Text First?"
@@ -16,22 +28,28 @@
     "ko": "자존심일까 두려움일까",
     "en": "Is it your pride or your fear?"
   },
-
   "images": {
     "thumbnail": "/images/quiz/why-cant-you-text-first/thumb.webp",
-    "og": "/images/quiz/why-cant-you-text-first/thumb.webp",
-    "start": "/images/quiz/why-cant-you-text-first/start.webp"
+    "og": "/images/quiz/why-cant-you-text-first/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "내가 먼저 연락하지 못하는 진짜 이유가 상처 회피인지, 자존심인지, 계산 때문인지 알아보는 테스트",
       "en": "Find out whether your hesitation to text first comes from fear of getting hurt, pride, or calculation"
     },
     "keywords": [
-      { "ko": "연애 테스트", "en": "love test" },
-      { "ko": "연락 심리", "en": "texting psychology" },
-      { "ko": "썸 테스트", "en": "situationship test" }
+      {
+        "ko": "연애 테스트",
+        "en": "love test"
+      },
+      {
+        "ko": "연락 심리",
+        "en": "texting psychology"
+      },
+      {
+        "ko": "썸 테스트",
+        "en": "situationship test"
+      }
     ],
     "ogTitle": {
       "ko": "나는 왜 먼저 연락을 못할까?",
@@ -42,7 +60,6 @@
       "en": "Maybe it’s not about courage, but your emotional pattern"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
@@ -50,13 +67,18 @@
       "en": "📱 Texting Psychology Test"
     },
     "image": "/images/quiz/why-cant-you-text-first/thumb.webp",
-    "railImage": "/images/banners/ko/rail-02.webp",
     "priority": 96
   },
-
-  "resultKeys": ["hurt_avoidant", "prideful", "calculated"],
-  "resultOrder": ["hurt_avoidant", "prideful", "calculated"],
-
+  "resultKeys": [
+    "hurt_avoidant",
+    "prideful",
+    "calculated"
+  ],
+  "resultOrder": [
+    "hurt_avoidant",
+    "prideful",
+    "calculated"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -65,7 +87,6 @@
     },
     "blendOnTie": true
   },
-
   "analytics": {
     "eventKey": "why_cant_you_text_first",
     "contentGroup": "love",
@@ -75,13 +96,11 @@
       "share": "quiz_share"
     }
   },
-
   "related": [
     "ambiguous-situationship-end",
     "who-likes-you-type",
     "love-pattern-destroying-habit"
   ],
-
   "results": {
     "hurt_avoidant": {
       "emoji": "🩹",
@@ -111,7 +130,6 @@
         "image": "/images/quiz/why-cant-you-text-first/result-1.webp"
       }
     },
-
     "prideful": {
       "emoji": "👑",
       "scoreKey": "prideful",
@@ -140,7 +158,6 @@
         "image": "/images/quiz/why-cant-you-text-first/result-2.webp"
       }
     },
-
     "calculated": {
       "emoji": "🧠",
       "scoreKey": "calculated",
@@ -170,7 +187,6 @@
       }
     }
   },
-
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
@@ -199,7 +215,6 @@
       "image": "/images/quiz/why-cant-you-text-first/thumb.webp"
     }
   },
-
   "questions": [
     {
       "prompt": {
@@ -434,7 +449,6 @@
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다.",
     "en": "This test is for fun and self-reflection only."

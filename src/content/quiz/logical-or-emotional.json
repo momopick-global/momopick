@@ -1,13 +1,25 @@
 {
   "id": "logical-or-emotional",
-  "locales": ["ko", "en"],
+  "slug": "logical-or-emotional",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "성향", "en": "personality" },
-    { "ko": "심리", "en": "psychology" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
   ],
-
   "title": {
     "ko": "나는 이성적일까 감성적일까?",
     "en": "Are You More Logical or Emotional?"
@@ -16,21 +28,24 @@
     "ko": "T/F 지수 공개",
     "en": "Discover your true thinking style"
   },
-
   "images": {
     "thumbnail": "/images/quiz/logical-or-emotional/thumb.webp",
-    "og": "/images/quiz/logical-or-emotional/thumb.webp",
-    "start": "/images/quiz/logical-or-emotional/start.webp"
+    "og": "/images/quiz/logical-or-emotional/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "판단·갈등·연애 패턴으로 이성 지수와 감성 지수를 나란히 알아보는 테스트",
       "en": "See your logical vs emotional split from everyday choices"
     },
     "keywords": [
-      { "ko": "연애 테스트", "en": "love test" },
-      { "ko": "MBTI T F", "en": "thinking feeling" }
+      {
+        "ko": "연애 테스트",
+        "en": "love test"
+      },
+      {
+        "ko": "MBTI T F",
+        "en": "thinking feeling"
+      }
     ],
     "ogTitle": {
       "ko": "나는 이성적일까 감성적일까?",
@@ -41,7 +56,6 @@
       "en": "Discover your thinking vs feeling balance"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
@@ -49,10 +63,8 @@
       "en": "🧠 Logic vs emotion"
     },
     "image": "/images/quiz/logical-or-emotional/thumb.webp",
-    "railImage": "/images/banners/ko/tile-love-01.webp",
     "priority": 88
   },
-
   "analytics": {
     "eventKey": "logical_or_emotional",
     "contentGroup": "love",
@@ -62,15 +74,22 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["relationship-balance-test", "love-temperature-test", "ideal-type-reality-test"],
-
+  "related": [
+    "relationship-balance-test",
+    "love-temperature-test",
+    "dating-expert-or-beginner"
+  ],
   "resultDisplay": "dual",
   "dualLabels": {
-    "logical": { "ko": "이성", "en": "Logical" },
-    "emotional": { "ko": "감성", "en": "Emotional" }
+    "logical": {
+      "ko": "이성",
+      "en": "Logical"
+    },
+    "emotional": {
+      "ko": "감성",
+      "en": "Emotional"
+    }
   },
-
   "resultRanges": [
     {
       "min": 0,
@@ -109,7 +128,6 @@
       }
     }
   ],
-
   "questions": [
     {
       "prompt": {
@@ -117,10 +135,34 @@
         "en": "When solving problems, I..."
       },
       "options": [
-        { "label": { "ko": "감정보다 논리를 본다", "en": "Focus on logic over feelings" }, "score": 15 },
-        { "label": { "ko": "상황에 따라 다름", "en": "Depends on the situation" }, "score": 10 },
-        { "label": { "ko": "사람의 감정을 먼저 본다", "en": "Consider emotions first" }, "score": 5 },
-        { "label": { "ko": "감정에 크게 좌우된다", "en": "Heavily driven by feelings" }, "score": 0 }
+        {
+          "label": {
+            "ko": "감정보다 논리를 본다",
+            "en": "Focus on logic over feelings"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "상황에 따라 다름",
+            "en": "Depends on the situation"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "사람의 감정을 먼저 본다",
+            "en": "Consider emotions first"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "감정에 크게 좌우된다",
+            "en": "Heavily driven by feelings"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -129,10 +171,34 @@
         "en": "In conflicts, I..."
       },
       "options": [
-        { "label": { "ko": "팩트로 이야기함", "en": "Talk with facts" }, "score": 15 },
-        { "label": { "ko": "조율하려 노력", "en": "Try to balance" }, "score": 10 },
-        { "label": { "ko": "상대 감정을 고려", "en": "Consider their feelings" }, "score": 5 },
-        { "label": { "ko": "감정적으로 반응", "en": "React emotionally" }, "score": 0 }
+        {
+          "label": {
+            "ko": "팩트로 이야기함",
+            "en": "Talk with facts"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "조율하려 노력",
+            "en": "Try to balance"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "상대 감정을 고려",
+            "en": "Consider their feelings"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "감정적으로 반응",
+            "en": "React emotionally"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -141,10 +207,34 @@
         "en": "When making decisions, I..."
       },
       "options": [
-        { "label": { "ko": "근거와 데이터 중심", "en": "Use data and logic" }, "score": 15 },
-        { "label": { "ko": "반반 고려", "en": "Balance both" }, "score": 10 },
-        { "label": { "ko": "느낌을 따른다", "en": "Follow intuition" }, "score": 5 },
-        { "label": { "ko": "기분에 따라 결정", "en": "Decide by mood" }, "score": 0 }
+        {
+          "label": {
+            "ko": "근거와 데이터 중심",
+            "en": "Use data and logic"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "반반 고려",
+            "en": "Balance both"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "느낌을 따른다",
+            "en": "Follow intuition"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "기분에 따라 결정",
+            "en": "Decide by mood"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -153,10 +243,34 @@
         "en": "When someone is struggling, I..."
       },
       "options": [
-        { "label": { "ko": "해결책 제시", "en": "Give solutions" }, "score": 15 },
-        { "label": { "ko": "공감 + 조언", "en": "Empathize and advise" }, "score": 10 },
-        { "label": { "ko": "공감 위주", "en": "Mostly empathize" }, "score": 5 },
-        { "label": { "ko": "같이 감정에 빠짐", "en": "Feel it deeply together" }, "score": 0 }
+        {
+          "label": {
+            "ko": "해결책 제시",
+            "en": "Give solutions"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "공감 + 조언",
+            "en": "Empathize and advise"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "공감 위주",
+            "en": "Mostly empathize"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "같이 감정에 빠짐",
+            "en": "Feel it deeply together"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -165,10 +279,34 @@
         "en": "In relationships, I..."
       },
       "options": [
-        { "label": { "ko": "현실적으로 판단", "en": "Think realistically" }, "score": 15 },
-        { "label": { "ko": "균형 잡으려 함", "en": "Try to balance" }, "score": 10 },
-        { "label": { "ko": "감정에 충실", "en": "Follow emotions" }, "score": 5 },
-        { "label": { "ko": "완전 감정형", "en": "Purely emotional" }, "score": 0 }
+        {
+          "label": {
+            "ko": "현실적으로 판단",
+            "en": "Think realistically"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "균형 잡으려 함",
+            "en": "Try to balance"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "감정에 충실",
+            "en": "Follow emotions"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "완전 감정형",
+            "en": "Purely emotional"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -177,10 +315,34 @@
         "en": "Under stress, I..."
       },
       "options": [
-        { "label": { "ko": "원인 분석", "en": "Analyze causes" }, "score": 15 },
-        { "label": { "ko": "정리하려 노력", "en": "Try to organize" }, "score": 10 },
-        { "label": { "ko": "감정에 집중", "en": "Focus on feelings" }, "score": 5 },
-        { "label": { "ko": "감정 폭발", "en": "Get overwhelmed" }, "score": 0 }
+        {
+          "label": {
+            "ko": "원인 분석",
+            "en": "Analyze causes"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "정리하려 노력",
+            "en": "Try to organize"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "감정에 집중",
+            "en": "Focus on feelings"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "감정 폭발",
+            "en": "Get overwhelmed"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -189,10 +351,34 @@
         "en": "How do you judge people?"
       },
       "options": [
-        { "label": { "ko": "행동과 결과", "en": "By actions and results" }, "score": 15 },
-        { "label": { "ko": "전체적인 느낌", "en": "Overall impression" }, "score": 10 },
-        { "label": { "ko": "감정적 연결", "en": "Emotional connection" }, "score": 5 },
-        { "label": { "ko": "첫 느낌", "en": "First feeling" }, "score": 0 }
+        {
+          "label": {
+            "ko": "행동과 결과",
+            "en": "By actions and results"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "전체적인 느낌",
+            "en": "Overall impression"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "감정적 연결",
+            "en": "Emotional connection"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "첫 느낌",
+            "en": "First feeling"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -201,14 +387,37 @@
         "en": "When explaining my choices, I..."
       },
       "options": [
-        { "label": { "ko": "논리적으로 설명", "en": "Explain logically" }, "score": 15 },
-        { "label": { "ko": "적당히 설명", "en": "Explain moderately" }, "score": 10 },
-        { "label": { "ko": "감정 중심 설명", "en": "Explain emotionally" }, "score": 5 },
-        { "label": { "ko": "그냥 느낌이라 말함", "en": "Just say it felt right" }, "score": 0 }
+        {
+          "label": {
+            "ko": "논리적으로 설명",
+            "en": "Explain logically"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "적당히 설명",
+            "en": "Explain moderately"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "감정 중심 설명",
+            "en": "Explain emotionally"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "그냥 느낌이라 말함",
+            "en": "Just say it felt right"
+          },
+          "score": 0
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다.",
     "en": "This test is for fun and self-reflection only."

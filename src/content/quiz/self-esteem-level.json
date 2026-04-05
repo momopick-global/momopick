@@ -1,0 +1,415 @@
+{
+  "id": "self-esteem-level",
+  "slug": "self-esteem-level",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "자존감",
+      "en": "self-esteem"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    },
+    {
+      "ko": "자기이해",
+      "en": "self-insight"
+    }
+  ],
+  "title": {
+    "ko": "나의 자존감 레벨은?",
+    "en": "What's Your Self-Esteem Level?"
+  },
+  "subtitle": {
+    "ko": "숨은 자존감 점수",
+    "en": "Reveal your inner confidence"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/self-esteem-level/thumb.webp",
+    "og": "/images/quiz/self-esteem-level/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "자기 인식·실수·비교·칭찬 반응 등을 점수로 환산해 자존감 지수를 알아보는 테스트",
+      "en": "Answer quick prompts to see your self-esteem score"
+    },
+    "keywords": [
+      {
+        "ko": "자존감 테스트",
+        "en": "self-esteem test"
+      },
+      {
+        "ko": "심리 테스트",
+        "en": "psychology test"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나의 자존감 레벨은?",
+      "en": "What's Your Self-Esteem Level?"
+    },
+    "ogDescription": {
+      "ko": "숨은 자존감 점수",
+      "en": "Reveal your inner confidence"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🪞 자존감",
+      "en": "🪞 Self-esteem"
+    },
+    "image": "/images/quiz/self-esteem-level/thumb.webp",
+    "priority": 87
+  },
+  "analytics": {
+    "eventKey": "self_esteem_level",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "mental-strength-test",
+    "emotional-sensitivity",
+    "hidden-dark-side"
+  ],
+  "resultDisplay": "percent",
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 44,
+      "title": {
+        "ko": "자존감 낮음",
+        "en": "Low Self-Esteem"
+      },
+      "desc": {
+        "ko": "자신을 더 긍정적으로 바라볼 필요가 있습니다.",
+        "en": "You may need to build more self-confidence."
+      }
+    },
+    {
+      "min": 45,
+      "max": 74,
+      "title": {
+        "ko": "자존감 보통",
+        "en": "Moderate Self-Esteem"
+      },
+      "desc": {
+        "ko": "상황에 따라 자존감이 흔들릴 수 있습니다.",
+        "en": "Your self-esteem varies depending on situations."
+      }
+    },
+    {
+      "min": 75,
+      "max": 100,
+      "title": {
+        "ko": "자존감 높음",
+        "en": "High Self-Esteem"
+      },
+      "desc": {
+        "ko": "자신을 긍정적으로 바라보는 건강한 상태입니다.",
+        "en": "You have a healthy level of self-confidence."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": {
+        "ko": "나는 나 자신을 어떻게 생각하나?",
+        "en": "How do you see yourself?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "꽤 괜찮은 사람",
+            "en": "Pretty good"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "보통이다",
+            "en": "Average"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "부족한 것 같다",
+            "en": "Not enough"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "자신이 없다",
+            "en": "No confidence"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "실수했을 때 나는?",
+        "en": "When you make a mistake..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "금방 털어낸다",
+            "en": "Move on quickly"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "조금 신경 쓴다",
+            "en": "Think about it"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "오래 생각한다",
+            "en": "Overthink"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "자책한다",
+            "en": "Blame myself"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "남의 평가에 나는?",
+        "en": "Others' opinions affect me..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "거의 영향 없다",
+            "en": "Not much"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "조금 신경 쓴다",
+            "en": "A bit"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "많이 신경 쓴다",
+            "en": "A lot"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "거의 좌우된다",
+            "en": "Very much"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "내 외모/능력에 대한 생각은?",
+        "en": "How do you feel about yourself?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "만족한다",
+            "en": "Satisfied"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "보통이다",
+            "en": "Okay"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "불만 있다",
+            "en": "Unsatisfied"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "자신 없다",
+            "en": "No confidence"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "비교를 할 때 나는?",
+        "en": "When comparing with others..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "크게 신경 안 씀",
+            "en": "Don't care"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "가끔 한다",
+            "en": "Sometimes"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "자주 한다",
+            "en": "Often"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "항상 비교한다",
+            "en": "Always compare"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "칭찬을 받으면?",
+        "en": "When you receive compliments..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "자연스럽게 받아들임",
+            "en": "Accept it"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "조금 어색하다",
+            "en": "A bit awkward"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "믿기 어렵다",
+            "en": "Hard to believe"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "부정한다",
+            "en": "Deny it"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "도전을 할 때 나는?",
+        "en": "When facing a challenge..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "도전한다",
+            "en": "Take it"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "고민 후 도전",
+            "en": "Think then try"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "망설인다",
+            "en": "Hesitate"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "피한다",
+            "en": "Avoid"
+          },
+          "score": 1
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "나는 어떤 사람인가?",
+        "en": "Who are you?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "괜찮은 사람",
+            "en": "A good person"
+          },
+          "score": 4
+        },
+        {
+          "label": {
+            "ko": "보통 사람",
+            "en": "Normal"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "부족한 사람",
+            "en": "Lacking"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "별로인 사람",
+            "en": "Not good"
+          },
+          "score": 1
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

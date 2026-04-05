@@ -1,0 +1,538 @@
+{
+  "id": "ambiguous-situationship-end",
+  "slug": "ambiguous-situationship-end",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "썸",
+      "en": "situationship"
+    },
+    {
+      "ko": "연애",
+      "en": "dating"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
+  ],
+  "title": {
+    "ko": "썸이 항상 애매하게 끝나는 이유",
+    "en": "Why Does Your Situationship Always Fade?"
+  },
+  "subtitle": {
+    "ko": "타이밍이 문제일까, 나일까?",
+    "en": "Is it timing or you?"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/ambiguous-situationship-end/start.webp",
+    "og": "/images/quiz/ambiguous-situationship-end/start.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "밀당·직진·눈치·과해석 중 썸이 흐지부지 끝나는 패턴이 어디에 가까운지 알아보는 테스트",
+      "en": "See whether push-pull, directness, caution, or overthinking ends your situationships"
+    },
+    "keywords": [
+      {
+        "ko": "썸 테스트",
+        "en": "situationship quiz"
+      },
+      {
+        "ko": "연애 테스트",
+        "en": "dating quiz"
+      }
+    ],
+    "ogTitle": {
+      "ko": "썸이 항상 애매하게 끝나는 이유",
+      "en": "Why Does Your Situationship Always Fade?"
+    },
+    "ogDescription": {
+      "ko": "타이밍이 문제일까, 나일까?",
+      "en": "Is it timing or you?"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "💬 썸 패턴",
+      "en": "💬 Situationship pattern"
+    },
+    "image": "/images/quiz/ambiguous-situationship-end/start.webp",
+    "priority": 85
+  },
+  "resultKeys": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C/D)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, C, or D. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "ambiguous_situationship_end",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "why-cant-you-text-first",
+    "when-men-lose-interest",
+    "love-pattern-destroying-habit"
+  ],
+  "results": {
+    "A": {
+      "emoji": "🎭",
+      "scoreKey": "A",
+      "title": {
+        "ko": "밀당형",
+        "en": "Push-Pull Type"
+      },
+      "tagline": {
+        "ko": "밀당형",
+        "en": "Push-pull type"
+      },
+      "body": {
+        "ko": "적당한 밀당이 아니라 타이밍을 놓치는 타입입니다. 애매함이 길어지면서 관계가 흐려집니다.",
+        "en": "Your push-pull behavior often ruins timing."
+      },
+      "image": "/images/quiz/ambiguous-situationship-end/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 썸 패턴은 밀당형",
+          "en": "My situationship pattern is Push-Pull Type"
+        },
+        "description": {
+          "ko": "적당한 밀당이 아니라 타이밍을 놓치는 타입",
+          "en": "Your push-pull behavior often ruins timing"
+        },
+        "image": "/images/quiz/ambiguous-situationship-end/result-1.webp"
+      }
+    },
+    "B": {
+      "emoji": "🚀",
+      "scoreKey": "B",
+      "title": {
+        "ko": "직진형",
+        "en": "Straightforward Type"
+      },
+      "tagline": {
+        "ko": "직진형",
+        "en": "Straightforward type"
+      },
+      "body": {
+        "ko": "감정 표현이 빠르고 솔직한 타입입니다. 하지만 속도가 부담이 될 수 있습니다.",
+        "en": "You move fast, which can overwhelm the other person."
+      },
+      "image": "/images/quiz/ambiguous-situationship-end/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 썸 패턴은 직진형",
+          "en": "My situationship pattern is Straightforward Type"
+        },
+        "description": {
+          "ko": "솔직하지만 속도가 부담 될 수 있는 타입",
+          "en": "You move fast, which can overwhelm the other person"
+        },
+        "image": "/images/quiz/ambiguous-situationship-end/result-2.webp"
+      }
+    },
+    "C": {
+      "emoji": "👀",
+      "scoreKey": "C",
+      "title": {
+        "ko": "눈치형",
+        "en": "Cautious Type"
+      },
+      "tagline": {
+        "ko": "눈치형",
+        "en": "Cautious type"
+      },
+      "body": {
+        "ko": "상대 반응을 너무 보는 타입입니다. 결국 확신을 주지 못해 흐지부지 끝납니다.",
+        "en": "You hesitate too much, leading to unclear endings."
+      },
+      "image": "/images/quiz/ambiguous-situationship-end/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 썸 패턴은 눈치형",
+          "en": "My situationship pattern is Cautious Type"
+        },
+        "description": {
+          "ko": "확신을 주지 못해 흐지부지 끝나기 쉬운 타입",
+          "en": "You hesitate too much, leading to unclear endings"
+        },
+        "image": "/images/quiz/ambiguous-situationship-end/result-3.webp"
+      }
+    },
+    "D": {
+      "emoji": "🌀",
+      "scoreKey": "D",
+      "title": {
+        "ko": "과해석형",
+        "en": "Overthinking Type"
+      },
+      "tagline": {
+        "ko": "과해석형",
+        "en": "Overthinking type"
+      },
+      "body": {
+        "ko": "상대 행동을 과하게 해석하는 타입입니다. 혼자 결론을 내리며 관계를 끝내는 경우가 많습니다.",
+        "en": "You overanalyze and often end things yourself."
+      },
+      "image": "/images/quiz/ambiguous-situationship-end/result-4.webp",
+      "share": {
+        "title": {
+          "ko": "나의 썸 패턴은 과해석형",
+          "en": "My situationship pattern is Overthinking Type"
+        },
+        "description": {
+          "ko": "혼자 결론을 내리며 끝내기 쉬운 과해석형",
+          "en": "You overanalyze and often end things yourself"
+        },
+        "image": "/images/quiz/ambiguous-situationship-end/result-4.webp"
+      }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "밀당·직진·눈치·과해석이 섞인 패턴",
+      "en": "A mix of push-pull, directness, caution, and overthinking"
+    },
+    "body": {
+      "ko": "한 가지 패턴으로만 정의되지 않을 수 있어요.\n상황에 따라 밀당하기도 하고 직진하기도 하며, 눈치를 보다 과해석하기도 합니다.\n썸이 애매하게 끝날 때는 타이밍·속도·신호·해석이 동시에 얽혀 있을 때가 많아요.\n‘나는 어떤 순간에 가장 방어/돌진/대기/해석을 쓰는지’를 보면 다음 썸이 조금 덜 헷갈릴 수 있어요.",
+      "en": "You may not fit one label.\nSometimes you push-pull, go direct, wait, or overthink—often in the same situationship.\nFuzzy endings usually mix timing, pace, signals, and interpretation.\nNoticing which mode you default to under stress can make the next connection clearer."
+    },
+    "image": "/images/quiz/ambiguous-situationship-end/start.webp",
+    "share": {
+      "title": {
+        "ko": "나의 썸 패턴은 복합형",
+        "en": "My situationship pattern is mixed"
+      },
+      "description": {
+        "ko": "네 가지 성향이 함께 나타날 수 있어요",
+        "en": "Multiple patterns can show up at once"
+      },
+      "image": "/images/quiz/ambiguous-situationship-end/start.webp"
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "썸 초반 나는?",
+        "en": "At the start of a situationship..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "밀당한다",
+            "en": "Play hard to get"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "솔직하게 표현",
+            "en": "Be direct"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "눈치 본다",
+            "en": "Read the room"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "혼자 의미 부여",
+            "en": "Overthink"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연락 템포는?",
+        "en": "Your texting style..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "일부러 늦게 답장",
+            "en": "Reply late on purpose"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "바로 답장",
+            "en": "Reply fast"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "상대에 맞춘다",
+            "en": "Match them"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "답장 의미 분석함",
+            "en": "Analyze replies"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 애매하면?",
+        "en": "If they act unclear..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "나도 애매하게 한다",
+            "en": "Act unclear too"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "확실히 물어본다",
+            "en": "Ask directly"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "눈치 보며 기다림",
+            "en": "Wait and observe"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "혼자 해석한다",
+            "en": "Interpret everything"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "썸에서 나는?",
+        "en": "In a situationship..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "게임하듯 한다",
+            "en": "Play a game"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "직진한다",
+            "en": "Go straight"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "상대 반응 본다",
+            "en": "Watch reactions"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "혼자 고민 많다",
+            "en": "Overthink alone"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "관계가 애매해질 때?",
+        "en": "When things get unclear..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "일부러 거리 둔다",
+            "en": "Create distance"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "정리하려 한다",
+            "en": "Clarify things"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "기다린다",
+            "en": "Wait"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "혼자 결론 내림",
+            "en": "Decide alone"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대 행동을 나는?",
+        "en": "How do you react to their behavior?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "맞춰서 행동",
+            "en": "Mirror them"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "솔직하게 반응",
+            "en": "Be honest"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "신중하게 본다",
+            "en": "Be cautious"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "의미 분석함",
+            "en": "Analyze meaning"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "썸이 끝나는 순간?",
+        "en": "When it ends..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "타이밍 놓침",
+            "en": "Miss timing"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "너무 빨리 직진",
+            "en": "Too fast"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "확신 못 줌",
+            "en": "No clarity"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "혼자 정리함",
+            "en": "End it alone"
+          },
+          "key": "D"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "나는 왜 썸이 끝날까?",
+        "en": "Why does it fail?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "밀당 때문",
+            "en": "Push-pull games"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "직진 때문",
+            "en": "Too direct"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "눈치 때문",
+            "en": "Too cautious"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "과해석 때문",
+            "en": "Overthinking"
+          },
+          "key": "D"
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

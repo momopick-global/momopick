@@ -1,36 +1,51 @@
 {
   "id": "anger-style-test",
-  "locales": ["ko", "en"],
+  "slug": "anger-style-test",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "감정", "en": "emotion" },
-    { "ko": "성향", "en": "personality" },
-    { "ko": "분노", "en": "anger" }
+    {
+      "ko": "감정",
+      "en": "emotion"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    },
+    {
+      "ko": "분노",
+      "en": "anger"
+    }
   ],
-
   "title": {
-    "ko": "MBTI가 화났을 때 나는?",
+    "ko": "화났을 때 나는?",
     "en": "How Do You React When Angry?"
   },
   "subtitle": {
     "ko": "분노 스타일 분석",
     "en": "Your true anger style revealed"
   },
-
   "images": {
     "thumbnail": "/images/quiz/anger-style-test/thumb.webp",
-    "og": "/images/quiz/anger-style-test/thumb.webp",
-    "start": "/images/quiz/anger-style-test/start.webp"
+    "og": "/images/quiz/anger-style-test/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "화·갈등·말투에서 드러나는 분노 스타일이 폭발형·직진형·회피형 중 어디에 가까운지 알아보는 테스트",
       "en": "See whether your anger style leans explosive, direct, or avoidant"
     },
     "keywords": [
-      { "ko": "분노 스타일", "en": "anger style" },
-      { "ko": "성향 테스트", "en": "personality test" }
+      {
+        "ko": "분노 스타일",
+        "en": "anger style"
+      },
+      {
+        "ko": "성향 테스트",
+        "en": "personality test"
+      }
     ],
     "ogTitle": {
       "ko": "MBTI가 화났을 때 나는?",
@@ -41,7 +56,6 @@
       "en": "Your true anger style revealed"
     }
   },
-
   "card": {
     "theme": "personality",
     "kicker": {
@@ -51,10 +65,16 @@
     "image": "/images/quiz/anger-style-test/thumb.webp",
     "priority": 85
   },
-
-  "resultKeys": ["A", "B", "C"],
-  "resultOrder": ["A", "B", "C"],
-
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -63,7 +83,6 @@
     },
     "blendOnTie": true
   },
-
   "analytics": {
     "eventKey": "anger_style_test",
     "contentGroup": "love",
@@ -73,9 +92,11 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["hidden-dark-side", "logical-or-emotional", "leader-or-supporter"],
-
+  "related": [
+    "hidden-dark-side",
+    "logical-or-emotional",
+    "leader-or-supporter"
+  ],
   "results": {
     "A": {
       "emoji": "🌋",
@@ -105,7 +126,6 @@
         "image": "/images/quiz/anger-style-test/result-1.webp"
       }
     },
-
     "B": {
       "emoji": "⚡",
       "scoreKey": "B",
@@ -134,7 +154,6 @@
         "image": "/images/quiz/anger-style-test/result-2.webp"
       }
     },
-
     "C": {
       "emoji": "🌫️",
       "scoreKey": "C",
@@ -164,7 +183,6 @@
       }
     }
   },
-
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
@@ -193,7 +211,6 @@
       "image": "/images/quiz/anger-style-test/thumb.webp"
     }
   },
-
   "questions": [
     {
       "prompt": {
@@ -201,10 +218,34 @@
         "en": "When I get angry, I..."
       },
       "options": [
-        { "label": { "ko": "참다가 터진다", "en": "Hold it then explode" }, "key": "A" },
-        { "label": { "ko": "그 자리에서 표현", "en": "Express immediately" }, "key": "B" },
-        { "label": { "ko": "그냥 피한다", "en": "Avoid it" }, "key": "C" },
-        { "label": { "ko": "겉으로 티 안냄", "en": "Hide it" }, "key": "C" }
+        {
+          "label": {
+            "ko": "참다가 터진다",
+            "en": "Hold it then explode"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "그 자리에서 표현",
+            "en": "Express immediately"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "그냥 피한다",
+            "en": "Avoid it"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "겉으로 티 안냄",
+            "en": "Hide it"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -213,10 +254,34 @@
         "en": "In conflicts, I..."
       },
       "options": [
-        { "label": { "ko": "쌓이다가 크게 터짐", "en": "Explode after buildup" }, "key": "A" },
-        { "label": { "ko": "바로 말한다", "en": "Speak right away" }, "key": "B" },
-        { "label": { "ko": "대화를 피한다", "en": "Avoid conversation" }, "key": "C" },
-        { "label": { "ko": "거리 둔다", "en": "Create distance" }, "key": "C" }
+        {
+          "label": {
+            "ko": "쌓이다가 크게 터짐",
+            "en": "Explode after buildup"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "바로 말한다",
+            "en": "Speak right away"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "대화를 피한다",
+            "en": "Avoid conversation"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "거리 둔다",
+            "en": "Create distance"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -225,10 +290,34 @@
         "en": "If someone triggers me, I..."
       },
       "options": [
-        { "label": { "ko": "속으로 쌓는다", "en": "Bottle it up" }, "key": "A" },
-        { "label": { "ko": "바로 반응한다", "en": "React instantly" }, "key": "B" },
-        { "label": { "ko": "무시한다", "en": "Ignore it" }, "key": "C" },
-        { "label": { "ko": "피해버린다", "en": "Walk away" }, "key": "C" }
+        {
+          "label": {
+            "ko": "속으로 쌓는다",
+            "en": "Bottle it up"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "바로 반응한다",
+            "en": "React instantly"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "무시한다",
+            "en": "Ignore it"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "피해버린다",
+            "en": "Walk away"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -237,10 +326,34 @@
         "en": "My tone when angry is..."
       },
       "options": [
-        { "label": { "ko": "참다가 날카로워짐", "en": "Sharp after holding back" }, "key": "A" },
-        { "label": { "ko": "직설적임", "en": "Very direct" }, "key": "B" },
-        { "label": { "ko": "조용해짐", "en": "Go quiet" }, "key": "C" },
-        { "label": { "ko": "단답형", "en": "Short answers" }, "key": "C" }
+        {
+          "label": {
+            "ko": "참다가 날카로워짐",
+            "en": "Sharp after holding back"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "직설적임",
+            "en": "Very direct"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "조용해짐",
+            "en": "Go quiet"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "단답형",
+            "en": "Short answers"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -249,10 +362,34 @@
         "en": "How long does your anger last?"
       },
       "options": [
-        { "label": { "ko": "오래 쌓인다", "en": "Builds up over time" }, "key": "A" },
-        { "label": { "ko": "강하게 왔다가 빨리 사라짐", "en": "Intense but short" }, "key": "B" },
-        { "label": { "ko": "금방 잊는다", "en": "Forget quickly" }, "key": "C" },
-        { "label": { "ko": "그냥 회피함", "en": "Avoid thinking about it" }, "key": "C" }
+        {
+          "label": {
+            "ko": "오래 쌓인다",
+            "en": "Builds up over time"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "강하게 왔다가 빨리 사라짐",
+            "en": "Intense but short"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "금방 잊는다",
+            "en": "Forget quickly"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "그냥 회피함",
+            "en": "Avoid thinking about it"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -261,10 +398,34 @@
         "en": "After a fight, I..."
       },
       "options": [
-        { "label": { "ko": "계속 생각함", "en": "Keep thinking about it" }, "key": "A" },
-        { "label": { "ko": "바로 풀려고 함", "en": "Try to resolve quickly" }, "key": "B" },
-        { "label": { "ko": "거리 둔다", "en": "Keep distance" }, "key": "C" },
-        { "label": { "ko": "아무 일 없는 척", "en": "Act normal" }, "key": "C" }
+        {
+          "label": {
+            "ko": "계속 생각함",
+            "en": "Keep thinking about it"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "바로 풀려고 함",
+            "en": "Try to resolve quickly"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "거리 둔다",
+            "en": "Keep distance"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "아무 일 없는 척",
+            "en": "Act normal"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -273,10 +434,34 @@
         "en": "When angry, I..."
       },
       "options": [
-        { "label": { "ko": "속으로 계속 곱씹음", "en": "Replay it in my head" }, "key": "A" },
-        { "label": { "ko": "말로 표현", "en": "Express verbally" }, "key": "B" },
-        { "label": { "ko": "연락 끊음", "en": "Cut off contact" }, "key": "C" },
-        { "label": { "ko": "혼자 있음", "en": "Stay alone" }, "key": "C" }
+        {
+          "label": {
+            "ko": "속으로 계속 곱씹음",
+            "en": "Replay it in my head"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "말로 표현",
+            "en": "Express verbally"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "연락 끊음",
+            "en": "Cut off contact"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "혼자 있음",
+            "en": "Stay alone"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -285,14 +470,37 @@
         "en": "My anger style is..."
       },
       "options": [
-        { "label": { "ko": "쌓아두는 타입", "en": "Accumulating" }, "key": "A" },
-        { "label": { "ko": "바로 터지는 타입", "en": "Explosive" }, "key": "B" },
-        { "label": { "ko": "회피하는 타입", "en": "Avoidant" }, "key": "C" },
-        { "label": { "ko": "거리 두는 타입", "en": "Detached" }, "key": "C" }
+        {
+          "label": {
+            "ko": "쌓아두는 타입",
+            "en": "Accumulating"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "바로 터지는 타입",
+            "en": "Explosive"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "회피하는 타입",
+            "en": "Avoidant"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "거리 두는 타입",
+            "en": "Detached"
+          },
+          "key": "C"
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용이며, MBTI와 무관한 일반 성향 분석입니다.",
     "en": "This test is for fun and self-reflection; it is not an MBTI assessment."

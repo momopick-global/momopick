@@ -1,0 +1,419 @@
+{
+  "id": "planner-or-spontaneous",
+  "slug": "planner-or-spontaneous",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "성향",
+      "en": "personality"
+    },
+    {
+      "ko": "계획",
+      "en": "planning"
+    },
+    {
+      "ko": "MBTI",
+      "en": "MBTI"
+    }
+  ],
+  "title": {
+    "ko": "나는 계획형인가 즉흥형인가?",
+    "en": "Planner or Spontaneous?"
+  },
+  "subtitle": {
+    "ko": "P/J 성향 분석",
+    "en": "Discover your planning style"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/planner-or-spontaneous/thumb.webp",
+    "og": "/images/quiz/planner-or-spontaneous/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "일정·업무·쇼핑까지 선택 패턴을 점수로 환산해 계획형 vs 즉흥형 지수를 알아보는 테스트",
+      "en": "Score your habits and see how planner-like or spontaneous you are"
+    },
+    "keywords": [
+      {
+        "ko": "계획형",
+        "en": "planner"
+      },
+      {
+        "ko": "즉흥형",
+        "en": "spontaneous"
+      },
+      {
+        "ko": "성향 테스트",
+        "en": "personality test"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나는 계획형인가 즉흥형인가?",
+      "en": "Planner or Spontaneous?"
+    },
+    "ogDescription": {
+      "ko": "P/J 성향 분석",
+      "en": "Discover your planning style"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "📅 계획 vs 즉흥",
+      "en": "📅 Planner vs spontaneous"
+    },
+    "image": "/images/quiz/planner-or-spontaneous/thumb.webp",
+    "priority": 88
+  },
+  "analytics": {
+    "eventKey": "planner_or_spontaneous",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "logical-or-emotional",
+    "relationship-balance-test",
+    "mental-strength-test"
+  ],
+  "resultDisplay": "percent",
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 39,
+      "title": {
+        "ko": "즉흥 70% 이상",
+        "en": "70% Spontaneous"
+      },
+      "desc": {
+        "ko": "즉흥적인 선택을 즐기는 타입입니다. 자유롭고 유연한 성향입니다.",
+        "en": "You prefer spontaneity and flexibility."
+      }
+    },
+    {
+      "min": 40,
+      "max": 69,
+      "title": {
+        "ko": "균형형",
+        "en": "Balanced Type"
+      },
+      "desc": {
+        "ko": "상황에 따라 계획과 즉흥을 적절히 조절하는 타입입니다.",
+        "en": "You balance planning and spontaneity."
+      }
+    },
+    {
+      "min": 70,
+      "max": 100,
+      "title": {
+        "ko": "계획 80% 이상",
+        "en": "80% Planner"
+      },
+      "desc": {
+        "ko": "당신은 계획을 세우는 것을 중요하게 생각하는 타입입니다. 안정과 예측을 선호합니다.",
+        "en": "You strongly prefer planning and structure."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": {
+        "ko": "여행을 간다면?",
+        "en": "When planning a trip..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "일정표부터 만든다",
+            "en": "Make a schedule first"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "대략만 정한다",
+            "en": "Plan roughly"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "가서 결정한다",
+            "en": "Decide on the spot"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "상황 따라 움직인다",
+            "en": "Go with the flow"
+          },
+          "score": 0
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "약속 잡을 때?",
+        "en": "When making plans..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "미리 날짜 확정",
+            "en": "Fix date early"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "대충 잡는다",
+            "en": "Set loosely"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "그때그때",
+            "en": "Decide later"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "상대에 맞춘다",
+            "en": "Follow others"
+          },
+          "score": 2
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "일 처리 스타일은?",
+        "en": "How do you handle tasks?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "계획 세우고 실행",
+            "en": "Plan then act"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "대충 흐름대로",
+            "en": "Go with flow"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "마감 직전에 몰아서",
+            "en": "Last-minute rush"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "상황 보며 조절",
+            "en": "Adjust as needed"
+          },
+          "score": 2
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "변수 생기면?",
+        "en": "When things change..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "스트레스 받는다",
+            "en": "Get stressed"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "적응한다",
+            "en": "Adapt"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "오히려 좋다",
+            "en": "Like it"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "크게 신경 안 쓴다",
+            "en": "Don't mind"
+          },
+          "score": 0
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "하루를 보내는 방식은?",
+        "en": "Your daily style is..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "계획대로 움직임",
+            "en": "Follow schedule"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "대충 계획 있음",
+            "en": "Loose plan"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "그날 느낌대로",
+            "en": "By mood"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "즉흥적 선택",
+            "en": "Spontaneous"
+          },
+          "score": 0
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "할 일이 많을 때?",
+        "en": "When busy..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "우선순위 정함",
+            "en": "Set priorities"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "하나씩 처리",
+            "en": "Do one by one"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "아무거나 먼저",
+            "en": "Random order"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "급한 것만 한다",
+            "en": "Only urgent tasks"
+          },
+          "score": 0
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "쇼핑할 때?",
+        "en": "When shopping..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "미리 리스트 작성",
+            "en": "Make a list"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "대충 정해놓음",
+            "en": "Rough idea"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "가서 결정",
+            "en": "Decide there"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "충동 구매",
+            "en": "Impulse buy"
+          },
+          "score": 0
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "나는 어떤 타입?",
+        "en": "Which are you?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "철저한 계획형",
+            "en": "Strict planner"
+          },
+          "score": 3
+        },
+        {
+          "label": {
+            "ko": "유연한 계획형",
+            "en": "Flexible planner"
+          },
+          "score": 2
+        },
+        {
+          "label": {
+            "ko": "완전 즉흥형",
+            "en": "Fully spontaneous"
+          },
+          "score": 0
+        },
+        {
+          "label": {
+            "ko": "상황형 인간",
+            "en": "Situational"
+          },
+          "score": 2
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

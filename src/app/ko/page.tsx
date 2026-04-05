@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { getKoHomeRailSorted } from "@/lib/content/homeRail";
+import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 
 const year = new Date().getFullYear();
 
 const homeRailKo = getKoHomeRailSorted("ko");
 const featuredQuiz = homeRailKo[0];
+const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
+/** 썸·연애 섹션 타일 개수 (우선순위 상위) */
+const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
 
 export default function KoHomePage() {
   return (
@@ -68,7 +71,7 @@ export default function KoHomePage() {
             <div className="hero-banner-wrap">
               <img
                 className="hero-banner"
-                src={featuredQuiz?.image || "/images/banners/ko/rail-01.webp"}
+                src={featuredQuiz?.image || "/images/banners/rail-01.webp"}
                 alt=""
                 width={480}
                 height={320}
@@ -108,7 +111,7 @@ export default function KoHomePage() {
                   role="listitem"
                 >
                   <img
-                    src={item.image || "/images/banners/ko/rail-01.webp"}
+                    src={item.image || "/images/banners/rail-01.webp"}
                     alt=""
                     width={480}
                     height={320}
@@ -132,76 +135,29 @@ export default function KoHomePage() {
               </Link>
             </div>
             <p className="sec-lead">
-              연애 심리·유형·가벼운 궁합까지. 카드 썸네일은 목업 이미지이며, 추후 실제 커버로
-              교체하면 됩니다.
+              연애 카테고리(콘텐츠 JSON의 love) 테스트 중 우선순위 상위 4개만 보여 드려요. 나머지는 상단{" "}
+              <Link href="/ko/love/">전체보기</Link>에서 모아 볼 수 있어요.
             </p>
             <div className="tile-grid">
-              <Link className="tile tile--love" href={featuredQuiz?.href || "/ko/love/"}>
-                <div className="thumb">
-                  <span className="badge">HOT</span>
-                  <img
-                    src={featuredQuiz?.image || "/images/banners/ko/tile-love-01.webp"}
-                    alt=""
-                    width={1536}
-                    height={1024}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="body">
-                  <b>{featuredQuiz?.title ?? "연애 테스트"}</b>
-                  <small>{featuredQuiz?.subtitleOnly ?? ""}</small>
-                </div>
-              </Link>
-              <Link className="tile tile--love" href="/ko/love/">
-                <div className="thumb">
-                  <span className="badge">허브</span>
-                  <img
-                    src="/images/banners/ko/tile-love-02.webp"
-                    alt=""
-                    width={1536}
-                    height={1024}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="body">
-                  <b>연애 테스트 모아보기</b>
-                  <small>썸·연인·소개팅 스토리별</small>
-                </div>
-              </Link>
-              <Link className="tile tile--love" href="/ko/explore/">
-                <div className="thumb">
-                  <img
-                    src="/images/banners/ko/tile-love-03.webp"
-                    alt=""
-                    width={1536}
-                    height={1024}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="body">
-                  <b>지금 인기 급상승</b>
-                  <small>실시간 큐레이션 자리</small>
-                </div>
-              </Link>
-              <Link className="tile tile--love" href="/ko/tag/">
-                <div className="thumb">
-                  <img
-                    src="/images/banners/ko/tile-love-04.webp"
-                    alt=""
-                    width={1536}
-                    height={1024}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="body">
-                  <b>태그로 찾기</b>
-                  <small>#썸 #궁합 #mbti</small>
-                </div>
-              </Link>
+              {loveSectionTiles.map((item, i) => (
+                <Link key={item.href} className="tile tile--love" href={item.href}>
+                  <div className="thumb">
+                    {i === 0 ? <span className="badge">HOT</span> : null}
+                    <img
+                      src={item.image || "/images/banners/tile-love-01.webp"}
+                      alt=""
+                      width={1536}
+                      height={1024}
+                      loading={i < 4 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="body">
+                    <b>{item.title}</b>
+                    <small>{item.subtitleLine}</small>
+                  </div>
+                </Link>
+              ))}
             </div>
           </section>
 
@@ -220,7 +176,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">1분</span>
                   <img
-                    src="/images/banners/ko/tile-mind-01.webp"
+                    src="/images/banners/tile-mind-01.webp"
                     alt=""
                     width={1536}
                     height={1024}
@@ -236,7 +192,7 @@ export default function KoHomePage() {
               <Link className="tile tile--personality" href="/ko/personality/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-mind-02.webp"
+                    src="/images/banners/tile-mind-02.webp"
                     alt=""
                     width={1536}
                     height={1024}
@@ -252,7 +208,7 @@ export default function KoHomePage() {
               <Link className="tile tile--social" href="/ko/social/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-mind-03.webp"
+                    src="/images/banners/tile-mind-03.webp"
                     alt=""
                     width={1536}
                     height={1024}
@@ -283,7 +239,7 @@ export default function KoHomePage() {
                 <div className="thumb">
                   <span className="badge">SNACK</span>
                   <img
-                    src="/images/banners/ko/tile-snack-01.webp"
+                    src="/images/banners/tile-snack-01.webp"
                     alt=""
                     width={1536}
                     height={1024}
@@ -299,7 +255,7 @@ export default function KoHomePage() {
               <Link className="tile tile--style" href="/ko/style/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-snack-02.webp"
+                    src="/images/banners/tile-snack-02.webp"
                     alt=""
                     width={1536}
                     height={1024}
@@ -315,7 +271,7 @@ export default function KoHomePage() {
               <Link className="tile tile--fun" href="/ko/explore/">
                 <div className="thumb">
                   <img
-                    src="/images/banners/ko/tile-snack-03.webp"
+                    src="/images/banners/tile-snack-03.webp"
                     alt=""
                     width={1536}
                     height={1024}

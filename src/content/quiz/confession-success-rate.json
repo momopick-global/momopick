@@ -1,13 +1,25 @@
 {
   "id": "confession-success-rate",
-  "locales": ["ko", "en"],
+  "slug": "confession-success-rate",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "고백", "en": "confession" },
-    { "ko": "썸", "en": "situationship" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "고백",
+      "en": "confession"
+    },
+    {
+      "ko": "썸",
+      "en": "situationship"
+    }
   ],
-
   "title": {
     "ko": "나의 고백 성공 확률은?",
     "en": "What Are Your Confession Success Chances?"
@@ -16,21 +28,24 @@
     "ko": "지금 고백해도 될까",
     "en": "Should you confess right now?"
   },
-
   "images": {
     "thumbnail": "/images/quiz/confession-success-rate/thumb.webp",
-    "og": "/images/quiz/confession-success-rate/thumb.webp",
-    "start": "/images/quiz/confession-success-rate/start.webp"
+    "og": "/images/quiz/confession-success-rate/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "관계 신호를 점수로 환산해 고백 타이밍 감을 알아보는 테스트",
       "en": "Turn your signals into a score and see if it’s a good time to confess"
     },
     "keywords": [
-      { "ko": "고백 테스트", "en": "confession test" },
-      { "ko": "썸 테스트", "en": "situationship test" }
+      {
+        "ko": "고백 테스트",
+        "en": "confession test"
+      },
+      {
+        "ko": "썸 테스트",
+        "en": "situationship test"
+      }
     ],
     "ogTitle": {
       "ko": "나의 고백 성공 확률은?",
@@ -41,7 +56,6 @@
       "en": "Should you confess right now?"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
@@ -49,10 +63,8 @@
       "en": "💌 Confession odds"
     },
     "image": "/images/quiz/confession-success-rate/thumb.webp",
-    "railImage": "/images/banners/ko/rail-04.webp",
     "priority": 92
   },
-
   "analytics": {
     "eventKey": "confession_success_rate",
     "contentGroup": "love",
@@ -62,9 +74,11 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["when-men-lose-interest", "why-cant-you-text-first", "who-likes-you-type"],
-
+  "related": [
+    "when-men-lose-interest",
+    "why-cant-you-text-first",
+    "who-likes-you-type"
+  ],
   "resultRanges": [
     {
       "min": 0,
@@ -103,7 +117,6 @@
       }
     }
   ],
-
   "questions": [
     {
       "prompt": {
@@ -111,10 +124,34 @@
         "en": "What is your current relationship with them?"
       },
       "options": [
-        { "label": { "ko": "거의 매일 연락함", "en": "We text almost every day" }, "score": 15 },
-        { "label": { "ko": "가끔 연락함", "en": "We talk occasionally" }, "score": 10 },
-        { "label": { "ko": "내가 먼저 연락함", "en": "I usually text first" }, "score": 5 },
-        { "label": { "ko": "거의 안함", "en": "We barely talk" }, "score": 0 }
+        {
+          "label": {
+            "ko": "거의 매일 연락함",
+            "en": "We text almost every day"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "가끔 연락함",
+            "en": "We talk occasionally"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "내가 먼저 연락함",
+            "en": "I usually text first"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "거의 안함",
+            "en": "We barely talk"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -123,10 +160,34 @@
         "en": "How fast do they reply?"
       },
       "options": [
-        { "label": { "ko": "빠르고 적극적", "en": "Fast and engaged" }, "score": 15 },
-        { "label": { "ko": "보통", "en": "Average" }, "score": 10 },
-        { "label": { "ko": "느리지만 답은 함", "en": "Slow but replies" }, "score": 5 },
-        { "label": { "ko": "읽씹 많음", "en": "Often leaves me on read" }, "score": 0 }
+        {
+          "label": {
+            "ko": "빠르고 적극적",
+            "en": "Fast and engaged"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "보통",
+            "en": "Average"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "느리지만 답은 함",
+            "en": "Slow but replies"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "읽씹 많음",
+            "en": "Often leaves me on read"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -135,10 +196,34 @@
         "en": "Have you met one-on-one?"
       },
       "options": [
-        { "label": { "ko": "여러 번 있음", "en": "Many times" }, "score": 15 },
-        { "label": { "ko": "몇 번 있음", "en": "A few times" }, "score": 10 },
-        { "label": { "ko": "한 번 있음", "en": "Once" }, "score": 5 },
-        { "label": { "ko": "없음", "en": "Never" }, "score": 0 }
+        {
+          "label": {
+            "ko": "여러 번 있음",
+            "en": "Many times"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "몇 번 있음",
+            "en": "A few times"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "한 번 있음",
+            "en": "Once"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "없음",
+            "en": "Never"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -147,10 +232,34 @@
         "en": "Have they ever approached you first?"
       },
       "options": [
-        { "label": { "ko": "자주 있음", "en": "Often" }, "score": 15 },
-        { "label": { "ko": "가끔 있음", "en": "Sometimes" }, "score": 10 },
-        { "label": { "ko": "거의 없음", "en": "Rarely" }, "score": 5 },
-        { "label": { "ko": "전혀 없음", "en": "Never" }, "score": 0 }
+        {
+          "label": {
+            "ko": "자주 있음",
+            "en": "Often"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "가끔 있음",
+            "en": "Sometimes"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "거의 없음",
+            "en": "Rarely"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "전혀 없음",
+            "en": "Never"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -159,10 +268,34 @@
         "en": "What is the vibe of your conversations?"
       },
       "options": [
-        { "label": { "ko": "썸 느낌 있음", "en": "Feels like flirting" }, "score": 15 },
-        { "label": { "ko": "편한 친구 느낌", "en": "Comfortable friendship" }, "score": 10 },
-        { "label": { "ko": "어색함", "en": "A bit awkward" }, "score": 5 },
-        { "label": { "ko": "형식적임", "en": "Very formal" }, "score": 0 }
+        {
+          "label": {
+            "ko": "썸 느낌 있음",
+            "en": "Feels like flirting"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "편한 친구 느낌",
+            "en": "Comfortable friendship"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "어색함",
+            "en": "A bit awkward"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "형식적임",
+            "en": "Very formal"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -171,10 +304,34 @@
         "en": "Have they complimented you?"
       },
       "options": [
-        { "label": { "ko": "자주 있음", "en": "Often" }, "score": 15 },
-        { "label": { "ko": "가끔 있음", "en": "Sometimes" }, "score": 10 },
-        { "label": { "ko": "거의 없음", "en": "Rarely" }, "score": 5 },
-        { "label": { "ko": "없음", "en": "Never" }, "score": 0 }
+        {
+          "label": {
+            "ko": "자주 있음",
+            "en": "Often"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "가끔 있음",
+            "en": "Sometimes"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "거의 없음",
+            "en": "Rarely"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "없음",
+            "en": "Never"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -183,10 +340,34 @@
         "en": "What is their relationship status?"
       },
       "options": [
-        { "label": { "ko": "완전 솔로", "en": "Completely single" }, "score": 15 },
-        { "label": { "ko": "애매한 상태", "en": "Complicated" }, "score": 10 },
-        { "label": { "ko": "누군가 있음", "en": "Seeing someone" }, "score": 5 },
-        { "label": { "ko": "확실히 연애중", "en": "In a relationship" }, "score": 0 }
+        {
+          "label": {
+            "ko": "완전 솔로",
+            "en": "Completely single"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "애매한 상태",
+            "en": "Complicated"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "누군가 있음",
+            "en": "Seeing someone"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "확실히 연애중",
+            "en": "In a relationship"
+          },
+          "score": 0
+        }
       ]
     },
     {
@@ -195,14 +376,37 @@
         "en": "How confident are you right now?"
       },
       "options": [
-        { "label": { "ko": "확신 있음", "en": "Very confident" }, "score": 15 },
-        { "label": { "ko": "가능성 있다고 느낌", "en": "Feels possible" }, "score": 10 },
-        { "label": { "ko": "잘 모르겠음", "en": "Not sure" }, "score": 5 },
-        { "label": { "ko": "불안함", "en": "Very unsure" }, "score": 0 }
+        {
+          "label": {
+            "ko": "확신 있음",
+            "en": "Very confident"
+          },
+          "score": 15
+        },
+        {
+          "label": {
+            "ko": "가능성 있다고 느낌",
+            "en": "Feels possible"
+          },
+          "score": 10
+        },
+        {
+          "label": {
+            "ko": "잘 모르겠음",
+            "en": "Not sure"
+          },
+          "score": 5
+        },
+        {
+          "label": {
+            "ko": "불안함",
+            "en": "Very unsure"
+          },
+          "score": 0
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다. 실제 관계는 사람마다 다릅니다.",
     "en": "This test is for fun and self-reflection only. Every relationship is different."

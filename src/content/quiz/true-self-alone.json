@@ -1,0 +1,508 @@
+{
+  "id": "true-self-alone",
+  "slug": "true-self-alone",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "혼자",
+      "en": "alone"
+    },
+    {
+      "ko": "자기이해",
+      "en": "self"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
+  ],
+  "title": {
+    "ko": "나는 혼자 있을 때 어떤 사람?",
+    "en": "Who Are You When You're Alone?"
+  },
+  "subtitle": {
+    "ko": "진짜 나 분석",
+    "en": "Discover your true self"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/true-self-alone/thumb.webp",
+    "og": "/images/quiz/true-self-alone/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "혼자 있는 시간의 패턴으로 사색형·소비형·방전형 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether you lean reflective, consumer, or drained when alone"
+    },
+    "keywords": [
+      {
+        "ko": "혼자",
+        "en": "alone time"
+      },
+      {
+        "ko": "성향 테스트",
+        "en": "personality test"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나는 혼자 있을 때 어떤 사람?",
+      "en": "Who Are You When You're Alone?"
+    },
+    "ogDescription": {
+      "ko": "진짜 나 분석",
+      "en": "Discover your true self"
+    }
+  },
+  "card": {
+    "theme": "personality",
+    "kicker": {
+      "ko": "🌙 혼자일 때 나",
+      "en": "🌙 Alone-time self"
+    },
+    "image": "/images/quiz/true-self-alone/thumb.webp",
+    "priority": 82
+  },
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "true_self_alone",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "emotional-sensitivity",
+    "mental-strength-test",
+    "hidden-dark-side"
+  ],
+  "results": {
+    "A": {
+      "emoji": "🌙",
+      "scoreKey": "A",
+      "title": {
+        "ko": "사색형",
+        "en": "Reflective Type"
+      },
+      "tagline": {
+        "ko": "혼자 있을 때 스스로를 돌아보는 타입",
+        "en": "You reflect and go deep when alone"
+      },
+      "body": {
+        "ko": "혼자 있는 시간을 통해 스스로를 돌아보는 타입입니다. 생각이 깊고 내면이 풍부합니다.\n혼자 생각에 잠기고, 혼자 있는 시간이 편안하게 느껴지기 쉽습니다.\n생각 정리·나를 돌아보기를 중시하고, 감정은 차분한 편이에요.\n시간이 길어질수록 더 깊이 생각하는 흐름이 나올 수 있습니다.\n‘혼자일 때 나’는 생각이 많은 사람에 가깝습니다.",
+        "en": "You reflect deeply and grow through alone time.\nYou may get lost in thought and feel comfortable alone.\nYou organize your mind and reflect on yourself; emotions stay calm.\nLong stretches of solitude can lead to deeper thinking.\nWhen alone, you are closer to a deep thinker."
+      },
+      "image": "/images/quiz/true-self-alone/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "혼자일 때 나는 사색형",
+          "en": "My alone-time type is Reflective"
+        },
+        "description": {
+          "ko": "생각이 깊고 내면이 풍부한 타입",
+          "en": "You reflect deeply when alone"
+        },
+        "image": "/images/quiz/true-self-alone/result-1.webp"
+      }
+    },
+    "B": {
+      "emoji": "📱",
+      "scoreKey": "B",
+      "title": {
+        "ko": "소비형",
+        "en": "Consumer Type"
+      },
+      "tagline": {
+        "ko": "콘텐츠와 활동으로 시간을 채우는 타입",
+        "en": "You fill alone time with content and activity"
+      },
+      "body": {
+        "ko": "혼자 있는 시간을 즐기는 타입입니다. 콘텐츠와 활동으로 시간을 채웁니다.\n영상·콘텐츠 소비나 폰을 보며 시간을 보내기 쉽고, 취미 활동으로 즐거움을 찾는 흐름이 나올 수 있어요.\n혼자 있는 시간이 적당히 즐겁게 느껴지고, 편안함과 함께 ‘즐거움’이나 ‘시간 보내기’가 중요합니다.\n시간이 길어지면 콘텐츠 소비가 늘기도 합니다.\n‘혼자일 때 나’는 즐길 줄 아는 사람에 가깝습니다.",
+        "en": "You enjoy your alone time through content and activities.\nYou may scroll, watch, or dive into hobbies.\nAlone time feels enjoyable; fun and passing time matter.\nWhen it stretches long, you might consume more content.\nWhen alone, you are someone who knows how to enjoy."
+      },
+      "image": "/images/quiz/true-self-alone/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "혼자일 때 나는 소비형",
+          "en": "My alone-time type is Consumer"
+        },
+        "description": {
+          "ko": "콘텐츠와 활동으로 시간을 채우는 타입",
+          "en": "You enjoy alone time through content and activities"
+        },
+        "image": "/images/quiz/true-self-alone/result-2.webp"
+      }
+    },
+    "C": {
+      "emoji": "🔋",
+      "scoreKey": "C",
+      "title": {
+        "ko": "방전형",
+        "en": "Drained Type"
+      },
+      "tagline": {
+        "ko": "혼자 있으면 에너지가 떨어지기 쉬운 타입",
+        "en": "You may lose energy when alone too long"
+      },
+      "body": {
+        "ko": "혼자 있는 시간이 길어질수록 에너지가 떨어지는 타입입니다. 외부 자극이 필요할 수 있습니다.\n아무것도 안 하거나 멍 때리며, 허전함·지루함·무기력이 느껴지기 쉽습니다.\n감정은 허무하거나 무기력하게 느껴질 수 있고, 시간이 빨리 가길 바라기도 합니다.\n혼자 있는 시간이 길어지면 지치거나 무기력해지는 흐름이 나올 수 있어요.\n편안함보다는 ‘방전’에 가까운 느낌이 들 수 있습니다.",
+        "en": "You tend to lose energy when alone for too long.\nYou may need outside stimulation.\nDoing nothing or zoning out can feel empty, boring, or draining.\nEmotions may feel hollow or unmotivated; you may wish time would pass faster.\nLong alone time can leave you drained or low.\nComfort may matter, but ‘energy drain’ shows up more."
+      },
+      "image": "/images/quiz/true-self-alone/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "혼자일 때 나는 방전형",
+          "en": "My alone-time type is Drained"
+        },
+        "description": {
+          "ko": "혼자 있으면 에너지가 떨어지기 쉬운 타입",
+          "en": "You tend to lose energy when alone too long"
+        },
+        "image": "/images/quiz/true-self-alone/result-3.webp"
+      }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "사색·소비·방전이 섞인 혼자 시간",
+      "en": "A mix of reflection, consumption, and drain"
+    },
+    "body": {
+      "ko": "한 가지 유형으로만 정의되지 않을 수 있어요.\n어떤 날은 생각에 잠기고, 어떤 날은 콘텐츠로 채우고, 또 어떤 날은 금방 지칩니다.\n‘혼자일 때 나’는 날짜와 컨디션에 따라 달라질 수 있습니다.",
+      "en": "You may not fit one label.\nSome days you reflect; some days you consume; some days you feel drained.\nYour alone-time self can shift with mood and context."
+    },
+    "image": "/images/quiz/true-self-alone/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "혼자일 때 나는 복합형",
+        "en": "My alone-time profile is mixed"
+      },
+      "description": {
+        "ko": "사색·소비·방전 성향이 함께 나타날 수 있어요",
+        "en": "Reflective, consumer, and drained sides can all show up"
+      },
+      "image": "/images/quiz/true-self-alone/thumb.webp"
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "혼자 있을 때 나는?",
+        "en": "When I’m alone, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "생각에 잠긴다",
+            "en": "Get lost in thoughts"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "영상이나 콘텐츠 소비",
+            "en": "Consume content"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "그냥 아무것도 안 한다",
+            "en": "Do nothing"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "폰만 계속 본다",
+            "en": "Scroll endlessly"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있는 시간의 느낌은?",
+        "en": "How does alone time feel?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "편안하고 좋다",
+            "en": "Comfortable"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "적당히 즐겁다",
+            "en": "Enjoyable"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "가끔 허전하다",
+            "en": "Sometimes lonely"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "지루하다",
+            "en": "Boring"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있을 때 나는 주로?",
+        "en": "When alone, I mostly..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "생각 정리",
+            "en": "Organize thoughts"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "취미 활동",
+            "en": "Do hobbies"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "멍 때림",
+            "en": "Zone out"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "시간 보내기",
+            "en": "Kill time"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있을 때 감정은?",
+        "en": "My emotions when alone are..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "차분하다",
+            "en": "Calm"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "편하다",
+            "en": "Relaxed"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "허무하다",
+            "en": "Empty"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "무기력하다",
+            "en": "Unmotivated"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있을 때 나는?",
+        "en": "When alone, I tend to..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "나를 돌아본다",
+            "en": "Reflect on myself"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "재밌는 걸 찾는다",
+            "en": "Look for fun"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "아무 생각 없다",
+            "en": "Think of nothing"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "시간이 빨리 가길 바란다",
+            "en": "Wait for time to pass"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있는 시간이 길어지면?",
+        "en": "If alone time gets long, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "더 깊이 생각한다",
+            "en": "Think deeper"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "콘텐츠 소비 증가",
+            "en": "Consume more content"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "지친다",
+            "en": "Get drained"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "무기력해진다",
+            "en": "Lose energy"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있을 때 가장 중요한 건?",
+        "en": "What matters most when alone?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "생각 정리",
+            "en": "Reflection"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "즐거움",
+            "en": "Enjoyment"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "편안함",
+            "en": "Comfort"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "시간 보내기",
+            "en": "Passing time"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "혼자 있을 때 나는 어떤 사람?",
+        "en": "Who am I when alone?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "생각이 많은 사람",
+            "en": "A deep thinker"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "즐길 줄 아는 사람",
+            "en": "Someone who enjoys"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "쉽게 지치는 사람",
+            "en": "Someone who gets drained"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "무기력한 사람",
+            "en": "Someone unmotivated"
+          },
+          "key": "C"
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

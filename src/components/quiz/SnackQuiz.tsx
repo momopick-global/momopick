@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizResultShare } from "./QuizResultShare";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
@@ -106,7 +107,8 @@ export function SnackQuiz({
     const singleKey = !isBlend && leaders[0] ? leaders[0] : null;
     const single = singleKey ? results[singleKey] : null;
 
-    const resultImage = isBlend ? blend.image : single?.image;
+    const resultImageRaw = isBlend ? blend.image : single?.image;
+    const resultImage = resultImageRaw ? quizAssetUrl(resultImageRaw, locale) : undefined;
     const shareText = (() => {
       if (isBlend && blend.share) {
         return `${pickQuizText(locale, blend.share.title)} — ${pickQuizText(locale, blend.share.description)} | Momopick`;
@@ -163,6 +165,12 @@ export function SnackQuiz({
   }
 
   const q = questions[step];
+  const shareTextInProgress = (() => {
+    const t = pickQuizText(locale, definition.title);
+    const sub = definition.subtitle ? pickQuizText(locale, definition.subtitle) : "";
+    return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
+  })();
+
   return (
     <div className="quiz-shell">
       <div className="quiz-progress-wrap" aria-hidden="true">
@@ -172,7 +180,7 @@ export function SnackQuiz({
       {q.image ? (
         <div className="quiz-q-visual">
           <img
-            src={q.image}
+            src={quizAssetUrl(q.image, locale)}
             alt=""
             width={480}
             height={320}
@@ -204,6 +212,9 @@ export function SnackQuiz({
           );
         })}
       </ul>
+      <div className="quiz-share-wrap quiz-share-wrap--during">
+        <QuizResultShare ui={ui} shareText={shareTextInProgress} />
+      </div>
     </div>
   );
 }

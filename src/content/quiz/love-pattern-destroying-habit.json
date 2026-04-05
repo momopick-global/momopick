@@ -1,13 +1,25 @@
 {
   "id": "love-pattern-destroying-habit",
-  "locales": ["ko", "en"],
+  "slug": "love-pattern-destroying-habit",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "습관", "en": "habit" },
-    { "ko": "심리", "en": "psychology" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "습관",
+      "en": "habit"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
   ],
-
   "title": {
     "ko": "내가 연애를 망치는 한 가지 습관",
     "en": "Why Does Your Situationship Always End Badly?"
@@ -16,21 +28,24 @@
     "ko": "반복되는 패턴의 진짜 이유",
     "en": "The real reason behind your repeating love patterns"
   },
-
   "images": {
-    "thumbnail": "/images/quiz/love-pattern-destroying-habit/ko/thumb.webp",
-    "og": "/images/quiz/love-pattern-destroying-habit/ko/thumb.webp",
-    "start": "/images/quiz/love-pattern-destroying-habit/ko/start.webp"
+    "thumbnail": "/images/quiz/love-pattern-destroying-habit/thumb.webp",
+    "og": "/images/quiz/love-pattern-destroying-habit/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "내 연애를 반복해서 망치게 만드는 가장 큰 습관이 무엇인지 알아보는 테스트",
       "en": "Find out the one habit that keeps ruining your relationships"
     },
     "keywords": [
-      { "ko": "연애 테스트", "en": "love test" },
-      { "ko": "심리 테스트", "en": "psychology test" }
+      {
+        "ko": "연애 테스트",
+        "en": "love test"
+      },
+      {
+        "ko": "심리 테스트",
+        "en": "psychology test"
+      }
     ],
     "ogTitle": {
       "ko": "내가 연애를 망치는 한 가지 습관",
@@ -41,21 +56,27 @@
       "en": "Maybe the problem isn’t them, it’s you"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
       "ko": "✨ 연애 스낵 테스트",
       "en": "✨ Love snack quiz"
     },
-    "image": "/images/quiz/love-pattern-destroying-habit/ko/thumb.webp",
-    "railImage": "/images/banners/ko/tile-love-02.webp",
+    "image": "/images/quiz/love-pattern-destroying-habit/thumb.webp",
     "priority": 90
   },
-
-  "resultKeys": ["overinvested", "indifferent", "avoidant", "clingy"],
-  "resultOrder": ["overinvested", "indifferent", "avoidant", "clingy"],
-
+  "resultKeys": [
+    "overinvested",
+    "indifferent",
+    "avoidant",
+    "clingy"
+  ],
+  "resultOrder": [
+    "overinvested",
+    "indifferent",
+    "avoidant",
+    "clingy"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -64,7 +85,6 @@
     },
     "blendOnTie": true
   },
-
   "analytics": {
     "eventKey": "love_pattern_destroying_habit",
     "contentGroup": "love",
@@ -74,14 +94,17 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["who-likes-you-type"],
-
+  "related": [
+    "who-likes-you-type"
+  ],
   "results": {
     "overinvested": {
       "emoji": "🔥",
       "scoreKey": "overinvested",
-      "title": { "ko": "과몰입형", "en": "Overinvesting Type" },
+      "title": {
+        "ko": "과몰입형",
+        "en": "Overinvesting Type"
+      },
       "tagline": {
         "ko": "감정이 너무 빠르게 커지는 타입",
         "en": "You fall too fast and too deep"
@@ -90,21 +113,26 @@
         "ko": "당신은 사랑이 시작되면 속도가 너무 빠르다.\n상대보다 먼저 감정이 깊어지고 기대도 커진다.\n문제는 그 속도를 상대가 따라오지 못한다는 것.\n결국 혼자 관계를 키우다가 스스로 무너진다.",
         "en": "You fall in love fast.\nFaster than the relationship can handle.\nYou build expectations before reality catches up.\nAnd that’s where things start to break."
       },
-      "image": "/images/quiz/love-pattern-destroying-habit/ko/result-1.webp",
+      "image": "/images/quiz/love-pattern-destroying-habit/result-1.webp",
       "share": {
-        "title": { "ko": "나는 과몰입형", "en": "I’m the overinvesting type" },
+        "title": {
+          "ko": "나는 과몰입형",
+          "en": "I’m the overinvesting type"
+        },
         "description": {
           "ko": "감정이 너무 빠르게 커지는 타입",
           "en": "You fall too fast and too deep"
         },
-        "image": "/images/quiz/love-pattern-destroying-habit/ko/result-1.webp"
+        "image": "/images/quiz/love-pattern-destroying-habit/result-1.webp"
       }
     },
-
     "indifferent": {
       "emoji": "🧊",
       "scoreKey": "indifferent",
-      "title": { "ko": "무관심형", "en": "Indifferent Type" },
+      "title": {
+        "ko": "무관심형",
+        "en": "Indifferent Type"
+      },
       "tagline": {
         "ko": "표현이 부족한 타입",
         "en": "You don’t show enough emotion"
@@ -113,21 +141,26 @@
         "ko": "당신은 좋아해도 표현을 잘 하지 않는다.\n혼자 마음이 있다고 생각하지만 상대는 느끼지 못한다.\n결국 관계는 애매하게 식어버린다.",
         "en": "You care, but you don’t show it.\nTo you, it’s obvious.\nTo them, it feels like nothing.\nAnd that gap slowly kills the relationship."
       },
-      "image": "/images/quiz/love-pattern-destroying-habit/ko/result-2.webp",
+      "image": "/images/quiz/love-pattern-destroying-habit/result-2.webp",
       "share": {
-        "title": { "ko": "나는 무관심형", "en": "I’m the indifferent type" },
+        "title": {
+          "ko": "나는 무관심형",
+          "en": "I’m the indifferent type"
+        },
         "description": {
           "ko": "표현이 부족한 타입",
           "en": "You don’t show enough emotion"
         },
-        "image": "/images/quiz/love-pattern-destroying-habit/ko/result-2.webp"
+        "image": "/images/quiz/love-pattern-destroying-habit/result-2.webp"
       }
     },
-
     "avoidant": {
       "emoji": "🌫️",
       "scoreKey": "avoidant",
-      "title": { "ko": "회피형", "en": "Avoidant Type" },
+      "title": {
+        "ko": "회피형",
+        "en": "Avoidant Type"
+      },
       "tagline": {
         "ko": "불편한 감정을 피하는 타입",
         "en": "You run from emotional discomfort"
@@ -136,21 +169,26 @@
         "ko": "당신은 갈등이 생기면 피한다.\n대화보다 거리를 선택한다.\n하지만 그 침묵이 관계를 더 빠르게 무너뜨린다.",
         "en": "You avoid conflict.\nInstead of talking, you disappear.\nBut silence doesn’t fix things.\nIt slowly breaks everything."
       },
-      "image": "/images/quiz/love-pattern-destroying-habit/ko/result-3.webp",
+      "image": "/images/quiz/love-pattern-destroying-habit/result-3.webp",
       "share": {
-        "title": { "ko": "나는 회피형", "en": "I’m the avoidant type" },
+        "title": {
+          "ko": "나는 회피형",
+          "en": "I’m the avoidant type"
+        },
         "description": {
           "ko": "불편한 감정을 피하는 타입",
           "en": "You run from emotional discomfort"
         },
-        "image": "/images/quiz/love-pattern-destroying-habit/ko/result-3.webp"
+        "image": "/images/quiz/love-pattern-destroying-habit/result-3.webp"
       }
     },
-
     "clingy": {
       "emoji": "💘",
       "scoreKey": "clingy",
-      "title": { "ko": "집착형", "en": "Clingy Type" },
+      "title": {
+        "ko": "집착형",
+        "en": "Clingy Type"
+      },
       "tagline": {
         "ko": "확인을 계속 원하는 타입",
         "en": "You constantly need reassurance"
@@ -159,22 +197,27 @@
         "ko": "당신은 불안해질수록 더 확인하려 한다.\n하지만 그 확인이 상대를 지치게 만든다.\n사랑이 아니라 압박으로 느껴진다.",
         "en": "The more anxious you feel, the more you check.\nBut that pressure pushes people away.\nWhat feels like love to you feels like stress to them."
       },
-      "image": "/images/quiz/love-pattern-destroying-habit/ko/result-4.webp",
+      "image": "/images/quiz/love-pattern-destroying-habit/result-4.webp",
       "share": {
-        "title": { "ko": "나는 집착형", "en": "I’m the clingy type" },
+        "title": {
+          "ko": "나는 집착형",
+          "en": "I’m the clingy type"
+        },
         "description": {
           "ko": "확인을 계속 원하는 타입",
           "en": "You constantly need reassurance"
         },
-        "image": "/images/quiz/love-pattern-destroying-habit/ko/result-4.webp"
+        "image": "/images/quiz/love-pattern-destroying-habit/result-4.webp"
       }
     }
   },
-
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
-    "title": { "ko": "복합형", "en": "Mixed pattern" },
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed pattern"
+    },
     "tagline": {
       "ko": "여러 성향이 비슷하게 나왔어요.",
       "en": "Several patterns scored close together."
@@ -183,17 +226,19 @@
       "ko": "두 타입 이상이 비슷하게 나왔어요.\n연애에서 여러 습관이 겹쳐 보일 수 있어요.",
       "en": "More than one pattern is strong.\nYour habits in love may overlap."
     },
-    "image": "/images/quiz/love-pattern-destroying-habit/ko/thumb.webp",
+    "image": "/images/quiz/love-pattern-destroying-habit/thumb.webp",
     "share": {
-      "title": { "ko": "연애 패턴은 복합형", "en": "Your love pattern is mixed" },
+      "title": {
+        "ko": "연애 패턴은 복합형",
+        "en": "Your love pattern is mixed"
+      },
       "description": {
         "ko": "한 가지로만 정의되지 않는 패턴",
         "en": "Not just one label"
       },
-      "image": "/images/quiz/love-pattern-destroying-habit/ko/thumb.webp"
+      "image": "/images/quiz/love-pattern-destroying-habit/thumb.webp"
     }
   },
-
   "questions": [
     {
       "prompt": {
@@ -201,10 +246,34 @@
         "en": "When someone replies late, I..."
       },
       "options": [
-        { "label": { "ko": "혼자 의미를 키운다", "en": "overthink it" }, "key": "overinvested" },
-        { "label": { "ko": "별 생각 없다", "en": "don’t care much" }, "key": "indifferent" },
-        { "label": { "ko": "나도 거리 둔다", "en": "pull away too" }, "key": "avoidant" },
-        { "label": { "ko": "계속 확인한다", "en": "keep checking" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "혼자 의미를 키운다",
+            "en": "overthink it"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "별 생각 없다",
+            "en": "don’t care much"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "나도 거리 둔다",
+            "en": "pull away too"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "계속 확인한다",
+            "en": "keep checking"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -213,10 +282,34 @@
         "en": "At the beginning of a relationship, I..."
       },
       "options": [
-        { "label": { "ko": "금방 깊어진다", "en": "get attached quickly" }, "key": "overinvested" },
-        { "label": { "ko": "티를 안 낸다", "en": "hide my feelings" }, "key": "indifferent" },
-        { "label": { "ko": "선을 둔다", "en": "keep distance" }, "key": "avoidant" },
-        { "label": { "ko": "확인한다", "en": "seek reassurance" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "금방 깊어진다",
+            "en": "get attached quickly"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "티를 안 낸다",
+            "en": "hide my feelings"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "선을 둔다",
+            "en": "keep distance"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "확인한다",
+            "en": "seek reassurance"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -225,10 +318,34 @@
         "en": "When conflict happens, I..."
       },
       "options": [
-        { "label": { "ko": "감정이 커진다", "en": "get emotional" }, "key": "overinvested" },
-        { "label": { "ko": "넘긴다", "en": "ignore it" }, "key": "indifferent" },
-        { "label": { "ko": "피한다", "en": "avoid it" }, "key": "avoidant" },
-        { "label": { "ko": "확인받고 싶다", "en": "need reassurance" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "감정이 커진다",
+            "en": "get emotional"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "넘긴다",
+            "en": "ignore it"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "피한다",
+            "en": "avoid it"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "확인받고 싶다",
+            "en": "need reassurance"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -237,10 +354,34 @@
         "en": "If they say they’re busy, I..."
       },
       "options": [
-        { "label": { "ko": "서운해진다", "en": "feel hurt" }, "key": "overinvested" },
-        { "label": { "ko": "이해한다", "en": "understand" }, "key": "indifferent" },
-        { "label": { "ko": "거리 둔다", "en": "step back" }, "key": "avoidant" },
-        { "label": { "ko": "확인한다", "en": "question it" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "서운해진다",
+            "en": "feel hurt"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "이해한다",
+            "en": "understand"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "거리 둔다",
+            "en": "step back"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "확인한다",
+            "en": "question it"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -249,10 +390,34 @@
         "en": "My biggest mistake in love is..."
       },
       "options": [
-        { "label": { "ko": "혼자 앞서감", "en": "moving too fast" }, "key": "overinvested" },
-        { "label": { "ko": "표현 부족", "en": "not expressing enough" }, "key": "indifferent" },
-        { "label": { "ko": "회피", "en": "avoiding issues" }, "key": "avoidant" },
-        { "label": { "ko": "집착", "en": "being too needy" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "혼자 앞서감",
+            "en": "moving too fast"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "표현 부족",
+            "en": "not expressing enough"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "회피",
+            "en": "avoiding issues"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "집착",
+            "en": "being too needy"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -261,10 +426,34 @@
         "en": "If they change, I..."
       },
       "options": [
-        { "label": { "ko": "더 예민해짐", "en": "get anxious" }, "key": "overinvested" },
-        { "label": { "ko": "나도 변함", "en": "match their energy" }, "key": "indifferent" },
-        { "label": { "ko": "거리 둠", "en": "pull away" }, "key": "avoidant" },
-        { "label": { "ko": "확인함", "en": "need answers" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "더 예민해짐",
+            "en": "get anxious"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "나도 변함",
+            "en": "match their energy"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "거리 둠",
+            "en": "pull away"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "확인함",
+            "en": "need answers"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -273,10 +462,34 @@
         "en": "My biggest fear is..."
       },
       "options": [
-        { "label": { "ko": "혼자 깊어짐", "en": "loving more than them" }, "key": "overinvested" },
-        { "label": { "ko": "가볍게 보임", "en": "looking weak" }, "key": "indifferent" },
-        { "label": { "ko": "상처", "en": "getting hurt" }, "key": "avoidant" },
-        { "label": { "ko": "버려짐", "en": "being abandoned" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "혼자 깊어짐",
+            "en": "loving more than them"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "가볍게 보임",
+            "en": "looking weak"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "상처",
+            "en": "getting hurt"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "버려짐",
+            "en": "being abandoned"
+          },
+          "key": "clingy"
+        }
       ]
     },
     {
@@ -285,14 +498,37 @@
         "en": "My relationships usually end when..."
       },
       "options": [
-        { "label": { "ko": "내가 너무 앞섬", "en": "I go too fast" }, "key": "overinvested" },
-        { "label": { "ko": "아무것도 안 함", "en": "I do nothing" }, "key": "indifferent" },
-        { "label": { "ko": "피하다 끝남", "en": "I avoid things" }, "key": "avoidant" },
-        { "label": { "ko": "집착하다 끝남", "en": "I push too hard" }, "key": "clingy" }
+        {
+          "label": {
+            "ko": "내가 너무 앞섬",
+            "en": "I go too fast"
+          },
+          "key": "overinvested"
+        },
+        {
+          "label": {
+            "ko": "아무것도 안 함",
+            "en": "I do nothing"
+          },
+          "key": "indifferent"
+        },
+        {
+          "label": {
+            "ko": "피하다 끝남",
+            "en": "I avoid things"
+          },
+          "key": "avoidant"
+        },
+        {
+          "label": {
+            "ko": "집착하다 끝남",
+            "en": "I push too hard"
+          },
+          "key": "clingy"
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 결과는 재미·자기이해용 스낵 테스트이며, 심리 진단이 아닙니다.",
     "en": "For fun and self-reflection only — not a clinical assessment."

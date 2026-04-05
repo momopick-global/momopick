@@ -1,0 +1,508 @@
+{
+  "id": "mental-strength-test",
+  "slug": "mental-strength-test",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "멘탈",
+      "en": "mindset"
+    },
+    {
+      "ko": "회복력",
+      "en": "resilience"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
+  ],
+  "title": {
+    "ko": "나는 멘탈 강자일까 유리멘탈일까?",
+    "en": "Are You Mentally Strong or Emotionally Fragile?"
+  },
+  "subtitle": {
+    "ko": "회복력 지수",
+    "en": "How strong is your emotional resilience?"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/mental-strength-test/thumb.webp",
+    "og": "/images/quiz/mental-strength-test/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "실패·비판·스트레스에서의 반응으로 강철 멘탈·탄성형·유리 멘탈 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether you lean steel-strong, resilient, or fragile under pressure"
+    },
+    "keywords": [
+      {
+        "ko": "멘탈 테스트",
+        "en": "mental strength test"
+      },
+      {
+        "ko": "회복력",
+        "en": "resilience"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나는 멘탈 강자일까 유리멘탈일까?",
+      "en": "Are You Mentally Strong or Emotionally Fragile?"
+    },
+    "ogDescription": {
+      "ko": "회복력 지수",
+      "en": "How strong is your emotional resilience?"
+    }
+  },
+  "card": {
+    "theme": "personality",
+    "kicker": {
+      "ko": "🧠 회복력",
+      "en": "🧠 Resilience"
+    },
+    "image": "/images/quiz/mental-strength-test/thumb.webp",
+    "priority": 84
+  },
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "mental_strength_test",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "anger-style-test",
+    "hidden-dark-side",
+    "leader-or-supporter"
+  ],
+  "results": {
+    "A": {
+      "emoji": "🛡️",
+      "scoreKey": "A",
+      "title": {
+        "ko": "강철 멘탈",
+        "en": "Strong Mentality"
+      },
+      "tagline": {
+        "ko": "쉽게 흔들리지 않는 회복력",
+        "en": "You bounce back fast and stay steady"
+      },
+      "body": {
+        "ko": "쉽게 흔들리지 않는 강한 멘탈을 가진 타입입니다. 스트레스와 실패를 빠르게 극복합니다.\n실패 후 바로 다시 도전하고, 비판을 객관적으로 받아들이며, 스트레스에서는 원인 해결을 먼저 떠올리기 쉽습니다.\n힘든 일이 있어도 정면 돌파를 택하고, 감정 기복은 상대적으로 작은 편일 수 있어요.\n문제가 반복되면 방법을 바꾸고, 타인의 말은 필요한 것만 골라 받아들입니다.\n힘든 시기를 지나면 더 강해졌다고 느끼는 경우가 많습니다.",
+        "en": "You have strong resilience and recover quickly from stress.\nAfter failure you may try again soon; criticism lands more objectively.\nUnder stress you look for solutions; when things get tough you face them.\nYour emotional swings may stay moderate; when problems repeat you change strategy.\nYou tend to take what matters from others’ words and feel stronger after hard seasons."
+      },
+      "image": "/images/quiz/mental-strength-test/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 멘탈은 강철 멘탈",
+          "en": "My mindset is Strong Mentality"
+        },
+        "description": {
+          "ko": "스트레스와 실패를 빠르게 극복하는 타입",
+          "en": "You recover quickly from stress and setbacks"
+        },
+        "image": "/images/quiz/mental-strength-test/result-1.webp"
+      }
+    },
+    "B": {
+      "emoji": "🌿",
+      "scoreKey": "B",
+      "title": {
+        "ko": "탄성형 멘탈",
+        "en": "Resilient Type"
+      },
+      "tagline": {
+        "ko": "흔들리지만 다시 돌아오는 회복력",
+        "en": "You wobble, then return steady"
+      },
+      "body": {
+        "ko": "흔들리긴 하지만 다시 돌아오는 타입입니다. 회복력이 안정적인 편입니다.\n실패 후 시간을 두고 회복하고, 비판에 조금 신경 쓰이지만 곧 정리하는 흐름이 나올 수 있어요.\n스트레스에서는 버티면서 조절하고, 힘든 일은 천천히 해결하려 합니다.\n감정 기복은 보통 수준이고, 문제가 반복되면 참고 견디며 버티기도 합니다.\n타인의 말에 어느 정도 신경 쓰이지만, 힘든 시기가 지나면 천천히 회복하는 편입니다.",
+        "en": "You may struggle but bounce back steadily.\nAfter failure you recover over time; criticism stings a bit but you move on.\nUnder stress you manage gradually; tough situations you handle slowly.\nYour emotional ups and downs are moderate; when problems repeat you endure.\nYou care somewhat what others say, and after hard times you recover step by step."
+      },
+      "image": "/images/quiz/mental-strength-test/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 멘탈은 탄성형",
+          "en": "My mindset is the Resilient Type"
+        },
+        "description": {
+          "ko": "흔들리지만 다시 돌아오는 타입",
+          "en": "You struggle but bounce back"
+        },
+        "image": "/images/quiz/mental-strength-test/result-2.webp"
+      }
+    },
+    "C": {
+      "emoji": "🫧",
+      "scoreKey": "C",
+      "title": {
+        "ko": "유리 멘탈",
+        "en": "Fragile Type"
+      },
+      "tagline": {
+        "ko": "감정의 영향을 크게 받는 타입",
+        "en": "Stress and words hit you hard"
+      },
+      "body": {
+        "ko": "감정의 영향을 크게 받는 타입입니다. 작은 자극에도 오래 흔들릴 수 있습니다.\n실패 후 오래 끙끙 앓거나 의욕이 줄고, 비판은 오래 남거나 깊게 상처로 느껴질 수 있어요.\n스트레스에서 감정에 휘둘리거나 피하고 싶어지고, 힘든 일은 버티기 힘들거나 회피하기 쉽습니다.\n감정 기복이 크고, 문제가 반복되면 지치거나 포기하고 싶어질 수 있어요.\n타인의 말에 많이 흔들리거나 계속 신경 쓰이고, 힘든 시기가 지나도 여전히 영향이 남거나 깊게 남는 느낌이 들 수 있습니다.",
+        "en": "You are sensitive and can be deeply affected by stress.\nAfter failure you may struggle a long time or lose motivation.\nCriticism can lead to overthinking or deep hurt.\nUnder stress you may feel overwhelmed or want to escape; tough times are hard to face.\nYour emotional swings may be large; repeated problems can exhaust you or push you toward giving up.\nOthers’ words may shake you easily, and hard seasons can leave a long shadow."
+      },
+      "image": "/images/quiz/mental-strength-test/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 멘탈은 유리 멘탈",
+          "en": "My mindset is the Fragile Type"
+        },
+        "description": {
+          "ko": "감정의 영향을 크게 받는 타입",
+          "en": "You are sensitive to stress and stimuli"
+        },
+        "image": "/images/quiz/mental-strength-test/result-3.webp"
+      }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "강함·탄성·민감함이 섞인 멘탈",
+      "en": "A mix of strength, resilience, and sensitivity"
+    },
+    "body": {
+      "ko": "한 가지 멘탈 유형으로만 정의되지 않을 수 있어요.\n상황에 따라 단단해지기도 하고, 흔들렸다가 돌아오기도 하며, 예민해지기도 합니다.\n‘항상 이렇다’보다 ‘어떤 조건에서 이렇게 된다’를 아는 것이 도움이 됩니다.",
+      "en": "You may not fit one label.\nSometimes you are strong, sometimes resilient, sometimes fragile.\nNoticing patterns by situation matters more than a single score."
+    },
+    "image": "/images/quiz/mental-strength-test/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나의 멘탈은 복합형",
+        "en": "My mindset profile is mixed"
+      },
+      "description": {
+        "ko": "강철·탄성·유리 성향이 함께 나타날 수 있어요",
+        "en": "Strong, resilient, and fragile sides can all show up"
+      },
+      "image": "/images/quiz/mental-strength-test/thumb.webp"
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "실패를 경험했을 때 나는?",
+        "en": "When I fail, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "바로 다시 도전",
+            "en": "Try again immediately"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "시간 두고 회복",
+            "en": "Recover over time"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "오래 끙끙 앓음",
+            "en": "Struggle for a long time"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "의욕이 사라짐",
+            "en": "Lose motivation"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "누군가 나를 비판하면?",
+        "en": "When criticized, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "객관적으로 받아들임",
+            "en": "Accept it objectively"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "조금 신경 쓰임",
+            "en": "Feel it a bit"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "오래 생각함",
+            "en": "Overthink it"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "상처받음",
+            "en": "Get hurt deeply"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "스트레스 상황에서 나는?",
+        "en": "Under stress, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "원인을 해결하려 함",
+            "en": "Solve the problem"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "버티면서 조절",
+            "en": "Manage it gradually"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "감정에 휘둘림",
+            "en": "Get overwhelmed"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "피하고 싶어짐",
+            "en": "Want to escape"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "힘든 일이 생기면 나는?",
+        "en": "When things get tough, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "정면 돌파",
+            "en": "Face it head-on"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "천천히 해결",
+            "en": "Handle it slowly"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "버티기 힘듦",
+            "en": "Struggle to cope"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "회피함",
+            "en": "Avoid it"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "감정 기복은?",
+        "en": "My emotional ups and downs are..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "거의 없음",
+            "en": "Very stable"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "보통 수준",
+            "en": "Moderate"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "큰 편",
+            "en": "Quite big"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "매우 심함",
+            "en": "Very intense"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "문제가 반복될 때 나는?",
+        "en": "When problems repeat, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "방법을 바꾼다",
+            "en": "Change strategy"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "참고 견딘다",
+            "en": "Endure it"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "지쳐버린다",
+            "en": "Get exhausted"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "포기한다",
+            "en": "Give up"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "타인의 말에 나는?",
+        "en": "When hearing others' opinions, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "필요한 것만 받아들임",
+            "en": "Take what matters"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "어느 정도 신경씀",
+            "en": "Care somewhat"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "많이 흔들림",
+            "en": "Get easily affected"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "계속 신경씀",
+            "en": "Keep thinking about it"
+          },
+          "key": "C"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "힘든 시기를 지나고 나는?",
+        "en": "After tough times, I..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "더 강해진다",
+            "en": "Become stronger"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "천천히 회복",
+            "en": "Recover gradually"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "여전히 영향받음",
+            "en": "Still affected"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "트라우마처럼 남음",
+            "en": "Feel long-term impact"
+          },
+          "key": "C"
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다. 정신건강 진단이 아닙니다.",
+    "en": "This test is for fun and self-reflection only; it is not a clinical assessment."
+  }
+}

@@ -1,13 +1,25 @@
 {
   "id": "leader-or-supporter",
-  "locales": ["ko", "en"],
+  "slug": "leader-or-supporter",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "팀", "en": "team" },
-    { "ko": "성향", "en": "personality" },
-    { "ko": "리더십", "en": "leadership" }
+    {
+      "ko": "팀",
+      "en": "team"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    },
+    {
+      "ko": "리더십",
+      "en": "leadership"
+    }
   ],
-
   "title": {
     "ko": "나는 리더형인가 조력자형인가?",
     "en": "Are You a Leader or a Supporter?"
@@ -16,21 +28,24 @@
     "ko": "팀에서의 포지션",
     "en": "What role do you play in a team?"
   },
-
   "images": {
     "thumbnail": "/images/quiz/leader-or-supporter/thumb.webp",
-    "og": "/images/quiz/leader-or-supporter/thumb.webp",
-    "start": "/images/quiz/leader-or-supporter/start.webp"
+    "og": "/images/quiz/leader-or-supporter/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "프로젝트·갈등·의사결정에서 나는 리더형, 전략가형, 서포터형 중 어디에 가까운지 알아보는 테스트",
       "en": "See whether you lean leader, strategist, or supporter in teams"
     },
     "keywords": [
-      { "ko": "팀워크 테스트", "en": "team role test" },
-      { "ko": "리더십", "en": "leadership" }
+      {
+        "ko": "팀워크 테스트",
+        "en": "team role test"
+      },
+      {
+        "ko": "리더십",
+        "en": "leadership"
+      }
     ],
     "ogTitle": {
       "ko": "나는 리더형인가 조력자형인가?",
@@ -41,7 +56,6 @@
       "en": "What role do you play in a team?"
     }
   },
-
   "card": {
     "theme": "personality",
     "kicker": {
@@ -51,10 +65,16 @@
     "image": "/images/quiz/leader-or-supporter/thumb.webp",
     "priority": 86
   },
-
-  "resultKeys": ["A", "B", "C"],
-  "resultOrder": ["A", "B", "C"],
-
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -63,7 +83,6 @@
     },
     "blendOnTie": true
   },
-
   "analytics": {
     "eventKey": "leader_or_supporter",
     "contentGroup": "love",
@@ -73,9 +92,11 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["hidden-dark-side", "logical-or-emotional", "dating-expert-or-beginner"],
-
+  "related": [
+    "hidden-dark-side",
+    "logical-or-emotional",
+    "dating-expert-or-beginner"
+  ],
   "results": {
     "A": {
       "emoji": "🎯",
@@ -105,7 +126,6 @@
         "image": "/images/quiz/leader-or-supporter/result-1.webp"
       }
     },
-
     "B": {
       "emoji": "🧭",
       "scoreKey": "B",
@@ -134,7 +154,6 @@
         "image": "/images/quiz/leader-or-supporter/result-2.webp"
       }
     },
-
     "C": {
       "emoji": "🤝",
       "scoreKey": "C",
@@ -164,7 +183,6 @@
       }
     }
   },
-
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
@@ -193,7 +211,6 @@
       "image": "/images/quiz/leader-or-supporter/thumb.webp"
     }
   },
-
   "questions": [
     {
       "prompt": {
@@ -201,10 +218,34 @@
         "en": "When starting a team project, I..."
       },
       "options": [
-        { "label": { "ko": "방향을 먼저 잡는다", "en": "Set direction first" }, "key": "A" },
-        { "label": { "ko": "전략을 고민한다", "en": "Think about strategy" }, "key": "B" },
-        { "label": { "ko": "필요한 역할을 찾는다", "en": "Find where I can help" }, "key": "C" },
-        { "label": { "ko": "분위기를 본다", "en": "Observe first" }, "key": "C" }
+        {
+          "label": {
+            "ko": "방향을 먼저 잡는다",
+            "en": "Set direction first"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "전략을 고민한다",
+            "en": "Think about strategy"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "필요한 역할을 찾는다",
+            "en": "Find where I can help"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "분위기를 본다",
+            "en": "Observe first"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -213,10 +254,34 @@
         "en": "When a problem arises, I..."
       },
       "options": [
-        { "label": { "ko": "바로 해결하려 한다", "en": "Try to solve it immediately" }, "key": "A" },
-        { "label": { "ko": "원인을 분석한다", "en": "Analyze the cause" }, "key": "B" },
-        { "label": { "ko": "도움을 준다", "en": "Support others" }, "key": "C" },
-        { "label": { "ko": "상황을 지켜본다", "en": "Wait and see" }, "key": "B" }
+        {
+          "label": {
+            "ko": "바로 해결하려 한다",
+            "en": "Try to solve it immediately"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "원인을 분석한다",
+            "en": "Analyze the cause"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "도움을 준다",
+            "en": "Support others"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "상황을 지켜본다",
+            "en": "Wait and see"
+          },
+          "key": "B"
+        }
       ]
     },
     {
@@ -225,10 +290,34 @@
         "en": "In decision-making, I..."
       },
       "options": [
-        { "label": { "ko": "결정을 내린다", "en": "Make the call" }, "key": "A" },
-        { "label": { "ko": "여러 의견을 정리한다", "en": "Organize opinions" }, "key": "B" },
-        { "label": { "ko": "다른 사람 의견을 따른다", "en": "Follow others" }, "key": "C" },
-        { "label": { "ko": "중간 역할을 한다", "en": "Bridge opinions" }, "key": "B" }
+        {
+          "label": {
+            "ko": "결정을 내린다",
+            "en": "Make the call"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "여러 의견을 정리한다",
+            "en": "Organize opinions"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "다른 사람 의견을 따른다",
+            "en": "Follow others"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "중간 역할을 한다",
+            "en": "Bridge opinions"
+          },
+          "key": "B"
+        }
       ]
     },
     {
@@ -237,10 +326,34 @@
         "en": "My relationship with teammates is..."
       },
       "options": [
-        { "label": { "ko": "이끄는 역할", "en": "Leading role" }, "key": "A" },
-        { "label": { "ko": "조율하는 역할", "en": "Mediator role" }, "key": "B" },
-        { "label": { "ko": "도와주는 역할", "en": "Support role" }, "key": "C" },
-        { "label": { "ko": "편한 동료", "en": "Easygoing member" }, "key": "C" }
+        {
+          "label": {
+            "ko": "이끄는 역할",
+            "en": "Leading role"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "조율하는 역할",
+            "en": "Mediator role"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "도와주는 역할",
+            "en": "Support role"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "편한 동료",
+            "en": "Easygoing member"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -249,10 +362,34 @@
         "en": "When working, I..."
       },
       "options": [
-        { "label": { "ko": "전체를 본다", "en": "See the big picture" }, "key": "A" },
-        { "label": { "ko": "구조를 만든다", "en": "Build structure" }, "key": "B" },
-        { "label": { "ko": "실행을 돕는다", "en": "Help execution" }, "key": "C" },
-        { "label": { "ko": "요청받은 일 중심", "en": "Do assigned tasks" }, "key": "C" }
+        {
+          "label": {
+            "ko": "전체를 본다",
+            "en": "See the big picture"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "구조를 만든다",
+            "en": "Build structure"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "실행을 돕는다",
+            "en": "Help execution"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "요청받은 일 중심",
+            "en": "Do assigned tasks"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -261,10 +398,34 @@
         "en": "In conflicts, I..."
       },
       "options": [
-        { "label": { "ko": "결론을 낸다", "en": "Drive a conclusion" }, "key": "A" },
-        { "label": { "ko": "중재한다", "en": "Mediate" }, "key": "B" },
-        { "label": { "ko": "뒤에서 돕는다", "en": "Support quietly" }, "key": "C" },
-        { "label": { "ko": "피한다", "en": "Avoid it" }, "key": "C" }
+        {
+          "label": {
+            "ko": "결론을 낸다",
+            "en": "Drive a conclusion"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "중재한다",
+            "en": "Mediate"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "뒤에서 돕는다",
+            "en": "Support quietly"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "피한다",
+            "en": "Avoid it"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -273,10 +434,34 @@
         "en": "When achieving results, I..."
       },
       "options": [
-        { "label": { "ko": "주도적으로 만든다", "en": "Lead the result" }, "key": "A" },
-        { "label": { "ko": "전략적으로 만든다", "en": "Plan strategically" }, "key": "B" },
-        { "label": { "ko": "도와서 만든다", "en": "Support the result" }, "key": "C" },
-        { "label": { "ko": "팀에 따라간다", "en": "Follow the team" }, "key": "C" }
+        {
+          "label": {
+            "ko": "주도적으로 만든다",
+            "en": "Lead the result"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "전략적으로 만든다",
+            "en": "Plan strategically"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "도와서 만든다",
+            "en": "Support the result"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "팀에 따라간다",
+            "en": "Follow the team"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -285,14 +470,37 @@
         "en": "Where am I most comfortable?"
       },
       "options": [
-        { "label": { "ko": "앞에서 이끄는 자리", "en": "Leading upfront" }, "key": "A" },
-        { "label": { "ko": "중간에서 조율", "en": "Coordinating" }, "key": "B" },
-        { "label": { "ko": "뒤에서 지원", "en": "Supporting behind" }, "key": "C" },
-        { "label": { "ko": "눈에 안 띄는 자리", "en": "Staying low-key" }, "key": "C" }
+        {
+          "label": {
+            "ko": "앞에서 이끄는 자리",
+            "en": "Leading upfront"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "중간에서 조율",
+            "en": "Coordinating"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "뒤에서 지원",
+            "en": "Supporting behind"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "눈에 안 띄는 자리",
+            "en": "Staying low-key"
+          },
+          "key": "C"
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다.",
     "en": "This test is for fun and self-reflection only."

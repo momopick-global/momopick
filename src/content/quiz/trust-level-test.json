@@ -1,0 +1,508 @@
+{
+  "id": "trust-level-test",
+  "slug": "trust-level-test",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "신뢰",
+      "en": "trust"
+    },
+    {
+      "ko": "관계",
+      "en": "relationship"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
+  ],
+  "title": {
+    "ko": "나는 사람을 잘 믿는 편일까?",
+    "en": "How Much Do You Trust Others?"
+  },
+  "subtitle": {
+    "ko": "신뢰도 분석",
+    "en": "Analyze your trust level"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/trust-level-test/thumb.webp",
+    "og": "/images/quiz/trust-level-test/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "첫만남·비밀·약속·배신까지, 나의 신뢰 패턴이 경계형·신뢰형·맹신형 중 어디에 가까운지 알아보는 테스트",
+      "en": "See whether you lean cautious, balanced, or over-trusting in relationships"
+    },
+    "keywords": [
+      {
+        "ko": "신뢰 테스트",
+        "en": "trust test"
+      },
+      {
+        "ko": "심리 테스트",
+        "en": "psychology test"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나는 사람을 잘 믿는 편일까?",
+      "en": "How Much Do You Trust Others?"
+    },
+    "ogDescription": {
+      "ko": "신뢰도 분석",
+      "en": "Analyze your trust level"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🤝 신뢰 성향",
+      "en": "🤝 Trust style"
+    },
+    "image": "/images/quiz/trust-level-test/thumb.webp",
+    "priority": 86
+  },
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, or C. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "trust_level_test",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "hidden-dark-side",
+    "emotional-sensitivity",
+    "true-self-alone"
+  ],
+  "results": {
+    "A": {
+      "emoji": "🛡️",
+      "scoreKey": "A",
+      "title": {
+        "ko": "경계형",
+        "en": "Cautious Type"
+      },
+      "tagline": {
+        "ko": "쉽게 믿지 않는 타입",
+        "en": "You guard trust carefully"
+      },
+      "body": {
+        "ko": "사람을 쉽게 믿지 않는 타입입니다. 신중하지만 관계가 좁아질 수 있습니다.\n처음 만난 사람에게 쉽게 마음을 열지 않고, 비밀도 잘 나누지 않는 편일 수 있어요.\n잘해주는 상대에게도 의심이 먼저 들 수 있고, 약속을 어기면 다시 믿기 어렵게 느낄 수 있습니다.\n사람을 판단할 때 시간을 두고, 배신 후에는 더 경계하게 되기 쉽습니다.\n친구 관계에서 선을 긋는 편이라면, ‘조심’과 ‘단절’ 사이에 나만의 속도를 찾는 것이 도움이 됩니다.",
+        "en": "You are cautious and careful with trust.\nYou may not open up quickly or share secrets easily.\nKindness can feel suspicious; broken promises are hard to forgive.\nYou take time to judge people and may trust less after betrayal.\nStrong boundaries protect you—balance them with closeness where it feels safe."
+      },
+      "image": "/images/quiz/trust-level-test/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 신뢰 유형은 경계형",
+          "en": "My trust style is Cautious Type"
+        },
+        "description": {
+          "ko": "사람을 쉽게 믿지 않는 타입",
+          "en": "You are careful with trust"
+        },
+        "image": "/images/quiz/trust-level-test/result-1.webp"
+      }
+    },
+    "B": {
+      "emoji": "⚖️",
+      "scoreKey": "B",
+      "title": {
+        "ko": "신뢰형",
+        "en": "Balanced Trust Type"
+      },
+      "tagline": {
+        "ko": "상황에 맞게 믿는 타입",
+        "en": "You calibrate trust to context"
+      },
+      "body": {
+        "ko": "상황에 따라 적절하게 사람을 믿는 타입입니다. 안정적인 관계를 유지합니다.\n처음엔 적당히 열고, 비밀은 믿는 사람에게만 나누는 흐름이 나올 수 있어요.\n잘해주는 건 좋게 받아들이되 한 번은 이해하고, 약속은 상황을 보며 넘기기도 합니다.\n느낌과 경험을 함께 보고, 배신 후에는 조심하지만 완전히 문을 닫지는 않을 수 있어요.\n친구 관계에서 적당히 오픈하고, 상대에 따라 거리를 조절하는 편입니다.",
+        "en": "You balance trust wisely depending on the situation.\nYou may trust moderately at first and share secrets only with trusted people.\nYou accept kindness, give one chance on broken promises, and read context.\nAfter betrayal you grow cautious but not always closed.\nIn friendships you stay moderately open and flexible."
+      },
+      "image": "/images/quiz/trust-level-test/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 신뢰 유형은 신뢰형",
+          "en": "My trust style is Balanced Trust Type"
+        },
+        "description": {
+          "ko": "상황에 맞게 믿는 타입",
+          "en": "You balance trust well"
+        },
+        "image": "/images/quiz/trust-level-test/result-2.webp"
+      }
+    },
+    "C": {
+      "emoji": "💗",
+      "scoreKey": "C",
+      "title": {
+        "ko": "맹신형",
+        "en": "Over-Trusting Type"
+      },
+      "tagline": {
+        "ko": "쉽게 믿고 열리는 타입",
+        "en": "You open up and trust fast"
+      },
+      "body": {
+        "ko": "사람을 쉽게 믿는 타입입니다. 따뜻하지만 상처를 받을 가능성도 있습니다.\n금방 마음을 열고, 비밀도 생각보다 쉽게 나눌 수 있어요.\n잘해주면 바로 믿는 쪽에 가깝고, 약속을 어겨도 금방 잊거나 넘기기 쉽습니다.\n첫인상을 믿는 편일 수 있고, 배신 후에도 ‘그래도 사람은 믿는다’는 쪽이 나올 수 있어요.\n친구 관계에서 완전히 오픈하는 편이라면, 가끔은 속도를 조절하는 것도 자기 보호에 도움이 됩니다.",
+        "en": "You trust easily, which is warm but risky.\nYou may open up fast and share secrets quickly.\nKindness can feel immediately trustworthy; broken promises may be forgiven easily.\nYou may trust first impressions and still believe in people after betrayal.\nFull openness is generous—pacing trust can protect you when needed."
+      },
+      "image": "/images/quiz/trust-level-test/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 신뢰 유형은 맹신형",
+          "en": "My trust style is Over-Trusting Type"
+        },
+        "description": {
+          "ko": "사람을 쉽게 믿는 타입",
+          "en": "You trust easily"
+        },
+        "image": "/images/quiz/trust-level-test/result-3.webp"
+      }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "경계·신뢰·맹신이 섞인 스타일",
+      "en": "A mix of caution, balance, and openness"
+    },
+    "body": {
+      "ko": "한 가지 패턴으로만 정의되지 않을 수 있어요.\n사람마다, 상황마다 경계·균형·열림이 섞여 나타날 수 있습니다.\n‘항상 이렇다’보다 ‘누구에게 어떤 속도로 믿는지’를 아는 것이 도움이 됩니다.",
+      "en": "You may not fit one label.\nCaution, balance, and openness can all show up depending on context.\nNoticing who you trust and how fast matters more than a single score."
+    },
+    "image": "/images/quiz/trust-level-test/thumb.webp",
+    "share": {
+      "title": {
+        "ko": "나의 신뢰 유형은 복합형",
+        "en": "My trust style is mixed"
+      },
+      "description": {
+        "ko": "경계·신뢰·맹신 성향이 함께 나타날 수 있어요",
+        "en": "Cautious, balanced, and open sides can all show up"
+      },
+      "image": "/images/quiz/trust-level-test/thumb.webp"
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "처음 만난 사람을 나는?",
+        "en": "When meeting someone new..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "쉽게 믿지 않는다",
+            "en": "Don't trust easily"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "적당히 믿는다",
+            "en": "Trust moderately"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "금방 믿는다",
+            "en": "Trust quickly"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "상황을 본다",
+            "en": "Depends on situation"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "비밀을 말할 때 나는?",
+        "en": "When sharing secrets..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "거의 말 안 한다",
+            "en": "Rarely share"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "믿는 사람에게만",
+            "en": "Only trusted people"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "생각보다 쉽게 말함",
+            "en": "Share easily"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "분위기 따라",
+            "en": "Depends"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "상대가 잘해주면?",
+        "en": "If someone is kind to you..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "의심부터 든다",
+            "en": "Feel suspicious"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "좋게 받아들인다",
+            "en": "Accept it"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "바로 믿는다",
+            "en": "Trust immediately"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "조금 지켜본다",
+            "en": "Observe first"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "약속을 어긴 사람에게?",
+        "en": "If someone breaks a promise..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "다시 믿기 어렵다",
+            "en": "Hard to trust again"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "한 번은 이해한다",
+            "en": "Give a chance"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "금방 잊는다",
+            "en": "Forget easily"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "상황을 본다",
+            "en": "Depends"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "사람을 판단할 때 나는?",
+        "en": "When judging people..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "시간 두고 판단",
+            "en": "Take time"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "느낌으로 판단",
+            "en": "Go by feeling"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "첫인상 믿음",
+            "en": "Trust first impression"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "경험 기준",
+            "en": "Based on experience"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "배신을 당하면?",
+        "en": "If betrayed..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "사람을 잘 안 믿게 된다",
+            "en": "Trust less"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "조심하게 된다",
+            "en": "Be cautious"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "그래도 사람은 믿는다",
+            "en": "Still trust people"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "상황에 따라 다름",
+            "en": "Depends"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "친구 관계에서 나는?",
+        "en": "In friendships..."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "선 긋는 편",
+            "en": "Keep boundaries"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "적당히 오픈",
+            "en": "Moderately open"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "완전 오픈",
+            "en": "Fully open"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "상대에 따라 다름",
+            "en": "Depends on person"
+          },
+          "key": "B"
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "나는 어떤 타입?",
+        "en": "Which describes you best?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "경계가 강한 사람",
+            "en": "Cautious"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "균형 잡힌 사람",
+            "en": "Balanced"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "사람을 잘 믿는 사람",
+            "en": "Trusting"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "유연한 사람",
+            "en": "Flexible"
+          },
+          "key": "B"
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미 및 자기이해용입니다.",
+    "en": "This test is for fun and self-reflection only."
+  }
+}

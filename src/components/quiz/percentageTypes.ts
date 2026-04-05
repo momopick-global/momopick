@@ -29,7 +29,10 @@ export type PercentageQuizQuestion = {
 
 /** 점수 합 → 퍼센트 환산 → `resultRanges` 매칭 */
 export type PercentageQuizDefinition = {
+  /** 카탈로그 식별자 (URL `slug`와 동일 권장) */
   id: string;
+  /** URL 경로 세그먼트 */
+  slug: string;
   locales?: string[];
   category?: string;
   tags?: SnackQuizText[];

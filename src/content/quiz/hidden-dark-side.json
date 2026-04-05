@@ -1,13 +1,25 @@
 {
   "id": "hidden-dark-side",
-  "locales": ["ko", "en"],
+  "slug": "hidden-dark-side",
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "연애", "en": "love" },
-    { "ko": "성향", "en": "personality" },
-    { "ko": "심리", "en": "psychology" }
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    }
   ],
-
   "title": {
     "ko": "나의 숨겨진 다크사이드",
     "en": "What Is Your Hidden Dark Side?"
@@ -16,21 +28,24 @@
     "ko": "아무도 모르는 내면",
     "en": "The side of you no one knows"
   },
-
   "images": {
     "thumbnail": "/images/quiz/hidden-dark-side/thumb.webp",
-    "og": "/images/quiz/hidden-dark-side/thumb.webp",
-    "start": "/images/quiz/hidden-dark-side/start.webp"
+    "og": "/images/quiz/hidden-dark-side/thumb.webp"
   },
-
   "meta": {
     "description": {
       "ko": "화·상처·갈등에서 드러나는 나의 그림자 성향이 통제형·폭발형·냉소형 중 어디에 가까운지 알아보는 테스트",
       "en": "See whether your hidden edge leans controlled, explosive, or detached"
     },
     "keywords": [
-      { "ko": "성향 테스트", "en": "personality test" },
-      { "ko": "다크사이드", "en": "dark side" }
+      {
+        "ko": "성향 테스트",
+        "en": "personality test"
+      },
+      {
+        "ko": "다크사이드",
+        "en": "dark side"
+      }
     ],
     "ogTitle": {
       "ko": "나의 숨겨진 다크사이드",
@@ -41,7 +56,6 @@
       "en": "The side of you no one knows"
     }
   },
-
   "card": {
     "theme": "love",
     "kicker": {
@@ -51,10 +65,16 @@
     "image": "/images/quiz/hidden-dark-side/thumb.webp",
     "priority": 87
   },
-
-  "resultKeys": ["A", "B", "C"],
-  "resultOrder": ["A", "B", "C"],
-
+  "resultKeys": [
+    "A",
+    "B",
+    "C"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -63,7 +83,6 @@
     },
     "blendOnTie": true
   },
-
   "analytics": {
     "eventKey": "hidden_dark_side",
     "contentGroup": "love",
@@ -73,9 +92,11 @@
       "share": "quiz_share"
     }
   },
-
-  "related": ["logical-or-emotional", "love-pattern-destroying-habit", "who-likes-you-type"],
-
+  "related": [
+    "logical-or-emotional",
+    "love-pattern-destroying-habit",
+    "who-likes-you-type"
+  ],
   "results": {
     "A": {
       "emoji": "🎭",
@@ -105,7 +126,6 @@
         "image": "/images/quiz/hidden-dark-side/result-1.webp"
       }
     },
-
     "B": {
       "emoji": "🔥",
       "scoreKey": "B",
@@ -134,7 +154,6 @@
         "image": "/images/quiz/hidden-dark-side/result-2.webp"
       }
     },
-
     "C": {
       "emoji": "🌑",
       "scoreKey": "C",
@@ -164,7 +183,6 @@
       }
     }
   },
-
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
@@ -193,7 +211,6 @@
       "image": "/images/quiz/hidden-dark-side/thumb.webp"
     }
   },
-
   "questions": [
     {
       "prompt": {
@@ -201,10 +218,34 @@
         "en": "When I get angry, I..."
       },
       "options": [
-        { "label": { "ko": "속으로 쌓아둔다", "en": "Bottle it up" }, "key": "A" },
-        { "label": { "ko": "한 번에 터뜨린다", "en": "Explode all at once" }, "key": "B" },
-        { "label": { "ko": "냉정하게 선 긋는다", "en": "Cut people off calmly" }, "key": "C" },
-        { "label": { "ko": "아무렇지 않은 척한다", "en": "Pretend I’m fine" }, "key": "A" }
+        {
+          "label": {
+            "ko": "속으로 쌓아둔다",
+            "en": "Bottle it up"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "한 번에 터뜨린다",
+            "en": "Explode all at once"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "냉정하게 선 긋는다",
+            "en": "Cut people off calmly"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "아무렇지 않은 척한다",
+            "en": "Pretend I’m fine"
+          },
+          "key": "A"
+        }
       ]
     },
     {
@@ -213,10 +254,34 @@
         "en": "If I feel disrespected, I..."
       },
       "options": [
-        { "label": { "ko": "기억해둔다", "en": "Remember it" }, "key": "A" },
-        { "label": { "ko": "바로 반응한다", "en": "React immediately" }, "key": "B" },
-        { "label": { "ko": "거리 둔다", "en": "Create distance" }, "key": "C" },
-        { "label": { "ko": "겉으로 웃는다", "en": "Smile it off" }, "key": "A" }
+        {
+          "label": {
+            "ko": "기억해둔다",
+            "en": "Remember it"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "바로 반응한다",
+            "en": "React immediately"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "거리 둔다",
+            "en": "Create distance"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "겉으로 웃는다",
+            "en": "Smile it off"
+          },
+          "key": "A"
+        }
       ]
     },
     {
@@ -225,10 +290,34 @@
         "en": "In conflict situations, I..."
       },
       "options": [
-        { "label": { "ko": "참다가 한 번에 터짐", "en": "Hold it in then explode" }, "key": "B" },
-        { "label": { "ko": "아예 피한다", "en": "Avoid it completely" }, "key": "C" },
-        { "label": { "ko": "속으로 계속 생각함", "en": "Overthink internally" }, "key": "A" },
-        { "label": { "ko": "상대 차단", "en": "Cut them off" }, "key": "C" }
+        {
+          "label": {
+            "ko": "참다가 한 번에 터짐",
+            "en": "Hold it in then explode"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "아예 피한다",
+            "en": "Avoid it completely"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "속으로 계속 생각함",
+            "en": "Overthink internally"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "상대 차단",
+            "en": "Cut them off"
+          },
+          "key": "C"
+        }
       ]
     },
     {
@@ -237,10 +326,34 @@
         "en": "When I’m hurt, I..."
       },
       "options": [
-        { "label": { "ko": "혼자 끙끙 앓는다", "en": "Suffer alone" }, "key": "A" },
-        { "label": { "ko": "감정 폭발", "en": "React strongly" }, "key": "B" },
-        { "label": { "ko": "거리 둔다", "en": "Pull away" }, "key": "C" },
-        { "label": { "ko": "무시하려 한다", "en": "Try to ignore it" }, "key": "A" }
+        {
+          "label": {
+            "ko": "혼자 끙끙 앓는다",
+            "en": "Suffer alone"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "감정 폭발",
+            "en": "React strongly"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "거리 둔다",
+            "en": "Pull away"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "무시하려 한다",
+            "en": "Try to ignore it"
+          },
+          "key": "A"
+        }
       ]
     },
     {
@@ -249,10 +362,34 @@
         "en": "When judging people, I..."
       },
       "options": [
-        { "label": { "ko": "겉으로는 괜찮은 척", "en": "Act nice outside" }, "key": "A" },
-        { "label": { "ko": "싫으면 바로 티냄", "en": "Show dislike instantly" }, "key": "B" },
-        { "label": { "ko": "조용히 거리 둔다", "en": "Distance quietly" }, "key": "C" },
-        { "label": { "ko": "속으로 평가함", "en": "Judge internally" }, "key": "A" }
+        {
+          "label": {
+            "ko": "겉으로는 괜찮은 척",
+            "en": "Act nice outside"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "싫으면 바로 티냄",
+            "en": "Show dislike instantly"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "조용히 거리 둔다",
+            "en": "Distance quietly"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "속으로 평가함",
+            "en": "Judge internally"
+          },
+          "key": "A"
+        }
       ]
     },
     {
@@ -261,10 +398,34 @@
         "en": "When stressed, I..."
       },
       "options": [
-        { "label": { "ko": "혼자 쌓는다", "en": "Keep it inside" }, "key": "A" },
-        { "label": { "ko": "분노로 표출", "en": "Release anger" }, "key": "B" },
-        { "label": { "ko": "사람 피함", "en": "Avoid people" }, "key": "C" },
-        { "label": { "ko": "겉으로 괜찮은 척", "en": "Act fine" }, "key": "A" }
+        {
+          "label": {
+            "ko": "혼자 쌓는다",
+            "en": "Keep it inside"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "분노로 표출",
+            "en": "Release anger"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "사람 피함",
+            "en": "Avoid people"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "겉으로 괜찮은 척",
+            "en": "Act fine"
+          },
+          "key": "A"
+        }
       ]
     },
     {
@@ -273,10 +434,34 @@
         "en": "When relationships break, I..."
       },
       "options": [
-        { "label": { "ko": "속으로 오래 끌고 감", "en": "Hold onto it" }, "key": "A" },
-        { "label": { "ko": "한 번에 정리", "en": "End it dramatically" }, "key": "B" },
-        { "label": { "ko": "조용히 끊는다", "en": "Fade away" }, "key": "C" },
-        { "label": { "ko": "겉으로 아무렇지 않음", "en": "Act unaffected" }, "key": "A" }
+        {
+          "label": {
+            "ko": "속으로 오래 끌고 감",
+            "en": "Hold onto it"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "한 번에 정리",
+            "en": "End it dramatically"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "조용히 끊는다",
+            "en": "Fade away"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "겉으로 아무렇지 않음",
+            "en": "Act unaffected"
+          },
+          "key": "A"
+        }
       ]
     },
     {
@@ -285,14 +470,37 @@
         "en": "My true self is..."
       },
       "options": [
-        { "label": { "ko": "겉과 속이 다름", "en": "Different inside" }, "key": "A" },
-        { "label": { "ko": "감정 기복이 큼", "en": "Emotionally intense" }, "key": "B" },
-        { "label": { "ko": "차갑고 거리 있음", "en": "Cold and distant" }, "key": "C" },
-        { "label": { "ko": "표현을 잘 안함", "en": "Hard to express" }, "key": "A" }
+        {
+          "label": {
+            "ko": "겉과 속이 다름",
+            "en": "Different inside"
+          },
+          "key": "A"
+        },
+        {
+          "label": {
+            "ko": "감정 기복이 큼",
+            "en": "Emotionally intense"
+          },
+          "key": "B"
+        },
+        {
+          "label": {
+            "ko": "차갑고 거리 있음",
+            "en": "Cold and distant"
+          },
+          "key": "C"
+        },
+        {
+          "label": {
+            "ko": "표현을 잘 안함",
+            "en": "Hard to express"
+          },
+          "key": "A"
+        }
       ]
     }
   ],
-
   "footnote": {
     "ko": "이 테스트는 재미 및 자기이해용입니다.",
     "en": "This test is for fun and self-reflection only."

@@ -6,13 +6,19 @@ import {
   quizLogicalOrEmotional,
   quizLoveTemperatureTest,
   quizRelationshipBalanceTest,
+  quizPlannerOrSpontaneous,
+  quizSelfEsteemLevel,
   quizDatingExpertOrBeginner,
+  quizEmotionalSensitivity,
   quizHiddenDarkSide,
-  quizIdealTypeRealityTest,
   quizLeaderOrSupporter,
+  quizMentalStrengthTest,
+  quizTrueSelfAlone,
+  quizTrustLevelTest,
   quizLovePatternDestroyingHabit,
   quizWhenMenLoseInterest,
   quizWhoLikesYouType,
+  quizAmbiguousSituationshipEnd,
   quizWhyCantYouTextFirst,
 } from "@/content/quiz";
 import type { QuizContentSource, QuizRef } from "./types";
@@ -23,14 +29,18 @@ function keyOf(ref: QuizRef): string {
 
 const koByKey: Record<string, SnackQuizDefinition> = {
   "ko/love/who-likes-you-type": quizWhoLikesYouType,
+  "ko/love/ambiguous-situationship-end": quizAmbiguousSituationshipEnd,
   "ko/love/love-pattern-destroying-habit": quizLovePatternDestroyingHabit,
   "ko/love/dating-expert-or-beginner": quizDatingExpertOrBeginner,
-  "ko/love/ideal-type-reality-test": quizIdealTypeRealityTest,
   "ko/love/why-cant-you-text-first": quizWhyCantYouTextFirst,
   "ko/love/when-men-lose-interest": quizWhenMenLoseInterest,
   "ko/love/hidden-dark-side": quizHiddenDarkSide,
   "ko/love/leader-or-supporter": quizLeaderOrSupporter,
   "ko/love/anger-style-test": quizAngerStyleTest,
+  "ko/love/mental-strength-test": quizMentalStrengthTest,
+  "ko/love/emotional-sensitivity": quizEmotionalSensitivity,
+  "ko/love/true-self-alone": quizTrueSelfAlone,
+  "ko/love/trust-level-test": quizTrustLevelTest,
 };
 
 const koPercentageByKey: Record<string, PercentageQuizDefinition> = {
@@ -38,6 +48,8 @@ const koPercentageByKey: Record<string, PercentageQuizDefinition> = {
   "ko/love/love-temperature-test": quizLoveTemperatureTest,
   "ko/love/relationship-balance-test": quizRelationshipBalanceTest,
   "ko/love/logical-or-emotional": quizLogicalOrEmotional,
+  "ko/love/planner-or-spontaneous": quizPlannerOrSpontaneous,
+  "ko/love/self-esteem-level": quizSelfEsteemLevel,
 };
 
 /**

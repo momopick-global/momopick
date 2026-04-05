@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PercentageQuiz } from "@/components/quiz/PercentageQuiz";
 import { pickQuizText } from "@/components/quiz/types";
+import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { quizRelationshipBalanceTest } from "@/content/quiz";
 
 const pack = quizRelationshipBalanceTest;
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     url: "https://momopick.com/ko/love/relationship-balance-test/",
     locale: "ko_KR",
     type: "website",
-    images: pack.images?.og ? [{ url: `https://momopick.com${pack.images.og}` }] : undefined,
+    images: pack.images?.og ? [{ url: `https://momopick.com${quizAssetUrl(pack.images.og, pageLocale)}` }] : undefined,
   },
 };
 
@@ -76,10 +77,10 @@ export default function RelationshipBalanceTestPage() {
                 ? `${subtitleLine} ${qCount}문항이면 끝나요.`
                 : `${qCount}문항이면 끝나요.`}
             </p>
-            {pack.images?.start ? (
+            {pack.images?.thumbnail ? (
               <div className="quiz-cover">
                 <img
-                  src={pack.images.start}
+                  src={quizAssetUrl(pack.images.thumbnail, pageLocale)}
                   alt=""
                   width={480}
                   height={320}
