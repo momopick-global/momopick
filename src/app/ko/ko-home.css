@@ -358,6 +358,97 @@
   transform: translateY(-1px);
 }
 
+/* 히어로 배너 롤링 (두 장 이상) */
+.momopick-ko .hero-banner-carousel {
+  aspect-ratio: 16 / 9;
+  max-height: min(52vh, 560px);
+  min-height: 200px;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.momopick-ko .hero-banner-carousel:active {
+  cursor: grabbing;
+}
+
+.momopick-ko .hero-banner-carousel .hero-banner {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.momopick-ko .hero-banner-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.65s ease;
+  z-index: 0;
+}
+
+.momopick-ko .hero-banner-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.momopick-ko .hero-banner-carousel .hero-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.momopick-ko .hero-banner-carousel .hero-banner-overlay {
+  padding-bottom: 52px;
+}
+
+.momopick-ko .hero-banner-overlay__text--multiline {
+  white-space: pre-line;
+}
+
+.momopick-ko .hero-banner-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.momopick-ko .hero-banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.momopick-ko .hero-banner-dot.is-active {
+  width: 22px;
+  background: #fff;
+}
+
+.momopick-ko .hero-banner-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.momopick-ko .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .momopick-ko .login-hint {
   margin-top: 20px;
   padding: 14px 18px;

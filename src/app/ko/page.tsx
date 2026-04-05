@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { HeroBannerCarousel } from "@/components/ko/HeroBannerCarousel";
 import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
 import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 
 const year = new Date().getFullYear();
@@ -69,29 +71,7 @@ export default function KoHomePage() {
               <strong>MBTI·연애·심리·관계·취향</strong>까지. 모모픽에서 가볍게 즐기고, 결과는
               친구에게 바로 공유해 보세요.
             </p>
-            <div className="hero-banner-wrap">
-              <img
-                className="hero-banner"
-                src="/images/banners/hero/notice_260406.webp"
-                alt="모모픽 베타 오픈 안내 배너"
-                width={1920}
-                height={1080}
-                loading="eager"
-                decoding="async"
-              />
-              <div className="hero-banner-overlay" role="region" aria-label="베타 오픈 안내">
-                <p className="hero-banner-overlay__kicker">[모모픽 베타 오픈 안내]</p>
-                <p className="hero-banner-overlay__text">
-                  MBTI·연애·심리 등 스낵 테스트를 한곳에서 즐길 수 있는 모모픽이 베타로 문을 열었습니다. 이용 중
-                  불편이나 버그는 공지·문의 채널로 알려 주세요.
-                </p>
-                <div className="hero-banner-overlay__cta">
-                  <Link className="hero-banner-overlay__btn" href="/ko/notice/">
-                    자세히 보기
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <HeroBannerCarousel slides={koHeroBannerSlides} />
           </section>
 
           <div className="login-hint">
