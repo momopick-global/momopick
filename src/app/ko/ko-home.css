@@ -242,10 +242,10 @@
 
 .momopick-ko .hero-kicker {
   display: inline-block;
-  margin-bottom: 10px;
-  padding: 6px 14px;
+  margin-bottom: 15px;
+  padding: 9px 21px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 19.5px;
   font-weight: 700;
   color: var(--accent);
   background: rgba(90, 103, 242, 0.12);
@@ -254,7 +254,7 @@
 
 .momopick-ko .hero h1 {
   margin: 0;
-  font-size: clamp(26px, 5vw, 38px);
+  font-size: clamp(39px, 7.5vw, 57px);
   letter-spacing: -0.04em;
   line-height: 1.2;
   font-weight: 900;
@@ -262,9 +262,9 @@
 
 .momopick-ko .hero .lead {
   margin: 12px auto 0;
-  max-width: 560px;
+  max-width: 840px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 22.5px;
 }
 
 /* 한국어 홈 히어로 이미지만 뷰포트 가로 전체(풀블리드). 나머지 섹션은 .wrap 그대로 */
@@ -295,7 +295,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  padding: 18px 20px 22px;
+  padding: 27px 30px 33px;
   text-align: left;
   background: linear-gradient(
     to top,
@@ -307,13 +307,13 @@
 
 @media (min-width: 720px) {
   .momopick-ko .hero-banner-overlay {
-    padding: 22px 32px 28px;
+    padding: 33px 48px 42px;
   }
 }
 
 .momopick-ko .hero-banner-overlay__kicker {
-  margin: 0 0 8px;
-  font-size: 13px;
+  margin: 0 0 12px;
+  font-size: 19.5px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.95);
@@ -323,7 +323,7 @@
 .momopick-ko .hero-banner-overlay__text {
   margin: 0;
   max-width: 42em;
-  font-size: clamp(13px, 3.2vw, 15px);
+  font-size: clamp(19.5px, 4.8vw, 22.5px);
   font-weight: 600;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.94);
@@ -331,16 +331,16 @@
 }
 
 .momopick-ko .hero-banner-overlay__cta {
-  margin-top: 14px;
+  margin-top: 21px;
 }
 
 .momopick-ko .hero-banner-overlay__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 18px;
+  padding: 15px 27px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 19.5px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #fff;
@@ -398,7 +398,7 @@
 }
 
 .momopick-ko .hero-banner-carousel .hero-banner-overlay {
-  padding-bottom: 52px;
+  padding-bottom: 78px;
 }
 
 .momopick-ko .hero-banner-overlay__text--multiline {
