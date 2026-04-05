@@ -1,0 +1,106 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 48px;
+  text-align: center;
+  background: radial-gradient(
+      700px 420px at 50% -15%,
+      rgba(90, 103, 242, 0.14),
+      transparent 58%
+    ),
+    radial-gradient(
+      500px 320px at 100% 100%,
+      rgba(232, 90, 140, 0.08),
+      transparent 55%
+    ),
+    #f6f7fb;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+.face {
+  width: min(200px, 52vw);
+  height: auto;
+  margin-bottom: 22px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 28px rgba(90, 103, 242, 0.18));
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #161022;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0 auto 10px;
+  font-size: 0.98rem;
+  color: rgba(22, 16, 34, 0.58);
+  max-width: 22em;
+  line-height: 1.55;
+}
+
+.code {
+  margin: 0 0 22px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5a67f2;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, #5a67f2, #e85a8c);
+  text-decoration: none;
+  box-shadow: 0 8px 26px rgba(90, 103, 242, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(90, 103, 242, 0.32);
+}
+
+.linkSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #161022;
+  background: #fff;
+  border: 1px solid rgba(90, 103, 242, 0.2);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(45, 30, 80, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.linkSecondary:hover {
+  transform: translateY(-1px);
+  border-color: rgba(90, 103, 242, 0.35);
+  box-shadow: 0 8px 24px rgba(45, 30, 80, 0.1);
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KoBottomNav } from "@/components/ko/KoBottomNav";
 import "./ko-home.css";
 
 export const metadata: Metadata = {
@@ -177,7 +178,10 @@ export default function KoLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
-      <div className="momopick-ko">{children}</div>
+      <div className="momopick-ko">
+        {children}
+        <KoBottomNav />
+      </div>
     </>
   );
 }

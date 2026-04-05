@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoFooterNav } from "@/components/ko/KoFooterNav";
+
+export const metadata: Metadata = {
+  title: "테스트 검색·탐색 | 모모픽",
+  description: "MBTI·연애·심리 테스트를 검색하고 둘러보세요.",
+  alternates: {
+    canonical: "https://momopick.com/ko/explore/",
+  },
+  openGraph: {
+    title: "테스트 검색·탐색 | 모모픽",
+    description: "테스트 검색·탐색",
+    url: "https://momopick.com/ko/explore/",
+    locale: "ko_KR",
+    type: "website",
+  },
+};
+
+const year = new Date().getFullYear();
+
+export default function KoExplorePage() {
+  return (
+    <>
+      <header className="site-hd">
+        <div className="inner">
+          <Link className="brand" href="/ko/" aria-label="모모픽 홈">
+            <KoBrandLogo />
+            <strong>Momopick</strong>
+          </Link>
+          <div className="hd-actions">
+            <Link className="btn sm primary" href="/ko/app/login/">
+              로그인
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <div className="wrap">
+        <main className="policy-page">
+          <nav className="quiz-breadcrumb" aria-label="경로">
+            <Link href="/ko/">홈</Link>
+            <span aria-hidden="true"> / </span>
+            <span>검색</span>
+          </nav>
+
+          <header className="policy-page-hd">
+            <h1>검색</h1>
+            <p className="policy-intro">
+              전체 검색 UI는 준비 중입니다. 지금은 카테고리 허브로 이동해 테스트를 골라 보세요.
+            </p>
+          </header>
+
+          <div className="cta" style={{ justifyContent: "flex-start" }}>
+            <Link className="btn primary" href="/ko/love/">
+              연애 테스트
+            </Link>
+            <Link className="btn" href="/ko/about/">
+              모모픽 소개
+            </Link>
+            <Link className="btn" href="/ko/notice/">
+              공지사항
+            </Link>
+          </div>
+        </main>
+
+        <footer className="ko-ft">
+          <div>© {year} Momopick. All rights reserved.</div>
+          <KoFooterNav />
+        </footer>
+      </div>
+    </>
+  );
+}

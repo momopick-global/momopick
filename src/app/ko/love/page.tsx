@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 
@@ -44,32 +45,7 @@ export default function KoLoveHubPage() {
         </div>
       </header>
 
-      <nav className="cat-bar" aria-label="카테고리 빠른 이동">
-        <Link className="chip chip--default" href="/ko/">
-          전체
-        </Link>
-        <Link className="chip chip--love" href="/ko/love/" aria-current="page">
-          연애
-        </Link>
-        <Link className="chip chip--personality" href="/ko/personality/">
-          성격·심리
-        </Link>
-        <Link className="chip chip--social" href="/ko/social/">
-          소셜
-        </Link>
-        <Link className="chip chip--style" href="/ko/style/">
-          스타일
-        </Link>
-        <Link className="chip chip--fun" href="/ko/fun/">
-          재미
-        </Link>
-        <Link className="chip chip--default" href="/ko/explore/">
-          탐색
-        </Link>
-        <Link className="chip chip--default" href="/ko/tag/">
-          태그
-        </Link>
-      </nav>
+      <KoCatBar />
 
       <div className="wrap">
         <main>

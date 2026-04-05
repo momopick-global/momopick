@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HeroBannerCarousel } from "@/components/ko/HeroBannerCarousel";
 import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
 import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
@@ -32,45 +33,11 @@ export default function KoHomePage() {
         </div>
       </header>
 
-      <nav className="cat-bar" aria-label="카테고리 빠른 이동">
-        <Link className="chip chip--default" href="/ko/" aria-current="true">
-          전체
-        </Link>
-        <Link className="chip chip--love" href="/ko/love/">
-          연애
-        </Link>
-        <Link className="chip chip--personality" href="/ko/personality/">
-          성격·심리
-        </Link>
-        <Link className="chip chip--social" href="/ko/social/">
-          소셜
-        </Link>
-        <Link className="chip chip--style" href="/ko/style/">
-          스타일
-        </Link>
-        <Link className="chip chip--fun" href="/ko/fun/">
-          재미
-        </Link>
-        <Link className="chip chip--default" href="/ko/explore/">
-          탐색
-        </Link>
-        <Link className="chip chip--default" href="/ko/tag/">
-          태그
-        </Link>
-        <Link className="chip chip--default" href="/ko/notice/">
-          공지
-        </Link>
-      </nav>
+      <KoCatBar />
 
       <div className="wrap">
         <main>
-          <section className="hero" aria-labelledby="hero-title">
-            <span className="hero-kicker">프리미엄 감성 · 1~3분 스낵 테스트</span>
-            <h1 id="hero-title">어라, 이거 내 얘긴데…?!</h1>
-            <p className="lead">
-              <strong>MBTI·연애·심리·관계·취향</strong>까지. 모모픽에서 가볍게 즐기고, 결과는
-              친구에게 바로 공유해 보세요.
-            </p>
+          <section className="hero" aria-label="추천 배너">
             <HeroBannerCarousel slides={koHeroBannerSlides} />
           </section>
 
