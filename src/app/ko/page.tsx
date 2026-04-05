@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 
 const year = new Date().getFullYear();
 
 const homeRailKo = getKoHomeRailSorted("ko");
-const featuredQuiz = homeRailKo[0];
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
 /** 썸·연애 섹션 타일 개수 (우선순위 상위) */
 const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
@@ -15,7 +16,7 @@ export default function KoHomePage() {
       <header className="site-hd">
         <div className="inner">
           <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <span className="logo" aria-hidden="true" />
+            <KoBrandLogo />
             <strong>Momopick</strong>
           </Link>
           <div className="hd-actions">
@@ -71,13 +72,25 @@ export default function KoHomePage() {
             <div className="hero-banner-wrap">
               <img
                 className="hero-banner"
-                src={featuredQuiz?.image || "/images/banners/rail-01.webp"}
-                alt=""
-                width={480}
-                height={320}
+                src="/images/banners/hero/notice_260406.webp"
+                alt="모모픽 베타 오픈 안내 배너"
+                width={1920}
+                height={1080}
                 loading="eager"
                 decoding="async"
               />
+              <div className="hero-banner-overlay" role="region" aria-label="베타 오픈 안내">
+                <p className="hero-banner-overlay__kicker">[모모픽 베타 오픈 안내]</p>
+                <p className="hero-banner-overlay__text">
+                  MBTI·연애·심리 등 스낵 테스트를 한곳에서 즐길 수 있는 모모픽이 베타로 문을 열었습니다. 이용 중
+                  불편이나 버그는 공지·문의 채널로 알려 주세요.
+                </p>
+                <div className="hero-banner-overlay__cta">
+                  <Link className="hero-banner-overlay__btn" href="/ko/notice/">
+                    자세히 보기
+                  </Link>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -407,11 +420,7 @@ export default function KoHomePage() {
 
         <footer className="ko-ft">
           <div>© {year} Momopick. All rights reserved.</div>
-          <div style={{ marginTop: 8 }}>
-            <Link href="/ko/notice/">공지사항</Link> ·{" "}
-            <Link href="/ko/policy/privacy/">개인정보처리방침</Link> ·{" "}
-            <Link href="/ko/policy/terms/">이용약관</Link>
-          </div>
+          <KoFooterNav />
         </footer>
       </div>
     </>

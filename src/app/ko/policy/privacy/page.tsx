@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoFooterNav } from "@/components/ko/KoFooterNav";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
@@ -24,7 +26,7 @@ export default function PrivacyPolicyPage() {
       <header className="site-hd">
         <div className="inner">
           <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <span className="logo" aria-hidden="true" />
+            <KoBrandLogo />
             <strong>Momopick</strong>
           </Link>
           <div className="hd-actions">
@@ -203,11 +205,7 @@ export default function PrivacyPolicyPage() {
 
         <footer className="ko-ft">
           <div>© {new Date().getFullYear()} Momopick. All rights reserved.</div>
-          <div style={{ marginTop: 8 }}>
-            <Link href="/ko/notice/">공지사항</Link> ·{" "}
-            <Link href="/ko/policy/privacy/">개인정보처리방침</Link> ·{" "}
-            <Link href="/ko/policy/terms/">이용약관</Link>
-          </div>
+          <KoFooterNav />
         </footer>
       </div>
     </>

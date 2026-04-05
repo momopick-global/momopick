@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
 import { SnackQuiz } from "@/components/quiz/SnackQuiz";
 import { pickQuizText } from "@/components/quiz/types";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
@@ -41,7 +42,7 @@ export default function WhoLikesYouTypePage() {
       <header className="site-hd">
         <div className="inner">
           <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <span className="logo" aria-hidden="true" />
+            <KoBrandLogo />
             <strong>Momopick</strong>
           </Link>
           <div className="hd-actions">

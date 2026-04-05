@@ -1,0 +1,94 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { SocialLoginButtons } from "@/components/ko/SocialLoginButtons";
+
+export const metadata: Metadata = {
+  title: "로그인 | 모모픽",
+  description:
+    "모모픽 계정으로 로그인하세요. Google, 카카오, Facebook, 네이버 등 소셜 로그인을 지원합니다.",
+  alternates: {
+    canonical: "https://momopick.com/ko/app/login/",
+  },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "로그인 | 모모픽",
+    description: "모모픽 로그인",
+    url: "https://momopick.com/ko/app/login/",
+    locale: "ko_KR",
+    type: "website",
+  },
+};
+
+const year = new Date().getFullYear();
+
+export default function KoLoginPage() {
+  return (
+    <>
+      <header className="site-hd">
+        <div className="inner">
+          <Link className="brand" href="/ko/" aria-label="모모픽 홈">
+            <KoBrandLogo />
+            <strong>Momopick</strong>
+          </Link>
+          <div className="hd-actions">
+            <Link className="btn sm" href="/ko/">
+              홈
+            </Link>
+            <span className="btn sm primary" aria-current="page" style={{ cursor: "default" }}>
+              로그인
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <div className="wrap">
+        <main className="login-page">
+          <nav className="quiz-breadcrumb" aria-label="경로">
+            <Link href="/ko/">홈</Link>
+            <span aria-hidden="true"> / </span>
+            <span>로그인</span>
+          </nav>
+
+          <header className="login-page-hd">
+            <h1>로그인</h1>
+            <p className="login-page-lead">
+              소셜 계정으로 간편하게 시작하세요. 테스트 기록·맞춤 추천 등은 로그인 후 이용할 수 있어요.
+            </p>
+          </header>
+
+          <section className="login-panel" aria-labelledby="login-social-title">
+            <h2 id="login-social-title" className="login-panel-title">
+              소셜 로그인
+            </h2>
+            <SocialLoginButtons />
+            <p className="login-panel-note">
+              실제 OAuth 연동 시 위 버튼이 각 제공사 로그인 화면으로 연결됩니다. 서비스 오픈 전까지는
+              버튼을 눌러도 계정이 생성되지 않습니다.
+            </p>
+          </section>
+
+          <p className="policy-foot">
+            <Link className="link-all" href="/ko/policy/privacy/">
+              개인정보처리방침
+            </Link>
+            <span aria-hidden="true"> · </span>
+            <Link className="link-all" href="/ko/policy/terms/">
+              이용약관
+            </Link>
+            <span aria-hidden="true"> · </span>
+            <Link className="link-all" href="/ko/policy/disclaimer/">
+              면책조항
+            </Link>
+          </p>
+        </main>
+
+        <footer className="ko-ft">
+          <div>© {year} Momopick. All rights reserved.</div>
+          <KoFooterNav />
+        </footer>
+      </div>
+    </>
+  );
+}
