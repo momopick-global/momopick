@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { SocialLoginButtons } from "@/components/ko/SocialLoginButtons";
 
@@ -26,22 +26,18 @@ const year = new Date().getFullYear();
 export default function KoLoginPage() {
   return (
     <>
-      <header className="site-hd">
-        <div className="inner">
-          <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <KoBrandLogo />
-            <strong>Momopick</strong>
-          </Link>
-          <div className="hd-actions">
-            <Link className="btn sm" href="/ko/">
+      <KoSiteHeader
+          actions={
+            <>
+              <Link className="btn sm" href="/ko/">
               홈
             </Link>
             <span className="btn sm primary" aria-current="page" style={{ cursor: "default" }}>
               로그인
             </span>
-          </div>
-        </div>
-      </header>
+            </>
+          }
+        />
 
       <div className="wrap">
         <main className="login-page">

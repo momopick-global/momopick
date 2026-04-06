@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "./not-found.module.css";
 
-/** `assets/img/mongpick-face.webp` → 빌드 시 `public/images/brand/mongpick-face.webp`와 동일 에셋 */
-const FACE_SRC = "/images/brand/mongpick-face.webp";
+/** `assets/img/momopick_symbol.webp` → 빌드 시 `public/images/brand/momopick_symbol.webp`와 동일 에셋 */
+const FACE_SRC = "/images/brand/momopick_symbol.webp";
 
 export const metadata: Metadata = {
   title: "페이지를 찾을 수 없습니다",

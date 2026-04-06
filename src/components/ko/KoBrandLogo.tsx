@@ -3,7 +3,7 @@ export function KoBrandLogo() {
   return (
     <img
       className="logo"
-      src="/images/brand/mongpick-face.webp"
+      src="/images/brand/momopick_symbol.webp"
       alt=""
       width={40}
       height={40}

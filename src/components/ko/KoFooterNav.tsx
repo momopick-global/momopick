@@ -1,12 +1,17 @@
 import Link from "next/link";
+import { Fragment } from "react";
+import { KO_SITE_NAV_LINKS } from "./koSiteNavLinks";
 
 /** 한국어 사이트 공통 하단 정보 링크 (홈·정책·블로그 등) */
 export function KoFooterNav() {
   return (
-    <nav style={{ marginTop: 8 }} aria-label="사이트 정보">
-      <Link href="/ko/about/">모모픽</Link> · <Link href="/ko/notice/">공지사항</Link> · <Link href="/ko/blog/">블로그</Link> ·{" "}
-      <Link href="/ko/policy/privacy/">개인정보처리방침</Link> · <Link href="/ko/policy/terms/">이용약관</Link> ·{" "}
-      <Link href="/ko/policy/disclaimer/">면책조항</Link>
+    <nav className="ko-ft-links" aria-label="사이트 정보">
+      {KO_SITE_NAV_LINKS.map((item, i) => (
+        <Fragment key={item.href}>
+          {i > 0 ? <span aria-hidden="true">·</span> : null}
+          <Link href={item.href}>{item.label}</Link>
+        </Fragment>
+      ))}
     </nav>
   );
 }

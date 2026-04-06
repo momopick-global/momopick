@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
+import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { HeroBannerCarousel } from "@/components/ko/HeroBannerCarousel";
-import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
 import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
@@ -16,22 +17,24 @@ const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
 export default function KoHomePage() {
   return (
     <>
-      <header className="site-hd">
-        <div className="inner">
-          <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <KoBrandLogo />
-            <strong>Momopick</strong>
-          </Link>
-          <div className="hd-actions">
-            <Link className="btn-icon" href="/ko/explore/" title="탐색" aria-label="테스트 탐색">
-              🔎
+      <KoSiteHeader
+          actions={
+            <>
+              <Link className="btn-icon" href="/ko/explore/" title="탐색" aria-label="테스트 탐색">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="2" />
+                <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </Link>
-            <Link className="btn sm primary" href="/ko/app/login/">
-              로그인
+            <Link className="btn-icon" href="/ko/app/login/" title="로그인" aria-label="로그인">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </Link>
-          </div>
-        </div>
-      </header>
+            </>
+          }
+        />
 
       <KoCatBar />
 
@@ -70,7 +73,7 @@ export default function KoHomePage() {
                   href={item.href}
                   role="listitem"
                 >
-                  <img
+                  <QuizImageWithFallback
                     src={item.image || "/images/banners/rail-01.webp"}
                     alt=""
                     width={480}
@@ -103,7 +106,7 @@ export default function KoHomePage() {
                 <Link key={item.href} className="tile tile--love" href={item.href}>
                   <div className="thumb">
                     {i === 0 ? <span className="badge">HOT</span> : null}
-                    <img
+                    <QuizImageWithFallback
                       src={item.image || "/images/banners/tile-love-01.webp"}
                       alt=""
                       width={1536}
@@ -135,7 +138,7 @@ export default function KoHomePage() {
               <Link className="tile tile--personality" href="/ko/personality/my-hidden-mbti/">
                 <div className="thumb">
                   <span className="badge">1분</span>
-                  <img
+                  <QuizImageWithFallback
                     src="/images/banners/tile-mind-01.webp"
                     alt=""
                     width={1536}
@@ -151,7 +154,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="tile tile--personality" href="/ko/personality/">
                 <div className="thumb">
-                  <img
+                  <QuizImageWithFallback
                     src="/images/banners/tile-mind-02.webp"
                     alt=""
                     width={1536}
@@ -167,7 +170,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="tile tile--social" href="/ko/social/">
                 <div className="thumb">
-                  <img
+                  <QuizImageWithFallback
                     src="/images/banners/tile-mind-03.webp"
                     alt=""
                     width={1536}
@@ -179,6 +182,22 @@ export default function KoHomePage() {
                 <div className="body">
                   <b>관계·대화 스타일</b>
                   <small>소셜 카테고리로 이동</small>
+                </div>
+              </Link>
+              <Link className="tile tile--personality" href="/ko/faq/">
+                <div className="thumb">
+                  <QuizImageWithFallback
+                    src="/images/banners/tile-mind-04.webp"
+                    alt=""
+                    width={1536}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="body">
+                  <b>자주 묻는 질문</b>
+                  <small>이용·결과 안내</small>
                 </div>
               </Link>
             </div>
@@ -198,7 +217,7 @@ export default function KoHomePage() {
               <Link className="tile tile--fun" href="/ko/fun/">
                 <div className="thumb">
                   <span className="badge">SNACK</span>
-                  <img
+                  <QuizImageWithFallback
                     src="/images/banners/tile-snack-01.webp"
                     alt=""
                     width={1536}
@@ -214,7 +233,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="tile tile--style" href="/ko/style/">
                 <div className="thumb">
-                  <img
+                  <QuizImageWithFallback
                     src="/images/banners/tile-snack-02.webp"
                     alt=""
                     width={1536}
@@ -230,7 +249,7 @@ export default function KoHomePage() {
               </Link>
               <Link className="tile tile--fun" href="/ko/explore/">
                 <div className="thumb">
-                  <img
+                  <QuizImageWithFallback
                     src="/images/banners/tile-snack-03.webp"
                     alt=""
                     width={1536}
@@ -242,6 +261,23 @@ export default function KoHomePage() {
                 <div className="body">
                   <b>전체 탐색</b>
                   <small>최신·인기 한 번에</small>
+                </div>
+              </Link>
+              <Link className="tile tile--fun" href="/ko/blog/">
+                <div className="thumb">
+                  <span className="badge">NOTE</span>
+                  <QuizImageWithFallback
+                    src="/images/banners/tile-snack-04.webp"
+                    alt=""
+                    width={1536}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="body">
+                  <b>블로그·소식</b>
+                  <small>팁·업데이트 짧게 읽기</small>
                 </div>
               </Link>
             </div>
@@ -277,6 +313,9 @@ export default function KoHomePage() {
           <section className="section faq" id="faq">
             <div className="sec-hd">
               <h2>자주 묻는 질문</h2>
+              <Link className="link-all" href="/ko/faq/">
+                전체보기
+              </Link>
             </div>
             <details>
               <summary>💔 왜 내 연애 테스트 결과가 이렇게 나왔나요?</summary>
@@ -285,36 +324,13 @@ export default function KoHomePage() {
             </details>
             <details>
               <summary>😳 이거… 진짜 맞는 거 아니에요?</summary>
-              <p>많은 사람들이 “소름 돋는다”라고 말합니다.</p>
-              <p>
-                완벽한 정답은 아니지만, 당신의 성향을 꽤 정확하게 짚어낼 수도 있어요.
-              </p>
+              <p>많은 사람들이 &ldquo;소름 돋는다&rdquo;라고 말합니다.</p>
+              <p>완벽한 정답은 아니지만, 당신의 성향을 꽤 정확하게 짚어낼 수도 있어요.</p>
             </details>
             <details>
               <summary>🤔 친구랑 똑같이 했는데 결과가 왜 달라요?</summary>
               <p>같은 질문이라도 선택하는 순간의 감정, 생각이 다르기 때문이에요.</p>
               <p>그래서 결과도 달라집니다. 그게 포인트죠.</p>
-            </details>
-            <details>
-              <summary>🧠 이거 MBTI 기반인가요?</summary>
-              <p>일부 테스트는 MBTI 성향을 참고하지만,</p>
-              <p>모모픽만의 해석 방식으로 재구성되어 있습니다.</p>
-            </details>
-            <details>
-              <summary>😅 결과가 너무 팩폭인데요… 틀린 거죠?</summary>
-              <p>틀렸다기보다는… 듣기 싫은 부분일 가능성이 큽니다.</p>
-              <p>대부분의 사람은 여기서 살짝 찔립니다.</p>
-            </details>
-            <details>
-              <summary>💡 결과를 바꿀 수 있나요?</summary>
-              <p>물론 가능합니다.</p>
-              <p>다른 선택을 하면 전혀 다른 결과가 나올 수 있어요.</p>
-              <p>(근데… 그 선택을 진짜 할 수 있을까요?)</p>
-            </details>
-            <details>
-              <summary>📊 테스트 결과는 믿어도 되나요?</summary>
-              <p>100% 정답은 아니지만,</p>
-              <p>당신을 이해하는 하나의 힌트가 될 수 있습니다.</p>
             </details>
             <details>
               <summary>🔒 로그인하면 뭐가 달라지나요?</summary>
@@ -326,41 +342,42 @@ export default function KoHomePage() {
               <p>👉 그냥 안 하면 손해 보는 구조입니다.</p>
             </details>
             <details>
-              <summary>📱 왜 자꾸 사람들이 공유하나요?</summary>
-              <p>재밌기도 하지만…</p>
-              <p>“너 이거 해봐” 하고 보내고 싶어지는 결과 구조 때문입니다.</p>
-            </details>
-            <details>
-              <summary>📢 광고 왜 이렇게 많아요?</summary>
-              <p>무료로 서비스 운영하려면 돈은 어디선가 나와야 합니다.</p>
-              <p>광고는 생존 장치입니다. 참고 좀 해주세요.</p>
-            </details>
-            <details>
               <summary>🚨 테스트가 안 돼요 (버그)</summary>
               <p>기기, 브라우저 문제일 가능성이 큽니다.</p>
-              <p>그래도 안 되면 문의 주세요.</p>
-              <p>우리가 고치긴 합니다. 가끔은 빠르게.</p>
+              <p>그래도 안 되면 문의 주세요. 우리가 고치긴 합니다.</p>
             </details>
-            <details>
-              <summary>😶 이거 중독성 있는 거 정상인가요?</summary>
-              <p>네, 정상입니다.</p>
-              <p>그래서 계속 하게 되는 겁니다.</p>
-            </details>
+            <div className="faq-more-wrap">
+              <Link className="btn faq-more-btn" href="/ko/faq/">
+                자세히 보기
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 8h10M9 4l4 4-4 4"
+                  />
+                </svg>
+              </Link>
+            </div>
           </section>
 
           <section className="section cta-bottom" id="cta-bottom">
-            <h2>🔎 나한테 맞는 테스트 찾기</h2>
-            <p className="sec-lead">
-              지금은 목업 레이아웃입니다. 실제 추천 로직·에디터 큐 연동 시 이 영역이 메인 전환
-              포인트가 됩니다.
-            </p>
-            <div className="cta">
-              <Link className="btn primary" href="/ko/explore/">
-                테스트 탐색하기
-              </Link>
-              <Link className="btn" href="/ko/tag/">
-                태그로 둘러보기
-              </Link>
+            <div className="cta-bottom-card">
+              <h2>🔎 나한테 맞는 테스트 찾기</h2>
+              <p className="sec-lead">
+                지금은 목업 레이아웃입니다. 실제 추천 로직·에디터 큐 연동 시 이 영역이 메인 전환
+                포인트가 됩니다.
+              </p>
+              <div className="cta">
+                <Link className="btn primary" href="/ko/explore/">
+                  테스트 탐색하기
+                </Link>
+                <Link className="btn" href="/ko/tag/">
+                  태그로 둘러보기
+                </Link>
+              </div>
             </div>
           </section>
         </main>

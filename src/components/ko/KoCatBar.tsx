@@ -103,19 +103,21 @@ export function KoCatBar() {
       className={`cat-bar${hidden ? " cat-bar--hidden" : ""}`}
       aria-label="카테고리 빠른 이동"
     >
-      {chips.map((chip) => {
-        const active = chip.matchFn(pathname);
-        return (
-          <Link
-            key={chip.href}
-            className={`${chip.className}${active ? "" : ""}`}
-            href={chip.href}
-            aria-current={active ? "true" : undefined}
-          >
-            {chip.label}
-          </Link>
-        );
-      })}
+      <div className="cat-bar__inner">
+        {chips.map((chip) => {
+          const active = chip.matchFn(pathname);
+          return (
+            <Link
+              key={chip.href}
+              className={chip.className}
+              href={chip.href}
+              aria-current={active ? "true" : undefined}
+            >
+              {chip.label}
+            </Link>
+          );
+        })}
+      </div>
     </nav>
   );
 }

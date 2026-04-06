@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
+import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultShare } from "./QuizResultShare";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
 
@@ -130,7 +131,7 @@ export function SnackQuiz({
         <div className="quiz-result-card">
           {resultImage ? (
             <div className="quiz-result-visual">
-              <img
+              <QuizImageWithFallback
                 src={resultImage}
                 alt=""
                 width={480}
@@ -179,7 +180,7 @@ export function SnackQuiz({
       <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
       {q.image ? (
         <div className="quiz-q-visual">
-          <img
+          <QuizImageWithFallback
             src={quizAssetUrl(q.image, locale)}
             alt=""
             width={480}

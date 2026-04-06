@@ -74,13 +74,92 @@
 .momopick-ko .site-hd .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 10px 16px;
-  display: flex;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  min-height: 60px;
 }
 
+/* 왼쪽 심볼 + 드롭다운 메뉴 */
+.momopick-ko .hd-symbol-menu {
+  justify-self: start;
+  position: relative;
+}
+
+.momopick-ko .hd-logo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+  line-height: 0;
+}
+
+.momopick-ko .hd-logo-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.momopick-ko .hd-symbol-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 60;
+  min-width: min(260px, calc(100vw - 32px));
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(252, 251, 255, 0.98);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.momopick-ko .hd-symbol-dropdown__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.momopick-ko .hd-symbol-dropdown__link {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.momopick-ko .hd-symbol-dropdown__link:hover {
+  background: rgba(90, 103, 242, 0.08);
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* 타이틀: 정중앙 */
+.momopick-ko .hd-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.momopick-ko .hd-title .hd-wordmark {
+  display: block;
+  height: 26px;
+  width: auto;
+  max-width: min(200px, 46vw);
+  object-fit: contain;
+}
+
+/* (구) brand 링크 호환 — brand 클래스가 남아 있는 페이지 대비 */
 .momopick-ko .brand {
   display: flex;
   align-items: center;
@@ -106,25 +185,50 @@
 .momopick-ko .hd-actions {
   display: flex;
   align-items: center;
+  justify-self: end;
   gap: 8px;
   flex-shrink: 0;
 }
 
 .momopick-ko .btn-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
   border: 1px solid var(--line);
   background: var(--surface);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 24px;
   box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.momopick-ko .btn-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .momopick-ko .btn-icon:hover {
   border-color: rgba(90, 103, 242, 0.35);
+}
+
+/* 상단 헤더 오른쪽 아이콘: 라운드 박스는 호버·포커스 시에만 */
+.momopick-ko .hd-actions .btn-icon {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.momopick-ko .hd-actions .btn-icon:hover,
+.momopick-ko .hd-actions .btn-icon:focus-visible {
+  border-color: rgba(90, 103, 242, 0.35);
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .momopick-ko .cat-bar {
@@ -134,8 +238,22 @@
   background: rgba(244, 242, 251, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
-  max-width: 100%;
-  margin: 0;
+  transform: translateY(0);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.28s ease;
+  will-change: transform;
+}
+
+.momopick-ko .cat-bar--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 헤더 로고 기준으로 정렬되는 내부 래퍼 */
+.momopick-ko .cat-bar__inner {
+  max-width: var(--max);
+  margin: 0 auto;
   padding: 10px 16px 6px;
   display: flex;
   gap: 8px;
@@ -149,19 +267,9 @@
     #000 calc(100% - 12px),
     transparent
   );
-  transform: translateY(0);
-  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.28s ease;
-  will-change: transform;
 }
 
-.momopick-ko .cat-bar--hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.momopick-ko .cat-bar::-webkit-scrollbar {
+.momopick-ko .cat-bar__inner::-webkit-scrollbar {
   display: none;
 }
 
@@ -221,12 +329,7 @@
   color: #fff;
 }
 
-/* 🎨 Style — 베이지 + 블랙 포인트 */
-.momopick-ko .chip--style {
-  background: #f4ebe3;
-  border-color: rgba(15, 15, 15, 0.35);
-  color: var(--ctr-style-b);
-}
+/* 🎨 Style — 베이지 + 블랙 포인트 (기본은 공통 .chip, 호버·선택 시만 테마) */
 .momopick-ko .chip--style:hover:not([aria-current="true"]) {
   border-color: var(--ctr-style-b);
   background: var(--ctr-style-a);
@@ -255,20 +358,33 @@
 }
 
 .momopick-ko .hero {
-  padding: 12px 0 8px;
+  padding: 0;
+  margin-left: -16px;
+  margin-right: -16px;
   text-align: center;
 }
 
-/* 히어로 배너: .wrap과 동일한 가로(최대 1120px, 좌우 16px 패딩 → 콘텐츠 최대 1088px) */
+/* 히어로 배너: 뷰포트 전체 너비 확장, 최대 1088px에서 중앙 정렬 */
 .momopick-ko .hero-banner-wrap {
   margin: 0 auto;
   width: 100%;
-  max-width: 100%;
+  max-width: 1088px;
   position: relative;
-  border-radius: var(--radius);
+  border-radius: 0;
   overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  border: none;
+  box-shadow: none;
+}
+
+@media (min-width: 720px) {
+  .momopick-ko .hero {
+    padding: 14px 0 10px;
+  }
+  .momopick-ko .hero-banner-wrap {
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
 }
 
 .momopick-ko .hero-banner {
@@ -301,8 +417,8 @@
 }
 
 .momopick-ko .hero-banner-overlay__kicker {
-  margin: 0 0 12px;
-  font-size: 19.5px;
+  margin: 0 0 10px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.95);
@@ -312,7 +428,7 @@
 .momopick-ko .hero-banner-overlay__text {
   margin: 0;
   max-width: 42em;
-  font-size: clamp(19.5px, 4.8vw, 22.5px);
+  font-size: clamp(15px, 3.5vw, 18px);
   font-weight: 600;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.94);
@@ -320,16 +436,16 @@
 }
 
 .momopick-ko .hero-banner-overlay__cta {
-  margin-top: 21px;
+  margin-top: 18px;
 }
 
 .momopick-ko .hero-banner-overlay__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 27px;
+  padding: 12px 22px;
   border-radius: 999px;
-  font-size: 19.5px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #fff;
@@ -1110,24 +1226,112 @@
   opacity: 0.75;
 }
 
+.momopick-ko .ko-ft-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 서비스 개선 의견·제휴 문의 버튼 영역 */
+.momopick-ko .ko-ft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.momopick-ko .ko-ft-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 2px 10px rgba(45, 30, 80, 0.05);
+  text-decoration: none !important;
+  opacity: 1 !important;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.momopick-ko .ko-ft-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(45, 30, 80, 0.1);
+}
+
+.momopick-ko .ko-ft-action-btn--feedback:hover {
+  border-color: rgba(90, 103, 242, 0.45);
+  background: rgba(90, 103, 242, 0.06);
+  color: var(--accent);
+}
+
+.momopick-ko .ko-ft-action-btn--partner:hover {
+  border-color: rgba(232, 90, 140, 0.45);
+  background: rgba(232, 90, 140, 0.06);
+  color: var(--accent-2);
+}
+
+.momopick-ko .ko-ft-action-btn__icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* 정보 링크 영역 */
+.momopick-ko .ko-ft-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.momopick-ko .ko-ft-links a {
+  text-decoration: underline;
+  color: var(--text);
+  opacity: 0.75;
+}
+
+.momopick-ko .ko-ft-links span[aria-hidden] {
+  color: var(--muted);
+  opacity: 0.5;
+  font-size: 11px;
+}
+
 .momopick-ko .cta-bottom {
   text-align: center;
 }
 
-.momopick-ko .cta-bottom h2 {
+.momopick-ko .cta-bottom-card {
+  padding: 32px 24px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(
+    135deg,
+    rgba(90, 103, 242, 0.06) 0%,
+    rgba(232, 90, 140, 0.05) 100%
+  );
+  box-shadow: var(--shadow);
+}
+
+.momopick-ko .cta-bottom-card h2 {
   margin: 0 0 12px;
   font-size: 19px;
   font-weight: 900;
   letter-spacing: -0.02em;
 }
 
-.momopick-ko .cta-bottom .sec-lead {
+.momopick-ko .cta-bottom-card .sec-lead {
   margin-left: auto;
   margin-right: auto;
 }
 
-.momopick-ko .cta-bottom .cta {
+.momopick-ko .cta-bottom-card .cta {
   justify-content: center;
+  margin-top: 20px;
 }
 
 /* —— 스낵 테스트(연애 유형 등) —— */
@@ -1904,6 +2108,234 @@
 
 .momopick-ko .policy-foot .link-all {
   font-size: 15px;
+}
+
+/* 문의 페이지 공통 (피드백·제휴) */
+.momopick-ko .contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.momopick-ko .channel-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-decoration: none !important;
+  color: var(--text);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.momopick-ko .channel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.momopick-ko .channel-card--mail:hover {
+  border-color: rgba(90, 103, 242, 0.4);
+  box-shadow: 0 10px 30px rgba(90, 103, 242, 0.1);
+}
+
+.momopick-ko .channel-card--kakao:hover {
+  border-color: rgba(254, 229, 0, 0.8);
+  box-shadow: 0 10px 30px rgba(254, 229, 0, 0.2);
+}
+
+.momopick-ko .channel-card__icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.momopick-ko .channel-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.momopick-ko .channel-card__label {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.momopick-ko .channel-card__desc {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.momopick-ko .channel-card__arrow {
+  font-size: 18px;
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.momopick-ko .channel-card:hover .channel-card__arrow {
+  transform: translateX(3px);
+}
+
+.momopick-ko .contact-note {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: rgba(90, 103, 242, 0.04);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.momopick-ko .contact-note p {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.momopick-ko .contact-note ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.momopick-ko .contact-note li {
+  margin-bottom: 4px;
+}
+
+/* 제휴 문의 파트너 유형 리스트 */
+.momopick-ko .partner-type-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .momopick-ko .partner-type-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.momopick-ko .partner-type-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.momopick-ko .partner-type-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.momopick-ko .partner-type-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.momopick-ko .partner-type-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* FAQ 전용 페이지 */
+.momopick-ko .faq-page .policy-intro a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.momopick-ko .faq-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.momopick-ko .faq-quick-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  box-shadow: 0 2px 8px rgba(45, 30, 80, 0.04);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.momopick-ko .faq-quick-chip:hover {
+  border-color: rgba(90, 103, 242, 0.4);
+  color: var(--accent);
+  background: rgba(90, 103, 242, 0.05);
+}
+
+.momopick-ko .faq-section {
+  margin-top: 36px;
+}
+
+.momopick-ko .faq-section-title {
+  margin: 0 0 14px;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--line);
+}
+
+/* 홈 FAQ 하단 "자세히 보기" 버튼 */
+.momopick-ko .faq-more-wrap {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.momopick-ko .faq-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border: 1.5px solid rgba(90, 103, 242, 0.3);
+  background: rgba(90, 103, 242, 0.06);
+  color: var(--accent);
+  box-shadow: 0 4px 16px rgba(90, 103, 242, 0.1);
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.momopick-ko .faq-more-btn:hover {
+  background: rgba(90, 103, 242, 0.12);
+  border-color: rgba(90, 103, 242, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(90, 103, 242, 0.18);
 }
 
 /* 하단 고정 탭바 (청월당 스타일: 아이콘 + 라벨) */

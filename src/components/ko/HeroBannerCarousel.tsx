@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { KoHeroBannerSlide } from "@/content/home/koHeroBanners";
+import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 
 const INTERVAL_MS = 6000;
 /** 가로 이동이 이 값(px) 이상이면 스와이프로 인식 */
@@ -182,7 +183,7 @@ export function HeroBannerCarousel({ slides }: Props) {
             aria-roledescription="슬라이드"
             aria-label={`${i + 1} / ${slides.length}`}
           >
-            <img
+            <QuizImageWithFallback
               className="hero-banner"
               src={slide.image}
               alt={slide.alt}

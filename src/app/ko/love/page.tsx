@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
+import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
+import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
@@ -28,22 +29,24 @@ const year = new Date().getFullYear();
 export default function KoLoveHubPage() {
   return (
     <>
-      <header className="site-hd">
-        <div className="inner">
-          <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <KoBrandLogo />
-            <strong>Momopick</strong>
-          </Link>
-          <div className="hd-actions">
-            <Link className="btn-icon" href="/ko/explore/" title="탐색" aria-label="테스트 탐색">
-              🔎
+      <KoSiteHeader
+          actions={
+            <>
+              <Link className="btn-icon" href="/ko/explore/" title="탐색" aria-label="테스트 탐색">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="2" />
+                <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </Link>
-            <Link className="btn sm primary" href="/ko/app/login/">
-              로그인
+            <Link className="btn-icon" href="/ko/app/login/" title="로그인" aria-label="로그인">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </Link>
-          </div>
-        </div>
-      </header>
+            </>
+          }
+        />
 
       <KoCatBar />
 
@@ -69,7 +72,7 @@ export default function KoLoveHubPage() {
                 <Link key={item.href} className="tile tile--love" href={item.href}>
                   <div className="thumb">
                     {i === 0 ? <span className="badge">HOT</span> : null}
-                    <img
+                    <QuizImageWithFallback
                       src={item.image || "/images/banners/tile-love-01.webp"}
                       alt=""
                       width={1536}

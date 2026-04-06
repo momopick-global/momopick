@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { notFound } from "next/navigation";
-import { KoBrandLogo } from "@/components/ko/KoBrandLogo";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoBlogPostBySlug, getKoBlogSlugs } from "@/content/blog/koSamplePosts";
 
@@ -58,22 +58,21 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
 
   return (
     <>
-      <header className="site-hd">
-        <div className="inner">
-          <Link className="brand" href="/ko/" aria-label="모모픽 홈">
-            <KoBrandLogo />
-            <strong>Momopick</strong>
-          </Link>
-          <div className="hd-actions">
-            <Link className="btn sm" href="/ko/blog/">
+      <KoSiteHeader
+          actions={
+            <>
+              <Link className="btn sm" href="/ko/blog/">
               블로그
             </Link>
-            <Link className="btn sm primary" href="/ko/app/login/">
-              로그인
+            <Link className="btn-icon" href="/ko/app/login/" title="로그인" aria-label="로그인">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </Link>
-          </div>
-        </div>
-      </header>
+            </>
+          }
+        />
 
       <div className="wrap">
         <main className="policy-page blog-post-page">
