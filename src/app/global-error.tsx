@@ -19,7 +19,7 @@ export default function GlobalError({
             fontFamily:
               'ui-sans-serif, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif',
             background: "#f6f7fb",
-            color: "#161022",
+            color: "#666666",
             maxWidth: 520,
             margin: "0 auto",
           }}

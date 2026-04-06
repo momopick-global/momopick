@@ -52,7 +52,7 @@ export default async function LocalePlaceholderPage({
         padding: 24,
         fontFamily: "system-ui, sans-serif",
         background: "#f4f2fb",
-        color: "#161022",
+        color: "#666666",
       }}
     >
       <h1 style={{ margin: "0 0 12px" }}>{l.title}</h1>

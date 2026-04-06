@@ -171,7 +171,7 @@ export default function PrivacyPolicyPage() {
               <ul className="policy-contact">
                 <li>
                   <strong>이메일</strong>:{" "}
-                  <a href="mailto:privacy@momopick.com">privacy@momopick.com</a>
+                  <a href="mailto:momopick.global@gmail.com">momopick.global@gmail.com</a>
                 </li>
                 <li>
                   <strong>기타</strong>: 추가 연락처(전화·주소 등)는 확정 시 본 페이지에 반영합니다.

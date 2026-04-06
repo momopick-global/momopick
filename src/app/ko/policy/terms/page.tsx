@@ -179,7 +179,7 @@ export default function TermsOfServicePage() {
               <ul className="policy-contact">
                 <li>
                   <strong>이메일</strong>:{" "}
-                  <a href="mailto:privacy@momopick.com">privacy@momopick.com</a>
+                  <a href="mailto:momopick.global@gmail.com">momopick.global@gmail.com</a>
                   {" "}(서비스·약관 관련 문의)
                 </li>
                 <li>

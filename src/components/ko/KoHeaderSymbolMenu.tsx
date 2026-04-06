@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { KoBrandLogo } from "./KoBrandLogo";
-import { KO_SITE_NAV_LINKS } from "./koSiteNavLinks";
+import { KO_SITE_NAV_LINKS, KO_TEST_CATEGORY_LINKS } from "./koSiteNavLinks";
 
 export function KoHeaderSymbolMenu() {
   const [open, setOpen] = useState(false);
@@ -49,16 +49,32 @@ export function KoHeaderSymbolMenu() {
         <KoBrandLogo />
       </button>
       {open ? (
-        <nav id={menuId} className="hd-symbol-dropdown" aria-label="사이트 정보">
-          <ul className="hd-symbol-dropdown__list">
-            {KO_SITE_NAV_LINKS.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hd-symbol-dropdown__link" onClick={close}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav id={menuId} className="hd-symbol-dropdown" aria-label="사이트 메뉴">
+          <div className="hd-symbol-dropdown__section">
+            <span className="hd-symbol-dropdown__label">테스트</span>
+            <ul className="hd-symbol-dropdown__list">
+              {KO_TEST_CATEGORY_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hd-symbol-dropdown__link" onClick={close}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="hd-symbol-dropdown__divider" />
+          <div className="hd-symbol-dropdown__section">
+            <span className="hd-symbol-dropdown__label">사이트 정보</span>
+            <ul className="hd-symbol-dropdown__list">
+              {KO_SITE_NAV_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hd-symbol-dropdown__link" onClick={close}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       ) : null}
     </div>
