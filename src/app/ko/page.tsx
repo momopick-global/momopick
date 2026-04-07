@@ -17,24 +17,7 @@ const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
 export default function KoHomePage() {
   return (
     <>
-      <KoSiteHeader
-          actions={
-            <>
-              <Link className="btn-icon" href="/ko/explore/" title="탐색" aria-label="테스트 탐색">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="2" />
-                <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </Link>
-            <Link className="btn-icon" href="/ko/app/login/" title="로그인" aria-label="로그인">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </Link>
-            </>
-          }
-        />
+      <KoSiteHeader />
 
       <KoCatBar />
 

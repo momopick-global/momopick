@@ -5,8 +5,8 @@ export function KoBrandLogo() {
       className="logo"
       src="/images/brand/momopick_symbol.webp"
       alt=""
-      width={40}
-      height={40}
+      width={28}
+      height={28}
       decoding="async"
       aria-hidden="true"
     />

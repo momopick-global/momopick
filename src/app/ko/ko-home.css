@@ -21,7 +21,12 @@
   --ctr-fun-b: #facc15;
   --radius: 20px;
   --radius-sm: 14px;
-  --max: 1120px;
+  /* 메인 콘텐츠·히어로·헤더 내부 정렬 공통 최대 너비 (풀 해상도 기준) */
+  --max: 1088px;
+  /* 좌우 여백: 해상도에 따라 확대 (넓은 화면에서만 콘텐츠 폭이 1088에 고정) */
+  --layout-gutter: 16px;
+  /* sticky 헤더(60px) + 하단 보더 1px — 심볼 메뉴 패널 시작선과 cat-bar sticky top과 동일 */
+  --ko-header-h: 61px;
   --quiz-col: 520px;
   --shadow: 0 8px 32px rgba(45, 30, 80, 0.08);
   --shadow-hover: 0 14px 40px rgba(45, 30, 80, 0.12);
@@ -47,6 +52,30 @@
   line-height: 1.55;
 }
 
+@media (min-width: 480px) {
+  .momopick-ko {
+    --layout-gutter: 20px;
+  }
+}
+
+@media (min-width: 720px) {
+  .momopick-ko {
+    --layout-gutter: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .momopick-ko {
+    --layout-gutter: 28px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .momopick-ko {
+    --layout-gutter: 32px;
+  }
+}
+
 .momopick-ko * {
   box-sizing: border-box;
 }
@@ -59,13 +88,14 @@
 .momopick-ko .wrap {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 16px 72px;
+  padding: 0 var(--layout-gutter) 72px;
 }
 
 .momopick-ko header.site-hd {
   position: sticky;
   top: 0;
-  z-index: 40;
+  /* 햄버거 슬라이드 패널(55)보다 위 — 심볼·닫기 버튼이 항상 클릭 가능 */
+  z-index: 60;
   background: rgba(244, 242, 251, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -74,94 +104,229 @@
 .momopick-ko .site-hd .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 var(--layout-gutter);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   min-height: 60px;
 }
 
-/* 왼쪽 심볼 + 드롭다운 메뉴 */
+/* 왼쪽 심볼 — 전체 화면 슬라이드 패널은 포털(body)로 렌더 */
 .momopick-ko .hd-symbol-menu {
   justify-self: start;
   position: relative;
 }
 
+/* 왼쪽 심볼: 오른쪽 로그인(.btn-icon)과 동일 54×54 터치 영역 */
 .momopick-ko .hd-logo-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 54px;
+  height: 54px;
   margin: 0;
   padding: 0;
-  border: none;
+  border: 1px solid transparent;
   background: transparent;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 16px;
   line-height: 0;
+  box-shadow: none;
+  flex-shrink: 0;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.momopick-ko .hd-logo-btn:hover,
+.momopick-ko .hd-logo-btn:focus-visible {
+  border-color: rgba(90, 103, 242, 0.35);
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .momopick-ko .hd-logo-btn:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
-.momopick-ko .hd-symbol-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
+.momopick-ko .hd-logo-btn__close {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+/*
+ * 포털 루트: .momopick-ko의 overflow-x:clip이 자식 position:fixed를
+ * 잘라내어 메뉴가 안 보이는 문제 방지 — 래퍼는 레이아웃·배경 없이 변수만 유지
+ */
+.momopick-ko.hd-symbol-panel-portal {
+  overflow: visible !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.momopick-ko.hd-symbol-panel-portal .hd-symbol-panel {
+  pointer-events: auto;
+}
+
+/* 헤더 아래 전체 화면 슬라이드 패널 (포털 루트에 .momopick-ko 함께 부착) */
+.momopick-ko .hd-symbol-panel {
+  position: fixed;
+  /* 하단 탭바(50)·본문보다 위, 헤더(60)보다 아래 */
+  z-index: 55;
   left: 0;
-  z-index: 60;
-  min-width: min(260px, calc(100vw - 32px));
-  padding: 8px 0;
+  right: 0;
+  top: var(--ko-header-h);
+  bottom: 0;
   margin: 0;
+  padding: 0 0 max(24px, env(safe-area-inset-bottom, 0px));
   list-style: none;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(252, 251, 255, 0.98);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--line);
+  background: rgba(244, 242, 251, 0.98);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(45, 30, 80, 0.12);
+  transform: translateY(-100%);
+  animation: hd-symbol-panel-slide 0.34s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
-.momopick-ko .hd-symbol-dropdown__list {
+@keyframes hd-symbol-panel-slide {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momopick-ko .hd-symbol-panel {
+    animation: none;
+    transform: translateY(0);
+  }
+}
+
+.momopick-ko .hd-symbol-panel__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px var(--layout-gutter) 32px;
+}
+
+.momopick-ko .hd-symbol-panel__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.momopick-ko .hd-symbol-dropdown__link {
-  display: block;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
-  opacity: 0.9;
+.momopick-ko .hd-symbol-panel__list > li {
+  min-width: 0;
 }
 
-.momopick-ko .hd-symbol-dropdown__link:hover {
-  background: rgba(90, 103, 242, 0.08);
+.momopick-ko .hd-symbol-panel__emoji {
+  flex-shrink: 0;
+  width: 1.25em;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.momopick-ko .hd-symbol-panel__link-text {
+  min-width: 0;
+}
+
+.momopick-ko .hd-symbol-panel__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 12px;
+  font-size: clamp(13px, 2.8vw, 15px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.95;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 2px 10px rgba(45, 30, 80, 0.05);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.momopick-ko .hd-symbol-panel__link:hover,
+.momopick-ko .hd-symbol-panel__link:focus-visible {
+  background: rgba(90, 103, 242, 0.07);
+  border-color: rgba(90, 103, 242, 0.28);
   color: var(--accent);
   opacity: 1;
 }
 
-.momopick-ko .hd-symbol-dropdown__section {
-  padding: 4px 0;
+.momopick-ko .hd-symbol-panel__section {
+  padding: 8px 0 6px;
 }
 
-.momopick-ko .hd-symbol-dropdown__label {
+.momopick-ko .hd-symbol-panel__label {
   display: block;
-  padding: 6px 16px 2px;
-  font-size: 11px;
+  padding: 12px 2px 10px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  opacity: 0.6;
+  opacity: 0.65;
 }
 
-.momopick-ko .hd-symbol-dropdown__divider {
+.momopick-ko .hd-symbol-panel__divider {
   height: 1px;
-  margin: 4px 0;
+  margin: 16px 0 8px;
   background: var(--line);
+}
+
+/* 약관·정책 — 사이트 정보와 시각적으로 구분 */
+.momopick-ko .hd-symbol-panel__section--policy {
+  margin-top: 4px;
+  padding: 14px 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(90, 103, 242, 0.2);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(244, 242, 251, 0.92) 100%
+  );
+  box-shadow: 0 2px 16px rgba(45, 30, 80, 0.06);
+}
+
+.momopick-ko .hd-symbol-panel__section--policy .hd-symbol-panel__label {
+  padding-top: 4px;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.momopick-ko .hd-symbol-panel__list--policy {
+  gap: 8px 10px;
+}
+
+.momopick-ko .hd-symbol-panel__section--social {
+  padding: 8px 0 4px;
+}
+
+.momopick-ko .hd-symbol-panel__section--social .ko-ft-social {
+  margin-top: 0;
 }
 
 /* 타이틀: 정중앙 */
@@ -189,8 +354,8 @@
 }
 
 .momopick-ko .logo {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   display: block;
   object-fit: contain;
@@ -228,6 +393,13 @@
 .momopick-ko .btn-icon svg {
   width: 28px;
   height: 28px;
+}
+
+.momopick-ko .btn-icon__img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
 }
 
 .momopick-ko .btn-icon:hover {
@@ -275,7 +447,7 @@
 .momopick-ko .cat-bar__inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 10px 16px 6px;
+  padding: 10px var(--layout-gutter) 10px;
   display: flex;
   gap: 8px;
   overflow-x: auto;
@@ -380,16 +552,16 @@
 
 .momopick-ko .hero {
   padding: 0;
-  margin-left: -16px;
-  margin-right: -16px;
+  margin-left: calc(-1 * var(--layout-gutter));
+  margin-right: calc(-1 * var(--layout-gutter));
   text-align: center;
 }
 
-/* 히어로 배너: 뷰포트 전체 너비 확장, 최대 1088px에서 중앙 정렬 */
+/* 히어로 배너: 뷰포트 전체 너비 확장, 최대 너비는 --max(1088)와 동일 */
 .momopick-ko .hero-banner-wrap {
   margin: 0 auto;
   width: 100%;
-  max-width: 1088px;
+  max-width: var(--max);
   position: relative;
   border-radius: 0;
   overflow: hidden;
@@ -399,7 +571,7 @@
 
 @media (min-width: 720px) {
   .momopick-ko .hero {
-    padding: 14px 0 10px;
+    padding: 0 0 10px;
   }
   .momopick-ko .hero-banner-wrap {
     border-radius: var(--radius);
@@ -433,7 +605,7 @@
 
 @media (min-width: 720px) {
   .momopick-ko .hero-banner-overlay {
-    padding: 33px 48px 42px;
+    padding: 33px clamp(var(--layout-gutter), 4vw, 48px) 42px;
   }
 }
 
@@ -530,6 +702,35 @@
   padding-bottom: 78px;
 }
 
+/* 좁은 뷰포트: 글자는 상단에서 패딩만큼 아래, 버튼은 하단(도트 위) 고정 */
+@media (max-width: 719px) {
+  .momopick-ko .hero-banner-carousel .hero-banner-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 28px var(--layout-gutter) 78px;
+    box-sizing: border-box;
+  }
+
+  .momopick-ko .hero-banner-overlay__kicker {
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+
+  .momopick-ko .hero-banner-overlay__text {
+    flex-shrink: 0;
+  }
+
+  .momopick-ko .hero-banner-overlay__cta {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+}
+
 .momopick-ko .hero-banner-overlay__text--multiline {
   white-space: pre-line;
 }
@@ -614,6 +815,91 @@
   gap: 10px;
   flex-wrap: wrap;
   align-items: center;
+}
+
+/* 보관함 — 헤더 로그인 아이콘 설정 */
+.momopick-ko .ko-saved-login-icon {
+  margin-top: 28px;
+  padding: 20px 20px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.momopick-ko .ko-saved-login-icon__title {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.momopick-ko .ko-saved-login-icon__desc {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.momopick-ko .ko-saved-login-icon__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(244, 242, 251, 0.6);
+}
+
+.momopick-ko .ko-saved-login-icon__img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+.momopick-ko .ko-saved-login-icon__preview-svg {
+  color: var(--text);
+  opacity: 0.75;
+}
+
+.momopick-ko .ko-saved-login-icon__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.momopick-ko .ko-saved-login-icon__file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.momopick-ko .ko-saved-login-icon__actions label.btn {
+  cursor: pointer;
+}
+
+.momopick-ko .ko-saved-login-icon__hint {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.momopick-ko .ko-saved-login-icon__code {
+  font-size: 11px;
+  word-break: break-all;
 }
 
 .momopick-ko .btn {
@@ -2411,7 +2697,7 @@
 .momopick-ko .ko-bottom-nav__list {
   list-style: none;
   margin: 0 auto;
-  padding: 6px 8px 8px;
+  padding: 6px max(8px, var(--layout-gutter)) 8px;
   max-width: var(--max);
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KoSavedLoginIconSettings } from "@/components/ko/KoSavedLoginIconSettings";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 
@@ -50,6 +51,8 @@ export default function KoSavedPage() {
               테스트 둘러보기
             </Link>
           </div>
+
+          <KoSavedLoginIconSettings />
         </main>
 
         <footer className="ko-ft">
