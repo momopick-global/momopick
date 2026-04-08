@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { QuizUiStrings } from "@/i18n/quiz-ui";
-import { getKakaoFeedShareUrls, parseShareTextForKakaoFeed } from "@/lib/kakaoShareFeed";
+import { getKakaoFeedShareUrls, normalizeUrlForKakao, parseShareTextForKakaoFeed } from "@/lib/kakaoShareFeed";
 
 type Props = {
   ui: QuizUiStrings;
@@ -10,6 +10,11 @@ type Props = {
   shareText: string;
   /** 카카오 공유 피드에 표시할 이미지 경로 (`/quizzes/...`) 또는 절대 URL. 없으면 기본 OG 이미지 사용 */
   shareImageUrl?: string;
+  /**
+   * 카카오 버튼 "테스트 하기"에 연결할 퀴즈 시작 URL (상대/절대 모두 가능).
+   * 없으면 현재 페이지 URL로 fallback.
+   */
+  quizStartUrl?: string;
 };
 
 function IconLink() {
@@ -62,7 +67,7 @@ function IconX() {
   );
 }
 
-export function QuizResultShare({ ui, shareText, shareImageUrl }: Props) {
+export function QuizResultShare({ ui, shareText, shareImageUrl, quizStartUrl }: Props) {
   const [pageUrl, setPageUrl] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -92,7 +97,11 @@ export function QuizResultShare({ ui, shareText, shareImageUrl }: Props) {
     }
     const { title, description } = parseShareTextForKakaoFeed(shareText);
     const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
-    const link: { mobileWebUrl: string; webUrl: string } = { mobileWebUrl, webUrl };
+    const resultLink = { mobileWebUrl, webUrl };
+
+    // "테스트 하기" 버튼용 URL — quizStartUrl이 있으면 정규화, 없으면 결과 URL과 동일
+    const startHref = quizStartUrl ? normalizeUrlForKakao(quizStartUrl) : mobileWebUrl;
+    const startLink = { mobileWebUrl: startHref, webUrl: startHref };
 
     const fallbackCopy = () => {
       void navigator.clipboard.writeText(pageUrl).then(() => {
@@ -102,16 +111,19 @@ export function QuizResultShare({ ui, shareText, shareImageUrl }: Props) {
     };
 
     try {
-      console.info("[Momopick][Kakao] Share.sendDefault(feed)", { pageUrl, mobileWebUrl, imageUrl });
+      console.info("[Momopick][Kakao] Share.sendDefault(feed)", { pageUrl, mobileWebUrl, imageUrl, startHref });
       const result = Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
           title: title || "모모픽",
           description: description || "재미로 보는 심리 테스트",
           imageUrl,
-          link,
+          link: resultLink,
         },
-        buttons: [{ title: "결과 보기", link }],
+        buttons: [
+          { title: "결과 보기", link: resultLink },
+          { title: "테스트 하기", link: startLink },
+        ],
       });
       if (result && typeof (result as Promise<void>).catch === "function") {
         (result as Promise<void>).catch((e: unknown) => {

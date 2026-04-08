@@ -55,11 +55,13 @@ export function SnackQuiz({
     [done, step, total],
   );
 
-  const resultsGalleryHref = useMemo(() => {
+  const quizPageHref = useMemo(() => {
     const cat = definition.category?.trim() || "quiz";
     const seg = definition.slug?.trim() || definition.id;
-    return `/${locale}/${cat}/${seg}/results/`;
+    return `/${locale}/${cat}/${seg}/`;
   }, [definition.category, definition.slug, definition.id, locale]);
+
+  const resultsGalleryHref = useMemo(() => `${quizPageHref}results/`, [quizPageHref]);
 
   useEffect(() => {
     return () => {
@@ -160,7 +162,12 @@ export function SnackQuiz({
           <p className="quiz-result-body">
             {isBlend ? pickQuizText(locale, blend.body) : pickQuizText(locale, single?.body)}
           </p>
-          <QuizResultShare ui={ui} shareText={shareText} shareImageUrl={resultImage} />
+          <QuizResultShare
+            ui={ui}
+            shareText={shareText}
+            shareImageUrl={resultImage}
+            quizStartUrl={quizPageHref}
+          />
           <div className="quiz-result-actions">
             <Link href={resultsGalleryHref} className="btn sm">
               {ui.viewAllResults}

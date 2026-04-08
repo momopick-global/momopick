@@ -17,6 +17,23 @@ function isLocalHost(hostname: string): boolean {
 }
 
 /**
+ * 단일 URL을 카카오 등록 도메인(production origin)으로 정규화합니다.
+ * localhost / 127.0.0.1 등 로컬 호스트는 KAKAO_SITE_ORIGIN 기준으로 변환.
+ */
+export function normalizeUrlForKakao(url: string): string {
+  const origin = KAKAO_SITE_ORIGIN.replace(/\/$/, "");
+  try {
+    const u = new URL(url);
+    if (isLocalHost(u.hostname)) {
+      return new URL(u.pathname + u.search + u.hash, `${origin}/`).href;
+    }
+    return u.href;
+  } catch {
+    return `${origin}/`;
+  }
+}
+
+/**
  * 카카오톡 공유용 URL 정규화 — **4019**(미등록 Web 도메인) 완화.
  *
  * - `localhost` / `127.0.0.1` 등에서는 링크를 `NEXT_PUBLIC_SITE_ORIGIN`(기본 momopick.com) 기준으로 바꿉니다.
