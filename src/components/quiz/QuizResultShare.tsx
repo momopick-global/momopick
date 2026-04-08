@@ -106,101 +106,173 @@ export function QuizResultShare({
   }, [pageUrl]);
 
   const openKakao = useCallback(() => {
-    if (!pageUrl) return;
-    const Kakao = typeof window !== "undefined" ? window.Kakao : undefined;
+    if (!pageUrl || typeof window === "undefined") return;
+
     const fallbackCopy = () => {
-      void navigator.clipboard.writeText(pageUrl).then(() => {
-        setCopied(true);
-        window.setTimeout(() => setCopied(false), 2000);
+      void navigator.clipboard.writeText(pageUrl).then(
+        () => {
+          setCopied(true);
+          window.setTimeout(() => setCopied(false), 2000);
+        },
+        () => {
+          console.warn("[Momopick] clipboard write failed, fallback prompt");
+          window.prompt("아래 링크를 복사해 주세요", pageUrl);
+        },
+      );
+    };
+
+    /** 스크립트 `afterInteractive` 로드 지연 시 초기화 전에 클릭하는 경우 대비 */
+    const waitForKakaoInit = async (maxMs: number): Promise<boolean> => {
+      if (window.Kakao?.isInitialized?.()) return true;
+      let settled = false;
+      const t0 = Date.now();
+      return await new Promise((resolve) => {
+        function done(ok: boolean) {
+          if (settled) return;
+          settled = true;
+          window.removeEventListener("kakao-sdk-ready", onReady);
+          window.clearInterval(tick);
+          resolve(ok);
+        }
+        function onReady() {
+          done(!!window.Kakao?.isInitialized?.());
+        }
+        window.addEventListener("kakao-sdk-ready", onReady, { once: true });
+        const tick = window.setInterval(() => {
+          if (window.Kakao?.isInitialized?.()) {
+            done(true);
+          } else if (Date.now() - t0 >= maxMs) {
+            done(!!window.Kakao?.isInitialized?.());
+          }
+        }, 80);
       });
     };
 
-    const { title, description } = parseShareTextForKakaoFeed(shareText);
-    const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
-    const resultMobile = absoluteHttpsUrlForKakao(mobileWebUrl);
-    const resultWeb = absoluteHttpsUrlForKakao(webUrl);
-    const imageForKakao = absoluteHttpsUrlForKakao(imageUrl);
-    const resultLink = { mobileWebUrl: resultMobile, webUrl: resultWeb };
+    void (async () => {
+      const { title, description } = parseShareTextForKakaoFeed(shareText);
+      const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
+      const resultMobile = absoluteHttpsUrlForKakao(mobileWebUrl);
+      const resultWeb = absoluteHttpsUrlForKakao(webUrl);
+      const imageForKakao = absoluteHttpsUrlForKakao(imageUrl);
+      const resultLink = { mobileWebUrl: resultMobile, webUrl: resultWeb };
 
-    if (!Kakao?.isInitialized?.()) {
-      fallbackCopy();
-      return;
-    }
-
-    /** 문항 진행 중 등: 기본 피드(본문 링크만, 하단 버튼 없음) */
-    if (!kakaoQuizResultShare) {
-      if (typeof Kakao.Share?.sendDefault !== "function") {
+      await waitForKakaoInit(5000);
+      const Kakao = window.Kakao;
+      if (!Kakao?.isInitialized?.()) {
+        console.warn("[Momopick][Kakao] SDK not initialized (NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY·스크립트 로드 확인)");
         fallbackCopy();
         return;
       }
+
+      /** 문항 진행 중 등: 기본 피드(본문 링크만, 하단 버튼 없음) */
+      if (!kakaoQuizResultShare) {
+        if (typeof Kakao.Share?.sendDefault !== "function") {
+          fallbackCopy();
+          return;
+        }
+        try {
+          console.info("[Momopick][Kakao] Share.sendDefault(feed, simple)", { pageUrl, resultMobile, imageForKakao });
+          const result = Kakao.Share.sendDefault({
+            objectType: "feed",
+            content: {
+              title: title || "모모픽",
+              description: description || "재미로 보는 심리 테스트",
+              imageUrl: imageForKakao,
+              link: resultLink,
+            },
+          });
+          if (result && typeof (result as Promise<void>).catch === "function") {
+            (result as Promise<void>).catch((e: unknown) => {
+              console.warn("[Kakao] Share.sendDefault rejected", e);
+              fallbackCopy();
+            });
+          }
+        } catch (e) {
+          console.warn("[Kakao] Share.sendDefault failed", e);
+          fallbackCopy();
+        }
+        return;
+      }
+
+      const startHref = quizStartUrl ? absoluteHttpsUrlForKakao(normalizeUrlForKakao(quizStartUrl)) : resultMobile;
+      const startLink = { mobileWebUrl: startHref, webUrl: startHref };
+
+      /** 커스텀 템플릿 실패 시에도 공유 창은 뜨도록 기본 피드 2버튼으로 폴백 */
+      const sendDefaultResultDual = () => {
+        if (typeof Kakao.Share?.sendDefault !== "function") {
+          fallbackCopy();
+          return;
+        }
+        try {
+          console.info("[Momopick][Kakao] Share.sendDefault(feed, result fallback)", { pageUrl, resultMobile, startHref });
+          const result = Kakao.Share.sendDefault({
+            objectType: "feed",
+            content: {
+              title: title || "모모픽",
+              description: description || "재미로 보는 심리 테스트",
+              imageUrl: imageForKakao,
+              link: resultLink,
+            },
+            buttons: [
+              { title: "결과 보기", link: resultLink },
+              { title: "테스트 하기", link: startLink },
+            ],
+          });
+          if (result && typeof (result as Promise<void>).catch === "function") {
+            (result as Promise<void>).catch((e: unknown) => {
+              console.warn("[Kakao] sendDefault(fallback) rejected", e);
+              fallbackCopy();
+            });
+          }
+        } catch (e) {
+          console.warn("[Kakao] sendDefault(fallback) failed", e);
+          fallbackCopy();
+        }
+      };
+
+      if (typeof Kakao.Share?.sendCustom !== "function") {
+        sendDefaultResultDual();
+        return;
+      }
+
+      const resultPath = pathForKakaoMessageTemplate(resultMobile);
+      const startPath = pathForKakaoMessageTemplate(startHref);
+
       try {
-        console.info("[Momopick][Kakao] Share.sendDefault(feed, simple)", { pageUrl, resultMobile, imageForKakao });
-        const result = Kakao.Share.sendDefault({
-          objectType: "feed",
-          content: {
-            title: title || "모모픽",
-            description: description || "재미로 보는 심리 테스트",
-            imageUrl: imageForKakao,
-            link: resultLink,
+        console.info("[Momopick][Kakao] Share.sendCustom(result)", {
+          templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
+          pageUrl,
+          resultMobile,
+          resultPath,
+          imageForKakao,
+          startHref,
+          startPath,
+        });
+        const result = Kakao.Share.sendCustom({
+          templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
+          templateArgs: {
+            TITLE: title || "모모픽",
+            DESC: description || "재미로 보는 심리 테스트",
+            IMAGE_URL: imageForKakao,
+            RESULT_URL: resultMobile,
+            RESULT_WEB_URL: resultWeb,
+            RESULT_PATH: resultPath,
+            START_URL: startHref,
+            START_WEB_URL: startHref,
+            START_PATH: startPath,
           },
         });
         if (result && typeof (result as Promise<void>).catch === "function") {
           (result as Promise<void>).catch((e: unknown) => {
-            console.warn("[Kakao] Share.sendDefault rejected", e);
-            fallbackCopy();
+            console.warn("[Kakao] Share.sendCustom rejected → sendDefault fallback", e);
+            sendDefaultResultDual();
           });
         }
       } catch (e) {
-        console.warn("[Kakao] Share.sendDefault failed", e);
-        fallbackCopy();
+        console.warn("[Kakao] Share.sendCustom failed → sendDefault fallback", e);
+        sendDefaultResultDual();
       }
-      return;
-    }
-
-    /** 퀴즈 결과: 커스텀 템플릿(2버튼) */
-    if (typeof Kakao.Share?.sendCustom !== "function") {
-      fallbackCopy();
-      return;
-    }
-    const startHref = quizStartUrl ? absoluteHttpsUrlForKakao(normalizeUrlForKakao(quizStartUrl)) : resultMobile;
-    const resultPath = pathForKakaoMessageTemplate(resultMobile);
-    const startPath = pathForKakaoMessageTemplate(startHref);
-
-    try {
-      console.info("[Momopick][Kakao] Share.sendCustom(result)", {
-        templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
-        pageUrl,
-        resultMobile,
-        resultPath,
-        imageForKakao,
-        startHref,
-        startPath,
-      });
-      const result = Kakao.Share.sendCustom({
-        templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
-        templateArgs: {
-          TITLE: title || "모모픽",
-          DESC: description || "재미로 보는 심리 테스트",
-          IMAGE_URL: imageForKakao,
-          /** 전체 URL — 템플릿에서 도메인 칸에 쓰면 안 됨(포맷 오류). 경로는 RESULT_PATH 사용 */
-          RESULT_URL: resultMobile,
-          RESULT_WEB_URL: resultWeb,
-          RESULT_PATH: resultPath,
-          START_URL: startHref,
-          START_WEB_URL: startHref,
-          START_PATH: startPath,
-        },
-      });
-      if (result && typeof (result as Promise<void>).catch === "function") {
-        (result as Promise<void>).catch((e: unknown) => {
-          console.warn("[Kakao] Share.sendCustom rejected", e);
-          fallbackCopy();
-        });
-      }
-    } catch (e) {
-      console.warn("[Kakao] Share.sendCustom failed", e);
-      fallbackCopy();
-    }
+    })();
   }, [pageUrl, shareText, shareImageUrl, quizStartUrl, kakaoQuizResultShare]);
 
   const openFacebook = useCallback(() => {
