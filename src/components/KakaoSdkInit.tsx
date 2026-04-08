@@ -34,8 +34,9 @@ export function KakaoSdkInit() {
 
   return (
     <Script
+      id="kakao-js-sdk"
       src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"
-      strategy="afterInteractive"
+      strategy="beforeInteractive"
       onLoad={onScriptLoad}
     />
   );

@@ -120,48 +120,26 @@ export function QuizResultShare({
       );
     };
 
-    /** 스크립트 `afterInteractive` 로드 지연 시 초기화 전에 클릭하는 경우 대비 */
-    const waitForKakaoInit = async (maxMs: number): Promise<boolean> => {
-      if (window.Kakao?.isInitialized?.()) return true;
-      let settled = false;
-      const t0 = Date.now();
-      return await new Promise((resolve) => {
-        function done(ok: boolean) {
-          if (settled) return;
-          settled = true;
-          window.removeEventListener("kakao-sdk-ready", onReady);
-          window.clearInterval(tick);
-          resolve(ok);
-        }
-        function onReady() {
-          done(!!window.Kakao?.isInitialized?.());
-        }
-        window.addEventListener("kakao-sdk-ready", onReady, { once: true });
-        const tick = window.setInterval(() => {
-          if (window.Kakao?.isInitialized?.()) {
-            done(true);
-          } else if (Date.now() - t0 >= maxMs) {
-            done(!!window.Kakao?.isInitialized?.());
-          }
-        }, 80);
-      });
-    };
+    /**
+     * `await` 로 클릭 직후 공유를 미루면 사용자 제스처가 끊겨 카카오 공유 창이 안 뜨는 브라우저가 많음.
+     * SDK는 `beforeInteractive` 로 최대한 먼저 로드 — 여기서는 동기 호출만 한다.
+     */
+    try {
+      const Kakao = window.Kakao;
+      if (!Kakao?.isInitialized?.()) {
+        console.warn(
+          "[Momopick][Kakao] SDK not ready yet — 잠시 후 다시 누르거나 NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 확인",
+        );
+        fallbackCopy();
+        return;
+      }
 
-    void (async () => {
       const { title, description } = parseShareTextForKakaoFeed(shareText);
       const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
       const resultMobile = absoluteHttpsUrlForKakao(mobileWebUrl);
       const resultWeb = absoluteHttpsUrlForKakao(webUrl);
       const imageForKakao = absoluteHttpsUrlForKakao(imageUrl);
       const resultLink = { mobileWebUrl: resultMobile, webUrl: resultWeb };
-
-      await waitForKakaoInit(5000);
-      const Kakao = window.Kakao;
-      if (!Kakao?.isInitialized?.()) {
-        console.warn("[Momopick][Kakao] SDK not initialized (NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY·스크립트 로드 확인)");
-        fallbackCopy();
-        return;
-      }
 
       /** 문항 진행 중 등: 기본 피드(본문 링크만, 하단 버튼 없음) */
       if (!kakaoQuizResultShare) {
@@ -193,17 +171,11 @@ export function QuizResultShare({
         return;
       }
 
-      /**
-       * 스낵/퍼센트 퀴즈는 결과도 같은 URL(클라이언트 상태만 바뀜). `quizStartUrl`은 상대 경로라
-       * 카카오 템플릿 변수 조합과 어긋나면 START가 `ko`만 되어 `/ko/`로 열리는 경우가 있어,
-       * 결과 공유 시「테스트 하기」도 현재 페이지(= 퀴즈 진입 URL)와 동일하게 맞춤.
-       */
       const resultPath = pathForKakaoMessageTemplate(resultMobile);
       const startHref = resultMobile;
       const startPath = resultPath;
       const startLink = { mobileWebUrl: startHref, webUrl: startHref };
 
-      /** 커스텀 템플릿 실패 시에도 공유 창은 뜨도록 기본 피드 2버튼으로 폴백 */
       const sendDefaultResultDual = () => {
         if (typeof Kakao.Share?.sendDefault !== "function") {
           fallbackCopy();
@@ -251,10 +223,6 @@ export function QuizResultShare({
           startHref,
           startPath,
         });
-        /**
-         * 카카오 빌더에서 `https://momopick.com/${RESULT_URL}` 처럼 도메인+변수 조합 시,
-         * 변수에 전체 URL을 넣으면 `...com/https://momopick.com/...` 가 됨 → *_URL 은 경로만 전달.
-         */
         const result = Kakao.Share.sendCustom({
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
           templateArgs: {
@@ -279,7 +247,10 @@ export function QuizResultShare({
         console.warn("[Kakao] Share.sendCustom failed → sendDefault fallback", e);
         sendDefaultResultDual();
       }
-    })();
+    } catch (e) {
+      console.error("[Momopick][Kakao] openKakao unexpected error", e);
+      fallbackCopy();
+    }
   }, [pageUrl, shareText, shareImageUrl, kakaoQuizResultShare]);
 
   const openFacebook = useCallback(() => {
