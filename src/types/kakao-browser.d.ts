@@ -50,6 +50,10 @@ declare global {
       /** 카카오톡 공유 */
       Share: {
         sendDefault: (settings: KakaoFeedShare) => Promise<void> | void;
+        sendCustom: (settings: {
+          templateId: number;
+          templateArgs?: Record<string, string>;
+        }) => Promise<void> | void;
       };
 
       /** 카카오 로그인 */

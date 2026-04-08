@@ -88,7 +88,7 @@ export function QuizResultShare({ ui, shareText, shareImageUrl, quizStartUrl }: 
   const openKakao = useCallback(() => {
     if (!pageUrl) return;
     const Kakao = typeof window !== "undefined" ? window.Kakao : undefined;
-    if (!Kakao?.isInitialized?.() || typeof Kakao.Share?.sendDefault !== "function") {
+    if (!Kakao?.isInitialized?.() || typeof Kakao.Share?.sendCustom !== "function") {
       void navigator.clipboard.writeText(pageUrl).then(() => {
         setCopied(true);
         window.setTimeout(() => setCopied(false), 2000);
@@ -97,11 +97,9 @@ export function QuizResultShare({ ui, shareText, shareImageUrl, quizStartUrl }: 
     }
     const { title, description } = parseShareTextForKakaoFeed(shareText);
     const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
-    const resultLink = { mobileWebUrl, webUrl };
 
     // "테스트 하기" 버튼용 URL — quizStartUrl이 있으면 정규화, 없으면 결과 URL과 동일
     const startHref = quizStartUrl ? normalizeUrlForKakao(quizStartUrl) : mobileWebUrl;
-    const startLink = { mobileWebUrl: startHref, webUrl: startHref };
 
     const fallbackCopy = () => {
       void navigator.clipboard.writeText(pageUrl).then(() => {
@@ -111,31 +109,30 @@ export function QuizResultShare({ ui, shareText, shareImageUrl, quizStartUrl }: 
     };
 
     try {
-      console.info("[Momopick][Kakao] Share.sendDefault(feed)", { pageUrl, mobileWebUrl, imageUrl, startHref });
-      const result = Kakao.Share.sendDefault({
-        objectType: "feed",
-        content: {
-          title: title || "모모픽",
-          description: description || "재미로 보는 심리 테스트",
-          imageUrl,
-          link: resultLink,
+      console.info("[Momopick][Kakao] Share.sendCustom(131878)", { pageUrl, mobileWebUrl, imageUrl, startHref });
+      const result = Kakao.Share.sendCustom({
+        templateId: 131878,
+        templateArgs: {
+          TITLE: title || "모모픽",
+          DESC: description || "재미로 보는 심리 테스트",
+          IMAGE_URL: imageUrl,
+          RESULT_URL: mobileWebUrl,
+          RESULT_WEB_URL: webUrl,
+          START_URL: startHref,
+          START_WEB_URL: startHref,
         },
-        buttons: [
-          { title: "결과 보기", link: resultLink },
-          { title: "테스트 하기", link: startLink },
-        ],
       });
       if (result && typeof (result as Promise<void>).catch === "function") {
         (result as Promise<void>).catch((e: unknown) => {
-          console.warn("[Kakao] Share.sendDefault rejected", e);
+          console.warn("[Kakao] Share.sendCustom rejected", e);
           fallbackCopy();
         });
       }
     } catch (e) {
-      console.warn("[Kakao] Share.sendDefault failed", e);
+      console.warn("[Kakao] Share.sendCustom failed", e);
       fallbackCopy();
     }
-  }, [pageUrl, shareText]);
+  }, [pageUrl, shareText, shareImageUrl, quizStartUrl]);
 
   const openFacebook = useCallback(() => {
     if (!pageUrl) return;
