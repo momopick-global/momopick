@@ -197,6 +197,7 @@ export function PercentageQuiz({
             shareText={shareText}
             shareImageUrl={shareOgImage}
             quizStartUrl={quizPageHref}
+            kakaoQuizResultShare
           />
           <div className="quiz-result-actions">
             <button type="button" className="btn primary sm" onClick={restart}>

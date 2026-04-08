@@ -167,6 +167,7 @@ export function SnackQuiz({
             shareText={shareText}
             shareImageUrl={resultImage}
             quizStartUrl={quizPageHref}
+            kakaoQuizResultShare
           />
           <div className="quiz-result-actions">
             <Link href={resultsGalleryHref} className="btn sm">
