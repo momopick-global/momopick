@@ -79,9 +79,25 @@ export function QuizResultShare({ ui, shareText }: Props) {
 
   const openKakao = useCallback(() => {
     if (!pageUrl) return;
+    const Kakao = typeof window !== "undefined" ? window.Kakao : undefined;
+    if (Kakao?.isInitialized?.()) {
+      try {
+        Kakao.Link.sendDefault({
+          objectType: "text",
+          text: shareText,
+          link: {
+            mobileWebUrl: pageUrl,
+            webUrl: pageUrl,
+          },
+        });
+        return;
+      } catch {
+        /* SDK 공유 실패 시 아래 폴백 */
+      }
+    }
     const u = encodeURIComponent(pageUrl);
     window.open(`https://story.kakao.com/share?url=${u}`, "_blank", "noopener,noreferrer");
-  }, [pageUrl]);
+  }, [pageUrl, shareText]);
 
   const openFacebook = useCallback(() => {
     if (!pageUrl) return;

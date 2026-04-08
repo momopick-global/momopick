@@ -6,6 +6,8 @@ export type QuizUiLocale = "ko" | "en" | "ja" | "es" | "pt" | "id";
 
 export type QuizUiStrings = {
   restart: string;
+  /** 결과 화면 — 모든 결과 이미지 페이지로 이동 */
+  viewAllResults: string;
   /** 1-based 현재 문항 번호 */
   formatQuestionStep: (current: number, total: number) => string;
   shareWithFriends: string;
@@ -19,6 +21,7 @@ export type QuizUiStrings = {
 export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   ko: {
     restart: "다시 하기",
+    viewAllResults: "모든 결과 보기",
     formatQuestionStep: (c, t) => `질문 ${c} / ${t}`,
     shareWithFriends: "친구에게 공유하기",
     copyLink: "링크 복사",
@@ -29,6 +32,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   },
   en: {
     restart: "Try again",
+    viewAllResults: "View all results",
     formatQuestionStep: (c, t) => `Question ${c} / ${t}`,
     shareWithFriends: "Share with friends",
     copyLink: "Copy link",
@@ -39,6 +43,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   },
   ja: {
     restart: "もう一度",
+    viewAllResults: "すべての結果を見る",
     formatQuestionStep: (c, t) => `質問 ${c} / ${t}`,
     shareWithFriends: "友だちにシェア",
     copyLink: "リンクをコピー",
@@ -49,6 +54,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   },
   es: {
     restart: "Intentar de nuevo",
+    viewAllResults: "Ver todos los resultados",
     formatQuestionStep: (c, t) => `Pregunta ${c} / ${t}`,
     shareWithFriends: "Compartir con amigos",
     copyLink: "Copiar enlace",
@@ -59,6 +65,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   },
   pt: {
     restart: "Tentar novamente",
+    viewAllResults: "Ver todos os resultados",
     formatQuestionStep: (c, t) => `Pergunta ${c} / ${t}`,
     shareWithFriends: "Compartilhar com amigos",
     copyLink: "Copiar link",
@@ -69,6 +76,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   },
   id: {
     restart: "Coba lagi",
+    viewAllResults: "Lihat semua hasil",
     formatQuestionStep: (c, t) => `Pertanyaan ${c} / ${t}`,
     shareWithFriends: "Bagikan ke teman",
     copyLink: "Salin tautan",

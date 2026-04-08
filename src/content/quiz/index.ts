@@ -59,6 +59,23 @@ export const quizPlannerOrSpontaneous = plannerOrSpontaneous as PercentageQuizDe
 
 export const quizSelfEsteemLevel = selfEsteemLevel as PercentageQuizDefinition;
 
+/** 스낵 퀴즈(최다득표형) — 결과 이미지 갤러리·`/ko/love/[slug]/results/` 라우트용 */
+export const snackQuizDefinitionsCatalog: SnackQuizDefinition[] = [
+  quizWhoLikesYouType,
+  quizAmbiguousSituationshipEnd,
+  quizWhyCantYouTextFirst,
+  quizWhenMenLoseInterest,
+  quizHiddenDarkSide,
+  quizLeaderOrSupporter,
+  quizAngerStyleTest,
+  quizMentalStrengthTest,
+  quizEmotionalSensitivity,
+  quizTrueSelfAlone,
+  quizTrustLevelTest,
+  quizLovePatternDestroyingHabit,
+  quizDatingExpertOrBeginner,
+];
+
 /**
  * 한국어 홈(“지금 뜨는 테스트” 등) — `src/content/quiz`에 JSON을 추가하면 여기에 한 줄 넣고,
  * 정렬은 각 JSON의 `card.priority`(클수록 앞)로 `getKoHomeRailSorted`에서 처리합니다.

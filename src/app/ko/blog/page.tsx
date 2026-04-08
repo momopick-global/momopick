@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KoBlogTabPanel } from "@/components/ko/KoBlogTabPanel";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
@@ -56,26 +57,7 @@ export default function KoBlogPage() {
             </p>
           </header>
 
-          <ul className="blog-list" aria-label="블로그 글 목록">
-            {koSamplePosts.map((post) => (
-              <li key={post.id}>
-                <Link href={`/ko/blog/${post.id}/`} className="blog-card-link">
-                  <article className="blog-card" aria-labelledby={`blog-title-${post.id}`}>
-                    <div className="blog-card__meta">
-                      <time className="blog-card__date" dateTime={post.dateTime}>
-                        {post.date}
-                      </time>
-                      {post.tag ? <span className="blog-card__tag">{post.tag}</span> : null}
-                    </div>
-                    <h2 className="blog-card__title" id={`blog-title-${post.id}`}>
-                      {post.title}
-                    </h2>
-                    <p className="blog-card__excerpt">{post.excerpt}</p>
-                  </article>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <KoBlogTabPanel posts={koSamplePosts} />
 
           <p className="policy-foot">
             <Link className="link-all" href="/ko/">

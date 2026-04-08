@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
@@ -7,8 +8,8 @@ import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultShare } from "./QuizResultShare";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
 
-/** 버튼 채움 애니메이션(≈0.8s)이 끝난 뒤 약간 여유를 두고 다음으로 */
-const ANSWER_FILL_MS = 920;
+/** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
+const ANSWER_FILL_MS = 340;
 
 function emptyCounts(keys: string[]): Record<string, number> {
   return Object.fromEntries(keys.map((k) => [k, 0]));
@@ -53,6 +54,12 @@ export function SnackQuiz({
     () => (done ? 100 : Math.round((step / total) * 100)),
     [done, step, total],
   );
+
+  const resultsGalleryHref = useMemo(() => {
+    const cat = definition.category?.trim() || "quiz";
+    const seg = definition.slug?.trim() || definition.id;
+    return `/${locale}/${cat}/${seg}/results/`;
+  }, [definition.category, definition.slug, definition.id, locale]);
 
   useEffect(() => {
     return () => {
@@ -155,6 +162,9 @@ export function SnackQuiz({
           </p>
           <QuizResultShare ui={ui} shareText={shareText} />
           <div className="quiz-result-actions">
+            <Link href={resultsGalleryHref} className="btn sm">
+              {ui.viewAllResults}
+            </Link>
             <button type="button" className="btn primary sm" onClick={restart}>
               {ui.restart}
             </button>

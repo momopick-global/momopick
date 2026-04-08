@@ -6,10 +6,13 @@ import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
 import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
+import { koSamplePosts } from "@/content/blog/koSamplePosts";
+import { QUIZ_IMAGE_PENDING_SRC } from "@/lib/content/quizImagePending";
 
 const year = new Date().getFullYear();
 
 const homeRailKo = getKoHomeRailSorted("ko");
+const recentBlogPosts = koSamplePosts.slice(0, 3);
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
 /** 썸·연애 섹션 타일 개수 (우선순위 상위) */
 const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
@@ -291,6 +294,44 @@ export default function KoHomePage() {
                 <span className="pill">결과 문구 A/B</span>
               </div>
             </article>
+          </section>
+
+          <section className="section" id="blog" aria-labelledby="sec-blog">
+            <div className="sec-hd">
+              <h2 id="sec-blog">📝 블로그 · 소식</h2>
+              <Link className="link-all" href="/ko/blog/">
+                전체보기
+              </Link>
+            </div>
+            <ul className="blog-list" style={{ marginTop: 0 }}>
+              {recentBlogPosts.map((post) => (
+                <li key={post.id}>
+                  <Link className="blog-card-link" href={`/ko/blog/${post.id}/`}>
+                    <article className="blog-card blog-card--with-img">
+                      <QuizImageWithFallback
+                        src={post.image ?? QUIZ_IMAGE_PENDING_SRC}
+                        alt=""
+                        width={720}
+                        height={360}
+                        loading="lazy"
+                        decoding="async"
+                        className="blog-card__thumb"
+                      />
+                      <div className="blog-card__meta">
+                        <time className="blog-card__date" dateTime={post.dateTime}>
+                          {post.date}
+                        </time>
+                        {post.tag && (
+                          <span className="blog-card__tag">{post.tag}</span>
+                        )}
+                      </div>
+                      <h3 className="blog-card__title">{post.title}</h3>
+                      <p className="blog-card__excerpt">{post.excerpt}</p>
+                    </article>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section className="section faq" id="faq">

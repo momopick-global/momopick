@@ -13,7 +13,7 @@ import {
   type PercentageQuizDefinition,
 } from "./percentageTypes";
 
-const ANSWER_FILL_MS = 920;
+const ANSWER_FILL_MS = 340;
 
 export function PercentageQuiz({
   definition,
