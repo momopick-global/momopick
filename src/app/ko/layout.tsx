@@ -27,7 +27,14 @@ export const metadata: Metadata = {
     title: "모모픽(Momopick) | MBTI·연애·심리 테스트 & 재미 퀴즈",
     description:
       "MBTI, 연애, 심리, 성격, 소셜, 스타일… 지금 바로 1분 퀴즈로 나를 알아보세요.",
-    images: [{ url: "https://momopick.com/images/og/og-ko.webp" }],
+    images: [
+      {
+        url: "https://momopick.com/og/main-og.webp",
+        width: 1536,
+        height: 1024,
+        alt: "모모픽 — MBTI·연애·심리 테스트",
+      },
+    ],
     locale: "ko_KR",
   },
   twitter: { card: "summary_large_image" },
@@ -40,6 +47,7 @@ const jsonLdWebsite = {
   alternateName: "모모픽",
   url: "https://momopick.com/",
   inLanguage: "ko",
+  image: "https://momopick.com/og/main-og.webp",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://momopick.com/ko/explore/?q={search_term_string}",
@@ -53,6 +61,7 @@ const jsonLdOrg = {
   name: "Momopick",
   url: "https://momopick.com/",
   logo: "https://momopick.com/images/brand/momopick_symbol.webp",
+  image: "https://momopick.com/og/main-og.webp",
   sameAs: [
     "https://www.youtube.com/@YOUR_CHANNEL",
     "https://www.instagram.com/YOUR_ID",

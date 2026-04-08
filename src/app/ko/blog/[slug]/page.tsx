@@ -4,6 +4,7 @@ import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { notFound } from "next/navigation";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoBlogPostBySlug, getKoBlogSlugs } from "@/content/blog/koSamplePosts";
+import { BackButton } from "@/components/ko/BackButton";
 
 const year = new Date().getFullYear();
 
@@ -32,6 +33,14 @@ export async function generateMetadata({
       title,
       description: post.excerpt.slice(0, 200),
       url: `https://momopick.com/ko/blog/${post.id}/`,
+    images: [
+      {
+        url: "https://momopick.com/og/main-og.webp",
+        width: 1536,
+        height: 1024,
+        alt: "모모픽 — MBTI·연애·심리 테스트",
+      },
+    ],
       locale: "ko_KR",
       type: "article",
     },
@@ -85,6 +94,7 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
               {post.title}
             </span>
           </nav>
+          <BackButton />
 
           <article>
             <header className="blog-post-hd">

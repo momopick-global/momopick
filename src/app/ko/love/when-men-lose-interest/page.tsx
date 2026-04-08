@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
+import { KoCatBar } from "@/components/ko/KoCatBar";
 import { SnackQuiz } from "@/components/quiz/SnackQuiz";
 import { pickQuizText } from "@/components/quiz/types";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 import { quizWhenMenLoseInterest } from "@/content/quiz";
+import { BackButton } from "@/components/ko/BackButton";
 
 const pack = quizWhenMenLoseInterest;
 const pageLocale = "ko" as const;
@@ -22,6 +24,26 @@ const subtitleLine = pickQuizText(pageLocale, pack.subtitle);
 const qCount = pack.questions?.length ?? 0;
 const kicker = pickQuizText(pageLocale, pack.card?.kicker) || "💔 썸·연애 패턴";
 
+/** JSON-LD Article 스키마 — Google 구조화 데이터 */
+function buildArticleJsonLd(opts: { title: string; description: string; url: string; image?: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.title,
+    description: opts.description,
+    url: opts.url,
+    image: opts.image ?? "https://momopick.com/og/main-og.webp",
+    publisher: {
+      "@type": "Organization",
+      name: "Momopick",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://momopick.com/images/brand/momopick_symbol.webp",
+      },
+    },
+  };
+}
+
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDesc,
@@ -35,7 +57,9 @@ export const metadata: Metadata = {
     url: "https://momopick.com/ko/love/when-men-lose-interest/",
     locale: "ko_KR",
     type: "website",
-    images: pack.images?.og ? [{ url: `https://momopick.com${quizAssetUrl(pack.images.og, pageLocale)}` }] : undefined,
+    images: pack.images?.og
+        ? [{ url: `https://momopick.com${quizAssetUrl(pack.images.og, pageLocale)}`, width: 1200, height: 630 }]
+        : [{ url: "https://momopick.com/og/main-og.webp", width: 1536, height: 1024, alt: "모모픽 테스트" }],
   },
 };
 
@@ -58,6 +82,8 @@ export default function WhenMenLoseInterestPage() {
           }
         />
 
+      <KoCatBar />
+
       <div className="wrap">
         <main className="quiz-page">
           <nav className="quiz-breadcrumb" aria-label="경로">
@@ -67,6 +93,7 @@ export default function WhenMenLoseInterestPage() {
             <span aria-hidden="true"> / </span>
             <span>관심이 식는 순간</span>
           </nav>
+          <BackButton />
 
           <header className="quiz-page-hd">
             <p className="quiz-kicker">{kicker}</p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { BackButton } from "@/components/ko/BackButton";
 
 export const metadata: Metadata = {
   title: "서비스 개선 의견 보내기 | 모모픽",
@@ -13,6 +14,14 @@ export const metadata: Metadata = {
     title: "서비스 개선 의견 보내기 | 모모픽",
     description: "모모픽 서비스 개선 의견",
     url: "https://momopick.com/ko/feedback/",
+    images: [
+      {
+        url: "https://momopick.com/og/main-og.webp",
+        width: 1536,
+        height: 1024,
+        alt: "모모픽 — MBTI·연애·심리 테스트",
+      },
+    ],
     locale: "ko_KR",
     type: "website",
   },
@@ -49,6 +58,7 @@ export default function KoFeedbackPage() {
             <span aria-hidden="true"> / </span>
             <span>서비스 개선 의견</span>
           </nav>
+          <BackButton />
 
           <header className="policy-page-hd">
             <h1>서비스 개선 의견 보내기</h1>

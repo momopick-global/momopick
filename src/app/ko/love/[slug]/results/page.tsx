@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
+import { KoCatBar } from "@/components/ko/KoCatBar";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 import { pickQuizText } from "@/components/quiz/types";
 import { snackQuizDefinitionsCatalog } from "@/content/quiz";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getSnackQuizBySlug, orderedSnackResultKeys } from "@/lib/content/snackQuizCatalog";
+import { BackButton } from "@/components/ko/BackButton";
 
 const pageLocale = "ko" as const;
 
@@ -85,6 +87,8 @@ export default async function KoLoveQuizAllResultsPage({
         }
       />
 
+      <KoCatBar />
+
       <div className="wrap">
         <main className="quiz-page quiz-results-gallery-page">
           <nav className="quiz-breadcrumb" aria-label="경로">
@@ -96,6 +100,7 @@ export default async function KoLoveQuizAllResultsPage({
             <span aria-hidden="true"> / </span>
             <span>모든 결과</span>
           </nav>
+          <BackButton />
 
           <header className="quiz-page-hd">
             <p className="quiz-kicker">✨ 연애 스낵 테스트</p>
@@ -158,7 +163,7 @@ export default async function KoLoveQuizAllResultsPage({
 
             <p className="quiz-results-gallery-back">
               <Link href={quizHref} className="btn primary sm">
-                테스트 하러 가기
+                테스트 다시 하기
               </Link>
             </p>
           </section>

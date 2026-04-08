@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: { default: "Momopick", template: "%s | Momopick" },
   description:
     "Momopick — fun quizzes & personality tests. Choose your language.",
+  openGraph: {
+    type: "website",
+    siteName: "Momopick",
+    url: "https://momopick.com",
+    images: [
+      {
+        url: "https://momopick.com/og/main-og.webp",
+        width: 1536,
+        height: 1024,
+        alt: "Momopick — quizzes & personality tests",
+      },
+    ],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

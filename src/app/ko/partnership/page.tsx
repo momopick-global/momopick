@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { BackButton } from "@/components/ko/BackButton";
 
 export const metadata: Metadata = {
   title: "제휴 문의 | 모모픽",
@@ -13,6 +14,14 @@ export const metadata: Metadata = {
     title: "제휴 문의 | 모모픽",
     description: "모모픽 제휴·파트너십 문의",
     url: "https://momopick.com/ko/partnership/",
+    images: [
+      {
+        url: "https://momopick.com/og/main-og.webp",
+        width: 1536,
+        height: 1024,
+        alt: "모모픽 — MBTI·연애·심리 테스트",
+      },
+    ],
     locale: "ko_KR",
     type: "website",
   },
@@ -55,6 +64,7 @@ export default function KoPartnershipPage() {
             <span aria-hidden="true"> / </span>
             <span>제휴 문의</span>
           </nav>
+          <BackButton />
 
           <header className="policy-page-hd">
             <h1>제휴 문의</h1>

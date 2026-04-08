@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { BackButton } from "@/components/ko/BackButton";
 
 export const metadata: Metadata = {
   title: "오늘의 운세 | 모모픽",
@@ -14,6 +15,14 @@ export const metadata: Metadata = {
     title: "오늘의 운세 | 모모픽",
     description: "오늘의 운세",
     url: "https://momopick.com/ko/today/",
+    images: [
+      {
+        url: "https://momopick.com/og/main-og.webp",
+        width: 1536,
+        height: 1024,
+        alt: "모모픽 — MBTI·연애·심리 테스트",
+      },
+    ],
     locale: "ko_KR",
     type: "website",
   },
@@ -33,6 +42,7 @@ export default function KoTodayPage() {
             <span aria-hidden="true"> / </span>
             <span>오늘의 운세</span>
           </nav>
+          <BackButton />
 
           <div className="quiz-section">
             <header className="quiz-page-hd">

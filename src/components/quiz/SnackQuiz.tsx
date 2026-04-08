@@ -184,9 +184,11 @@ export function SnackQuiz({
 
   return (
     <div className="quiz-shell">
+      {/* 로딩바 애니메이션 — 추후 활성화 시 주석 해제
       <div className="quiz-progress-wrap" aria-hidden="true">
         <div className="quiz-progress-bar" style={{ width: `${progress}%` }} />
       </div>
+      */}
       <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
       {q.image ? (
         <div className="quiz-q-visual">

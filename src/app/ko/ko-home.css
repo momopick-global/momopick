@@ -1684,7 +1684,30 @@
 .momopick-ko .quiz-breadcrumb {
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 18px;
+  margin-bottom: 10px;
+}
+
+/* 뒤로가기 버튼 */
+.momopick-ko .back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 20px;
+  padding: 0;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.momopick-ko .back-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(90, 103, 242, 0.05);
 }
 
 .momopick-ko .quiz-breadcrumb a {
@@ -2508,14 +2531,14 @@
 }
 
 .momopick-ko .blog-carousel-item {
-  flex: 0 0 min(280px, 80vw);
+  flex: 0 0 min(224px, 64vw);
   scroll-snap-align: start;
   display: flex;
 }
 
 @media (min-width: 720px) {
   .momopick-ko .blog-carousel-item {
-    flex: 0 0 320px;
+    flex: 0 0 256px;
   }
 }
 
