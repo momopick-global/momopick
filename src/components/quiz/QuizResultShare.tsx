@@ -248,17 +248,21 @@ export function QuizResultShare({
           startHref,
           startPath,
         });
+        /**
+         * 카카오 빌더에서 `https://momopick.com/${RESULT_URL}` 처럼 도메인+변수 조합 시,
+         * 변수에 전체 URL을 넣으면 `...com/https://momopick.com/...` 가 됨 → *_URL 은 경로만 전달.
+         */
         const result = Kakao.Share.sendCustom({
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
           templateArgs: {
             TITLE: title || "모모픽",
             DESC: description || "재미로 보는 심리 테스트",
             IMAGE_URL: imageForKakao,
-            RESULT_URL: resultMobile,
-            RESULT_WEB_URL: resultWeb,
+            RESULT_URL: resultPath,
+            RESULT_WEB_URL: resultPath,
             RESULT_PATH: resultPath,
-            START_URL: startHref,
-            START_WEB_URL: startHref,
+            START_URL: startPath,
+            START_WEB_URL: startPath,
             START_PATH: startPath,
           },
         });
