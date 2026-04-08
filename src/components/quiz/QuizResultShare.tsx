@@ -5,7 +5,6 @@ import type { QuizUiStrings } from "@/i18n/quiz-ui";
 import {
   absoluteHttpsUrlForKakao,
   getKakaoFeedShareUrls,
-  normalizeUrlForKakao,
   parseShareTextForKakaoFeed,
   pathForKakaoMessageTemplate,
 } from "@/lib/kakaoShareFeed";
@@ -85,7 +84,7 @@ export function QuizResultShare({
   ui,
   shareText,
   shareImageUrl,
-  quizStartUrl,
+  quizStartUrl: _quizStartUrl,
   kakaoQuizResultShare = false,
 }: Props) {
   const [pageUrl, setPageUrl] = useState("");
@@ -194,7 +193,14 @@ export function QuizResultShare({
         return;
       }
 
-      const startHref = quizStartUrl ? absoluteHttpsUrlForKakao(normalizeUrlForKakao(quizStartUrl)) : resultMobile;
+      /**
+       * 스낵/퍼센트 퀴즈는 결과도 같은 URL(클라이언트 상태만 바뀜). `quizStartUrl`은 상대 경로라
+       * 카카오 템플릿 변수 조합과 어긋나면 START가 `ko`만 되어 `/ko/`로 열리는 경우가 있어,
+       * 결과 공유 시「테스트 하기」도 현재 페이지(= 퀴즈 진입 URL)와 동일하게 맞춤.
+       */
+      const resultPath = pathForKakaoMessageTemplate(resultMobile);
+      const startHref = resultMobile;
+      const startPath = resultPath;
       const startLink = { mobileWebUrl: startHref, webUrl: startHref };
 
       /** 커스텀 템플릿 실패 시에도 공유 창은 뜨도록 기본 피드 2버튼으로 폴백 */
@@ -235,9 +241,6 @@ export function QuizResultShare({
         return;
       }
 
-      const resultPath = pathForKakaoMessageTemplate(resultMobile);
-      const startPath = pathForKakaoMessageTemplate(startHref);
-
       try {
         console.info("[Momopick][Kakao] Share.sendCustom(result)", {
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
@@ -277,7 +280,7 @@ export function QuizResultShare({
         sendDefaultResultDual();
       }
     })();
-  }, [pageUrl, shareText, shareImageUrl, quizStartUrl, kakaoQuizResultShare]);
+  }, [pageUrl, shareText, shareImageUrl, kakaoQuizResultShare]);
 
   const openFacebook = useCallback(() => {
     if (!pageUrl) return;
