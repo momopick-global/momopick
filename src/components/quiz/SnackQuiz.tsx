@@ -160,7 +160,7 @@ export function SnackQuiz({
           <p className="quiz-result-body">
             {isBlend ? pickQuizText(locale, blend.body) : pickQuizText(locale, single?.body)}
           </p>
-          <QuizResultShare ui={ui} shareText={shareText} />
+          <QuizResultShare ui={ui} shareText={shareText} shareImageUrl={resultImage} />
           <div className="quiz-result-actions">
             <Link href={resultsGalleryHref} className="btn sm">
               {ui.viewAllResults}

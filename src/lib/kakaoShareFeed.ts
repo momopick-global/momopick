@@ -23,27 +23,35 @@ function isLocalHost(hostname: string): boolean {
  *   (카카오 콘솔에 로컬 도메인을 넣지 않아도 운영 URL로 공유됩니다.)
  * - 이미지는 등록된 도메인의 HTTPS OG로 고정해 피드 검증에 맞춥니다.
  */
-export function getKakaoFeedShareUrls(pageUrl: string): {
+export function getKakaoFeedShareUrls(
+  pageUrl: string,
+  /** 결과 이미지 경로 (`/quizzes/...`) 또는 절대 URL. 없으면 기본 OG 이미지 사용 */
+  customImagePath?: string,
+): {
   mobileWebUrl: string;
   webUrl: string;
   imageUrl: string;
 } {
-  const imageUrl = `${KAKAO_SITE_ORIGIN.replace(/\/$/, "")}${OG_PATH}`;
+  const origin = KAKAO_SITE_ORIGIN.replace(/\/$/, "");
+  const imageUrl = customImagePath
+    ? customImagePath.startsWith("http")
+      ? customImagePath
+      : `${origin}${customImagePath}`
+    : `${origin}${OG_PATH}`;
 
   try {
     const u = new URL(pageUrl);
     if (isLocalHost(u.hostname)) {
-      const prod = new URL(u.pathname + u.search + u.hash, `${KAKAO_SITE_ORIGIN.replace(/\/$/, "")}/`);
+      const prod = new URL(u.pathname + u.search + u.hash, `${origin}/`);
       const href = prod.href;
       return { mobileWebUrl: href, webUrl: href, imageUrl };
     }
     const href = u.href;
     return { mobileWebUrl: href, webUrl: href, imageUrl };
   } catch {
-    const fallback = KAKAO_SITE_ORIGIN.replace(/\/$/, "");
     return {
-      mobileWebUrl: fallback + "/",
-      webUrl: fallback + "/",
+      mobileWebUrl: origin + "/",
+      webUrl: origin + "/",
       imageUrl,
     };
   }

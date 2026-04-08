@@ -8,6 +8,8 @@ type Props = {
   ui: QuizUiStrings;
   /** SNS 미리보기·트윗에 쓸 짧은 문구 */
   shareText: string;
+  /** 카카오 공유 피드에 표시할 이미지 경로 (`/quizzes/...`) 또는 절대 URL. 없으면 기본 OG 이미지 사용 */
+  shareImageUrl?: string;
 };
 
 function IconLink() {
@@ -60,7 +62,7 @@ function IconX() {
   );
 }
 
-export function QuizResultShare({ ui, shareText }: Props) {
+export function QuizResultShare({ ui, shareText, shareImageUrl }: Props) {
   const [pageUrl, setPageUrl] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -89,7 +91,7 @@ export function QuizResultShare({ ui, shareText }: Props) {
       return;
     }
     const { title, description } = parseShareTextForKakaoFeed(shareText);
-    const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl);
+    const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
     const link: { mobileWebUrl: string; webUrl: string } = { mobileWebUrl, webUrl };
 
     const fallbackCopy = () => {
