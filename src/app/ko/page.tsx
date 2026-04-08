@@ -7,12 +7,11 @@ import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
 import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
-import { QUIZ_IMAGE_PENDING_SRC } from "@/lib/content/quizImagePending";
-
+import { BlogCarousel } from "@/components/ko/BlogCarousel";
 const year = new Date().getFullYear();
 
 const homeRailKo = getKoHomeRailSorted("ko");
-const recentBlogPosts = koSamplePosts.slice(0, 3);
+const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
 /** 썸·연애 섹션 타일 개수 (우선순위 상위) */
 const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
@@ -303,35 +302,7 @@ export default function KoHomePage() {
                 전체보기
               </Link>
             </div>
-            <ul className="blog-list" style={{ marginTop: 0 }}>
-              {recentBlogPosts.map((post) => (
-                <li key={post.id}>
-                  <Link className="blog-card-link" href={`/ko/blog/${post.id}/`}>
-                    <article className="blog-card blog-card--with-img">
-                      <QuizImageWithFallback
-                        src={post.image ?? QUIZ_IMAGE_PENDING_SRC}
-                        alt=""
-                        width={720}
-                        height={360}
-                        loading="lazy"
-                        decoding="async"
-                        className="blog-card__thumb"
-                      />
-                      <div className="blog-card__meta">
-                        <time className="blog-card__date" dateTime={post.dateTime}>
-                          {post.date}
-                        </time>
-                        {post.tag && (
-                          <span className="blog-card__tag">{post.tag}</span>
-                        )}
-                      </div>
-                      <h3 className="blog-card__title">{post.title}</h3>
-                      <p className="blog-card__excerpt">{post.excerpt}</p>
-                    </article>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <BlogCarousel posts={recentBlogPosts} />
           </section>
 
           <section className="section faq" id="faq">

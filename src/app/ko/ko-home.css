@@ -2449,6 +2449,100 @@
 }
 
 /* 블로그 목록 (/ko/blog/) */
+/* —— 블로그 홈 캐러셀 —— */
+.momopick-ko .blog-carousel-wrap {
+  margin-top: 0;
+}
+
+.momopick-ko .blog-carousel-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 14px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.momopick-ko .blog-carousel-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.momopick-ko .blog-carousel-tab {
+  flex: 0 0 auto;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.momopick-ko .blog-carousel-tab.is-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.momopick-ko .blog-carousel-tab:hover:not(.is-active) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.momopick-ko .blog-carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 8px;
+}
+
+.momopick-ko .blog-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.momopick-ko .blog-carousel-item {
+  flex: 0 0 min(280px, 80vw);
+  scroll-snap-align: start;
+  display: flex;
+}
+
+@media (min-width: 720px) {
+  .momopick-ko .blog-carousel-item {
+    flex: 0 0 320px;
+  }
+}
+
+.momopick-ko .blog-carousel-item .blog-card-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.momopick-ko .blog-carousel-item .blog-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.momopick-ko .blog-carousel-item .blog-card__excerpt {
+  flex: 1;
+}
+
+.momopick-ko .blog-carousel-empty {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 32px 0;
+  text-align: center;
+}
+
+/* —— 블로그 목록 (세로 리스트) —— */
 .momopick-ko .blog-list {
   list-style: none;
   margin: 0 0 8px;
@@ -2524,7 +2618,6 @@
   font-size: 14px;
   color: var(--muted);
   line-height: 1.6;
-  white-space: pre-line;
 }
 
 .momopick-ko .blog-card--with-img {
