@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { QuizUiStrings } from "@/i18n/quiz-ui";
+import { KAKAO_SHARE_DEFAULT_IMAGE_URL, parseShareTextForKakaoFeed } from "@/lib/kakaoShareFeed";
 
 type Props = {
   ui: QuizUiStrings;
@@ -80,23 +81,35 @@ export function QuizResultShare({ ui, shareText }: Props) {
   const openKakao = useCallback(() => {
     if (!pageUrl) return;
     const Kakao = typeof window !== "undefined" ? window.Kakao : undefined;
-    if (Kakao?.isInitialized?.()) {
-      try {
-        Kakao.Link.sendDefault({
-          objectType: "text",
-          text: shareText,
+    if (!Kakao?.isInitialized?.() || typeof Kakao.Share?.sendDefault !== "function") {
+      void navigator.clipboard.writeText(pageUrl).then(() => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      });
+      return;
+    }
+    const { title, description } = parseShareTextForKakaoFeed(shareText);
+    try {
+      console.info("[Momopick][Kakao] Share.sendDefault(feed)", { pageUrl });
+      Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: title || "모모픽",
+          description: description || "재미로 보는 심리 테스트",
+          imageUrl: KAKAO_SHARE_DEFAULT_IMAGE_URL,
           link: {
             mobileWebUrl: pageUrl,
             webUrl: pageUrl,
           },
-        });
-        return;
-      } catch {
-        /* SDK 공유 실패 시 아래 폴백 */
-      }
+        },
+      });
+    } catch (e) {
+      console.warn("[Kakao] Share.sendDefault failed", e);
+      void navigator.clipboard.writeText(pageUrl).then(() => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      });
     }
-    const u = encodeURIComponent(pageUrl);
-    window.open(`https://story.kakao.com/share?url=${u}`, "_blank", "noopener,noreferrer");
   }, [pageUrl, shareText]);
 
   const openFacebook = useCallback(() => {
