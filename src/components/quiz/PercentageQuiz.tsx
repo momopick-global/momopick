@@ -5,6 +5,7 @@ import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultShare } from "./QuizResultShare";
+import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
 import { pickQuizText } from "./types";
 import {
   maxScoreForPercentageQuiz,
@@ -200,6 +201,29 @@ export function PercentageQuiz({
             kakaoQuizResultShare
           />
           <div className="quiz-result-actions">
+            <QuizSaveToVaultButton
+              ui={ui}
+              draft={{
+                locale,
+                quizSlug: definition.slug,
+                quizTitle: pickQuizText(locale, definition.title) || definition.slug,
+                quizHref: quizPageHref,
+                kind: "percent",
+                resultTitle: titleText,
+                resultLine: (() => {
+                  if (showDual && dualLabels) {
+                    return `${pickQuizText(locale, dualLabels.logical)} ${logicalPct}% · ${pickQuizText(locale, dualLabels.emotional)} ${emotionalPct}%`;
+                  }
+                  if (showDegree) {
+                    return locale === "ko"
+                      ? `${heroDegree}° · 환산 ${finalPercent}%`
+                      : `${heroDegree}° · ${finalPercent}%`;
+                  }
+                  return `${finalPercent}%`;
+                })(),
+                imageUrl: shareOgImage,
+              }}
+            />
             <button type="button" className="btn primary sm" onClick={restart}>
               {ui.restart}
             </button>

@@ -6,6 +6,7 @@ import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultShare } from "./QuizResultShare";
+import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
 
 /** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
@@ -170,6 +171,23 @@ export function SnackQuiz({
             kakaoQuizResultShare
           />
           <div className="quiz-result-actions">
+            <QuizSaveToVaultButton
+              ui={ui}
+              draft={{
+                locale,
+                quizSlug: definition.slug,
+                quizTitle: pickQuizText(locale, definition.title) || definition.slug,
+                quizHref: quizPageHref,
+                kind: "snack",
+                resultTitle: isBlend
+                  ? pickQuizText(locale, blend.title)
+                  : pickQuizText(locale, single?.title),
+                resultLine: isBlend
+                  ? pickQuizText(locale, blend.tagline)
+                  : pickQuizText(locale, single?.tagline),
+                imageUrl: resultImage,
+              }}
+            />
             <Link href={resultsGalleryHref} className="btn sm">
               {ui.viewAllResults}
             </Link>

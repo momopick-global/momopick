@@ -8,6 +8,12 @@ export type QuizUiStrings = {
   restart: string;
   /** 결과 화면 — 모든 결과 이미지 페이지로 이동 */
   viewAllResults: string;
+  /** 보관함에 결과 저장 */
+  saveToVault: string;
+  /** 저장 완료 피드백 */
+  savedToVault: string;
+  /** 보관함 목록에서 항목 삭제 */
+  removeFromVault: string;
   /** 1-based 현재 문항 번호 */
   formatQuestionStep: (current: number, total: number) => string;
   shareWithFriends: string;
@@ -22,6 +28,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   ko: {
     restart: "다시 하기",
     viewAllResults: "모든 결과 보기",
+    saveToVault: "보관함에 저장",
+    savedToVault: "보관함에 저장했어요",
+    removeFromVault: "삭제",
     formatQuestionStep: (c, t) => `질문 ${c} / ${t}`,
     shareWithFriends: "친구에게 공유하기",
     copyLink: "링크 복사",
@@ -33,6 +42,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   en: {
     restart: "Try again",
     viewAllResults: "View all results",
+    saveToVault: "Save to vault",
+    savedToVault: "Saved to your vault",
+    removeFromVault: "Remove",
     formatQuestionStep: (c, t) => `Question ${c} / ${t}`,
     shareWithFriends: "Share with friends",
     copyLink: "Copy link",
@@ -44,6 +56,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   ja: {
     restart: "もう一度",
     viewAllResults: "すべての結果を見る",
+    saveToVault: "保存する",
+    savedToVault: "保存しました",
+    removeFromVault: "削除",
     formatQuestionStep: (c, t) => `質問 ${c} / ${t}`,
     shareWithFriends: "友だちにシェア",
     copyLink: "リンクをコピー",
@@ -55,6 +70,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   es: {
     restart: "Intentar de nuevo",
     viewAllResults: "Ver todos los resultados",
+    saveToVault: "Guardar",
+    savedToVault: "Guardado",
+    removeFromVault: "Eliminar",
     formatQuestionStep: (c, t) => `Pregunta ${c} / ${t}`,
     shareWithFriends: "Compartir con amigos",
     copyLink: "Copiar enlace",
@@ -66,6 +84,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   pt: {
     restart: "Tentar novamente",
     viewAllResults: "Ver todos os resultados",
+    saveToVault: "Salvar",
+    savedToVault: "Salvo",
+    removeFromVault: "Remover",
     formatQuestionStep: (c, t) => `Pergunta ${c} / ${t}`,
     shareWithFriends: "Compartilhar com amigos",
     copyLink: "Copiar link",
@@ -77,6 +98,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
   id: {
     restart: "Coba lagi",
     viewAllResults: "Lihat semua hasil",
+    saveToVault: "Simpan",
+    savedToVault: "Tersimpan",
+    removeFromVault: "Hapus",
     formatQuestionStep: (c, t) => `Pertanyaan ${c} / ${t}`,
     shareWithFriends: "Bagikan ke teman",
     copyLink: "Salin tautan",

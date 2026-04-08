@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSavedLoginIconSettings } from "@/components/ko/KoSavedLoginIconSettings";
+import { KoSavedVaultList } from "@/components/ko/KoSavedVaultList";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { BackButton } from "@/components/ko/BackButton";
 
 export const metadata: Metadata = {
   title: "보관함 | 모모픽",
-  description: "저장한 테스트와 결과를 모아 보는 보관함. 로그인 후 이용할 수 있습니다.",
+  description:
+    "저장한 테스트 결과를 모아 보는 보관함. 이 기기에서 북마크한 결과가 표시되며, 로그인·동기화는 준비 중입니다.",
   alternates: {
     canonical: "https://momopick.com/ko/app/saved/",
   },
@@ -48,12 +50,14 @@ export default function KoSavedPage() {
           <header className="policy-page-hd">
             <h1>보관함</h1>
             <p className="policy-intro">
-              북마크·이어하기·결과 히스토리는 로그인 후 이곳에 쌓이도록 연결할 수 있어요. 지금은
-              준비 중입니다.
+              테스트 결과 화면의 북마크 아이콘으로 저장한 항목이 아래에 모입니다. 데이터는 이
+              브라우저에만 남고, 계정 연동·다른 기기 동기화는 곧 이어서 붙일 수 있어요.
             </p>
           </header>
 
-          <div className="cta">
+          <KoSavedVaultList />
+
+          <div className="cta ko-vault-cta">
             <Link className="btn primary" href="/ko/app/login/">
               로그인하고 시작하기
             </Link>
