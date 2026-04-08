@@ -38,17 +38,17 @@ export function normalizeUrlForKakao(url: string): string {
 }
 
 /**
- * 카카오 메시지 템플릿 **링크 → 경로** 칸용 (`/ko/...` + 쿼리·해시).
- * 웹 도메인은 콘솔에서 등록 도메인(momopick.com)을 고르고, 경로만 변수로 넘길 때 사용.
+ * 카카오 메시지 템플릿 **경로 변수**용 — **선행 `/` 없음** (`ko/love/...` + 쿼리·해시).
+ * 콘솔에서 `https://momopick.com/${RESULT_PATH}` 또는 경로 `/${RESULT_PATH}` 처럼 쓸 때 슬래시가 겹치지 않게 함.
  */
 export function pathForKakaoMessageTemplate(absoluteUrl: string): string {
   try {
     const u = new URL(absoluteUrl);
-    const p = u.pathname || "/";
-    const path = p.startsWith("/") ? p : `/${p}`;
-    return `${path}${u.search}${u.hash}`;
+    let p = u.pathname || "/";
+    if (p.startsWith("/")) p = p.slice(1);
+    return `${p}${u.search}${u.hash}`;
   } catch {
-    return "/";
+    return "";
   }
 }
 
