@@ -12,10 +12,10 @@ const year = new Date().getFullYear();
 
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
-/** 임시: 지금 뜨는 테스트 = love 우선순위 상위 4 (썸·연애 타일과 동일 소스) */
-const homeRailKo = loveSectionQuizzes.slice(0, 4);
+/** 임시: 지금 뜨는 테스트 = love 우선순위 상위 2 (썸·연애 타일과 동일 소스) */
+const homeRailKo = loveSectionQuizzes.slice(0, 2);
 /** 썸·연애 섹션 타일 개수 (우선순위 상위) */
-const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
+const loveSectionTiles = loveSectionQuizzes.slice(0, 2);
 
 export default function KoHomePage() {
   return (
@@ -64,7 +64,7 @@ export default function KoHomePage() {
                     alt=""
                     width={480}
                     height={320}
-                    loading={i === 0 ? "eager" : "lazy"}
+                    loading={i < 2 ? "eager" : "lazy"}
                     decoding="async"
                   />
                   <div className="cap">
@@ -84,7 +84,7 @@ export default function KoHomePage() {
               </Link>
             </div>
             <p className="sec-lead">
-              연애 카테고리(콘텐츠 JSON의 love) 테스트 중 우선순위 상위 4개만 보여 드려요. 나머지는 상단{" "}
+              연애 카테고리(콘텐츠 JSON의 love) 테스트 중 우선순위 상위 2개만 보여 드려요. 나머지는 상단{" "}
               <Link href="/ko/love/">전체보기</Link>에서 모아 볼 수 있어요.
             </p>
             <div className="tile-grid">
@@ -97,7 +97,7 @@ export default function KoHomePage() {
                       alt=""
                       width={1536}
                       height={1024}
-                      loading={i < 4 ? "eager" : "lazy"}
+                      loading={i < 2 ? "eager" : "lazy"}
                       decoding="async"
                     />
                   </div>
