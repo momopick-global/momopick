@@ -7,6 +7,7 @@ import {
   getKakaoFeedShareUrls,
   normalizeUrlForKakao,
   parseShareTextForKakaoFeed,
+  pathForKakaoMessageTemplate,
 } from "@/lib/kakaoShareFeed";
 
 /** 퀴즈 결과 전용 카카오 커스텀 템플릿 ID (버튼 2개) */
@@ -162,14 +163,18 @@ export function QuizResultShare({
       return;
     }
     const startHref = quizStartUrl ? absoluteHttpsUrlForKakao(normalizeUrlForKakao(quizStartUrl)) : resultMobile;
+    const resultPath = pathForKakaoMessageTemplate(resultMobile);
+    const startPath = pathForKakaoMessageTemplate(startHref);
 
     try {
       console.info("[Momopick][Kakao] Share.sendCustom(result)", {
         templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
         pageUrl,
         resultMobile,
+        resultPath,
         imageForKakao,
         startHref,
+        startPath,
       });
       const result = Kakao.Share.sendCustom({
         templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
@@ -177,10 +182,13 @@ export function QuizResultShare({
           TITLE: title || "모모픽",
           DESC: description || "재미로 보는 심리 테스트",
           IMAGE_URL: imageForKakao,
+          /** 전체 URL — 템플릿에서 도메인 칸에 쓰면 안 됨(포맷 오류). 경로는 RESULT_PATH 사용 */
           RESULT_URL: resultMobile,
           RESULT_WEB_URL: resultWeb,
+          RESULT_PATH: resultPath,
           START_URL: startHref,
           START_WEB_URL: startHref,
+          START_PATH: startPath,
         },
       });
       if (result && typeof (result as Promise<void>).catch === "function") {

@@ -37,6 +37,21 @@ export function normalizeUrlForKakao(url: string): string {
   }
 }
 
+/**
+ * 카카오 메시지 템플릿 **링크 → 경로** 칸용 (`/ko/...` + 쿼리·해시).
+ * 웹 도메인은 콘솔에서 등록 도메인(momopick.com)을 고르고, 경로만 변수로 넘길 때 사용.
+ */
+export function pathForKakaoMessageTemplate(absoluteUrl: string): string {
+  try {
+    const u = new URL(absoluteUrl);
+    const p = u.pathname || "/";
+    const path = p.startsWith("/") ? p : `/${p}`;
+    return `${path}${u.search}${u.hash}`;
+  } catch {
+    return "/";
+  }
+}
+
 /** 카카오 피드·커스텀 템플릿용: 항상 절대 URL(https), 공백 제거 */
 export function absoluteHttpsUrlForKakao(url: string): string {
   const normalized = normalizeUrlForKakao(url);
