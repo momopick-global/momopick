@@ -5,9 +5,8 @@ import { useCallback, useEffect, useId, useState } from "react";
 import { useKakaoAuth } from "@/context/KakaoAuthContext";
 import {
   SUPABASE_OAUTH_CALLBACK_PATH,
-  createSupabaseBrowserClient,
   isSupabasePublicEnvValid,
-} from "@/lib/supabase/client";
+} from "@/lib/supabase/env";
 
 function IconGoogle() {
   return (
@@ -96,22 +95,34 @@ export function SocialLoginButtons() {
     if (!SUPABASE_CONFIGURED) return;
     let cancelled = false;
     let unsubscribe: (() => void) | undefined;
-    try {
-      const supabase = createSupabaseBrowserClient();
-      void supabase.auth.getSession().then(({ data: { session } }) => {
-        if (!cancelled) setSupabaseUser(session?.user ?? null);
+    void import("@/lib/supabase/client")
+      .then(({ createSupabaseBrowserClient }) => {
+        if (cancelled) return;
+        try {
+          const supabase = createSupabaseBrowserClient();
+          void supabase.auth.getSession().then(
+            ({ data: { session } }) => {
+              if (!cancelled) setSupabaseUser(session?.user ?? null);
+            },
+            () => {
+              /* getSession 실패는 무시 */
+            },
+          );
+          const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+            if (!cancelled) setSupabaseUser(session?.user ?? null);
+          });
+          unsubscribe = () => sub.subscription.unsubscribe();
+        } catch (e) {
+          if (!cancelled) {
+            setSupabaseError(
+              e instanceof Error ? e.message : "Supabase에 연결할 수 없습니다. URL·키를 확인하세요.",
+            );
+          }
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setSupabaseError("Supabase 모듈을 불러오지 못했습니다.");
       });
-      const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-        if (!cancelled) setSupabaseUser(session?.user ?? null);
-      });
-      unsubscribe = () => sub.subscription.unsubscribe();
-    } catch (e) {
-      if (!cancelled) {
-        setSupabaseError(
-          e instanceof Error ? e.message : "Supabase에 연결할 수 없습니다. URL·키를 확인하세요.",
-        );
-      }
-    }
     return () => {
       cancelled = true;
       unsubscribe?.();
@@ -122,6 +133,7 @@ export function SocialLoginButtons() {
     setSupabaseError(null);
     setGoogleLoading(true);
     try {
+      const { createSupabaseBrowserClient } = await import("@/lib/supabase/client");
       const supabase = createSupabaseBrowserClient();
       const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: "google",
@@ -144,6 +156,7 @@ export function SocialLoginButtons() {
   const logoutGoogle = useCallback(async () => {
     setSupabaseError(null);
     try {
+      const { createSupabaseBrowserClient } = await import("@/lib/supabase/client");
       const supabase = createSupabaseBrowserClient();
       await supabase.auth.signOut();
     } catch (e) {
