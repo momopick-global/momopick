@@ -22,6 +22,7 @@ export function KakaoSdkInit() {
       if (!Kakao.isInitialized()) {
         Kakao.init(KAKAO_JS_KEY.trim());
       }
+      window.dispatchEvent(new CustomEvent("kakao-sdk-ready"));
     } catch (e) {
       console.warn("[Kakao] init failed", e);
     }

@@ -17,6 +17,8 @@ import {
 type KakaoAuthState = {
   user: KakaoUser | null;
   loading: boolean;
+  /** 카카오 SDK 초기화 완료 여부 */
+  sdkReady: boolean;
   error: string | null;
   login: () => void;
   logout: () => void;
@@ -27,6 +29,7 @@ type KakaoAuthState = {
 const KakaoAuthContext = createContext<KakaoAuthState>({
   user: null,
   loading: false,
+  sdkReady: false,
   error: null,
   login: () => {},
   logout: () => {},
@@ -40,10 +43,20 @@ export function useKakaoAuth() {
 export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<KakaoUser | null>(null);
   const [loading, setLoading] = useState(false);
+  const [sdkReady, setSdkReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setUser(loadKakaoUser());
+
+    // SDK가 이미 초기화된 경우 (페이지 재진입 등)
+    if (window.Kakao?.isInitialized()) {
+      setSdkReady(true);
+      return;
+    }
+    const onReady = () => setSdkReady(true);
+    window.addEventListener("kakao-sdk-ready", onReady);
+    return () => window.removeEventListener("kakao-sdk-ready", onReady);
   }, []);
 
   const login = useCallback(() => {
@@ -105,7 +118,7 @@ export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <KakaoAuthContext.Provider value={{ user, loading, error, login, logout, fetchAndSaveUser }}>
+    <KakaoAuthContext.Provider value={{ user, loading, sdkReady, error, login, logout, fetchAndSaveUser }}>
       {children}
     </KakaoAuthContext.Provider>
   );

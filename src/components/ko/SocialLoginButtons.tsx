@@ -57,7 +57,7 @@ function IconNaver() {
 }
 
 export function SocialLoginButtons() {
-  const { user, loading, error, login, logout } = useKakaoAuth();
+  const { user, loading, sdkReady, error, login, logout } = useKakaoAuth();
   const statusId = useId();
 
   if (user) {
@@ -116,10 +116,11 @@ export function SocialLoginButtons() {
             className="oauth-btn oauth-btn--kakao"
             aria-describedby={error ? statusId : undefined}
             onClick={login}
-            disabled={loading}
+            disabled={loading || !sdkReady}
+            title={!sdkReady ? "카카오 SDK 로드 중…" : undefined}
           >
             <IconKakao />
-            {loading ? "로그인 중…" : "카카오로 시작하기"}
+            {loading ? "로그인 중…" : !sdkReady ? "준비 중…" : "카카오로 시작하기"}
           </button>
         </li>
         <li>
