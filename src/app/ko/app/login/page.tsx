@@ -70,8 +70,8 @@ export default function KoLoginPage() {
             </h2>
             <SocialLoginButtons />
             <p className="login-panel-note">
-              실제 OAuth 연동 시 위 버튼이 각 제공사 로그인 화면으로 연결됩니다. 서비스 오픈 전까지는
-              버튼을 눌러도 계정이 생성되지 않습니다.
+              Google은 Supabase Auth로 연결됩니다. 카카오·기타 제공사 버튼은 설정이 완료되면 각 로그인
+              화면으로 이동합니다.
             </p>
           </section>
 

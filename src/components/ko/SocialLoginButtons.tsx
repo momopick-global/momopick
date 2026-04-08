@@ -1,7 +1,12 @@
 "use client";
 
-import { useId } from "react";
+import type { User } from "@supabase/supabase-js";
+import { useCallback, useEffect, useId, useState } from "react";
 import { useKakaoAuth } from "@/context/KakaoAuthContext";
+import {
+  SUPABASE_OAUTH_CALLBACK_PATH,
+  createSupabaseBrowserClient,
+} from "@/lib/supabase/client";
 
 function IconGoogle() {
   return (
@@ -61,9 +66,82 @@ const KAKAO_JS_KEY_CONFIGURED = Boolean(
   (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim(),
 );
 
+const SUPABASE_CONFIGURED = Boolean(
+  (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim() &&
+    (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "").trim(),
+);
+
+function supabaseDisplayName(u: User): string {
+  const meta = u.user_metadata as Record<string, string | undefined> | undefined;
+  return (
+    meta?.full_name ??
+    meta?.name ??
+    u.email?.split("@")[0] ??
+    "Google 사용자"
+  );
+}
+
+function supabaseAvatarUrl(u: User): string | null {
+  const meta = u.user_metadata as Record<string, string | undefined> | undefined;
+  return meta?.avatar_url ?? meta?.picture ?? null;
+}
+
 export function SocialLoginButtons() {
   const { user, loading, sdkReady, error, login, logout } = useKakaoAuth();
   const statusId = useId();
+  const [supabaseUser, setSupabaseUser] = useState<User | null>(null);
+  const [googleLoading, setGoogleLoading] = useState(false);
+  const [supabaseError, setSupabaseError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!SUPABASE_CONFIGURED) return;
+    let cancelled = false;
+    const supabase = createSupabaseBrowserClient();
+    void supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!cancelled) setSupabaseUser(session?.user ?? null);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!cancelled) setSupabaseUser(session?.user ?? null);
+    });
+    return () => {
+      cancelled = true;
+      sub.subscription.unsubscribe();
+    };
+  }, []);
+
+  const loginWithGoogle = useCallback(async () => {
+    setSupabaseError(null);
+    setGoogleLoading(true);
+    try {
+      const supabase = createSupabaseBrowserClient();
+      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}${SUPABASE_OAUTH_CALLBACK_PATH}`,
+        },
+      });
+      if (oauthError) {
+        setSupabaseError(oauthError.message);
+        setGoogleLoading(false);
+        return;
+      }
+      if (data.url) window.location.href = data.url;
+    } catch (e) {
+      setSupabaseError(e instanceof Error ? e.message : "Google 로그인을 시작할 수 없습니다.");
+      setGoogleLoading(false);
+    }
+  }, []);
+
+  const logoutGoogle = useCallback(async () => {
+    setSupabaseError(null);
+    try {
+      const supabase = createSupabaseBrowserClient();
+      await supabase.auth.signOut();
+    } catch (e) {
+      setSupabaseError(e instanceof Error ? e.message : "로그아웃에 실패했습니다.");
+    }
+    setSupabaseUser(null);
+  }, []);
 
   if (user) {
     return (
@@ -96,11 +174,44 @@ export function SocialLoginButtons() {
     );
   }
 
+  if (supabaseUser) {
+    const avatar = supabaseAvatarUrl(supabaseUser);
+    return (
+      <div className="oauth-wrap">
+        <div className="oauth-status" role="status">
+          {avatar && (
+            <img
+              src={avatar}
+              alt=""
+              width={36}
+              height={36}
+              style={{ borderRadius: "50%", verticalAlign: "middle", marginRight: 8 }}
+            />
+          )}
+          <strong>{supabaseDisplayName(supabaseUser)}</strong>님, 환영합니다 👋
+        </div>
+        {supabaseUser.email && (
+          <p className="oauth-kakao-hint" style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>
+            {supabaseUser.email}
+          </p>
+        )}
+        <ul className="oauth-list" style={{ marginTop: 12 }}>
+          <li>
+            <button type="button" className="oauth-btn oauth-btn--google" onClick={() => void logoutGoogle()}>
+              <IconGoogle />
+              Google 로그아웃
+            </button>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+
   return (
     <div className="oauth-wrap">
-      {error && (
+      {(error || supabaseError) && (
         <p id={statusId} className="oauth-status" role="alert" style={{ color: "#b91c1c" }}>
-          {error}
+          {error ?? supabaseError}
         </p>
       )}
       <ul className="oauth-list">
@@ -108,12 +219,29 @@ export function SocialLoginButtons() {
           <button
             type="button"
             className="oauth-btn oauth-btn--google"
-            aria-describedby={error ? statusId : undefined}
-            onClick={() => alert("Google 로그인은 준비 중입니다.")}
+            aria-describedby={error || supabaseError ? statusId : undefined}
+            onClick={() => void loginWithGoogle()}
+            disabled={googleLoading || !SUPABASE_CONFIGURED}
+            title={
+              !SUPABASE_CONFIGURED
+                ? "빌드에 Supabase URL·Anon 키가 없습니다"
+                : googleLoading
+                  ? "이동 중…"
+                  : undefined
+            }
           >
             <IconGoogle />
-            Google로 계속하기
+            {googleLoading ? "이동 중…" : "Google로 계속하기"}
           </button>
+          {!SUPABASE_CONFIGURED && (
+            <p className="oauth-kakao-hint" role="note" style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>
+              Google 로그인을 쓰려면 빌드 환경에{" "}
+              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_SUPABASE_URL</code>,{" "}
+              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>가 필요합니다. Supabase 대시보드
+              Authentication → Providers에서 Google을 켜고, URL Configuration의 Redirect URLs에{" "}
+              <code style={{ fontSize: 12 }}>…/ko/app/login/oauth/</code> 를 추가한 뒤 다시 배포하세요.
+            </p>
+          )}
         </li>
         <li>
           <button
