@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useKakaoAuth } from "@/context/KakaoAuthContext";
 
 /**
@@ -48,9 +49,9 @@ export default function KakaoCallbackPage() {
           <p style={{ fontSize: 32, marginBottom: 12 }}>😢</p>
           <p style={{ fontWeight: 700, marginBottom: 8 }}>로그인에 실패했습니다</p>
           <p style={{ color: "var(--muted)", fontSize: 14, marginBottom: 24 }}>{errorMsg}</p>
-          <a className="btn primary" href="/ko/app/login/">
+          <Link className="btn primary" href="/ko/app/login/">
             다시 시도하기
-          </a>
+          </Link>
         </div>
       </div>
     );
