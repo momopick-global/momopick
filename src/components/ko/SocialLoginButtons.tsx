@@ -6,6 +6,7 @@ import { useKakaoAuth } from "@/context/KakaoAuthContext";
 import {
   SUPABASE_OAUTH_CALLBACK_PATH,
   createSupabaseBrowserClient,
+  isSupabasePublicEnvValid,
 } from "@/lib/supabase/client";
 
 function IconGoogle() {
@@ -66,10 +67,8 @@ const KAKAO_JS_KEY_CONFIGURED = Boolean(
   (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim(),
 );
 
-const SUPABASE_CONFIGURED = Boolean(
-  (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim() &&
-    (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "").trim(),
-);
+/** URL·키 형식까지 통과할 때만 true (잘못된 URL이면 useEffect에서 createClient 예외로 페이지 전체 크래시 방지) */
+const SUPABASE_CONFIGURED = isSupabasePublicEnvValid();
 
 function supabaseDisplayName(u: User): string {
   const meta = u.user_metadata as Record<string, string | undefined> | undefined;
@@ -96,16 +95,26 @@ export function SocialLoginButtons() {
   useEffect(() => {
     if (!SUPABASE_CONFIGURED) return;
     let cancelled = false;
-    const supabase = createSupabaseBrowserClient();
-    void supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!cancelled) setSupabaseUser(session?.user ?? null);
-    });
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!cancelled) setSupabaseUser(session?.user ?? null);
-    });
+    let unsubscribe: (() => void) | undefined;
+    try {
+      const supabase = createSupabaseBrowserClient();
+      void supabase.auth.getSession().then(({ data: { session } }) => {
+        if (!cancelled) setSupabaseUser(session?.user ?? null);
+      });
+      const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+        if (!cancelled) setSupabaseUser(session?.user ?? null);
+      });
+      unsubscribe = () => sub.subscription.unsubscribe();
+    } catch (e) {
+      if (!cancelled) {
+        setSupabaseError(
+          e instanceof Error ? e.message : "Supabase에 연결할 수 없습니다. URL·키를 확인하세요.",
+        );
+      }
+    }
     return () => {
       cancelled = true;
-      sub.subscription.unsubscribe();
+      unsubscribe?.();
     };
   }, []);
 
@@ -224,22 +233,28 @@ export function SocialLoginButtons() {
             disabled={googleLoading || !SUPABASE_CONFIGURED}
             title={
               !SUPABASE_CONFIGURED
-                ? "빌드에 Supabase URL·Anon 키가 없습니다"
+                ? "Cloudflare Pages 빌드 환경 변수에 NEXT_PUBLIC_SUPABASE_URL·ANON_KEY가 필요합니다"
                 : googleLoading
-                  ? "이동 중…"
+                  ? "Google 로그인 페이지로 이동 중…"
                   : undefined
             }
           >
             <IconGoogle />
-            {googleLoading ? "이동 중…" : "Google로 계속하기"}
+            {googleLoading
+              ? "이동 중…"
+              : !SUPABASE_CONFIGURED
+                ? "Google (배포에 Supabase 키 필요)"
+                : "Google로 계속하기"}
           </button>
           {!SUPABASE_CONFIGURED && (
             <p className="oauth-kakao-hint" role="note" style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>
               Google 로그인을 쓰려면 빌드 환경에{" "}
-              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_SUPABASE_URL</code>,{" "}
-              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>가 필요합니다. Supabase 대시보드
-              Authentication → Providers에서 Google을 켜고, URL Configuration의 Redirect URLs에{" "}
-              <code style={{ fontSize: 12 }}>…/ko/app/login/oauth/</code> 를 추가한 뒤 다시 배포하세요.
+              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_SUPABASE_URL</code>(반드시{" "}
+              <code style={{ fontSize: 12 }}>https://…supabase.co</code> 형식),{" "}
+              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>가 필요합니다. 값이 비어 있거나
+              주소가 잘못되면 콘솔에 Supabase URL 오류가 납니다. Supabase Authentication → Providers에서 Google을
+              켜고, Redirect URLs에 <code style={{ fontSize: 12 }}>…/ko/app/login/oauth/</code>를 넣은 뒤{" "}
+              <strong>다시 배포</strong>하세요.
             </p>
           )}
         </li>
@@ -249,17 +264,23 @@ export function SocialLoginButtons() {
             className="oauth-btn oauth-btn--kakao"
             aria-describedby={error ? statusId : undefined}
             onClick={login}
-            disabled={loading || !sdkReady}
+            disabled={loading || !sdkReady || !KAKAO_JS_KEY_CONFIGURED}
             title={
               !KAKAO_JS_KEY_CONFIGURED
-                ? "배포 빌드에 카카오 JavaScript 키가 없습니다"
+                ? "Cloudflare Pages에 NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY를 넣고 다시 배포하세요"
                 : !sdkReady
                   ? "카카오 SDK 로드 중…"
                   : undefined
             }
           >
             <IconKakao />
-            {loading ? "로그인 중…" : !sdkReady ? "준비 중…" : "카카오로 시작하기"}
+            {loading
+              ? "로그인 중…"
+              : !KAKAO_JS_KEY_CONFIGURED
+                ? "카카오 (배포에 앱 키 필요)"
+                : !sdkReady
+                  ? "카카오 SDK 로드 중…"
+                  : "카카오로 시작하기"}
           </button>
           {!KAKAO_JS_KEY_CONFIGURED && (
             <p className="oauth-kakao-hint" role="note" style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>
@@ -274,7 +295,9 @@ export function SocialLoginButtons() {
             type="button"
             className="oauth-btn oauth-btn--facebook"
             aria-describedby={error ? statusId : undefined}
-            onClick={() => alert("Facebook 로그인은 준비 중입니다.")}
+            onClick={() =>
+              alert("Facebook 로그인은 아직 연결되어 있지 않습니다. Google 또는 카카오를 이용해 주세요.")
+            }
           >
             <IconFacebook />
             Facebook으로 계속하기
@@ -285,7 +308,9 @@ export function SocialLoginButtons() {
             type="button"
             className="oauth-btn oauth-btn--naver"
             aria-describedby={error ? statusId : undefined}
-            onClick={() => alert("네이버 로그인은 준비 중입니다.")}
+            onClick={() =>
+              alert("네이버 로그인은 아직 연결되어 있지 않습니다. Google 또는 카카오를 이용해 주세요.")
+            }
           >
             <IconNaver />
             네이버로 시작하기
