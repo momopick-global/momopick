@@ -5,14 +5,15 @@ import { HeroBannerCarousel } from "@/components/ko/HeroBannerCarousel";
 import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
-import { getKoHomeRailSorted, getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
+import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
 import { BlogCarousel } from "@/components/ko/BlogCarousel";
 const year = new Date().getFullYear();
 
-const homeRailKo = getKoHomeRailSorted("ko");
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
+/** 임시: 지금 뜨는 테스트 = love 우선순위 상위 4 (썸·연애 타일과 동일 소스) */
+const homeRailKo = loveSectionQuizzes.slice(0, 4);
 /** 썸·연애 섹션 타일 개수 (우선순위 상위) */
 const loveSectionTiles = loveSectionQuizzes.slice(0, 4);
 

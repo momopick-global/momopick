@@ -49,14 +49,30 @@ export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setUser(loadKakaoUser());
 
-    // SDK가 이미 초기화된 경우 (페이지 재진입 등)
-    if (window.Kakao?.isInitialized()) {
-      setSdkReady(true);
-      return;
-    }
+    const tryMarkReady = () => {
+      if (window.Kakao?.isInitialized()) {
+        setSdkReady(true);
+        return true;
+      }
+      return false;
+    };
+
+    if (tryMarkReady()) return;
+
     const onReady = () => setSdkReady(true);
     window.addEventListener("kakao-sdk-ready", onReady);
-    return () => window.removeEventListener("kakao-sdk-ready", onReady);
+
+    // 스크립트가 늦게 로드되거나 이벤트가 먼저 지나간 경우 대비
+    const poll = window.setInterval(() => {
+      if (tryMarkReady()) window.clearInterval(poll);
+    }, 200);
+    const stopPoll = window.setTimeout(() => window.clearInterval(poll), 15000);
+
+    return () => {
+      window.removeEventListener("kakao-sdk-ready", onReady);
+      window.clearInterval(poll);
+      window.clearTimeout(stopPoll);
+    };
   }, []);
 
   const login = useCallback(() => {

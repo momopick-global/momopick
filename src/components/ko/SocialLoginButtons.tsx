@@ -56,6 +56,11 @@ function IconNaver() {
   );
 }
 
+/** 빌드 시 인라인됨 — 비어 있으면 SDK 스크립트 자체가 로드되지 않음 */
+const KAKAO_JS_KEY_CONFIGURED = Boolean(
+  (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim(),
+);
+
 export function SocialLoginButtons() {
   const { user, loading, sdkReady, error, login, logout } = useKakaoAuth();
   const statusId = useId();
@@ -117,11 +122,24 @@ export function SocialLoginButtons() {
             aria-describedby={error ? statusId : undefined}
             onClick={login}
             disabled={loading || !sdkReady}
-            title={!sdkReady ? "카카오 SDK 로드 중…" : undefined}
+            title={
+              !KAKAO_JS_KEY_CONFIGURED
+                ? "배포 빌드에 카카오 JavaScript 키가 없습니다"
+                : !sdkReady
+                  ? "카카오 SDK 로드 중…"
+                  : undefined
+            }
           >
             <IconKakao />
             {loading ? "로그인 중…" : !sdkReady ? "준비 중…" : "카카오로 시작하기"}
           </button>
+          {!KAKAO_JS_KEY_CONFIGURED && (
+            <p className="oauth-kakao-hint" role="note" style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>
+              이 사이트 빌드에 카카오 앱 키가 포함되어 있지 않습니다. Cloudflare Pages 등 배포 환경에{" "}
+              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY</code>를 등록한 뒤{" "}
+              <strong>다시 배포</strong>해야 카카오 로그인이 동작합니다.
+            </p>
+          )}
         </li>
         <li>
           <button
