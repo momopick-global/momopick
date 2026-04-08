@@ -2,7 +2,12 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { QuizUiStrings } from "@/i18n/quiz-ui";
-import { getKakaoFeedShareUrls, normalizeUrlForKakao, parseShareTextForKakaoFeed } from "@/lib/kakaoShareFeed";
+import {
+  absoluteHttpsUrlForKakao,
+  getKakaoFeedShareUrls,
+  normalizeUrlForKakao,
+  parseShareTextForKakaoFeed,
+} from "@/lib/kakaoShareFeed";
 
 type Props = {
   ui: QuizUiStrings;
@@ -98,8 +103,11 @@ export function QuizResultShare({ ui, shareText, shareImageUrl, quizStartUrl }: 
     const { title, description } = parseShareTextForKakaoFeed(shareText);
     const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
 
-    // "테스트 하기" 버튼용 URL — quizStartUrl이 있으면 정규화, 없으면 결과 URL과 동일
-    const startHref = quizStartUrl ? normalizeUrlForKakao(quizStartUrl) : mobileWebUrl;
+    const resultMobile = absoluteHttpsUrlForKakao(mobileWebUrl);
+    const resultWeb = absoluteHttpsUrlForKakao(webUrl);
+    const imageForKakao = absoluteHttpsUrlForKakao(imageUrl);
+    // "테스트 하기" 버튼용 URL — 상대 경로(`/ko/...`)는 normalizeUrlForKakao로 절대 URL화
+    const startHref = quizStartUrl ? absoluteHttpsUrlForKakao(normalizeUrlForKakao(quizStartUrl)) : resultMobile;
 
     const fallbackCopy = () => {
       void navigator.clipboard.writeText(pageUrl).then(() => {
@@ -109,15 +117,23 @@ export function QuizResultShare({ ui, shareText, shareImageUrl, quizStartUrl }: 
     };
 
     try {
-      console.info("[Momopick][Kakao] Share.sendCustom(131878)", { pageUrl, mobileWebUrl, imageUrl, startHref });
+      console.info("[Momopick][Kakao] Share.sendCustom(131878)", {
+        pageUrl,
+        resultMobile,
+        resultWeb,
+        imageForKakao,
+        startHref,
+      });
       const result = Kakao.Share.sendCustom({
         templateId: 131878,
         templateArgs: {
           TITLE: title || "모모픽",
           DESC: description || "재미로 보는 심리 테스트",
-          IMAGE_URL: imageUrl,
-          RESULT_URL: mobileWebUrl,
-          RESULT_WEB_URL: webUrl,
+          IMAGE_URL: imageForKakao,
+          /** 결과(현재 화면) — 버튼·본문 링크에 템플릿에서 이 변수를 연결해야 함 */
+          RESULT_URL: resultMobile,
+          RESULT_WEB_URL: resultWeb,
+          /** 퀴즈 시작 페이지 — 템플릿 버튼에 연결 */
           START_URL: startHref,
           START_WEB_URL: startHref,
         },

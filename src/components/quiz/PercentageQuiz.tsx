@@ -41,6 +41,17 @@ export function PercentageQuiz({
     [done, step, total],
   );
 
+  const quizPageHref = useMemo(() => {
+    const cat = definition.category?.trim() || "quiz";
+    const seg = definition.slug?.trim() || definition.id;
+    return `/${locale}/${cat}/${seg}/`;
+  }, [definition.category, definition.slug, definition.id, locale]);
+
+  const shareOgImage = useMemo(
+    () => (definition.images?.og ? quizAssetUrl(definition.images.og, locale) : undefined),
+    [definition.images?.og, locale],
+  );
+
   useEffect(() => {
     return () => {
       if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
@@ -181,7 +192,12 @@ export function PercentageQuiz({
           {descText ? (
             <p className="quiz-result-body quiz-result-body--percent">{descText}</p>
           ) : null}
-          <QuizResultShare ui={ui} shareText={shareText} />
+          <QuizResultShare
+            ui={ui}
+            shareText={shareText}
+            shareImageUrl={shareOgImage}
+            quizStartUrl={quizPageHref}
+          />
           <div className="quiz-result-actions">
             <button type="button" className="btn primary sm" onClick={restart}>
               {ui.restart}

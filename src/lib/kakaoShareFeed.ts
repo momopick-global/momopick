@@ -22,14 +22,33 @@ function isLocalHost(hostname: string): boolean {
  */
 export function normalizeUrlForKakao(url: string): string {
   const origin = KAKAO_SITE_ORIGIN.replace(/\/$/, "");
+  const base = `${origin}/`;
+  const trimmed = url.trim();
+  if (!trimmed) return base;
   try {
-    const u = new URL(url);
+    /** 상대 경로(`/ko/...`)는 반드시 base와 함께 파싱 (단독 `new URL('/ko')` 는 예외 → 메인으로 잘못 떨어지던 버그) */
+    const u = new URL(trimmed, base);
     if (isLocalHost(u.hostname)) {
-      return new URL(u.pathname + u.search + u.hash, `${origin}/`).href;
+      return new URL(u.pathname + u.search + u.hash, base).href;
     }
     return u.href;
   } catch {
-    return `${origin}/`;
+    return base;
+  }
+}
+
+/** 카카오 피드·커스텀 템플릿용: 항상 절대 URL(https), 공백 제거 */
+export function absoluteHttpsUrlForKakao(url: string): string {
+  const normalized = normalizeUrlForKakao(url);
+  try {
+    const u = new URL(normalized);
+    if (u.protocol === "http:" && (u.hostname === "momopick.com" || u.hostname === "www.momopick.com")) {
+      u.protocol = "https:";
+      return u.href;
+    }
+    return u.href;
+  } catch {
+    return normalized;
   }
 }
 
