@@ -2209,7 +2209,7 @@
 /* —— 정책(개인정보처리방침 등) —— */
 .momopick-ko .policy-page {
   padding-top: 8px;
-  max-width: 720px;
+  max-width: var(--max);
   margin: 0 auto;
 }
 

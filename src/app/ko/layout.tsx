@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { KoBottomNav } from "@/components/ko/KoBottomNav";
+import { KakaoAuthProvider } from "@/context/KakaoAuthContext";
 import "./ko-home.css";
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: "모모픽(Momopick) | MBTI·연애·심리 테스트 & 재미 퀴즈",
     description:
       "MBTI, 연애, 심리, 성격, 소셜, 스타일… 지금 바로 1분 퀴즈로 나를 알아보세요.",
-    images: [{ url: "https://momopick.com/assets/og/og-ko.webp" }],
+    images: [{ url: "https://momopick.com/images/og/og-ko.webp" }],
     locale: "ko_KR",
   },
   twitter: { card: "summary_large_image" },
@@ -51,7 +52,7 @@ const jsonLdOrg = {
   "@type": "Organization",
   name: "Momopick",
   url: "https://momopick.com/",
-  logo: "https://momopick.com/assets/brand/logo.png",
+  logo: "https://momopick.com/images/brand/momopick_symbol.webp",
   sameAs: [
     "https://www.youtube.com/@YOUR_CHANNEL",
     "https://www.instagram.com/YOUR_ID",
@@ -178,10 +179,12 @@ export default function KoLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
-      <div className="momopick-ko">
-        {children}
-        <KoBottomNav />
-      </div>
+      <KakaoAuthProvider>
+        <div className="momopick-ko">
+          {children}
+          <KoBottomNav />
+        </div>
+      </KakaoAuthProvider>
     </>
   );
 }

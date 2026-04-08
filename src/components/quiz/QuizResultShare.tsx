@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { QuizUiStrings } from "@/i18n/quiz-ui";
-import { KAKAO_SHARE_DEFAULT_IMAGE_URL, parseShareTextForKakaoFeed } from "@/lib/kakaoShareFeed";
+import { getKakaoFeedShareUrls, parseShareTextForKakaoFeed } from "@/lib/kakaoShareFeed";
 
 type Props = {
   ui: QuizUiStrings;
@@ -89,26 +89,37 @@ export function QuizResultShare({ ui, shareText }: Props) {
       return;
     }
     const { title, description } = parseShareTextForKakaoFeed(shareText);
-    try {
-      console.info("[Momopick][Kakao] Share.sendDefault(feed)", { pageUrl });
-      Kakao.Share.sendDefault({
-        objectType: "feed",
-        content: {
-          title: title || "모모픽",
-          description: description || "재미로 보는 심리 테스트",
-          imageUrl: KAKAO_SHARE_DEFAULT_IMAGE_URL,
-          link: {
-            mobileWebUrl: pageUrl,
-            webUrl: pageUrl,
-          },
-        },
-      });
-    } catch (e) {
-      console.warn("[Kakao] Share.sendDefault failed", e);
+    const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl);
+    const link: { mobileWebUrl: string; webUrl: string } = { mobileWebUrl, webUrl };
+
+    const fallbackCopy = () => {
       void navigator.clipboard.writeText(pageUrl).then(() => {
         setCopied(true);
         window.setTimeout(() => setCopied(false), 2000);
       });
+    };
+
+    try {
+      console.info("[Momopick][Kakao] Share.sendDefault(feed)", { pageUrl, mobileWebUrl, imageUrl });
+      const result = Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: title || "모모픽",
+          description: description || "재미로 보는 심리 테스트",
+          imageUrl,
+          link,
+        },
+        buttons: [{ title: "결과 보기", link }],
+      });
+      if (result && typeof (result as Promise<void>).catch === "function") {
+        (result as Promise<void>).catch((e: unknown) => {
+          console.warn("[Kakao] Share.sendDefault rejected", e);
+          fallbackCopy();
+        });
+      }
+    } catch (e) {
+      console.warn("[Kakao] Share.sendDefault failed", e);
+      fallbackCopy();
     }
   }, [pageUrl, shareText]);
 

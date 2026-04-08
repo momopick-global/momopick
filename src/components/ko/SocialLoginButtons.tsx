@@ -1,6 +1,7 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId } from "react";
+import { useKakaoAuth } from "@/context/KakaoAuthContext";
 
 function IconGoogle() {
   return (
@@ -56,27 +57,54 @@ function IconNaver() {
 }
 
 export function SocialLoginButtons() {
-  const [message, setMessage] = useState<string | null>(null);
+  const { user, loading, error, login, logout } = useKakaoAuth();
   const statusId = useId();
 
-  const onPick = (label: string) => {
-    setMessage(`${label} 로그인 연동은 준비 중입니다.`);
-  };
+  if (user) {
+    return (
+      <div className="oauth-wrap">
+        <div className="oauth-status" role="status">
+          {user.profileImageUrl && (
+            <img
+              src={user.profileImageUrl}
+              alt=""
+              width={36}
+              height={36}
+              style={{ borderRadius: "50%", verticalAlign: "middle", marginRight: 8 }}
+            />
+          )}
+          <strong>{user.nickname}</strong>님, 환영합니다 👋
+        </div>
+        <ul className="oauth-list" style={{ marginTop: 12 }}>
+          <li>
+            <button
+              type="button"
+              className="oauth-btn oauth-btn--kakao"
+              onClick={logout}
+            >
+              <IconKakao />
+              카카오 로그아웃
+            </button>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 
   return (
     <div className="oauth-wrap">
-      {message ? (
-        <p id={statusId} className="oauth-status" role="status">
-          {message}
+      {error && (
+        <p id={statusId} className="oauth-status" role="alert" style={{ color: "#b91c1c" }}>
+          {error}
         </p>
-      ) : null}
+      )}
       <ul className="oauth-list">
         <li>
           <button
             type="button"
             className="oauth-btn oauth-btn--google"
-            aria-describedby={message ? statusId : undefined}
-            onClick={() => onPick("Google")}
+            aria-describedby={error ? statusId : undefined}
+            onClick={() => alert("Google 로그인은 준비 중입니다.")}
           >
             <IconGoogle />
             Google로 계속하기
@@ -86,19 +114,20 @@ export function SocialLoginButtons() {
           <button
             type="button"
             className="oauth-btn oauth-btn--kakao"
-            aria-describedby={message ? statusId : undefined}
-            onClick={() => onPick("카카오")}
+            aria-describedby={error ? statusId : undefined}
+            onClick={login}
+            disabled={loading}
           >
             <IconKakao />
-            카카오로 시작하기
+            {loading ? "로그인 중…" : "카카오로 시작하기"}
           </button>
         </li>
         <li>
           <button
             type="button"
             className="oauth-btn oauth-btn--facebook"
-            aria-describedby={message ? statusId : undefined}
-            onClick={() => onPick("Facebook")}
+            aria-describedby={error ? statusId : undefined}
+            onClick={() => alert("Facebook 로그인은 준비 중입니다.")}
           >
             <IconFacebook />
             Facebook으로 계속하기
@@ -108,8 +137,8 @@ export function SocialLoginButtons() {
           <button
             type="button"
             className="oauth-btn oauth-btn--naver"
-            aria-describedby={message ? statusId : undefined}
-            onClick={() => onPick("네이버")}
+            aria-describedby={error ? statusId : undefined}
+            onClick={() => alert("네이버 로그인은 준비 중입니다.")}
           >
             <IconNaver />
             네이버로 시작하기
