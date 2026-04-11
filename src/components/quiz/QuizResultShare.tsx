@@ -17,6 +17,8 @@ const KAKAO_QUIZ_RESULT_TEMPLATE_ID = 131878;
 /** SDK 스크립트는 로드됐는데 `onLoad` 직전에 클릭하는 경우 동기 `init` 보완 (제스처 유지) */
 const NEXT_KAKAO_JS_KEY = (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim();
 
+type KakaoFallbackCause = "missing_key" | "script" | "default";
+
 type Props = {
   ui: QuizUiStrings;
   /** SNS 미리보기·트윗에 쓸 짧은 문구 */
@@ -101,8 +103,8 @@ export function QuizResultShare({
   const [pageUrl, setPageUrl] = useState("");
   /** 링크 복사 버튼 전용 */
   const [linkCopiedNotice, setLinkCopiedNotice] = useState(false);
-  /** 카카오 공유 폴백(클립보드) 전용 — 「복사됨」과 혼동 방지 */
-  const [kakaoFallbackNotice, setKakaoFallbackNotice] = useState(false);
+  /** 카카오 실패 후 클립보드 폴백 시 원인별 안내(「복사됨」과 구분) */
+  const [kakaoFallback, setKakaoFallback] = useState<null | { cause: KakaoFallbackCause }>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -119,7 +121,7 @@ export function QuizResultShare({
 
   const handleCopy = useCallback(() => {
     if (!resolvedPageUrl) return;
-    setKakaoFallbackNotice(false);
+    setKakaoFallback(null);
     void navigator.clipboard.writeText(resolvedPageUrl).then(
       () => {
         setLinkCopiedNotice(true);
@@ -132,19 +134,19 @@ export function QuizResultShare({
   const openKakao = useCallback(() => {
     if (typeof window === "undefined" || !canUseShareLinks) return;
     setLinkCopiedNotice(false);
-    setKakaoFallbackNotice(false);
+    setKakaoFallback(null);
     /** 마운트 시점 URL이 아니라 클릭 시점 — 클라이언트 전환·쿼리 반영 후에도 맞음 */
     const hrefAtClick = window.location.href;
     const hrefForResultFeed = quizResultUrl?.trim()
       ? normalizeMomopickHostForShare(quizResultUrl.trim())
       : hrefAtClick;
 
-    const fallbackCopy = () => {
+    const fallbackCopy = (cause: KakaoFallbackCause = "default") => {
       setLinkCopiedNotice(false);
       void navigator.clipboard.writeText(hrefForResultFeed).then(
         () => {
-          setKakaoFallbackNotice(true);
-          window.setTimeout(() => setKakaoFallbackNotice(false), 3500);
+          setKakaoFallback({ cause });
+          window.setTimeout(() => setKakaoFallback(null), 8000);
         },
         () => {
           console.warn("[Momopick] clipboard write failed, fallback prompt");
@@ -161,12 +163,12 @@ export function QuizResultShare({
       const Kakao = window.Kakao;
       if (!NEXT_KAKAO_JS_KEY) {
         console.warn("[Momopick][Kakao] NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 없음 — 빌드·Pages 환경변수 확인");
-        fallbackCopy();
+        fallbackCopy("missing_key");
         return;
       }
       if (!Kakao) {
         console.warn("[Momopick][Kakao] 스크립트 미로드 — 네트워크·차단기 확인 후 다시 시도");
-        fallbackCopy();
+        fallbackCopy("script");
         return;
       }
       if (!Kakao.isInitialized()) {
@@ -397,9 +399,13 @@ export function QuizResultShare({
           {ui.copied}
         </p>
       ) : null}
-      {kakaoFallbackNotice ? (
+      {kakaoFallback ? (
         <p className="quiz-share-hint" role="status">
-          {ui.kakaoShareFallbackHint}
+          {kakaoFallback.cause === "missing_key"
+            ? ui.kakaoShareMissingKeyHint
+            : kakaoFallback.cause === "script"
+              ? ui.kakaoShareScriptBlockedHint
+              : ui.kakaoShareFallbackHint}
         </p>
       ) : null}
     </div>
