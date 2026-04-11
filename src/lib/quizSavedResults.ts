@@ -108,3 +108,14 @@ export function removeQuizVaultItem(id: string): void {
   const prev = readSavedQuizVault();
   writeSavedQuizVault(prev.filter((x) => x.id !== id));
 }
+
+export function removeQuizVaultItems(ids: string[]): void {
+  if (ids.length === 0) return;
+  const drop = new Set(ids);
+  const prev = readSavedQuizVault();
+  writeSavedQuizVault(prev.filter((x) => !drop.has(x.id)));
+}
+
+export function clearQuizVault(): void {
+  writeSavedQuizVault([]);
+}

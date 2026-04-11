@@ -11,6 +11,8 @@ body {
 /* JS/CSS 로딩 지연·오류 시에도 완전 하얀 화면만 보이지 않도록 */
 html {
   background-color: #f6f7fb;
+  /* 짧은 페이지(스크롤 없음) vs 긴 페이지(스크롤바) 간 가용 너비 차이로 헤더 정렬이 흔들리지 않게 */
+  scrollbar-gutter: stable;
 }
 
 body {

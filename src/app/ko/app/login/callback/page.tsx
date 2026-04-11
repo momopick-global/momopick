@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useKakaoAuth } from "@/context/KakaoAuthContext";
+import { consumePostLoginRedirect } from "@/lib/postLoginRedirect";
 
 /**
  * 카카오 OAuth implicit flow 콜백 페이지.
@@ -34,7 +35,7 @@ export default function KakaoCallbackPage() {
 
     fetchAndSaveUser(accessToken)
       .then(() => {
-        router.replace("/ko/");
+        router.replace(consumePostLoginRedirect("/ko/"));
       })
       .catch(() => {
         setErrorMsg("사용자 정보를 불러오지 못했습니다.");

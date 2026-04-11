@@ -7,18 +7,42 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useRouter } from "next/navigation";
 import {
   type KakaoUser,
   clearKakaoUser,
   loadKakaoUser,
   saveKakaoUser,
 } from "@/lib/kakaoAuth";
+import { clearQuizVault } from "@/lib/quizSavedResults";
+
+/** OAuth 콜백 직후 SDK 스크립트가 아직 없을 수 있어, 짧게 대기 */
+function waitForKakaoInitialized(maxMs: number): Promise<void> {
+  if (typeof window === "undefined") {
+    return Promise.reject(new Error("SSR"));
+  }
+  if (window.Kakao?.isInitialized()) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const start = Date.now();
+    const id = window.setInterval(() => {
+      if (window.Kakao?.isInitialized()) {
+        window.clearInterval(id);
+        resolve();
+      } else if (Date.now() - start >= maxMs) {
+        window.clearInterval(id);
+        reject(new Error("KAKAO_SDK_TIMEOUT"));
+      }
+    }, 50);
+  });
+}
 
 type KakaoAuthState = {
   user: KakaoUser | null;
   loading: boolean;
   /** 카카오 SDK 초기화 완료 여부 */
   sdkReady: boolean;
+  /** 첫 클라이언트 effect에서 localStorage(kakao_user) 반영 완료 — 미로그인 판별 전에 true가 되어야 함 */
+  kakaoHydrated: boolean;
   error: string | null;
   login: () => void;
   logout: () => void;
@@ -30,6 +54,7 @@ const KakaoAuthContext = createContext<KakaoAuthState>({
   user: null,
   loading: false,
   sdkReady: false,
+  kakaoHydrated: false,
   error: null,
   login: () => {},
   logout: () => {},
@@ -41,13 +66,16 @@ export function useKakaoAuth() {
 }
 
 export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [user, setUser] = useState<KakaoUser | null>(null);
   const [loading, setLoading] = useState(false);
   const [sdkReady, setSdkReady] = useState(false);
+  const [kakaoHydrated, setKakaoHydrated] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setUser(loadKakaoUser());
+    setKakaoHydrated(true);
 
     const tryMarkReady = () => {
       if (window.Kakao?.isInitialized()) {
@@ -91,13 +119,23 @@ export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const fetchAndSaveUser = useCallback(async (accessToken: string) => {
+    try {
+      await waitForKakaoInitialized(12_000);
+    } catch {
+      setError("카카오 SDK를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.");
+      throw new Error("KAKAO_SDK_TIMEOUT");
+    }
+
     const Kakao = window.Kakao;
-    if (!Kakao?.isInitialized()) return;
+    if (!Kakao?.isInitialized()) {
+      setError("카카오 SDK를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.");
+      throw new Error("KAKAO_SDK_NOT_READY");
+    }
 
     setLoading(true);
     Kakao.Auth.setAccessToken(accessToken, true);
 
-    await new Promise<void>((resolve) => {
+    await new Promise<void>((resolve, reject) => {
       Kakao.API.request({
         url: "/v2/user/me",
         success: (res) => {
@@ -117,7 +155,7 @@ export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
         fail: () => {
           setError("사용자 정보를 가져오지 못했습니다.");
           setLoading(false);
-          resolve();
+          reject(new Error("KAKAO_USER_ME_FAILED"));
         },
       });
     });
@@ -126,15 +164,19 @@ export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
   const logout = useCallback(() => {
     const Kakao = window.Kakao;
     clearKakaoUser();
+    clearQuizVault();
     setUser(null);
     setError(null);
     if (Kakao?.isInitialized() && Kakao.Auth.getAccessToken()) {
       Kakao.Auth.logout();
     }
-  }, []);
+    router.replace("/ko/app/login/");
+  }, [router]);
 
   return (
-    <KakaoAuthContext.Provider value={{ user, loading, sdkReady, error, login, logout, fetchAndSaveUser }}>
+    <KakaoAuthContext.Provider
+      value={{ user, loading, sdkReady, kakaoHydrated, error, login, logout, fetchAndSaveUser }}
+    >
       {children}
     </KakaoAuthContext.Provider>
   );

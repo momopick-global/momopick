@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+import { useKakaoAuth } from "@/context/KakaoAuthContext";
+import { useSupabaseAuthUser } from "@/hooks/useSupabaseAuthUser";
 import { readKoHeaderLoginIconStorage, resolveKoHeaderLoginIcon } from "@/lib/koHeaderLoginIcon";
+import { DEFAULT_LOGIN_SUCCESS_PATH } from "@/lib/postLoginRedirect";
+import { HeaderLogoutIcon } from "./KoHeaderLogoutBtn";
 
 function LoginSvg() {
   return (
@@ -19,9 +22,12 @@ function LoginSvg() {
   );
 }
 
-/** 헤더 오른쪽 로그인: 보관함은 기본 PNG, 그 외 SVG — localStorage로 덮어쓰기 가능 */
+/** 헤더 오른쪽: 비로그인은 로그인 링크, 로그인 시 동일 자리에서 마이페이지 로그인 정보(#ko-account)로 이동 */
 export function KoHeaderLoginBtn() {
-  const pathname = usePathname() ?? "";
+  const { user: kakaoUser } = useKakaoAuth();
+  const { user: supabaseUser } = useSupabaseAuthUser();
+  const loggedIn = Boolean(kakaoUser || supabaseUser);
+
   const [stored, setStored] = useState<string | null>(null);
 
   const sync = useCallback(() => {
@@ -38,10 +44,24 @@ export function KoHeaderLoginBtn() {
     };
   }, [sync]);
 
-  const resolved = resolveKoHeaderLoginIcon(pathname, stored);
+  if (loggedIn) {
+    return (
+      <Link
+        className="btn-icon btn-icon--logout"
+        href="/ko/app/saved/#ko-account"
+        title="로그인 정보"
+        aria-label="마이페이지에서 로그인 정보 보기"
+      >
+        <HeaderLogoutIcon />
+      </Link>
+    );
+  }
+
+  const resolved = resolveKoHeaderLoginIcon(stored);
+  const loginHref = `/ko/app/login/?next=${encodeURIComponent(DEFAULT_LOGIN_SUCCESS_PATH)}`;
 
   return (
-    <Link className="btn-icon" href="/ko/app/login/" title="로그인" aria-label="로그인">
+    <Link className="btn-icon" href={loginHref} title="로그인" aria-label="로그인">
       {resolved === "svg" ? (
         <LoginSvg />
       ) : (

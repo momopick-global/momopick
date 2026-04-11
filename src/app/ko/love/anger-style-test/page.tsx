@@ -66,21 +66,7 @@ export const metadata: Metadata = {
 export default function AngerStyleTestPage() {
   return (
     <>
-      <KoSiteHeader
-          actions={
-            <>
-              <Link className="btn sm" href="/ko/">
-              홈
-            </Link>
-            <Link className="btn-icon" href="/ko/app/login/" title="로그인" aria-label="로그인">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </Link>
-            </>
-          }
-        />
+      <KoSiteHeader />
 
       <KoCatBar />
 

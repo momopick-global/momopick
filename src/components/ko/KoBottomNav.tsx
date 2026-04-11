@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useKoAuthStatus } from "@/hooks/useKoAuthStatus";
+import { DEFAULT_LOGIN_SUCCESS_PATH } from "@/lib/postLoginRedirect";
 
 type NavItem = {
   href: string;
@@ -58,16 +60,19 @@ function IconSearch({ active }: { active: boolean }) {
   );
 }
 
-function IconArchive({ active }: { active: boolean }) {
+/** 마이페이지 — 24×24에 맞춰 실루엣을 크게 (stroke 2pt 여유 1px 내외) */
+function IconMyPage({ active }: { active: boolean }) {
   const c = active ? "var(--ko-tab-active)" : "var(--ko-tab-idle)";
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="7" r="5" fill="none" stroke={c} strokeWidth="2" />
       <path
         fill="none"
         stroke={c}
         strokeWidth="2"
+        strokeLinecap="round"
         strokeLinejoin="round"
-        d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v15.5l-6.5-4-6.5 4V5a1.5 1.5 0 0 1 1.5-1.5Z"
+        d="M1.5 21.5C1.5 14.25 6.15 11.25 12 11.25S22.5 14.25 22.5 21.5"
       />
     </svg>
   );
@@ -94,25 +99,33 @@ const items: NavItem[] = [
   },
   {
     href: "/ko/app/saved/",
-    label: "보관함",
+    label: "마이페이지",
     match: (p) => p.startsWith("/ko/app/saved"),
-    icon: (a) => <IconArchive active={a} />,
+    icon: (a) => <IconMyPage active={a} />,
   },
 ];
 
-/** 한국어 구역 하단 고정 탭 (홈·오늘의 운세·검색·보관함) */
+/** 한국어 구역 하단 고정 탭 (홈·오늘의 운세·검색·마이페이지) */
 export function KoBottomNav() {
   const pathname = usePathname() ?? "";
+  const { authResolved, isLoggedIn } = useKoAuthStatus();
+
+  const myPageHref =
+    authResolved && !isLoggedIn
+      ? `/ko/app/login/?next=${encodeURIComponent(DEFAULT_LOGIN_SUCCESS_PATH)}`
+      : "/ko/app/saved/";
 
   return (
     <nav className="ko-bottom-nav" aria-label="주요 메뉴">
       <ul className="ko-bottom-nav__list">
         {items.map((item) => {
           const active = item.match(pathname);
+          const href =
+            item.href === "/ko/app/saved/" ? myPageHref : item.href;
           return (
             <li key={item.href} className="ko-bottom-nav__item">
               <Link
-                href={item.href}
+                href={href}
                 className={`ko-bottom-nav__link${active ? " is-active" : ""}`}
                 aria-current={active ? "page" : undefined}
               >

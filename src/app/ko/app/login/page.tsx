@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
+import { PostLoginRedirectCapture } from "@/components/ko/PostLoginRedirectCapture";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { SocialLoginButtons } from "@/components/ko/SocialLoginButtons";
@@ -35,21 +37,13 @@ const year = new Date().getFullYear();
 export default function KoLoginPage() {
   return (
     <>
-      <KoSiteHeader
-          actions={
-            <>
-              <Link className="btn sm" href="/ko/">
-              홈
-            </Link>
-            <span className="btn sm primary" aria-current="page" style={{ cursor: "default" }}>
-              로그인
-            </span>
-            </>
-          }
-        />
+      <Suspense fallback={null}>
+        <PostLoginRedirectCapture />
+      </Suspense>
+      <KoSiteHeader />
 
       <div className="wrap">
-        <main className="login-page">
+        <main className="login-page ko-app-narrow">
           <nav className="quiz-breadcrumb" aria-label="경로">
             <Link href="/ko/">홈</Link>
             <span aria-hidden="true"> / </span>

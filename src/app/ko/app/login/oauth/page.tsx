@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
+import { consumePostLoginRedirect } from "@/lib/postLoginRedirect";
 
 /**
  * Supabase OAuth(Google 등) PKCE 콜백.
@@ -34,15 +35,15 @@ export default function SupabaseOAuthCallbackPage() {
       return;
     }
 
-    const goHome = () => {
+    const goAfterLogin = () => {
       if (finished.current) return;
       finished.current = true;
-      router.replace("/ko/");
+      router.replace(consumePostLoginRedirect("/ko/"));
     };
 
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
       if (session && (event === "SIGNED_IN" || event === "INITIAL_SESSION")) {
-        goHome();
+        goAfterLogin();
       }
     });
 
@@ -53,14 +54,14 @@ export default function SupabaseOAuthCallbackPage() {
         setStatus("error");
         return;
       }
-      if (session) goHome();
+      if (session) goAfterLogin();
     });
 
     const timeout = window.setTimeout(() => {
       if (finished.current) return;
       void supabase.auth.getSession().then(({ data: { session } }) => {
         if (finished.current) return;
-        if (session) goHome();
+        if (session) goAfterLogin();
         else {
           setMessage("로그인 세션을 확인하지 못했습니다. 다시 시도해 주세요.");
           setStatus("error");
