@@ -5,6 +5,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import {
   buildPercentageOutcomeQuery,
+  getBrowserQuizSearchString,
   parsePercentageOutcomePercent,
   totalScoreForTargetPercent,
 } from "@/lib/quizOutcomeUrl";
@@ -65,12 +66,27 @@ export function PercentageQuiz({
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
-    const pct = parsePercentageOutcomePercent(urlSearch);
+    const tryRestore = (search: string) => {
+      const pct = parsePercentageOutcomePercent(search);
+      if (pct == null) return;
+      setTotalScore(totalScoreForTargetPercent(pct, maxTotal));
+      setDone(true);
+      setStep(questions.length);
+    };
+    tryRestore(urlSearch);
+    tryRestore(getBrowserQuizSearchString());
+    const id = requestAnimationFrame(() => tryRestore(getBrowserQuizSearchString()));
+    return () => cancelAnimationFrame(id);
+  }, [maxTotal, questions.length, urlSearch]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || done) return;
+    const pct = parsePercentageOutcomePercent(getBrowserQuizSearchString());
     if (pct == null) return;
     setTotalScore(totalScoreForTargetPercent(pct, maxTotal));
     setDone(true);
     setStep(questions.length);
-  }, [maxTotal, questions.length, urlSearch]);
+  }, [done, maxTotal, questions.length, urlSearch]);
 
   useEffect(() => {
     return () => {

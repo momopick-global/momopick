@@ -1,0 +1,4 @@
+# Cloudflare Pages — HTML이 쿼리 없이 장기 캐시되면 구 JS·스냅이 어긋날 수 있음
+# 연애 퀴즈 페이지는 재검증(운영에서 ?r= / ?p= 딥링크 복원 안정화)
+/ko/love/*
+  Cache-Control: public, max-age=0, must-revalidate

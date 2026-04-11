@@ -4,7 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
-import { buildSnackOutcomeQuery, parseSnackOutcomeSearch } from "@/lib/quizOutcomeUrl";
+import {
+  buildSnackOutcomeQuery,
+  getBrowserQuizSearchString,
+  parseSnackOutcomeSearch,
+} from "@/lib/quizOutcomeUrl";
 import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
@@ -72,12 +76,29 @@ export function SnackQuiz({
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
-    const restored = parseSnackOutcomeSearch(urlSearch, resultKeys);
+    const tryRestore = (search: string) => {
+      const restored = parseSnackOutcomeSearch(search, resultKeys);
+      if (restored) {
+        setCounts(restored);
+        setDone(true);
+      }
+    };
+    tryRestore(urlSearch);
+    tryRestore(getBrowserQuizSearchString());
+    const id = requestAnimationFrame(() => tryRestore(getBrowserQuizSearchString()));
+    return () => cancelAnimationFrame(id);
+  }, [resultKeys, urlSearch]);
+
+  /** 프로덕션 CDN·하이드레이션 타이밍에서 layout 이후 한 번 더 (짧은 깜빡임 허용) */
+  useEffect(() => {
+    if (typeof window === "undefined" || done) return;
+    const search = getBrowserQuizSearchString();
+    const restored = parseSnackOutcomeSearch(search, resultKeys);
     if (restored) {
       setCounts(restored);
       setDone(true);
     }
-  }, [resultKeys, urlSearch]);
+  }, [done, resultKeys, urlSearch]);
 
   useEffect(() => {
     return () => {

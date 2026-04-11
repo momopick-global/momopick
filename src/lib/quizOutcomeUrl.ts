@@ -39,6 +39,26 @@ export function getEffectiveLocationSearch(href: string, search: string): string
   return slice.startsWith("?") ? slice : `?${slice}`;
 }
 
+/**
+ * 브라우저에서 `location`·`document.URL`을 모두 보며 쿼리 후보를 합침.
+ * (CDN/리다이렉트 직후 한 틱에만 `search`가 비는 경우 완화)
+ */
+export function getBrowserQuizSearchString(): string {
+  if (typeof window === "undefined") return "";
+  const href = window.location.href;
+  const fromLoc = getEffectiveLocationSearch(href, window.location.search);
+  if (fromLoc.length > 1) return fromLoc;
+  try {
+    if (typeof document !== "undefined" && document.URL) {
+      const fromDoc = getEffectiveLocationSearch(document.URL, new URL(document.URL).search);
+      if (fromDoc.length > 1) return fromDoc;
+    }
+  } catch {
+    /* ignore */
+  }
+  return fromLoc;
+}
+
 /** `search`는 `?a=b` 또는 `a=b` 형태 모두 허용 */
 export function parseSnackOutcomeSearch(
   search: string,
