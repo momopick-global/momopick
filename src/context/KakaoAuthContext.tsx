@@ -111,11 +111,17 @@ export function KakaoAuthProvider({ children }: { children: React.ReactNode }) {
     }
     setError(null);
     const redirectUri = `${window.location.origin}/ko/app/login/callback/`;
-    Kakao.Auth.authorize({
-      redirectUri,
-      responseType: "token",
-      throughTalk: true,
-    });
+    try {
+      // PC 웹·카카오톡 미설치 환경에서 throughTalk: true 는 동작이 멈춘 것처럼 보일 수 있음
+      Kakao.Auth.authorize({
+        redirectUri,
+        responseType: "token",
+        throughTalk: false,
+      });
+    } catch (e) {
+      console.warn("[Kakao] authorize failed", e);
+      setError("카카오 로그인을 시작하지 못했습니다. 새로고침 후 다시 시도해 주세요.");
+    }
   }, []);
 
   const fetchAndSaveUser = useCallback(async (accessToken: string) => {

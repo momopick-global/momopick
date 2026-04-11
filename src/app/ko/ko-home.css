@@ -1017,6 +1017,19 @@
   filter: brightness(0.98);
 }
 
+.momopick-ko .oauth-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+
+.momopick-ko .oauth-btn:disabled:hover {
+  transform: none;
+  filter: none;
+}
+
 .momopick-ko .oauth-btn__svg {
   width: 22px;
   height: 22px;
