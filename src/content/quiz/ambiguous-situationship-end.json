@@ -29,8 +29,8 @@
     "en": "Is it timing or you?"
   },
   "images": {
-    "thumbnail": "/images/quiz/ambiguous-situationship-end/start.webp",
-    "og": "/images/quiz/ambiguous-situationship-end/start.webp"
+    "thumbnail": "/images/quiz/ambiguous-situationship-end/thumb.webp",
+    "og": "/images/quiz/ambiguous-situationship-end/thumb.webp"
   },
   "meta": {
     "description": {
@@ -62,7 +62,7 @@
       "ko": "💬 썸 패턴",
       "en": "💬 Situationship pattern"
     },
-    "image": "/images/quiz/ambiguous-situationship-end/start.webp",
+    "image": "/images/quiz/ambiguous-situationship-end/thumb.webp",
     "priority": 85
   },
   "resultKeys": [
@@ -228,7 +228,7 @@
       "ko": "한 가지 패턴으로만 정의되지 않을 수 있어요.\n상황에 따라 밀당하기도 하고 직진하기도 하며, 눈치를 보다 과해석하기도 합니다.\n썸이 애매하게 끝날 때는 타이밍·속도·신호·해석이 동시에 얽혀 있을 때가 많아요.\n‘나는 어떤 순간에 가장 방어/돌진/대기/해석을 쓰는지’를 보면 다음 썸이 조금 덜 헷갈릴 수 있어요.",
       "en": "You may not fit one label.\nSometimes you push-pull, go direct, wait, or overthink—often in the same situationship.\nFuzzy endings usually mix timing, pace, signals, and interpretation.\nNoticing which mode you default to under stress can make the next connection clearer."
     },
-    "image": "/images/quiz/ambiguous-situationship-end/start.webp",
+    "image": "/images/quiz/ambiguous-situationship-end/thumb.webp",
     "share": {
       "title": {
         "ko": "나의 썸 패턴은 복합형",
@@ -238,7 +238,7 @@
         "ko": "네 가지 성향이 함께 나타날 수 있어요",
         "en": "Multiple patterns can show up at once"
       },
-      "image": "/images/quiz/ambiguous-situationship-end/start.webp"
+      "image": "/images/quiz/ambiguous-situationship-end/thumb.webp"
     }
   },
   "questions": [

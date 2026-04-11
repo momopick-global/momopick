@@ -56,9 +56,8 @@ export default function KoLoveHubPage() {
               <h1 id="hub-love-title">💌 썸·연애 테스트</h1>
             </div>
             <p className="sec-lead">
-              홈 메인에는 같은 조건(콘텐츠 JSON에서 <strong>category: love</strong>) 중 우선순위 상위 4개만
-              노출됩니다. 여기서는 해당 카테고리 테스트를 <strong>전체</strong> 볼 수 있어요. 순서는 카드
-              우선순위(높을수록 앞)입니다.
+              홈 메인 썸·연애 섹션과 같은 목록입니다. 콘텐츠 JSON에서 <strong>category: love</strong>인 테스트를
+              카드 우선순위(높을수록 앞)로 정렬해 두었어요.
             </p>
             <div className="tile-grid">
               {loveAll.map((item, i) => (
@@ -69,7 +68,7 @@ export default function KoLoveHubPage() {
                       src={item.image || "/images/banners/tile-love-01.webp"}
                       alt=""
                       width={1536}
-                      height={1024}
+                      height={1920}
                       loading={i < 6 ? "eager" : "lazy"}
                       decoding="async"
                     />

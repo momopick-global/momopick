@@ -16,6 +16,10 @@ export type QuizUiStrings = {
   removeFromVault: string;
   /** 1-based 현재 문항 번호 */
   formatQuestionStep: (current: number, total: number) => string;
+  /** 인트로 화면 — 첫 질문 전 안내 문단 */
+  quizIntroBody: (questionTotal: number) => string;
+  /** 인트로 — 테스트 시작 버튼 */
+  startTest: string;
   shareWithFriends: string;
   copyLink: string;
   copied: string;
@@ -38,6 +42,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     savedToVault: "보관함에 저장했어요",
     removeFromVault: "삭제",
     formatQuestionStep: (c, t) => `질문 ${c} / ${t}`,
+    quizIntroBody: (t) =>
+      `총 ${t}문항이에요. 가장 와닿는 답을 고르면 바로 결과를 볼 수 있어요.`,
+    startTest: "테스트 시작하기",
     shareWithFriends: "친구에게 공유하기",
     copyLink: "링크 복사",
     copied: "복사됨",
@@ -56,6 +63,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     savedToVault: "Saved to your vault",
     removeFromVault: "Remove",
     formatQuestionStep: (c, t) => `Question ${c} / ${t}`,
+    quizIntroBody: (t) =>
+      `${t} quick questions. Pick what feels most like you — your result is just ahead.`,
+    startTest: "Start the test",
     shareWithFriends: "Share with friends",
     copyLink: "Copy link",
     copied: "Copied",
@@ -74,6 +84,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     savedToVault: "保存しました",
     removeFromVault: "削除",
     formatQuestionStep: (c, t) => `質問 ${c} / ${t}`,
+    quizIntroBody: (t) =>
+      `全${t}問です。しっくりくる方を選ぶと、すぐ結果が見られます。`,
+    startTest: "テストを始める",
     shareWithFriends: "友だちにシェア",
     copyLink: "リンクをコピー",
     copied: "コピーしました",
@@ -92,6 +105,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     savedToVault: "Guardado",
     removeFromVault: "Eliminar",
     formatQuestionStep: (c, t) => `Pregunta ${c} / ${t}`,
+    quizIntroBody: (t) =>
+      `${t} preguntas cortas. Elige lo que más te represente y verás el resultado al instante.`,
+    startTest: "Empezar el test",
     shareWithFriends: "Compartir con amigos",
     copyLink: "Copiar enlace",
     copied: "Copiado",
@@ -110,6 +126,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     savedToVault: "Salvo",
     removeFromVault: "Remover",
     formatQuestionStep: (c, t) => `Pergunta ${c} / ${t}`,
+    quizIntroBody: (t) =>
+      `São ${t} perguntas rápidas. Escolha o que mais combina com você e veja o resultado na hora.`,
+    startTest: "Começar o teste",
     shareWithFriends: "Compartilhar com amigos",
     copyLink: "Copiar link",
     copied: "Copiado",
@@ -128,6 +147,9 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     savedToVault: "Tersimpan",
     removeFromVault: "Hapus",
     formatQuestionStep: (c, t) => `Pertanyaan ${c} / ${t}`,
+    quizIntroBody: (t) =>
+      `Ada ${t} pertanyaan singkat. Pilih yang paling pas untukmu — hasilnya langsung muncul.`,
+    startTest: "Mulai tes",
     shareWithFriends: "Bagikan ke teman",
     copyLink: "Salin tautan",
     copied: "Disalin",

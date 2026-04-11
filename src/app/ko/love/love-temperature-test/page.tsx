@@ -97,7 +97,7 @@ export default function LoveTemperatureTestPage() {
                   src={quizAssetUrl(pack.images.thumbnail, pageLocale)}
                   alt=""
                   width={480}
-                  height={320}
+                  height={600}
                   loading="eager"
                   decoding="async"
                 />

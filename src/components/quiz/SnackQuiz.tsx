@@ -56,6 +56,7 @@ export function SnackQuiz({
   const [answerBusy, setAnswerBusy] = useState(false);
   const [pickingKey, setPickingKey] = useState<string | null>(null);
   const [fillActive, setFillActive] = useState(false);
+  const [quizStarted, setQuizStarted] = useState(false);
   const answerTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const total = questions.length;
@@ -80,6 +81,19 @@ export function SnackQuiz({
   }, [definition.images?.thumbnail, definition.images?.og, definition.card?.image, locale]);
 
   const urlSearch = useHydratedLocationSearch();
+
+  const effectiveSearch = useMemo(() => {
+    const u = urlSearch?.trim() ?? "";
+    if (u.length > 1) return u.startsWith("?") ? u : `?${u}`;
+    return getBrowserQuizSearchString();
+  }, [urlSearch]);
+
+  const hasSharedOutcomeInUrl = useMemo(
+    () => parseSnackOutcomeSearch(effectiveSearch, resultKeys) != null,
+    [effectiveSearch, resultKeys],
+  );
+
+  const showIntro = !done && !quizStarted && !hasSharedOutcomeInUrl;
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
@@ -149,6 +163,7 @@ export function SnackQuiz({
     setStep(0);
     setCounts(emptyCounts(resultKeys));
     setDone(false);
+    setQuizStarted(false);
     setAnswerBusy(false);
     setPickingKey(null);
     setFillActive(false);
@@ -211,7 +226,7 @@ export function SnackQuiz({
                 src={resultImage}
                 alt=""
                 width={480}
-                height={320}
+                height={600}
                 loading="eager"
                 decoding="async"
               />
@@ -275,6 +290,21 @@ export function SnackQuiz({
     return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
   })();
 
+  if (showIntro) {
+    return (
+      <div className="quiz-shell quiz-shell--intro">
+        <div className="quiz-intro">
+          <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
+          <div className="quiz-intro-actions">
+            <button type="button" className="btn primary" onClick={() => setQuizStarted(true)}>
+              {ui.startTest}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="quiz-shell">
       {/* 로딩바 애니메이션 — 추후 활성화 시 주석 해제
@@ -289,7 +319,7 @@ export function SnackQuiz({
             src={quizAssetUrl(q.image, locale)}
             alt=""
             width={480}
-            height={320}
+            height={600}
             loading="lazy"
             decoding="async"
           />

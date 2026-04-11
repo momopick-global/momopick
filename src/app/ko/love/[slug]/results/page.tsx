@@ -103,7 +103,7 @@ export default async function KoLoveQuizAllResultsPage({
                           src={img}
                           alt=""
                           width={480}
-                          height={320}
+                          height={600}
                           loading="lazy"
                           decoding="async"
                         />
@@ -130,7 +130,7 @@ export default async function KoLoveQuizAllResultsPage({
                         src={quizAssetUrl(pack.blend.image, pageLocale)}
                         alt=""
                         width={480}
-                        height={320}
+                        height={600}
                         loading="lazy"
                         decoding="async"
                       />

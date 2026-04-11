@@ -12,10 +12,8 @@ const year = new Date().getFullYear();
 
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
-/** 임시: 지금 뜨는 테스트 = love 우선순위 상위 2 (썸·연애 타일과 동일 소스) */
+/** 지금 뜨는 테스트 가로 레일 = 썸·연애 우선순위 상위 (홈 레일용) */
 const homeRailKo = loveSectionQuizzes.slice(0, 2);
-/** 썸·연애 섹션 타일 개수 (우선순위 상위) */
-const loveSectionTiles = loveSectionQuizzes.slice(0, 2);
 
 export default function KoHomePage() {
   return (
@@ -63,7 +61,7 @@ export default function KoHomePage() {
                     src={item.image || "/images/banners/rail-01.webp"}
                     alt=""
                     width={480}
-                    height={320}
+                    height={600}
                     loading={i < 2 ? "eager" : "lazy"}
                     decoding="async"
                   />
@@ -84,11 +82,11 @@ export default function KoHomePage() {
               </Link>
             </div>
             <p className="sec-lead">
-              연애 카테고리(콘텐츠 JSON의 love) 테스트 중 우선순위 상위 2개만 보여 드려요. 나머지는 상단{" "}
-              <Link href="/ko/love/">전체보기</Link>에서 모아 볼 수 있어요.
+              썸·연애 카테고리 테스트를 우선순위가 높은 순으로 모두 모아 두었어요.{" "}
+              <Link href="/ko/love/">썸·연애 허브</Link>와 같은 목록입니다.
             </p>
             <div className="tile-grid">
-              {loveSectionTiles.map((item, i) => (
+              {loveSectionQuizzes.map((item, i) => (
                 <Link key={item.href} className="tile tile--love" href={item.href}>
                   <div className="thumb">
                     {i === 0 ? <span className="badge">HOT</span> : null}
@@ -96,8 +94,8 @@ export default function KoHomePage() {
                       src={item.image || "/images/banners/tile-love-01.webp"}
                       alt=""
                       width={1536}
-                      height={1024}
-                      loading={i < 2 ? "eager" : "lazy"}
+                      height={1920}
+                      loading={i < 6 ? "eager" : "lazy"}
                       decoding="async"
                     />
                   </div>
@@ -128,7 +126,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-mind-01.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -144,7 +142,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-mind-02.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -160,7 +158,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-mind-03.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -176,7 +174,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-mind-04.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -207,7 +205,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-snack-01.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -223,7 +221,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-snack-02.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -239,7 +237,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-snack-03.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
@@ -256,7 +254,7 @@ export default function KoHomePage() {
                     src="/images/banners/tile-snack-04.webp"
                     alt=""
                     width={1536}
-                    height={1024}
+                    height={1920}
                     loading="lazy"
                     decoding="async"
                   />
