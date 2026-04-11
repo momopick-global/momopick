@@ -62,6 +62,13 @@ export function PercentageQuiz({
     [definition.images?.og, locale],
   );
 
+  /** 진행 중 공유 — 카카오·OG용 퀴즈 대표 커버(thumbnail 우선) */
+  const quizShareCoverUrl = useMemo(() => {
+    const raw =
+      definition.images?.thumbnail ?? definition.images?.og ?? definition.card?.image;
+    return raw ? quizAssetUrl(raw, locale) : undefined;
+  }, [definition.images?.thumbnail, definition.images?.og, definition.card?.image, locale]);
+
   const urlSearch = useHydratedLocationSearch();
 
   useLayoutEffect(() => {
@@ -340,7 +347,11 @@ export function PercentageQuiz({
         })}
       </ul>
       <div className="quiz-share-wrap quiz-share-wrap--during">
-        <QuizResultShare ui={ui} shareText={shareTextInProgress} />
+        <QuizResultShare
+          ui={ui}
+          shareText={shareTextInProgress}
+          shareImageUrl={quizShareCoverUrl}
+        />
       </div>
     </div>
   );
