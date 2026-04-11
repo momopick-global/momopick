@@ -99,7 +99,10 @@ export function QuizResultShare({
   kakaoQuizResultShare = false,
 }: Props) {
   const [pageUrl, setPageUrl] = useState("");
-  const [copied, setCopied] = useState(false);
+  /** 링크 복사 버튼 전용 */
+  const [linkCopiedNotice, setLinkCopiedNotice] = useState(false);
+  /** 카카오 공유 폴백(클립보드) 전용 — 「복사됨」과 혼동 방지 */
+  const [kakaoFallbackNotice, setKakaoFallbackNotice] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -116,10 +119,11 @@ export function QuizResultShare({
 
   const handleCopy = useCallback(() => {
     if (!resolvedPageUrl) return;
+    setKakaoFallbackNotice(false);
     void navigator.clipboard.writeText(resolvedPageUrl).then(
       () => {
-        setCopied(true);
-        window.setTimeout(() => setCopied(false), 2000);
+        setLinkCopiedNotice(true);
+        window.setTimeout(() => setLinkCopiedNotice(false), 2000);
       },
       () => window.prompt("아래 링크를 복사해 주세요", resolvedPageUrl),
     );
@@ -127,6 +131,8 @@ export function QuizResultShare({
 
   const openKakao = useCallback(() => {
     if (typeof window === "undefined" || !canUseShareLinks) return;
+    setLinkCopiedNotice(false);
+    setKakaoFallbackNotice(false);
     /** 마운트 시점 URL이 아니라 클릭 시점 — 클라이언트 전환·쿼리 반영 후에도 맞음 */
     const hrefAtClick = window.location.href;
     const hrefForResultFeed = quizResultUrl?.trim()
@@ -134,10 +140,11 @@ export function QuizResultShare({
       : hrefAtClick;
 
     const fallbackCopy = () => {
+      setLinkCopiedNotice(false);
       void navigator.clipboard.writeText(hrefForResultFeed).then(
         () => {
-          setCopied(true);
-          window.setTimeout(() => setCopied(false), 2000);
+          setKakaoFallbackNotice(true);
+          window.setTimeout(() => setKakaoFallbackNotice(false), 3500);
         },
         () => {
           console.warn("[Momopick] clipboard write failed, fallback prompt");
@@ -317,14 +324,7 @@ export function QuizResultShare({
       console.error("[Momopick][Kakao] openKakao unexpected error", e);
       fallbackCopy();
     }
-  }, [
-    canUseShareLinks,
-    shareText,
-    shareImageUrl,
-    kakaoQuizResultShare,
-    quizStartUrl,
-    quizResultUrl,
-  ]);
+  }, [canUseShareLinks, shareText, shareImageUrl, kakaoQuizResultShare, quizStartUrl, quizResultUrl]);
 
   const openFacebook = useCallback(() => {
     if (!resolvedPageUrl) return;
@@ -349,7 +349,7 @@ export function QuizResultShare({
           onClick={handleCopy}
           disabled={!canUseShareLinks}
           title={ui.copyLink}
-          aria-label={copied ? ui.copied : ui.copyLink}
+          aria-label={linkCopiedNotice ? ui.copied : ui.copyLink}
         >
           <span className="quiz-share-btn-inner quiz-share-btn-inner--link">
             <IconLink />
@@ -392,9 +392,14 @@ export function QuizResultShare({
           </span>
         </button>
       </div>
-      {copied ? (
+      {linkCopiedNotice ? (
         <p className="quiz-share-hint" role="status">
           {ui.copied}
+        </p>
+      ) : null}
+      {kakaoFallbackNotice ? (
+        <p className="quiz-share-hint" role="status">
+          {ui.kakaoShareFallbackHint}
         </p>
       ) : null}
     </div>

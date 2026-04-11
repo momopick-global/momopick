@@ -19,6 +19,8 @@ export type QuizUiStrings = {
   shareWithFriends: string;
   copyLink: string;
   copied: string;
+  /** 카카오 공유 실패·미설정 시 링크 복사 폴백 안내(「복사됨」과 구분) */
+  kakaoShareFallbackHint: string;
   shareKakao: string;
   shareFacebook: string;
   shareX: string;
@@ -35,6 +37,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareWithFriends: "친구에게 공유하기",
     copyLink: "링크 복사",
     copied: "복사됨",
+    kakaoShareFallbackHint: "카카오를 열 수 없어 링크를 복사했어요",
     shareKakao: "카카오로 공유",
     shareFacebook: "페이스북으로 공유",
     shareX: "X로 공유",
@@ -49,6 +52,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareWithFriends: "Share with friends",
     copyLink: "Copy link",
     copied: "Copied",
+    kakaoShareFallbackHint: "Kakao didn’t open — we copied the link",
     shareKakao: "Share on Kakao",
     shareFacebook: "Share on Facebook",
     shareX: "Share on X",
@@ -63,6 +67,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareWithFriends: "友だちにシェア",
     copyLink: "リンクをコピー",
     copied: "コピーしました",
+    kakaoShareFallbackHint: "カカオを開けなかったため、リンクをコピーしました",
     shareKakao: "カカオでシェア",
     shareFacebook: "Facebookでシェア",
     shareX: "Xでシェア",
@@ -77,6 +82,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareWithFriends: "Compartir con amigos",
     copyLink: "Copiar enlace",
     copied: "Copiado",
+    kakaoShareFallbackHint: "No se abrió Kakao; copiamos el enlace",
     shareKakao: "Compartir en Kakao",
     shareFacebook: "Compartir en Facebook",
     shareX: "Compartir en X",
@@ -91,6 +97,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareWithFriends: "Compartilhar com amigos",
     copyLink: "Copiar link",
     copied: "Copiado",
+    kakaoShareFallbackHint: "O Kakao não abriu — copiamos o link",
     shareKakao: "Compartilhar no Kakao",
     shareFacebook: "Compartilhar no Facebook",
     shareX: "Compartilhar no X",
@@ -105,6 +112,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareWithFriends: "Bagikan ke teman",
     copyLink: "Salin tautan",
     copied: "Disalin",
+    kakaoShareFallbackHint: "Kakao tidak terbuka — tautan sudah disalin",
     shareKakao: "Bagikan ke Kakao",
     shareFacebook: "Bagikan ke Facebook",
     shareX: "Bagikan ke X",
