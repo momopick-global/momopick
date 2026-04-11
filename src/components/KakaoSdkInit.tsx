@@ -22,7 +22,10 @@ export function KakaoSdkInit() {
       if (!Kakao.isInitialized()) {
         Kakao.init(KAKAO_JS_KEY.trim());
       }
-      window.dispatchEvent(new CustomEvent("kakao-sdk-ready"));
+      // 다음 태스크로 미루어 KakaoAuthProvider 의 리스너가 먼저 붙은 뒤 알림 (이벤트 유실 방지)
+      window.setTimeout(() => {
+        window.dispatchEvent(new CustomEvent("kakao-sdk-ready"));
+      }, 0);
     } catch (e) {
       console.warn("[Kakao] init failed", e);
     }
@@ -36,7 +39,7 @@ export function KakaoSdkInit() {
     <Script
       id="kakao-js-sdk"
       src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"
-      strategy="afterInteractive"
+      strategy="beforeInteractive"
       onLoad={onScriptLoad}
     />
   );

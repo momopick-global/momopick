@@ -12,6 +12,9 @@ import {
 /** 퀴즈 결과 전용 카카오 커스텀 템플릿 ID (버튼 2개) */
 const KAKAO_QUIZ_RESULT_TEMPLATE_ID = 131878;
 
+/** SDK 스크립트는 로드됐는데 `onLoad` 직전에 클릭하는 경우 동기 `init` 보완 (제스처 유지) */
+const NEXT_KAKAO_JS_KEY = (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim();
+
 type Props = {
   ui: QuizUiStrings;
   /** SNS 미리보기·트윗에 쓸 짧은 문구 */
@@ -98,10 +101,13 @@ export function QuizResultShare({
 
   const handleCopy = useCallback(() => {
     if (!pageUrl) return;
-    void navigator.clipboard.writeText(pageUrl).then(() => {
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    });
+    void navigator.clipboard.writeText(pageUrl).then(
+      () => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      },
+      () => window.prompt("아래 링크를 복사해 주세요", pageUrl),
+    );
   }, [pageUrl]);
 
   const openKakao = useCallback(() => {
@@ -126,9 +132,26 @@ export function QuizResultShare({
      */
     try {
       const Kakao = window.Kakao;
-      if (!Kakao?.isInitialized?.()) {
+      if (!NEXT_KAKAO_JS_KEY) {
+        console.warn("[Momopick][Kakao] NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 없음 — 빌드·Pages 환경변수 확인");
+        fallbackCopy();
+        return;
+      }
+      if (!Kakao) {
+        console.warn("[Momopick][Kakao] 스크립트 미로드 — 네트워크·차단기 확인 후 다시 시도");
+        fallbackCopy();
+        return;
+      }
+      if (!Kakao.isInitialized()) {
+        try {
+          Kakao.init(NEXT_KAKAO_JS_KEY);
+        } catch (e) {
+          console.warn("[Kakao] init(공유 클릭 시점) 실패", e);
+        }
+      }
+      if (!Kakao.isInitialized()) {
         console.warn(
-          "[Momopick][Kakao] SDK not ready yet — 잠시 후 다시 누르거나 NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 확인",
+          "[Momopick][Kakao] init 후에도 미준비 — 잠시 후 다시 누르거나 카카오 앱 키·도메인 등록 확인",
         );
         fallbackCopy();
         return;
