@@ -37,8 +37,21 @@ export function normalizeUrlForKakao(url: string): string {
   }
 }
 
+/** `output: "export"` + `trailingSlash: true` — 페이지 URL은 보통 끝 `/` 필요 */
+function ensureTrailingSlashPathNoLeading(pathWithQueryHash: string): string {
+  const q = pathWithQueryHash.indexOf("?");
+  const h = pathWithQueryHash.indexOf("#");
+  const cut = Math.min(q === -1 ? Infinity : q, h === -1 ? Infinity : h);
+  const pathPart = cut === Infinity ? pathWithQueryHash : pathWithQueryHash.slice(0, cut);
+  const rest = cut === Infinity ? "" : pathWithQueryHash.slice(cut);
+  if (!pathPart || pathPart.endsWith("/")) return pathWithQueryHash;
+  const lastSeg = pathPart.split("/").filter(Boolean).pop() ?? "";
+  if (lastSeg.includes(".")) return pathWithQueryHash;
+  return `${pathPart}/${rest}`;
+}
+
 /**
- * 카카오 메시지 템플릿 **경로 변수**용 — **선행 `/` 없음** (`ko/love/...` + 쿼리·해시).
+ * 카카오 메시지 템플릿 **경로 변수**용 — **선행 `/` 없음** (`ko/love/.../` + 쿼리·해시).
  * 콘솔에서 `https://momopick.com/${RESULT_PATH}` 또는 경로 `/${RESULT_PATH}` 처럼 쓸 때 슬래시가 겹치지 않게 함.
  */
 export function pathForKakaoMessageTemplate(absoluteUrl: string): string {
@@ -46,9 +59,54 @@ export function pathForKakaoMessageTemplate(absoluteUrl: string): string {
     const u = new URL(absoluteUrl);
     let p = u.pathname || "/";
     if (p.startsWith("/")) p = p.slice(1);
-    return `${p}${u.search}${u.hash}`;
+    return ensureTrailingSlashPathNoLeading(`${p}${u.search}${u.hash}`);
   } catch {
     return "";
+  }
+}
+
+/**
+ * 커스텀 템플릿에서 `RESULT_PATH` 안에 `?쿼리`를 넣으면 일부 환경에서 쿼리가 잘리고
+ * 「결과 보기」가 퀴즈 시작 URL과 같아지는 경우가 있음 → 경로와 접미사로 분리.
+ *
+ * - `path`: 선행 `/` 없음 (`ko/love/slug/`)
+ * - `suffix`: 쿼리가 있으면 `?r=…` 형태, 없으면 `""` — 템플릿: `https://momopick.com/${RESULT_PATH}${RESULT_SUFFIX}`
+ */
+export function kakaoTemplatePathAndSuffix(absoluteUrl: string): { path: string; suffix: string } {
+  try {
+    const u = new URL(absoluteUrl);
+    let p = u.pathname || "/";
+    if (p.startsWith("/")) p = p.slice(1);
+    p = ensureTrailingSlashPathNoLeading(p);
+    const searchPart = u.search && u.search.startsWith("?") ? u.search : "";
+    const hashPart = u.hash && u.hash.startsWith("#") ? u.hash : "";
+    return { path: p, suffix: `${searchPart}${hashPart}` };
+  } catch {
+    return { path: "", suffix: "" };
+  }
+}
+
+/** `/ko`, `/en` 처럼 로케일 루트만 있으면 퀴즈 링크로 쓰기 부적합 */
+export function isKakaoPathLocaleHubOnly(pathWithoutLeadingSlash: string): boolean {
+  const pathOnly = pathWithoutLeadingSlash.split(/[?#]/)[0] ?? "";
+  const segs = pathOnly.replace(/\/+$/, "").split("/").filter(Boolean);
+  if (segs.length === 0) return true;
+  if (segs.length === 1 && /^(ko|en|ja|es|zh)$/i.test(segs[0] ?? "")) return true;
+  return false;
+}
+
+/** 카카오 Web 도메인 등록이 보통 apex 기준 — `www` 를 제거 */
+export function normalizeMomopickHostForShare(url: string): string {
+  const abs = absoluteHttpsUrlForKakao(url);
+  try {
+    const u = new URL(abs);
+    if (u.hostname === "www.momopick.com") {
+      u.hostname = "momopick.com";
+      return u.href;
+    }
+    return abs;
+  } catch {
+    return abs;
   }
 }
 

@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
+import { buildSnackOutcomeQuery, parseSnackOutcomeSearch } from "@/lib/quizOutcomeUrl";
+import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultShare } from "./QuizResultShare";
@@ -38,6 +41,7 @@ export function SnackQuiz({
   /** 고정 UI(다시 하기·질문 n/t) 언어. 라우트 세그먼트와 맞출 것 */
   locale?: QuizUiLocale;
 }) {
+  const router = useRouter();
   const ui = getQuizUiStrings(locale);
   const { resultKeys, resultOrder, results, blend, questions, footnote } = definition;
 
@@ -63,6 +67,17 @@ export function SnackQuiz({
   }, [definition.category, definition.slug, definition.id, locale]);
 
   const resultsGalleryHref = useMemo(() => `${quizPageHref}results/`, [quizPageHref]);
+
+  const urlSearch = useHydratedLocationSearch();
+
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+    const restored = parseSnackOutcomeSearch(urlSearch, resultKeys);
+    if (restored) {
+      setCounts(restored);
+      setDone(true);
+    }
+  }, [resultKeys, urlSearch]);
 
   useEffect(() => {
     return () => {
@@ -109,7 +124,30 @@ export function SnackQuiz({
     setAnswerBusy(false);
     setPickingKey(null);
     setFillActive(false);
-  }, [resultKeys]);
+    router.replace(quizPageHref);
+  }, [resultKeys, quizPageHref, router]);
+
+  const shareOutcomeQuery = useMemo(() => {
+    if (!done) return "";
+    const maxScore = Math.max(0, ...resultKeys.map((k) => counts[k] ?? 0));
+    const leaders = orderLeaders(resultKeys, resultOrder, counts, maxScore);
+    const isBlendOutcome = leaders.length > 1;
+    const onlyKey = !isBlendOutcome && leaders[0] ? leaders[0] : null;
+    return buildSnackOutcomeQuery(isBlendOutcome, leaders, onlyKey);
+  }, [done, counts, resultKeys, resultOrder]);
+
+  const quizResultUrl = useMemo(() => {
+    if (!shareOutcomeQuery) return undefined;
+    return `${quizPageHref}?${shareOutcomeQuery}`;
+  }, [quizPageHref, shareOutcomeQuery]);
+
+  useEffect(() => {
+    if (!done || typeof window === "undefined" || !shareOutcomeQuery) return;
+    const want = `?${shareOutcomeQuery}`;
+    if (window.location.search !== want) {
+      window.history.replaceState(null, "", `${quizPageHref}?${shareOutcomeQuery}`);
+    }
+  }, [done, quizPageHref, shareOutcomeQuery]);
 
   if (done) {
     const maxScore = Math.max(0, ...resultKeys.map((k) => counts[k] ?? 0));
@@ -168,6 +206,7 @@ export function SnackQuiz({
             shareText={shareText}
             shareImageUrl={resultImage}
             quizStartUrl={quizPageHref}
+            quizResultUrl={quizResultUrl}
             kakaoQuizResultShare
           />
           <div className="quiz-result-actions">

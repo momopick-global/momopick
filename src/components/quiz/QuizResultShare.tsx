@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { QuizUiStrings } from "@/i18n/quiz-ui";
 import {
-  absoluteHttpsUrlForKakao,
   getKakaoFeedShareUrls,
+  isKakaoPathLocaleHubOnly,
+  kakaoTemplatePathAndSuffix,
+  normalizeMomopickHostForShare,
   parseShareTextForKakaoFeed,
   pathForKakaoMessageTemplate,
 } from "@/lib/kakaoShareFeed";
@@ -26,6 +28,11 @@ type Props = {
    * 없으면 현재 페이지 URL로 fallback.
    */
   quizStartUrl?: string;
+  /**
+   * 결과 딥링크(쿼리 포함 가능). 있으면 복사·SNS·카카오「결과 보기」·피드 본문 링크에 우선 사용.
+   * 예: `/ko/love/slug/?r=typeA` — `quizStartUrl`은 쿼리 없는 시작 페이지 권장.
+   */
+  quizResultUrl?: string;
   /**
    * true: 퀴즈 **결과** 화면 — 커스텀 템플릿(결과 보기·테스트 하기 2버튼).
    * false/생략: 문항 진행 중 등 — 기본 피드(현재 페이지 1링크, 추가 버튼 없음).
@@ -87,7 +94,8 @@ export function QuizResultShare({
   ui,
   shareText,
   shareImageUrl,
-  quizStartUrl: _quizStartUrl,
+  quizStartUrl,
+  quizResultUrl,
   kakaoQuizResultShare = false,
 }: Props) {
   const [pageUrl, setPageUrl] = useState("");
@@ -99,29 +107,41 @@ export function QuizResultShare({
     }
   }, []);
 
+  const resolvedPageUrl = useMemo(() => {
+    if (quizResultUrl?.trim()) return normalizeMomopickHostForShare(quizResultUrl.trim());
+    return pageUrl;
+  }, [quizResultUrl, pageUrl]);
+
+  const canUseShareLinks = Boolean(pageUrl || quizResultUrl?.trim());
+
   const handleCopy = useCallback(() => {
-    if (!pageUrl) return;
-    void navigator.clipboard.writeText(pageUrl).then(
+    if (!resolvedPageUrl) return;
+    void navigator.clipboard.writeText(resolvedPageUrl).then(
       () => {
         setCopied(true);
         window.setTimeout(() => setCopied(false), 2000);
       },
-      () => window.prompt("아래 링크를 복사해 주세요", pageUrl),
+      () => window.prompt("아래 링크를 복사해 주세요", resolvedPageUrl),
     );
-  }, [pageUrl]);
+  }, [resolvedPageUrl]);
 
   const openKakao = useCallback(() => {
-    if (!pageUrl || typeof window === "undefined") return;
+    if (typeof window === "undefined" || !canUseShareLinks) return;
+    /** 마운트 시점 URL이 아니라 클릭 시점 — 클라이언트 전환·쿼리 반영 후에도 맞음 */
+    const hrefAtClick = window.location.href;
+    const hrefForResultFeed = quizResultUrl?.trim()
+      ? normalizeMomopickHostForShare(quizResultUrl.trim())
+      : hrefAtClick;
 
     const fallbackCopy = () => {
-      void navigator.clipboard.writeText(pageUrl).then(
+      void navigator.clipboard.writeText(hrefForResultFeed).then(
         () => {
           setCopied(true);
           window.setTimeout(() => setCopied(false), 2000);
         },
         () => {
           console.warn("[Momopick] clipboard write failed, fallback prompt");
-          window.prompt("아래 링크를 복사해 주세요", pageUrl);
+          window.prompt("아래 링크를 복사해 주세요", hrefForResultFeed);
         },
       );
     };
@@ -158,10 +178,10 @@ export function QuizResultShare({
       }
 
       const { title, description } = parseShareTextForKakaoFeed(shareText);
-      const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(pageUrl, shareImageUrl);
-      const resultMobile = absoluteHttpsUrlForKakao(mobileWebUrl);
-      const resultWeb = absoluteHttpsUrlForKakao(webUrl);
-      const imageForKakao = absoluteHttpsUrlForKakao(imageUrl);
+      const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(hrefForResultFeed, shareImageUrl);
+      const resultMobile = normalizeMomopickHostForShare(mobileWebUrl);
+      const resultWeb = normalizeMomopickHostForShare(webUrl);
+      const imageForKakao = normalizeMomopickHostForShare(imageUrl);
       const resultLink = { mobileWebUrl: resultMobile, webUrl: resultWeb };
 
       /** 문항 진행 중 등: 기본 피드(본문 링크만, 하단 버튼 없음) */
@@ -171,7 +191,11 @@ export function QuizResultShare({
           return;
         }
         try {
-          console.info("[Momopick][Kakao] Share.sendDefault(feed, simple)", { pageUrl, resultMobile, imageForKakao });
+          console.info("[Momopick][Kakao] Share.sendDefault(feed, simple)", {
+            hrefForResultFeed,
+            resultMobile,
+            imageForKakao,
+          });
           const result = Kakao.Share.sendDefault({
             objectType: "feed",
             content: {
@@ -195,8 +219,18 @@ export function QuizResultShare({
       }
 
       const resultPath = pathForKakaoMessageTemplate(resultMobile);
-      const startHref = resultMobile;
-      const startPath = resultPath;
+      const rs = kakaoTemplatePathAndSuffix(resultMobile);
+      let startHref = quizStartUrl?.trim()
+        ? normalizeMomopickHostForShare(quizStartUrl)
+        : resultMobile;
+      let startPath = pathForKakaoMessageTemplate(startHref);
+      if (isKakaoPathLocaleHubOnly(startPath)) {
+        startHref = resultMobile;
+        startPath = resultPath;
+      }
+      const ss = kakaoTemplatePathAndSuffix(startHref);
+      const resultPathFull = `${rs.path}${rs.suffix}`;
+      const startPathFull = `${ss.path}${ss.suffix}`;
       const startLink = { mobileWebUrl: startHref, webUrl: startHref };
 
       const sendDefaultResultDual = () => {
@@ -205,7 +239,11 @@ export function QuizResultShare({
           return;
         }
         try {
-          console.info("[Momopick][Kakao] Share.sendDefault(feed, result fallback)", { pageUrl, resultMobile, startHref });
+          console.info("[Momopick][Kakao] Share.sendDefault(feed, result fallback)", {
+            hrefForResultFeed,
+            resultMobile,
+            startHref,
+          });
           const result = Kakao.Share.sendDefault({
             objectType: "feed",
             content: {
@@ -239,12 +277,14 @@ export function QuizResultShare({
       try {
         console.info("[Momopick][Kakao] Share.sendCustom(result)", {
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
-          pageUrl,
+          hrefForResultFeed,
           resultMobile,
-          resultPath,
+          resultPathFull,
+          rs,
           imageForKakao,
           startHref,
-          startPath,
+          startPathFull,
+          ss,
         });
         const result = Kakao.Share.sendCustom({
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
@@ -252,12 +292,15 @@ export function QuizResultShare({
             TITLE: title || "모모픽",
             DESC: description || "재미로 보는 심리 테스트",
             IMAGE_URL: imageForKakao,
-            RESULT_URL: resultPath,
-            RESULT_WEB_URL: resultPath,
-            RESULT_PATH: resultPath,
-            START_URL: startPath,
-            START_WEB_URL: startPath,
-            START_PATH: startPath,
+            /** 레거시·단일 변수용: 경로+쿼리 한 덩어리(쿼리가 잘리는 템플릿은 RESULT_PATH+RESULT_SUFFIX 권장) */
+            RESULT_URL: resultPathFull,
+            RESULT_WEB_URL: resultPathFull,
+            RESULT_PATH: rs.path,
+            RESULT_SUFFIX: rs.suffix,
+            START_URL: startPathFull,
+            START_WEB_URL: startPathFull,
+            START_PATH: ss.path,
+            START_SUFFIX: ss.suffix,
           },
         });
         if (result && typeof (result as Promise<void>).catch === "function") {
@@ -274,20 +317,27 @@ export function QuizResultShare({
       console.error("[Momopick][Kakao] openKakao unexpected error", e);
       fallbackCopy();
     }
-  }, [pageUrl, shareText, shareImageUrl, kakaoQuizResultShare]);
+  }, [
+    canUseShareLinks,
+    shareText,
+    shareImageUrl,
+    kakaoQuizResultShare,
+    quizStartUrl,
+    quizResultUrl,
+  ]);
 
   const openFacebook = useCallback(() => {
-    if (!pageUrl) return;
-    const u = encodeURIComponent(pageUrl);
+    if (!resolvedPageUrl) return;
+    const u = encodeURIComponent(resolvedPageUrl);
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${u}`, "_blank", "noopener,noreferrer");
-  }, [pageUrl]);
+  }, [resolvedPageUrl]);
 
   const openX = useCallback(() => {
-    if (!pageUrl) return;
-    const u = encodeURIComponent(pageUrl);
+    if (!resolvedPageUrl) return;
+    const u = encodeURIComponent(resolvedPageUrl);
     const t = encodeURIComponent(shareText);
     window.open(`https://twitter.com/intent/tweet?text=${t}&url=${u}`, "_blank", "noopener,noreferrer");
-  }, [pageUrl, shareText]);
+  }, [resolvedPageUrl, shareText]);
 
   return (
     <div className="quiz-share">
@@ -297,7 +347,7 @@ export function QuizResultShare({
           type="button"
           className="quiz-share-btn"
           onClick={handleCopy}
-          disabled={!pageUrl}
+          disabled={!canUseShareLinks}
           title={ui.copyLink}
           aria-label={copied ? ui.copied : ui.copyLink}
         >
@@ -309,7 +359,7 @@ export function QuizResultShare({
           type="button"
           className="quiz-share-btn"
           onClick={openKakao}
-          disabled={!pageUrl}
+          disabled={!canUseShareLinks}
           title={ui.shareKakao}
           aria-label={ui.shareKakao}
         >
@@ -321,7 +371,7 @@ export function QuizResultShare({
           type="button"
           className="quiz-share-btn"
           onClick={openFacebook}
-          disabled={!pageUrl}
+          disabled={!canUseShareLinks}
           title={ui.shareFacebook}
           aria-label={ui.shareFacebook}
         >
@@ -333,7 +383,7 @@ export function QuizResultShare({
           type="button"
           className="quiz-share-btn"
           onClick={openX}
-          disabled={!pageUrl}
+          disabled={!canUseShareLinks}
           title={ui.shareX}
           aria-label={ui.shareX}
         >

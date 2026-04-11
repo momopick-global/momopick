@@ -1,7 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
+import {
+  buildPercentageOutcomeQuery,
+  parsePercentageOutcomePercent,
+  totalScoreForTargetPercent,
+} from "@/lib/quizOutcomeUrl";
+import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultShare } from "./QuizResultShare";
@@ -23,6 +30,7 @@ export function PercentageQuiz({
   definition: PercentageQuizDefinition;
   locale?: QuizUiLocale;
 }) {
+  const router = useRouter();
   const ui = getQuizUiStrings(locale);
   const { questions, resultRanges, footnote, resultDisplay, dualLabels } = definition;
 
@@ -52,6 +60,17 @@ export function PercentageQuiz({
     () => (definition.images?.og ? quizAssetUrl(definition.images.og, locale) : undefined),
     [definition.images?.og, locale],
   );
+
+  const urlSearch = useHydratedLocationSearch();
+
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+    const pct = parsePercentageOutcomePercent(urlSearch);
+    if (pct == null) return;
+    setTotalScore(totalScoreForTargetPercent(pct, maxTotal));
+    setDone(true);
+    setStep(questions.length);
+  }, [maxTotal, questions.length, urlSearch]);
 
   useEffect(() => {
     return () => {
@@ -101,7 +120,8 @@ export function PercentageQuiz({
     setAnswerBusy(false);
     setPickingIdx(null);
     setFillActive(false);
-  }, []);
+    router.replace(quizPageHref);
+  }, [quizPageHref, router]);
 
   const finalPercent = useMemo(
     () => percentFromTotalScore(totalScore, maxTotal),
@@ -112,6 +132,24 @@ export function PercentageQuiz({
     () => pickPercentageRange(resultRanges, finalPercent),
     [resultRanges, finalPercent],
   );
+
+  const sharePctQuery = useMemo(() => {
+    if (!done) return "";
+    return buildPercentageOutcomeQuery(finalPercent);
+  }, [done, finalPercent]);
+
+  const quizResultUrl = useMemo(() => {
+    if (!sharePctQuery) return undefined;
+    return `${quizPageHref}?${sharePctQuery}`;
+  }, [quizPageHref, sharePctQuery]);
+
+  useEffect(() => {
+    if (!done || typeof window === "undefined" || !sharePctQuery) return;
+    const want = `?${sharePctQuery}`;
+    if (window.location.search !== want) {
+      window.history.replaceState(null, "", `${quizPageHref}?${sharePctQuery}`);
+    }
+  }, [done, quizPageHref, sharePctQuery]);
 
   if (done) {
     const titleText = rangeMatch
@@ -198,6 +236,7 @@ export function PercentageQuiz({
             shareText={shareText}
             shareImageUrl={shareOgImage}
             quizStartUrl={quizPageHref}
+            quizResultUrl={quizResultUrl}
             kakaoQuizResultShare
           />
           <div className="quiz-result-actions">
