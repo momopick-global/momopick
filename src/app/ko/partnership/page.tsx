@@ -99,7 +99,7 @@ export default function KoPartnershipPage() {
             </a>
             <a
               className="channel-card channel-card--kakao"
-              href="https://pf.kakao.com/_momopick"
+              href="https://pf.kakao.com/_GlGxlX"
               target="_blank"
               rel="noopener noreferrer"
             >

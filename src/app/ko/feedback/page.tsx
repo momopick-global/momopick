@@ -40,7 +40,7 @@ const channels = [
     icon: "💬",
     label: "카카오톡 채널",
     desc: "@모모픽 채널로 메시지 보내기",
-    href: "https://pf.kakao.com/_momopick",
+    href: "https://pf.kakao.com/_GlGxlX",
     style: "channel-card--kakao",
   },
 ];

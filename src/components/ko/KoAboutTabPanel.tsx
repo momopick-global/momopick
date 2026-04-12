@@ -141,7 +141,7 @@ export function KoAboutTabPanel() {
         ) : null}
 
         {active === "explore" ? (
-          <div className="about-tabpanel__inner policy-prose">
+          <div className="about-tabpanel__inner about-tabpanel__inner--explore policy-prose">
             <section aria-labelledby="about-2">
               <h2 id="about-2">무엇을 할 수 있나요</h2>
               <ul>
@@ -226,7 +226,7 @@ export function KoAboutTabPanel() {
                 <Link href="/ko/blog/">블로그</Link>
               </li>
               <li>
-                <a href="https://pf.kakao.com/_momopick" target="_blank" rel="noopener noreferrer">
+                <a href="https://pf.kakao.com/_GlGxlX" target="_blank" rel="noopener noreferrer">
                   카카오 채널 (새 창)
                 </a>
               </li>

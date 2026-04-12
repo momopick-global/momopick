@@ -130,7 +130,7 @@ export function KoHeaderSymbolMenu({ open, onOpenChange }: KoHeaderSymbolMenuPro
             <div className="hd-symbol-panel__section hd-symbol-panel__section--social">
               <div className="ko-ft-social" aria-label="소셜 채널">
                 <a
-                  href="https://pf.kakao.com/_momopick"
+                  href="https://pf.kakao.com/_GlGxlX"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="카카오 채널"
