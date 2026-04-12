@@ -3468,6 +3468,20 @@ html.today-video-lock body {
   background: #2b1841;
 }
 
+/* MP4 첫 프레임 WebP — 비디오 로드 전까지 동일 구도로 표시(배경색만 보이는 구간 완화) */
+.momopick-ko .today-video-first-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* 가로 100% 기준 비율 유지, 상단 정렬(세로 초과분은 아래에서 잘림) */
 .momopick-ko .today-video-bg {
   position: absolute;
@@ -3478,6 +3492,12 @@ html.today-video-lock body {
   max-width: 100%;
   height: auto;
   display: block;
+  opacity: 0;
+  transition: opacity 0.12s ease-out;
+}
+
+.momopick-ko .today-video-bg.is-ready {
+  opacity: 1;
 }
 
 .momopick-ko .today-video-scrim {
@@ -3559,7 +3579,7 @@ html.today-video-lock body {
 .momopick-ko .today-video-type {
   margin: 0;
   width: 100%;
-  max-width: 36em;
+  max-width: 18.432em; /* 36em × 0.8³ */
   font-size: clamp(15px, 4.1vw, 19px);
   font-weight: 600;
   line-height: 1.65;

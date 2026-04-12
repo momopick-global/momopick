@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { BackButton } from "@/components/ko/BackButton";
 
 const VIDEO_SRC = "/images/today/tarot.mp4";
-const POSTER_SRC = "/images/today/tarot.webp";
+/** MP4 첫 프레임과 동일(이질감 최소화), 로딩 중·비디오 페이드인 전까지 표시 */
+const FIRST_FRAME_WEBP = "/images/today/tarot-first-frame.webp";
 
 const FULL_TEXT = `타로를 통해 오늘의 운세를 가볍게 확인할 수 있는 콘텐츠를 준비 중입니다.
 
@@ -29,13 +30,20 @@ function usePrefersReducedMotion(): boolean {
 export function KoTodayVideoExperience() {
   const [typed, setTyped] = useState("");
   const [typingDone, setTypingDone] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const reducedMotion = usePrefersReducedMotion();
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     document.documentElement.classList.add("today-video-lock");
     return () => document.documentElement.classList.remove("today-video-lock");
   }, []);
+
+  const onVideoReadyToShow = () => {
+    setVideoReady(true);
+    void videoRef.current?.play().catch(() => {});
+  };
 
   useEffect(() => {
     if (reducedMotion) {
@@ -65,15 +73,28 @@ export function KoTodayVideoExperience() {
       <h1 className="sr-only">오늘의 운세</h1>
       <p className="sr-only">{FULL_TEXT}</p>
 
+      <img
+        src={FIRST_FRAME_WEBP}
+        alt=""
+        className="today-video-first-frame"
+        width={720}
+        height={1280}
+        decoding="async"
+        fetchPriority="high"
+        aria-hidden
+      />
+
       <video
-        className="today-video-bg"
+        ref={videoRef}
+        className={`today-video-bg${videoReady ? " is-ready" : ""}`}
         src={VIDEO_SRC}
-        poster={POSTER_SRC}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
+        onLoadedData={onVideoReadyToShow}
+        onCanPlay={onVideoReadyToShow}
         aria-hidden="true"
       />
 
