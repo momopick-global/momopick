@@ -11,8 +11,8 @@ import {
 } from "@/lib/quizOutcomeUrl";
 import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
 import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
-import { useQuizParticipantCount } from "@/hooks/useQuizParticipantCount";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
+import { SnackQuizIntroWithLiveCount } from "./SnackQuizIntroWithLiveCount";
 import { QuizResultShare } from "./QuizResultShare";
 import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
@@ -41,10 +41,16 @@ function orderLeaders(
 export function SnackQuiz({
   definition,
   locale = "ko",
+  trackParticipantCount = false,
 }: {
   definition: SnackQuizDefinition;
   /** 고정 UI(다시 하기·질문 n/t) 언어. 라우트 세그먼트와 맞출 것 */
   locale?: QuizUiLocale;
+  /**
+   * true일 때만 Supabase `quiz_stats` 조회·시작 시 +1 및 `#user-count` 표시.
+   * 특정 랜딩(예: ambiguous-situationship-end)에서만 켭니다.
+   */
+  trackParticipantCount?: boolean;
 }) {
   const router = useRouter();
   const ui = getQuizUiStrings(locale);
@@ -71,12 +77,6 @@ export function SnackQuiz({
     const seg = definition.slug?.trim() || definition.id;
     return `/${locale}/${cat}/${seg}/`;
   }, [definition.category, definition.slug, definition.id, locale]);
-
-  const quizId = useMemo(
-    () => definition.slug?.trim() || definition.id,
-    [definition.slug, definition.id],
-  );
-  const { count: participantCount, registerStart } = useQuizParticipantCount(quizId);
 
   const resultsGalleryHref = useMemo(() => `${quizPageHref}results/`, [quizPageHref]);
 
@@ -298,26 +298,30 @@ export function SnackQuiz({
   })();
 
   if (showIntro) {
+    const quizId = definition.slug?.trim() || definition.id;
     return (
       <div className="quiz-shell quiz-shell--intro">
-        <div className="quiz-intro">
-          <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
-          <div className="quiz-intro-actions">
-            <button
-              type="button"
-              className="btn primary quiz-intro-start"
-              onClick={async () => {
-                await registerStart();
-                setQuizStarted(true);
-              }}
-            >
-              {ui.startTest}
-            </button>
+        {trackParticipantCount ? (
+          <SnackQuizIntroWithLiveCount
+            quizId={quizId}
+            locale={locale}
+            questionTotal={total}
+            onStarted={() => setQuizStarted(true)}
+          />
+        ) : (
+          <div className="quiz-intro">
+            <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
+            <div className="quiz-intro-actions">
+              <button
+                type="button"
+                className="btn primary quiz-intro-start"
+                onClick={() => setQuizStarted(true)}
+              >
+                {ui.startTest}
+              </button>
+            </div>
           </div>
-          <p id="user-count" className="quiz-intro-participants" aria-live="polite">
-            {ui.formatLiveParticipantLine(participantCount)}
-          </p>
-        </div>
+        )}
       </div>
     );
   }

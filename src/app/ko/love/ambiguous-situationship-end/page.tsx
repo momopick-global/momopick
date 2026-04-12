@@ -106,7 +106,7 @@ export default function AmbiguousSituationshipEndPage() {
           </header>
 
           <section className="quiz-section" aria-labelledby="quiz-title">
-            <SnackQuiz definition={pack} locale="ko" />
+            <SnackQuiz definition={pack} locale="ko" trackParticipantCount />
           </section>
         </main>
 
