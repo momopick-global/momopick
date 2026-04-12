@@ -10,9 +10,10 @@ export type KoBlogTabId = "all" | KoBlogCategoryId;
 const TABS: { id: KoBlogTabId; label: string }[] = [
   { id: "all", label: "전체" },
   { id: "love", label: "💗 연애 심리" },
+  { id: "personality", label: "🧠 성격 / 심리 분석" },
   { id: "tarot", label: "🔮 타로 / 운세" },
-  { id: "growth", label: "🎯 자기계발" },
   { id: "fun", label: "🎭 재미 / 트렌드" },
+  { id: "story", label: "📖 모모픽 스토리" },
 ];
 
 export function KoBlogTabPanel({ posts }: { posts: KoSampleBlogPost[] }) {

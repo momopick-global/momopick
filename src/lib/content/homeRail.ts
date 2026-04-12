@@ -80,3 +80,10 @@ export function getKoLoveQuizzesSorted(locale: string): KoHomeRailItem[] {
     .map((d) => toRailItem(d, locale))
     .sort((a, b) => b.priority - a.priority);
 }
+
+/** `/ko/love/` 허브 목록형과 동일 정렬에서 `excludeHref` 제외 후 상위 N개 */
+export function getKoLoveMoreQuizzes(locale: string, excludeHref: string, limit = 4): KoHomeRailItem[] {
+  return getKoLoveQuizzesSorted(locale)
+    .filter((item) => item.href !== excludeHref)
+    .slice(0, limit);
+}

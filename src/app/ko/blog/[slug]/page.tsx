@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { Fragment } from "react";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { notFound } from "next/navigation";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoBlogPostBySlug, getKoBlogSlugs } from "@/content/blog/koSamplePosts";
+import { BlogAmbiguousSituationshipPromo } from "@/components/blog/BlogAmbiguousSituationshipPromo";
 import { BackButton } from "@/components/ko/BackButton";
+import { QUIZ_IMAGE_PENDING_SRC } from "@/lib/content/quizImagePending";
 
 const year = new Date().getFullYear();
 
@@ -23,6 +27,26 @@ export async function generateMetadata({
     return { title: "글을 찾을 수 없습니다 | 모모픽" };
   }
   const title = `${post.title} | 모모픽 블로그`;
+  const heroPath = post.image ?? QUIZ_IMAGE_PENDING_SRC;
+  const useCustomOg = heroPath !== QUIZ_IMAGE_PENDING_SRC;
+  const ogImages = useCustomOg
+    ? [
+        {
+          url: `https://momopick.com${heroPath}`,
+          width: 1536,
+          height: 1024,
+          alt: post.imageAlt ?? post.title,
+        },
+      ]
+    : [
+        {
+          url: "https://momopick.com/og/main-og.webp",
+          width: 1536,
+          height: 1024,
+          alt: "모모픽 — MBTI·연애·심리 테스트",
+        },
+      ];
+
   return {
     title,
     description: post.excerpt.replace(/\s+/g, " ").slice(0, 160),
@@ -33,14 +57,7 @@ export async function generateMetadata({
       title,
       description: post.excerpt.slice(0, 200),
       url: `https://momopick.com/ko/blog/${post.id}/`,
-    images: [
-      {
-        url: "https://momopick.com/og/main-og.webp",
-        width: 1536,
-        height: 1024,
-        alt: "모모픽 — MBTI·연애·심리 테스트",
-      },
-    ],
+      images: ogImages,
       locale: "ko_KR",
       type: "article",
     },
@@ -48,12 +65,34 @@ export async function generateMetadata({
 }
 
 function BlogPostBody({ body }: { body: string }) {
-  const paragraphs = body.split(/\n\n+/).filter(Boolean);
+  const blocks = body
+    .split(/\n\n+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+
   return (
     <div className="blog-post-body policy-prose">
-      {paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
-      ))}
+      {blocks.map((block, i) => {
+        const heading = /^## (.+)$/.exec(block);
+        if (heading?.[1]?.trim()) {
+          return (
+            <h3 key={i} className="blog-post-h3">
+              {heading[1].trim()}
+            </h3>
+          );
+        }
+        const lines = block.split("\n");
+        return (
+          <p key={i}>
+            {lines.map((line, li) => (
+              <Fragment key={li}>
+                {li > 0 ? <br /> : null}
+                {line}
+              </Fragment>
+            ))}
+          </p>
+        );
+      })}
     </div>
   );
 }
@@ -64,6 +103,8 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
   if (!post) {
     notFound();
   }
+
+  const heroPath = post.image ?? QUIZ_IMAGE_PENDING_SRC;
 
   return (
     <>
@@ -93,7 +134,22 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
               <h1 className="blog-post-title">{post.title}</h1>
             </header>
 
+            <figure className="blog-post-hero">
+              <Image
+                src={heroPath}
+                alt={post.imageAlt ?? post.title}
+                fill
+                sizes="(max-width: 480px) 92vw, 520px"
+                className="blog-post-hero__img"
+                priority
+              />
+            </figure>
+
             <BlogPostBody body={post.body} />
+
+            {post.embedAfterBody === "ambiguous-situationship-end" ? (
+              <BlogAmbiguousSituationshipPromo />
+            ) : null}
           </article>
 
           <p className="policy-foot">

@@ -24,6 +24,7 @@ import {
 import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
 import { useQuizResultShareModel } from "./useQuizResultShareModel";
+import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
 
 /** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
 const ANSWER_FILL_MS = 340;
@@ -192,6 +193,9 @@ function SnackQuizDoneCard({
           <QuizShareStatusHints model={shareModel} ui={ui} />
         </div>
       </div>
+      {locale === "ko" && definition.category?.trim() === "love" ? (
+        <KoLoveHubMoreSection locale={locale} excludeHref={quizPageHref} placement="quiz" />
+      ) : null}
     </div>
   );
 }

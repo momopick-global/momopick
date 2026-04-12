@@ -9,6 +9,7 @@ import { snackQuizDefinitionsCatalog } from "@/content/quiz";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { getSnackQuizBySlug, orderedSnackResultKeys } from "@/lib/content/snackQuizCatalog";
 import { BackButton } from "@/components/ko/BackButton";
+import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
 
 const pageLocale = "ko" as const;
 
@@ -147,6 +148,10 @@ export default async function KoLoveQuizAllResultsPage({
                 테스트 다시 하기
               </Link>
             </p>
+
+            {pack.category?.trim() === "love" ? (
+              <KoLoveHubMoreSection locale={pageLocale} excludeHref={quizHref} placement="quiz" />
+            ) : null}
           </section>
         </main>
 

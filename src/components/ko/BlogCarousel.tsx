@@ -12,13 +12,15 @@ type Tab = { id: TabId; label: string };
 
 const TABS: Tab[] = [
   { id: "all", label: "전체" },
-  { id: "love", label: "연애" },
-  { id: "growth", label: "성장" },
-  { id: "fun", label: "재미" },
-  { id: "tarot", label: "타로" },
+  { id: "love", label: "💗 연애 심리" },
+  { id: "personality", label: "🧠 성격 / 심리 분석" },
+  { id: "tarot", label: "🔮 타로 / 운세" },
+  { id: "fun", label: "🎭 재미 / 트렌드" },
+  { id: "story", label: "📖 모모픽 스토리" },
 ];
 
-const EXCERPT_LIMIT = 70;
+/** 메인 리스트는 텍스트 위주 — 요약을 조금 더 길게 */
+const EXCERPT_LIMIT = 118;
 
 function truncateExcerpt(text: string, limit = EXCERPT_LIMIT): string {
   const flat = text.replace(/\n/g, " ");
@@ -37,7 +39,7 @@ export function BlogCarousel({ posts }: Props) {
 
   const handleTabClick = (id: TabId) => {
     setActiveTab(id);
-    scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" });
+    scrollRef.current?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
@@ -60,30 +62,32 @@ export function BlogCarousel({ posts }: Props) {
       {filtered.length === 0 ? (
         <p className="blog-carousel-empty">해당 카테고리 글이 없어요.</p>
       ) : (
-        <ul className="blog-carousel" ref={scrollRef} role="list">
+        <ul className="blog-carousel blog-carousel--list" ref={scrollRef} role="list">
           {filtered.map((post) => (
-            <li key={post.id} className="blog-carousel-item">
-              <Link className="blog-card-link" href={`/ko/blog/${post.id}/`}>
-                <article className="blog-card blog-card--with-img">
-                  <div className="blog-card__thumb-frame">
+            <li key={post.id} className="blog-carousel-item blog-carousel-item--list">
+              <Link className="blog-card-link blog-card-link--row" href={`/ko/blog/${post.id}/`}>
+                <article className="blog-card blog-card--home-list">
+                  <div className="blog-card__thumb-frame blog-card__thumb-frame--sq" aria-hidden="true">
                     <QuizImageWithFallback
                       src={post.image ?? QUIZ_IMAGE_PENDING_SRC}
                       alt=""
-                      width={480}
-                      height={600}
+                      width={128}
+                      height={128}
                       loading="lazy"
                       decoding="async"
                       className="blog-card__thumb"
                     />
                   </div>
-                  <div className="blog-card__meta">
-                    <time className="blog-card__date" dateTime={post.dateTime}>
-                      {post.date}
-                    </time>
-                    {post.tag && <span className="blog-card__tag">{post.tag}</span>}
+                  <div className="blog-card__body">
+                    <div className="blog-card__meta">
+                      <time className="blog-card__date" dateTime={post.dateTime}>
+                        {post.date}
+                      </time>
+                      {post.tag ? <span className="blog-card__tag">{post.tag}</span> : null}
+                    </div>
+                    <h3 className="blog-card__title">{post.title}</h3>
+                    <p className="blog-card__excerpt">{truncateExcerpt(post.excerpt)}</p>
                   </div>
-                  <h3 className="blog-card__title">{post.title}</h3>
-                  <p className="blog-card__excerpt">{truncateExcerpt(post.excerpt)}</p>
                 </article>
               </Link>
             </li>

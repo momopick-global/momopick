@@ -3,8 +3,8 @@
   overflow-x: clip;
   --bg: #f4f2fb;
   --surface: #fff;
-  --text: #666666;
-  --muted: rgba(22, 16, 34, 0.58);
+  --text: #333333;
+  --muted: #666666;
   --line: rgba(90, 103, 242, 0.14);
   --accent: #5a67f2;
   --accent-2: #e85a8c;
@@ -1084,6 +1084,69 @@
   color: var(--accent);
 }
 
+.momopick-ko .about-page-hd-lead {
+  margin-bottom: 4px;
+}
+
+.momopick-ko .about-tabpanel {
+  margin-top: 2px;
+}
+
+.momopick-ko .about-tabpanel__inner {
+  margin-top: 6px;
+}
+
+.momopick-ko .about-tabpanel__intro {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.momopick-ko .about-howto-steps {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.momopick-ko .about-howto-steps strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.momopick-ko .about-tabpanel__cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 22px;
+  max-width: 400px;
+}
+
+.momopick-ko .about-together-links {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.momopick-ko .about-together-links a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.momopick-ko .about-momo--tab {
+  margin-top: 8px;
+}
+
 .momopick-ko .about-page-cta {
   margin-top: 28px;
   display: flex;
@@ -1095,11 +1158,14 @@
 .momopick-ko .about-momo {
   margin: 0 0 32px;
   padding: 0;
+  text-align: center;
+  /* 캐릭터 이미지와 본문 열 너비 공통 */
+  --about-momo-col: min(280px, 100%);
 }
 
 .momopick-ko .about-momo__figure {
   margin: 0 auto 18px;
-  max-width: 280px;
+  max-width: var(--about-momo-col);
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -1112,9 +1178,11 @@
 }
 
 .momopick-ko .about-momo__body {
-  max-width: 520px;
+  max-width: var(--about-momo-col);
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .momopick-ko .about-momo__body h2 {
@@ -1137,7 +1205,7 @@
 .momopick-ko .about-momo__hint {
   margin: 0 0 20px;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .momopick-ko .about-momo__hint p {
@@ -2758,6 +2826,8 @@
   justify-content: center;
   text-align: center;
   line-height: 1.25;
+  /* .quiz-share-kakao-wide 와 동일 */
+  border-radius: 12px;
 }
 
 .momopick-ko .quiz-result-actions-row__secondary {
@@ -3526,32 +3596,113 @@
   display: none;
 }
 
-.momopick-ko .blog-carousel-item {
+.momopick-ko .blog-carousel-item:not(.blog-carousel-item--list) {
   flex: 0 0 min(224px, 64vw);
   scroll-snap-align: start;
   display: flex;
 }
 
+.momopick-ko .blog-carousel-item--list {
+  display: block;
+}
+
 @media (min-width: 720px) {
-  .momopick-ko .blog-carousel-item {
+  .momopick-ko .blog-carousel-item:not(.blog-carousel-item--list) {
     flex: 0 0 256px;
   }
 }
 
-.momopick-ko .blog-carousel-item .blog-card-link {
+.momopick-ko .blog-carousel-item:not(.blog-carousel-item--list) .blog-card-link {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.momopick-ko .blog-carousel-item .blog-card {
+.momopick-ko .blog-carousel-item:not(.blog-carousel-item--list) .blog-card {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.momopick-ko .blog-carousel-item .blog-card__excerpt {
+.momopick-ko .blog-carousel-item:not(.blog-carousel-item--list) .blog-card__excerpt {
   flex: 1;
+}
+
+/* 메인 홈 「블로그 · 소식」— 세로 리스트, 왼쪽 작은 정사각 썸네일 + 텍스트 */
+.momopick-ko .blog-carousel--list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-x: visible;
+  scroll-snap-type: none;
+  max-height: none;
+}
+
+.momopick-ko .blog-carousel--list .blog-carousel-item--list {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  scroll-snap-align: unset;
+}
+
+.momopick-ko .blog-carousel--list .blog-card-link--row {
+  display: block;
+  width: 100%;
+}
+
+.momopick-ko .blog-card.blog-card--home-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.momopick-ko .blog-card--home-list .blog-card__thumb-frame--sq {
+  position: relative;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: linear-gradient(145deg, #e8e4f7, #fce8ef);
+}
+
+.momopick-ko .blog-card--home-list .blog-card__thumb-frame--sq .blog-card__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.momopick-ko .blog-card--home-list .blog-card__body {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.momopick-ko .blog-card--home-list .blog-card__meta {
+  margin-bottom: 6px;
+}
+
+.momopick-ko .blog-card--home-list .blog-card__title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.momopick-ko .blog-card--home-list .blog-card__excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.55;
 }
 
 .momopick-ko .blog-carousel-empty {
@@ -3736,11 +3887,168 @@
   color: var(--text);
 }
 
+.momopick-ko .blog-post-hero {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 22px;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: rgba(90, 103, 242, 0.06);
+}
+
+.momopick-ko .blog-post-hero__img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 블로그 글 하단 — 퀴즈 인트로와 동일 블록 */
+.momopick-ko .blog-quiz-promo {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.momopick-ko .blog-quiz-promo__hd .quiz-lead {
+  margin-bottom: 18px;
+}
+
+.momopick-ko .blog-quiz-promo__title {
+  margin: 0 0 10px;
+  font-size: clamp(20px, 3.5vw, 26px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.momopick-ko .blog-quiz-promo__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.momopick-ko .blog-quiz-promo__title a:hover {
+  color: var(--accent);
+}
+
+.momopick-ko .blog-quiz-promo__cover-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.momopick-ko .blog-quiz-promo .quiz-cover {
+  max-width: var(--quiz-col);
+}
+
+.momopick-ko .blog-quiz-promo__section {
+  margin-top: 8px;
+}
+
+.momopick-ko .blog-quiz-promo__more {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.momopick-ko .blog-quiz-promo__more-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.momopick-ko .blog-quiz-promo__more-lead {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted, #666);
+}
+
+/* 퀴즈 결과(스낵·퍼센트 완료 카드·모든 결과 갤러리) 하단 — 허브 목록형과 동일 4개 */
+.momopick-ko .ko-love-more-stack--quiz {
+  max-width: var(--quiz-col);
+}
+
+.momopick-ko .quiz-result-love-more {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.momopick-ko .quiz-result-love-more__title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.momopick-ko .quiz-result-love-more__lead {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted, #666);
+}
+
+.momopick-ko .ko-love-more__lead--end {
+  text-align: right;
+}
+
+/* 퀴즈 결과 하단 `더보기` — 전폭 폭만 유지(최대 400px), 스타일은 `모든 결과 보기`와 동일 */
+.momopick-ko .ko-love-more__more-wrap {
+  margin: 22px 0 0;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 결과 화면 `모든 결과 보기`와 동일 톤·크기, 라운드는 카카오 공유 CTA(.quiz-share-kakao-wide)와 동일 */
+.momopick-ko .ko-love-more__more-wrap .ko-love-more__more-btn {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 12px;
+  font-size: 16px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.25;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.momopick-ko .ko-love-more__home {
+  margin: 16px 0 0;
+  text-align: left;
+}
+
 .momopick-ko .blog-post-body {
   margin-top: 4px;
 }
 
 .momopick-ko .blog-post-body p:first-child {
+  margin-top: 0;
+}
+
+.momopick-ko .blog-post-body .blog-post-h3 {
+  margin: 26px 0 12px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.momopick-ko .blog-post-body .blog-post-h3:first-child {
   margin-top: 0;
 }
 

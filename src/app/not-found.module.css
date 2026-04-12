@@ -35,14 +35,14 @@
   font-size: clamp(1.75rem, 4.5vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #666666;
+  color: #333333;
   line-height: 1.2;
 }
 
 .subtitle {
   margin: 0 auto 10px;
   font-size: 0.98rem;
-  color: rgba(22, 16, 34, 0.58);
+  color: #666666;
   max-width: 22em;
   line-height: 1.55;
 }
@@ -91,7 +91,7 @@
   border-radius: 14px;
   font-weight: 700;
   font-size: 15px;
-  color: #666666;
+  color: #333333;
   background: #fff;
   border: 1px solid rgba(90, 103, 242, 0.2);
   text-decoration: none;

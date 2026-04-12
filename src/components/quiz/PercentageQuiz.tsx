@@ -30,6 +30,7 @@ import {
   pickPercentageRange,
   type PercentageQuizDefinition,
 } from "./percentageTypes";
+import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
 
 const ANSWER_FILL_MS = 340;
 /** 마지막 문항 후 결과 카드 전 로딩 대기(ms). 감소 모션 시 0. */
@@ -224,6 +225,9 @@ function PercentageQuizDoneCard({
           <QuizShareStatusHints model={shareModel} ui={ui} />
         </div>
       </div>
+      {locale === "ko" && definition.category?.trim() === "love" ? (
+        <KoLoveHubMoreSection locale={locale} excludeHref={quizPageHref} placement="quiz" />
+      ) : null}
     </div>
   );
 }
