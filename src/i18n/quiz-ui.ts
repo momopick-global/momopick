@@ -20,6 +20,8 @@ export type QuizUiStrings = {
   quizIntroBody: (questionTotal: number) => string;
   /** 인트로 — 테스트 시작 버튼 */
   startTest: string;
+  /** 인트로 — id=user-count, Supabase 실시간 참여 수 (null이면 로딩) */
+  formatLiveParticipantLine: (count: number | null) => string;
   shareWithFriends: string;
   copyLink: string;
   copied: string;
@@ -45,6 +47,8 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     quizIntroBody: (t) =>
       `총 ${t}문항이에요. 가장 와닿는 답을 고르면 바로 결과를 볼 수 있어요.`,
     startTest: "테스트 시작하기",
+    formatLiveParticipantLine: (c) =>
+      c === null ? "🔥 …" : `🔥 ${c.toLocaleString("ko-KR")}명 참여`,
     shareWithFriends: "친구에게 공유하기",
     copyLink: "링크 복사",
     copied: "복사됨",
@@ -66,6 +70,8 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     quizIntroBody: (t) =>
       `${t} quick questions. Pick what feels most like you — your result is just ahead.`,
     startTest: "Start the test",
+    formatLiveParticipantLine: (c) =>
+      c === null ? "🔥 …" : `🔥 ${c.toLocaleString("en-US")} joined`,
     shareWithFriends: "Share with friends",
     copyLink: "Copy link",
     copied: "Copied",
@@ -87,6 +93,8 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     quizIntroBody: (t) =>
       `全${t}問です。しっくりくる方を選ぶと、すぐ結果が見られます。`,
     startTest: "テストを始める",
+    formatLiveParticipantLine: (c) =>
+      c === null ? "🔥 …" : `🔥 ${c.toLocaleString("ja-JP")}人参加`,
     shareWithFriends: "友だちにシェア",
     copyLink: "リンクをコピー",
     copied: "コピーしました",
@@ -108,6 +116,8 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     quizIntroBody: (t) =>
       `${t} preguntas cortas. Elige lo que más te represente y verás el resultado al instante.`,
     startTest: "Empezar el test",
+    formatLiveParticipantLine: (c) =>
+      c === null ? "🔥 …" : `🔥 ${c.toLocaleString("es-ES")} participaron`,
     shareWithFriends: "Compartir con amigos",
     copyLink: "Copiar enlace",
     copied: "Copiado",
@@ -129,6 +139,8 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     quizIntroBody: (t) =>
       `São ${t} perguntas rápidas. Escolha o que mais combina com você e veja o resultado na hora.`,
     startTest: "Começar o teste",
+    formatLiveParticipantLine: (c) =>
+      c === null ? "🔥 …" : `🔥 ${c.toLocaleString("pt-BR")} participaram`,
     shareWithFriends: "Compartilhar com amigos",
     copyLink: "Copiar link",
     copied: "Copiado",
@@ -150,6 +162,8 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     quizIntroBody: (t) =>
       `Ada ${t} pertanyaan singkat. Pilih yang paling pas untukmu — hasilnya langsung muncul.`,
     startTest: "Mulai tes",
+    formatLiveParticipantLine: (c) =>
+      c === null ? "🔥 …" : `🔥 ${c.toLocaleString("id-ID")} ikut`,
     shareWithFriends: "Bagikan ke teman",
     copyLink: "Salin tautan",
     copied: "Disalin",
