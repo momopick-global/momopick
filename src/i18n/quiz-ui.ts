@@ -59,7 +59,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "카카오 키가 빌드에 없어요. Cloudflare Pages 환경 변수에 NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 를 넣고 다시 배포해 주세요. 링크는 복사해 두었어요.",
     kakaoShareScriptBlockedHint: "카카오 스크립트를 불러오지 못했어요(차단·네트워크). 링크를 복사했어요.",
     shareKakao: "카카오로 공유",
-    shareKakaoWideCta: "카카오톡으로 결과 공유하기",
+    shareKakaoWideCta: "친구에게 공유하기",
     shareFacebook: "페이스북으로 공유",
     shareX: "X로 공유",
   },
