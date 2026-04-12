@@ -12,6 +12,7 @@ import {
 import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
 import { getQuizUiStrings, type QuizUiLocale, type QuizUiStrings } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
+import { QuizResultLoadingScreen } from "./QuizResultLoadingScreen";
 import { QuizPackTags } from "./QuizPackTags";
 import { SnackQuizIntroWithLiveCount } from "./SnackQuizIntroWithLiveCount";
 import {
@@ -26,6 +27,10 @@ import { useQuizResultShareModel } from "./useQuizResultShareModel";
 
 /** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
 const ANSWER_FILL_MS = 340;
+/** 마지막 문항 후 결과 카드 전 로딩 대기(ms). 감소 모션 시 0. */
+const QUIZ_RESULT_LOADING_MS = 3000;
+
+type QuizResultPhase = "idle" | "loading" | "done";
 
 function emptyCounts(keys: string[]): Record<string, number> {
   return Object.fromEntries(keys.map((k) => [k, 0]));
@@ -211,7 +216,7 @@ export function SnackQuiz({
 
   const [step, setStep] = useState(0);
   const [counts, setCounts] = useState<Record<string, number>>(() => emptyCounts(resultKeys));
-  const [done, setDone] = useState(false);
+  const [resultPhase, setResultPhase] = useState<QuizResultPhase>("idle");
   /** 답 선택 후: 클릭한 버튼 안에서만 채움 애니메이션 중 */
   const [answerBusy, setAnswerBusy] = useState(false);
   const [pickingKey, setPickingKey] = useState<string | null>(null);
@@ -220,9 +225,10 @@ export function SnackQuiz({
   const answerTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const total = questions.length;
+  /** 현재 문항까지 진행률(1/N … N/N). 문항 UI에서만 사용 */
   const progress = useMemo(
-    () => (done ? 100 : Math.round((step / total) * 100)),
-    [done, step, total],
+    () => Math.round(((step + 1) / total) * 100),
+    [step, total],
   );
 
   const quizPageHref = useMemo(() => {
@@ -254,7 +260,7 @@ export function SnackQuiz({
     [effectiveSearch, resultKeys],
   );
 
-  const showIntro = !done && !quizStarted && !hasSharedOutcomeInUrl;
+  const showIntro = resultPhase === "idle" && !quizStarted && !hasSharedOutcomeInUrl;
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
@@ -262,7 +268,7 @@ export function SnackQuiz({
       const restored = parseSnackOutcomeSearch(search, resultKeys);
       if (restored) {
         setCounts(restored);
-        setDone(true);
+        setResultPhase("done");
       }
     };
     tryRestore(urlSearch);
@@ -273,14 +279,24 @@ export function SnackQuiz({
 
   /** 프로덕션 CDN·하이드레이션 타이밍에서 layout 이후 한 번 더 (짧은 깜빡임 허용) */
   useEffect(() => {
-    if (typeof window === "undefined" || done) return;
+    if (typeof window === "undefined" || resultPhase !== "idle") return;
     const search = getBrowserQuizSearchString();
     const restored = parseSnackOutcomeSearch(search, resultKeys);
     if (restored) {
       setCounts(restored);
-      setDone(true);
+      setResultPhase("done");
     }
-  }, [done, resultKeys, urlSearch]);
+  }, [resultPhase, resultKeys, urlSearch]);
+
+  useEffect(() => {
+    if (resultPhase !== "loading") return;
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ms = reduced ? 0 : QUIZ_RESULT_LOADING_MS;
+    const id = window.setTimeout(() => setResultPhase("done"), ms);
+    return () => window.clearTimeout(id);
+  }, [resultPhase]);
 
   useEffect(() => {
     return () => {
@@ -304,7 +320,7 @@ export function SnackQuiz({
         answerTimerRef.current = null;
         setCounts((prev) => ({ ...prev, [key]: (prev[key] ?? 0) + 1 }));
         if (step >= total - 1) {
-          setDone(true);
+          setResultPhase("loading");
         } else {
           setStep((s) => s + 1);
         }
@@ -323,7 +339,7 @@ export function SnackQuiz({
     }
     setStep(0);
     setCounts(emptyCounts(resultKeys));
-    setDone(false);
+    setResultPhase("idle");
     setQuizStarted(false);
     setAnswerBusy(false);
     setPickingKey(null);
@@ -332,13 +348,13 @@ export function SnackQuiz({
   }, [resultKeys, quizPageHref, router]);
 
   const shareOutcomeQuery = useMemo(() => {
-    if (!done) return "";
+    if (resultPhase !== "done") return "";
     const maxScore = Math.max(0, ...resultKeys.map((k) => counts[k] ?? 0));
     const leaders = orderLeaders(resultKeys, resultOrder, counts, maxScore);
     const isBlendOutcome = leaders.length > 1;
     const onlyKey = !isBlendOutcome && leaders[0] ? leaders[0] : null;
     return buildSnackOutcomeQuery(isBlendOutcome, leaders, onlyKey);
-  }, [done, counts, resultKeys, resultOrder]);
+  }, [resultPhase, counts, resultKeys, resultOrder]);
 
   const quizResultUrl = useMemo(() => {
     if (!shareOutcomeQuery) return undefined;
@@ -346,14 +362,14 @@ export function SnackQuiz({
   }, [quizPageHref, shareOutcomeQuery]);
 
   useEffect(() => {
-    if (!done || typeof window === "undefined" || !shareOutcomeQuery) return;
+    if (resultPhase !== "done" || typeof window === "undefined" || !shareOutcomeQuery) return;
     const want = `?${shareOutcomeQuery}`;
     if (window.location.search !== want) {
       window.history.replaceState(null, "", `${quizPageHref}?${shareOutcomeQuery}`);
     }
-  }, [done, quizPageHref, shareOutcomeQuery]);
+  }, [resultPhase, quizPageHref, shareOutcomeQuery]);
 
-  if (done) {
+  if (resultPhase === "done") {
     return (
       <SnackQuizDoneCard
         definition={definition}
@@ -366,6 +382,10 @@ export function SnackQuiz({
         restart={restart}
       />
     );
+  }
+
+  if (resultPhase === "loading") {
+    return <QuizResultLoadingScreen ui={ui} />;
   }
 
   if (showIntro) {
@@ -417,19 +437,24 @@ export function SnackQuiz({
 
   return (
     <div className="quiz-shell">
-      {/* 로딩바 애니메이션 — 추후 활성화 시 주석 해제
-      <div className="quiz-progress-wrap" aria-hidden="true">
+      <div
+        className="quiz-progress-wrap"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={progress}
+        aria-label={ui.formatQuestionStep(step + 1, total)}
+      >
         <div className="quiz-progress-bar" style={{ width: `${progress}%` }} />
       </div>
-      */}
       <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
       {q.image ? (
         <div className="quiz-q-visual">
           <QuizImageWithFallback
             src={quizAssetUrl(q.image, locale)}
             alt=""
-            width={480}
-            height={600}
+            width={240}
+            height={300}
             loading="lazy"
             decoding="async"
           />

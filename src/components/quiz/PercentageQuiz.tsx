@@ -13,6 +13,7 @@ import {
 import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
 import { getQuizUiStrings, type QuizUiLocale, type QuizUiStrings } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
+import { QuizResultLoadingScreen } from "./QuizResultLoadingScreen";
 import { QuizPackTags } from "./QuizPackTags";
 import {
   QuizResultShare,
@@ -31,6 +32,10 @@ import {
 } from "./percentageTypes";
 
 const ANSWER_FILL_MS = 340;
+/** 마지막 문항 후 결과 카드 전 로딩 대기(ms). 감소 모션 시 0. */
+const QUIZ_RESULT_LOADING_MS = 3000;
+
+type QuizResultPhase = "idle" | "loading" | "done";
 
 function PercentageQuizDoneCard({
   definition,
@@ -238,7 +243,7 @@ export function PercentageQuiz({
 
   const [step, setStep] = useState(0);
   const [totalScore, setTotalScore] = useState(0);
-  const [done, setDone] = useState(false);
+  const [resultPhase, setResultPhase] = useState<QuizResultPhase>("idle");
   const [answerBusy, setAnswerBusy] = useState(false);
   const [pickingIdx, setPickingIdx] = useState<number | null>(null);
   const [fillActive, setFillActive] = useState(false);
@@ -246,9 +251,10 @@ export function PercentageQuiz({
   const answerTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const total = questions.length;
+  /** 현재 문항까지 진행률(1/N … N/N). 문항 UI에서만 사용 */
   const progress = useMemo(
-    () => (done ? 100 : Math.round((step / total) * 100)),
-    [done, step, total],
+    () => Math.round(((step + 1) / total) * 100),
+    [step, total],
   );
 
   const quizPageHref = useMemo(() => {
@@ -278,7 +284,7 @@ export function PercentageQuiz({
     [effectiveSearch],
   );
 
-  const showIntro = !done && !quizStarted && !hasSharedOutcomeInUrl;
+  const showIntro = resultPhase === "idle" && !quizStarted && !hasSharedOutcomeInUrl;
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
@@ -286,7 +292,7 @@ export function PercentageQuiz({
       const pct = parsePercentageOutcomePercent(search);
       if (pct == null) return;
       setTotalScore(totalScoreForTargetPercent(pct, maxTotal));
-      setDone(true);
+      setResultPhase("done");
       setStep(questions.length);
     };
     tryRestore(urlSearch);
@@ -296,13 +302,23 @@ export function PercentageQuiz({
   }, [maxTotal, questions.length, urlSearch]);
 
   useEffect(() => {
-    if (typeof window === "undefined" || done) return;
+    if (typeof window === "undefined" || resultPhase !== "idle") return;
     const pct = parsePercentageOutcomePercent(getBrowserQuizSearchString());
     if (pct == null) return;
     setTotalScore(totalScoreForTargetPercent(pct, maxTotal));
-    setDone(true);
+    setResultPhase("done");
     setStep(questions.length);
-  }, [done, maxTotal, questions.length, urlSearch]);
+  }, [resultPhase, maxTotal, questions.length, urlSearch]);
+
+  useEffect(() => {
+    if (resultPhase !== "loading") return;
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ms = reduced ? 0 : QUIZ_RESULT_LOADING_MS;
+    const id = window.setTimeout(() => setResultPhase("done"), ms);
+    return () => window.clearTimeout(id);
+  }, [resultPhase]);
 
   useEffect(() => {
     return () => {
@@ -329,7 +345,7 @@ export function PercentageQuiz({
         answerTimerRef.current = null;
         setTotalScore((s) => s + opt.score);
         if (step >= total - 1) {
-          setDone(true);
+          setResultPhase("loading");
         } else {
           setStep((x) => x + 1);
         }
@@ -348,7 +364,7 @@ export function PercentageQuiz({
     }
     setStep(0);
     setTotalScore(0);
-    setDone(false);
+    setResultPhase("idle");
     setQuizStarted(false);
     setAnswerBusy(false);
     setPickingIdx(null);
@@ -362,19 +378,19 @@ export function PercentageQuiz({
   );
 
   const sharePctQuery = useMemo(() => {
-    if (!done) return "";
+    if (resultPhase !== "done") return "";
     return buildPercentageOutcomeQuery(finalPercent);
-  }, [done, finalPercent]);
+  }, [resultPhase, finalPercent]);
 
   useEffect(() => {
-    if (!done || typeof window === "undefined" || !sharePctQuery) return;
+    if (resultPhase !== "done" || typeof window === "undefined" || !sharePctQuery) return;
     const want = `?${sharePctQuery}`;
     if (window.location.search !== want) {
       window.history.replaceState(null, "", `${quizPageHref}?${sharePctQuery}`);
     }
-  }, [done, quizPageHref, sharePctQuery]);
+  }, [resultPhase, quizPageHref, sharePctQuery]);
 
-  if (done) {
+  if (resultPhase === "done") {
     return (
       <PercentageQuizDoneCard
         definition={definition}
@@ -386,6 +402,10 @@ export function PercentageQuiz({
         restart={restart}
       />
     );
+  }
+
+  if (resultPhase === "loading") {
+    return <QuizResultLoadingScreen ui={ui} />;
   }
 
   if (showIntro) {
@@ -420,19 +440,24 @@ export function PercentageQuiz({
 
   return (
     <div className="quiz-shell">
-      {/* 로딩바 애니메이션 — 추후 활성화 시 주석 해제
-      <div className="quiz-progress-wrap" aria-hidden="true">
+      <div
+        className="quiz-progress-wrap"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={progress}
+        aria-label={ui.formatQuestionStep(step + 1, total)}
+      >
         <div className="quiz-progress-bar" style={{ width: `${progress}%` }} />
       </div>
-      */}
       <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
       {q.image ? (
         <div className="quiz-q-visual">
           <QuizImageWithFallback
             src={quizAssetUrl(q.image, locale)}
             alt=""
-            width={480}
-            height={600}
+            width={240}
+            height={300}
             loading="lazy"
             decoding="async"
           />

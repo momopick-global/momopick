@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
@@ -53,6 +54,37 @@ export default function KoAboutPage() {
             </p>
           </header>
 
+          <section className="about-momo" aria-labelledby="about-momo-heading">
+            <figure className="about-momo__figure">
+              <Image
+                src="/images/common/23543453.webp"
+                alt="모모픽 안내자 모모"
+                width={1024}
+                height={1024}
+                sizes="(max-width: 480px) 72vw, 280px"
+                className="about-momo__img"
+                priority
+              />
+            </figure>
+            <div className="about-momo__body">
+              <h2 id="about-momo-heading">모모는</h2>
+              <p>모모픽에서 당신에게 질문을 던지는 작은 안내자입니다.</p>
+              <div className="about-momo__hint">
+                <p>
+                  👉 모모는 &quot;정답&quot;을 알려주지 않습니다.
+                  <br />
+                  대신, 지금의 당신을 비추는 힌트를 건넵니다.
+                </p>
+              </div>
+              <h3 className="about-momo__subhd">앞으로 모모는</h3>
+              <p className="about-momo__future">
+                테스트, 결과, 타로, 추천까지
+                <br />
+                모모픽의 모든 경험에서 함께합니다.
+              </p>
+            </div>
+          </section>
+
           <article className="policy-prose">
             <section aria-labelledby="about-1">
               <h2 id="about-1">왜 모모픽인가요</h2>
@@ -74,9 +106,19 @@ export default function KoAboutPage() {
             <section aria-labelledby="about-3">
               <h2 id="about-3">알아 두세요</h2>
               <p>
-                테스트 결과는 참고용이며 의학·법률 등 전문 판단의 대체가 될 수 없습니다. 자세한 책임
-                범위는{" "}
-                <Link href="/ko/policy/disclaimer/">면책조항</Link>을 참고해 주세요.
+                모모픽의 테스트는
+                <br />
+                재미와 자기 이해를 위한 콘텐츠입니다.
+              </p>
+              <p>
+                의학, 법률, 심리 진단 등
+                <br />
+                전문적인 판단을 대신하지 않습니다.
+              </p>
+              <p>
+                👉 중요한 선택은
+                <br />
+                항상 &quot;현실의 당신&quot;이 하세요.
               </p>
             </section>
           </article>
