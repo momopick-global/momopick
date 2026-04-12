@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-const year = new Date().getFullYear();
 
 type FaqItem = { q: string; a: string | string[] };
 type FaqSection = { id: string; title: string; items: FaqItem[] };
@@ -314,7 +313,6 @@ export default function KoFaqPage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

@@ -194,7 +194,6 @@ export default function TermsOfServicePage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {new Date().getFullYear()} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   },
 };
 
-const year = new Date().getFullYear();
 
 const partnerTypes = [
   {
@@ -89,12 +88,12 @@ export default function KoPartnershipPage() {
           <div className="contact-channels">
             <a
               className="channel-card channel-card--mail"
-              href="mailto:partner@momopick.com"
+              href="mailto:momopick.global@gmail.com"
             >
               <span className="channel-card__icon">✉️</span>
               <span className="channel-card__body">
                 <strong className="channel-card__label">이메일로 문의하기</strong>
-                <span className="channel-card__desc">partner@momopick.com</span>
+                <span className="channel-card__desc">momopick.global@gmail.com</span>
               </span>
               <span className="channel-card__arrow" aria-hidden="true">→</span>
             </a>
@@ -133,7 +132,6 @@ export default function KoPartnershipPage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

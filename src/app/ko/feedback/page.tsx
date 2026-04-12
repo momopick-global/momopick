@@ -27,14 +27,13 @@ export const metadata: Metadata = {
   },
 };
 
-const year = new Date().getFullYear();
 
 const channels = [
   {
     icon: "✉️",
     label: "이메일로 보내기",
-    desc: "contact@momopick.com",
-    href: "mailto:contact@momopick.com",
+    desc: "momopick.global@gmail.com",
+    href: "mailto:momopick.global@gmail.com",
     style: "channel-card--mail",
   },
   {
@@ -108,7 +107,6 @@ export default function KoFeedbackPage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

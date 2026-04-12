@@ -2,9 +2,27 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { KO_SITE_NAV_LINKS_FOOTER } from "./koSiteNavLinks";
 
+/** 사업자·저작권 표기 (/ko 푸터 공통) */
+export function KoFooterLegal() {
+  return (
+    <div className="ko-ft-legal" aria-label="Company and legal information">
+      <p className="ko-ft-legal__line ko-ft-legal__line--name">ASOG Co., Ltd.</p>
+      <p className="ko-ft-legal__line">Address: Hancheon-Ro, Gangbuk-Gu, Seoul, Republic Of Korea</p>
+      <p className="ko-ft-legal__line">Business Registration Number: 370-54-00601</p>
+      <p className="ko-ft-legal__line">
+        Mail-Order Business Registration Number: 2021-Seoul-Seodaemun-0013
+      </p>
+      <p className="ko-ft-legal__line ko-ft-legal__line--copy">
+        Copyright© momopick Co., Ltd. All Rights Reserved.
+      </p>
+    </div>
+  );
+}
+
 /** 한국어 사이트 공통 하단 정보 링크 (홈·정책·블로그 등) */
 export function KoFooterNav() {
   return (
+    <>
     <div className="ko-ft-bottom">
       <nav className="ko-ft-links" aria-label="사이트 정보">
         {KO_SITE_NAV_LINKS_FOOTER.map((item, i) => (
@@ -55,5 +73,7 @@ export function KoFooterNav() {
         </a>
       </div>
     </div>
+    <KoFooterLegal />
+    </>
   );
 }

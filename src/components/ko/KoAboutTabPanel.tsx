@@ -42,6 +42,37 @@ export function KoAboutTabPanel() {
         </div>
       </div>
 
+      {active === "intro" ? (
+        <section className="about-page-hero" aria-label="모모픽 소개 비주얼">
+          <figure className="about-page-hero__figure">
+            <Image
+              src="/images/common/momopick-about-intro.webp"
+              alt="모모픽 서비스를 소개하는 일러스트"
+              width={1024}
+              height={1024}
+              sizes="(max-width: 480px) 88vw, 360px"
+              className="about-page-hero__img"
+              priority
+            />
+          </figure>
+        </section>
+      ) : null}
+
+      {active === "howto" ? (
+        <section className="about-page-hero" aria-label="모모픽 이용 방법 비주얼">
+          <figure className="about-page-hero__figure">
+            <Image
+              src="/images/common/momopick-about-hero.webp"
+              alt="모모픽 이용 방법을 안내하는 일러스트"
+              width={1024}
+              height={1024}
+              sizes="(max-width: 480px) 88vw, 360px"
+              className="about-page-hero__img"
+            />
+          </figure>
+        </section>
+      ) : null}
+
       <div
         role="tabpanel"
         id={`about-tabpanel-${active}`}
@@ -155,6 +186,16 @@ export function KoAboutTabPanel() {
                   대신, 지금의 당신을 비추는 힌트를 건넵니다.
                 </p>
               </div>
+              <figure className="about-momo__figure about-momo__figure--forward">
+                <Image
+                  src="/images/common/momo-character-forward.webp"
+                  alt="앞으로 모모픽과 함께할 모모"
+                  width={1024}
+                  height={1024}
+                  sizes="(max-width: 480px) 72vw, 280px"
+                  className="about-momo__img"
+                />
+              </figure>
               <h3 className="about-momo__subhd">앞으로 모모는</h3>
               <p className="about-momo__future">
                 테스트, 결과, 타로, 추천까지

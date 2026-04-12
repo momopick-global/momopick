@@ -9,7 +9,6 @@ import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
 import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
 import { BlogCarousel } from "@/components/ko/BlogCarousel";
-const year = new Date().getFullYear();
 
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
@@ -405,7 +404,6 @@ export default function KoHomePage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

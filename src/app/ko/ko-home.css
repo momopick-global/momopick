@@ -685,7 +685,7 @@
   transform: translateY(-1px);
 }
 
-/* 히어로 배너 롤링: 그리드로 같은 칸에 겹치고, 높이는 이미지 비율(가장 긴 슬라이드 기준) */
+/* 히어로 배너 롤링: 그리드로 같은 칸에 겹침, 이미지는 원본 비율(width 100% · height auto) */
 .momopick-ko .hero-banner-carousel {
   display: grid;
   grid-template-columns: 1fr;
@@ -700,11 +700,8 @@
 
 .momopick-ko .hero-banner-carousel .hero-banner {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  max-width: 100%;
   height: auto;
-  max-height: none;
-  object-fit: cover;
-  object-position: center;
   display: block;
   user-select: none;
   -webkit-user-drag: none;
@@ -1088,6 +1085,28 @@
   margin-bottom: 4px;
 }
 
+/* 탭(서브 메뉴) 바로 아래 — /ko/about/ KoAboutTabPanel */
+.momopick-ko .about-page-hero {
+  margin: 8px 0 18px;
+}
+
+.momopick-ko .about-page-hero__figure {
+  margin: 0 auto;
+  max-width: min(360px, 88vw);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(90, 103, 242, 0.06);
+  box-shadow: 0 12px 36px rgba(52, 38, 150, 0.12);
+}
+
+.momopick-ko .about-page-hero__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
 .momopick-ko .about-tabpanel {
   margin-top: 2px;
 }
@@ -1213,6 +1232,13 @@
   font-size: 15px;
   color: var(--muted);
   line-height: 1.65;
+}
+
+.momopick-ko .about-momo__figure--forward {
+  margin: 4px auto 14px;
+  max-width: var(--about-momo-col);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .momopick-ko .about-momo__subhd {
@@ -2135,6 +2161,36 @@
   color: var(--muted);
   opacity: 0.5;
   font-size: 11px;
+}
+
+.momopick-ko .ko-ft-legal {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+  letter-spacing: -0.01em;
+}
+
+.momopick-ko .ko-ft-legal__line {
+  margin: 0;
+}
+
+.momopick-ko .ko-ft-legal__line + .ko-ft-legal__line {
+  margin-top: 4px;
+}
+
+.momopick-ko .ko-ft-legal__line--name {
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.momopick-ko .ko-ft-legal__line--copy {
+  margin-top: 10px;
+  font-size: 11px;
+  opacity: 0.9;
 }
 
 .momopick-ko .cta-bottom {
@@ -3892,7 +3948,7 @@
   width: 100%;
   max-width: 520px;
   margin: 0 auto 22px;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);

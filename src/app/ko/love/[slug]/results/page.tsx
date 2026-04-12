@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KoFooterLegal } from "@/components/ko/KoFooterNav";
 import { notFound } from "next/navigation";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoCatBar } from "@/components/ko/KoCatBar";
@@ -159,6 +160,7 @@ export default async function KoLoveQuizAllResultsPage({
           <div>
             <Link href="/ko/explore/">다른 테스트 보기</Link>
           </div>
+          <KoFooterLegal />
         </footer>
       </div>
     </>

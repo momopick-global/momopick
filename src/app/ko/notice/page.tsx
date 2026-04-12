@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const year = new Date().getFullYear();
 
 /** 공지 본문에서 `**강조**` 구간을 굵게 표시 */
 function formatNoticeSummary(text: string): ReactNode {
@@ -102,7 +101,6 @@ export default function KoNoticePage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

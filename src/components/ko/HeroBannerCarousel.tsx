@@ -187,8 +187,8 @@ export function HeroBannerCarousel({ slides }: Props) {
               className="hero-banner"
               src={slide.image}
               alt={slide.alt}
-              width={960}
-              height={1200}
+              width={1536}
+              height={1024}
               loading={i === 0 ? "eager" : "lazy"}
               decoding="async"
             />

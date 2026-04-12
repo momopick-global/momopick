@@ -10,7 +10,6 @@ import { BlogAmbiguousSituationshipPromo } from "@/components/blog/BlogAmbiguous
 import { BackButton } from "@/components/ko/BackButton";
 import { QUIZ_IMAGE_PENDING_SRC } from "@/lib/content/quizImagePending";
 
-const year = new Date().getFullYear();
 
 export function generateStaticParams() {
   return getKoBlogSlugs().map((slug) => ({ slug }));
@@ -160,7 +159,6 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>

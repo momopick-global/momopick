@@ -33,7 +33,6 @@ export const metadata: Metadata = {
   },
 };
 
-const year = new Date().getFullYear();
 
 export default function KoLoveHubPage() {
   return (
@@ -78,7 +77,6 @@ export default function KoLoveHubPage() {
         </main>
 
         <footer className="ko-ft">
-          <div>© {year} Momopick. All rights reserved.</div>
           <KoFooterNav />
         </footer>
       </div>
