@@ -2,15 +2,41 @@
 
 import Link from "next/link";
 import { createPortal } from "react-dom";
-import { useCallback, useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { KoBrandLogo } from "./KoBrandLogo";
 import { KO_POLICY_LINKS, KO_SITE_NAV_LINKS, KO_TEST_CATEGORY_LINKS } from "./koSiteNavLinks";
 
-export function KoHeaderSymbolMenu() {
-  const [open, setOpen] = useState(false);
-  const menuId = useId();
+export type KoHeaderSymbolMenuProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+};
 
-  const close = useCallback(() => setOpen(false), []);
+export function KoHeaderSymbolMenu({ open, onOpenChange }: KoHeaderSymbolMenuProps) {
+  const menuId = useId();
+  const [portalVisible, setPortalVisible] = useState(false);
+  const [closing, setClosing] = useState(false);
+  const [menuMountKey, setMenuMountKey] = useState(0);
+  const closingRef = useRef(false);
+  closingRef.current = closing;
+
+  const close = useCallback(() => onOpenChange(false), [onOpenChange]);
+
+  useEffect(() => {
+    if (!open) return;
+    setMenuMountKey((k) => k + 1);
+    setPortalVisible(true);
+    setClosing(false);
+  }, [open]);
+
+  useEffect(() => {
+    if (open || !portalVisible) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setPortalVisible(false);
+      setClosing(false);
+    } else {
+      setClosing(true);
+    }
+  }, [open, portalVisible]);
 
   useEffect(() => {
     if (!open) return;
@@ -22,18 +48,36 @@ export function KoHeaderSymbolMenu() {
   }, [open, close]);
 
   useEffect(() => {
-    if (!open) return;
+    if (!portalVisible) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [open]);
+  }, [portalVisible]);
+
+  const handlePanelAnimationEnd = useCallback((e: React.AnimationEvent<HTMLElement>) => {
+    if (e.target !== e.currentTarget) return;
+    if (!closingRef.current) return;
+    const name = e.animationName ?? "";
+    if (!String(name).includes("hd-symbol-panel-slide-out")) return;
+    setPortalVisible(false);
+    setClosing(false);
+  }, []);
+
+  /** 패널이 DOM에 있는 동안은 닫힘 애니메이션과 버튼 아이콘·aria를 맞춤 (open만 쓰면 닫기 중 토끼로 바뀌는 깜빡임) */
+  const panelOnScreen = open || portalVisible;
 
   const panel =
-    open && typeof document !== "undefined" ? (
+    portalVisible && typeof document !== "undefined" ? (
       <div className="momopick-ko hd-symbol-panel-portal">
-        <nav id={menuId} className="hd-symbol-panel" aria-label="사이트 메뉴">
+        <nav
+          key={menuMountKey}
+          id={menuId}
+          className={`hd-symbol-panel${closing ? " hd-symbol-panel--closing" : ""}`}
+          aria-label="사이트 메뉴"
+          onAnimationEnd={handlePanelAnimationEnd}
+        >
           <div className="hd-symbol-panel__inner">
             <div className="hd-symbol-panel__section">
               <span className="hd-symbol-panel__label">🎯 테스트</span>
@@ -145,13 +189,13 @@ export function KoHeaderSymbolMenu() {
         <button
           type="button"
           className="hd-logo-btn"
-          aria-expanded={open}
+          aria-expanded={panelOnScreen}
           aria-haspopup="true"
           aria-controls={menuId}
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "사이트 메뉴 닫기" : "사이트 메뉴 열기"}
+          onClick={() => onOpenChange(!open)}
+          aria-label={panelOnScreen ? "사이트 메뉴 닫기" : "사이트 메뉴 열기"}
         >
-          {open ? (
+          {panelOnScreen ? (
             <svg
               className="hd-logo-btn__close"
               width="28"

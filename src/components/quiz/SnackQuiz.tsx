@@ -10,12 +10,19 @@ import {
   parseSnackOutcomeSearch,
 } from "@/lib/quizOutcomeUrl";
 import { useHydratedLocationSearch } from "@/lib/useHydratedLocationSearch";
-import { getQuizUiStrings, type QuizUiLocale } from "@/i18n/quiz-ui";
+import { getQuizUiStrings, type QuizUiLocale, type QuizUiStrings } from "@/i18n/quiz-ui";
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
+import { QuizPackTags } from "./QuizPackTags";
 import { SnackQuizIntroWithLiveCount } from "./SnackQuizIntroWithLiveCount";
-import { QuizResultShare } from "./QuizResultShare";
+import {
+  QuizResultShare,
+  QuizResultShareIconRow,
+  QuizShareKakaoWideButton,
+  QuizShareStatusHints,
+} from "./QuizResultShare";
 import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
+import { useQuizResultShareModel } from "./useQuizResultShareModel";
 
 /** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
 const ANSWER_FILL_MS = 340;
@@ -38,6 +45,152 @@ function orderLeaders(
   return [...primary, ...rest];
 }
 
+function SnackQuizDoneCard({
+  definition,
+  locale,
+  ui,
+  counts,
+  quizPageHref,
+  resultsGalleryHref,
+  quizResultUrl,
+  restart,
+}: {
+  definition: SnackQuizDefinition;
+  locale: QuizUiLocale;
+  ui: QuizUiStrings;
+  counts: Record<string, number>;
+  quizPageHref: string;
+  resultsGalleryHref: string;
+  quizResultUrl: string | undefined;
+  restart: () => void;
+}) {
+  const { resultKeys, resultOrder, results, blend, footnote } = definition;
+  const maxScore = Math.max(0, ...resultKeys.map((k) => counts[k] ?? 0));
+  const leaders = orderLeaders(resultKeys, resultOrder, counts, maxScore);
+  const isBlend = leaders.length > 1;
+  const singleKey = !isBlend && leaders[0] ? leaders[0] : null;
+  const single = singleKey ? results[singleKey] : null;
+
+  const resultImageRaw = isBlend ? blend.image : single?.image;
+  const resultImage = resultImageRaw ? quizAssetUrl(resultImageRaw, locale) : undefined;
+  const shareText = (() => {
+    if (isBlend && blend.share) {
+      return `${pickQuizText(locale, blend.share.title)} — ${pickQuizText(locale, blend.share.description)} | Momopick`;
+    }
+    if (!isBlend && single?.share) {
+      return `${pickQuizText(locale, single.share.title)} — ${pickQuizText(locale, single.share.description)} | Momopick`;
+    }
+    const resultTitle = isBlend
+      ? pickQuizText(locale, blend.title)
+      : pickQuizText(locale, single?.title);
+    const resultTagline = isBlend
+      ? pickQuizText(locale, blend.tagline)
+      : pickQuizText(locale, single?.tagline);
+    return `${resultTitle} — ${resultTagline} | Momopick`.trim();
+  })();
+
+  const shareModel = useQuizResultShareModel({
+    shareText,
+    shareImageUrl: resultImage,
+    quizStartUrl: quizPageHref,
+    quizResultUrl,
+    kakaoQuizResultShare: true,
+  });
+
+  return (
+    <div className="quiz-shell">
+      <div className="quiz-result-card">
+        {resultImage ? (
+          <div className="quiz-result-visual-wrap">
+            <div className="quiz-result-visual">
+              <QuizImageWithFallback
+                src={resultImage}
+                alt=""
+                width={480}
+                height={600}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <div className="quiz-result-save-fab">
+              <QuizSaveToVaultButton
+                variant="fab"
+                ui={ui}
+                draft={{
+                  locale,
+                  quizSlug: definition.slug,
+                  quizTitle: pickQuizText(locale, definition.title) || definition.slug,
+                  quizHref: quizPageHref,
+                  kind: "snack",
+                  resultTitle: isBlend
+                    ? pickQuizText(locale, blend.title)
+                    : pickQuizText(locale, single?.title),
+                  resultLine: isBlend
+                    ? pickQuizText(locale, blend.tagline)
+                    : pickQuizText(locale, single?.tagline),
+                  imageUrl: resultImage,
+                }}
+              />
+            </div>
+          </div>
+        ) : null}
+        {resultImage ? <QuizPackTags tags={definition.tags} locale={locale} afterImage /> : null}
+        <p className="quiz-result-emoji" aria-hidden="true">
+          {isBlend ? blend.emoji : single?.emoji}
+        </p>
+        {!resultImage ? <QuizPackTags tags={definition.tags} locale={locale} /> : null}
+        <h2 className="quiz-result-title">
+          {isBlend ? pickQuizText(locale, blend.title) : pickQuizText(locale, single?.title)}
+        </h2>
+        <p className="quiz-result-tagline">
+          {isBlend ? pickQuizText(locale, blend.tagline) : pickQuizText(locale, single?.tagline)}
+        </p>
+        <p className="quiz-result-body">
+          {isBlend ? pickQuizText(locale, blend.body) : pickQuizText(locale, single?.body)}
+        </p>
+        <div className="quiz-share quiz-share--result-top">
+          <QuizResultShareIconRow model={shareModel} ui={ui} />
+        </div>
+        <div className="quiz-result-actions-stack">
+          {!resultImage ? (
+            <QuizSaveToVaultButton
+              layout="bar"
+              ui={ui}
+              draft={{
+                locale,
+                quizSlug: definition.slug,
+                quizTitle: pickQuizText(locale, definition.title) || definition.slug,
+                quizHref: quizPageHref,
+                kind: "snack",
+                resultTitle: isBlend
+                  ? pickQuizText(locale, blend.title)
+                  : pickQuizText(locale, single?.title),
+                resultLine: isBlend
+                  ? pickQuizText(locale, blend.tagline)
+                  : pickQuizText(locale, single?.tagline),
+                imageUrl: resultImage,
+              }}
+            />
+          ) : null}
+          <div className="quiz-result-actions-row">
+            <Link href={resultsGalleryHref} className="btn sm quiz-result-actions-row__secondary">
+              {ui.viewAllResults}
+            </Link>
+            <button type="button" className="btn primary sm quiz-result-actions-row__primary" onClick={restart}>
+              {ui.restart}
+            </button>
+          </div>
+        </div>
+        <p className="quiz-footnote">{pickQuizText(locale, footnote)}</p>
+        <QuizShareKakaoWideButton model={shareModel} ui={ui} />
+        <div className="quiz-result-share-hints">
+          <QuizShareStatusHints model={shareModel} ui={ui} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function SnackQuiz({
   definition,
   locale = "ko",
@@ -54,7 +207,7 @@ export function SnackQuiz({
 }) {
   const router = useRouter();
   const ui = getQuizUiStrings(locale);
-  const { resultKeys, resultOrder, results, blend, questions, footnote } = definition;
+  const { resultKeys, resultOrder, questions } = definition;
 
   const [step, setStep] = useState(0);
   const [counts, setCounts] = useState<Record<string, number>>(() => emptyCounts(resultKeys));
@@ -89,10 +242,11 @@ export function SnackQuiz({
 
   const urlSearch = useHydratedLocationSearch();
 
+  /** 하이드레이션: 서버·첫 클라 렌더는 `urlSearch`만 쓴다. `window` 직접 읽기는 useLayoutEffect에서 처리 */
   const effectiveSearch = useMemo(() => {
     const u = urlSearch?.trim() ?? "";
     if (u.length > 1) return u.startsWith("?") ? u : `?${u}`;
-    return getBrowserQuizSearchString();
+    return "";
   }, [urlSearch]);
 
   const hasSharedOutcomeInUrl = useMemo(
@@ -200,104 +354,26 @@ export function SnackQuiz({
   }, [done, quizPageHref, shareOutcomeQuery]);
 
   if (done) {
-    const maxScore = Math.max(0, ...resultKeys.map((k) => counts[k] ?? 0));
-    const leaders = orderLeaders(resultKeys, resultOrder, counts, maxScore);
-    const isBlend = leaders.length > 1;
-    const singleKey = !isBlend && leaders[0] ? leaders[0] : null;
-    const single = singleKey ? results[singleKey] : null;
-
-    const resultImageRaw = isBlend ? blend.image : single?.image;
-    const resultImage = resultImageRaw ? quizAssetUrl(resultImageRaw, locale) : undefined;
-    const shareText = (() => {
-      if (isBlend && blend.share) {
-        return `${pickQuizText(locale, blend.share.title)} — ${pickQuizText(locale, blend.share.description)} | Momopick`;
-      }
-      if (!isBlend && single?.share) {
-        return `${pickQuizText(locale, single.share.title)} — ${pickQuizText(locale, single.share.description)} | Momopick`;
-      }
-      const resultTitle = isBlend
-        ? pickQuizText(locale, blend.title)
-        : pickQuizText(locale, single?.title);
-      const resultTagline = isBlend
-        ? pickQuizText(locale, blend.tagline)
-        : pickQuizText(locale, single?.tagline);
-      return `${resultTitle} — ${resultTagline} | Momopick`.trim();
-    })();
-
     return (
-      <div className="quiz-shell">
-        <div className="quiz-result-card">
-          {resultImage ? (
-            <div className="quiz-result-visual">
-              <QuizImageWithFallback
-                src={resultImage}
-                alt=""
-                width={480}
-                height={600}
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-          ) : null}
-          <p className="quiz-result-emoji" aria-hidden="true">
-            {isBlend ? blend.emoji : single?.emoji}
-          </p>
-          <h2 className="quiz-result-title">
-            {isBlend ? pickQuizText(locale, blend.title) : pickQuizText(locale, single?.title)}
-          </h2>
-          <p className="quiz-result-tagline">
-            {isBlend ? pickQuizText(locale, blend.tagline) : pickQuizText(locale, single?.tagline)}
-          </p>
-          <p className="quiz-result-body">
-            {isBlend ? pickQuizText(locale, blend.body) : pickQuizText(locale, single?.body)}
-          </p>
-          <QuizResultShare
-            ui={ui}
-            shareText={shareText}
-            shareImageUrl={resultImage}
-            quizStartUrl={quizPageHref}
-            quizResultUrl={quizResultUrl}
-            kakaoQuizResultShare
-          />
-          <div className="quiz-result-actions">
-            <QuizSaveToVaultButton
-              ui={ui}
-              draft={{
-                locale,
-                quizSlug: definition.slug,
-                quizTitle: pickQuizText(locale, definition.title) || definition.slug,
-                quizHref: quizPageHref,
-                kind: "snack",
-                resultTitle: isBlend
-                  ? pickQuizText(locale, blend.title)
-                  : pickQuizText(locale, single?.title),
-                resultLine: isBlend
-                  ? pickQuizText(locale, blend.tagline)
-                  : pickQuizText(locale, single?.tagline),
-                imageUrl: resultImage,
-              }}
-            />
-            <Link href={resultsGalleryHref} className="btn sm">
-              {ui.viewAllResults}
-            </Link>
-            <button type="button" className="btn primary sm" onClick={restart}>
-              {ui.restart}
-            </button>
-          </div>
-          <p className="quiz-footnote">{pickQuizText(locale, footnote)}</p>
-        </div>
-      </div>
+      <SnackQuizDoneCard
+        definition={definition}
+        locale={locale}
+        ui={ui}
+        counts={counts}
+        quizPageHref={quizPageHref}
+        resultsGalleryHref={resultsGalleryHref}
+        quizResultUrl={quizResultUrl}
+        restart={restart}
+      />
     );
   }
 
-  const q = questions[step];
-  const shareTextInProgress = (() => {
-    const t = pickQuizText(locale, definition.title);
-    const sub = definition.subtitle ? pickQuizText(locale, definition.subtitle) : "";
-    return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
-  })();
-
   if (showIntro) {
+    const introShareText = (() => {
+      const t = pickQuizText(locale, definition.title);
+      const sub = definition.subtitle ? pickQuizText(locale, definition.subtitle) : "";
+      return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
+    })();
     const quizId = definition.slug?.trim() || definition.id;
     return (
       <div className="quiz-shell quiz-shell--intro">
@@ -306,11 +382,22 @@ export function SnackQuiz({
             quizId={quizId}
             locale={locale}
             questionTotal={total}
+            tags={definition.tags}
+            shareText={introShareText}
+            shareImageUrl={quizShareCoverUrl}
             onStarted={() => setQuizStarted(true)}
           />
         ) : (
           <div className="quiz-intro">
+            <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
             <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
+            <div className="quiz-share-wrap quiz-share-wrap--intro">
+              <QuizResultShare
+                ui={ui}
+                shareText={introShareText}
+                shareImageUrl={quizShareCoverUrl}
+              />
+            </div>
             <div className="quiz-intro-actions">
               <button
                 type="button"
@@ -325,6 +412,8 @@ export function SnackQuiz({
       </div>
     );
   }
+
+  const q = questions[step];
 
   return (
     <div className="quiz-shell">
@@ -369,9 +458,6 @@ export function SnackQuiz({
           );
         })}
       </ul>
-      <div className="quiz-share-wrap quiz-share-wrap--during">
-        <QuizResultShare ui={ui} shareText={shareTextInProgress} shareImageUrl={quizShareCoverUrl} />
-      </div>
     </div>
   );
 }

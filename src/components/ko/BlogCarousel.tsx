@@ -65,15 +65,17 @@ export function BlogCarousel({ posts }: Props) {
             <li key={post.id} className="blog-carousel-item">
               <Link className="blog-card-link" href={`/ko/blog/${post.id}/`}>
                 <article className="blog-card blog-card--with-img">
-                  <QuizImageWithFallback
-                    src={post.image ?? QUIZ_IMAGE_PENDING_SRC}
-                    alt=""
-                    width={720}
-                    height={360}
-                    loading="lazy"
-                    decoding="async"
-                    className="blog-card__thumb"
-                  />
+                  <div className="blog-card__thumb-frame">
+                    <QuizImageWithFallback
+                      src={post.image ?? QUIZ_IMAGE_PENDING_SRC}
+                      alt=""
+                      width={480}
+                      height={600}
+                      loading="lazy"
+                      decoding="async"
+                      className="blog-card__thumb"
+                    />
+                  </div>
                   <div className="blog-card__meta">
                     <time className="blog-card__date" dateTime={post.dateTime}>
                       {post.date}

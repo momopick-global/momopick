@@ -30,9 +30,13 @@ function IconBookmark({ filled }: { filled: boolean }) {
 type Props = {
   ui: QuizUiStrings;
   draft: SavedQuizVaultDraft;
+  /** 결과 카드: 전폭 바 형태 */
+  layout?: "icon" | "bar";
+  /** 이미지 우상단 FAB — layout이 icon일 때만 적용 */
+  variant?: "default" | "fab";
 };
 
-export function QuizSaveToVaultButton({ ui, draft }: Props) {
+export function QuizSaveToVaultButton({ ui, draft, layout = "icon", variant = "default" }: Props) {
   const [savedFlash, setSavedFlash] = useState(false);
 
   const onSave = () => {
@@ -41,11 +45,33 @@ export function QuizSaveToVaultButton({ ui, draft }: Props) {
     window.setTimeout(() => setSavedFlash(false), 2000);
   };
 
+  if (layout === "bar") {
+    return (
+      <div className="quiz-vault-save-bar-wrap">
+        <button
+          type="button"
+          className={`btn quiz-vault-save-bar${savedFlash ? " quiz-vault-save-bar--done" : ""}`}
+          onClick={onSave}
+        >
+          <IconBookmark filled={savedFlash} />
+          <span>{savedFlash ? ui.savedToVault : ui.saveToVault}</span>
+        </button>
+        {savedFlash ? (
+          <p className="quiz-vault-save-hint quiz-vault-save-hint--bar" role="status">
+            {ui.savedToVault}
+          </p>
+        ) : null}
+      </div>
+    );
+  }
+
+  const fab = variant === "fab";
+
   return (
-    <div className="quiz-vault-save-wrap">
+    <div className={`quiz-vault-save-wrap${fab ? " quiz-vault-save-wrap--fab" : ""}`}>
       <button
         type="button"
-        className={`quiz-share-btn quiz-vault-save${savedFlash ? " quiz-vault-save--done" : ""}`}
+        className={`quiz-share-btn quiz-vault-save${fab ? " quiz-vault-save--fab" : ""}${savedFlash ? " quiz-vault-save--done" : ""}`}
         onClick={onSave}
         title={savedFlash ? ui.savedToVault : ui.saveToVault}
         aria-label={savedFlash ? ui.savedToVault : ui.saveToVault}
@@ -55,7 +81,7 @@ export function QuizSaveToVaultButton({ ui, draft }: Props) {
         </span>
       </button>
       {savedFlash ? (
-        <p className="quiz-vault-save-hint" role="status">
+        <p className={`quiz-vault-save-hint${fab ? " quiz-vault-save-hint--fab" : ""}`} role="status">
           {ui.savedToVault}
         </p>
       ) : null}

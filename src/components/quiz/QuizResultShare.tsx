@@ -1,46 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
 import type { QuizUiStrings } from "@/i18n/quiz-ui";
 import {
-  getKakaoFeedShareUrls,
-  isKakaoPathLocaleHubOnly,
-  kakaoTemplatePathAndSuffix,
-  normalizeMomopickHostForShare,
-  parseShareTextForKakaoFeed,
-  pathForKakaoMessageTemplate,
-} from "@/lib/kakaoShareFeed";
-
-/** 퀴즈 결과 전용 카카오 커스텀 템플릿 ID (버튼 2개) */
-const KAKAO_QUIZ_RESULT_TEMPLATE_ID = 131878;
-
-/** SDK 스크립트는 로드됐는데 `onLoad` 직전에 클릭하는 경우 동기 `init` 보완 (제스처 유지) */
-const NEXT_KAKAO_JS_KEY = (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim();
-
-type KakaoFallbackCause = "missing_key" | "script" | "default";
-
-type Props = {
-  ui: QuizUiStrings;
-  /** SNS 미리보기·트윗에 쓸 짧은 문구 */
-  shareText: string;
-  /** 카카오 공유 피드에 표시할 이미지 경로 (`/quizzes/...`) 또는 절대 URL. 없으면 기본 OG 이미지 사용 */
-  shareImageUrl?: string;
-  /**
-   * 카카오 버튼 "테스트 하기"에 연결할 퀴즈 시작 URL (상대/절대 모두 가능).
-   * 없으면 현재 페이지 URL로 fallback.
-   */
-  quizStartUrl?: string;
-  /**
-   * 결과 딥링크(쿼리 포함 가능). 있으면 복사·SNS·카카오「결과 보기」·피드 본문 링크에 우선 사용.
-   * 예: `/ko/love/slug/?r=typeA` — `quizStartUrl`은 쿼리 없는 시작 페이지 권장.
-   */
-  quizResultUrl?: string;
-  /**
-   * true: 퀴즈 **결과** 화면 — 커스텀 템플릿(결과 보기·테스트 하기 2버튼).
-   * false/생략: 문항 진행 중 등 — 기본 피드(현재 페이지 1링크, 추가 버튼 없음).
-   */
-  kakaoQuizResultShare?: boolean;
-};
+  type QuizResultShareModel,
+  useQuizResultShareModel,
+  type UseQuizResultShareModelParams,
+} from "@/components/quiz/useQuizResultShareModel";
 
 function IconLink() {
   return (
@@ -92,266 +57,44 @@ function IconX() {
   );
 }
 
-export function QuizResultShare({
-  ui,
-  shareText,
-  shareImageUrl,
-  quizStartUrl,
-  quizResultUrl,
-  kakaoQuizResultShare = false,
-}: Props) {
-  const [pageUrl, setPageUrl] = useState("");
-  /** 링크 복사 버튼 전용 */
-  const [linkCopiedNotice, setLinkCopiedNotice] = useState(false);
-  /** 카카오 실패 후 클립보드 폴백 시 원인별 안내(「복사됨」과 구분) */
-  const [kakaoFallback, setKakaoFallback] = useState<null | { cause: KakaoFallbackCause }>(null);
+type Props = UseQuizResultShareModelParams & {
+  ui: QuizUiStrings;
+};
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setPageUrl(window.location.href);
-    }
-  }, []);
-
-  const resolvedPageUrl = useMemo(() => {
-    if (quizResultUrl?.trim()) return normalizeMomopickHostForShare(quizResultUrl.trim());
-    return pageUrl;
-  }, [quizResultUrl, pageUrl]);
-
-  const canUseShareLinks = Boolean(pageUrl || quizResultUrl?.trim());
-
-  const handleCopy = useCallback(() => {
-    if (!resolvedPageUrl) return;
-    setKakaoFallback(null);
-    void navigator.clipboard.writeText(resolvedPageUrl).then(
-      () => {
-        setLinkCopiedNotice(true);
-        window.setTimeout(() => setLinkCopiedNotice(false), 2000);
-      },
-      () => window.prompt("아래 링크를 복사해 주세요", resolvedPageUrl),
-    );
-  }, [resolvedPageUrl]);
-
-  const openKakao = useCallback(() => {
-    if (typeof window === "undefined" || !canUseShareLinks) return;
-    setLinkCopiedNotice(false);
-    setKakaoFallback(null);
-    /** 마운트 시점 URL이 아니라 클릭 시점 — 클라이언트 전환·쿼리 반영 후에도 맞음 */
-    const hrefAtClick = window.location.href;
-    const hrefForResultFeed = quizResultUrl?.trim()
-      ? normalizeMomopickHostForShare(quizResultUrl.trim())
-      : hrefAtClick;
-
-    const fallbackCopy = (cause: KakaoFallbackCause = "default") => {
-      setLinkCopiedNotice(false);
-      void navigator.clipboard.writeText(hrefForResultFeed).then(
-        () => {
-          setKakaoFallback({ cause });
-          window.setTimeout(() => setKakaoFallback(null), 8000);
-        },
-        () => {
-          console.warn("[Momopick] clipboard write failed, fallback prompt");
-          window.prompt("아래 링크를 복사해 주세요", hrefForResultFeed);
-        },
-      );
-    };
-
-    /**
-     * `await` 로 클릭 직후 공유를 미루면 사용자 제스처가 끊겨 카카오 공유 창이 안 뜨는 브라우저가 많음.
-     * SDK는 `beforeInteractive` 로 최대한 먼저 로드 — 여기서는 동기 호출만 한다.
-     */
-    try {
-      const Kakao = window.Kakao;
-      if (!NEXT_KAKAO_JS_KEY) {
-        console.warn("[Momopick][Kakao] NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 없음 — 빌드·Pages 환경변수 확인");
-        fallbackCopy("missing_key");
-        return;
-      }
-      if (!Kakao) {
-        console.warn("[Momopick][Kakao] 스크립트 미로드 — 네트워크·차단기 확인 후 다시 시도");
-        fallbackCopy("script");
-        return;
-      }
-      if (!Kakao.isInitialized()) {
-        try {
-          Kakao.init(NEXT_KAKAO_JS_KEY);
-        } catch (e) {
-          console.warn("[Kakao] init(공유 클릭 시점) 실패", e);
-        }
-      }
-      if (!Kakao.isInitialized()) {
-        console.warn(
-          "[Momopick][Kakao] init 후에도 미준비 — 잠시 후 다시 누르거나 카카오 앱 키·도메인 등록 확인",
-        );
-        fallbackCopy();
-        return;
-      }
-
-      const { title, description } = parseShareTextForKakaoFeed(shareText);
-      const { mobileWebUrl, webUrl, imageUrl } = getKakaoFeedShareUrls(hrefForResultFeed, shareImageUrl);
-      const resultMobile = normalizeMomopickHostForShare(mobileWebUrl);
-      const resultWeb = normalizeMomopickHostForShare(webUrl);
-      const imageForKakao = normalizeMomopickHostForShare(imageUrl);
-      const resultLink = { mobileWebUrl: resultMobile, webUrl: resultWeb };
-
-      /** 문항 진행 중 등: 기본 피드(본문 링크만, 하단 버튼 없음) */
-      if (!kakaoQuizResultShare) {
-        if (typeof Kakao.Share?.sendDefault !== "function") {
-          fallbackCopy();
-          return;
-        }
-        try {
-          console.info("[Momopick][Kakao] Share.sendDefault(feed, simple)", {
-            hrefForResultFeed,
-            resultMobile,
-            imageForKakao,
-          });
-          const result = Kakao.Share.sendDefault({
-            objectType: "feed",
-            content: {
-              title: title || "모모픽",
-              description: description || "재미로 보는 심리 테스트",
-              imageUrl: imageForKakao,
-              link: resultLink,
-            },
-          });
-          if (result && typeof (result as Promise<void>).catch === "function") {
-            (result as Promise<void>).catch((e: unknown) => {
-              console.warn("[Kakao] Share.sendDefault rejected", e);
-              fallbackCopy();
-            });
-          }
-        } catch (e) {
-          console.warn("[Kakao] Share.sendDefault failed", e);
-          fallbackCopy();
-        }
-        return;
-      }
-
-      const resultPath = pathForKakaoMessageTemplate(resultMobile);
-      const rs = kakaoTemplatePathAndSuffix(resultMobile);
-      let startHref = quizStartUrl?.trim()
-        ? normalizeMomopickHostForShare(quizStartUrl)
-        : resultMobile;
-      let startPath = pathForKakaoMessageTemplate(startHref);
-      if (isKakaoPathLocaleHubOnly(startPath)) {
-        startHref = resultMobile;
-        startPath = resultPath;
-      }
-      const ss = kakaoTemplatePathAndSuffix(startHref);
-      const resultPathFull = `${rs.path}${rs.suffix}`;
-      const startPathFull = `${ss.path}${ss.suffix}`;
-      const startLink = { mobileWebUrl: startHref, webUrl: startHref };
-
-      const sendDefaultResultDual = () => {
-        if (typeof Kakao.Share?.sendDefault !== "function") {
-          fallbackCopy();
-          return;
-        }
-        try {
-          console.info("[Momopick][Kakao] Share.sendDefault(feed, result fallback)", {
-            hrefForResultFeed,
-            resultMobile,
-            startHref,
-          });
-          const result = Kakao.Share.sendDefault({
-            objectType: "feed",
-            content: {
-              title: title || "모모픽",
-              description: description || "재미로 보는 심리 테스트",
-              imageUrl: imageForKakao,
-              link: resultLink,
-            },
-            buttons: [
-              { title: "결과 보기", link: resultLink },
-              { title: "테스트 하기", link: startLink },
-            ],
-          });
-          if (result && typeof (result as Promise<void>).catch === "function") {
-            (result as Promise<void>).catch((e: unknown) => {
-              console.warn("[Kakao] sendDefault(fallback) rejected", e);
-              fallbackCopy();
-            });
-          }
-        } catch (e) {
-          console.warn("[Kakao] sendDefault(fallback) failed", e);
-          fallbackCopy();
-        }
-      };
-
-      if (typeof Kakao.Share?.sendCustom !== "function") {
-        sendDefaultResultDual();
-        return;
-      }
-
-      try {
-        console.info("[Momopick][Kakao] Share.sendCustom(result)", {
-          templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
-          hrefForResultFeed,
-          resultMobile,
-          resultPathFull,
-          rs,
-          imageForKakao,
-          startHref,
-          startPathFull,
-          ss,
-        });
-        const result = Kakao.Share.sendCustom({
-          templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
-          templateArgs: {
-            TITLE: title || "모모픽",
-            DESC: description || "재미로 보는 심리 테스트",
-            IMAGE_URL: imageForKakao,
-            /** 레거시·단일 변수용: 경로+쿼리 한 덩어리(쿼리가 잘리는 템플릿은 RESULT_PATH+RESULT_SUFFIX 권장) */
-            RESULT_URL: resultPathFull,
-            RESULT_WEB_URL: resultPathFull,
-            RESULT_PATH: rs.path,
-            RESULT_SUFFIX: rs.suffix,
-            START_URL: startPathFull,
-            START_WEB_URL: startPathFull,
-            START_PATH: ss.path,
-            START_SUFFIX: ss.suffix,
-          },
-        });
-        if (result && typeof (result as Promise<void>).catch === "function") {
-          (result as Promise<void>).catch((e: unknown) => {
-            console.warn("[Kakao] Share.sendCustom rejected → sendDefault fallback", e);
-            sendDefaultResultDual();
-          });
-        }
-      } catch (e) {
-        console.warn("[Kakao] Share.sendCustom failed → sendDefault fallback", e);
-        sendDefaultResultDual();
-      }
-    } catch (e) {
-      console.error("[Momopick][Kakao] openKakao unexpected error", e);
-      fallbackCopy();
-    }
-  }, [canUseShareLinks, shareText, shareImageUrl, kakaoQuizResultShare, quizStartUrl, quizResultUrl]);
-
-  const openFacebook = useCallback(() => {
-    if (!resolvedPageUrl) return;
-    const u = encodeURIComponent(resolvedPageUrl);
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${u}`, "_blank", "noopener,noreferrer");
-  }, [resolvedPageUrl]);
-
-  const openX = useCallback(() => {
-    if (!resolvedPageUrl) return;
-    const u = encodeURIComponent(resolvedPageUrl);
-    const t = encodeURIComponent(shareText);
-    window.open(`https://twitter.com/intent/tweet?text=${t}&url=${u}`, "_blank", "noopener,noreferrer");
-  }, [resolvedPageUrl, shareText]);
-
+export function QuizShareStatusHints({ model, ui }: { model: QuizResultShareModel; ui: QuizUiStrings }) {
   return (
-    <div className="quiz-share">
+    <>
+      {model.linkCopiedNotice ? (
+        <p className="quiz-share-hint" role="status">
+          {ui.copied}
+        </p>
+      ) : null}
+      {model.kakaoFallback ? (
+        <p className="quiz-share-hint" role="status">
+          {model.kakaoFallback.cause === "missing_key"
+            ? ui.kakaoShareMissingKeyHint
+            : model.kakaoFallback.cause === "script"
+              ? ui.kakaoShareScriptBlockedHint
+              : ui.kakaoShareFallbackHint}
+        </p>
+      ) : null}
+    </>
+  );
+}
+
+/** SNS 아이콘 행 — `useQuizResultShareModel` 한 번만 호출한 뒤 전달 */
+export function QuizResultShareIconRow({ model, ui }: { model: QuizResultShareModel; ui: QuizUiStrings }) {
+  return (
+    <>
       <p className="quiz-share-title">{ui.shareWithFriends}</p>
       <div className="quiz-share-row" role="group" aria-label={ui.shareWithFriends}>
         <button
           type="button"
           className="quiz-share-btn"
-          onClick={handleCopy}
-          disabled={!canUseShareLinks}
+          onClick={model.handleCopy}
+          disabled={!model.canUseShareLinks}
           title={ui.copyLink}
-          aria-label={linkCopiedNotice ? ui.copied : ui.copyLink}
+          aria-label={model.linkCopiedNotice ? ui.copied : ui.copyLink}
         >
           <span className="quiz-share-btn-inner quiz-share-btn-inner--link">
             <IconLink />
@@ -360,8 +103,8 @@ export function QuizResultShare({
         <button
           type="button"
           className="quiz-share-btn"
-          onClick={openKakao}
-          disabled={!canUseShareLinks}
+          onClick={model.openKakao}
+          disabled={!model.canUseShareLinks}
           title={ui.shareKakao}
           aria-label={ui.shareKakao}
         >
@@ -372,8 +115,8 @@ export function QuizResultShare({
         <button
           type="button"
           className="quiz-share-btn"
-          onClick={openFacebook}
-          disabled={!canUseShareLinks}
+          onClick={model.openFacebook}
+          disabled={!model.canUseShareLinks}
           title={ui.shareFacebook}
           aria-label={ui.shareFacebook}
         >
@@ -384,8 +127,8 @@ export function QuizResultShare({
         <button
           type="button"
           className="quiz-share-btn"
-          onClick={openX}
-          disabled={!canUseShareLinks}
+          onClick={model.openX}
+          disabled={!model.canUseShareLinks}
           title={ui.shareX}
           aria-label={ui.shareX}
         >
@@ -394,20 +137,36 @@ export function QuizResultShare({
           </span>
         </button>
       </div>
-      {linkCopiedNotice ? (
-        <p className="quiz-share-hint" role="status">
-          {ui.copied}
-        </p>
-      ) : null}
-      {kakaoFallback ? (
-        <p className="quiz-share-hint" role="status">
-          {kakaoFallback.cause === "missing_key"
-            ? ui.kakaoShareMissingKeyHint
-            : kakaoFallback.cause === "script"
-              ? ui.kakaoShareScriptBlockedHint
-              : ui.kakaoShareFallbackHint}
-        </p>
-      ) : null}
+    </>
+  );
+}
+
+/** 결과 카드 하단 — 전폭 카카오 CTA (아이콘 행과 동일 `openKakao`) */
+export function QuizShareKakaoWideButton({ model, ui }: { model: QuizResultShareModel; ui: QuizUiStrings }) {
+  return (
+    <div className="quiz-share-kakao-wide-wrap">
+      <button
+        type="button"
+        className="quiz-share-kakao-wide"
+        onClick={model.openKakao}
+        disabled={!model.canUseShareLinks}
+        aria-label={ui.shareKakaoWideCta}
+      >
+        <span className="quiz-share-kakao-wide__glyph" aria-hidden="true">
+          <IconKakao />
+        </span>
+        <span className="quiz-share-kakao-wide__label">{ui.shareKakaoWideCta}</span>
+      </button>
+    </div>
+  );
+}
+
+export function QuizResultShare({ ui, ...modelParams }: Props) {
+  const model = useQuizResultShareModel(modelParams);
+  return (
+    <div className="quiz-share">
+      <QuizResultShareIconRow model={model} ui={ui} />
+      <QuizShareStatusHints model={model} ui={ui} />
     </div>
   );
 }

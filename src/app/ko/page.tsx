@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { KoHomeQuizThumbActions } from "@/components/ko/KoHomeQuizThumbActions";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { HeroBannerCarousel } from "@/components/ko/HeroBannerCarousel";
@@ -14,6 +15,8 @@ const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
 /** 지금 뜨는 테스트 가로 레일 = 썸·연애 우선순위 상위 (홈 레일용) */
 const homeRailKo = loveSectionQuizzes.slice(0, 2);
+/** 홈 썸·연애 타일 = 우선순위 상위 4개만 (전체는 /ko/love/) */
+const homeLoveTilesKo = loveSectionQuizzes.slice(0, 4);
 
 export default function KoHomePage() {
   return (
@@ -51,25 +54,38 @@ export default function KoHomePage() {
             </div>
             <div className="rail" role="list">
               {homeRailKo.map((item, i) => (
-                <Link
+                <div
                   key={item.href}
                   className={`rail-card rail-card--${item.railTheme}`}
-                  href={item.href}
                   role="listitem"
                 >
-                  <QuizImageWithFallback
-                    src={item.image || "/images/banners/rail-01.webp"}
-                    alt=""
-                    width={480}
-                    height={600}
-                    loading={i < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                  />
-                  <div className="cap">
-                    <b>{item.title}</b>
-                    <small>{item.subtitleLine}</small>
+                  <div className="rail-card__thumb">
+                    <Link href={item.href} className="rail-card__thumb-link" aria-label={item.title}>
+                      <QuizImageWithFallback
+                        src={item.image || "/images/banners/rail-01.webp"}
+                        alt=""
+                        width={480}
+                        height={600}
+                        loading={i < 2 ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                    </Link>
+                    <KoHomeQuizThumbActions
+                      href={item.href}
+                      slug={item.slug}
+                      title={item.title}
+                      subtitleLine={item.subtitleLine}
+                      subtitleOnly={item.subtitleOnly}
+                      imageUrl={item.image || "/images/banners/rail-01.webp"}
+                    />
                   </div>
-                </Link>
+                  <Link href={item.href} className="rail-card__cap-link">
+                    <div className="cap">
+                      <b>{item.title}</b>
+                      <small>{item.subtitleLine}</small>
+                    </div>
+                  </Link>
+                </div>
               ))}
             </div>
           </section>
@@ -82,28 +98,40 @@ export default function KoHomePage() {
               </Link>
             </div>
             <p className="sec-lead">
-              썸·연애 카테고리 테스트를 우선순위가 높은 순으로 모두 모아 두었어요.{" "}
-              <Link href="/ko/love/">썸·연애 허브</Link>와 같은 목록입니다.
+              우선순위가 높은 테스트만 대표로 골랐어요. 나머지는{" "}
+              <Link href="/ko/love/">썸·연애 허브</Link>에서 볼 수 있어요.
             </p>
             <div className="tile-grid">
-              {loveSectionQuizzes.map((item, i) => (
-                <Link key={item.href} className="tile tile--love" href={item.href}>
+              {homeLoveTilesKo.map((item, i) => (
+                <div key={item.href} className="tile tile--love">
                   <div className="thumb">
                     {i === 0 ? <span className="badge">HOT</span> : null}
-                    <QuizImageWithFallback
-                      src={item.image || "/images/banners/tile-love-01.webp"}
-                      alt=""
-                      width={1536}
-                      height={1920}
-                      loading={i < 6 ? "eager" : "lazy"}
-                      decoding="async"
+                    <Link href={item.href} className="tile-thumb-fill" aria-label={item.title}>
+                      <QuizImageWithFallback
+                        src={item.image || "/images/banners/tile-love-01.webp"}
+                        alt=""
+                        width={1536}
+                        height={1920}
+                        loading={i < 4 ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                    </Link>
+                    <KoHomeQuizThumbActions
+                      href={item.href}
+                      slug={item.slug}
+                      title={item.title}
+                      subtitleLine={item.subtitleLine}
+                      subtitleOnly={item.subtitleOnly}
+                      imageUrl={item.image || "/images/banners/tile-love-01.webp"}
                     />
                   </div>
-                  <div className="body">
-                    <b>{item.title}</b>
-                    <small>{item.subtitleLine}</small>
-                  </div>
-                </Link>
+                  <Link href={item.href} className="tile-body-link">
+                    <div className="body">
+                      <b>{item.title}</b>
+                      <small>{item.subtitleLine}</small>
+                    </div>
+                  </Link>
+                </div>
               ))}
             </div>
           </section>

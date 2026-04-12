@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { BackButton } from "@/components/ko/BackButton";
+import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
 
 const loveAll = getKoLoveQuizzesSorted("ko");
 
@@ -59,30 +59,7 @@ export default function KoLoveHubPage() {
               홈 메인 썸·연애 섹션과 같은 목록입니다. 콘텐츠 JSON에서 <strong>category: love</strong>인 테스트를
               카드 우선순위(높을수록 앞)로 정렬해 두었어요.
             </p>
-            <div className="tile-grid">
-              {loveAll.map((item, i) => (
-                <Link key={item.href} className="tile tile--love" href={item.href}>
-                  <div className="thumb">
-                    {i === 0 ? <span className="badge">HOT</span> : null}
-                    <QuizImageWithFallback
-                      src={item.image || "/images/banners/tile-love-01.webp"}
-                      alt=""
-                      width={1536}
-                      height={1920}
-                      loading={i < 6 ? "eager" : "lazy"}
-                      decoding="async"
-                    />
-                    <span className="thumb-slug" aria-hidden="true">
-                      {item.slug.split("/").filter(Boolean).pop() ?? item.slug}
-                    </span>
-                  </div>
-                  <div className="body">
-                    <b>{item.title}</b>
-                    <small>{item.subtitleLine}</small>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <KoLoveQuizListView items={loveAll} />
           </section>
 
           <section className="section duo hub-love-footer" aria-label="다음 이동">

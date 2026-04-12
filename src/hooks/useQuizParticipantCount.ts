@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { increaseQuizCount, initQuizCount } from "@/lib/quizStatsSupabase";
 
 /**
@@ -8,6 +8,8 @@ import { increaseQuizCount, initQuizCount } from "@/lib/quizStatsSupabase";
  */
 export function useQuizParticipantCount(quizId: string) {
   const [count, setCount] = useState<number | null>(null);
+  const isCountingRef = useRef(false);
+  const registerStartSeqRef = useRef(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -20,11 +22,21 @@ export function useQuizParticipantCount(quizId: string) {
   }, [quizId]);
 
   const registerStart = useCallback(async () => {
+    if (isCountingRef.current) {
+      console.warn("[quiz_stats] registerStart skipped (isCounting)");
+      return;
+    }
+    isCountingRef.current = true;
+    registerStartSeqRef.current += 1;
+    const rsNo = registerStartSeqRef.current;
+    console.info(`[quiz_stats] registerStart() #${rsNo} quizId=${quizId}`);
     try {
       const next = await increaseQuizCount(quizId);
       setCount(next);
     } catch (e) {
       console.error("[quiz_stats] registerStart", e);
+    } finally {
+      isCountingRef.current = false;
     }
   }, [quizId]);
 

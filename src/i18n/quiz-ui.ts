@@ -32,6 +32,8 @@ export type QuizUiStrings = {
   /** SDK 스크립트 로드 실패(차단·네트워크) */
   kakaoShareScriptBlockedHint: string;
   shareKakao: string;
+  /** 결과 카드 하단 전폭 카카오 버튼 문구 */
+  shareKakaoWideCta: string;
   shareFacebook: string;
   shareX: string;
 };
@@ -57,6 +59,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "카카오 키가 빌드에 없어요. Cloudflare Pages 환경 변수에 NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY 를 넣고 다시 배포해 주세요. 링크는 복사해 두었어요.",
     kakaoShareScriptBlockedHint: "카카오 스크립트를 불러오지 못했어요(차단·네트워크). 링크를 복사했어요.",
     shareKakao: "카카오로 공유",
+    shareKakaoWideCta: "카카오톡으로 결과 공유하기",
     shareFacebook: "페이스북으로 공유",
     shareX: "X로 공유",
   },
@@ -80,6 +83,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "Kakao JS key wasn’t in the build. Add NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY in Cloudflare Pages and redeploy. Link copied.",
     kakaoShareScriptBlockedHint: "Couldn’t load Kakao script (blocker/network). Link copied.",
     shareKakao: "Share on Kakao",
+    shareKakaoWideCta: "Share your result on KakaoTalk",
     shareFacebook: "Share on Facebook",
     shareX: "Share on X",
   },
@@ -103,6 +107,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "ビルドにカカオJSキーがありません。Cloudflare Pagesの環境変数に NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY を設定して再デプロイしてください。リンクはコピー済みです。",
     kakaoShareScriptBlockedHint: "カカオのスクリプトを読み込めませんでした（ブロック・通信）。リンクをコピーしました。",
     shareKakao: "カカオでシェア",
+    shareKakaoWideCta: "カカオトークで結果をシェア",
     shareFacebook: "Facebookでシェア",
     shareX: "Xでシェア",
   },
@@ -126,6 +131,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "Falta la clave JS de Kakao en el build. Añade NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY en Pages y vuelve a desplegar. Enlace copiado.",
     kakaoShareScriptBlockedHint: "No se pudo cargar el script de Kakao (bloqueo/red). Enlace copiado.",
     shareKakao: "Compartir en Kakao",
+    shareKakaoWideCta: "Compartir resultado en KakaoTalk",
     shareFacebook: "Compartir en Facebook",
     shareX: "Compartir en X",
   },
@@ -149,6 +155,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "Chave JS do Kakao ausente no build. Defina NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY no Pages e faça redeploy. Link copiado.",
     kakaoShareScriptBlockedHint: "Não foi possível carregar o script do Kakao (bloqueio/rede). Link copiado.",
     shareKakao: "Compartilhar no Kakao",
+    shareKakaoWideCta: "Compartilhar resultado no KakaoTalk",
     shareFacebook: "Compartilhar no Facebook",
     shareX: "Compartilhar no X",
   },
@@ -172,6 +179,7 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
       "Kunci JS Kakao tidak ada di build. Tambahkan NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY di Pages lalu deploy ulang. Tautan disalin.",
     kakaoShareScriptBlockedHint: "Skrip Kakao tidak dimuat (pemblokiran/jaringan). Tautan disalin.",
     shareKakao: "Bagikan ke Kakao",
+    shareKakaoWideCta: "Bagikan hasil ke KakaoTalk",
     shareFacebook: "Bagikan ke Facebook",
     shareX: "Bagikan ke X",
   },
