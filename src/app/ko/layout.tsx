@@ -64,7 +64,7 @@ const jsonLdOrg = {
   image: "https://momopick.com/og/main-og.webp",
   sameAs: [
     "https://www.youtube.com/@YOUR_CHANNEL",
-    "https://www.instagram.com/YOUR_ID",
+    "https://www.instagram.com/momopick.cc/",
   ],
 };
 

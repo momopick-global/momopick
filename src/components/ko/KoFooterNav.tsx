@@ -48,7 +48,7 @@ export function KoFooterNav() {
           <span>카카오채널</span>
         </a>
         <a
-          href="https://www.instagram.com/momopick.global"
+          href="https://www.instagram.com/momopick.cc?igsh=MTVzbmhueWVpaWNxMg%3D%3D&utm_source=qr"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="인스타그램"

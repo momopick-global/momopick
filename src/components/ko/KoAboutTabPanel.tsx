@@ -232,7 +232,7 @@ export function KoAboutTabPanel() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/momopick.global"
+                  href="https://www.instagram.com/momopick.cc?igsh=MTVzbmhueWVpaWNxMg%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

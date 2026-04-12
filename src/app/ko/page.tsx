@@ -135,6 +135,7 @@ export default function KoHomePage() {
             </div>
           </section>
 
+          {/* 당분간 비노출: 🧠 성격·심리, 오늘의 나는 누구?
           <section className="section section--personality" id="mind" aria-labelledby="sec-mind">
             <div className="sec-hd">
               <h2 id="sec-mind">🧠 성격·심리, 오늘의 나는 누구?</h2>
@@ -213,7 +214,9 @@ export default function KoHomePage() {
               </Link>
             </div>
           </section>
+          */}
 
+          {/* 당분간 비노출: 🍿 심심할 때 5분 스낵 퀴즈
           <section className="section section--fun" id="snack" aria-labelledby="sec-snack">
             <div className="sec-hd">
               <h2 id="sec-snack">🍿 심심할 때 5분 스낵 퀴즈</h2>
@@ -293,6 +296,7 @@ export default function KoHomePage() {
               </Link>
             </div>
           </section>
+          */}
 
           <section className="section duo" aria-label="플랫폼 안내">
             <article className="info-card">
