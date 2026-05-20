@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { KakaoSdkInit } from "@/components/KakaoSdkInit";
+import { InAppBrowserGuide } from "@/components/InAppBrowserGuide";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <KakaoSdkInit />
+        <InAppBrowserGuide />
         {children}
       </body>
     </html>
