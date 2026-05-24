@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://momopick.com/ko/today/",
   },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "오늘의 운세 | 모모픽",
     description: "오늘의 운세",

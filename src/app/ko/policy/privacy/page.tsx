@@ -84,6 +84,10 @@ export default function PrivacyPolicyPage() {
                 <li>
                   <strong>고객 문의</strong>: 문의 내용, 연락처(이메일 등), 처리 이력
                 </li>
+                <li>
+                  <strong>광고 게재·측정</strong>: Google AdSense 등 제3자 광고 사업자가 광고 노출과
+                  측정을 위해 수집할 수 있는 쿠키·기기 식별자·광고 식별자, 페이지 방문·이용 기록
+                </li>
               </ul>
               <p>
                 필수·선택 항목은 각 수집 시점에 별도로 구분하여 안내합니다. 이용자는 선택 항목에 대해
@@ -114,6 +118,12 @@ export default function PrivacyPolicyPage() {
                 업체에 위탁할 수 있습니다. 위탁 시에는 위탁받는 자, 위탁 업무 내용을 본 방침 또는 별도
                 공지로 게재하고, 관련 법령에 따라 관리·감독합니다.
               </p>
+              <p>
+                또한 서비스 내 광고 게재를 위해 <strong>Google LLC(Google AdSense)</strong>를 비롯한
+                제3자 광고 사업자가 이용자의 브라우저에서 직접 쿠키·기기 식별자 등을 처리할 수
+                있습니다. 광고 사업자는 자체 개인정보처리방침에 따라 수집·이용을 관리하며, 운영자는
+                해당 광고 사업자가 게재한 광고 내용·거래에 대해 직접 책임지지 않습니다.
+              </p>
             </section>
 
             <section aria-labelledby="p5">
@@ -122,6 +132,12 @@ export default function PrivacyPolicyPage() {
                 클라우드·인프라 특성상 개인정보가 국외 서버에 저장·처리될 수 있습니다. 해당 경우 관련
                 법령이 요구하는 사항(이전 국가, 일시·방법, 항목, 조치 등)을 안내하고 필요한 보호조치를
                 취합니다.
+              </p>
+              <p>
+                광고 게재와 관련하여 <strong>Google LLC(미국)</strong>가 쿠키·광고 식별자·페이지 방문
+                정보 등을 자동으로 수집·이전하여 광고 노출·측정에 사용할 수 있습니다. 이전 시점은
+                광고 표시가 발생하는 시점이며, 통신 구간은 HTTPS로 보호됩니다. 보유 기간은 Google의
+                자체 정책에 따릅니다.
               </p>
             </section>
 
@@ -152,11 +168,51 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section aria-labelledby="p9">
-              <h2 id="p9">9. 쿠키</h2>
+              <h2 id="p9">9. 쿠키 및 광고</h2>
               <p>
                 서비스는 이용 편의·통계·보안을 위해 쿠키 등을 사용할 수 있습니다. 브라우저 설정에서 쿠키
                 저장을 거부할 수 있으나, 일부 기능이 제한될 수 있습니다.
               </p>
+              <p>
+                또한 본 서비스는 <strong>Google AdSense</strong> 등 제3자 광고 사업자를 통해 광고를
+                표시할 수 있습니다. 이 과정에서 Google과 협력 광고 사업자는 쿠키·기기 식별자·광고
+                식별자 등을 사용하여 이용자의 사이트 방문 정보 등을 기반으로 <strong>맞춤형(행태 기반)
+                광고</strong>를 게재할 수 있습니다.
+              </p>
+              <p>
+                이용자는 아래 페이지에서 Google의 맞춤 광고 표시를 관리하거나 사용 중지(opt-out)할 수
+                있습니다.
+              </p>
+              <ul>
+                <li>
+                  Google 광고 설정:{" "}
+                  <a
+                    href="https://adssettings.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://adssettings.google.com
+                  </a>
+                </li>
+                <li>
+                  제3자 광고 쿠키 일반 관리:{" "}
+                  <a
+                    href="https://www.aboutads.info/choices/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    aboutads.info/choices
+                  </a>{" "}
+                  /{" "}
+                  <a
+                    href="https://www.youronlinechoices.eu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    youronlinechoices.eu
+                  </a>
+                </li>
+              </ul>
             </section>
 
             <section aria-labelledby="p10">

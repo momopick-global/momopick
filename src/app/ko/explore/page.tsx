@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://momopick.com/ko/explore/",
   },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "테스트 검색·탐색 | 모모픽",
     description: "테스트 검색·탐색",

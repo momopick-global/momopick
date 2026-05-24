@@ -113,7 +113,17 @@ export default function DisclaimerPage() {
             </section>
 
             <section aria-labelledby="d6">
-              <h2 id="d6">6. 서비스 이용 제한</h2>
+              <h2 id="d6">6. 제3자 광고</h2>
+              <p>
+                본 서비스에는 Google AdSense 등 제3자 광고 사업자의 광고가 표시될 수 있습니다.
+                운영자는 표시되는 광고의 상품·서비스·콘텐츠의 정확성·품질·합법성을 직접 보증하지
+                않으며, 광고를 통한 거래는 이용자와 광고주 간의 책임입니다. 광고로 인해 발생한
+                손해에 대해 운영자는 관련 법령이 정한 범위를 제외하고 책임을 지지 않습니다.
+              </p>
+            </section>
+
+            <section aria-labelledby="d7">
+              <h2 id="d7">7. 서비스 이용 제한</h2>
               <p>다음과 같은 경우 서비스 이용이 제한될 수 있습니다:</p>
               <ul>
                 <li>서비스 운영을 방해하는 행위</li>
@@ -122,16 +132,16 @@ export default function DisclaimerPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="d7">
-              <h2 id="d7">7. 면책의 범위</h2>
+            <section aria-labelledby="d8">
+              <h2 id="d8">8. 면책의 범위</h2>
               <p>
                 모모픽은 서비스 이용과 관련하여 발생한 직접적 또는 간접적 손해에 대해 책임을 지지
                 않습니다.
               </p>
             </section>
 
-            <section aria-labelledby="d8">
-              <h2 id="d8">8. 동의</h2>
+            <section aria-labelledby="d9">
+              <h2 id="d9">9. 동의</h2>
               <p>본 서비스를 이용하는 경우, 위의 모든 면책조항에 동의한 것으로 간주됩니다.</p>
             </section>
           </article>
