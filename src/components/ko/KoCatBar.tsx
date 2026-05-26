@@ -19,38 +19,27 @@ const chips: ChipItem[] = [
     matchFn: (p) => p === "/ko" || p === "/ko/",
   },
   {
-    href: "/ko/love/",
-    label: "연애",
-    className: "chip chip--love",
-    matchFn: (p) => p.startsWith("/ko/love"),
+    href: "/ko/onepick/",
+    label: "원픽 테스트",
+    className: "chip chip--default",
+    matchFn: (p) => p.startsWith("/ko/onepick"),
   },
   {
-    href: "/ko/personality/",
-    label: "성격·심리",
-    className: "chip chip--personality",
-    matchFn: (p) => p.startsWith("/ko/personality"),
-  },
-  {
-    href: "/ko/social/",
-    label: "소셜",
-    className: "chip chip--social",
-    matchFn: (p) => p.startsWith("/ko/social"),
-  },
-  {
-    href: "/ko/style/",
-    label: "스타일",
-    className: "chip chip--style",
-    matchFn: (p) => p.startsWith("/ko/style"),
-  },
-  {
-    href: "/ko/fun/",
-    label: "재미",
-    className: "chip chip--fun",
-    matchFn: (p) => p.startsWith("/ko/fun"),
+    href: "/ko/personality-test/",
+    label: "성향 테스트",
+    className: "chip chip--default",
+    matchFn: (p) =>
+      p.startsWith("/ko/personality-test") ||
+      // 성향 테스트 카테고리 페이지(/ko/love/ 등)에서도 활성 표시
+      p.startsWith("/ko/love") ||
+      p.startsWith("/ko/personality/") ||
+      p.startsWith("/ko/social") ||
+      p.startsWith("/ko/style") ||
+      p.startsWith("/ko/fun"),
   },
   {
     href: "/ko/explore/",
-    label: "탐색",
+    label: "검색",
     className: "chip chip--default",
     matchFn: (p) => p.startsWith("/ko/explore"),
   },
