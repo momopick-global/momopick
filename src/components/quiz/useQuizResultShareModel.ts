@@ -207,6 +207,12 @@ export function useQuizResultShareModel({
         return;
       }
 
+      // 카카오 디벨로퍼스에 등록된 템플릿(ID 131878)이 이미지 영역에 ${THU}
+      // 사용자 인자를 사용하므로 THU 키로 결과 이미지 URL을 전달해야 함.
+      // 이전엔 IMAGE_URL만 보내서 결과 페이지 공유 시 카드 이미지가 빈 상태로
+      // 노출됐다. 호환성을 위해 IMAGE_URL은 그대로 두고 THU를 추가.
+      const resultTitleForLog = title || "모모픽";
+      const resultDescForLog = description || "재미로 보는 심리 테스트";
       try {
         console.info("[Momopick][Kakao] Share.sendCustom(result)", {
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
@@ -214,7 +220,10 @@ export function useQuizResultShareModel({
           resultMobile,
           resultPathFull,
           rs,
-          imageForKakao,
+          resultTitle: resultTitleForLog,
+          resultDescription: resultDescForLog,
+          resultImageUrl: imageForKakao,
+          THU: imageForKakao,
           startHref,
           startPathFull,
           ss,
@@ -222,8 +231,9 @@ export function useQuizResultShareModel({
         const result = Kakao.Share.sendCustom({
           templateId: KAKAO_QUIZ_RESULT_TEMPLATE_ID,
           templateArgs: {
-            TITLE: title || "모모픽",
-            DESC: description || "재미로 보는 심리 테스트",
+            TITLE: resultTitleForLog,
+            DESC: resultDescForLog,
+            THU: imageForKakao,
             IMAGE_URL: imageForKakao,
             RESULT_URL: resultPathFull,
             RESULT_WEB_URL: resultPathFull,
