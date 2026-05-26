@@ -94,7 +94,7 @@ export default function WhoLikesYouTypePage() {
                   src={quizAssetUrl(pack.images.thumbnail, pageLocale)}
                   alt=""
                   width={480}
-                  height={600}
+                  height={480}
                   loading="eager"
                   decoding="async"
                 />

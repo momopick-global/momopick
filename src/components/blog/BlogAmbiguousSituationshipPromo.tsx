@@ -52,7 +52,7 @@ export function BlogAmbiguousSituationshipPromo() {
                 src={quizAssetUrl(pack.images.thumbnail, locale)}
                 alt=""
                 width={480}
-                height={600}
+                height={480}
                 loading="lazy"
                 decoding="async"
               />

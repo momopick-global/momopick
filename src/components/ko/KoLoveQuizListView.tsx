@@ -91,8 +91,8 @@ export function KoLoveQuizListView({ items }: Props) {
                 <QuizImageWithFallback
                   src={item.image || "/images/banners/tile-love-01.webp"}
                   alt=""
-                  width={1536}
-                  height={1920}
+                  width={1024}
+                  height={1024}
                   loading={i < 6 ? "eager" : "lazy"}
                   decoding="async"
                 />
@@ -118,7 +118,7 @@ export function KoLoveQuizListView({ items }: Props) {
                     src={item.image || "/images/banners/tile-love-01.webp"}
                     alt=""
                     width={320}
-                    height={400}
+                    height={320}
                     loading={i < 8 ? "eager" : "lazy"}
                     decoding="async"
                   />

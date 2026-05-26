@@ -1362,7 +1362,7 @@
 .momopick-ko .rail-card__thumb img,
 .momopick-ko .rail-card__thumb-link img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   height: auto;
   object-fit: cover;
   object-position: center;
@@ -1586,7 +1586,7 @@
   position: relative;
   flex: 0 0 64px;
   width: 64px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 10px;
   overflow: hidden;
   background: linear-gradient(145deg, #ffe0f0, #ffc8e4);
@@ -1676,7 +1676,7 @@
   display: block;
   overflow: hidden;
   background: linear-gradient(145deg, #dfd8f5, #ffd8e8);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 .momopick-ko .tile--love .thumb {
@@ -2332,7 +2332,7 @@
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   background: linear-gradient(145deg, #e8e4f7, #fce8ef);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 .momopick-ko .quiz-cover img {
@@ -2487,7 +2487,7 @@
   overflow: hidden;
   border: 1px solid var(--line);
   background: rgba(90, 103, 242, 0.04);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 .momopick-ko .quiz-q-visual img {
@@ -2647,7 +2647,7 @@
   overflow: hidden;
   border: 1px solid var(--line);
   background: linear-gradient(145deg, #e8e4f7, #fce8ef);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 .momopick-ko .quiz-result-visual img {
@@ -3296,7 +3296,7 @@
   margin: 0;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(145deg, #e8e4f7, #fce8ef);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
 }
 
@@ -3313,7 +3313,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(145deg, rgba(90, 103, 242, 0.12), rgba(232, 90, 140, 0.1));
 }

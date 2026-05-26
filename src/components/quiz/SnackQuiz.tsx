@@ -113,7 +113,7 @@ function SnackQuizDoneCard({
                 src={resultImage}
                 alt=""
                 width={480}
-                height={600}
+                height={480}
                 loading="eager"
                 decoding="async"
               />
@@ -458,7 +458,7 @@ export function SnackQuiz({
             src={quizAssetUrl(q.image, locale)}
             alt=""
             width={240}
-            height={300}
+            height={240}
             loading="lazy"
             decoding="async"
           />

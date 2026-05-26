@@ -461,7 +461,7 @@ export function PercentageQuiz({
             src={quizAssetUrl(q.image, locale)}
             alt=""
             width={240}
-            height={300}
+            height={240}
             loading="lazy"
             decoding="async"
           />

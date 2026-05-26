@@ -64,7 +64,7 @@ export default function KoHomePage() {
                         src={item.image || "/images/banners/rail-01.webp"}
                         alt=""
                         width={480}
-                        height={600}
+                        height={480}
                         loading={i < 2 ? "eager" : "lazy"}
                         decoding="async"
                       />
@@ -109,8 +109,8 @@ export default function KoHomePage() {
                       <QuizImageWithFallback
                         src={item.image || "/images/banners/tile-love-01.webp"}
                         alt=""
-                        width={1536}
-                        height={1920}
+                        width={1024}
+                        height={1024}
                         loading={i < 4 ? "eager" : "lazy"}
                         decoding="async"
                       />
@@ -153,8 +153,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-mind-01.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -169,8 +169,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-mind-02.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -185,8 +185,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-mind-03.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -201,8 +201,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-mind-04.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -234,8 +234,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-snack-01.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -250,8 +250,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-snack-02.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -266,8 +266,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-snack-03.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />
@@ -283,8 +283,8 @@ export default function KoHomePage() {
                   <QuizImageWithFallback
                     src="/images/banners/tile-snack-04.webp"
                     alt=""
-                    width={1536}
-                    height={1920}
+                    width={1024}
+                    height={1024}
                     loading="lazy"
                     decoding="async"
                   />

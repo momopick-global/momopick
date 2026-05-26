@@ -51,7 +51,7 @@ export function KoLoveHubMoreSection({ locale, excludeHref, limit = 4, placement
                     src={item.image || "/images/banners/tile-love-01.webp"}
                     alt=""
                     width={320}
-                    height={400}
+                    height={320}
                     loading="lazy"
                     decoding="async"
                   />
