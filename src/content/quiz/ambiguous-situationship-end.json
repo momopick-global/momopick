@@ -171,7 +171,7 @@
         "ko": "상대 반응을 너무 보는 타입입니다. 결국 확신을 주지 못해 흐지부지 끝납니다.",
         "en": "You hesitate too much, leading to unclear endings."
       },
-      "image": "/images/common/quiz-image-pending.webp",
+      "image": "/images/quiz/ambiguous-situationship-end/result-3.webp",
       "share": {
         "title": {
           "ko": "나의 썸 패턴은 눈치형",
@@ -181,7 +181,7 @@
           "ko": "확신을 주지 못해 흐지부지 끝나기 쉬운 타입",
           "en": "You hesitate too much, leading to unclear endings"
         },
-        "image": "/images/common/quiz-image-pending.webp"
+        "image": "/images/quiz/ambiguous-situationship-end/result-3.webp"
       }
     },
     "D": {
@@ -199,7 +199,7 @@
         "ko": "상대 행동을 과하게 해석하는 타입입니다. 혼자 결론을 내리며 관계를 끝내는 경우가 많습니다.",
         "en": "You overanalyze and often end things yourself."
       },
-      "image": "/images/common/quiz-image-pending.webp",
+      "image": "/images/quiz/ambiguous-situationship-end/result-4.webp",
       "share": {
         "title": {
           "ko": "나의 썸 패턴은 과해석형",
@@ -209,7 +209,7 @@
           "ko": "혼자 결론을 내리며 끝내기 쉬운 과해석형",
           "en": "You overanalyze and often end things yourself"
         },
-        "image": "/images/common/quiz-image-pending.webp"
+        "image": "/images/quiz/ambiguous-situationship-end/result-4.webp"
       }
     }
   },
