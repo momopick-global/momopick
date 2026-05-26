@@ -123,17 +123,22 @@ export function useQuizResultShareModel({
           fallbackCopy();
           return;
         }
+        const introTitle = title || "모모픽";
+        const introDescription = description || "재미로 보는 심리 테스트";
         try {
-          console.info("[Momopick][Kakao] Share.sendDefault(feed, simple)", {
-            hrefForResultFeed,
-            resultMobile,
-            imageForKakao,
+          // 인트로 공유 디버그 — 카카오 카드 이미지가 옛 캐시로 보이는 경우
+          // imageUrl 값과 카카오 디버거 갱신 여부 모두 점검.
+          console.info("[Momopick][Kakao] Share.sendDefault(intro)", {
+            title: introTitle,
+            description: introDescription,
+            imageUrl: imageForKakao,
+            url: resultMobile,
           });
           const result = Kakao.Share.sendDefault({
             objectType: "feed",
             content: {
-              title: title || "모모픽",
-              description: description || "재미로 보는 심리 테스트",
+              title: introTitle,
+              description: introDescription,
               imageUrl: imageForKakao,
               link: resultLink,
             },

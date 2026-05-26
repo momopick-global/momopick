@@ -7,6 +7,26 @@ export const KAKAO_SITE_ORIGIN =
 
 const OG_PATH = "/images/og/og-ko.webp";
 
+/**
+ * 카카오 측 OG 캐시 회피용 cache-busting 키.
+ * 공유 이미지가 갱신됐는데 카카오 캐시가 옛 이미지를 들고 있는 경우, 이 값을
+ * 변경(bump)해 새 URL로 인식시킨다. 디버거(`developers.kakao.com/tool/debugger/sharing`)
+ * 에서 수동 갱신과 병행. 카카오는 쿼리스트링이 다르면 별도 URL로 취급해 재 fetch.
+ */
+const SHARE_IMAGE_CACHE_KEY = "20260527";
+
+/** 이미지 URL에 `?v=<key>` 형태의 cache-busting 쿼리를 부착 */
+function appendCacheBuster(url: string, key: string): string {
+  if (!url || !key) return url;
+  try {
+    const u = new URL(url);
+    u.searchParams.set("v", key);
+    return u.href;
+  } catch {
+    return url;
+  }
+}
+
 function isLocalHost(hostname: string): boolean {
   return (
     hostname === "localhost" ||
@@ -142,11 +162,12 @@ export function getKakaoFeedShareUrls(
   imageUrl: string;
 } {
   const origin = KAKAO_SITE_ORIGIN.replace(/\/$/, "");
-  const imageUrl = customImagePath
+  const rawImageUrl = customImagePath
     ? customImagePath.startsWith("http")
       ? customImagePath
       : `${origin}${customImagePath}`
     : `${origin}${OG_PATH}`;
+  const imageUrl = appendCacheBuster(rawImageUrl, SHARE_IMAGE_CACHE_KEY);
 
   try {
     const u = new URL(pageUrl);
