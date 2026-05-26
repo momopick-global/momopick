@@ -144,7 +144,7 @@ export function useQuizResultShareModel({
             },
             // buttons 미지정 시 카카오가 기본 "자세히 보기" 버튼을 표시함.
             // 인트로 공유는 현재 페이지(=테스트 시작 페이지)로 보내는 단일 CTA로 통일.
-            buttons: [{ title: "테스트 하기", link: resultLink }],
+            buttons: [{ title: "나도 테스트 하기", link: resultLink }],
           });
           if (result && typeof (result as Promise<void>).catch === "function") {
             (result as Promise<void>).catch((e: unknown) => {
@@ -195,7 +195,7 @@ export function useQuizResultShareModel({
             },
             buttons: [
               { title: "결과 보기", link: resultLink },
-              { title: "테스트 하기", link: startLink },
+              { title: "나도 테스트 하기", link: startLink },
             ],
           });
           if (result && typeof (result as Promise<void>).catch === "function") {
