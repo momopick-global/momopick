@@ -1,136 +1,142 @@
-# 모모픽(Momopick) 개발 문서 허브
+# 모모픽(Momopick) — Claude Code 문서 허브
 
-> **momopick.com** — MBTI·연애·심리·소셜·스타일·재미 퀴즈 플랫폼  
-> 문서 구성은 **유어타로류 프로덕트**에서 흔히 쓰는 방식(폴더 구조 / 데이터모델 / API / 디자인 시스템 분리)을 참고했습니다.
-
----
-
-## 1. 문서 목록 (바로가기)
-
-| 문서 | 설명 |
-|------|------|
-| [folder-structure.md](./folder-structure.md) | 1차 오픈 기준 폴더·파일 역할 |
-| [data-model.md](./data-model.md) | 1차 오픈 기준 데이터 모델(Supabase 중심) |
-| [api-spec.md](./api-spec.md) | 1차 오픈 기준 API·엣지 동작 명세 |
-| [design-system.md](./design-system.md) | 1차 오픈 기준 디자인 시스템 |
+> **목적**: Claude Code가 모모픽 프로젝트의 구조·기능·SEO·디자인·배포를 빠르게 파악하기 위한 문서 모음.
+> 이 폴더의 문서를 먼저 읽고 작업을 시작하세요.
 
 ---
 
-## 2. 전체 목차 (이해·기획용)
+## 운영 기준 요약 (2026-05-25 기준)
 
-아래는 **제품·운영·기술**을 한 번에 잡기 위한 권장 목차입니다. 질문하실 때 이 번호를 붙이시면 대화가 빨라집니다.
-
-### A. 비전·포지셔닝
-- A1. 한 줄 정의(무엇을 누구에게)
-- A2. 레퍼런스(푸망, 소울블렌드, 청월당)에서 **가져올 것 / 차별점**
-- A3. 톤앤매너(재미 vs 진지, 연애 비중)
-
-### B. 사용자·여정
-- B1. 페르소나(연애 관심층, MBTI 허브 유저, 가벼운 밈 유저)
-- B2. 핵심 플로우: 랜딩 → 탐색 → 테스트 → 결과 → 공유 → 재방문
-- B3. 회원: 비회원 가능 범위 vs 로그인 후 가치(저장, 히스토리, 북마크)
-- B4. 온보딩(최소 정보, 약관, 나이·성별 수집 여부 — 법무 검토)
-
-### C. 정보 구조(IA) · 콘텐츠
-- C1. 글로벌 내비: 홈 / 카테고리 허브 / 탐색 / 블로그 / 공지
-- C2. 카테고리(1차)
-  - 연애 · 성격·심리 · 소셜·관계 · 스타일·취향 · 재미 퀴즈 · 전체 탐색
-- C3. 콘텐츠 타입: 심층 테스트 / 1분 퀴즈 / 밈형 / 궁합형(2인 입력 등)
-- C4. 블로그 필라: 연애, 심리, 타로(콘텐츠 확장), 기타 라이프스타일
-- C5. 태그·추천·인기·최신 **규칙**(편집 큐레이션 vs 자동)
-
-### D. URL · SEO · 성장
-- D1. **슬러그 규칙**(언어 prefix, 카테고리, 테스트 ID)
-- D2. `canonical` / `hreflang` / `og:*` / 구조화 데이터(FAQ, Article, BreadcrumbList)
-- D3. 사이트맵 분할, Search Console, 색인 모니터링
-- D4. 내부링크 전략(허브 페이지, 관련 테스트 추천)
-- D5. 측정: GA4 / 전환(완료율, 공유 클릭)
-
-### E. 디자인·프론트
-- E1. 반응형 브레이크포인트(모바일 웹 우선)
-- E2. 디자인 시스템(토큰, 컴포넌트, 접근성)
-- E3. 결과 화면·공유 카드(이미지 OG 자동 생성 여부)
-
-### F. 백엔드·데이터
-- F1. Supabase: Auth, DB, Storage, RLS
-- F2. 테스트 정의(JSON vs DB), 버전 관리(문항 수정 시)
-- F3. 결과 저장·개인정보 최소화
-
-### G. 인프라·배포
-- G1. **Cloudflare Pages**: Git 연동 빌드, 프리뷰 배포, **레포 루트** + 출력 디렉터리 `out`
-- G2. **Cloudflare(공통)**: DNS·SSL, 캐시, **Redirect**(대시보드 또는 `public/_redirects`), (선택) WAF
-- G3. **Pages Functions**: Next 정적 export로 커버 안 되는 **경량 API** (`functions/` → 예: `/api/health`)
-- G4. 환경 변수: Pages **Build / Production**에 `NEXT_PUBLIC_SUPABASE_*` 등 등록
-
-### H. 단계별 오픈
-- H1. **1차**: 한국어 중심 + 최소 영문 루트(또는 언어 선택만)
-- H2. **2차**: 영어 콘텐츠·UI 본격화, 회원 기능 강화
-- H3. **3차**: 추가 언어, 커뮤니티/UGC, 광고·멤버십 등(선택)
+| 항목 | 값 |
+|---|---|
+| 서비스명 | **모모픽 (Momopick)** — 유어타로/다른 프로젝트 아님 |
+| 운영 도메인 | **https://momopick.com** |
+| 배포 환경 | **Cloudflare Pages** (Next.js 정적 export) |
+| Production branch | **main** |
+| 최근 커밋(이 문서 기준) | `b1ea46b chore(seo): add blog posts to sitemap` |
+| 활성 로케일 | `/ko/` 만 운영 (en/ja/es/pt/id는 placeholder, noindex) |
+| AdSense | 심사 코드 삽입 완료(`ca-pub-2758905830381994`), 슬롯 미배치, 심사 대기 |
+| GA4 / GTM | **미적용** |
 
 ---
 
-## 3. 도구 스택 — 이미 적으신 것 + 보완
+## Claude Code가 먼저 읽어야 할 문서 순서
 
-| 구분 | 도구 | 역할 |
-|------|------|------|
-| 디자인 | **Figma** | UI 키트, 컴포넌트, 반응형 프레임(모바일·태블릿·PC) |
-| 기획·카피 | **ChatGPT** 등 | 카피 초안, 문항 다듬기(법적 리스크 문구는 사람 검수) |
-| CDN·DNS·앱 호스팅 | **Cloudflare Pages** | DNS·SSL, Git 빌드, 정적 Next(`out`), **Pages Functions**로 소형 API |
-| DB·Auth | **Supabase** | PostgreSQL, 로그인, RLS, Storage(이미지) |
-| 검색 | **Google Search Console** | 색인, 사이트맵, 쿼리 분석 |
-| 분석 | **GA4** | 유입, 이탈, 완료율 |
-| 에러·성능 | **Sentry**, **Web Vitals** | 프로덕션 안정성 |
-| 이메일(선택) | **Resend**, **SendGrid** | 가입 인증, 뉴스레터 |
-| 결제(후순위) | **Stripe** 등 | 유료 결과·멤버십 시 |
-| 저장소 | **GitHub** | 코드, PR, Actions(CI) |
-| AI 빌더 | **Cursor**, **v0** 등 | 프로토타입 가속(본 문서와 함께 유지보수) |
-
-**모바일웹 해상도**: Figma에서 최소 **390×844**, **768×1024**, **1280+** 프레임을 두고, 실기기 Safari/Chrome으로 검증하는 것을 권장합니다.
+1. [project/overview.md](./project/overview.md) — 서비스 개요
+2. [project/current-status.md](./project/current-status.md) — 현재 운영 기준
+3. [project/protected-areas.md](./project/protected-areas.md) — **건드리면 위험한 영역**
+4. [setup/deployment.md](./setup/deployment.md) — Cloudflare Pages 배포 흐름
+5. [setup/environment-variables.md](./setup/environment-variables.md) — 환경변수
+6. [seo/adsense-review.md](./seo/adsense-review.md) — AdSense 심사 상태
+7. [features/snack-tests.md](./features/snack-tests.md) — 핵심 기능: 스낵 테스트
+8. [features/share-kakao.md](./features/share-kakao.md) — 카카오 공유 (수정 주의)
+9. [design/design-overview.md](./design/design-overview.md) — 디자인 톤
+10. [content/content-tone.md](./content/content-tone.md) — 문구 톤
+11. [troubleshooting/adsense-issues.md](./troubleshooting/adsense-issues.md) — 심사 트러블슈팅
 
 ---
 
-## 4. 보완하면 좋은 것 & 이유
+## 전체 문서 구조
 
-| 보완 항목 | 왜 필요한가 |
-|-----------|-------------|
-| **개인정보처리방침·이용약관 초안** | 연령·성별·로그인 시 수집 항목이 늘어남. 스토어/광고 전 필수. |
-| **콘텐츠 가이드라인** | 심리·MBTI 표현이 의료 오인 시 리스크. “재미/성향” 표현 고정. |
-| **슬러그·ID 규칙 문서화** | URL 변경은 SEO에 치명적. 1차부터 규칙 고정. |
-| **결과 공유 정책** | 스크린샷/OG에 들어가는 문구, 저작권(이미지·폰트). |
-| **에디터 워크플로** | 누가 문항을 올리나(CMS vs Git). 실수 시 롤백 방법. |
-| **성능 예산** | LCP 목표, 이미지 포맷(webp/avif), 폰트 서브셋. |
-| **레퍼런스 벤치마크 표** | 푸망/소울블렌드/청월당의 IA·공유 UX를 1페이지로 정리. |
+```
+docs/
+├─ README.md                   ← 이 파일
+├─ project/
+│  ├─ overview.md              서비스 개요·라우트·기술 스택
+│  ├─ current-status.md        커밋·도메인·배포·최근 작업
+│  ├─ roadmap.md               예정 작업·미해결 이슈
+│  └─ protected-areas.md       건드리면 위험한 영역
+├─ setup/
+│  ├─ local-development.md     npm 스크립트·포트 3040
+│  ├─ deployment.md            Cloudflare Pages 배포
+│  ├─ environment-variables.md NEXT_PUBLIC_*
+│  └─ cloudflare-pages.md      _headers·_redirects·functions/
+├─ seo/
+│  ├─ seo-checklist.md         색인·canonical 점검표
+│  ├─ adsense-review.md        AdSense 심사 상태
+│  ├─ sitemap-robots.md        sitemap.xml·robots.txt 관리
+│  ├─ metadata-og.md           metadata·OG·JSON-LD
+│  └─ search-console.md        Search Console 운용
+├─ features/
+│  ├─ snack-tests.md           스낵형 13개 퀴즈
+│  ├─ love-tests.md            퍼센티지형 6개 퀴즈
+│  ├─ blog.md                  /ko/blog/
+│  ├─ auth-login.md            Kakao+Supabase OAuth
+│  ├─ share-kakao.md           Kakao Feed 공유
+│  ├─ supabase-stats.md        quiz_stats 참여자 수
+│  └─ inapp-browser.md         InAppBrowserGuide
+├─ design/
+│  ├─ design-overview.md       디자인 톤
+│  ├─ ui-guidelines.md         UI 패턴
+│  ├─ color-system.md          컬러 토큰
+│  ├─ typography.md            타이포
+│  ├─ layout-mobile.md         모바일 우선
+│  ├─ image-guidelines.md      이미지 공통 규칙
+│  ├─ quiz-image-style.md      퀴즈 이미지 스타일
+│  └─ asset-paths.md           public/images 경로 규칙
+├─ content/
+│  ├─ content-tone.md          모모픽 문구 톤
+│  ├─ quiz-writing-guide.md    퀴즈 문항·선택지 작성법
+│  ├─ result-writing-guide.md  결과 글 작성법
+│  └─ blog-writing-guide.md    블로그 글 작성법
+├─ troubleshooting/
+│  ├─ domain-cloudflare.md     도메인·DNS·www→apex
+│  ├─ build-errors.md          빌드 에러
+│  ├─ search-console.md        sitemap 제출 문제
+│  ├─ kakao-share.md           공유 카드 안 보일 때
+│  ├─ inapp-browser.md         인앱 브라우저 트러블
+│  └─ adsense-issues.md        심사 거절 사유·체크리스트
+└─ archive/
+   ├─ GEMINI.md                          (Firebase Studio 템플릿, 무관)
+   ├─ blueprint.md                       (framework-less 스타터, 무관)
+   ├─ 2026-q2-planning-docs-readme.md    (옛 기획 문서 — 1차 오픈 기획)
+   ├─ 2026-q2-planning-api-spec.md       (옛 API 기획)
+   ├─ 2026-q2-planning-data-model.md     (옛 데이터 모델 기획)
+   ├─ 2026-q2-planning-design-system.md  (옛 디자인 시스템 기획)
+   └─ 2026-q2-planning-folder-structure.md (옛 폴더 구조 기획)
+```
 
 ---
 
-## 5. 확장을 위해 지금부터 지킬 것
+## 절대 건드리면 안 되는 영역 (요약 — 자세한 건 [protected-areas.md](./project/protected-areas.md))
 
-1. **URL에 언어 코드 고정** (`/ko/`, 추후 `/en/`) — `hreflang`과 동일한 패턴.  
-2. **콘텐츠 ID와 슬러그 분리** — 슬러그는 바꿀 수 있되 리다이렉트 전략 필요.  
-3. **DB에 `locale` 컬럼** — 같은 테스트의 다국어 행을 연결.  
-4. **RLS 기본 거부** — 공개 읽기만 허용하는 테이블을 명시적으로 설계.  
-5. **API 버저닝** 또는 최소한 **breaking change 정책** 문서화.  
-6. **OG·canonical은 apex(`momopick.com`)** — www는 301만.
-
----
-
-## 6. 1·2·3차 오픈 범위(초안)
-
-| 단계 | 범위(제안) |
-|------|-------------|
-| **1차** | KO 콘텐츠 + 핵심 카테고리 + 탐색 + 정적/경량 동적 + Search Console + 기본 분석. EN은 랜딩/선택만 또는 최소 페이지. |
-| **2차** | EN 본 페이지, 블로그 본격, 회원(저장·히스토리), 추천 로직 v1. |
-| **3차** | 추가 언어, UGC/댓글(검토 큐), 파트너십, 수익화 실험. |
-
-세부 일정은 리소스에 맞춰 `docs/`에 `roadmap.md`로 쪼개도 좋습니다.
+- **카카오 공유**: `KakaoSdkInit`, `lib/kakaoShareFeed.ts`, `components/quiz/QuizResultShare.tsx`, `useQuizResultShareModel`
+- **로그인·인증**: `context/KakaoAuthContext.tsx`, `lib/supabase/*`, `/ko/app/login/*` 콜백 경로
+- **Supabase 통계**: `lib/quizStatsSupabase.ts`, `hooks/useQuizParticipantCount.ts`
+- **배포 설정**: `next.config.ts`, `public/_headers`, `public/_redirects`
+- **SEO**: `public/sitemap.xml`, `public/robots.txt`, 각 페이지 `metadata` canonical
+- **AdSense**: `src/app/layout.tsx`의 `<script async src="...adsbygoogle...">`, `public/ads.txt`
 
 ---
 
-## 7. 질문 가이드
+## 최근 주요 작업 (역순)
 
-목차 중 막히는 구간이 있으면 예시처럼 질문해 주세요.
+| 커밋 | 내용 |
+|---|---|
+| `b1ea46b` | sitemap에 블로그 7개 URL 추가 |
+| `0d2bf64` | AdSense 심사 준비: explore/today noindex + 정책 페이지 광고 조항 추가 |
+| `8a0891f` | Google AdSense 심사 스크립트 + ads.txt 추가 |
+| `f46ee64` | ambiguous-situationship-end의 누락된 result-3/4 이미지를 pending placeholder로 대체 |
+| `8bbd962` | 무참조 미디어 5개 삭제 + check-quiz-images.mjs 로케일 룰 반영 |
+| `b5aae62` | InAppBrowserGuide 모달 (카톡/인스타/페북/라인/네이버 감지) |
 
-- “**D1 슬러그**에서 테스트 제목이 바뀌면 URL은 어떻게?”  
-- “**B3** 비회원도 결과 저장하려면 로컬만으로 되나?”  
+---
 
-이 허브(`README.md`)는 요약용이며, 필드 정의·엔드포인트는 각 전용 문서를 봅니다.
+## 다음 작업 전 체크리스트
+
+- [ ] 작업 대상 영역이 [protected-areas.md](./project/protected-areas.md)에 해당하는지 확인
+- [ ] `git status` 깨끗한 상태에서 시작 (`next-env.d.ts` 변경은 자동, 커밋 제외)
+- [ ] 코드 수정 시 `npm run build` 통과 확인
+- [ ] 콘텐츠/이미지 수정 시 `node tools/check-quiz-images.mjs` 통과 확인
+- [ ] 새 페이지 추가 시 `public/sitemap.xml` 등록 검토
+- [ ] AdSense 심사 영향 가능성 평가 ([seo/adsense-review.md](./seo/adsense-review.md))
+- [ ] 커밋 후 push 전 사용자 확인 (자동 push 금지)
+
+---
+
+## 문서 작성 원칙
+
+- 사실 기반: 코드/저장소의 현재 상태만 기록. 추측·계획은 `roadmap.md` 또는 `archive/`로.
+- 비밀키 금지: API Key/Supabase Key/OAuth Secret 값은 절대 적지 않음. 변수명과 용도만.
+- 짧고 검색 가능하게: 표·체크리스트·코드 경로 위주.
+- 변경 발생 시 해당 문서를 같이 업데이트.
