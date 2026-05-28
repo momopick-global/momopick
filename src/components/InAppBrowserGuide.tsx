@@ -30,9 +30,73 @@ function detectPlatform(ua: string): Platform {
   return "other";
 }
 
+function IconClose() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M6 6l12 12M18 6 6 18"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function IconGlobe() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+      <path
+        d="M3 12h18M12 3c2.6 2.7 4 6 4 9s-1.4 6.3-4 9c-2.6-2.7-4-6-4-9s1.4-6.3 4-9z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function IconExternal() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function IconCopy() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect
+        x="8"
+        y="8"
+        width="12"
+        height="12"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function InAppBrowserGuide() {
   const [open, setOpen] = useState(false);
   const [platform, setPlatform] = useState<Platform>("other");
+  const [copyState, setCopyState] = useState<"idle" | "copied">("idle");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -49,7 +113,7 @@ export function InAppBrowserGuide() {
     setOpen(true);
   }, []);
 
-  const dismiss = () => {
+  const close = () => {
     try {
       window.sessionStorage.setItem(SESSION_KEY, "1");
     } catch {
@@ -83,6 +147,21 @@ export function InAppBrowserGuide() {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const copyUrl = () => {
+    const url = window.location.href;
+    const after = () => {
+      setCopyState("copied");
+      window.setTimeout(() => setCopyState("idle"), 2000);
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(url).then(after, () => {
+        window.prompt("아래 주소를 복사해 주세요", url);
+      });
+      return;
+    }
+    window.prompt("아래 주소를 복사해 주세요", url);
+  };
+
   if (!open) return null;
 
   return (
@@ -92,16 +171,32 @@ export function InAppBrowserGuide() {
       aria-modal="true"
       aria-labelledby="inapp-guide-title"
       onClick={(e) => {
-        if (e.target === e.currentTarget) dismiss();
+        if (e.target === e.currentTarget) close();
       }}
     >
-      <div className={styles.sheet}>
+      <div className={styles.card}>
+        <button
+          type="button"
+          className={styles.close}
+          onClick={close}
+          aria-label="안내 닫기"
+        >
+          <IconClose />
+        </button>
+
+        <div className={styles.iconCircle} aria-hidden="true">
+          <IconGlobe />
+        </div>
+
         <h2 id="inapp-guide-title" className={styles.title}>
-          외부 브라우저에서 더 안정적으로 볼 수 있어요
+          더 편하게 보기
         </h2>
-        <p className={styles.desc}>
-          현재 인앱브라우저에서는 글자 크기나 화면 구성이 다르게 보일 수 있어요.
-          외부 브라우저에서 열면 더 안정적으로 이용할 수 있습니다.
+        <p className={styles.body}>
+          현재 앱 내 브라우저에서는
+          <br />
+          화면이 다르게 보일 수 있어요.
+          <br />
+          외부 브라우저에서 여는 것을 추천드려요.
         </p>
 
         <div className={styles.actions}>
@@ -109,13 +204,27 @@ export function InAppBrowserGuide() {
             type="button"
             className={styles.primary}
             onClick={openExternal}
+            aria-label="외부 브라우저로 열기"
           >
-            외부 브라우저로 열기
+            <IconExternal />
+            <span>외부 브라우저로 열기</span>
           </button>
-          <button type="button" className={styles.secondary} onClick={dismiss}>
-            그냥 보기
+          <button
+            type="button"
+            className={styles.secondary}
+            onClick={copyUrl}
+            aria-label="주소 복사하기"
+          >
+            <IconCopy />
+            <span>{copyState === "copied" ? "주소가 복사되었어요" : "주소 복사하기"}</span>
           </button>
         </div>
+
+        <p className={styles.hint}>
+          열리지 않으면 주소를 복사해
+          <br />
+          브라우저 주소창에 붙여넣어 주세요.
+        </p>
       </div>
     </div>
   );
