@@ -5,7 +5,8 @@
 
   <!--
     색인 대상만 포함 (실제 200 페이지·메타 robots 허용).
-    플레이스홀더 /en/ 등은 noindex라 제외. 허브·퀴즈 추가 시 여기에 <url> 추가.
+    /en/ /ja/ /es/ /pt/ /id/ 는 /ko/ 로 301 redirect 처리 → hreflang 제거.
+    허브·퀴즈 추가 시 여기에 <url> 추가.
   -->
 
   <url>
@@ -14,11 +15,6 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://momopick.com/ko/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://momopick.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://momopick.com/ja/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://momopick.com/es/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://momopick.com/pt/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://momopick.com/id/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://momopick.com/" />
   </url>
 

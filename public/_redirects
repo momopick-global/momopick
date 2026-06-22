@@ -1,1 +1,8 @@
 https://www.momopick.com/* https://momopick.com/:splat 301!
+
+# 다국어 placeholder → 한국어 메인으로 301 redirect (thin-content 방지)
+/en/* /ko/ 301!
+/ja/* /ko/ 301!
+/es/* /ko/ 301!
+/pt/* /ko/ 301!
+/id/* /ko/ 301!
