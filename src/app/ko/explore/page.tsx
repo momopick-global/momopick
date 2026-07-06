@@ -3,6 +3,9 @@ import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { BackButton } from "@/components/ko/BackButton";
+import { KoQuizSearch } from "@/components/ko/KoQuizSearch";
+import { getKoSearchIndex } from "@/lib/content/homeRail";
+import { getKoQuizTags } from "@/lib/content/quizTags";
 
 export const metadata: Metadata = {
   title: "테스트 검색·탐색 | 모모픽",
@@ -30,12 +33,15 @@ export const metadata: Metadata = {
 
 
 export default function KoExplorePage() {
+  const searchIndex = getKoSearchIndex("ko");
+  const quickTags = getKoQuizTags(2).slice(0, 12);
+
   return (
     <>
       <KoSiteHeader />
 
       <div className="wrap">
-        <main className="policy-page">
+        <main>
           <nav className="quiz-breadcrumb" aria-label="경로">
             <Link href="/ko/">홈</Link>
             <span aria-hidden="true"> / </span>
@@ -46,21 +52,11 @@ export default function KoExplorePage() {
           <header className="policy-page-hd">
             <h1>검색</h1>
             <p className="policy-intro">
-              전체 검색 UI는 준비 중입니다. 지금은 카테고리 허브로 이동해 테스트를 골라 보세요.
+              테스트 이름이나 태그로 찾아보세요. 초성 검색도 돼요.
             </p>
           </header>
 
-          <div className="cta" style={{ justifyContent: "flex-start" }}>
-            <Link className="btn primary" href="/ko/love/">
-              연애 테스트
-            </Link>
-            <Link className="btn" href="/ko/about/">
-              모모픽 소개
-            </Link>
-            <Link className="btn" href="/ko/notice/">
-              공지사항
-            </Link>
-          </div>
+          <KoQuizSearch index={searchIndex} tags={quickTags} />
         </main>
 
         <KoPageFooter />

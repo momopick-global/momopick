@@ -5,6 +5,7 @@ import type { SnackQuizDefinition } from "@/components/quiz/types";
 import { koQuizCatalogForHome } from "@/content/quiz";
 import { quizPathSegment, snackQuizHref } from "./quizRoutes";
 import { koTagFromLabel } from "./koTagRegistry";
+import { chosungOf, normalizeText } from "@/lib/search/koChosung";
 
 export type KoHomeRailItem = {
   href: string;
@@ -122,6 +123,35 @@ export function canonicalTagSlugsOf(def: SnackQuizDefinition | PercentageQuizDef
     if (t) out.add(t.slug);
   }
   return [...out];
+}
+
+/** 검색용 인덱스 항목 — 표시용 레일 정보 + 매칭용 정규화 텍스트·초성 */
+export type KoSearchItem = KoHomeRailItem & {
+  /** 태그 칩 필터용 캐노니컬 slug 목록 */
+  tagSlugs: string[];
+  /** 매칭용: 제목+부제+태그 라벨을 소문자·공백제거로 합친 문자열 */
+  keywords: string;
+  /** 매칭용: 위 텍스트의 초성 문자열 */
+  chosung: string;
+};
+
+/** 전체 퀴즈 클라이언트 검색 인덱스 (정적 export이므로 빌드 시 생성). */
+export function getKoSearchIndex(locale: string): KoSearchItem[] {
+  return koQuizCatalogForHome
+    .map((def) => {
+      const item = toRailItem(def, locale);
+      const tagLabels = (def.tags ?? [])
+        .map((t) => pickQuizText(locale, t))
+        .filter(Boolean);
+      const raw = [item.title, item.subtitleOnly, ...tagLabels].join(" ");
+      return {
+        ...item,
+        tagSlugs: canonicalTagSlugsOf(def),
+        keywords: normalizeText(raw),
+        chosung: chosungOf(raw),
+      };
+    })
+    .sort((a, b) => b.priority - a.priority);
 }
 
 /** 특정 태그(slug)가 달린 퀴즈를 심층/원픽/성향 그룹으로 나눠 반환 (각 그룹 priority 내림차순) */
