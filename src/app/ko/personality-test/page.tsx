@@ -9,6 +9,12 @@ import { pickQuizText } from "@/components/quiz/types";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 
+// 허브 공유(OG) 이미지: 대표 성향 테스트(성격·심리 분석)의 썸네일 JPG. 없으면 공용 OG로 폴백.
+const ptOg = quizPersonalityPsychologyTest.images?.og;
+const ogImageUrl = ptOg
+  ? `https://momopick.com${quizAssetUrl(ptOg, "ko")}`
+  : "https://momopick.com/og/main-og.webp";
+
 export const metadata: Metadata = {
   title: "성향 테스트 모아보기 | 모모픽",
   description:
@@ -22,10 +28,10 @@ export const metadata: Metadata = {
     url: "https://momopick.com/ko/personality-test/",
     images: [
       {
-        url: "https://momopick.com/og/main-og.webp",
-        width: 1536,
-        height: 1024,
-        alt: "모모픽 — MBTI·연애·심리 테스트",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "모모픽 성향 테스트",
       },
     ],
     locale: "ko_KR",

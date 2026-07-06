@@ -26,6 +26,7 @@
 - [ ] 정책 페이지 다국어
 - [ ] `tools/check-quiz-images.mjs` strict 모드를 빌드에 통합
 - [ ] 다중 카테고리 확장 (현재는 `love` 카테고리만 — `personality`, `social`, `style` 등)
+- [ ] **심층·성향 경로 리네이밍** (`/ko/love/` → `/ko/deep/` 등) — 카테고리 라벨(심층/성향)과 URL 세그먼트(`love`) 불일치 정리. **전제: AdSense 승인 후 진행 + 301 리다이렉트 필수** (안 하면 색인·백링크 유실). 범위·단계별 체크리스트: [route-rename-plan.md](./route-rename-plan.md)
 
 ## 검토 필요 (사용자 결정 미정)
 
@@ -37,5 +38,5 @@
 
 - ❌ 카카오 공유 코드 시그니처 변경
 - ❌ Supabase 스키마 마이그레이션 (현 `quiz_stats` 운영 중)
-- ❌ 라우트 구조 변경 (`/ko/love/<slug>/` trailing slash)
+- ❌ trailing slash 규칙 변경 (`/ko/.../` 끝 슬래시 유지) — 경로 세그먼트 리네이밍은 위 장기 항목에서 별도 검토
 - ❌ `output: "export"` → SSR 전환

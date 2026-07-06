@@ -16,39 +16,21 @@ import {
   SupabaseLoggedInOAuthBlock,
 } from "@/components/ko/OAuthLoggedInBlocks";
 
-function IconFacebook() {
-  return (
-    <svg className="oauth-btn__svg" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="#fff"
-        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-      />
-    </svg>
-  );
-}
-
-function IconNaver() {
-  return (
-    <svg className="oauth-btn__svg" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="#fff" d="M16.273 12.845 13.376 5H19v14h-4.727V11.155L7.624 19H2V5h4.727v7.845l2.897-7.845z" />
-    </svg>
-  );
-}
-
-/** 빌드 시 인라인됨 — 비어 있으면 SDK 스크립트 자체가 로드되지 않음 */
-const KAKAO_JS_KEY_CONFIGURED = Boolean(
-  (process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY ?? "").trim(),
-);
-
 /** URL·키 형식까지 통과할 때만 true (잘못된 URL이면 useEffect에서 createClient 예외로 페이지 전체 크래시 방지) */
 const SUPABASE_CONFIGURED = isSupabasePublicEnvValid();
 
+/** 카카오 로그인 노출 여부. 현재 임시 비활성화(false).
+ *  Supabase Kakao provider 설정을 마치면 true 로 바꾸면 버튼이 다시 보인다.
+ *  절차: docs/project/kakao-login-todo.md */
+const KAKAO_LOGIN_ENABLED = false;
+
 export function SocialLoginButtons() {
   const router = useRouter();
-  const { user, loading, sdkReady, error, login, logout } = useKakaoAuth();
+  const { user, error, logout } = useKakaoAuth();
   const statusId = useId();
   const { user: supabaseUser, connectionError: supabaseConnectionError } = useSupabaseAuthUser();
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [kakaoLoading, setKakaoLoading] = useState(false);
   const [supabaseError, setSupabaseError] = useState<string | null>(null);
 
   const loginWithGoogle = useCallback(async () => {
@@ -72,6 +54,30 @@ export function SocialLoginButtons() {
     } catch (e) {
       setSupabaseError(e instanceof Error ? e.message : "Google 로그인을 시작할 수 없습니다.");
       setGoogleLoading(false);
+    }
+  }, []);
+
+  const loginWithKakao = useCallback(async () => {
+    setSupabaseError(null);
+    setKakaoLoading(true);
+    try {
+      const { createSupabaseBrowserClient } = await import("@/lib/supabase/client");
+      const supabase = createSupabaseBrowserClient();
+      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
+        provider: "kakao",
+        options: {
+          redirectTo: `${window.location.origin}${SUPABASE_OAUTH_CALLBACK_PATH}`,
+        },
+      });
+      if (oauthError) {
+        setSupabaseError(oauthError.message);
+        setKakaoLoading(false);
+        return;
+      }
+      if (data.url) window.location.href = data.url;
+    } catch (e) {
+      setSupabaseError(e instanceof Error ? e.message : "카카오 로그인을 시작할 수 없습니다.");
+      setKakaoLoading(false);
     }
   }, []);
 
@@ -138,64 +144,33 @@ export function SocialLoginButtons() {
             </p>
           )}
         </li>
-        <li>
-          <button
-            type="button"
-            className="oauth-btn oauth-btn--kakao"
-            aria-describedby={error ? statusId : undefined}
-            onClick={login}
-            disabled={loading || !sdkReady || !KAKAO_JS_KEY_CONFIGURED}
-            title={
-              !KAKAO_JS_KEY_CONFIGURED
-                ? "Cloudflare Pages에 NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY를 넣고 다시 배포하세요"
-                : !sdkReady
-                  ? "카카오 SDK 로드 중…"
-                  : undefined
-            }
-          >
-            <IconKakao />
-            {loading
-              ? "로그인 중…"
-              : !KAKAO_JS_KEY_CONFIGURED
-                ? "카카오 (배포에 앱 키 필요)"
-                : !sdkReady
-                  ? "카카오 SDK 로드 중…"
+        {/* 카카오 로그인 임시 비활성화 — Supabase Kakao provider 설정 후 KAKAO_LOGIN_ENABLED=true 로 변경.
+            자세한 재활성화 절차는 docs/project/kakao-login-todo.md 참고. */}
+        {KAKAO_LOGIN_ENABLED && (
+          <li>
+            <button
+              type="button"
+              className="oauth-btn oauth-btn--kakao"
+              aria-describedby={error || supabaseError || supabaseConnectionError ? statusId : undefined}
+              onClick={() => void loginWithKakao()}
+              disabled={kakaoLoading || !SUPABASE_CONFIGURED}
+              title={
+                !SUPABASE_CONFIGURED
+                  ? "Cloudflare Pages 빌드 환경 변수에 NEXT_PUBLIC_SUPABASE_URL·ANON_KEY가 필요합니다"
+                  : kakaoLoading
+                    ? "카카오 로그인 페이지로 이동 중…"
+                    : undefined
+              }
+            >
+              <IconKakao />
+              {kakaoLoading
+                ? "이동 중…"
+                : !SUPABASE_CONFIGURED
+                  ? "카카오 (배포에 Supabase 키 필요)"
                   : "카카오로 시작하기"}
-          </button>
-          {!KAKAO_JS_KEY_CONFIGURED && (
-            <p className="oauth-kakao-hint" role="note" style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>
-              이 사이트 빌드에 카카오 앱 키가 포함되어 있지 않습니다. Cloudflare Pages 등 배포 환경에{" "}
-              <code style={{ fontSize: 12 }}>NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY</code>를 등록한 뒤{" "}
-              <strong>다시 배포</strong>해야 카카오 로그인이 동작합니다.
-            </p>
-          )}
-        </li>
-        <li>
-          <button
-            type="button"
-            className="oauth-btn oauth-btn--facebook"
-            aria-describedby={error ? statusId : undefined}
-            onClick={() =>
-              alert("Facebook 로그인은 아직 연결되어 있지 않습니다. Google 또는 카카오를 이용해 주세요.")
-            }
-          >
-            <IconFacebook />
-            Facebook으로 계속하기
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="oauth-btn oauth-btn--naver"
-            aria-describedby={error ? statusId : undefined}
-            onClick={() =>
-              alert("네이버 로그인은 아직 연결되어 있지 않습니다. Google 또는 카카오를 이용해 주세요.")
-            }
-          >
-            <IconNaver />
-            네이버로 시작하기
-          </button>
-        </li>
+            </button>
+          </li>
+        )}
       </ul>
     </div>
   );

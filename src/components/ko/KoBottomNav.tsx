@@ -87,7 +87,7 @@ const items: NavItem[] = [
   },
   {
     href: "/ko/today/",
-    label: "오늘의 운세",
+    label: "연애운세",
     match: (p) => p.startsWith("/ko/today"),
     icon: (a) => <IconFortune active={a} />,
   },
@@ -105,7 +105,7 @@ const items: NavItem[] = [
   },
 ];
 
-/** 한국어 구역 하단 고정 탭 (홈·오늘의 운세·검색·마이페이지) */
+/** 한국어 구역 하단 고정 탭 (홈·연애운세·검색·마이페이지) */
 export function KoBottomNav() {
   const pathname = usePathname() ?? "";
   const { authResolved, isLoggedIn } = useKoAuthStatus();

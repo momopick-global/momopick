@@ -10,7 +10,7 @@ import { BackButton } from "@/components/ko/BackButton";
 export const metadata: Metadata = {
   title: "로그인 | 모모픽",
   description:
-    "모모픽 계정으로 로그인하세요. Google, 카카오, Facebook, 네이버 등 소셜 로그인을 지원합니다.",
+    "모모픽 계정으로 로그인하세요. Google, 카카오 소셜 로그인을 지원합니다.",
   alternates: {
     canonical: "https://momopick.com/ko/app/login/",
   },

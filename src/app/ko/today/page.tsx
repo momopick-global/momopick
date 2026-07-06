@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { KoTodayVideoExperience } from "@/components/ko/KoTodayVideoExperience";
+import { KoLoveTarotExperience } from "@/components/ko/KoLoveTarotExperience";
 
 export const metadata: Metadata = {
-  title: "오늘의 운세 | 모모픽",
+  title: "연애운세 | 모모픽",
   description:
-    "타로로 오늘의 운세를 가볍게 확인하는 콘텐츠를 준비 중입니다. 서비스 오픈 전 안내입니다.",
+    "타로 카드 3장으로 상대의 마음·나의 마음·조언을 확인하는 오늘의 연애운세.",
   alternates: {
     canonical: "https://momopick.com/ko/today/",
   },
   robots: { index: false, follow: true },
   openGraph: {
-    title: "오늘의 운세 | 모모픽",
-    description: "오늘의 운세",
+    title: "연애운세 | 모모픽",
+    description: "타로 카드 3장으로 보는 오늘의 연애운세",
     url: "https://momopick.com/ko/today/",
     images: [
       {
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function KoTodayPage() {
-  return <KoTodayVideoExperience />;
+  return <KoLoveTarotExperience />;
 }

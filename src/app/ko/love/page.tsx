@@ -8,9 +8,15 @@ import { BackButton } from "@/components/ko/BackButton";
 import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
 
 // 허브 목록은 영문 슬러그 알파벳순으로 노출 (홈 레일은 기존 priority 정렬 유지)
-const loveAll = getKoLoveQuizzesSorted("ko")
-  .slice()
-  .sort((a, b) => a.slug.localeCompare(b.slug));
+const loveSorted = getKoLoveQuizzesSorted("ko");
+const loveAll = loveSorted.slice().sort((a, b) => a.slug.localeCompare(b.slug));
+
+// 허브 공유(OG) 이미지: 대표(최상위 우선순위) 심층 테스트의 썸네일 JPG. 없으면 공용 OG로 폴백.
+const featuredLove = loveSorted[0];
+const ogImageUrl =
+  featuredLove?.image && !featuredLove.image.includes("quiz-image-pending")
+    ? `https://momopick.com${featuredLove.image.replace(/\.webp$/, ".jpg")}`
+    : "https://momopick.com/og/main-og.webp";
 
 export const metadata: Metadata = {
   title: "심층 테스트 | 모모픽",
@@ -25,10 +31,10 @@ export const metadata: Metadata = {
     url: "https://momopick.com/ko/love/",
     images: [
       {
-        url: "https://momopick.com/og/main-og.webp",
-        width: 1536,
-        height: 1024,
-        alt: "모모픽 — MBTI·연애·심리 테스트",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "모모픽 심층 테스트",
       },
     ],
     locale: "ko_KR",
