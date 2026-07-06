@@ -4,6 +4,7 @@ import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import type { SnackQuizDefinition } from "@/components/quiz/types";
 import { koQuizCatalogForHome } from "@/content/quiz";
 import { quizPathSegment, snackQuizHref } from "./quizRoutes";
+import { koTagFromLabel } from "./koTagRegistry";
 
 export type KoHomeRailItem = {
   href: string;
@@ -71,12 +72,13 @@ function isLoveCategory(def: SnackQuizDefinition | PercentageQuizDefinition): bo
 }
 
 /**
- * JSON `category: "love"` 인 퀴즈만 — 메인 `썸·연애` 섹션 타일용.
+ * 심층 테스트 목록 — `category: "love"` 이면서 원픽(1문항)이 아닌 퀴즈만.
+ * 원픽은 별도 메뉴(`/ko/onepick/`)로 분리되므로 심층 목록·홈 심층 섹션에서 제외한다.
  * 정렬은 홈 레일과 동일하게 `card.priority` 내림차순.
  */
 export function getKoLoveQuizzesSorted(locale: string): KoHomeRailItem[] {
   return koQuizCatalogForHome
-    .filter(isLoveCategory)
+    .filter((d) => isLoveCategory(d) && !isOnePickQuiz(d))
     .map((d) => toRailItem(d, locale))
     .sort((a, b) => b.priority - a.priority);
 }
@@ -102,4 +104,38 @@ export function getKoLoveMoreQuizzes(locale: string, excludeHref: string, limit 
   return getKoLoveQuizzesSorted(locale)
     .filter((item) => item.href !== excludeHref)
     .slice(0, limit);
+}
+
+/** 메뉴 그룹(구조) — 데이터로 자동 판별. 원픽(1문항) / 성향(card.theme=personality) / 심층(그 외). */
+export type KoMenuGroup = "onepick" | "personality" | "deep";
+export function menuGroupOf(def: SnackQuizDefinition | PercentageQuizDefinition): KoMenuGroup {
+  if ((def.questions?.length ?? 0) === 1) return "onepick";
+  if (def.card?.theme?.trim() === "personality") return "personality";
+  return "deep";
+}
+
+/** 퀴즈가 가진 캐노니컬 태그 slug 목록 (레지스트리로 정규화, 중복 제거) */
+export function canonicalTagSlugsOf(def: SnackQuizDefinition | PercentageQuizDefinition): string[] {
+  const out = new Set<string>();
+  for (const raw of def.tags ?? []) {
+    const t = koTagFromLabel(raw?.ko) ?? koTagFromLabel(raw?.en);
+    if (t) out.add(t.slug);
+  }
+  return [...out];
+}
+
+/** 특정 태그(slug)가 달린 퀴즈를 심층/원픽/성향 그룹으로 나눠 반환 (각 그룹 priority 내림차순) */
+export function getKoQuizzesByTag(
+  slug: string,
+  locale: string,
+): Record<KoMenuGroup, KoHomeRailItem[]> {
+  const groups: Record<KoMenuGroup, KoHomeRailItem[]> = { deep: [], onepick: [], personality: [] };
+  for (const def of koQuizCatalogForHome) {
+    if (!canonicalTagSlugsOf(def).includes(slug)) continue;
+    groups[menuGroupOf(def)].push(toRailItem(def, locale));
+  }
+  (Object.keys(groups) as KoMenuGroup[]).forEach((g) =>
+    groups[g].sort((a, b) => b.priority - a.priority),
+  );
+  return groups;
 }

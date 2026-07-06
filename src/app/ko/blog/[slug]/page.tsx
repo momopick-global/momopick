@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { notFound } from "next/navigation";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { getKoBlogPostBySlug, getKoBlogSlugs } from "@/content/blog/koSamplePosts";
 import { BlogAmbiguousSituationshipPromo } from "@/components/blog/BlogAmbiguousSituationshipPromo";
 import { BackButton } from "@/components/ko/BackButton";
@@ -158,9 +158,7 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
           </p>
         </main>
 
-        <footer className="ko-ft">
-          <KoFooterNav />
-        </footer>
+        <KoPageFooter />
       </div>
     </>
   );

@@ -4,6 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { KO_PRIMARY_NAV_LIVE, isKoNavActive } from "./koSiteNavLinks";
+import { KoTagBar } from "./KoTagBar";
+import type { KoMenuGroup } from "@/lib/content/homeRail";
+
+/** 메인(홈) 경로 여부 — 홈에선 태그 바를 노출하지 않는다. */
+function isHomePath(pathname: string): boolean {
+  return pathname === "/ko" || pathname === "/ko/";
+}
+
+/** 현재 경로에 해당하는 메뉴 그룹 — 태그 칩 이동 시 해당 섹션으로 스코프 */
+function scopeFromPath(pathname: string): KoMenuGroup | undefined {
+  if (pathname.startsWith("/ko/onepick")) return "onepick";
+  if (pathname.startsWith("/ko/personality-test")) return "personality";
+  if (pathname.startsWith("/ko/love")) return "deep";
+  return undefined;
+}
 
 /** 스크롤 내릴 때 숨고, 올릴 때 다시 나타나는 카테고리 바 */
 export function KoCatBar() {
@@ -36,25 +51,28 @@ export function KoCatBar() {
   }, []);
 
   return (
-    <nav
-      className={`cat-bar${hidden ? " cat-bar--hidden" : ""}`}
-      aria-label="카테고리 빠른 이동"
-    >
-      <div className="cat-bar__inner">
-        {KO_PRIMARY_NAV_LIVE.map((item) => {
-          const active = isKoNavActive(item, pathname);
-          return (
-            <Link
-              key={item.key}
-              className="chip chip--default"
-              href={item.href}
-              aria-current={active ? "true" : undefined}
-            >
-              {item.chipLabel}
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
+    <>
+      <nav
+        className={`cat-bar${hidden ? " cat-bar--hidden" : ""}`}
+        aria-label="카테고리 빠른 이동"
+      >
+        <div className="cat-bar__inner">
+          {KO_PRIMARY_NAV_LIVE.map((item) => {
+            const active = isKoNavActive(item, pathname);
+            return (
+              <Link
+                key={item.key}
+                className="chip chip--default"
+                href={item.href}
+                aria-current={active ? "true" : undefined}
+              >
+                {item.chipLabel}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+      {isHomePath(pathname) ? null : <KoTagBar scope={scopeFromPath(pathname)} />}
+    </>
   );
 }

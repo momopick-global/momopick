@@ -51,7 +51,7 @@ options: { label: SnackQuizText; key: string; image?: string }[]
 ## 5. 이미지 경로 규칙 (기존 규칙 그대로)
 
 - JSON에는 `/images/quiz/{slug}/…`로만 적고, 실제 파일은 `public/images/quiz/{slug}/{locale}/`에 둔다(`quizAssetUrl`이 연결).
-- 파일명 컨벤션: 썸네일 `thumb.webp` · 결과 `result-{번호}.webp` (resultOrder 순서대로 `result-1`, `result-2`, … — 썸연애 퀴즈와 동일; 보기 이미지 쓸 경우 `option-{번호}.webp`).
+- 파일명 컨벤션: 썸네일 `thumb.webp` · 결과 `result-{번호}.webp` (resultOrder 순서대로 `result-1`, `result-2`, … — 심층 테스트(연애·썸) 퀴즈와 동일; 보기 이미지 쓸 경우 `option-{번호}.webp`).
 - 검증: `node tools/check-quiz-images.mjs` (경로에 적힌 파일이 실제로 있어야 통과).
 
 ## 6. 데이터 예시 (현재 샘플 `color-mood-onepick`)

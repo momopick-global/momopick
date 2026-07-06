@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { pickQuizText, type SnackQuizText } from "./types";
+import { koTagFromLabel } from "@/lib/content/koTagRegistry";
 
 type Props = {
   tags?: SnackQuizText[];
@@ -10,9 +12,15 @@ type Props = {
 
 export function QuizPackTags({ tags, locale, afterImage, className }: Props) {
   if (!tags?.length) return null;
+  // 라벨 + (한국어 한정) 캐노니컬 slug. 레지스트리에 있으면 `/ko/tag/[slug]/`로 링크.
   const items = tags
-    .map((t) => pickQuizText(locale, t).trim())
-    .filter(Boolean);
+    .map((t) => {
+      const label = pickQuizText(locale, t).trim();
+      const slug =
+        locale === "ko" ? (koTagFromLabel(t?.ko) ?? koTagFromLabel(t?.en))?.slug : undefined;
+      return { label, slug };
+    })
+    .filter((it) => it.label);
   if (!items.length) return null;
 
   const aria =
@@ -28,9 +36,9 @@ export function QuizPackTags({ tags, locale, afterImage, className }: Props) {
 
   return (
     <ul className={cn} aria-label={aria}>
-      {items.map((label, i) => (
-        <li key={`${label}-${i}`} className="quiz-result-tag">
-          {label}
+      {items.map((it, i) => (
+        <li key={`${it.label}-${i}`} className="quiz-result-tag">
+          {it.slug ? <Link href={`/ko/tag/${it.slug}/`}>{it.label}</Link> : it.label}
         </li>
       ))}
     </ul>

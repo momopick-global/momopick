@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { BackButton } from "@/components/ko/BackButton";
 
 export const metadata: Metadata = {
@@ -106,9 +106,7 @@ export default function KoFeedbackPage() {
           </div>
         </main>
 
-        <footer className="ko-ft">
-          <KoFooterNav />
-        </footer>
+        <KoPageFooter />
       </div>
     </>
   );

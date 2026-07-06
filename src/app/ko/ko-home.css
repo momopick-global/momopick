@@ -545,6 +545,81 @@
   box-shadow: 0 2px 12px rgba(45, 30, 80, 0.04);
 }
 
+/* GNB 바로 아래 태그 줄 (카테고리 바보다 한 단계 가볍게) */
+.momopick-ko .tag-bar {
+  border-bottom: 1px solid var(--line);
+  background: rgba(244, 242, 251, 0.6);
+}
+
+.momopick-ko .tag-bar__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 8px var(--layout-gutter);
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent
+  );
+}
+
+.momopick-ko .tag-bar__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.momopick-ko .chip--tag {
+  padding: 5px 11px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface);
+  box-shadow: none;
+}
+
+/* /ko/tag/ 인덱스 — 전체 태그 클라우드 */
+.momopick-ko .tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.momopick-ko .tag-cloud .chip--tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: var(--fs-md);
+}
+
+.momopick-ko .tag-cloud__count {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* 태그 페이지 스코프 안내(서브페이지에서 특정 메뉴만 볼 때) */
+.momopick-ko .tag-scope-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.momopick-ko .tag-scope-clear {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
 .momopick-ko .chip[aria-current="true"] {
   color: #fff;
   border-color: transparent;
@@ -4773,4 +4848,63 @@ html.today-video-lock body {
 .momopick-ko .ko-bottom-nav__label {
   line-height: 1.2;
   white-space: nowrap;
+}
+
+/* 맨 위로 버튼 — 오른쪽 하단(하단 탭바 위), 스크롤 올릴 때만 표시 */
+.momopick-ko .ko-scroll-top {
+  position: fixed;
+  right: 16px;
+  /* 하단 탭바(≈56px) + 안전영역 위로 띄움 */
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 16px);
+  z-index: 55;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent) 0%, #7a50dc 100%);
+  box-shadow: 0 6px 20px rgba(45, 30, 120, 0.28);
+  /* 기본은 숨김(아래로 살짝 내려가며 사라짐) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+}
+
+.momopick-ko .ko-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.momopick-ko .ko-scroll-top:hover {
+  box-shadow: 0 10px 26px rgba(45, 30, 120, 0.36);
+}
+
+.momopick-ko .ko-scroll-top__arrow {
+  animation: koScrollTopBob 1.4s ease-in-out infinite;
+}
+
+@keyframes koScrollTopBob {
+  0%,
+  100% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momopick-ko .ko-scroll-top,
+  .momopick-ko .ko-scroll-top__arrow {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    animation: none;
+  }
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoCatBar } from "@/components/ko/KoCatBar";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { BackButton } from "@/components/ko/BackButton";
 import { getKoOnePickQuizzesSorted } from "@/lib/content/homeRail";
 import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
@@ -72,7 +72,7 @@ export default function KoOnepickPage() {
                 <p>아직 공개된 원픽 테스트가 없어요.</p>
                 <div className="cta-row">
                   <Link className="btn primary sm" href="/ko/love/">
-                    썸·연애 테스트 보러 가기
+                    심층 테스트 보러 가기
                   </Link>
                   <Link className="btn secondary sm" href="/ko/">
                     홈으로
@@ -81,9 +81,23 @@ export default function KoOnepickPage() {
               </div>
             )}
           </section>
+
+          <section className="section duo hub-love-footer" aria-label="다음 이동">
+            <p className="sec-lead" style={{ marginBottom: 16 }}>
+              다른 주제도 둘러볼까요?
+            </p>
+            <div className="cta">
+              <Link className="btn primary" href="/ko/">
+                홈으로
+              </Link>
+              <Link className="btn" href="/ko/explore/">
+                전체 탐색
+              </Link>
+            </div>
+          </section>
         </main>
 
-        <KoFooterNav />
+        <KoPageFooter />
       </div>
     </>
   );

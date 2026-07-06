@@ -34,11 +34,11 @@ export function KoLoveHubMoreSection({ locale, excludeHref, limit = 4, placement
     >
       <section className={sectionClass} aria-labelledby={headingId}>
         <h3 id={headingId} className={titleClass}>
-          다른 썸·연애 테스트
+          다른 심층 테스트
         </h3>
         <p className={`${leadClass} ko-love-more__lead--end`}>
           <Link className="link-all" href={loveHubHref}>
-            썸·연애 허브에서 전체 보기
+            심층 테스트 허브에서 전체 보기
           </Link>
         </p>
         <ul className="love-hub-list" role="list">

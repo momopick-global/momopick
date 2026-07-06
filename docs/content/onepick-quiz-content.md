@@ -15,7 +15,7 @@
 원픽 이미지는 **① 제목 이미지**와 **② 결과 이미지** 두 종류로 나뉜다. 아래 공통 규격을 공유하되, 종류별 규칙이 다르다.
 
 - 공통 규격: **1:1 정사각형(square)** — UI에서 커버·보기·결과가 `aspect-ratio: 1/1`로 표시되므로 정사각형이 아니면 잘림.
-- 공통 그림체: 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 계열 무드.
+- 공통 그림체: 부드러운 한국 웹툰풍 일러스트. 색은 **각 이미지의 소재·무드에 맞춰 다양하게** — 특정 보라색 계열로 치우치지 않게 한다.
 
 > ⚠️ 텍스트 렌더링 주의: AI 이미지 생성기는 글자, 특히 한글을 정확히 못 그리는 경우가 많다. 아래처럼 이미지에 텍스트를 넣기로 했으므로, 텍스트 재현이 좋은 도구를 쓰거나 최종 문구는 디자인 툴로 얹는(오버레이) 방식을 병행하는 것을 권장한다.
 
@@ -31,7 +31,7 @@
 5. 최하단: 테스트 설명 (한 줄)
 
 - EN suffix: `poster-style thumbnail. Top: a small English label "ONE-PICK TEST"; second line: the quiz title; third line: a short instruction (e.g., "Pick one"); center: the 4–6 options each marked with a large, legible number (1, 2, 3, ...); bottom: a one-line description. Soft Korean webtoon illustration, pink-purple ambiance; square 1:1 aspect ratio.`
-- KO suffix: `포스터형 썸네일. 상단: 작은 영문 라벨 "ONE-PICK TEST", 둘째 줄: 테스트 제목, 셋째 줄: 방법 안내 문구(예: "1가지를 골라보세요"), 중앙: 보기 4~6개에 각각 크고 읽기 쉬운 번호(1·2·3·…), 최하단: 테스트 설명 한 줄. 부드러운 한국 웹툰풍 일러스트·핑크 퍼플 무드, 1:1 정사각형 비율.`
+- KO suffix: `포스터형 썸네일. 상단: 작은 영문 라벨 "ONE-PICK TEST", 둘째 줄: 테스트 제목, 셋째 줄: 방법 안내 문구(예: "1가지를 골라보세요"), 중앙: 보기 4~6개에 각각 크고 읽기 쉬운 번호(1·2·3·…), 최하단: 테스트 설명 한 줄. 부드러운 한국 웹툰풍 일러스트, 소재·주제에 어울리는 색감(보라색에 치우치지 말고 다양하게), 1:1 정사각형 비율.`
 
 > 실제 생성 시 제목·설명·안내 문구는 각 퀴즈 「기본 정보」의 값(제목·설명)을 넣는다.
 
@@ -39,8 +39,8 @@
 
 용도: 결과 화면 상단 이미지. 해당 결과 **하나**를 상징하는 **단일 장면** 위에, 그 결과의 **태그라인(헤드라인) + 핵심 내용을 압축한 한두 줄**을 함께 얹는다.
 
-- EN suffix: `a single symbolic scene expressing this one result's mood, with the result's tagline shown as a headline and one or two short condensed lines of the result text overlaid; soft Korean webtoon illustration, pink-purple palette; square 1:1 aspect ratio.`
-- KO suffix: `해당 결과 하나의 감정·무드를 담은 단일 상징 장면 위에, 그 결과의 태그라인(헤드라인)과 핵심 내용을 압축한 한두 줄을 얹음, 부드러운 한국 웹툰풍 일러스트·핑크 퍼플 팔레트, 1:1 정사각형 비율.`
+- EN suffix: `a single symbolic scene expressing this one result's mood, with the result's tagline shown as a headline and one or two short condensed lines of the result text overlaid; soft Korean webtoon illustration; a palette that fits the result's subject and mood, kept varied (not defaulting to purple); square 1:1 aspect ratio.`
+- KO suffix: `해당 결과 하나의 감정·무드를 담은 단일 상징 장면 위에, 그 결과의 태그라인(헤드라인)과 핵심 내용을 압축한 한두 줄을 얹음, 부드러운 한국 웹툰풍 일러스트, 결과의 소재·감정에 맞는 색 팔레트(보라색에 치우치지 말고 다양하게), 1:1 정사각형 비율.`
 
 > 실제 생성 시 태그라인·압축 내용은 각 결과의 `tagline`/`body` 값에서 가져온다.
 
@@ -83,8 +83,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Four glowing doors floating in a dreamy night space, each hinting a different mood — warm sunset, sparkling starry sky, cozy golden light, bright morning sun; each door clearly marked with a large, legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick psychology test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "오늘 열고 싶은 문은?"; instruction "1가지를 골라보세요"; bottom one-line description "네 개의 문 중 지금 가장 끌리는 하나로, 요즘 내 마음이 진짜 바라는 걸 알아보는 원픽 심리 테스트".`
-- KO: `꿈결 같은 밤 공간에 떠 있는 빛나는 문 4개, 각 문이 서로 다른 분위기를 암시 — 따뜻한 노을, 반짝이는 별하늘, 포근한 황금빛, 밝은 아침햇살; 각 문에 크고 읽기 쉬운 번호 1~4를 뚜렷하게 표시, 패널 분할이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 심리테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "오늘 열고 싶은 문은?", 안내 "1가지를 골라보세요", 하단 설명 "네 개의 문 중 지금 가장 끌리는 하나로, 요즘 내 마음이 진짜 바라는 걸 알아보는 원픽 심리 테스트".`
+- EN: `Four glowing doors floating in a dreamy night space, each hinting a different mood — warm sunset, sparkling starry sky, cozy golden light, bright morning sun; each door clearly marked with a large, legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, a varied palette matching each door's mood (sunset orange, starry blue, warm gold, morning yellow), one-pick psychology test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "오늘 열고 싶은 문은?"; instruction "1가지를 골라보세요"; bottom one-line description "네 개의 문 중 지금 가장 끌리는 하나로, 요즘 내 마음이 진짜 바라는 걸 알아보는 원픽 심리 테스트".`
+- KO: `꿈결 같은 밤 공간에 떠 있는 빛나는 문 4개, 각 문이 서로 다른 분위기를 암시 — 따뜻한 노을, 반짝이는 별하늘, 포근한 황금빛, 밝은 아침햇살; 각 문에 크고 읽기 쉬운 번호 1~4를 뚜렷하게 표시, 패널 분할이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 각 문의 분위기에 맞는 다채로운 색감(노을 오렌지·별빛 블루·황금빛·새벽 옐로), 원픽 심리테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "오늘 열고 싶은 문은?", 안내 "1가지를 골라보세요", 하단 설명 "네 개의 문 중 지금 가장 끌리는 하나로, 요즘 내 마음이 진짜 바라는 걸 알아보는 원픽 심리 테스트".`
 
 ### 결과 1 — 휴식형 🌙 (`rest`)
 
@@ -138,8 +138,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Six dreamy desserts arranged as a numbered set 1 to 6 — passionate red velvet, playful macaron tower, warm homey cookie, neat classic tart, rich chocolate lava, soft heart-shaped mousse; each dessert clearly marked with a large legible number 1 to 6, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick love-style test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 손이 가는 디저트는?"; instruction "1가지를 골라보세요"; bottom one-line description "여섯 개의 디저트 중 지금 가장 손이 가는 하나로, 나의 연애 스타일을 알아보는 원픽 테스트".`
-- KO: `꿈결 같은 디저트 6개를 번호 세트 1~6으로 배치 — 열정적인 레드벨벳, 발랄한 마카롱 타워, 포근한 홈메이드 쿠키, 단정한 클래식 타르트, 진한 초콜릿 라바, 부드러운 하트 무스; 각 디저트에 크고 읽기 쉬운 번호 1~6 뚜렷하게, 패널 분할이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 연애스타일 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 손이 가는 디저트는?", 안내 "1가지를 골라보세요", 하단 설명 "여섯 개의 디저트 중 지금 가장 손이 가는 하나로, 나의 연애 스타일을 알아보는 원픽 테스트".`
+- EN: `Six dreamy desserts arranged as a numbered set 1 to 6 — passionate red velvet, playful macaron tower, warm homey cookie, neat classic tart, rich chocolate lava, soft heart-shaped mousse; each dessert clearly marked with a large legible number 1 to 6, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, sweet pastel and cream tones (berry pink, cream, chocolate), one-pick love-style test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 손이 가는 디저트는?"; instruction "1가지를 골라보세요"; bottom one-line description "여섯 개의 디저트 중 지금 가장 손이 가는 하나로, 나의 연애 스타일을 알아보는 원픽 테스트".`
+- KO: `꿈결 같은 디저트 6개를 번호 세트 1~6으로 배치 — 열정적인 레드벨벳, 발랄한 마카롱 타워, 포근한 홈메이드 쿠키, 단정한 클래식 타르트, 진한 초콜릿 라바, 부드러운 하트 무스; 각 디저트에 크고 읽기 쉬운 번호 1~6 뚜렷하게, 패널 분할이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 달콤한 파스텔·크림 톤(베리 핑크·크림·초콜릿), 원픽 연애스타일 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 손이 가는 디저트는?", 안내 "1가지를 골라보세요", 하단 설명 "여섯 개의 디저트 중 지금 가장 손이 가는 하나로, 나의 연애 스타일을 알아보는 원픽 테스트".`
 
 ### 결과 1 — 열정형(에로스) ❤️‍🔥 (`eros`)
 
@@ -207,8 +207,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Four contrasting night skies arranged as a numbered set 1 to 4 — a sparkling excited starry sky, a calm serene moonlit sky, a restless swirling aurora, a quiet deep midnight sky; each sky clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick mood test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "끌리는 밤하늘은?"; instruction "1가지를 골라보세요"; bottom one-line description "네 개의 밤하늘 중 지금 끌리는 하나로, 요즘 내 마음 상태를 알아보는 원픽 테스트".`
-- KO: `대비되는 밤하늘 4개를 번호 세트 1~4로 배치 — 반짝이는 설레는 별하늘, 고요하고 평온한 달빛 하늘, 일렁이는 오로라의 싱숭생숭한 하늘, 깊고 조용한 자정의 하늘; 각 하늘에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 감정 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "끌리는 밤하늘은?", 안내 "1가지를 골라보세요", 하단 설명 "네 개의 밤하늘 중 지금 끌리는 하나로, 요즘 내 마음 상태를 알아보는 원픽 테스트".`
+- EN: `Four contrasting night skies arranged as a numbered set 1 to 4 — a sparkling excited starry sky, a calm serene moonlit sky, a restless swirling aurora, a quiet deep midnight sky; each sky clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, deep night-sky blues and indigo with soft aurora hues, one-pick mood test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "끌리는 밤하늘은?"; instruction "1가지를 골라보세요"; bottom one-line description "네 개의 밤하늘 중 지금 끌리는 하나로, 요즘 내 마음 상태를 알아보는 원픽 테스트".`
+- KO: `대비되는 밤하늘 4개를 번호 세트 1~4로 배치 — 반짝이는 설레는 별하늘, 고요하고 평온한 달빛 하늘, 일렁이는 오로라의 싱숭생숭한 하늘, 깊고 조용한 자정의 하늘; 각 하늘에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 깊은 밤하늘 블루·인디고에 은은한 오로라 색감, 원픽 감정 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "끌리는 밤하늘은?", 안내 "1가지를 골라보세요", 하단 설명 "네 개의 밤하늘 중 지금 끌리는 하나로, 요즘 내 마음 상태를 알아보는 원픽 테스트".`
 
 ### 결과 1 — 설렘 ✨ (`excited`)
 
@@ -262,8 +262,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Five symbolic survival items on a dreamy deserted island, arranged as a numbered set 1 to 5 — a cozy blanket (security), a bundle of fireworks (excitement), a walkie-talkie and letter (trust & communication), a compass (freedom), a small seedling (growth); each item clearly marked with a large legible number 1 to 5, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick relationship-value test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "무인도에 딱 하나 가져간다면?"; instruction "1가지를 골라보세요"; bottom one-line description "무인도에 가져갈 물건 하나로, 연애에서 내가 가장 중요하게 여기는 가치를 알아보는 원픽 테스트".`
-- KO: `꿈결 같은 무인도에 놓인 상징적인 물건 5개를 번호 세트 1~5로 배치 — 포근한 담요(안정감), 폭죽 묶음(설렘), 무전기와 편지(신뢰·소통), 나침반(자유), 작은 새싹(성장); 각 물건에 크고 읽기 쉬운 번호 1~5 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 관계가치 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "무인도에 딱 하나 가져간다면?", 안내 "1가지를 골라보세요", 하단 설명 "무인도에 가져갈 물건 하나로, 연애에서 내가 가장 중요하게 여기는 가치를 알아보는 원픽 테스트".`
+- EN: `Five symbolic survival items on a dreamy deserted island, arranged as a numbered set 1 to 5 — a cozy blanket (security), a bundle of fireworks (excitement), a walkie-talkie and letter (trust & communication), a compass (freedom), a small seedling (growth); each item clearly marked with a large legible number 1 to 5, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, tropical blues, sandy beige and fresh greens, one-pick relationship-value test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "무인도에 딱 하나 가져간다면?"; instruction "1가지를 골라보세요"; bottom one-line description "무인도에 가져갈 물건 하나로, 연애에서 내가 가장 중요하게 여기는 가치를 알아보는 원픽 테스트".`
+- KO: `꿈결 같은 무인도에 놓인 상징적인 물건 5개를 번호 세트 1~5로 배치 — 포근한 담요(안정감), 폭죽 묶음(설렘), 무전기와 편지(신뢰·소통), 나침반(자유), 작은 새싹(성장); 각 물건에 크고 읽기 쉬운 번호 1~5 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 트로피컬 블루·모래빛 베이지·싱그러운 그린, 원픽 관계가치 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "무인도에 딱 하나 가져간다면?", 안내 "1가지를 골라보세요", 하단 설명 "무인도에 가져갈 물건 하나로, 연애에서 내가 가장 중요하게 여기는 가치를 알아보는 원픽 테스트".`
 
 ### 결과 1 — 안정감 🧣 (`security`)
 
@@ -324,8 +324,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Six different flowers arranged as a numbered set 1 to 6 — a warm sunflower (warmth), a cheerful freesia (humor), soft lavender (intellect), a mysterious dark rose (mystery), gentle baby's breath (stability), a passionate red rose (passion); each flower clearly marked with a large legible number 1 to 6, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick charm test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "눈길이 먼저 가는 꽃은?"; instruction "1가지를 골라보세요"; bottom one-line description "여섯 송이 꽃 중 눈길이 먼저 가는 하나로, 나의 매력 포인트를 알아보는 원픽 테스트".`
-- KO: `서로 다른 꽃 6개를 번호 세트 1~6으로 배치 — 따뜻한 해바라기(따뜻함), 발랄한 프리지아(유머), 은은한 라벤더(지적매력), 신비로운 다크 로즈(신비로움), 부드러운 안개꽃(안정감), 정열적인 붉은 장미(열정); 각 꽃에 크고 읽기 쉬운 번호 1~6 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 매력 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "눈길이 먼저 가는 꽃은?", 안내 "1가지를 골라보세요", 하단 설명 "여섯 송이 꽃 중 눈길이 먼저 가는 하나로, 나의 매력 포인트를 알아보는 원픽 테스트".`
+- EN: `Six different flowers arranged as a numbered set 1 to 6 — a warm sunflower (warmth), a cheerful freesia (humor), soft lavender (intellect), a mysterious dark rose (mystery), gentle baby's breath (stability), a passionate red rose (passion); each flower clearly marked with a large legible number 1 to 6, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, each flower's own natural colors (yellow, lavender, deep red, white), one-pick charm test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "눈길이 먼저 가는 꽃은?"; instruction "1가지를 골라보세요"; bottom one-line description "여섯 송이 꽃 중 눈길이 먼저 가는 하나로, 나의 매력 포인트를 알아보는 원픽 테스트".`
+- KO: `서로 다른 꽃 6개를 번호 세트 1~6으로 배치 — 따뜻한 해바라기(따뜻함), 발랄한 프리지아(유머), 은은한 라벤더(지적매력), 신비로운 다크 로즈(신비로움), 부드러운 안개꽃(안정감), 정열적인 붉은 장미(열정); 각 꽃에 크고 읽기 쉬운 번호 1~6 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 꽃마다 다른 자연스러운 색(노랑·라벤더·짙은 빨강·흰색), 원픽 매력 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "눈길이 먼저 가는 꽃은?", 안내 "1가지를 골라보세요", 하단 설명 "여섯 송이 꽃 중 눈길이 먼저 가는 하나로, 나의 매력 포인트를 알아보는 원픽 테스트".`
 
 ### 결과 1 — 따뜻함 🌻 (`warmth`)
 
@@ -393,8 +393,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Four expressive chat emoji bubbles arranged as a numbered set 1 to 4 — a bold heart (straightforward), a teary pleading face (anxious), a cool sunglasses face (distant), a smirking playful face (push-and-pull); each emoji clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick crush-attitude test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 보내고 싶은 이모지는?"; instruction "1가지를 골라보세요"; bottom one-line description "네 개의 이모지 중 지금 보내고 싶은 하나로, 썸 탈 때 나의 태도를 알아보는 원픽 테스트".`
-- KO: `표정이 살아있는 채팅 이모지 말풍선 4개를 번호 세트 1~4로 배치 — 대담한 하트(직진), 눈물 그렁 애원하는 얼굴(불안), 쿨한 선글라스 얼굴(거리두기), 능글맞게 웃는 얼굴(밀당); 각 이모지에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 썸태도 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 보내고 싶은 이모지는?", 안내 "1가지를 골라보세요", 하단 설명 "네 개의 이모지 중 지금 보내고 싶은 하나로, 썸 탈 때 나의 태도를 알아보는 원픽 테스트".`
+- EN: `Four expressive chat emoji bubbles arranged as a numbered set 1 to 4 — a bold heart (straightforward), a teary pleading face (anxious), a cool sunglasses face (distant), a smirking playful face (push-and-pull); each emoji clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, bright chat-app colors (red, blue, yellow), one-pick crush-attitude test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 보내고 싶은 이모지는?"; instruction "1가지를 골라보세요"; bottom one-line description "네 개의 이모지 중 지금 보내고 싶은 하나로, 썸 탈 때 나의 태도를 알아보는 원픽 테스트".`
+- KO: `표정이 살아있는 채팅 이모지 말풍선 4개를 번호 세트 1~4로 배치 — 대담한 하트(직진), 눈물 그렁 애원하는 얼굴(불안), 쿨한 선글라스 얼굴(거리두기), 능글맞게 웃는 얼굴(밀당); 각 이모지에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 밝은 채팅 앱 색감(레드·블루·옐로), 원픽 썸태도 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 보내고 싶은 이모지는?", 안내 "1가지를 골라보세요", 하단 설명 "네 개의 이모지 중 지금 보내고 싶은 하나로, 썸 탈 때 나의 태도를 알아보는 원픽 테스트".`
 
 ### 결과 1 — 편안한 직진형 ❤️ (`secure`)
 
@@ -448,8 +448,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Four window views showing different weather, arranged as a numbered set 1 to 4 — a clear sunny sky (stable), a cloudy grey sky (boredom/uncertainty), gentle rain on the glass (hurt/lull), gusty wind with drifting petals (excitement/change); each view clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick relationship-weather test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "창밖 날씨 중 지금 나는?"; instruction "1가지를 골라보세요"; bottom one-line description "네 가지 날씨 중 지금 내 마음 같은 하나로, 요즘 연애 기류를 돌아보는 원픽 테스트".`
-- KO: `서로 다른 날씨의 창밖 풍경 4개를 번호 세트 1~4로 배치 — 맑은 하늘(안정), 흐린 잿빛 하늘(권태·불확실), 유리창에 부드럽게 내리는 비(상처·소강), 꽃잎이 날리는 바람(설렘·변화); 각 풍경에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 연애기류 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "창밖 날씨 중 지금 나는?", 안내 "1가지를 골라보세요", 하단 설명 "네 가지 날씨 중 지금 내 마음 같은 하나로, 요즘 연애 기류를 돌아보는 원픽 테스트".`
+- EN: `Four window views showing different weather, arranged as a numbered set 1 to 4 — a clear sunny sky (stable), a cloudy grey sky (boredom/uncertainty), gentle rain on the glass (hurt/lull), gusty wind with drifting petals (excitement/change); each view clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, sky-driven colors (clear blue, cloudy grey, rainy blue, breezy green), one-pick relationship-weather test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "창밖 날씨 중 지금 나는?"; instruction "1가지를 골라보세요"; bottom one-line description "네 가지 날씨 중 지금 내 마음 같은 하나로, 요즘 연애 기류를 돌아보는 원픽 테스트".`
+- KO: `서로 다른 날씨의 창밖 풍경 4개를 번호 세트 1~4로 배치 — 맑은 하늘(안정), 흐린 잿빛 하늘(권태·불확실), 유리창에 부드럽게 내리는 비(상처·소강), 꽃잎이 날리는 바람(설렘·변화); 각 풍경에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 하늘에서 온 색감(맑은 블루·흐린 그레이·비의 블루·바람의 연두), 원픽 연애기류 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "창밖 날씨 중 지금 나는?", 안내 "1가지를 골라보세요", 하단 설명 "네 가지 날씨 중 지금 내 마음 같은 하나로, 요즘 연애 기류를 돌아보는 원픽 테스트".`
 
 ### 결과 1 — 맑음 ☀️ (`clear`)
 
@@ -503,8 +503,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `A cozy cafe interior seen from above with five highlighted seats, arranged as a numbered set 1 to 5 — a window seat (observer), a central table (open), a corner nook (safe), a seat by the door (open-ended), a solo bar seat (independent); each seat clearly marked with a large legible number 1 to 5, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick closeness test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "카페에서 고르는 자리는?"; instruction "1가지를 골라보세요"; bottom one-line description "카페에서 끌리는 자리 하나로, 관계에서 내가 두는 거리감을 알아보는 원픽 테스트".`
-- KO: `위에서 내려다본 아늑한 카페 내부에 강조된 자리 5개를 번호 세트 1~5로 배치 — 창가 자리(관찰형), 중앙 테이블(개방형), 구석 자리(안전추구형), 문가 자리(여지형), 혼자 앉는 바 자리(독립형); 각 자리에 크고 읽기 쉬운 번호 1~5 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 거리감 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "카페에서 고르는 자리는?", 안내 "1가지를 골라보세요", 하단 설명 "카페에서 끌리는 자리 하나로, 관계에서 내가 두는 거리감을 알아보는 원픽 테스트".`
+- EN: `A cozy cafe interior seen from above with five highlighted seats, arranged as a numbered set 1 to 5 — a window seat (observer), a central table (open), a corner nook (safe), a seat by the door (open-ended), a solo bar seat (independent); each seat clearly marked with a large legible number 1 to 5, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, warm wood, cream and beige cafe tones, one-pick closeness test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "카페에서 고르는 자리는?"; instruction "1가지를 골라보세요"; bottom one-line description "카페에서 끌리는 자리 하나로, 관계에서 내가 두는 거리감을 알아보는 원픽 테스트".`
+- KO: `위에서 내려다본 아늑한 카페 내부에 강조된 자리 5개를 번호 세트 1~5로 배치 — 창가 자리(관찰형), 중앙 테이블(개방형), 구석 자리(안전추구형), 문가 자리(여지형), 혼자 앉는 바 자리(독립형); 각 자리에 크고 읽기 쉬운 번호 1~5 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 따뜻한 우드·크림·베이지 카페 톤, 원픽 거리감 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "카페에서 고르는 자리는?", 안내 "1가지를 골라보세요", 하단 설명 "카페에서 끌리는 자리 하나로, 관계에서 내가 두는 거리감을 알아보는 원픽 테스트".`
 
 ### 결과 1 — 관찰형 🪟 (`window`)
 
@@ -565,8 +565,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Four cute plush dolls arranged as a numbered set 1 to 4 — a warm teddy bear (intimacy/stability), a lively bunny (passion/excitement), a loyal puppy (devotion/companionship), a cool independent cat (freedom); each doll clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick love-shape test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 껴안고 싶은 인형은?"; instruction "1가지를 골라보세요"; bottom one-line description "네 인형 중 지금 껴안고 싶은 하나로, 내가 원하는 사랑의 형태를 알아보는 원픽 테스트".`
-- KO: `귀여운 인형 4개를 번호 세트 1~4로 배치 — 따뜻한 곰인형(친밀·안정), 발랄한 토끼(열정·설렘), 충직한 강아지(헌신·동반), 쿨한 고양이(자유·독립); 각 인형에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 사랑형태 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 껴안고 싶은 인형은?", 안내 "1가지를 골라보세요", 하단 설명 "네 인형 중 지금 껴안고 싶은 하나로, 내가 원하는 사랑의 형태를 알아보는 원픽 테스트".`
+- EN: `Four cute plush dolls arranged as a numbered set 1 to 4 — a warm teddy bear (intimacy/stability), a lively bunny (passion/excitement), a loyal puppy (devotion/companionship), a cool independent cat (freedom); each doll clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, soft plush pastel colors (brown, pink, cream, grey), one-pick love-shape test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 껴안고 싶은 인형은?"; instruction "1가지를 골라보세요"; bottom one-line description "네 인형 중 지금 껴안고 싶은 하나로, 내가 원하는 사랑의 형태를 알아보는 원픽 테스트".`
+- KO: `귀여운 인형 4개를 번호 세트 1~4로 배치 — 따뜻한 곰인형(친밀·안정), 발랄한 토끼(열정·설렘), 충직한 강아지(헌신·동반), 쿨한 고양이(자유·독립); 각 인형에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 부드러운 인형 파스텔 색(브라운·핑크·크림·그레이), 원픽 사랑형태 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 껴안고 싶은 인형은?", 안내 "1가지를 골라보세요", 하단 설명 "네 인형 중 지금 껴안고 싶은 하나로, 내가 원하는 사랑의 형태를 알아보는 원픽 테스트".`
 
 ### 결과 1 — 친밀·안정형 🧸 (`bear`)
 
@@ -620,8 +620,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Six dreamy travel destinations arranged as a numbered set 1 to 6 — a calm ocean (cleansing/rest), a challenging mountain (achievement), a lively city (stimulation/connection), a peaceful countryside (calm/stability), an exotic foreign street (novelty/freedom), a cozy home nook (safety/recovery); each destination clearly marked with a large legible number 1 to 6, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick inner-need test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "문득 떠나고 싶은 여행지는?"; instruction "1가지를 골라보세요"; bottom one-line description "여섯 여행지 중 지금 가장 끌리는 하나로, 지금 내 마음이 진짜 바라는 걸 알아보는 원픽 테스트".`
-- KO: `꿈결 같은 여행지 6개를 번호 세트 1~6으로 배치 — 잔잔한 바다(정화·쉼), 도전적인 산(성취), 활기찬 도시(자극·연결), 평화로운 시골(평온·안정), 이국적인 거리(새로움·자유), 아늑한 집(안전·회복); 각 여행지에 크고 읽기 쉬운 번호 1~6 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 마음욕구 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "문득 떠나고 싶은 여행지는?", 안내 "1가지를 골라보세요", 하단 설명 "여섯 여행지 중 지금 가장 끌리는 하나로, 지금 내 마음이 진짜 바라는 걸 알아보는 원픽 테스트".`
+- EN: `Six dreamy travel destinations arranged as a numbered set 1 to 6 — a calm ocean (cleansing/rest), a challenging mountain (achievement), a lively city (stimulation/connection), a peaceful countryside (calm/stability), an exotic foreign street (novelty/freedom), a cozy home nook (safety/recovery); each destination clearly marked with a large legible number 1 to 6, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, colors of each destination (ocean blue, mountain green, city glow, countryside gold, exotic teal, cozy warm), one-pick inner-need test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "문득 떠나고 싶은 여행지는?"; instruction "1가지를 골라보세요"; bottom one-line description "여섯 여행지 중 지금 가장 끌리는 하나로, 지금 내 마음이 진짜 바라는 걸 알아보는 원픽 테스트".`
+- KO: `꿈결 같은 여행지 6개를 번호 세트 1~6으로 배치 — 잔잔한 바다(정화·쉼), 도전적인 산(성취), 활기찬 도시(자극·연결), 평화로운 시골(평온·안정), 이국적인 거리(새로움·자유), 아늑한 집(안전·회복); 각 여행지에 크고 읽기 쉬운 번호 1~6 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 여행지마다 다른 색(바다 블루·산 그린·도시 네온·시골 골드·이국 틸·집 웜톤), 원픽 마음욕구 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "문득 떠나고 싶은 여행지는?", 안내 "1가지를 골라보세요", 하단 설명 "여섯 여행지 중 지금 가장 끌리는 하나로, 지금 내 마음이 진짜 바라는 걸 알아보는 원픽 테스트".`
 
 ### 결과 1 — 정화·쉼 🌊 (`ocean`)
 
@@ -691,8 +691,8 @@
 
 ### 제목 이미지 프롬프트
 
-- EN: `Four glowing color cards arranged as a numbered set 1 to 4 — a passionate red, a calm blue, a cheerful yellow, a soothing green; each card clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, pink-purple neon ambiance, one-pick color-mood test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 끌리는 색은?"; instruction "1가지를 골라보세요"; bottom one-line description "지금 가장 끌리는 색 하나로 오늘의 마음 상태를 알아보는 원픽 테스트".`
-- KO: `빛나는 색 카드 4개를 번호 세트 1~4로 배치 — 정열의 레드, 차분한 블루, 발랄한 옐로, 편안한 그린; 각 카드에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 핑크 퍼플 네온 분위기, 원픽 색채무드 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 끌리는 색은?", 안내 "1가지를 골라보세요", 하단 설명 "지금 가장 끌리는 색 하나로 오늘의 마음 상태를 알아보는 원픽 테스트".`
+- EN: `Four glowing color cards arranged as a numbered set 1 to 4 — a passionate red, a calm blue, a cheerful yellow, a soothing green; each card clearly marked with a large legible number 1 to 4, split into panels or one scene is fine but the numbers must be clearly visible, soft Korean webtoon illustration, four distinct vivid colors (red, blue, yellow, green), one-pick color-mood test thumbnail, square 1:1 aspect ratio. Overlaid Korean text — top small label "ONE-PICK TEST"; title "지금 끌리는 색은?"; instruction "1가지를 골라보세요"; bottom one-line description "지금 가장 끌리는 색 하나로 오늘의 마음 상태를 알아보는 원픽 테스트".`
+- KO: `빛나는 색 카드 4개를 번호 세트 1~4로 배치 — 정열의 레드, 차분한 블루, 발랄한 옐로, 편안한 그린; 각 카드에 크고 읽기 쉬운 번호 1~4 뚜렷하게, 패널이든 한 장면이든 무방하되 번호는 반드시 잘 보이게, 부드러운 한국 웹툰풍 일러스트, 네 가지 뚜렷한 색감(빨강·파랑·노랑·초록), 원픽 색채무드 테스트 썸네일, 1:1 정사각형 비율. 오버레이 텍스트 — 상단 작은 라벨 "ONE-PICK TEST", 제목 "지금 끌리는 색은?", 안내 "1가지를 골라보세요", 하단 설명 "지금 가장 끌리는 색 하나로 오늘의 마음 상태를 알아보는 원픽 테스트".`
 
 ### 결과 1 — 열정형 ❤️ (`red`)
 

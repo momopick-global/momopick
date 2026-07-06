@@ -461,8 +461,9 @@ export function SnackQuiz({
           <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
         </>
       ) : (
-        // 원픽: 시작 버튼 대신 안내 문구 + 공유 버튼을 보기 위에 노출
+        // 원픽: 시작 버튼 대신 태그 + 안내 문구 + 공유 버튼을 보기 위에 노출
         <>
+          <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
           <p className="quiz-intro-body quiz-intro-body--onepick">{ui.quizIntroBody(total)}</p>
           <div className="quiz-share-wrap quiz-share-wrap--intro">
             <QuizResultShare ui={ui} shareText={introShareText} shareImageUrl={quizShareCoverUrl} />

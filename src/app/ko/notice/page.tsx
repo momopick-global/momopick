@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { koSampleNotices } from "@/content/notice/koSampleNotices";
 import { BackButton } from "@/components/ko/BackButton";
 
@@ -100,9 +100,7 @@ export default function KoNoticePage() {
           </p>
         </main>
 
-        <footer className="ko-ft">
-          <KoFooterNav />
-        </footer>
+        <KoPageFooter />
       </div>
     </>
   );

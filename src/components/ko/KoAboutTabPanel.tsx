@@ -155,7 +155,7 @@ export function KoAboutTabPanel() {
                 전체 테스트 탐색
               </Link>
               <Link className="btn" href="/ko/love/">
-                썸·연애 허브
+                심층 테스트 허브
               </Link>
               <Link className="btn" href="/ko/">
                 한국어 홈

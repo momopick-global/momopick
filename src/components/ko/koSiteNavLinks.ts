@@ -24,11 +24,12 @@ export type KoPrimaryNavItem = {
 
 export const KO_PRIMARY_NAV: readonly KoPrimaryNavItem[] = [
   { key: "home", href: "/ko/", label: "메인", chipLabel: "메인", emoji: "🏠", live: true, exactOnly: true },
-  { key: "love", href: "/ko/love/", label: "썸·연애 테스트", chipLabel: "썸·연애", emoji: "💗", live: true, matchPrefixes: ["/ko/love"] },
+  { key: "love", href: "/ko/love/", label: "심층 테스트", chipLabel: "심층", emoji: "💗", live: true, matchPrefixes: ["/ko/love"] },
   { key: "onepick", href: "/ko/onepick/", label: "원픽 테스트", chipLabel: "원픽", emoji: "🎯", live: true, matchPrefixes: ["/ko/onepick"] },
   { key: "personality-test", href: "/ko/personality-test/", label: "성향 모아보기", chipLabel: "성향", emoji: "🧠", live: true, matchPrefixes: ["/ko/personality-test"] },
   { key: "search", href: "/ko/explore/", label: "검색", chipLabel: "검색", emoji: "🔍", live: true, matchPrefixes: ["/ko/explore"] },
-  { key: "tag", href: "/ko/tag/", label: "태그", chipLabel: "태그", emoji: "🏷️", live: true, matchPrefixes: ["/ko/tag"] },
+  // 태그는 메뉴(카테고리 바·햄버거)에서 숨김. 태그 페이지·필터 기능은 유지되며 태그 칩·퀴즈 태그로 진입한다.
+  { key: "tag", href: "/ko/tag/", label: "태그", chipLabel: "태그", emoji: "🏷️", live: false, matchPrefixes: ["/ko/tag"] },
   // --- 준비 중(콘텐츠·라우트 생기면 live: true) ---
   { key: "personality", href: "/ko/personality/", label: "성격·심리 테스트", chipLabel: "성격·심리", emoji: "🧠", live: false, matchPrefixes: ["/ko/personality/"] },
   { key: "social", href: "/ko/social/", label: "소셜 테스트", chipLabel: "소셜", emoji: "👥", live: false, matchPrefixes: ["/ko/social"] },

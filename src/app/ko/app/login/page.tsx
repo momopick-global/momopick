@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { PostLoginRedirectCapture } from "@/components/ko/PostLoginRedirectCapture";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { SocialLoginButtons } from "@/components/ko/SocialLoginButtons";
 import { BackButton } from "@/components/ko/BackButton";
 
@@ -83,9 +83,7 @@ export default function KoLoginPage() {
           </p>
         </main>
 
-        <footer className="ko-ft">
-          <KoFooterNav />
-        </footer>
+        <KoPageFooter />
       </div>
     </>
   );

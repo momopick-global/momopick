@@ -4,7 +4,7 @@ import { KoSavedRequireAuth } from "@/components/ko/KoSavedRequireAuth";
 import { KoSavedVaultAccountCard } from "@/components/ko/KoSavedVaultAccountCard";
 import { KoSavedVaultList } from "@/components/ko/KoSavedVaultList";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { BackButton } from "@/components/ko/BackButton";
 
 export const metadata: Metadata = {
@@ -64,9 +64,7 @@ export default function KoSavedPage() {
           </KoSavedRequireAuth>
         </main>
 
-        <footer className="ko-ft">
-          <KoFooterNav />
-        </footer>
+        <KoPageFooter />
       </div>
     </>
   );

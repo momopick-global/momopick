@@ -2,22 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoCatBar } from "@/components/ko/KoCatBar";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { BackButton } from "@/components/ko/BackButton";
-import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
-import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { quizPersonalityPsychologyTest } from "@/content/quiz";
 import { pickQuizText } from "@/components/quiz/types";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
-
-const SECTION_LIMIT = 12;
-const loveItems = getKoLoveQuizzesSorted("ko").slice(0, SECTION_LIMIT);
-const personalityItems = loveItems.filter((item) =>
-  ["personality-psychology-test", "true-self-alone", "mental-strength-test", "emotional-sensitivity"].includes(
-    item.slug,
-  ),
-);
 
 export const metadata: Metadata = {
   title: "성향 테스트 모아보기 | 모모픽",
@@ -104,23 +94,22 @@ export default function KoPersonalityTestHubPage() {
             </div>
           </section>
 
-          <section className="section section--love hub-love" aria-labelledby="cat-love-title">
-            <div className="sec-hd">
-              <h2 id="cat-love-title">💌 관련 테스트</h2>
-            </div>
-            <p className="sec-lead">
-              성격·심리와 결이 비슷한 테스트를 함께 모아봤어요.
+          <section className="section duo hub-love-footer" aria-label="다음 이동">
+            <p className="sec-lead" style={{ marginBottom: 16 }}>
+              다른 주제도 둘러볼까요?
             </p>
-            <KoLoveQuizListView items={personalityItems.length ? personalityItems : loveItems.slice(0, 4)} />
-            <div className="cta-row" style={{ marginTop: 20 }}>
-              <Link className="btn primary sm" href="/ko/love/">
-                전체 테스트 보기 →
+            <div className="cta">
+              <Link className="btn primary" href="/ko/">
+                홈으로
+              </Link>
+              <Link className="btn" href="/ko/explore/">
+                전체 탐색
               </Link>
             </div>
           </section>
         </main>
 
-        <KoFooterNav />
+        <KoPageFooter />
       </div>
     </>
   );

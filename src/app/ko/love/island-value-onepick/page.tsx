@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { KoFooterLegal } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
 import { KoCatBar } from "@/components/ko/KoCatBar";
 import { SnackQuiz } from "@/components/quiz/SnackQuiz";
@@ -84,12 +84,7 @@ export default function IslandValueOnepickPage() {
           </section>
         </main>
 
-        <footer className="ko-ft">
-          <div>
-            <Link href="/ko/onepick/">다른 원픽 테스트 보기</Link>
-          </div>
-          <KoFooterLegal />
-        </footer>
+        <KoPageFooter variant="quiz" moreHref="/ko/onepick/" moreLabel="다른 원픽 테스트 보기" />
       </div>
     </>
   );

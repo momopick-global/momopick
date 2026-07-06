@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KoBlogTabPanel } from "@/components/ko/KoBlogTabPanel";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
-import { KoFooterNav } from "@/components/ko/KoFooterNav";
+import { KoPageFooter } from "@/components/ko/KoPageFooter";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
 import { BackButton } from "@/components/ko/BackButton";
 
@@ -61,9 +61,7 @@ export default function KoBlogPage() {
           </p>
         </main>
 
-        <footer className="ko-ft">
-          <KoFooterNav />
-        </footer>
+        <KoPageFooter />
       </div>
     </>
   );
