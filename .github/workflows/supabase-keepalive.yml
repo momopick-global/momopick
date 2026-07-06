@@ -1,0 +1,32 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    - cron: "17 3 */3 * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "::error::SUPABASE_URL 또는 SUPABASE_ANON_KEY 시크릿이 없습니다."
+            exit 1
+          fi
+          base="${SUPABASE_URL%/}"
+          code=$(curl -s -o /tmp/resp.txt -w "%{http_code}" \
+            "$base/rest/v1/quiz_stats?select=id&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
+          echo "HTTP $code"
+          cat /tmp/resp.txt
+          if [ "$code" != "200" ]; then
+            echo "::error::킵얼라이브 실패 (HTTP $code)"
+            exit 1
+          fi
+          echo "✅ Supabase 정지 타이머 리셋 완료"
