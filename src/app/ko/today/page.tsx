@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://momopick.com/ko/today/",
   },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   openGraph: {
     title: "연애운세 | 모모픽",
     description: "타로 카드 3장으로 보는 오늘의 연애운세",
