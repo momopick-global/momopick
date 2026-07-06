@@ -490,23 +490,47 @@
   box-shadow: var(--shadow);
 }
 
-.momopick-ko .cat-bar {
+/* 카테고리 바(1뎁스) + 태그 바(2뎁스)를 한 묶음으로 sticky — 스크롤 올릴 때 함께 노출 */
+.momopick-ko .cat-stack {
   position: sticky;
   top: 61px;
   z-index: 39;
-  background: rgba(244, 242, 251, 0.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
   transform: translateY(0);
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.28s ease;
   will-change: transform;
 }
 
-.momopick-ko .cat-bar--hidden {
+.momopick-ko .cat-stack--hidden {
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
+}
+
+.momopick-ko .cat-bar {
+  background: rgba(244, 242, 251, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 헤더 바로 아래 스크롤 진행바 — 아래로 내릴수록 왼쪽부터 채워짐 */
+.momopick-ko .ko-scroll-progress {
+  position: fixed;
+  top: var(--ko-header-h);
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 59;
+  background: transparent;
+  pointer-events: none;
+}
+
+.momopick-ko .ko-scroll-progress__fill {
+  height: 100%;
+  width: 0;
+  /* 깊은 핑크 (형광기 낮춤) */
+  background: linear-gradient(90deg, #cf2170, #e0568f);
+  transition: width 0.1s linear;
 }
 
 /* 헤더 로고 기준으로 정렬되는 내부 래퍼 */
@@ -2559,7 +2583,8 @@
 
 .momopick-ko .quiz-intro-actions .btn.primary.quiz-intro-start {
   width: 100%;
-  max-width: 320px;
+  /* 아래 구분선(.quiz-divider)과 동일한 가로폭 = .quiz-intro 전체 너비 */
+  max-width: none;
   min-width: 0;
   padding: 18px 28px;
   font-size: var(--fs-3xl);
@@ -2573,6 +2598,19 @@
   line-height: 1.45;
   color: var(--muted);
   font-weight: 600;
+}
+
+/* 인트로 구분선 — "친구에게 공유하기" 위 라인과 동일 (1px, var(--line)) */
+.momopick-ko .quiz-divider {
+  height: 0;
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* 원픽: 보기(선택지) 아래 구분선은 위로 약간 더 여백 */
+.momopick-ko .quiz-divider--onepick {
+  margin: 20px 0 16px;
 }
 
 .momopick-ko .quiz-progress-wrap {
@@ -4866,8 +4904,9 @@ html.today-video-lock body {
   border-radius: 999px;
   cursor: pointer;
   color: #fff;
-  background: linear-gradient(135deg, var(--accent) 0%, #7a50dc 100%);
-  box-shadow: 0 6px 20px rgba(45, 30, 120, 0.28);
+  /* 하단 메뉴처럼 깊은 핑크 그라데이션 (형광기 낮춤) */
+  background: linear-gradient(135deg, #e03a83 0%, #cf2170 55%, #b01a5c 100%);
+  box-shadow: 0 6px 20px rgba(176, 26, 92, 0.3);
   /* 기본은 숨김(아래로 살짝 내려가며 사라짐) */
   opacity: 0;
   visibility: hidden;
@@ -4884,7 +4923,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .ko-scroll-top:hover {
-  box-shadow: 0 10px 26px rgba(45, 30, 120, 0.36);
+  box-shadow: 0 10px 26px rgba(176, 26, 92, 0.38);
 }
 
 .momopick-ko .ko-scroll-top__arrow {

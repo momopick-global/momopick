@@ -46,11 +46,8 @@ export function KoCatBar() {
   }, []);
 
   return (
-    <>
-      <nav
-        className={`cat-bar${hidden ? " cat-bar--hidden" : ""}`}
-        aria-label="카테고리 빠른 이동"
-      >
+    <div className={`cat-stack${hidden ? " cat-stack--hidden" : ""}`}>
+      <nav className="cat-bar" aria-label="카테고리 빠른 이동">
         <div className="cat-bar__inner">
           {KO_PRIMARY_NAV_LIVE.map((item) => {
             const active = isKoNavActive(item, pathname);
@@ -68,6 +65,6 @@ export function KoCatBar() {
         </div>
       </nav>
       <KoTagBar scope={scopeFromPath(pathname)} />
-    </>
+    </div>
   );
 }

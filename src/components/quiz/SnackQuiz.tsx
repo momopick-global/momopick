@@ -29,7 +29,7 @@ import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
 /** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
 const ANSWER_FILL_MS = 340;
 /** 마지막 문항 후 결과 카드 전 로딩 대기(ms). 감소 모션 시 0. */
-const QUIZ_RESULT_LOADING_MS = 1000;
+const QUIZ_RESULT_LOADING_MS = 500;
 
 type QuizResultPhase = "idle" | "loading" | "done";
 
@@ -418,15 +418,6 @@ export function SnackQuiz({
           />
         ) : (
           <div className="quiz-intro">
-            <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
-            <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
-            <div className="quiz-share-wrap quiz-share-wrap--intro">
-              <QuizResultShare
-                ui={ui}
-                shareText={introShareText}
-                shareImageUrl={quizShareCoverUrl}
-              />
-            </div>
             <div className="quiz-intro-actions">
               <button
                 type="button"
@@ -435,6 +426,16 @@ export function SnackQuiz({
               >
                 {ui.startTest}
               </button>
+            </div>
+            <hr className="quiz-divider" />
+            <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
+            <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
+            <div className="quiz-share-wrap quiz-share-wrap--intro">
+              <QuizResultShare
+                ui={ui}
+                shareText={introShareText}
+                shareImageUrl={quizShareCoverUrl}
+              />
             </div>
           </div>
         )}
@@ -461,14 +462,8 @@ export function SnackQuiz({
           <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
         </>
       ) : (
-        // 원픽: 시작 버튼 대신 태그 + 안내 문구 + 공유 버튼을 보기 위에 노출
-        <>
-          <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
-          <p className="quiz-intro-body quiz-intro-body--onepick">{ui.quizIntroBody(total)}</p>
-          <div className="quiz-share-wrap quiz-share-wrap--intro">
-            <QuizResultShare ui={ui} shareText={introShareText} shareImageUrl={quizShareCoverUrl} />
-          </div>
-        </>
+        // 원픽: 안내 문구만 맨 위에, 태그·공유하기는 보기(선택지) 아래로 이동
+        <p className="quiz-intro-body quiz-intro-body--onepick">{ui.quizIntroBody(total)}</p>
       )}
       {q.image ? (
         <div className="quiz-q-visual">
@@ -517,6 +512,15 @@ export function SnackQuiz({
           );
         })}
       </ul>
+      {total === 1 ? (
+        <>
+          <hr className="quiz-divider quiz-divider--onepick" />
+          <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
+          <div className="quiz-share-wrap quiz-share-wrap--intro">
+            <QuizResultShare ui={ui} shareText={introShareText} shareImageUrl={quizShareCoverUrl} />
+          </div>
+        </>
+      ) : null}
     </div>
   );
 }

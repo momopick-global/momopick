@@ -33,11 +33,6 @@ export function SnackQuizIntroWithLiveCount({
 
   return (
     <div className="quiz-intro">
-      <QuizPackTags tags={tags} locale={locale} className="quiz-intro-tags" />
-      <p className="quiz-intro-body">{ui.quizIntroBody(questionTotal)}</p>
-      <div className="quiz-share-wrap quiz-share-wrap--intro">
-        <QuizResultShare ui={ui} shareText={shareText} shareImageUrl={shareImageUrl} />
-      </div>
       <div className="quiz-intro-actions">
         <button
           type="button"
@@ -49,6 +44,12 @@ export function SnackQuizIntroWithLiveCount({
         >
           {ui.startTest}
         </button>
+      </div>
+      <hr className="quiz-divider" />
+      <QuizPackTags tags={tags} locale={locale} className="quiz-intro-tags" />
+      <p className="quiz-intro-body">{ui.quizIntroBody(questionTotal)}</p>
+      <div className="quiz-share-wrap quiz-share-wrap--intro">
+        <QuizResultShare ui={ui} shareText={shareText} shareImageUrl={shareImageUrl} />
       </div>
       <p id="user-count" className="quiz-intro-participants" aria-live="polite">
         {ui.formatLiveParticipantLine(participantCount)}

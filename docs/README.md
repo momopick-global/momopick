@@ -28,7 +28,7 @@
 4. [setup/deployment.md](./setup/deployment.md) — Cloudflare Pages 배포 흐름
 5. [setup/environment-variables.md](./setup/environment-variables.md) — 환경변수
 6. [seo/adsense-review.md](./seo/adsense-review.md) — AdSense 심사 상태
-7. [features/snack-tests.md](./features/snack-tests.md) — 핵심 기능: 스낵 테스트
+7. [features/deep_snack.md](./features/deep_snack.md) — 핵심 기능: 스낵 테스트
 8. [features/share-kakao.md](./features/share-kakao.md) — 카카오 공유 (수정 주의)
 9. [design/design-overview.md](./design/design-overview.md) — 디자인 톤
 10. [content/content-tone.md](./content/content-tone.md) — 문구 톤
@@ -73,8 +73,8 @@ docs/
 │  ├─ metadata-og.md           metadata·OG·JSON-LD
 │  └─ search-console.md        Search Console 운용
 ├─ features/
-│  ├─ snack-tests.md           스낵형 13개 퀴즈
-│  ├─ love-tests.md            퍼센티지형 6개 퀴즈
+│  ├─ deep_snack.md           스낵형 13개 퀴즈
+│  ├─ deep_percentage.md            퍼센티지형 6개 퀴즈
 │  ├─ blog.md                  /ko/blog/
 │  ├─ auth-login.md            Kakao+Supabase OAuth
 │  ├─ share-kakao.md           Kakao Feed 공유

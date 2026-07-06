@@ -2,9 +2,9 @@
 
 > 성향(성격·심리·소셜) 카테고리 개별 퀴즈의 기획·결과·이미지 프롬프트를 채워가는 작업 문서.
 > 주제 시리즈 기획: [personality-test-series-plan.md](./personality-test-series-plan.md).
-> 형식·구현 규칙: 스낵형 [../features/snack-tests.md](../features/snack-tests.md) · 퍼센티지형 [../features/love-tests.md](../features/love-tests.md).
+> 형식·구현 규칙: 스낵형 [../features/deep_snack.md](../features/deep_snack.md) · 퍼센티지형 [../features/deep_percentage.md](../features/deep_percentage.md).
 > 작성 규격: [quiz-writing-guide.md](./quiz-writing-guide.md) · 결과 글: [result-writing-guide.md](./result-writing-guide.md) · 톤: [content-tone.md](./content-tone.md).
-> 썸·연애는 별도 문서: [love-quiz-content.md](./love-quiz-content.md). 원픽은 [onepick-quiz-content.md](./onepick-quiz-content.md).
+> 썸·연애는 별도 문서: [deep_content.md](./deep_content.md). 원픽은 [onepick-quiz-content.md](./onepick-quiz-content.md).
 
 ## 결과 설계 기준
 

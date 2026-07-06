@@ -1,8 +1,8 @@
-# 심층 테스트(연애·썸 테마) 콘텐츠 (제작 진행 문서)
+# 심층 테스트 — 콘텐츠 (연애·썸 테마, 제작 진행 문서)
 
 > **상단 메뉴는 테마가 아니라 문제 형식 기준으로 재편됨** — 심층(다문항 4지선다) · 원픽(1문항 4지선다) · 성향(A/B). 이 문서는 그중 **심층 테스트 메뉴(`/ko/love/`)** 에 실리는 퀴즈의 기획·결과·이미지 프롬프트를 채워가는 작업 문서다.
 > **연애·썸은 이제 카테고리가 아니라 태그**(`연애`·`썸` 등, `src/lib/content/koTagRegistry.ts`)로 분류된다. 심층 메뉴에서 태그를 누르면 해당 태그가 달린 퀴즈 목록이 노출된다. 아래 퀴즈들은 연애·썸 태그 심층 테스트다.
-> 형식·구현 규칙: 스낵형 [../features/snack-tests.md](../features/snack-tests.md) · 퍼센티지형 [../features/love-tests.md](../features/love-tests.md).
+> 형식·구현 규칙: 스낵형 [../features/deep_snack.md](../features/deep_snack.md) · 퍼센티지형 [../features/deep_percentage.md](../features/deep_percentage.md).
 > 작성 규격: [quiz-writing-guide.md](./quiz-writing-guide.md) · 결과 글: [result-writing-guide.md](./result-writing-guide.md) · 톤: [content-tone.md](./content-tone.md).
 > 원픽은 별도 문서: [onepick-quiz-content.md](./onepick-quiz-content.md). 성향은 [personality-quiz-content.md](./personality-quiz-content.md).
 
@@ -21,7 +21,7 @@
 
 ## 공통 이미지 프롬프트 (심층 테스트 — 연애·썸 테마)
 
-> 🖼️ **이미지 프롬프트·캐릭터 배정·색상 설계는 [quiz-image-prompts.md](../quiz-image-prompts.md) 한 곳에서 관리합니다.** (퀴즈별 제목·결과 이미지 프롬프트, 캐릭터 배정표, 색상 설계, 텍스트 오버레이 규칙 포함)
+> 🖼️ **이미지 프롬프트·캐릭터 배정·색상 설계는 [quiz-image-prompts.md](../quiz-image-prompts.md) 한 곳에서 관리합니다.** (퀴즈별 제목·결과 이미지 프롬프트, 캐릭터 배정표, 색상 설계, 이미지 안 텍스트 규칙 포함)
 > 캐릭터 시각 정의는 [character-profile-prompts.md](../character-profile-prompts.md), 규격은 [../design/image-guidelines.md](../design/image-guidelines.md).
 > 이 문서는 **콘텐츠 기획**(결과 설계·문항·본문)에 집중하고, 이미지 관련은 위 문서를 따른다.
 

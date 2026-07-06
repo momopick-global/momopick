@@ -162,6 +162,13 @@
 
 모든 퀴즈 이미지 프롬프트의 맨 앞에 공통으로 붙여서 사용하는 문장입니다.
 
+### 4대 개선 원칙 (2026-07 반영 — 아래 공통 프롬프트에 이미 반영됨)
+
+1. **얼굴 크게**: 주인공 얼굴이 화면의 **55~70%**를 차지하는 클로즈업. 전신·원거리 구도 금지. (모바일 썸네일이 작아 얼굴이 작으면 안 보임)
+2. **표정 과장 + 차별화**: 표정을 과장되게 연기하고, **퀴즈마다·결과마다 표정이 뚜렷이 달라야** 함. (현재 문제: 표정이 다 비슷함)
+3. **굵은 프레임 테두리**: 이미지 바깥을 굵은 프레임으로 둘러 안쪽 제목·글자(이미지 안에 직접 렌더) 가독성 확보.
+4. **퀴즈별 색·캐릭터 지정**: 보라 일변도 금지, 퀴즈 주제에 맞는 색. 주인공은 **퀴즈마다 다른 캐릭터를 명시 지정**(같은 여성 반복 금지) — 배정은 각 퀴즈 `캐릭터 배정표`, 시각 정의는 [character-profile-prompts.md](./character-profile-prompts.md).
+
 ### 공통 프롬프트 역할
 
 - 그림체 브랜드 통일
@@ -172,11 +179,11 @@
 
 ### 공통 프롬프트 EN
 
-`Square 1:1 Korean viral psychology quiz illustration, ultra-polished anime artwork, glossy oversized eyes, highly expressive character acting, dramatic emotional storytelling, rich neon lighting, strong black-outline title-friendly composition, layered foreground and background details, symbolic props and emotional icons around the character, cute mascot-animal companion in the same world, social-media thumbnail impact, leave a large clean area at the top for a huge Korean headline, leave a clear rounded banner area at the bottom for a short conclusion line, allow extra space near the middle for a subtitle capsule, main character shown in a larger bust-up portrait, face occupying a strong central focal area, eyes and expression clearly readable at thumbnail size, avoid tiny full-body framing, vibrant but controlled color harmony, crisp linework, soft airbrushed skin, sparkling particles, high contrast rim light, bright readable face lighting, lifted midtones, luminous skin highlights, strong separation between foreground and background, brighter highlight support behind headline, subtitle capsule, and bottom banner zones, clean readable text-zone contrast, avoid muddy shadows, avoid overly dark full-frame exposure, no watermark, no logo, no photorealism.`
+`Square 1:1 Korean viral psychology quiz illustration, ultra-polished anime artwork, glossy oversized eyes, highly expressive character acting, dramatic emotional storytelling, rich neon lighting, strong black-outline title-friendly composition, layered foreground and background details, symbolic props and emotional icons around the character, cute mascot-animal companion in the same world, social-media thumbnail impact, leave a large clean area at the top for a huge Korean headline, leave a clear rounded banner area at the bottom for a short conclusion line, allow extra space near the middle for a subtitle capsule, main character shown as a close-up with the face occupying 55–70% of the frame, the face as the clear focal point, a strongly exaggerated expression that reads instantly at thumbnail size and differs clearly per quiz and per result, avoid tiny full-body framing, a thick bold frame border around the whole image for overlay-text legibility, vibrant but controlled color harmony, crisp linework, soft airbrushed skin, sparkling particles, high contrast rim light, bright readable face lighting, lifted midtones, luminous skin highlights, strong separation between foreground and background, brighter highlight support behind headline, subtitle capsule, and bottom banner zones, clean readable text-zone contrast, avoid muddy shadows, avoid overly dark full-frame exposure, no watermark, no logo, no photorealism.`
 
 ### 공통 프롬프트 KO
 
-`정사각형 1:1 비율의 한국형 바이럴 심리 퀴즈 일러스트, 매우 정교한 애니메이션 아트워크, 반짝이는 큰 눈, 감정 표현이 매우 선명한 캐릭터 연기, 드라마틱한 감정 서사, 풍부한 네온 조명, 두꺼운 검은 외곽선의 제목이 잘 올라갈 수 있는 구도, 전경과 배경이 레이어드된 디테일, 캐릭터 주변의 상징 소품과 감정 아이콘, 같은 세계관 안의 귀여운 동물 마스코트 동반, SNS 썸네일처럼 강한 시선 끌기, 상단에는 매우 큰 한글 제목이 들어갈 넓고 깨끗한 여백, 하단에는 짧은 결론 문구가 들어갈 둥근 배너 영역, 중간에는 서브 문구 캡슐이 들어갈 자리 확보, 주인공은 더 크게 잡힌 상반신 중심 클로즈업, 얼굴이 화면에서 확실한 중심 초점이 되도록, 썸네일 크기에서도 눈과 표정이 바로 읽히도록, 너무 멀리 잡힌 전신 구도 금지, 선명하지만 과하지 않은 색 조화, 또렷한 라인, 부드러운 에어브러시 피부 표현, 반짝이는 입자, 대비가 강한 림라이트, 얼굴과 손이 밝고 읽히는 조명, 중간 명도 확보, 피부 하이라이트 강화, 전경과 배경 분리 강화, 제목과 부제목과 하단 배너 뒤쪽의 밝은 하이라이트 보강, 글자 존이 또렷하게 읽히는 대비 확보, 탁한 검은 그림자와 과도한 전체 암부 금지, 워터마크 없음, 로고 없음, 지나치게 사실적인 사진풍 금지.`
+`정사각형 1:1 비율의 한국형 바이럴 심리 퀴즈 일러스트, 매우 정교한 애니메이션 아트워크, 반짝이는 큰 눈, 감정 표현이 매우 선명한 캐릭터 연기, 드라마틱한 감정 서사, 풍부한 네온 조명, 두꺼운 검은 외곽선의 제목이 잘 올라갈 수 있는 구도, 전경과 배경이 레이어드된 디테일, 캐릭터 주변의 상징 소품과 감정 아이콘, 같은 세계관 안의 귀여운 동물 마스코트 동반, SNS 썸네일처럼 강한 시선 끌기, 상단에는 매우 큰 한글 제목이 들어갈 넓고 깨끗한 여백, 하단에는 짧은 결론 문구가 들어갈 둥근 배너 영역, 중간에는 서브 문구 캡슐이 들어갈 자리 확보, 주인공 얼굴을 화면의 55~70%로 크게 잡은 클로즈업, 얼굴이 확실한 중심 초점이 되도록, 표정을 과장되게 연기해 썸네일 크기에서도 감정이 바로 읽히도록(퀴즈마다·결과마다 표정이 뚜렷이 다르게), 너무 멀리 잡힌 전신 구도 금지, 이미지 바깥을 굵은 프레임 테두리로 둘러 안쪽 텍스트 가독성 확보, 선명하지만 과하지 않은 색 조화, 또렷한 라인, 부드러운 에어브러시 피부 표현, 반짝이는 입자, 대비가 강한 림라이트, 얼굴과 손이 밝고 읽히는 조명, 중간 명도 확보, 피부 하이라이트 강화, 전경과 배경 분리 강화, 제목과 부제목과 하단 배너 뒤쪽의 밝은 하이라이트 보강, 글자 존이 또렷하게 읽히는 대비 확보, 탁한 검은 그림자와 과도한 전체 암부 금지, 워터마크 없음, 로고 없음, 지나치게 사실적인 사진풍 금지.`
 
 ### 다크 고딕 변형 공통 프롬프트 EN
 
@@ -373,7 +380,6 @@
   - 하단 결론 문구
 - `결과명 라벨`, `안정형/집착형` 같은 결과 타입 텍스트는 대표 이미지에 직접 넣지 않습니다.
 - 결과 타입은 이미지 안의 `색`, `표정`, `소품`, `미니 장면`으로만 암시합니다.
-- 한글 텍스트가 틀어질 수 있으므로, 대표 이미지는 2~3회 시도 후 가장 안정적인 버전을 고릅니다.
 - 결과 이미지도 `읽을 수 있는 한글 텍스트 포함`을 기본 기준으로 유지합니다.
 
 ### 완성형 대표 이미지 예시 메모
@@ -456,10 +462,10 @@
 ### 결과 프롬프트 작성 템플릿
 
 - EN:
-  - `Result image for a Korean viral psychology quiz, one clear protagonist, one dominant emotional axis, one mascot-animal companion that reflects the same emotion, include readable Korean text as part of the finished result card, top result title text, short middle descriptor text or capsule, bottom concluding banner text, larger bust-up or close-up portrait framing, make the face the first thing seen, eyes and expression clearly readable at thumbnail size, avoid tiny figures or overly distant full-body framing, [result mood], [facial expression], [pose], [2-4 symbolic props], [color direction], [lighting mood], same character identity as the quiz thumbnail.`
+  - `Result image for a Korean viral psychology quiz, one clear protagonist, one dominant emotional axis, one mascot-animal companion that reflects the same emotion, include readable Korean text as part of the finished result card, top result title text, short middle descriptor text or capsule, bottom concluding banner text, close-up framing with the face occupying 55–70% of the frame, make the face the first thing seen, an exaggerated expression for this result type that differs clearly from the other results and reads at thumbnail size, avoid tiny figures or overly distant full-body framing, a thick bold frame border around the whole card for text legibility, [result mood], [facial expression], [pose], [2-4 symbolic props], [color direction], [lighting mood], same character identity as the quiz thumbnail.`
 
 - KO:
-  - `한국형 바이럴 심리 퀴즈 결과 카드, 한 명의 분명한 주인공, 하나의 지배적인 감정 축, 같은 감정을 반영하는 동물 마스코트 1마리, 결과 카드로 완성된 형태, 상단 결과명 텍스트 직접 포함, 중간의 짧은 설명 문구 또는 캡슐 포함, 하단 둥근 결론 배너 문구 포함, 더 크게 잡힌 상반신 또는 클로즈업 중심 구도, 얼굴이 가장 먼저 보이게, 썸네일 크기에서도 눈과 표정이 또렷하게 읽히게, 너무 작거나 멀리 잡힌 전신 결과 카드 금지, [결과 무드], [표정], [포즈], [상징 소품 2~4개], [색 방향], [조명 무드], 퀴즈 썸네일과 동일한 캐릭터 정체성 유지.`
+  - `한국형 바이럴 심리 퀴즈 결과 카드, 한 명의 분명한 주인공, 하나의 지배적인 감정 축, 같은 감정을 반영하는 동물 마스코트 1마리, 결과 카드로 완성된 형태, 상단 결과명 텍스트 직접 포함, 중간의 짧은 설명 문구 또는 캡슐 포함, 하단 둥근 결론 배너 문구 포함, 얼굴을 화면의 55~70%로 크게 잡은 클로즈업 구도, 얼굴이 가장 먼저 보이게, 결과 타입 감정을 과장된 표정으로(결과마다 뚜렷이 다르게) 썸네일 크기에서도 또렷하게 읽히게, 너무 작거나 멀리 잡힌 전신 결과 카드 금지, 이미지 바깥을 굵은 프레임 테두리로 둘러 텍스트 가독성 확보, [결과 무드], [표정], [포즈], [상징 소품 2~4개], [색 방향], [조명 무드], 퀴즈 썸네일과 동일한 캐릭터 정체성 유지.`
 
 ### 결과 이미지 텍스트 생성 규칙
 
@@ -473,7 +479,6 @@
   - 상단 결과명: 두꺼운 버블형 또는 강한 판정형 한글
   - 중단 설명: 짧고 읽기 쉬운 캡슐형
   - 하단 결론: 대비 높은 배너형 한 줄 문장
-- 한글 텍스트가 틀어질 수 있으므로 2~3회 시도 후 가장 안정적인 버전을 고릅니다.
 
 ### 결과 프롬프트 조립 순서
 
@@ -510,7 +515,7 @@
 | 하단 안전영역 | 전체 높이의 약 15% |
 | 중앙 인물 영역 | 화면 높이의 약 45%~60% |
 
-### 텍스트 오버레이 가이드
+### 텍스트 레이아웃 가이드 (이미지 안 렌더)
 
 - 제목 이미지는 상단에 메인 제목 2줄 이내, 하단에 보조 문구 1줄 배치를 기준으로 잡습니다.
 - 결과 이미지는 상단에 결과명, 중단에 핵심 장면, 하단에 짧은 설명 문구가 들어간다고 가정합니다.
@@ -553,6 +558,20 @@
 | `M3` | 친근하고 장난기 많은 | 친구형, 장난형, 편한 썸 |
 | `M4` | 이성적이고 전략적인 | 계산형, 전략가, 거리감 있는 호감 |
 | `M5` | 냉소적이거나 미스터리한 | 무심형, 냉소형, 다크한 분위기 |
+
+#### 퀴즈별 주인공 배정 (성별 균형)
+
+- 심층 20개 퀴즈에 **10명(F1~F5·M1~M5)을 각 2회씩** 배정 — 여성 리드 10개 / 남성 리드 10개로 균형.
+- 각 퀴즈의 실제 주인공 코드는 아래 표 및 각 `실전 예시`의 `주인공 코드` 기준. (이 표가 단일 소스)
+- **씬 프롬프트의 인물 성별은 주인공 코드에 맞춘다.** 씬 문구가 "한국인 젊은 여성"이라도 남성 리드면 "남성"으로 바꿔 쓴다. (복붙 생성 시 자동 반영)
+
+| 리드 | 퀴즈 | 리드 | 퀴즈 |
+|---|---|---|---|
+| `F1` | confession-success-rate, who-likes-you-type | `M1` | trust-level-test, love-temperature-test |
+| `F2` | logical-or-emotional, self-esteem-level | `M2` | when-men-lose-interest, love-pattern-destroying-habit |
+| `F3` | emotional-sensitivity, true-self-alone | `M3` | why-cant-you-text-first, planner-or-spontaneous |
+| `F4` | relationship-balance-test, hidden-dark-side | `M4` | leader-or-supporter, mental-strength-test |
+| `F5` | ambiguous-situationship-end, dating-expert-or-beginner | `M5` | anger-style-test, personality-psychology-test |
 
 #### 운영 규칙
 
@@ -1357,7 +1376,7 @@
 
 - 슬러그: `trust-level-test`
 - 제목: `나는 사람을 잘 믿는 편일까?`
-- 주인공 코드: `F3`
+- 주인공 코드: `M1`
 - 상대역 코드: `M1`, `M5`
 - 메인 마스코트 코드: `A3`
 - 보조 마스코트 코드: `A9`, `A8`
@@ -2167,7 +2186,7 @@
 
 - 슬러그: `mental-strength-test`
 - 제목: `나는 멘탈 강자일까 유리멘탈일까?`
-- 주인공 코드: `F2`
+- 주인공 코드: `M4`
 - 상대역 코드: `없음`
 - 메인 마스코트 코드: `A3`
 - 보조 마스코트 코드: `A8`, `A7`
@@ -2302,7 +2321,7 @@
 
 - 슬러그: `love-temperature-test`
 - 제목: `나는 어떤 연애 온도일까?`
-- 주인공 코드: `F1`
+- 주인공 코드: `M1`
 - 상대역 코드: `M2`
 - 메인 마스코트 코드: `A5`
 - 보조 마스코트 코드: `A3`, `A6`
@@ -2572,7 +2591,7 @@
 
 - 슬러그: `planner-or-spontaneous`
 - 제목: `나는 계획형인가 즉흥형인가?`
-- 주인공 코드: `F2`
+- 주인공 코드: `M3`
 - 상대역 코드: `없음`
 - 메인 마스코트 코드: `A2`
 - 보조 마스코트 코드: `A5`, `A3`
@@ -2707,7 +2726,7 @@
 
 - 슬러그: `anger-style-test`
 - 제목: `화났을 때 나는?`
-- 주인공 코드: `F4`
+- 주인공 코드: `M5`
 - 상대역 코드: `없음`
 - 메인 마스코트 코드: `A4`
 - 보조 마스코트 코드: `A9`, `A1`
@@ -2842,7 +2861,7 @@
 
 - 슬러그: `leader-or-supporter`
 - 제목: `나는 리더형인가 조력자형인가?`
-- 주인공 코드: `F2`
+- 주인공 코드: `M4`
 - 상대역 코드: `없음`
 - 메인 마스코트 코드: `A3`
 - 보조 마스코트 코드: `A2`, `A8`
@@ -2977,7 +2996,7 @@
 
 - 슬러그: `personality-psychology-test`
 - 제목: `나의 성격·심리 분석은?`
-- 주인공 코드: `F3`
+- 주인공 코드: `M5`
 - 상대역 코드: `없음`
 - 메인 마스코트 코드: `A8`
 - 보조 마스코트 코드: `A2`, `A3`, `A5`
@@ -3134,7 +3153,7 @@
 
 - 슬러그: `ambiguous-situationship-end`
 - 제목: `썸이 항상 애매하게 끝나는 이유`
-- 주인공 코드: `F3`
+- 주인공 코드: `F5`
 - 상대역 코드: `M1`, `M4`, `M5`
 - 메인 마스코트 코드: `A7`
 - 보조 마스코트 코드: `A10`, `A2`, `A1`
@@ -3433,7 +3452,7 @@
 
 - 슬러그: `why-cant-you-text-first`
 - 제목: `나는 왜 먼저 연락을 못할까?`
-- 주인공 코드: `F2`
+- 주인공 코드: `M3`
 - 상대역 코드: `M4`
 - 메인 마스코트 코드: `A7`
 - 보조 마스코트 코드: `A9`, `A2`
@@ -3568,7 +3587,7 @@
 
 - 슬러그: `when-men-lose-interest`
 - 제목: `남자가 나에게 식는 순간`
-- 주인공 코드: `F4`
+- 주인공 코드: `M2`
 - 상대역 코드: `M1`, `M3`, `M5`
 - 메인 마스코트 코드: `A6`
 - 보조 마스코트 코드: `A7`, `A5`
@@ -3703,7 +3722,7 @@
 
 - 슬러그: `love-pattern-destroying-habit`
 - 제목: `내가 연애를 망치는 한 가지 습관`
-- 주인공 코드: `F1`
+- 주인공 코드: `M2`
 - 상대역 코드: `M2`, `M4`
 - 메인 마스코트 코드: `A4`
 - 보조 마스코트 코드: `A6`, `A7`, `A9`
@@ -4012,7 +4031,7 @@
 
 - 슬러그: `self-esteem-level`
 - 제목: `나의 자존감 레벨은?`
-- 주인공 코드: `F3`
+- 주인공 코드: `F2`
 - 상대역 코드: `F2`, `M1`
 - 메인 마스코트 코드: `A8`
 - 보조 마스코트 코드: `A9`, `A10`

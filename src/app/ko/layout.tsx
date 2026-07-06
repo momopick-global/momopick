@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KoBottomNav } from "@/components/ko/KoBottomNav";
 import { KoScrollTopButton } from "@/components/ko/KoScrollTopButton";
+import { KoScrollProgress } from "@/components/ko/KoScrollProgress";
 import { KakaoAuthProvider } from "@/context/KakaoAuthContext";
 import "./ko-home.css";
 
@@ -191,6 +192,7 @@ export default function KoLayout({
       />
       <KakaoAuthProvider>
         <div className="momopick-ko">
+          <KoScrollProgress />
           {children}
           <KoScrollTopButton />
           <KoBottomNav />

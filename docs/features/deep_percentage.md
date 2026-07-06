@@ -1,4 +1,4 @@
-# Love Tests — 퍼센티지형 6개 퀴즈
+# 심층 테스트 — 퍼센티지형(%) 6개 퀴즈
 
 ## 개요
 
@@ -53,4 +53,4 @@ ko/love/self-esteem-level
 
 ## 새 퍼센티지 퀴즈 추가 절차
 
-스낵형 [snack-tests.md](./snack-tests.md)와 동일하되, `src/lib/content/jsonSource.ts`에서 `koPercentageByKey`에 등록.
+스낵형 [deep_snack.md](./deep_snack.md)와 동일하되, `src/lib/content/jsonSource.ts`에서 `koPercentageByKey`에 등록.
