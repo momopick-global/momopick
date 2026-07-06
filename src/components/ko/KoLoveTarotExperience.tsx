@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useState } from "react";
 import { BackButton } from "@/components/ko/BackButton";
 import {
@@ -51,12 +50,6 @@ export function KoLoveTarotExperience() {
     setRevealed([true, true, true]);
   }, []);
 
-  const reset = useCallback(() => {
-    setPhase("intro");
-    setCards([]);
-    setRevealed([false, false, false]);
-  }, []);
-
   const allRevealed = revealed.every(Boolean);
 
   return (
@@ -86,9 +79,9 @@ export function KoLoveTarotExperience() {
       {phase === "intro" ? (
         <section className="love-tarot-intro">
           <p className="love-tarot-intro__desc">
-            마음을 가라앉히고, 지금 떠오르는 그 사람을 생각하며
+            마음을 가라앉히고, 지금 떠오르는
             <br />
-            카드를 뽑아보세요.
+            그 사람을 생각하며 카드를 뽑아보세요.
           </p>
 
           <ul className="love-tarot-positions" aria-hidden="true">
@@ -187,23 +180,15 @@ export function KoLoveTarotExperience() {
               >
                 다시 뽑기
               </button>
-              <Link className="btn" href="/ko/explore/">
-                테스트 찾아보기
-              </Link>
-              <button
-                type="button"
-                className="love-tarot-reset"
-                onClick={reset}
-              >
-                처음으로
-              </button>
             </div>
           )}
         </section>
       )}
 
       <p className="love-tarot-disclaimer">
-        타로 결과는 재미로 즐기는 콘텐츠예요. 오늘 하루의 작은 힌트로만 참고해 주세요.
+        타로 결과는 재미로 즐기는 콘텐츠예요.
+        <br />
+        오늘 하루의 작은 힌트로만 참고해 주세요.
       </p>
     </div>
   );

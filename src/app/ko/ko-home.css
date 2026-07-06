@@ -4082,7 +4082,7 @@ html.today-video-lock body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
+  gap: 7px;
   padding: 18px 8px 6px;
 }
 
@@ -4096,14 +4096,15 @@ html.today-video-lock body {
 
 .momopick-ko .love-tarot-intro__desc {
   margin: 0;
-  font-size: var(--fs-fluid-2);
+  font-size: var(--fs-fluid-1);
+  font-weight: 700;
   line-height: 1.35;
   color: var(--muted);
 }
 
 .momopick-ko .love-tarot-positions {
   list-style: none;
-  margin: 10px 0 6px;
+  margin: 5px 0 3px;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4140,7 +4141,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .love-tarot-draw-btn {
-  margin-top: 10px;
+  margin-top: 5px;
   min-width: 220px;
   justify-content: center;
 }
@@ -4351,7 +4352,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .love-tarot-disclaimer {
-  margin: 18px auto 0;
+  margin: 9px auto 0;
   max-width: 460px;
   text-align: center;
   font-size: 0.76rem;
