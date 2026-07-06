@@ -10,11 +10,11 @@ import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
 const onepickAll = getKoOnePickQuizzesSorted("ko");
 
 // 허브 공유(OG) 이미지: 대표(최상위 우선순위) 원픽 테스트의 썸네일을 사용.
-// 실제 이미지가 없어(placeholder) 폴백이 필요하면 공용 OG를 쓴다.
+// 카카오 공유 안정성을 위해 WebP 대신 같은 폴더의 JPG(og)를 쓴다. 없으면 공용 OG로 폴백.
 const featuredOnepick = onepickAll[0];
 const ogImageUrl =
   featuredOnepick?.image && !featuredOnepick.image.includes("quiz-image-pending")
-    ? `https://momopick.com${featuredOnepick.image}`
+    ? `https://momopick.com${featuredOnepick.image.replace(/\.webp$/, ".jpg")}`
     : "https://momopick.com/og/main-og.webp";
 
 export const metadata: Metadata = {
