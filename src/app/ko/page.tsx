@@ -14,8 +14,8 @@ import { BlogCarousel } from "@/components/ko/BlogCarousel";
 
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
-/** 지금 뜨는 테스트 가로 레일 = 심층 우선순위 상위 (홈 레일용) */
-const homeRailKo = loveSectionQuizzes.slice(0, 5);
+/** 지금 뜨는 테스트 가로 레일 = 원픽(1문항) 우선순위 상위 (홈 레일용) */
+const homeRailKo = getKoOnePickQuizzesSorted("ko").slice(0, 5);
 /** 홈 심층 타일 = 우선순위 상위 8개만 (전체는 /ko/love/) */
 const homeLoveTilesKo = loveSectionQuizzes.slice(0, 8);
 /** 홈 원픽 타일 = 원픽(1문항) 상위 8개 (전체는 /ko/onepick/) */

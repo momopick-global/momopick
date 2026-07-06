@@ -21,65 +21,9 @@
 
 ## 공통 이미지 프롬프트 (심층 테스트 — 연애·썸 테마)
 
-심층 테스트 이미지는 **① 제목(썸네일) 이미지**와 **② 결과 이미지** 두 종류. 공통 규격은 아래를 공유한다.
-
-### 개편 원칙 (2026-07 반영)
-
-1. **퀴즈마다 다른 주인공.** 생성기에 그냥 맡기면 매번 비슷한 여성 캐릭터만 나온다. 반드시 [character-profile-prompts.md](../character-profile-prompts.md)의 캐릭터(F1~F5·M1~M5)를 **하나 지정해 그 인물 묘사 문장을 프롬프트에 그대로 삽입**한다. 아래 [퀴즈별 리드 캐릭터·색상 배정표](#퀴즈별-리드-캐릭터색상-배정표) 참고.
-2. **얼굴을 크게, 표정은 과장되게.** 모바일에서 썸네일이 작게 노출되므로 **얼굴이 프레임의 55~70%를 차지하는 클로즈업**으로 잡고, 감정·표정을 **한눈에 읽힐 만큼 과장**한다(활짝 웃음·찡그림·눈물·도도함 등). 퀴즈마다·결과마다 표정이 뚜렷이 달라야 한다. (현재 문제: 표정이 다 비슷함)
-3. **두꺼운 테두리.** 제목 이미지는 **굵은 프레임 보더**(두꺼운 외곽선/색 테두리)를 둘러 안쪽 오버레이 글자가 배경에 묻히지 않게 한다.
-4. **색상은 콘텐츠에 맞게 다양하게.** 보라 일변도 금지. 퀴즈 주제·결과 감정에 맞춰 배정표의 팔레트를 쓴다. (사이트 액센트인 보라·핑크는 포인트로만.)
-
-공통 규격: **1:1 정사각형(square)** — 커버·결과가 `aspect-ratio: 1/1`로 표시되므로 정사각형이 아니면 잘림. (예: `thumb.webp` 1024×1024) · 그림체: 부드러운 한국 웹툰풍 일러스트, 반짝이는 큰 눈·드라마틱 조명(캐릭터 세계관 유지).
-
-> ⚠️ AI 이미지 생성기는 한글을 정확히 못 그린다. 이미지 안 글자는 **비워두고**, 최종 문구(라벨·제목·설명)는 디자인 툴로 오버레이하는 것을 기본으로 한다. 두꺼운 테두리는 오버레이 가독성을 위한 것이다.
-
-### ① 제목 이미지 프롬프트
-
-용도: 목록 썸네일·퀴즈 상단 커버. 원픽과 달리 **보기 번호는 넣지 않고**, 주인공 얼굴과 무드 중심.
-
-조립 공식: `[배정표의 리드 캐릭터 묘사 문장]` + 아래 suffix.
-
-- KO suffix: `이 인물의 얼굴을 화면의 55~70%로 크게 잡은 클로즈업 포스터 썸네일, 퀴즈 주제에 맞는 감정을 과장되게 드러낸 표정, 시선·포즈가 뚜렷함. 굵은 프레임 테두리로 둘러싼 구도(안쪽에 제목 오버레이 공간 확보), 이미지 안 글자 없음. [배정표의 색상 팔레트] 계열 조명·배경, 부드러운 한국 웹툰풍 일러스트, 1:1 정사각형 비율.`
-- EN suffix: `a close-up poster thumbnail with this character's face filling 55–70% of the frame, an exaggerated expression matching the quiz theme, clear gaze and pose. A thick bold frame border around the composition (leaving inner space for a title overlay), no text inside the image. [palette from the table] lighting and background, soft Korean webtoon illustration, square 1:1 aspect ratio.`
-
-### ② 결과 이미지 프롬프트
-
-용도: 결과 화면 상단 + Kakao 공유 카드. 결과 **하나**당 이미지 1장. 같은 퀴즈라도 결과 4개의 **표정·색이 확실히 달라야** 한다.
-
-조립 공식: `[리드 캐릭터(또는 해당 결과 유형에 맞는 다른 캐릭터) 묘사]` + 아래 suffix.
-
-- KO suffix: `해당 결과 유형의 감정을 과장되게 드러낸 얼굴 클로즈업(얼굴이 화면의 55~70%), 그 결과 특유의 표정·시선·포즈. 이미지 안 글자 없음(태그라인은 후편집 오버레이). 이 결과의 감정에 맞는 [결과별 색상] 계열 조명·배경으로 네 결과가 한눈에 구분되게, 부드러운 한국 웹툰풍 일러스트, 1:1 정사각형 비율.`
-- EN suffix: `a face close-up (face filling 55–70% of the frame) with an exaggerated expression for this result type, its own distinct gaze and pose. No text inside the image (tagline added later as overlay). [per-result palette] lighting and background so the four results read as clearly different at a glance; soft Korean webtoon illustration, square 1:1 aspect ratio.`
-
-### 퀴즈별 리드 캐릭터·색상 배정표
-
-- 리드 캐릭터는 `F1~F5·M1~M5`(설명은 [character-profile-prompts.md](../character-profile-prompts.md)), 마스코트는 각 캐릭터의 기본 조합(F1→A1 … M5→A1).
-- **제목 이미지**는 리드 1명으로 통일, **결과 이미지**는 리드의 표정·색을 결과별로 변주(또는 결과 유형이 확연히 다르면 다른 캐릭터 차용).
-- 아래는 시작 배정안 — 겹침·POV가 어색하면 자유롭게 교체(캐릭터당 2개꼴로만 유지).
-
-| 슬러그 | 제목 | 리드 | 색상 팔레트 |
-|---|---|---|---|
-| `confession-success-rate` | 나의 고백 성공 확률은? | F1 | 설레는 코랄·핑크 |
-| `who-likes-you-type` | 나를 좋아하는 사람은 어떤 타입? | F1 | 따뜻한 로즈·크림 |
-| `ambiguous-situationship-end` | 썸이 항상 애매하게 끝나는 이유 | F2 | 안개빛 로즈·그레이 |
-| `logical-or-emotional` | 나는 이성적일까 감성적일까? | F2 | 스틸 블루 ↔ 웜 로즈 대비 |
-| `emotional-sensitivity` | 나는 왜 예민할까? | F3 | 소프트 라벤더·민트 |
-| `why-cant-you-text-first` | 나는 왜 먼저 연락을 못할까? | F3 | 문라이트 인디고·블루 |
-| `dating-expert-or-beginner` | 나는 연애 고수일까 초보일까? | F4 | 골드·버건디 |
-| `relationship-balance-test` | 연애 중 나는 갑 vs 을? | F4 | 로즈·차콜 |
-| `love-pattern-destroying-habit` | 내가 연애를 망치는 습관 | F5 | 스모키 틸·앰버 |
-| `self-esteem-level` | 나의 자존감 레벨은? | F5 | 골드·피치 |
-| `love-temperature-test` | 나는 어떤 연애 온도일까? | M1 | 아이스 블루 → 핫 레드 그라데이션 |
-| `trust-level-test` | 나는 사람을 잘 믿는 편일까? | M1 | 세이지 그린·아이보리 |
-| `anger-style-test` | 화났을 때 나는? | M2 | 레드·오렌지 |
-| `when-men-lose-interest` | 남자가 나에게 식는 순간 | M2 | 페이딩 블루·애쉬 |
-| `personality-psychology-test` | 나의 성격·심리 분석은? | M3 | 인디고·틸 |
-| `true-self-alone` | 나는 혼자 있을 때 어떤 사람? | M3 | 차분한 블루·그레이 |
-| `leader-or-supporter` | 나는 리더형인가 조력자형인가? | M4 | 로열 블루·틸 |
-| `mental-strength-test` | 나는 멘탈 강자일까 유리멘탈일까? | M4 | 스틸·실버·앰버 |
-| `hidden-dark-side` | 나의 숨겨진 다크사이드 | M5 | 다크 플럼·크림슨 |
-| `planner-or-spontaneous` | 나는 계획형인가 즉흥형인가? | M5 | 네이비 ↔ 선샤인 옐로 대비 |
+> 🖼️ **이미지 프롬프트·캐릭터 배정·색상 설계는 [quiz-image-prompts.md](../quiz-image-prompts.md) 한 곳에서 관리합니다.** (퀴즈별 제목·결과 이미지 프롬프트, 캐릭터 배정표, 색상 설계, 텍스트 오버레이 규칙 포함)
+> 캐릭터 시각 정의는 [character-profile-prompts.md](../character-profile-prompts.md), 규격은 [../design/image-guidelines.md](../design/image-guidelines.md).
+> 이 문서는 **콘텐츠 기획**(결과 설계·문항·본문)에 집중하고, 이미지 관련은 위 문서를 따른다.
 
 ## 진행 현황
 

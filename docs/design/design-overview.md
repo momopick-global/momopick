@@ -63,6 +63,5 @@
 - [color-system.md](./color-system.md) — 컬러 토큰
 - [typography.md](./typography.md) — 타이포
 - [layout-mobile.md](./layout-mobile.md) — 모바일 레이아웃
-- [image-guidelines.md](./image-guidelines.md) — 이미지 공통
-- [quiz-image-style.md](./quiz-image-style.md) — 퀴즈 이미지
+- [image-guidelines.md](./image-guidelines.md) — 이미지 공통 + 퀴즈 이미지 스타일
 - [asset-paths.md](./asset-paths.md) — 자산 경로 규칙

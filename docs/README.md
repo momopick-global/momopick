@@ -86,8 +86,7 @@ docs/
 │  ├─ color-system.md          컬러 토큰
 │  ├─ typography.md            타이포
 │  ├─ layout-mobile.md         모바일 우선
-│  ├─ image-guidelines.md      이미지 공통 규칙
-│  ├─ quiz-image-style.md      퀴즈 이미지 스타일
+│  ├─ image-guidelines.md      이미지 공통 규칙 + 퀴즈 이미지 스타일
 │  └─ asset-paths.md           public/images 경로 규칙
 ├─ content/
 │  ├─ content-tone.md          모모픽 문구 톤

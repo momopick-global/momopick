@@ -41,11 +41,8 @@
 
 ### 디자인 참고
 
-- [quiz-image-style.md](/Users/xxxaskillofgodxxxgmail.com/Desktop/momo/momopick/docs/design/quiz-image-style.md)
-  - 퀴즈 이미지 스타일 정리
-
 - [image-guidelines.md](/Users/xxxaskillofgodxxxgmail.com/Desktop/momo/momopick/docs/design/image-guidelines.md)
-  - 이미지 전반 가이드
+  - 이미지 전반 가이드 + 퀴즈 이미지 스타일(구도·표정·색·안티패턴)
 
 ## 2. 실제 퀴즈 데이터
 

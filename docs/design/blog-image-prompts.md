@@ -2,7 +2,7 @@
 
 > 작성 기준일: 2026-07-06
 > 대상: `/ko/blog/`에서 아직 대표 이미지가 없는 글 6개 (현재 `PENDING` fallback 사용)
-> 규격 근거: [image-guidelines.md](./image-guidelines.md) · [quiz-image-style.md](./quiz-image-style.md)
+> 규격 근거: [image-guidelines.md](./image-guidelines.md)
 
 ## 공통 규격 (모든 블로그 커버 동일)
 
