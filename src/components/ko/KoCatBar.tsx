@@ -7,11 +7,6 @@ import { KO_PRIMARY_NAV_LIVE, isKoNavActive } from "./koSiteNavLinks";
 import { KoTagBar } from "./KoTagBar";
 import type { KoMenuGroup } from "@/lib/content/homeRail";
 
-/** 메인(홈) 경로 여부 — 홈에선 태그 바를 노출하지 않는다. */
-function isHomePath(pathname: string): boolean {
-  return pathname === "/ko" || pathname === "/ko/";
-}
-
 /** 현재 경로에 해당하는 메뉴 그룹 — 태그 칩 이동 시 해당 섹션으로 스코프 */
 function scopeFromPath(pathname: string): KoMenuGroup | undefined {
   if (pathname.startsWith("/ko/onepick")) return "onepick";
@@ -72,7 +67,7 @@ export function KoCatBar() {
           })}
         </div>
       </nav>
-      {isHomePath(pathname) ? null : <KoTagBar scope={scopeFromPath(pathname)} />}
+      <KoTagBar scope={scopeFromPath(pathname)} />
     </>
   );
 }
