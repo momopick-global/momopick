@@ -29,7 +29,7 @@ import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
 /** 버튼 채움 애니메이션(≈0.28s)이 끝난 뒤 약간 여유를 두고 다음으로 */
 const ANSWER_FILL_MS = 340;
 /** 마지막 문항 후 결과 카드 전 로딩 대기(ms). 감소 모션 시 0. */
-const QUIZ_RESULT_LOADING_MS = 3000;
+const QUIZ_RESULT_LOADING_MS = 1000;
 
 type QuizResultPhase = "idle" | "loading" | "done";
 

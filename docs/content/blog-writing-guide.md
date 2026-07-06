@@ -1,5 +1,7 @@
 # Blog Writing Guide — 블로그 작성
 
+> **무엇을** 쓸지(주제·우선순위·연결 퀴즈)는 [blog-content-roadmap.md](./blog-content-roadmap.md)를, **어떻게** 쓸지는 이 문서를 참고.
+
 ## 기본 구조
 
 `src/content/blog/koSamplePosts.ts`의 객체 배열에 추가.
@@ -27,7 +29,7 @@
 | 600~1,000자 | 양호 |
 | 1,500자+ | 풍부함 |
 
-**AdSense 심사 통과를 위해 600자 이상 권장.** 현재 7개 글 중 5개가 220~320자 → 확장 또는 임시 제거 필요.
+**AdSense 심사 통과를 위해 600자 이상 권장.** 현재 7개 글 중 5개가 220~320자 → 확장 또는 임시 제거 필요 (계획표의 P0 항목, [blog-content-roadmap.md](./blog-content-roadmap.md#p0--기존-글-확장-먼저-처리)).
 
 ## 본문 구성 권장
 

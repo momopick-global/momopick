@@ -23,7 +23,7 @@ export type KoPrimaryNavItem = {
 };
 
 export const KO_PRIMARY_NAV: readonly KoPrimaryNavItem[] = [
-  { key: "home", href: "/ko/", label: "전체", chipLabel: "전체", emoji: "🏠", live: true, exactOnly: true },
+  { key: "home", href: "/ko/", label: "메인", chipLabel: "메인", emoji: "🏠", live: true, exactOnly: true },
   { key: "love", href: "/ko/love/", label: "썸·연애 테스트", chipLabel: "썸·연애", emoji: "💗", live: true, matchPrefixes: ["/ko/love"] },
   { key: "onepick", href: "/ko/onepick/", label: "원픽 테스트", chipLabel: "원픽", emoji: "🎯", live: true, matchPrefixes: ["/ko/onepick"] },
   { key: "personality-test", href: "/ko/personality-test/", label: "성향 모아보기", chipLabel: "성향", emoji: "🧠", live: true, matchPrefixes: ["/ko/personality-test"] },

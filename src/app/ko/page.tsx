@@ -24,20 +24,6 @@ export default function KoHomePage() {
 
       <div className="wrap">
         <main>
-          <div className="login-hint">
-            <div>
-              <p>💡 로그인하면 맞춤 추천·히스토리를 쓸 수 있어요</p>
-              <span className="desc">
-                나중에 북마크와 이어하기 기능을 연결할 수 있게 자리만 잡아두었습니다.
-              </span>
-            </div>
-            <div className="cta">
-              <Link className="btn primary sm" href="/ko/app/login/">
-                로그인 / 시작하기
-              </Link>
-            </div>
-          </div>
-
           <section className="rail-wrap" aria-labelledby="rail-title">
             <div className="rail-head">
               <h2 id="rail-title">✨ 지금 뜨는 테스트</h2>
@@ -318,6 +304,20 @@ export default function KoHomePage() {
               </div>
             </article>
           </section>
+
+          <div className="login-hint">
+            <div>
+              <p>💡 로그인하면 맞춤 추천·히스토리를 쓸 수 있어요</p>
+              <span className="desc">
+                나중에 북마크와 이어하기 기능을 연결할 수 있게 자리만 잡아두었습니다.
+              </span>
+            </div>
+            <div className="cta">
+              <Link className="btn primary sm" href="/ko/app/login/">
+                로그인 / 시작하기
+              </Link>
+            </div>
+          </div>
 
           <section className="section" id="blog" aria-labelledby="sec-blog">
             <div className="sec-hd">

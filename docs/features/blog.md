@@ -1,5 +1,7 @@
 # Blog — `/ko/blog/`
 
+> 콘텐츠 확장 계획은 [../content/blog-content-roadmap.md](../content/blog-content-roadmap.md) 참조 (2026-07-06 신설).
+
 ## 개요
 
 7개 짧은 블로그 글. 콘텐츠는 `src/content/blog/koSamplePosts.ts`에 TypeScript 객체 배열로 작성.
@@ -16,7 +18,7 @@
 | `new-quizzes-rhythm` | 앞으로도 테스트는 꾸준히 늘어납니다 | ~228자 |
 | `mbti-not-diagnosis` | MBTI·성향 퀴즈, 진단이 아니라는 걸 기억해 주세요 | ~271자 |
 
-> ⚠️ 본문 200~320자 글이 5개. AdSense thin-content 리스크 — 본문 확장 또는 임시 제거 검토.
+> ⚠️ 본문 200~320자 글이 5개(`snack-test-what`, `share-result`, `love-category-editor`, `new-quizzes-rhythm`, `mbti-not-diagnosis`). AdSense thin-content 리스크 — 각 600자+로 확장(P0). 확장 방향은 [블로그 콘텐츠 계획표](../content/blog-content-roadmap.md#p0--기존-글-확장-먼저-처리) 참조.
 
 ## 구조
 
@@ -81,7 +83,8 @@ export type KoSampleBlogPost = {
 
 ## 글 작성 가이드
 
-[../content/blog-writing-guide.md](../content/blog-writing-guide.md) 참조.
+- 작성법: [../content/blog-writing-guide.md](../content/blog-writing-guide.md)
+- 어떤 글을 쓸지(주제·우선순위·연결 퀴즈): [../content/blog-content-roadmap.md](../content/blog-content-roadmap.md)
 
 ## 빠진 정렬·필터
 

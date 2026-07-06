@@ -34,7 +34,7 @@ import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
 
 const ANSWER_FILL_MS = 340;
 /** 마지막 문항 후 결과 카드 전 로딩 대기(ms). 감소 모션 시 0. */
-const QUIZ_RESULT_LOADING_MS = 3000;
+const QUIZ_RESULT_LOADING_MS = 1000;
 
 type QuizResultPhase = "idle" | "loading" | "done";
 
