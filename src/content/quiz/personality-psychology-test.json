@@ -1,0 +1,430 @@
+{
+  "id": "personality-psychology-test",
+  "slug": "personality-psychology-test",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "성격",
+      "en": "personality"
+    },
+    {
+      "ko": "심리",
+      "en": "psychology"
+    },
+    {
+      "ko": "분석",
+      "en": "analysis"
+    }
+  ],
+  "title": {
+    "ko": "나의 성격·심리 분석은?",
+    "en": "What Does Your Personality Say?"
+  },
+  "subtitle": {
+    "ko": "내 성격이 드러나는 순간 분석",
+    "en": "See what your reactions reveal"
+  },
+  "images": {
+    "thumbnail": "/images/quiz/personality-psychology-test/thumb.webp",
+    "og": "/images/quiz/personality-psychology-test/thumb.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "일상 반응, 관계 속 태도, 혼자 있을 때 습관으로 드러나는 성격·심리 패턴을 알아보는 테스트",
+      "en": "See what your daily reactions, relationship habits, and alone-time patterns reveal"
+    },
+    "keywords": [
+      {
+        "ko": "성격 테스트",
+        "en": "personality test"
+      },
+      {
+        "ko": "심리 분석",
+        "en": "psychology analysis"
+      }
+    ],
+    "ogTitle": {
+      "ko": "나의 성격·심리 분석은?",
+      "en": "What Does Your Personality Say?"
+    },
+    "ogDescription": {
+      "ko": "내 성격이 드러나는 순간 분석",
+      "en": "See what your reactions reveal"
+    }
+  },
+  "card": {
+    "theme": "personality",
+    "kicker": {
+      "ko": "🧠 성격·심리 분석",
+      "en": "🧠 Personality check"
+    },
+    "image": "/images/quiz/personality-psychology-test/thumb.webp",
+    "priority": 87
+  },
+  "resultKeys": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "resultOrder": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "각 문항에서 선택한 유형(A/B/C/D)에 1점씩 가산합니다. 최고 득점 유형이 결과이며, 동점이면 복합형으로 안내합니다.",
+      "en": "Each answer adds one point to A, B, C, or D. Your top score is your result; ties show a blended type."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "personality_psychology_test",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "true-self-alone",
+    "mental-strength-test",
+    "emotional-sensitivity"
+  ],
+  "results": {
+    "A": {
+      "emoji": "🔍",
+      "scoreKey": "A",
+      "title": {
+        "ko": "분석형",
+        "en": "Analyst Type"
+      },
+      "tagline": {
+        "ko": "상황을 먼저 해석하고 의미를 찾는 타입",
+        "en": "You look for meaning before reacting"
+      },
+      "body": {
+        "ko": "당신은 상황을 있는 그대로 받기보다, 먼저 해석하고 구조를 파악하려는 편입니다. 사람의 말투, 분위기, 맥락을 같이 읽어내는 감각이 있어 단순히 감정적으로 반응하기보다 ‘왜 이랬을까’를 생각합니다.\n\n이런 성향은 관계에서 오해를 줄이는 장점이 있고, 문제의 원인을 차분히 찾는 힘이 됩니다. 다만 생각이 깊어질수록 혼자 결론을 앞당기거나, 상대의 의도를 너무 빨리 추측해 피곤해질 수도 있어요.\n\n가끔은 해석보다 사실을 먼저 보는 연습이 도움이 됩니다.",
+        "en": "You tend to interpret situations and look for structure before reacting. You naturally read tone, context, and subtext, so you often ask yourself why something happened instead of reacting emotionally first.\n\nThat helps you reduce misunderstandings and find the root of issues calmly. The downside is that deep thinking can turn into premature conclusions or mental fatigue when you assume too much too quickly.\n\nSometimes, it helps to check the facts before the interpretation."
+      },
+      "image": "/images/quiz/personality-psychology-test/result-1.webp",
+      "share": {
+        "title": {
+          "ko": "나의 성격·심리는 분석형",
+          "en": "My personality type is Analyst"
+        },
+        "description": {
+          "ko": "상황을 먼저 해석하고 의미를 찾는 타입",
+          "en": "You look for meaning before reacting"
+        },
+        "image": "/images/quiz/personality-psychology-test/result-1.webp"
+      }
+    },
+    "B": {
+      "emoji": "💛",
+      "scoreKey": "B",
+      "title": {
+        "ko": "공감형",
+        "en": "Empath Type"
+      },
+      "tagline": {
+        "ko": "사람의 감정부터 느끼는 타입",
+        "en": "You feel people before judging them"
+      },
+      "body": {
+        "ko": "당신은 상대의 기분과 분위기를 빠르게 읽는 편입니다. 말보다 표정과 온도차를 먼저 느끼고, 누가 힘들어 보이면 자연스럽게 신경을 씁니다. 사람 사이의 정서적 흐름을 잘 캐치하는 편이라 주변에서 편안하다는 말을 듣기도 합니다.\n\n이 성향은 관계를 따뜻하게 만들지만, 타인의 감정을 너무 많이 떠안으면 쉽게 지칠 수 있어요. 나도 모르게 분위기 조정 역할을 맡고 있거나, 상대의 기분에 내 컨디션이 흔들릴 수 있습니다.\n\n공감은 강점이지만, 내 감정 경계도 함께 지켜주는 것이 좋습니다.",
+        "en": "You quickly notice how other people feel and what the atmosphere is like. You read expressions and emotional temperature before words, and when someone seems off, you naturally pay attention. People may find you comforting because you catch emotional shifts well.\n\nThis makes relationships warmer, but it can also drain you if you carry too much of other people’s feelings. You may end up being the mood manager without noticing, or your own energy may rise and fall with someone else’s state.\n\nYour empathy is a strength, but your boundaries matter too."
+      },
+      "image": "/images/quiz/personality-psychology-test/result-2.webp",
+      "share": {
+        "title": {
+          "ko": "나의 성격·심리는 공감형",
+          "en": "My personality type is Empath"
+        },
+        "description": {
+          "ko": "사람의 감정부터 느끼는 타입",
+          "en": "You feel people before judging them"
+        },
+        "image": "/images/quiz/personality-psychology-test/result-2.webp"
+      }
+    },
+    "C": {
+      "emoji": "🧭",
+      "scoreKey": "C",
+      "title": {
+        "ko": "균형형",
+        "en": "Balanced Type"
+      },
+      "tagline": {
+        "ko": "상황에 따라 생각과 감정을 조절하는 타입",
+        "en": "You balance logic and emotion by situation"
+      },
+      "body": {
+        "ko": "당신은 한쪽으로만 치우치지 않고, 상황에 따라 생각과 감정을 조절하려는 편입니다. 누군가와 대화할 때도 감정만 따르기보다 무엇이 필요한지, 어떤 방식이 가장 무난한지 함께 봅니다.\n\n이 성향은 갈등을 크게 만들지 않고 유연하게 대처하는 데 강합니다. 다만 너무 균형을 맞추려다 보면 내 진심이 늦게 드러나거나, 결정이 필요할 때 망설일 수 있어요.\n\n모든 걸 평균으로 맞추기보다, 정말 중요한 지점에서는 내 기준을 분명히 해두는 것이 좋습니다.",
+        "en": "You try not to lean too far to one side and adjust your thinking and feelings based on the situation. In conversations, you look not only at emotions but also at what is needed and what approach is most workable.\n\nThis helps you handle conflict without making it bigger and gives you flexibility. The downside is that trying to keep everything balanced can delay your true feelings or make decisions harder when you need to commit.\n\nInstead of averaging everything out, it helps to be clear about what really matters to you."
+      },
+      "image": "/images/quiz/personality-psychology-test/result-3.webp",
+      "share": {
+        "title": {
+          "ko": "나의 성격·심리는 균형형",
+          "en": "My personality type is Balanced"
+        },
+        "description": {
+          "ko": "상황에 따라 생각과 감정을 조절하는 타입",
+          "en": "You balance logic and emotion by situation"
+        },
+        "image": "/images/quiz/personality-psychology-test/result-3.webp"
+      }
+    },
+    "D": {
+      "emoji": "⚡",
+      "scoreKey": "D",
+      "title": {
+        "ko": "직관형",
+        "en": "Intuitive Type"
+      },
+      "tagline": {
+        "ko": "빠르게 느끼고 바로 움직이는 타입",
+        "en": "You sense fast and act quickly"
+      },
+      "body": {
+        "ko": "당신은 머리로 오래 굴리기보다, 직감적으로 느낌이 오는 방향을 먼저 따라가는 편입니다. 어떤 사람이나 상황이 마음에 드는지 빠르게 감지하고, 맞다 싶으면 속도감 있게 움직일 수 있어요. 행동이 빠른 만큼 에너지와 추진력이 있다는 점이 매력입니다.\n\n다만 직감이 강할수록 서두르거나, 세부 정보를 충분히 확인하지 않은 채 결론을 내릴 가능성도 있습니다. 그래서 빠른 판단에 더해 한 번만 더 확인하는 습관이 도움이 됩니다.\n\n직감은 당신의 강력한 무기지만, 확인 한 스텝이 더해지면 더 안정적입니다.",
+        "en": "You tend to follow your gut rather than think something through for too long. You can quickly sense whether a person or situation feels right, and when it does, you move fast. That speed and momentum are part of your appeal.\n\nThe flip side is that strong intuition can make you rush or reach conclusions without enough detail. Adding one extra check before acting can make your instincts even more reliable.\n\nYour intuition is powerful, and a quick reality check makes it stronger."
+      },
+      "image": "/images/quiz/personality-psychology-test/result-4.webp",
+      "share": {
+        "title": {
+          "ko": "나의 성격·심리는 직관형",
+          "en": "My personality type is Intuitive"
+        },
+        "description": {
+          "ko": "빠르게 느끼고 바로 움직이는 타입",
+          "en": "You sense fast and act quickly"
+        },
+        "image": "/images/quiz/personality-psychology-test/result-4.webp"
+      }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": "Mixed Type"
+    },
+    "tagline": {
+      "ko": "분석·공감·균형·직관이 섞인 성격",
+      "en": "A mix of analysis, empathy, balance, and intuition"
+    },
+    "body": {
+      "ko": "당신의 성격은 한 가지 단어로만 정리되기보다, 상황에 따라 여러 면이 함께 드러나는 편입니다. 어떤 순간에는 분석적으로 보이고, 또 어떤 순간에는 공감이 앞서며, 때로는 균형을 맞추고 직감대로 움직이기도 합니다.\n\n이런 복합성은 꽤 큰 장점입니다. 사람과 상황을 넓게 볼 수 있고, 한쪽 기준에 갇히지 않기 때문이에요. 다만 스스로를 설명할 때는 조금 헷갈릴 수 있습니다.\n\n지금의 당신은 ‘한 가지’보다 ‘여러 결’이 함께 있는 사람에 더 가깝습니다.",
+      "en": "Your personality is better described by several sides showing up in different situations. Sometimes you look analytical, sometimes empathic, sometimes balanced, and sometimes very intuitive.\n\nThat mix is a real strength because it helps you see people and situations more broadly instead of getting stuck in one pattern. The tradeoff is that it can be harder to explain yourself cleanly.\n\nRight now, you are closer to someone with many layers than a single label."
+    },
+    "image": "/images/quiz/personality-psychology-test/result-blend.webp",
+    "share": {
+      "title": {
+        "ko": "나의 성격·심리는 복합형",
+        "en": "My personality type is mixed"
+      },
+      "description": {
+        "ko": "분석·공감·균형·직관이 함께 나타날 수 있어요",
+        "en": "Analysis, empathy, balance, and intuition can all show up"
+      },
+      "image": "/images/quiz/personality-psychology-test/result-blend.webp"
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "친구가 갑자기 분위기가 달라 보여요. 당신은?",
+        "en": "A friend suddenly feels different. You:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "label": {
+            "ko": "무슨 일이 있었는지 먼저 떠올려 본다",
+            "en": "Think about what might have happened"
+          }
+        },
+        {
+          "key": "B",
+          "label": {
+            "ko": "기분부터 살펴보고 조심스럽게 챙긴다",
+            "en": "Check their feelings and approach gently"
+          }
+        },
+        {
+          "key": "C",
+          "label": {
+            "ko": "괜히 건드리지 않고 상황을 지켜본다",
+            "en": "Watch and wait without pushing"
+          }
+        },
+        {
+          "key": "D",
+          "label": {
+            "ko": "직감적으로 무슨 일인지 바로 느낌이 온다",
+            "en": "Immediately get a gut feeling"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "새로운 사람을 만났을 때 당신은?",
+        "en": "When meeting someone new, you:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "label": {
+            "ko": "이 사람의 성향을 먼저 분석한다",
+            "en": "Analyze their personality first"
+          }
+        },
+        {
+          "key": "B",
+          "label": {
+            "ko": "편한 사람이 되도록 분위기를 맞춘다",
+            "en": "Try to make them feel comfortable"
+          }
+        },
+        {
+          "key": "C",
+          "label": {
+            "ko": "천천히 보다가 자연스럽게 가까워진다",
+            "en": "Take it slow and warm up naturally"
+          }
+        },
+        {
+          "key": "D",
+          "label": {
+            "ko": "첫인상으로 금방 친해질지 감이 온다",
+            "en": "Quickly sense if you will click"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "갑작스러운 일정 변경이 생기면?",
+        "en": "When plans suddenly change, you:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "label": {
+            "ko": "변경 이유부터 정리해 본다",
+            "en": "Figure out the reason first"
+          }
+        },
+        {
+          "key": "B",
+          "label": {
+            "ko": "상대가 부담 없게 반응을 살핀다",
+            "en": "Gauge how the other person feels"
+          }
+        },
+        {
+          "key": "C",
+          "label": {
+            "ko": "일단 유연하게 받아들인다",
+            "en": "Stay flexible and adapt"
+          }
+        },
+        {
+          "key": "D",
+          "label": {
+            "ko": "바로 다른 가능성을 떠올린다",
+            "en": "Instantly think of another option"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "누군가 속마음을 잘 말하지 않으면?",
+        "en": "When someone hides how they feel, you:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "label": {
+            "ko": "패턴과 맥락을 분석한다",
+            "en": "Analyze the pattern and context"
+          }
+        },
+        {
+          "key": "B",
+          "label": {
+            "ko": "말하지 못하는 이유가 궁금해진다",
+            "en": "Wonder why they can’t open up"
+          }
+        },
+        {
+          "key": "C",
+          "label": {
+            "ko": "시간을 두고 기다려 준다",
+            "en": "Give them time"
+          }
+        },
+        {
+          "key": "D",
+          "label": {
+            "ko": "표정만 봐도 대략 알아챈다",
+            "en": "Pick it up from their expression"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "스트레스를 받을 때 가장 먼저 드러나는 건?",
+        "en": "When stressed, what shows first?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "label": {
+            "ko": "생각이 많아지고 원인부터 찾는다",
+            "en": "More thinking and root-cause hunting"
+          }
+        },
+        {
+          "key": "B",
+          "label": {
+            "ko": "감정 기복과 예민함이 올라온다",
+            "en": "More emotional sensitivity"
+          }
+        },
+        {
+          "key": "C",
+          "label": {
+            "ko": "속도를 줄이고 쉬고 싶어진다",
+            "en": "Want to slow down and rest"
+          }
+        },
+        {
+          "key": "D",
+          "label": {
+            "ko": "바로 움직여서 해결하려 한다",
+            "en": "Jump into action to fix it"
+          }
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "이 테스트는 재미와 자기이해를 위한 심리 콘텐츠입니다. 특정 성격을 단정하기보다, 평소 반응의 경향을 가볍게 살펴보는 용도로 즐겨 주세요.",
+    "en": "This test is for fun and self-understanding. It is meant to lightly explore your usual reaction patterns, not define you completely."
+  }
+}

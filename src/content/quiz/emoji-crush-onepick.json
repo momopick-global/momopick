@@ -1,0 +1,221 @@
+{
+  "id": "emoji-crush-onepick",
+  "slug": "emoji-crush-onepick",
+  "locales": [
+    "ko"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "원픽",
+      "en": ""
+    },
+    {
+      "ko": "썸",
+      "en": ""
+    },
+    {
+      "ko": "연애",
+      "en": ""
+    },
+    {
+      "ko": "심리",
+      "en": ""
+    }
+  ],
+  "title": {
+    "ko": "지금 보내고 싶은 이모지는?",
+    "en": ""
+  },
+  "subtitle": {
+    "ko": "지금 보내고 싶은 이모지가 내 썸 태도를 알려줘요",
+    "en": ""
+  },
+  "images": {
+    "thumbnail": "/images/common/quiz-image-pending.webp",
+    "og": "/images/common/quiz-image-pending.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "네 개의 이모지 중 지금 보내고 싶은 하나로, 썸 탈 때 나의 태도를 알아보는 원픽 테스트.",
+      "en": ""
+    },
+    "ogTitle": {
+      "ko": "지금 보내고 싶은 이모지는?",
+      "en": ""
+    },
+    "ogDescription": {
+      "ko": "지금 보내고 싶은 이모지가 내 썸 태도를 알려줘요",
+      "en": ""
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🎯 원픽 테스트",
+      "en": ""
+    },
+    "image": "/images/common/quiz-image-pending.webp",
+    "priority": 74
+  },
+  "resultKeys": [
+    "secure",
+    "anxious",
+    "avoidant",
+    "ambivalent"
+  ],
+  "resultOrder": [
+    "secure",
+    "anxious",
+    "avoidant",
+    "ambivalent"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "고른 하나가 곧 결과입니다(원픽).",
+      "en": ""
+    },
+    "blendOnTie": false
+  },
+  "analytics": {
+    "eventKey": "emoji_crush_onepick",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "color-mood-onepick"
+  ],
+  "results": {
+    "secure": {
+      "emoji": "❤️",
+      "scoreKey": "secure",
+      "title": {
+        "ko": "편안한 직진형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "마음을 편하게 표현하는 타입",
+        "en": ""
+      },
+      "body": {
+        "ko": "이런 타입은 좋아하는 마음을 자연스럽고 편안하게 표현하는 경향이 있어요. 밀당보다 솔직함이 편하고, 상대에게도 안정감을 주죠. 그 담백함이 큰 매력이니, 지금처럼 당신다운 방식으로 다가가면 좋은 흐름이 이어질 거예요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "anxious": {
+      "emoji": "🥺",
+      "scoreKey": "anxious",
+      "title": {
+        "ko": "확인받고 싶은형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "상대의 마음을 자주 확인하고 싶은 타입",
+        "en": ""
+      },
+      "body": {
+        "ko": "이런 타입은 상대의 마음이 궁금해 자주 확인하고 싶어지는 경향이 있어요. 그만큼 애정이 깊고 관계에 진심이죠. 다만 답장이 늦어도 마음이 식은 건 아니라는 걸 기억하면, 불안이 줄고 관계가 한결 편안해져요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "avoidant": {
+      "emoji": "😎",
+      "scoreKey": "avoidant",
+      "title": {
+        "ko": "거리 두는형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "천천히, 나만의 속도로 다가가는 타입",
+        "en": ""
+      },
+      "body": {
+        "ko": "이런 타입은 마음이 있어도 서두르지 않고 나만의 속도를 지키는 경향이 있어요. 감정을 쉽게 드러내기보다 여유 있게 지켜보죠. 그 담담함이 편안함을 주지만, 가끔은 마음을 한 뼘 더 표현해 주면 상대도 안심할 수 있어요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "ambivalent": {
+      "emoji": "😏",
+      "scoreKey": "ambivalent",
+      "title": {
+        "ko": "밀당형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "다가갔다 물러섰다, 리듬을 타는 타입",
+        "en": ""
+      },
+      "body": {
+        "ko": "이런 타입은 다가가고 싶은 마음과 재고 싶은 마음이 함께 있어, 밀당의 리듬을 타는 경향이 있어요. 그 긴장감이 설렘을 키우기도 하죠. 다만 진심이 통하는 순간엔 한 번쯤 솔직하게 마음을 보여주면, 관계가 더 깊어져요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": ""
+    },
+    "tagline": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "지금 이 사람에게 보내고 싶은 이모지는?",
+        "en": ""
+      },
+      "options": [
+        {
+          "key": "secure",
+          "label": {
+            "ko": "1번 선택 (❤️)",
+            "en": ""
+          }
+        },
+        {
+          "key": "anxious",
+          "label": {
+            "ko": "2번 선택 (🥺)",
+            "en": ""
+          }
+        },
+        {
+          "key": "avoidant",
+          "label": {
+            "ko": "3번 선택 (😎)",
+            "en": ""
+          }
+        },
+        {
+          "key": "ambivalent",
+          "label": {
+            "ko": "4번 선택 (😏)",
+            "en": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 심리 테스트예요. 결과는 참고용입니다.",
+    "en": ""
+  }
+}

@@ -4,7 +4,10 @@ import Link from "next/link";
 import { createPortal } from "react-dom";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { KoBrandLogo } from "./KoBrandLogo";
-import { KO_POLICY_LINKS, KO_SITE_NAV_LINKS, KO_TEST_CATEGORY_LINKS } from "./koSiteNavLinks";
+import { KO_POLICY_LINKS, KO_PRIMARY_NAV_LIVE, KO_SITE_NAV_LINKS } from "./koSiteNavLinks";
+
+/** 햄버거 '테스트' 섹션 — 공유 내비에서 홈(전체)만 제외 (홈은 로고로 이동) */
+const KO_TEST_CATEGORY_LINKS = KO_PRIMARY_NAV_LIVE.filter((item) => item.key !== "home");
 
 export type KoHeaderSymbolMenuProps = {
   open: boolean;

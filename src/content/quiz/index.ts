@@ -2,6 +2,17 @@ import type { PercentageQuizDefinition } from "@/components/quiz/percentageTypes
 import type { SnackQuizDefinition } from "@/components/quiz/types";
 import ambiguousSituationshipEnd from "./ambiguous-situationship-end.json";
 import angerStyleTest from "./anger-style-test.json";
+import colorMoodOnepick from "./color-mood-onepick.json";
+import doorNeedOnepick from "./door-need-onepick.json";
+import dessertLoveOnepick from "./dessert-love-onepick.json";
+import nightSkyMoodOnepick from "./night-sky-mood-onepick.json";
+import islandValueOnepick from "./island-value-onepick.json";
+import flowerCharmOnepick from "./flower-charm-onepick.json";
+import emojiCrushOnepick from "./emoji-crush-onepick.json";
+import weatherRelationshipOnepick from "./weather-relationship-onepick.json";
+import cafeSeatOnepick from "./cafe-seat-onepick.json";
+import dollLoveOnepick from "./doll-love-onepick.json";
+import travelNeedOnepick from "./travel-need-onepick.json";
 import confessionSuccessRate from "./confession-success-rate.json";
 import datingExpertOrBeginner from "./dating-expert-or-beginner.json";
 import emotionalSensitivity from "./emotional-sensitivity.json";
@@ -9,6 +20,7 @@ import hiddenDarkSide from "./hidden-dark-side.json";
 import leaderOrSupporter from "./leader-or-supporter.json";
 import loveTemperatureTest from "./love-temperature-test.json";
 import mentalStrengthTest from "./mental-strength-test.json";
+import personalityPsychologyTest from "./personality-psychology-test.json";
 import plannerOrSpontaneous from "./planner-or-spontaneous.json";
 import selfEsteemLevel from "./self-esteem-level.json";
 import logicalOrEmotional from "./logical-or-emotional.json";
@@ -37,6 +49,30 @@ export const quizMentalStrengthTest = mentalStrengthTest as SnackQuizDefinition;
 
 export const quizEmotionalSensitivity = emotionalSensitivity as SnackQuizDefinition;
 
+export const quizPersonalityPsychologyTest = personalityPsychologyTest as SnackQuizDefinition;
+
+/** 원픽 테스트 샘플 — 1문항(이미지 보기 4개) → 결과 1:1 */
+export const quizColorMoodOnepick = colorMoodOnepick as SnackQuizDefinition;
+export const quizDoorNeedOnepick = doorNeedOnepick as SnackQuizDefinition;
+
+export const quizDessertLoveOnepick = dessertLoveOnepick as SnackQuizDefinition;
+
+export const quizNightSkyMoodOnepick = nightSkyMoodOnepick as SnackQuizDefinition;
+
+export const quizIslandValueOnepick = islandValueOnepick as SnackQuizDefinition;
+
+export const quizFlowerCharmOnepick = flowerCharmOnepick as SnackQuizDefinition;
+
+export const quizEmojiCrushOnepick = emojiCrushOnepick as SnackQuizDefinition;
+
+export const quizWeatherRelationshipOnepick = weatherRelationshipOnepick as SnackQuizDefinition;
+
+export const quizCafeSeatOnepick = cafeSeatOnepick as SnackQuizDefinition;
+
+export const quizDollLoveOnepick = dollLoveOnepick as SnackQuizDefinition;
+
+export const quizTravelNeedOnepick = travelNeedOnepick as SnackQuizDefinition;
+
 export const quizTrueSelfAlone = trueSelfAlone as SnackQuizDefinition;
 
 export const quizTrustLevelTest = trustLevelTest as SnackQuizDefinition;
@@ -61,6 +97,17 @@ export const quizSelfEsteemLevel = selfEsteemLevel as PercentageQuizDefinition;
 
 /** 스낵 퀴즈(최다득표형) — 결과 이미지 갤러리·`/ko/love/[slug]/results/` 라우트용 */
 export const snackQuizDefinitionsCatalog: SnackQuizDefinition[] = [
+  quizColorMoodOnepick,
+  quizDoorNeedOnepick,
+  quizDessertLoveOnepick,
+  quizNightSkyMoodOnepick,
+  quizIslandValueOnepick,
+  quizFlowerCharmOnepick,
+  quizEmojiCrushOnepick,
+  quizWeatherRelationshipOnepick,
+  quizCafeSeatOnepick,
+  quizDollLoveOnepick,
+  quizTravelNeedOnepick,
   quizWhoLikesYouType,
   quizAmbiguousSituationshipEnd,
   quizWhyCantYouTextFirst,
@@ -70,6 +117,7 @@ export const snackQuizDefinitionsCatalog: SnackQuizDefinition[] = [
   quizAngerStyleTest,
   quizMentalStrengthTest,
   quizEmotionalSensitivity,
+  quizPersonalityPsychologyTest,
   quizTrueSelfAlone,
   quizTrustLevelTest,
   quizLovePatternDestroyingHabit,
@@ -81,6 +129,17 @@ export const snackQuizDefinitionsCatalog: SnackQuizDefinition[] = [
  * 정렬은 각 JSON의 `card.priority`(클수록 앞)로 `getKoHomeRailSorted`에서 처리합니다.
  */
 export const koQuizCatalogForHome: (SnackQuizDefinition | PercentageQuizDefinition)[] = [
+  quizColorMoodOnepick,
+  quizDoorNeedOnepick,
+  quizDessertLoveOnepick,
+  quizNightSkyMoodOnepick,
+  quizIslandValueOnepick,
+  quizFlowerCharmOnepick,
+  quizEmojiCrushOnepick,
+  quizWeatherRelationshipOnepick,
+  quizCafeSeatOnepick,
+  quizDollLoveOnepick,
+  quizTravelNeedOnepick,
   quizWhoLikesYouType,
   quizAmbiguousSituationshipEnd,
   quizWhyCantYouTextFirst,
@@ -96,6 +155,7 @@ export const koQuizCatalogForHome: (SnackQuizDefinition | PercentageQuizDefiniti
   quizAngerStyleTest,
   quizMentalStrengthTest,
   quizEmotionalSensitivity,
+  quizPersonalityPsychologyTest,
   quizTrueSelfAlone,
   quizTrustLevelTest,
   quizLovePatternDestroyingHabit,

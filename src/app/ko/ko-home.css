@@ -2347,6 +2347,11 @@
   max-width: var(--quiz-col);
 }
 
+/* 원픽: 인트로가 없으므로 커버를 quiz-shell 폭(=quiz-col)에 맞춰 크게 */
+.momopick-ko .quiz-page:has(.quiz-intro-body--onepick) .quiz-cover {
+  max-width: var(--quiz-col);
+}
+
 /* 결과·결과 로딩: 상단 대표 커버 썸네일 숨김 */
 .momopick-ko .quiz-page:has(.quiz-result-card) .quiz-cover,
 .momopick-ko .quiz-page:has(.quiz-shell--result-loading) .quiz-cover {
@@ -2560,6 +2565,43 @@
 .momopick-ko .quiz-opt-label {
   position: relative;
   z-index: 1;
+}
+
+/* 원픽 등 이미지 보기 — 카드 그리드 */
+.momopick-ko .quiz-options--grid {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.momopick-ko .quiz-options--grid > li {
+  flex: 1 1 calc(50% - 5px);
+  min-width: calc(50% - 5px);
+  display: flex;
+}
+
+.momopick-ko .quiz-opt--card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.momopick-ko .quiz-opt-thumb {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.momopick-ko .quiz-opt-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .momopick-ko .quiz-opt--picking {

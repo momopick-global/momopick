@@ -1,0 +1,221 @@
+{
+  "id": "door-need-onepick",
+  "slug": "door-need-onepick",
+  "locales": [
+    "ko"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "원픽",
+      "en": ""
+    },
+    {
+      "ko": "심리",
+      "en": ""
+    },
+    {
+      "ko": "감정",
+      "en": ""
+    },
+    {
+      "ko": "자기이해",
+      "en": ""
+    }
+  ],
+  "title": {
+    "ko": "오늘 열고 싶은 문은?",
+    "en": ""
+  },
+  "subtitle": {
+    "ko": "무심코 끌린 문 하나가 지금 내 마음을 알려줘요",
+    "en": ""
+  },
+  "images": {
+    "thumbnail": "/images/common/quiz-image-pending.webp",
+    "og": "/images/common/quiz-image-pending.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "네 개의 문 중 지금 가장 끌리는 하나로, 요즘 내 마음이 진짜 바라는 걸 알아보는 원픽 심리 테스트.",
+      "en": ""
+    },
+    "ogTitle": {
+      "ko": "오늘 열고 싶은 문은?",
+      "en": ""
+    },
+    "ogDescription": {
+      "ko": "무심코 끌린 문 하나가 지금 내 마음을 알려줘요",
+      "en": ""
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🎯 원픽 테스트",
+      "en": ""
+    },
+    "image": "/images/common/quiz-image-pending.webp",
+    "priority": 79
+  },
+  "resultKeys": [
+    "rest",
+    "thrill",
+    "connect",
+    "achieve"
+  ],
+  "resultOrder": [
+    "rest",
+    "thrill",
+    "connect",
+    "achieve"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "고른 하나가 곧 결과입니다(원픽).",
+      "en": ""
+    },
+    "blendOnTie": false
+  },
+  "analytics": {
+    "eventKey": "door_need_onepick",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "color-mood-onepick"
+  ],
+  "results": {
+    "rest": {
+      "emoji": "🌙",
+      "scoreKey": "rest",
+      "title": {
+        "ko": "휴식형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "지금은 쉼표가 필요한 때",
+        "en": ""
+      },
+      "body": {
+        "ko": "요즘 마음이 조금 지쳐 있는지도 몰라요. 이런 타입은 새로운 자극보다 편안한 쉼과 재충전이 필요한 경향이 있어요. 억지로 더 해내려 하기보다, 오늘은 나를 조금 놓아주는 시간을 가져보세요. 잘 쉬는 것도 앞으로 나아가는 힘이 돼요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "thrill": {
+      "emoji": "✨",
+      "scoreKey": "thrill",
+      "title": {
+        "ko": "설렘형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "새로운 자극이 그리운 때",
+        "en": ""
+      },
+      "body": {
+        "ko": "지금 당신은 익숙한 일상보다 새로운 변화나 설렘을 바라고 있는지도 몰라요. 이런 타입은 작은 도전이나 낯선 경험에서 에너지를 얻는 경향이 있어요. 오늘은 평소 안 가던 길로 걸어보거나, 미뤄둔 걸 하나 시도해 보세요. 작은 변화가 기분을 바꿔줄 거예요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "connect": {
+      "emoji": "💛",
+      "scoreKey": "connect",
+      "title": {
+        "ko": "연결형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "마음을 나누고 싶은 때",
+        "en": ""
+      },
+      "body": {
+        "ko": "요즘 누군가와 마음을 나누고 싶은 마음이 큰 상태일 수 있어요. 이런 타입은 혼자보다 관계 속에서 안정을 느끼는 경향이 있어요. 오늘은 오래 연락 못 한 사람에게 먼저 안부를 건네보는 건 어때요? 작은 연결 하나가 큰 위로가 되기도 해요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "achieve": {
+      "emoji": "🌟",
+      "scoreKey": "achieve",
+      "title": {
+        "ko": "인정형",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "인정받고 싶은 때",
+        "en": ""
+      },
+      "body": {
+        "ko": "지금 당신은 스스로의 노력을 누군가 알아봐 주길 바라는 마음이 있는지도 몰라요. 이런 타입은 성취와 인정에서 힘을 얻는 경향이 있어요. 오늘은 작더라도 해낸 일 하나를 스스로 칭찬해 주세요. 남의 인정만큼 내 인정도 소중해요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": ""
+    },
+    "tagline": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "지금 가장 열어보고 싶은 문은?",
+        "en": ""
+      },
+      "options": [
+        {
+          "key": "rest",
+          "label": {
+            "ko": "1번 선택 (노을빛 문)",
+            "en": ""
+          }
+        },
+        {
+          "key": "thrill",
+          "label": {
+            "ko": "2번 선택 (별빛 문)",
+            "en": ""
+          }
+        },
+        {
+          "key": "connect",
+          "label": {
+            "ko": "3번 선택 (불빛 문)",
+            "en": ""
+          }
+        },
+        {
+          "key": "achieve",
+          "label": {
+            "ko": "4번 선택 (아침햇살 문)",
+            "en": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 심리 테스트예요. 결과는 참고용입니다.",
+    "en": ""
+  }
+}

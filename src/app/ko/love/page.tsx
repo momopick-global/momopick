@@ -7,7 +7,10 @@ import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { BackButton } from "@/components/ko/BackButton";
 import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
 
-const loveAll = getKoLoveQuizzesSorted("ko");
+// 허브 목록은 영문 슬러그 알파벳순으로 노출 (홈 레일은 기존 priority 정렬 유지)
+const loveAll = getKoLoveQuizzesSorted("ko")
+  .slice()
+  .sort((a, b) => a.slug.localeCompare(b.slug));
 
 export const metadata: Metadata = {
   title: "썸·연애 테스트 모아보기 | 모모픽",
@@ -55,8 +58,7 @@ export default function KoLoveHubPage() {
               <h1 id="hub-love-title">💌 썸·연애 테스트</h1>
             </div>
             <p className="sec-lead">
-              홈 메인 썸·연애 섹션과 같은 목록입니다. 콘텐츠 JSON에서 <strong>category: love</strong>인 테스트를
-              카드 우선순위(높을수록 앞)로 정렬해 두었어요.
+              콘텐츠 JSON에서 <strong>category: love</strong>인 테스트를 슬러그 알파벳순으로 정렬해 두었어요.
             </p>
             <KoLoveQuizListView items={loveAll} />
           </section>

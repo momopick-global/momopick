@@ -81,6 +81,22 @@ export function getKoLoveQuizzesSorted(locale: string): KoHomeRailItem[] {
     .sort((a, b) => b.priority - a.priority);
 }
 
+/**
+ * 원픽 테스트 판별 — "1문항" 형식을 데이터에서 자동 판별한다.
+ * 별도 `category`/플래그를 두지 않으므로, 문항이 1개인 퀴즈를 만들면 자동으로 원픽에 편입된다.
+ */
+export function isOnePickQuiz(def: SnackQuizDefinition | PercentageQuizDefinition): boolean {
+  return (def.questions?.length ?? 0) === 1;
+}
+
+/** `/ko/onepick/` 용 — 문항 1개짜리 퀴즈만, 홈 레일과 동일하게 priority 내림차순 */
+export function getKoOnePickQuizzesSorted(locale: string): KoHomeRailItem[] {
+  return koQuizCatalogForHome
+    .filter(isOnePickQuiz)
+    .map((d) => toRailItem(d, locale))
+    .sort((a, b) => b.priority - a.priority);
+}
+
 /** `/ko/love/` 허브 목록형과 동일 정렬에서 `excludeHref` 제외 후 상위 N개 */
 export function getKoLoveMoreQuizzes(locale: string, excludeHref: string, limit = 4): KoHomeRailItem[] {
   return getKoLoveQuizzesSorted(locale)

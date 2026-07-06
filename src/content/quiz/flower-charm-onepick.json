@@ -1,0 +1,273 @@
+{
+  "id": "flower-charm-onepick",
+  "slug": "flower-charm-onepick",
+  "locales": [
+    "ko"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "원픽",
+      "en": ""
+    },
+    {
+      "ko": "매력",
+      "en": ""
+    },
+    {
+      "ko": "심리",
+      "en": ""
+    },
+    {
+      "ko": "성격",
+      "en": ""
+    }
+  ],
+  "title": {
+    "ko": "눈길이 먼저 가는 꽃은?",
+    "en": ""
+  },
+  "subtitle": {
+    "ko": "눈이 먼저 가는 꽃이 나도 몰랐던 매력을 알려줘요",
+    "en": ""
+  },
+  "images": {
+    "thumbnail": "/images/common/quiz-image-pending.webp",
+    "og": "/images/common/quiz-image-pending.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "여섯 송이 꽃 중 눈길이 먼저 가는 하나로, 나의 매력 포인트를 알아보는 원픽 테스트.",
+      "en": ""
+    },
+    "ogTitle": {
+      "ko": "눈길이 먼저 가는 꽃은?",
+      "en": ""
+    },
+    "ogDescription": {
+      "ko": "눈이 먼저 가는 꽃이 나도 몰랐던 매력을 알려줘요",
+      "en": ""
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🎯 원픽 테스트",
+      "en": ""
+    },
+    "image": "/images/common/quiz-image-pending.webp",
+    "priority": 75
+  },
+  "resultKeys": [
+    "warmth",
+    "humor",
+    "intellect",
+    "mystery",
+    "stability",
+    "passion"
+  ],
+  "resultOrder": [
+    "warmth",
+    "humor",
+    "intellect",
+    "mystery",
+    "stability",
+    "passion"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "고른 하나가 곧 결과입니다(원픽).",
+      "en": ""
+    },
+    "blendOnTie": false
+  },
+  "analytics": {
+    "eventKey": "flower_charm_onepick",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "color-mood-onepick"
+  ],
+  "results": {
+    "warmth": {
+      "emoji": "🌻",
+      "scoreKey": "warmth",
+      "title": {
+        "ko": "따뜻함",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "곁에 있으면 마음이 편해지는 매력",
+        "en": ""
+      },
+      "body": {
+        "ko": "당신의 매력은 따뜻함이에요. 이런 타입은 함께 있으면 편안하고 기분이 좋아지는 분위기를 가진 경향이 있어요. 사람들이 자연스레 곁에 머물고 싶어 하죠. 그 온기를 스스로도 알아봐 주면, 매력이 더 환하게 빛나요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "humor": {
+      "emoji": "🌼",
+      "scoreKey": "humor",
+      "title": {
+        "ko": "유머",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "함께 있으면 웃게 되는 매력",
+        "en": ""
+      },
+      "body": {
+        "ko": "당신의 매력은 유머예요. 이런 타입은 분위기를 밝게 만들고 사람들을 웃게 하는 재치를 가진 경향이 있어요. 무거운 순간도 가볍게 풀어주죠. 그 경쾌함이 큰 매력이지만, 진지한 마음도 가끔은 솔직히 보여주면 더 깊이 통해요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "intellect": {
+      "emoji": "💜",
+      "scoreKey": "intellect",
+      "title": {
+        "ko": "지적매력",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "대화할수록 빠져드는 매력",
+        "en": ""
+      },
+      "body": {
+        "ko": "당신의 매력은 지적인 깊이예요. 이런 타입은 생각이 깊고 대화를 나눌수록 매력이 드러나는 경향이 있어요. 차분한 통찰이 사람들의 호기심을 끌죠. 그 지성을 뽐내지 않아도 자연스레 전해지니, 편하게 당신다운 이야기를 들려주세요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "mystery": {
+      "emoji": "🖤",
+      "scoreKey": "mystery",
+      "title": {
+        "ko": "신비로움",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "더 알고 싶어지는 매력",
+        "en": ""
+      },
+      "body": {
+        "ko": "당신의 매력은 신비로움이에요. 이런 타입은 쉽게 속을 다 보여주지 않아 궁금증을 자아내는 분위기를 가진 경향이 있어요. 사람들이 더 알고 싶어 다가오죠. 그 여백이 매력이지만, 마음을 연 사람에겐 조금 더 보여줘도 관계가 깊어져요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "stability": {
+      "emoji": "🤍",
+      "scoreKey": "stability",
+      "title": {
+        "ko": "안정감",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "함께 있으면 든든해지는 매력",
+        "en": ""
+      },
+      "body": {
+        "ko": "당신의 매력은 안정감이에요. 이런 타입은 곁에 있으면 마음이 놓이고 신뢰가 가는 분위기를 가진 경향이 있어요. 요란하지 않아도 은은하게 오래 남죠. 그 차분한 매력이 큰 강점이니, 당신의 그 편안함을 자신 있게 여겨도 좋아요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "passion": {
+      "emoji": "🌹",
+      "scoreKey": "passion",
+      "title": {
+        "ko": "열정",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "눈길을 사로잡는 강렬한 매력",
+        "en": ""
+      },
+      "body": {
+        "ko": "당신의 매력은 열정이에요. 이런 타입은 생기와 에너지가 넘쳐 시선을 사로잡는 존재감을 가진 경향이 있어요. 좋아하는 것에 몰입하는 모습이 특히 빛나죠. 그 뜨거움이 큰 매력이니, 그대로의 당신을 마음껏 드러내 보세요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": ""
+    },
+    "tagline": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "눈길이 먼저 가는 꽃은?",
+        "en": ""
+      },
+      "options": [
+        {
+          "key": "warmth",
+          "label": {
+            "ko": "1번 선택 (해바라기)",
+            "en": ""
+          }
+        },
+        {
+          "key": "humor",
+          "label": {
+            "ko": "2번 선택 (프리지아)",
+            "en": ""
+          }
+        },
+        {
+          "key": "intellect",
+          "label": {
+            "ko": "3번 선택 (라벤더)",
+            "en": ""
+          }
+        },
+        {
+          "key": "mystery",
+          "label": {
+            "ko": "4번 선택 (다크 로즈)",
+            "en": ""
+          }
+        },
+        {
+          "key": "stability",
+          "label": {
+            "ko": "5번 선택 (안개꽃)",
+            "en": ""
+          }
+        },
+        {
+          "key": "passion",
+          "label": {
+            "ko": "6번 선택 (붉은 장미)",
+            "en": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 심리 테스트예요. 결과는 참고용입니다.",
+    "en": ""
+  }
+}

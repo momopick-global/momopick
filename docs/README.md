@@ -36,11 +36,26 @@
 
 ---
 
+## 퀴즈 작업 바로가기
+
+퀴즈 제목, 결과, 이미지 프롬프트, 캐릭터 자료를 한 번에 보려면 아래 문서를 먼저 보면 됩니다.
+
+1. [quiz-docs-hub.md](./quiz-docs-hub.md) — 퀴즈 관련 중앙 목차
+2. [quiz-title-results.md](./quiz-title-results.md) — 퀴즈 제목/결과 기준표
+3. [quiz-image-prompts.md](./quiz-image-prompts.md) — 대표/결과 이미지 프롬프트 기준
+4. [character-profile-prompts.md](./character-profile-prompts.md) — 고정 캐릭터/동물 마스코트 기준
+
+---
+
 ## 전체 문서 구조
 
 ```
 docs/
 ├─ README.md                   ← 이 파일
+├─ quiz-docs-hub.md            퀴즈 문서 중앙 목차
+├─ quiz-title-results.md       퀴즈 제목·결과 기준표
+├─ quiz-image-prompts.md       퀴즈 이미지 프롬프트 기준
+├─ character-profile-prompts.md 캐릭터·마스코트 프롬프트
 ├─ project/
 │  ├─ overview.md              서비스 개요·라우트·기술 스택
 │  ├─ current-status.md        커밋·도메인·배포·최근 작업

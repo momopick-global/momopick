@@ -1,0 +1,221 @@
+{
+  "id": "weather-relationship-onepick",
+  "slug": "weather-relationship-onepick",
+  "locales": [
+    "ko"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "원픽",
+      "en": ""
+    },
+    {
+      "ko": "연애",
+      "en": ""
+    },
+    {
+      "ko": "감정",
+      "en": ""
+    },
+    {
+      "ko": "관계",
+      "en": ""
+    }
+  ],
+  "title": {
+    "ko": "창밖 날씨 중 지금 나는?",
+    "en": ""
+  },
+  "subtitle": {
+    "ko": "지금 끌리는 날씨가 요즘 내 연애 기류를 알려줘요",
+    "en": ""
+  },
+  "images": {
+    "thumbnail": "/images/common/quiz-image-pending.webp",
+    "og": "/images/common/quiz-image-pending.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "네 가지 날씨 중 지금 내 마음 같은 하나로, 요즘 연애 기류를 돌아보는 원픽 테스트.",
+      "en": ""
+    },
+    "ogTitle": {
+      "ko": "창밖 날씨 중 지금 나는?",
+      "en": ""
+    },
+    "ogDescription": {
+      "ko": "지금 끌리는 날씨가 요즘 내 연애 기류를 알려줘요",
+      "en": ""
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "🎯 원픽 테스트",
+      "en": ""
+    },
+    "image": "/images/common/quiz-image-pending.webp",
+    "priority": 73
+  },
+  "resultKeys": [
+    "clear",
+    "cloudy",
+    "rain",
+    "wind"
+  ],
+  "resultOrder": [
+    "clear",
+    "cloudy",
+    "rain",
+    "wind"
+  ],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "고른 하나가 곧 결과입니다(원픽).",
+      "en": ""
+    },
+    "blendOnTie": false
+  },
+  "analytics": {
+    "eventKey": "weather_relationship_onepick",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "color-mood-onepick"
+  ],
+  "results": {
+    "clear": {
+      "emoji": "☀️",
+      "scoreKey": "clear",
+      "title": {
+        "ko": "맑음",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "안정되고 만족스러운 기류",
+        "en": ""
+      },
+      "body": {
+        "ko": "요즘 당신의 연애 기류는 맑음이에요. 큰 흔들림 없이 안정되고 서로에게 만족을 느끼는 시기일 수 있어요. 이런 때는 그 편안함을 당연하게 여기지 말고, 작은 고마움을 한 번씩 표현해 주면 맑은 날이 더 오래가요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "cloudy": {
+      "emoji": "☁️",
+      "scoreKey": "cloudy",
+      "title": {
+        "ko": "흐림",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "조금 무뎌지고 불확실한 기류",
+        "en": ""
+      },
+      "body": {
+        "ko": "요즘 당신의 연애 기류는 살짝 흐림일 수 있어요. 익숙해지며 설렘이 무뎌지거나, 마음이 조금 불확실해지는 시기죠. 이런 땐 크게 걱정하기보다, 함께 새로운 걸 해보거나 솔직한 대화를 나누면 흐림이 걷히기도 해요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "rain": {
+      "emoji": "🌧️",
+      "scoreKey": "rain",
+      "title": {
+        "ko": "비",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "마음이 조금 젖어드는 기류",
+        "en": ""
+      },
+      "body": {
+        "ko": "요즘 당신의 연애 기류는 비가 내리는 것 같을 수 있어요. 작은 서운함이나 상처로 마음이 촉촉해지는 시기죠. 이런 감정도 관계의 자연스러운 한 부분이에요. 비가 그치면 공기가 맑아지듯, 마음을 나누다 보면 한결 개운해질 거예요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    },
+    "wind": {
+      "emoji": "🍃",
+      "scoreKey": "wind",
+      "title": {
+        "ko": "바람",
+        "en": ""
+      },
+      "tagline": {
+        "ko": "변화의 설렘이 부는 기류",
+        "en": ""
+      },
+      "body": {
+        "ko": "요즘 당신의 연애 기류엔 바람이 불고 있어요. 새로운 설렘이나 변화의 조짐이 느껴지는 시기죠. 그 산뜻한 바람은 관계에 활력을 주기도 해요. 어디로 부는 바람인지 가만히 느껴보면, 지금 내 마음이 바라는 방향이 보일 거예요.",
+        "en": ""
+      },
+      "image": "/images/common/quiz-image-pending.webp"
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": {
+      "ko": "복합형",
+      "en": ""
+    },
+    "tagline": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "지금 내 마음 같은 창밖 날씨는?",
+        "en": ""
+      },
+      "options": [
+        {
+          "key": "clear",
+          "label": {
+            "ko": "1번 선택 (맑음)",
+            "en": ""
+          }
+        },
+        {
+          "key": "cloudy",
+          "label": {
+            "ko": "2번 선택 (흐림)",
+            "en": ""
+          }
+        },
+        {
+          "key": "rain",
+          "label": {
+            "ko": "3번 선택 (비)",
+            "en": ""
+          }
+        },
+        {
+          "key": "wind",
+          "label": {
+            "ko": "4번 선택 (바람)",
+            "en": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 심리 테스트예요. 결과는 참고용입니다.",
+    "en": ""
+  }
+}

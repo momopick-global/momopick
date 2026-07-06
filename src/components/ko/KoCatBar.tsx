@@ -3,59 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-
-type ChipItem = {
-  href: string;
-  label: string;
-  className: string;
-  matchFn: (p: string) => boolean;
-};
-
-const chips: ChipItem[] = [
-  {
-    href: "/ko/",
-    label: "전체",
-    className: "chip chip--default",
-    matchFn: (p) => p === "/ko" || p === "/ko/",
-  },
-  {
-    href: "/ko/onepick/",
-    label: "원픽 테스트",
-    className: "chip chip--default",
-    matchFn: (p) => p.startsWith("/ko/onepick"),
-  },
-  {
-    href: "/ko/personality-test/",
-    label: "성향 테스트",
-    className: "chip chip--default",
-    matchFn: (p) =>
-      p.startsWith("/ko/personality-test") ||
-      // 성향 테스트 카테고리 페이지(/ko/love/ 등)에서도 활성 표시
-      p.startsWith("/ko/love") ||
-      p.startsWith("/ko/personality/") ||
-      p.startsWith("/ko/social") ||
-      p.startsWith("/ko/style") ||
-      p.startsWith("/ko/fun"),
-  },
-  {
-    href: "/ko/explore/",
-    label: "검색",
-    className: "chip chip--default",
-    matchFn: (p) => p.startsWith("/ko/explore"),
-  },
-  {
-    href: "/ko/tag/",
-    label: "태그",
-    className: "chip chip--default",
-    matchFn: (p) => p.startsWith("/ko/tag"),
-  },
-  {
-    href: "/ko/notice/",
-    label: "공지",
-    className: "chip chip--default",
-    matchFn: (p) => p.startsWith("/ko/notice"),
-  },
-];
+import { KO_PRIMARY_NAV_LIVE, isKoNavActive } from "./koSiteNavLinks";
 
 /** 스크롤 내릴 때 숨고, 올릴 때 다시 나타나는 카테고리 바 */
 export function KoCatBar() {
@@ -93,16 +41,16 @@ export function KoCatBar() {
       aria-label="카테고리 빠른 이동"
     >
       <div className="cat-bar__inner">
-        {chips.map((chip) => {
-          const active = chip.matchFn(pathname);
+        {KO_PRIMARY_NAV_LIVE.map((item) => {
+          const active = isKoNavActive(item, pathname);
           return (
             <Link
-              key={chip.href}
-              className={chip.className}
-              href={chip.href}
+              key={item.key}
+              className="chip chip--default"
+              href={item.href}
               aria-current={active ? "true" : undefined}
             >
-              {chip.label}
+              {item.chipLabel}
             </Link>
           );
         })}

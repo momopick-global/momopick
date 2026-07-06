@@ -6,26 +6,18 @@ import { KoFooterNav } from "@/components/ko/KoFooterNav";
 import { BackButton } from "@/components/ko/BackButton";
 import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
 import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
+import { quizPersonalityPsychologyTest } from "@/content/quiz";
+import { pickQuizText } from "@/components/quiz/types";
+import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
+import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 
 const SECTION_LIMIT = 12;
 const loveItems = getKoLoveQuizzesSorted("ko").slice(0, SECTION_LIMIT);
-
-/** 카테고리 in-page nav 항목. href는 같은 페이지 anchor */
-const categoryNav: readonly { id: string; label: string }[] = [
-  { id: "cat-love", label: "💌 연애" },
-  { id: "cat-personality", label: "🧠 성격 심리" },
-  { id: "cat-social", label: "👥 소셜" },
-  { id: "cat-style", label: "🎨 스타일" },
-  { id: "cat-fun", label: "🎲 재미" },
-];
-
-/** 콘텐츠가 아직 없는 카테고리 (404 라우트라 더보기 버튼 X) */
-const emptyCategories: readonly { id: string; label: string }[] = [
-  { id: "cat-personality", label: "🧠 성격 심리" },
-  { id: "cat-social", label: "👥 소셜" },
-  { id: "cat-style", label: "🎨 스타일" },
-  { id: "cat-fun", label: "🎲 재미" },
-];
+const personalityItems = loveItems.filter((item) =>
+  ["personality-psychology-test", "true-self-alone", "mental-strength-test", "emotional-sensitivity"].includes(
+    item.slug,
+  ),
+);
 
 export const metadata: Metadata = {
   title: "성향 테스트 모아보기 | 모모픽",
@@ -52,6 +44,9 @@ export const metadata: Metadata = {
 };
 
 export default function KoPersonalityTestHubPage() {
+  const pack = quizPersonalityPsychologyTest;
+  const title = pickQuizText("ko", pack.title) || "나의 성격·심리 분석은?";
+  const subtitle = pickQuizText("ko", pack.subtitle) || "내 성격이 드러나는 순간 분석";
   return (
     <>
       <KoSiteHeader />
@@ -72,67 +67,57 @@ export default function KoPersonalityTestHubPage() {
               <h1 id="ptest-title">🧭 성향 테스트</h1>
             </div>
             <p className="sec-lead">
-              8~10문항을 풀고 3~4가지 유형으로 결과가 나오는 기존 모모픽 테스트입니다.
-              카테고리별로 모아 두었어요.
+              성격과 심리 반응을 가볍게 살펴보는 테스트를 모아 둔 목차예요.
             </p>
-
-            {/* 카테고리 in-page anchor 네비 — 같은 페이지 내 섹션으로 스크롤. 404 없음. */}
-            <nav
-              className="ptest-cat-nav"
-              aria-label="카테고리 빠른 이동"
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 8,
-                margin: "12px 0 24px",
-              }}
-            >
-              {categoryNav.map((c) => (
-                <a
-                  key={c.id}
-                  href={`#${c.id}`}
-                  className="chip chip--default"
-                  style={{ textDecoration: "none" }}
-                >
-                  {c.label}
-                </a>
-              ))}
-            </nav>
           </section>
 
-          {/* 연애 — 콘텐츠 있음. KoLoveQuizListView로 12개 + 더보기 */}
-          <section
-            id="cat-love"
-            className="section section--love hub-love"
-            aria-labelledby="cat-love-title"
-            style={{ scrollMarginTop: "calc(var(--ko-header-h) + 16px)" }}
-          >
+          <section className="section" aria-labelledby="featured-personality-title">
             <div className="sec-hd">
-              <h2 id="cat-love-title">💌 연애</h2>
+              <h2 id="featured-personality-title">🧠 대표 테스트</h2>
             </div>
-            <KoLoveQuizListView items={loveItems} />
+            <div className="tile-grid">
+              <Link className="tile tile--love" href="/ko/love/personality-psychology-test/">
+                <div className="thumb">
+                  <span className="badge">NEW</span>
+                  <QuizImageWithFallback
+                    src={quizAssetUrl(pack.images?.thumbnail || "/images/common/quiz-image-pending.webp", "ko")}
+                    alt=""
+                    width={1024}
+                    height={1024}
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <span className="thumb-slug" aria-hidden="true">
+                    personality-psychology-test
+                  </span>
+                </div>
+                <div className="body">
+                  <b>{title}</b>
+                  <small>{subtitle}</small>
+                </div>
+              </Link>
+            </div>
             <div className="cta-row" style={{ marginTop: 20 }}>
-              <Link className="btn primary sm" href="/ko/love/">
-                연애 테스트 더보기 →
+              <Link className="btn primary sm" href="/ko/love/personality-psychology-test/">
+                바로 시작하기 →
               </Link>
             </div>
           </section>
 
-          {/* 콘텐츠 0개 카테고리 — 섹션 헤더 + 안내 문구. 더보기 버튼 없음. */}
-          {emptyCategories.map((c) => (
-            <section
-              key={c.id}
-              id={c.id}
-              className="section"
-              aria-labelledby={`${c.id}-title`}
-              style={{ scrollMarginTop: "calc(var(--ko-header-h) + 16px)" }}
-            >
-              <div className="sec-hd">
-                <h2 id={`${c.id}-title`}>{c.label}</h2>
-              </div>
-              <p className="sec-lead">곧 새로운 테스트가 추가될 예정입니다.</p>
-            </section>
-          ))}
+          <section className="section section--love hub-love" aria-labelledby="cat-love-title">
+            <div className="sec-hd">
+              <h2 id="cat-love-title">💌 관련 테스트</h2>
+            </div>
+            <p className="sec-lead">
+              성격·심리와 결이 비슷한 테스트를 함께 모아봤어요.
+            </p>
+            <KoLoveQuizListView items={personalityItems.length ? personalityItems : loveItems.slice(0, 4)} />
+            <div className="cta-row" style={{ marginTop: 20 }}>
+              <Link className="btn primary sm" href="/ko/love/">
+                전체 테스트 보기 →
+              </Link>
+            </div>
+          </section>
         </main>
 
         <KoFooterNav />

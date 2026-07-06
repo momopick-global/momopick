@@ -13,6 +13,7 @@ import {
   quizHiddenDarkSide,
   quizLeaderOrSupporter,
   quizMentalStrengthTest,
+  quizPersonalityPsychologyTest,
   quizTrueSelfAlone,
   quizTrustLevelTest,
   quizLovePatternDestroyingHabit,
@@ -39,6 +40,7 @@ const koByKey: Record<string, SnackQuizDefinition> = {
   "ko/love/anger-style-test": quizAngerStyleTest,
   "ko/love/mental-strength-test": quizMentalStrengthTest,
   "ko/love/emotional-sensitivity": quizEmotionalSensitivity,
+  "ko/love/personality-psychology-test": quizPersonalityPsychologyTest,
   "ko/love/true-self-alone": quizTrueSelfAlone,
   "ko/love/trust-level-test": quizTrustLevelTest,
 };

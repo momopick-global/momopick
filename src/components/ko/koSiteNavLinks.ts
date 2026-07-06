@@ -1,11 +1,52 @@
-/** 헤더 심볼 메뉴 테스트 카테고리 링크 (emoji는 햄버거 메뉴 표시용, 푸터는 label만 사용) */
-export const KO_TEST_CATEGORY_LINKS: readonly { href: string; label: string; emoji: string }[] = [
-  { href: "/ko/explore/", label: "지금 뜨는 테스트", emoji: "✨" },
-  { href: "/ko/love/", label: "썸·연애 테스트", emoji: "💗" },
-  { href: "/ko/personality/", label: "성격·심리 테스트", emoji: "🧠" },
-  { href: "/ko/social/", label: "소셜 테스트", emoji: "👥" },
-  { href: "/ko/style/", label: "스타일 테스트", emoji: "🎨" },
+/**
+ * 기본 내비게이션 단일 소스 (Single Source of Truth).
+ * 카테고리 바(KoCatBar)와 햄버거 메뉴(KoHeaderSymbolMenu)가 모두 이 목록을 참조한다.
+ * 여기만 고치면 두 메뉴가 함께 바뀌므로 다시 어긋나지 않는다.
+ *
+ * - `live: false` 항목은 콘텐츠·라우트가 준비되기 전까지 메뉴에서 숨긴다 (404 방지).
+ * - 원픽은 "1문항" 형식이라 별도 카테고리가 아니라 `questions.length === 1`로 자동 판별한다.
+ *   (판별 헬퍼는 `lib/content/homeRail.ts`의 `isOnePickQuiz` 참고)
+ */
+export type KoPrimaryNavItem = {
+  key: string;
+  href: string;
+  /** 햄버거 메뉴용 풀 라벨 */
+  label: string;
+  /** 카테고리 바(칩)용 짧은 라벨 */
+  chipLabel: string;
+  emoji: string;
+  live: boolean;
+  /** 활성 표시용 경로 prefix (없으면 href 기준) */
+  matchPrefixes?: readonly string[];
+  /** 전체(홈)처럼 정확히 일치할 때만 활성 */
+  exactOnly?: boolean;
+};
+
+export const KO_PRIMARY_NAV: readonly KoPrimaryNavItem[] = [
+  { key: "home", href: "/ko/", label: "전체", chipLabel: "전체", emoji: "🏠", live: true, exactOnly: true },
+  { key: "love", href: "/ko/love/", label: "썸·연애 테스트", chipLabel: "썸·연애", emoji: "💗", live: true, matchPrefixes: ["/ko/love"] },
+  { key: "onepick", href: "/ko/onepick/", label: "원픽 테스트", chipLabel: "원픽", emoji: "🎯", live: true, matchPrefixes: ["/ko/onepick"] },
+  { key: "personality-test", href: "/ko/personality-test/", label: "성향 모아보기", chipLabel: "성향", emoji: "🧠", live: true, matchPrefixes: ["/ko/personality-test"] },
+  { key: "search", href: "/ko/explore/", label: "검색", chipLabel: "검색", emoji: "🔍", live: true, matchPrefixes: ["/ko/explore"] },
+  { key: "tag", href: "/ko/tag/", label: "태그", chipLabel: "태그", emoji: "🏷️", live: true, matchPrefixes: ["/ko/tag"] },
+  // --- 준비 중(콘텐츠·라우트 생기면 live: true) ---
+  { key: "personality", href: "/ko/personality/", label: "성격·심리 테스트", chipLabel: "성격·심리", emoji: "🧠", live: false, matchPrefixes: ["/ko/personality/"] },
+  { key: "social", href: "/ko/social/", label: "소셜 테스트", chipLabel: "소셜", emoji: "👥", live: false, matchPrefixes: ["/ko/social"] },
+  { key: "style", href: "/ko/style/", label: "스타일 테스트", chipLabel: "스타일", emoji: "🎨", live: false, matchPrefixes: ["/ko/style"] },
 ] as const;
+
+/** 메뉴에 실제로 노출할 항목 (live만) */
+export const KO_PRIMARY_NAV_LIVE: readonly KoPrimaryNavItem[] = KO_PRIMARY_NAV.filter((i) => i.live);
+
+/** 현재 경로가 해당 내비 항목에 해당하는지 (활성 표시용) */
+export function isKoNavActive(item: KoPrimaryNavItem, pathname: string): boolean {
+  if (item.exactOnly) return pathname === "/ko" || pathname === "/ko/";
+  const prefixes = item.matchPrefixes ?? [item.href];
+  return prefixes.some((pre) => {
+    const norm = pre.replace(/\/$/, "");
+    return pathname === norm || pathname.startsWith(norm + "/");
+  });
+}
 
 /** 개인정보·약관·면책 (햄버거 메뉴 등에서 별도 그룹) */
 export const KO_POLICY_LINKS: readonly { href: string; label: string; emoji: string }[] = [

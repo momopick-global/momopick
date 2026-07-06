@@ -2,10 +2,8 @@ import Link from "next/link";
 import { KoHomeQuizThumbActions } from "@/components/ko/KoHomeQuizThumbActions";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
 import { KoSiteHeader } from "@/components/ko/KoSiteHeader";
-import { HeroBannerCarousel } from "@/components/ko/HeroBannerCarousel";
 import { KoCatBar } from "@/components/ko/KoCatBar";
 import { KoFooterNav } from "@/components/ko/KoFooterNav";
-import { koHeroBannerSlides } from "@/content/home/koHeroBanners";
 import { getKoLoveQuizzesSorted } from "@/lib/content/homeRail";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
 import { BlogCarousel } from "@/components/ko/BlogCarousel";
@@ -13,9 +11,9 @@ import { BlogCarousel } from "@/components/ko/BlogCarousel";
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
 /** 지금 뜨는 테스트 가로 레일 = 썸·연애 우선순위 상위 (홈 레일용) */
-const homeRailKo = loveSectionQuizzes.slice(0, 2);
-/** 홈 썸·연애 타일 = 우선순위 상위 4개만 (전체는 /ko/love/) */
-const homeLoveTilesKo = loveSectionQuizzes.slice(0, 4);
+const homeRailKo = loveSectionQuizzes.slice(0, 5);
+/** 홈 썸·연애 타일 = 우선순위 상위 8개만 (전체는 /ko/love/) */
+const homeLoveTilesKo = loveSectionQuizzes.slice(0, 8);
 
 export default function KoHomePage() {
   return (
@@ -26,10 +24,6 @@ export default function KoHomePage() {
 
       <div className="wrap">
         <main>
-          <section className="hero" aria-label="추천 배너">
-            <HeroBannerCarousel slides={koHeroBannerSlides} />
-          </section>
-
           <div className="login-hint">
             <div>
               <p>💡 로그인하면 맞춤 추천·히스토리를 쓸 수 있어요</p>

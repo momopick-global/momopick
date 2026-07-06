@@ -223,7 +223,9 @@ export function SnackQuiz({
   const [resultPhase, setResultPhase] = useState<QuizResultPhase>("idle");
   /** 답 선택 후: 클릭한 버튼 안에서만 채움 애니메이션 중 */
   const [answerBusy, setAnswerBusy] = useState(false);
-  const [pickingKey, setPickingKey] = useState<string | null>(null);
+  // 선택 하이라이트는 결과 key가 아니라 보기 위치(index)로 식별한다.
+  // (한 문항에 같은 결과 key를 가진 보기가 2개 이상일 수 있어 key로 식별하면 다중 하이라이트 발생)
+  const [pickingIndex, setPickingIndex] = useState<number | null>(null);
   const [fillActive, setFillActive] = useState(false);
   const [quizStarted, setQuizStarted] = useState(false);
   const answerTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -250,6 +252,13 @@ export function SnackQuiz({
     return raw ? quizAssetUrl(raw, locale) : undefined;
   }, [definition.images?.thumbnail, definition.images?.og, definition.card?.image, locale]);
 
+  /** 인트로·원픽 공유 문구 */
+  const introShareText = useMemo(() => {
+    const t = pickQuizText(locale, definition.title);
+    const sub = definition.subtitle ? pickQuizText(locale, definition.subtitle) : "";
+    return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
+  }, [locale, definition.title, definition.subtitle]);
+
   const urlSearch = useHydratedLocationSearch();
 
   /** 하이드레이션: 서버·첫 클라 렌더는 `urlSearch`만 쓴다. `window` 직접 읽기는 useLayoutEffect에서 처리 */
@@ -264,7 +273,8 @@ export function SnackQuiz({
     [effectiveSearch, resultKeys],
   );
 
-  const showIntro = resultPhase === "idle" && !quizStarted && !hasSharedOutcomeInUrl;
+  // 원픽(1문항)은 인트로/시작 버튼 없이 첫 화면에서 바로 보기를 노출한다.
+  const showIntro = resultPhase === "idle" && !quizStarted && !hasSharedOutcomeInUrl && total > 1;
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
@@ -309,11 +319,11 @@ export function SnackQuiz({
   }, []);
 
   const pick = useCallback(
-    (key: string) => {
+    (optionIndex: number, key: string) => {
       if (answerBusy || !resultKeys.includes(key)) return;
 
       setAnswerBusy(true);
-      setPickingKey(key);
+      setPickingIndex(optionIndex);
       setFillActive(false);
       requestAnimationFrame(() => {
         requestAnimationFrame(() => setFillActive(true));
@@ -329,7 +339,7 @@ export function SnackQuiz({
           setStep((s) => s + 1);
         }
         setAnswerBusy(false);
-        setPickingKey(null);
+        setPickingIndex(null);
         setFillActive(false);
       }, ANSWER_FILL_MS);
     },
@@ -343,10 +353,10 @@ export function SnackQuiz({
     }
     setStep(0);
     setCounts(emptyCounts(resultKeys));
+    setPickingIndex(null);
     setResultPhase("idle");
     setQuizStarted(false);
     setAnswerBusy(false);
-    setPickingKey(null);
     setFillActive(false);
     router.replace(quizPageHref);
   }, [resultKeys, quizPageHref, router]);
@@ -393,11 +403,6 @@ export function SnackQuiz({
   }
 
   if (showIntro) {
-    const introShareText = (() => {
-      const t = pickQuizText(locale, definition.title);
-      const sub = definition.subtitle ? pickQuizText(locale, definition.subtitle) : "";
-      return sub ? `${t} — ${sub} | Momopick` : `${t} | Momopick`;
-    })();
     const quizId = definition.slug?.trim() || definition.id;
     return (
       <div className="quiz-shell quiz-shell--intro">
@@ -441,17 +446,29 @@ export function SnackQuiz({
 
   return (
     <div className="quiz-shell">
-      <div
-        className="quiz-progress-wrap"
-        role="progressbar"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={progress}
-        aria-label={ui.formatQuestionStep(step + 1, total)}
-      >
-        <div className="quiz-progress-bar" style={{ width: `${progress}%` }} />
-      </div>
-      <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
+      {total > 1 ? (
+        <>
+          <div
+            className="quiz-progress-wrap"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={progress}
+            aria-label={ui.formatQuestionStep(step + 1, total)}
+          >
+            <div className="quiz-progress-bar" style={{ width: `${progress}%` }} />
+          </div>
+          <p className="quiz-step-label">{ui.formatQuestionStep(step + 1, total)}</p>
+        </>
+      ) : (
+        // 원픽: 시작 버튼 대신 안내 문구 + 공유 버튼을 보기 위에 노출
+        <>
+          <p className="quiz-intro-body quiz-intro-body--onepick">{ui.quizIntroBody(total)}</p>
+          <div className="quiz-share-wrap quiz-share-wrap--intro">
+            <QuizResultShare ui={ui} shareText={introShareText} shareImageUrl={quizShareCoverUrl} />
+          </div>
+        </>
+      )}
       {q.image ? (
         <div className="quiz-q-visual">
           <QuizImageWithFallback
@@ -465,22 +482,34 @@ export function SnackQuiz({
         </div>
       ) : null}
       <h2 className="quiz-q">{pickQuizText(locale, q.prompt)}</h2>
-      <ul className="quiz-options" role="list">
-        {q.options.map((o) => {
-          const isPicking = pickingKey === o.key;
+      <ul className={`quiz-options${q.options.some((o) => o.image) ? " quiz-options--grid" : ""}`} role="list">
+        {q.options.map((o, idx) => {
+          const isPicking = pickingIndex === idx;
           const showFill = isPicking && fillActive;
           return (
-            <li key={`${step}-${o.key}`}>
+            <li key={`${step}-${idx}`}>
               <button
                 type="button"
-                className={`quiz-opt${isPicking ? " quiz-opt--picking" : ""}`}
+                className={`quiz-opt${o.image ? " quiz-opt--card" : ""}${isPicking ? " quiz-opt--picking" : ""}`}
                 disabled={answerBusy}
-                onClick={() => pick(o.key)}
+                onClick={() => pick(idx, o.key)}
               >
                 <span
                   className={`quiz-opt-fill${showFill ? " quiz-opt-fill--full" : ""}`}
                   aria-hidden="true"
                 />
+                {o.image ? (
+                  <span className="quiz-opt-thumb" aria-hidden="true">
+                    <QuizImageWithFallback
+                      src={quizAssetUrl(o.image, locale)}
+                      alt=""
+                      width={200}
+                      height={200}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                ) : null}
                 <span className="quiz-opt-label">{pickQuizText(locale, o.label)}</span>
               </button>
             </li>

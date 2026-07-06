@@ -42,7 +42,11 @@ export type SnackQuizQuestion = {
   prompt: SnackQuizText;
   /** 문항 상단 일러스트 (선택) */
   image?: string;
-  options: { label: SnackQuizText; key: string }[];
+  /**
+   * 보기 목록. `image`가 있으면 보기가 이미지+텍스트 카드로 렌더된다(원픽 테스트 등).
+   * 경로 규칙은 결과 이미지와 동일(`/images/quiz/{slug}/…`, `quizAssetUrl`로 변환).
+   */
+  options: { label: SnackQuizText; key: string; image?: string }[];
 };
 
 export type SnackQuizBlend = {
