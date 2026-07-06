@@ -6,19 +6,20 @@
 
 7개 짧은 블로그 글. 콘텐츠는 `src/content/blog/koSamplePosts.ts`에 TypeScript 객체 배열로 작성.
 
-## 운영 중인 글 (7개)
+## 운영 중인 글 (8개, 길이 2026-07-06 확인)
 
 | slug | 제목 | 본문 길이 |
 |---|---|---|
-| `what-is-tarot` | 🔮 타로 카드란 무엇인가? | ~1,240자 |
-| `why-som-always-ends-awkwardly` | 📌 썸이 항상 애매하게 끝나는 이유 | ~1,477자 |
-| `snack-test-what` | 스낵 테스트가 뭐예요? | ~321자 |
-| `share-result` | 테스트 결과, 친구에게 이렇게 공유해 보세요 | ~300자 |
-| `love-category-editor` | 연애 테스트, 웃으면서 보는 게 포인트 | ~285자 |
-| `new-quizzes-rhythm` | 앞으로도 테스트는 꾸준히 늘어납니다 | ~228자 |
-| `mbti-not-diagnosis` | MBTI·성향 퀴즈, 진단이 아니라는 걸 기억해 주세요 | ~271자 |
+| `signs-som-turning-into-love` | 썸에서 연애로 넘어가는 신호 | ~1,541자 |
+| `what-is-tarot` | 🔮 타로 카드란 무엇인가? | ~1,271자 |
+| `why-som-always-ends-awkwardly` | 📌 썸이 항상 애매하게 끝나는 이유 | ~1,220자 |
+| `mbti-not-diagnosis` | MBTI·성향 퀴즈, 진단이 아니라는 걸 기억해 주세요 | ~1,118자 |
+| `snack-test-what` | 스낵 테스트가 뭐예요? | ~972자 |
+| `love-category-editor` | 연애 테스트, 웃으면서 보는 게 포인트 | ~972자 |
+| `share-result` | 테스트 결과, 친구에게 이렇게 공유해 보세요 | ~956자 |
+| `new-quizzes-rhythm` | 앞으로도 테스트는 꾸준히 늘어납니다 | ~775자 |
 
-> ⚠️ 본문 200~320자 글이 5개(`snack-test-what`, `share-result`, `love-category-editor`, `new-quizzes-rhythm`, `mbti-not-diagnosis`). AdSense thin-content 리스크 — 각 600자+로 확장(P0). 확장 방향은 [블로그 콘텐츠 계획표](../content/blog-content-roadmap.md#p0--기존-글-확장-먼저-처리) 참조.
+> ✅ 8개 글 전부 600자 이상(775~1,541자, 2026-07-06 확인). 과거 220~320자였던 5개(`snack-test-what`, `share-result`, `love-category-editor`, `new-quizzes-rhythm`, `mbti-not-diagnosis`)는 확장 완료 — thin-content 길이 리스크 해소.
 
 ## 구조
 

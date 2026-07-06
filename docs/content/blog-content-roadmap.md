@@ -4,25 +4,26 @@
 > 목적: `/ko/blog/` 글을 (1) AdSense thin-content 리스크 해소, (2) 퀴즈와 내부 링크로 연결해 SEO·회유(回遊) 강화하는 방향으로 확장.
 > 데이터: `src/content/blog/koSamplePosts.ts` · 작성법: [blog-writing-guide.md](./blog-writing-guide.md) · 기능 구조: [../features/blog.md](../features/blog.md)
 
-## 현황 요약 (2026-07-06)
+## 현황 요약 (2026-07-06 갱신)
 
-운영 중인 글은 7개. 이 중 5개가 본문 220~320자로 **thin-content 위험** 상태다.
+운영 중인 글은 8개. **전부 600자 이상(775~1,541자)으로 thin-content 길이 리스크는 해소됨.** 과거 220~320자였던 5개는 확장 완료. 이제 로드맵의 초점은 확장이 아니라 **P1 필러 글 신규 발행 + 연결 퀴즈로 내부 링크 강화**에 있다.
 
 | slug | 제목 | 카테고리 | 본문 | 상태 |
 |---|---|---|---|---|
-| `what-is-tarot` | 🔮 타로 카드란 무엇인가? | tarot | ~1,240자 | ✅ 양호 |
-| `why-som-always-ends-awkwardly` | 📌 썸이 항상 애매하게 끝나는 이유 | love | ~1,477자 | ✅ 양호 |
-| `snack-test-what` | 스낵 테스트가 뭐예요? | fun | ~321자 | ⚠️ 확장 |
-| `share-result` | 테스트 결과, 친구에게 공유해 보세요 | story | ~300자 | ⚠️ 확장 |
-| `love-category-editor` | 연애 테스트, 웃으면서 보는 게 포인트 | love | ~285자 | ⚠️ 확장 |
-| `new-quizzes-rhythm` | 앞으로도 테스트는 꾸준히 늘어납니다 | story | ~228자 | ⚠️ 확장 |
-| `mbti-not-diagnosis` | MBTI·성향 퀴즈, 진단이 아니라는 걸… | story | ~271자 | ⚠️ 확장 |
+| `signs-som-turning-into-love` | 썸에서 연애로 넘어가는 신호 | love | ~1,541자 | ✅ 양호 |
+| `what-is-tarot` | 🔮 타로 카드란 무엇인가? | tarot | ~1,271자 | ✅ 양호 |
+| `why-som-always-ends-awkwardly` | 📌 썸이 항상 애매하게 끝나는 이유 | love | ~1,220자 | ✅ 양호 |
+| `mbti-not-diagnosis` | MBTI·성향 퀴즈, 진단이 아니라는 걸… | story | ~1,118자 | ✅ 양호(확장 완료) |
+| `snack-test-what` | 스낵 테스트가 뭐예요? | fun | ~972자 | ✅ 양호(확장 완료) |
+| `love-category-editor` | 연애 테스트, 웃으면서 보는 게 포인트 | love | ~972자 | ✅ 양호(확장 완료) |
+| `share-result` | 테스트 결과, 친구에게 공유해 보세요 | story | ~956자 | ✅ 양호(확장 완료) |
+| `new-quizzes-rhythm` | 앞으로도 테스트는 꾸준히 늘어납니다 | story | ~775자 | ✅ 양호(확장 완료) |
 
 퀴즈는 현재 31개(썸·연애 중심 + 원픽 + 성격·심리). 블로그 글마다 **연결 퀴즈**를 지정해 본문 끝에서 유도하면, 콘텐츠 두께와 페이지 회유를 동시에 얻는다.
 
 ## 우선순위 원칙
 
-1. **P0 — 기존 thin 글 확장**: 새 글보다 먼저. 5개를 각 600자+로 확장(또는 통합·제거).
+1. ~~**P0 — 기존 thin 글 확장**~~ ✅ **완료** (5개 전부 600자+ 확장됨, 2026-07-06).
 2. **P1 — 필러(pillar) 글**: 카테고리별 대표 글. 검색 유입 노림, 1,000자+.
 3. **P2 — 원픽·재미 글**: 가볍게, 600~800자. 발행 리듬 유지용.
 4. **P3 — 운영/업데이트 글**: 월 1회 "이번 달 새 테스트" 정례.
@@ -31,17 +32,19 @@
 
 ---
 
-## P0 — 기존 글 확장 (먼저 처리)
+## P0 — 기존 글 확장 ✅ 완료 (2026-07-06)
 
-| # | 대상 slug | 확장 방향 | 연결 퀴즈 | 목표 |
+아래 5개는 전부 600자+로 확장 완료. 기록 보존용.
+
+| # | 대상 slug | 확장 방향 | 연결 퀴즈 | 결과 |
 |---|---|---|---|---|
-| A1 | `snack-test-what` | "스낵 테스트란?" + 왜 3분인지 + 즐기는 법 3가지 + 대표 원픽 소개 | `color-mood-onepick`, `dessert-love-onepick` | 600자+ |
-| A2 | `share-result` | 공유가 재미있는 이유 + 상황별 공유 멘트 예시 + 캡처 팁 | `who-likes-you-type` | 600자+ |
-| A3 | `love-category-editor` | "웃으면서 보기"의 의미 + 연애 테스트 활용 사례 + 대표 3선 | `dating-expert-or-beginner`, `love-temperature-test` | 600자+ |
-| A4 | `new-quizzes-rhythm` | → P3 월간 업데이트 글로 흡수 검토 (중복 축소) | — | 통합/확장 |
-| A5 | `mbti-not-diagnosis` | 진단이 아닌 이유 + 재미로 보는 법 + 면책 톤 강화 | `personality-psychology-test`, `logical-or-emotional` | 600자+ |
+| A1 | `snack-test-what` | "스낵 테스트란?" + 왜 3분인지 + 즐기는 법 3가지 + 대표 원픽 소개 | `color-mood-onepick`, `dessert-love-onepick` | ✅ ~972자 |
+| A2 | `share-result` | 공유가 재미있는 이유 + 상황별 공유 멘트 예시 + 캡처 팁 | `who-likes-you-type` | ✅ ~956자 |
+| A3 | `love-category-editor` | "웃으면서 보기"의 의미 + 연애 테스트 활용 사례 + 대표 3선 | `dating-expert-or-beginner`, `love-temperature-test` | ✅ ~972자 |
+| A4 | `new-quizzes-rhythm` | → P3 월간 업데이트 글로 흡수 검토 (중복 축소) | — | ✅ ~775자 |
+| A5 | `mbti-not-diagnosis` | 진단이 아닌 이유 + 재미로 보는 법 + 면책 톤 강화 | `personality-psychology-test`, `logical-or-emotional` | ✅ ~1,118자 |
 
-> A4는 `new-quizzes-rhythm`과 P3(월간 업데이트)이 주제가 겹침 — 하나로 합치거나 하나를 story 카테고리 대표글로 확장.
+> A4는 `new-quizzes-rhythm`과 P3(월간 업데이트)이 주제가 겹침 — 향후 하나로 합치거나 story 카테고리 대표글로 재구성 검토(선택).
 
 ---
 
@@ -106,6 +109,6 @@
 
 ## 다음 액션 (제안)
 
-1. **P0 A1~A5 먼저 확장** — 심사 리스크 즉시 완화.
-2. 이후 **주 1편 P1**부터 발행, 매월 말 **P3 S1** 정례.
+1. ~~P0 A1~A5 확장~~ ✅ 완료 — 길이 리스크 해소됨.
+2. **주 1편 P1**부터 발행, 매월 말 **P3 S1** 정례.
 3. 성격·심리 글이 쌓이면 nav의 `personality`(현재 `live: false`)를 켜는 시점 검토.

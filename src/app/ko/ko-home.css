@@ -19,6 +19,32 @@
   --ctr-style-b: #0f0f0f;
   --ctr-fun-a: #dc2626;
   --ctr-fun-b: #facc15;
+  /* === 글자 크기 스케일 토큰 (여기 값만 바꾸면 전체 반영) === */
+  --fs-3xs: 11px;
+  --fs-2xs: 13px;
+  --fs-xs: 14px;
+  --fs-sm: 15px;
+  --fs-md: 16px;
+  --fs-lg: 17px;
+  --fs-xl: 18px;
+  --fs-2xl: 19px;
+  --fs-3xl: 20px;
+  --fs-4xl: 21px;
+  --fs-5xl: 22px;
+  --fs-6xl: 24px;
+  --fs-7xl: 26px;
+  --fs-8xl: 28px;
+  --fs-9xl: 30px;
+  --fs-10xl: 46px;
+  --fs-11xl: 50px;
+  --fs-12xl: 58px;
+  --fs-fluid-1: clamp(17px, 3.5vw, 20px);
+  --fs-fluid-2: clamp(26px, 4.5vw, 34px);
+  --fs-fluid-3: clamp(24px, 4vw, 28px);
+  --fs-fluid-4: clamp(15px, 3.2vw, 17px);
+  --fs-fluid-5: clamp(17px, 4.1vw, 21px);
+  --fs-fluid-6: clamp(24px, 4vw, 30px);
+  --fs-fluid-7: clamp(22px, 3.5vw, 28px);
   --radius: 20px;
   --radius-sm: 14px;
   /* 메인 콘텐츠·히어로·헤더 내부 정렬 공통 최대 너비 (풀 해상도 기준) */
@@ -384,7 +410,7 @@
 }
 
 .momopick-ko .brand strong {
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   letter-spacing: -0.02em;
   font-weight: 800;
 }
@@ -407,7 +433,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: var(--fs-7xl);
   box-shadow: var(--shadow);
   flex-shrink: 0;
 }
@@ -499,7 +525,7 @@
   flex: 0 0 auto;
   padding: 10px 16px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 600;
   white-space: nowrap;
   border: 1px solid var(--line);
@@ -640,7 +666,7 @@
 
 .momopick-ko .hero-banner-overlay__kicker {
   margin: 0 0 10px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.95);
@@ -650,7 +676,7 @@
 .momopick-ko .hero-banner-overlay__text {
   margin: 0;
   max-width: 42em;
-  font-size: clamp(15px, 3.5vw, 18px);
+  font-size: var(--fs-fluid-1);
   font-weight: 600;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.94);
@@ -667,7 +693,7 @@
   justify-content: center;
   padding: 12px 22px;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #fff;
@@ -829,14 +855,14 @@
 .momopick-ko .login-hint p {
   margin: 0;
   font-weight: 700;
-  font-size: 15px;
+  font-size: var(--fs-lg);
 }
 
 .momopick-ko .login-hint span.desc {
   display: block;
   font-weight: 500;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   margin-top: 4px;
 }
 
@@ -854,7 +880,7 @@
   padding: 12px 18px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--fs-md);
   border: 1px solid var(--line);
   background: var(--surface);
   color: var(--text);
@@ -870,7 +896,7 @@
 
 .momopick-ko .btn.sm {
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
 }
 
 .momopick-ko .btn:hover {
@@ -910,7 +936,7 @@
 
 .momopick-ko .login-page-hd h1 {
   margin: 0;
-  font-size: clamp(24px, 4.5vw, 32px);
+  font-size: var(--fs-fluid-2);
   font-weight: 900;
   letter-spacing: -0.04em;
 }
@@ -919,7 +945,7 @@
   margin: 12px auto 0;
   max-width: 420px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--fs-lg);
   line-height: 1.55;
 }
 
@@ -935,7 +961,7 @@
 
 .momopick-ko .login-panel-title {
   margin: 0 0 16px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 800;
   text-align: center;
   color: var(--text);
@@ -943,7 +969,7 @@
 
 .momopick-ko .login-panel-note {
   margin: 16px 0 0;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   line-height: 1.5;
   color: var(--muted);
   text-align: center;
@@ -957,7 +983,7 @@
   margin: 0 0 12px;
   padding: 10px 12px;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   text-align: center;
   color: var(--text);
@@ -990,7 +1016,7 @@
 .momopick-ko .oauth-email-line {
   margin: 0 0 10px;
   padding: 0 4px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   line-height: 1.45;
   color: var(--muted);
   text-align: center;
@@ -1019,7 +1045,7 @@
   min-height: 48px;
   padding: 10px 16px;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 700;
   letter-spacing: -0.02em;
   border: 1px solid transparent;
@@ -1074,7 +1100,7 @@
 /* 모모픽 소개 (/ko/about/) */
 .momopick-ko .about-page-kicker {
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1126,7 +1152,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   line-height: 1.65;
   color: var(--text);
 }
@@ -1227,7 +1253,7 @@
 
 .momopick-ko .about-momo__body h2 {
   margin: 0 0 12px;
-  font-size: 22px;
+  font-size: var(--fs-6xl);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -1236,7 +1262,7 @@
 
 .momopick-ko .about-momo__body > p:first-of-type {
   margin: 0 0 16px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--text);
   line-height: 1.65;
@@ -1250,7 +1276,7 @@
 
 .momopick-ko .about-momo__hint p {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -1264,7 +1290,7 @@
 
 .momopick-ko .about-momo__subhd {
   margin: 0 0 8px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -1272,7 +1298,7 @@
 
 .momopick-ko .about-momo__future {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--muted);
   line-height: 1.7;
@@ -1292,13 +1318,13 @@
 
 .momopick-ko .rail-head h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--fs-3xl);
   font-weight: 900;
   letter-spacing: -0.02em;
 }
 
 .momopick-ko .link-all {
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 700;
   color: var(--accent);
   white-space: nowrap;
@@ -1383,7 +1409,7 @@
 
 .momopick-ko .rail-card .cap b {
   display: block;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   line-height: 1.35;
   font-weight: 800;
 }
@@ -1391,7 +1417,7 @@
 .momopick-ko .rail-card .cap small {
   display: block;
   margin-top: 4px;
-  font-size: 11px;
+  font-size: var(--fs-2xs);
   color: var(--muted);
   line-height: 1.35;
 }
@@ -1458,7 +1484,7 @@
 
 .momopick-ko .sec-hd h2 {
   margin: 0;
-  font-size: 19px;
+  font-size: var(--fs-4xl);
   font-weight: 900;
   letter-spacing: -0.02em;
 }
@@ -1466,7 +1492,7 @@
 .momopick-ko .sec-lead {
   margin: 0 0 14px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--fs-md);
   max-width: 680px;
 }
 
@@ -1536,7 +1562,7 @@
 
 .momopick-ko .hub-love > .sec-hd h1 {
   margin: 0;
-  font-size: clamp(22px, 4vw, 26px);
+  font-size: var(--fs-fluid-3);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -1606,7 +1632,7 @@
   left: 4px;
   padding: 3px 6px;
   border-radius: 6px;
-  font-size: 9px;
+  font-size: var(--fs-3xs);
   font-weight: 800;
   color: #fff;
   z-index: 1;
@@ -1624,13 +1650,13 @@
 
 .momopick-ko .love-hub-list__title {
   font-weight: 800;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   line-height: 1.35;
   letter-spacing: -0.02em;
 }
 
 .momopick-ko .love-hub-list__sub {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--muted);
   line-height: 1.4;
@@ -1840,7 +1866,7 @@
 
 .momopick-ko .home-quiz-share-popover__title {
   margin: 0 36px 12px 0;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.35;
@@ -1850,7 +1876,7 @@
 .momopick-ko .home-quiz-share-popover__section .quiz-share-title {
   margin: 0 0 10px;
   text-align: center;
-  font-size: 13px;
+  font-size: var(--fs-sm);
 }
 
 .momopick-ko .home-quiz-share-popover__section .quiz-share-row {
@@ -1872,7 +1898,7 @@
 .momopick-ko .home-quiz-share-popover__section .quiz-share-hint {
   margin: 10px 0 0;
   text-align: center;
-  font-size: 12px;
+  font-size: var(--fs-xs);
 }
 
 .momopick-ko .home-quiz-share-popover__vault {
@@ -1887,7 +1913,7 @@
 
 .momopick-ko .home-quiz-share-popover__vault-label {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 800;
   color: var(--muted);
   letter-spacing: -0.02em;
@@ -1904,7 +1930,7 @@
   right: 0;
   bottom: 0;
   padding: 8px 10px 7px;
-  font-size: 11px;
+  font-size: var(--fs-2xs);
   font-weight: 700;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   letter-spacing: 0.02em;
@@ -1930,7 +1956,7 @@
   z-index: 1;
   padding: 4px 8px;
   border-radius: 8px;
-  font-size: 11px;
+  font-size: var(--fs-2xs);
   font-weight: 800;
   color: #fff;
   background: rgba(22, 16, 34, 0.55);
@@ -1963,7 +1989,7 @@
 
 .momopick-ko .tile .body b {
   display: block;
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 800;
   line-height: 1.35;
 }
@@ -1971,7 +1997,7 @@
 .momopick-ko .tile .body small {
   display: block;
   margin-top: 6px;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   color: var(--muted);
   line-height: 1.45;
 }
@@ -1999,14 +2025,14 @@
 
 .momopick-ko .info-card h3 {
   margin: 0 0 8px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 900;
 }
 
 .momopick-ko .info-card p {
   margin: 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--fs-md);
 }
 
 .momopick-ko .pillrow {
@@ -2017,7 +2043,7 @@
 }
 
 .momopick-ko .pill {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid var(--line);
@@ -2042,14 +2068,14 @@
 .momopick-ko .faq p {
   margin: 10px 0 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--fs-md);
 }
 
 .momopick-ko .faq ul {
   margin: 10px 0 0;
   padding-left: 1.25rem;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--fs-md);
 }
 
 .momopick-ko .faq ul li {
@@ -2232,7 +2258,7 @@
 
 .momopick-ko .cta-bottom-card h2 {
   margin: 0 0 12px;
-  font-size: 19px;
+  font-size: var(--fs-4xl);
   font-weight: 900;
   letter-spacing: -0.02em;
 }
@@ -2253,7 +2279,7 @@
 }
 
 .momopick-ko .quiz-breadcrumb {
-  font-size: 13px;
+  font-size: var(--fs-sm);
   color: var(--muted);
   margin-bottom: 10px;
 }
@@ -2297,14 +2323,14 @@
 
 .momopick-ko .quiz-kicker {
   margin: 0 0 8px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--accent);
 }
 
 .momopick-ko .quiz-page-hd h1 {
   margin: 0 0 10px;
-  font-size: 24px;
+  font-size: var(--fs-7xl);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -2312,7 +2338,7 @@
 
 @media (min-width: 640px) {
   .momopick-ko .quiz-page-hd h1 {
-    font-size: 28px;
+    font-size: var(--fs-9xl);
   }
 }
 
@@ -2320,7 +2346,7 @@
   margin: 0 auto 18px;
   max-width: 420px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--fs-lg);
 }
 
 .momopick-ko .quiz-cover {
@@ -2417,7 +2443,7 @@
 
 .momopick-ko .quiz-result-loading-title {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 700;
   line-height: 1.45;
   color: var(--text);
@@ -2435,7 +2461,7 @@
 
 .momopick-ko .quiz-intro-body {
   margin: 0 0 20px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   line-height: 1.55;
   color: var(--text);
 }
@@ -2450,14 +2476,14 @@
   max-width: 320px;
   min-width: 0;
   padding: 18px 28px;
-  font-size: 18px;
+  font-size: var(--fs-3xl);
   font-weight: 800;
   border-radius: 14px;
 }
 
 .momopick-ko .quiz-intro-participants {
   margin: 16px 0 0;
-  font-size: 14px;
+  font-size: var(--fs-md);
   line-height: 1.45;
   color: var(--muted);
   font-weight: 600;
@@ -2480,7 +2506,7 @@
 
 .momopick-ko .quiz-step-label {
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--muted);
 }
@@ -2506,7 +2532,7 @@
 
 .momopick-ko .quiz-q {
   margin: 0 0 18px;
-  font-size: 18px;
+  font-size: var(--fs-3xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.45;
@@ -2530,7 +2556,7 @@
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background: rgba(90, 103, 242, 0.04);
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 600;
   line-height: 1.45;
   color: var(--text);
@@ -2658,7 +2684,7 @@
 
 .momopick-ko .quiz-result-tag {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 800;
   letter-spacing: -0.02em;
   padding: 6px 12px;
@@ -2702,7 +2728,7 @@
 
 .momopick-ko .quiz-result-emoji {
   margin: 0 0 12px;
-  font-size: 48px;
+  font-size: var(--fs-11xl);
   line-height: 1;
 }
 
@@ -2716,7 +2742,7 @@
 }
 
 .momopick-ko .quiz-result-percent {
-  font-size: 56px;
+  font-size: var(--fs-12xl);
   font-weight: 900;
   letter-spacing: -0.05em;
   color: var(--accent);
@@ -2724,7 +2750,7 @@
 }
 
 .momopick-ko .quiz-result-percent-suffix {
-  font-size: 28px;
+  font-size: var(--fs-9xl);
   font-weight: 800;
   color: var(--muted);
   letter-spacing: -0.02em;
@@ -2736,7 +2762,7 @@
 
 .momopick-ko .quiz-result-submetric {
   margin: -8px 0 14px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--muted);
 }
@@ -2760,7 +2786,7 @@
 .momopick-ko .quiz-result-dual-label {
   display: block;
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 800;
   color: var(--muted);
   letter-spacing: -0.02em;
@@ -2775,11 +2801,11 @@
 }
 
 .momopick-ko .quiz-result-dual-row .quiz-result-percent {
-  font-size: 44px;
+  font-size: var(--fs-10xl);
 }
 
 .momopick-ko .quiz-result-dual-row .quiz-result-percent-suffix {
-  font-size: 22px;
+  font-size: var(--fs-6xl);
 }
 
 .momopick-ko .quiz-result-dual-divider {
@@ -2792,14 +2818,14 @@
 
 .momopick-ko .quiz-result-title {
   margin: 0 0 8px;
-  font-size: 22px;
+  font-size: var(--fs-6xl);
   font-weight: 900;
   letter-spacing: -0.02em;
 }
 
 .momopick-ko .quiz-result-tagline {
   margin: 0 0 14px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 700;
   color: var(--accent);
 }
@@ -2807,7 +2833,7 @@
 .momopick-ko .quiz-result-body {
   margin: 0 0 20px;
   text-align: left;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   color: var(--muted);
   line-height: 1.65;
   white-space: pre-line;
@@ -2841,7 +2867,7 @@
 
 .momopick-ko .quiz-share-title {
   margin: 0 0 14px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -2902,7 +2928,7 @@
 
 .momopick-ko .quiz-share-hint {
   margin: 12px 0 0;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--accent);
 }
@@ -2938,7 +2964,7 @@
   width: 100%;
   min-height: 52px;
   padding: 14px 12px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 800;
   display: inline-flex;
   align-items: center;
@@ -2967,7 +2993,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   border-radius: var(--radius-sm);
@@ -3016,7 +3042,7 @@
   border-radius: 12px;
   background: #fee500;
   color: #191919;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   cursor: pointer;
@@ -3089,7 +3115,7 @@
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 10px rgba(45, 30, 80, 0.12);
-  font-size: 11px;
+  font-size: var(--fs-2xs);
 }
 
 .momopick-ko .quiz-vault-save--done .quiz-vault-save-inner {
@@ -3100,7 +3126,7 @@
 
 .momopick-ko .quiz-vault-save-hint {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--fs-2xs);
   font-weight: 700;
   color: var(--accent);
   white-space: nowrap;
@@ -3130,13 +3156,13 @@
 
 .momopick-ko .ko-vault-empty__title {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: var(--fs-3xl);
   font-weight: 800;
 }
 
 .momopick-ko .ko-vault-empty__desc {
   margin: 0 0 16px;
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--muted);
   line-height: 1.55;
 }
@@ -3163,7 +3189,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 700;
   cursor: pointer;
   user-select: none;
@@ -3260,28 +3286,28 @@
 
 .momopick-ko .ko-vault-card__quiz {
   margin: 0 0 4px;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--muted);
 }
 
 .momopick-ko .ko-vault-card__result {
   margin: 0 0 4px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   line-height: 1.3;
 }
 
 .momopick-ko .ko-vault-card__line {
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.45;
 }
 
 .momopick-ko .ko-vault-card__meta {
   margin: 0 0 10px;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   color: var(--muted);
   opacity: 0.9;
 }
@@ -3295,12 +3321,12 @@
 /* 다시 하기: 기본 .btn.sm 대비 약 1.5배 (패딩·글자 크기) */
 .momopick-ko .quiz-result-actions .btn.sm {
   padding: 15px 21px;
-  font-size: 20px;
+  font-size: var(--fs-5xl);
 }
 
 .momopick-ko .quiz-footnote {
   margin: 20px 0 0;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   color: var(--muted);
   opacity: 0.9;
 }
@@ -3361,13 +3387,13 @@
 }
 
 .momopick-ko .quiz-results-gallery-emoji {
-  font-size: 48px;
+  font-size: var(--fs-11xl);
   line-height: 1;
 }
 
 .momopick-ko .quiz-results-gallery-title {
   margin: 14px 16px 6px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.35;
@@ -3375,7 +3401,7 @@
 
 .momopick-ko .quiz-results-gallery-tagline {
   margin: 0 16px 16px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--muted);
   line-height: 1.45;
@@ -3383,7 +3409,7 @@
 
 .momopick-ko .quiz-results-gallery-blend-h {
   margin: 28px 0 12px;
-  font-size: 18px;
+  font-size: var(--fs-3xl);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -3414,7 +3440,7 @@
 
 .momopick-ko .policy-page-hd h1 {
   margin: 0 0 8px;
-  font-size: 26px;
+  font-size: var(--fs-8xl);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -3422,7 +3448,7 @@
 
 .momopick-ko .policy-effective {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 600;
   color: var(--muted);
 }
@@ -3433,7 +3459,7 @@
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background: rgba(90, 103, 242, 0.04);
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -3473,7 +3499,7 @@
 .momopick-ko .today-hero__text {
   margin: 0;
   max-width: 42em;
-  font-size: clamp(13px, 3.2vw, 15px);
+  font-size: var(--fs-fluid-4);
   font-weight: 600;
   line-height: 1.62;
   color: rgba(255, 255, 255, 0.96);
@@ -3622,7 +3648,7 @@ html.today-video-lock body {
   margin: 0;
   width: 100%;
   max-width: 18.432em; /* 36em × 0.8³ */
-  font-size: clamp(15px, 4.1vw, 19px);
+  font-size: var(--fs-fluid-5);
   font-weight: 600;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.96);
@@ -3730,14 +3756,14 @@ html.today-video-lock body {
 }
 
 .momopick-ko .notice-item__date {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--muted);
   letter-spacing: 0.02em;
 }
 
 .momopick-ko .notice-item__badge {
-  font-size: 11px;
+  font-size: var(--fs-2xs);
   font-weight: 800;
   padding: 3px 8px;
   border-radius: 8px;
@@ -3752,7 +3778,7 @@ html.today-video-lock body {
 
 .momopick-ko .notice-item__title {
   margin: 0 0 8px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -3761,7 +3787,7 @@ html.today-video-lock body {
 
 .momopick-ko .notice-item__summary {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--muted);
   line-height: 1.55;
   white-space: pre-line;
@@ -3819,7 +3845,7 @@ html.today-video-lock body {
   background: var(--surface);
   color: var(--text);
   font-family: inherit;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -3857,7 +3883,7 @@ html.today-video-lock body {
   border-radius: var(--radius-sm);
   border: 1px dashed var(--line);
   background: rgba(90, 103, 242, 0.04);
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 600;
   color: var(--muted);
   text-align: center;
@@ -3889,7 +3915,7 @@ html.today-video-lock body {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--surface);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--muted);
   cursor: pointer;
@@ -4020,7 +4046,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-card--home-list .blog-card__title {
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   line-height: 1.35;
 }
 
@@ -4033,7 +4059,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .blog-carousel-empty {
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--muted);
   padding: 32px 0;
   text-align: center;
@@ -4085,14 +4111,14 @@ html.today-video-lock body {
 }
 
 .momopick-ko .blog-card__date {
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--muted);
   letter-spacing: 0.02em;
 }
 
 .momopick-ko .blog-card__tag {
-  font-size: 11px;
+  font-size: var(--fs-2xs);
   font-weight: 800;
   padding: 3px 8px;
   border-radius: 8px;
@@ -4103,7 +4129,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-card__title {
   margin: 0 0 10px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -4112,7 +4138,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-card__excerpt {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--muted);
   line-height: 1.6;
 }
@@ -4200,14 +4226,14 @@ html.today-video-lock body {
 }
 
 .momopick-ko .blog-post-date {
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--muted);
 }
 
 .momopick-ko .blog-post-title {
   margin: 0;
-  font-size: clamp(22px, 4vw, 28px);
+  font-size: var(--fs-fluid-6);
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1.3;
@@ -4245,7 +4271,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-quiz-promo__title {
   margin: 0 0 10px;
-  font-size: clamp(20px, 3.5vw, 26px);
+  font-size: var(--fs-fluid-7);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -4282,7 +4308,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-quiz-promo__more-title {
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.35;
@@ -4291,7 +4317,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-quiz-promo__more-lead {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--fs-md);
   line-height: 1.45;
   color: var(--muted, #666);
 }
@@ -4309,7 +4335,7 @@ html.today-video-lock body {
 
 .momopick-ko .quiz-result-love-more__title {
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.35;
@@ -4318,7 +4344,7 @@ html.today-video-lock body {
 
 .momopick-ko .quiz-result-love-more__lead {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-size: var(--fs-md);
   line-height: 1.45;
   color: var(--muted, #666);
 }
@@ -4341,7 +4367,7 @@ html.today-video-lock body {
   width: 100%;
   min-height: 52px;
   padding: 14px 12px;
-  font-size: 16px;
+  font-size: var(--fs-xl);
   font-weight: 800;
   display: inline-flex;
   align-items: center;
@@ -4368,7 +4394,7 @@ html.today-video-lock body {
 
 .momopick-ko .blog-post-body .blog-post-h3 {
   margin: 26px 0 12px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.35;
@@ -4385,7 +4411,7 @@ html.today-video-lock body {
 
 .momopick-ko .policy-prose h2 {
   margin: 0 0 10px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -4393,7 +4419,7 @@ html.today-video-lock body {
 
 .momopick-ko .policy-prose p {
   margin: 0 0 10px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   color: var(--muted);
   line-height: 1.7;
 }
@@ -4402,7 +4428,7 @@ html.today-video-lock body {
   margin: 0 0 12px;
   padding-left: 1.25rem;
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--fs-lg);
   line-height: 1.65;
 }
 
@@ -4427,7 +4453,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .policy-foot .link-all {
-  font-size: 15px;
+  font-size: var(--fs-lg);
 }
 
 /* 문의 페이지 공통 (피드백·제휴) */
@@ -4468,7 +4494,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .channel-card__icon {
-  font-size: 28px;
+  font-size: var(--fs-9xl);
   line-height: 1;
   flex-shrink: 0;
 }
@@ -4482,18 +4508,18 @@ html.today-video-lock body {
 }
 
 .momopick-ko .channel-card__label {
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .momopick-ko .channel-card__desc {
-  font-size: 13px;
+  font-size: var(--fs-sm);
   color: var(--muted);
 }
 
 .momopick-ko .channel-card__arrow {
-  font-size: 18px;
+  font-size: var(--fs-3xl);
   color: var(--muted);
   flex-shrink: 0;
   transition: transform 0.18s ease;
@@ -4509,7 +4535,7 @@ html.today-video-lock body {
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background: rgba(90, 103, 242, 0.04);
-  font-size: 14px;
+  font-size: var(--fs-md);
   color: var(--muted);
   line-height: 1.7;
 }
@@ -4557,7 +4583,7 @@ html.today-video-lock body {
 }
 
 .momopick-ko .partner-type-icon {
-  font-size: 24px;
+  font-size: var(--fs-7xl);
   line-height: 1;
   flex-shrink: 0;
   margin-top: 2px;
@@ -4565,7 +4591,7 @@ html.today-video-lock body {
 
 .momopick-ko .partner-type-title {
   display: block;
-  font-size: 14px;
+  font-size: var(--fs-md);
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 4px;
@@ -4573,7 +4599,7 @@ html.today-video-lock body {
 
 .momopick-ko .partner-type-desc {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.55;
 }
@@ -4599,7 +4625,7 @@ html.today-video-lock body {
   align-items: center;
   padding: 8px 14px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 700;
   border: 1px solid var(--line);
   background: var(--surface);
@@ -4620,7 +4646,7 @@ html.today-video-lock body {
 
 .momopick-ko .faq-section-title {
   margin: 0 0 14px;
-  font-size: 17px;
+  font-size: var(--fs-2xl);
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -4641,7 +4667,7 @@ html.today-video-lock body {
   gap: 7px;
   padding: 13px 28px;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: var(--fs-lg);
   font-weight: 800;
   letter-spacing: -0.02em;
   border: 1.5px solid rgba(90, 103, 242, 0.3);

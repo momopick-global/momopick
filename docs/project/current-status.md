@@ -54,7 +54,7 @@
 |---|---|---|
 | `ambiguous-situationship-end` C/D 결과 실제 자산 생성 | 현재 pending placeholder 노출 중 | 중 |
 | 빈 love 슬러그 4개 (`dating-personality-type`, `ideal-type-reality-test`, `why-my-relationships-fail`, `your-love-type`) | 폴더만 존재, 라우트 없음 (404) | 중 |
-| 짧은 블로그 글 5개 (220~320자) | AdSense thin-content 리스크 | 중 |
+| ~~짧은 블로그 글 5개 (220~320자)~~ | ✅ 해소 — 8개 전부 600자+(775~1,541자, 2026-07-06 확인) | 완료 |
 | 다국어 placeholder(/en/, /ja/, /es/, /pt/, /id/) | noindex이지만 sitemap hreflang에 포함 | 낮 |
 | GA4 / GTM 미적용 | 트래픽·전환 측정 불가 | 낮 (AdSense 승인 이후) |
 | 광고 슬롯 UI | AdSense 승인 후 배치 필요 | AdSense 승인 후 |
