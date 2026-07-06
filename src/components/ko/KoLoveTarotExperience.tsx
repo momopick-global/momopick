@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { BackButton } from "@/components/ko/BackButton";
 import {
   TAROT_CARDS,
@@ -30,11 +30,17 @@ export function KoLoveTarotExperience() {
   const [phase, setPhase] = useState<Phase>("intro");
   const [cards, setCards] = useState<TarotCard[]>([]);
   const [revealed, setRevealed] = useState<boolean[]>([false, false, false]);
+  /** 상단에 결과를 보여줄 카드(가장 최근에 누른 카드) */
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const startDraw = useCallback(() => {
     setCards(drawThree());
     setRevealed([false, false, false]);
+    setActiveIndex(null);
     setPhase("drawn");
+    // 다시 뽑을 땐 배경 영상 재생 재개
+    void videoRef.current?.play().catch(() => {});
   }, []);
 
   const reveal = useCallback((index: number) => {
@@ -44,20 +50,20 @@ export function KoLoveTarotExperience() {
       next[index] = true;
       return next;
     });
-  }, []);
-
-  const revealAll = useCallback(() => {
-    setRevealed([true, true, true]);
+    setActiveIndex(index);
+    // 카드를 누르면 배경 영상은 사라지지 않고 그 자리에서 정지
+    videoRef.current?.pause();
   }, []);
 
   const allRevealed = revealed.every(Boolean);
+  const activeCard = activeIndex !== null ? cards[activeIndex] : null;
+  const activePos = activeIndex !== null ? TAROT_POSITIONS[activeIndex] : null;
 
   return (
-    <div
-      className={`love-tarot-root has-video-bg${allRevealed ? " is-revealed" : ""}`}
-    >
+    <div className="love-tarot-root has-video-bg">
       <div className="love-tarot-bg" aria-hidden="true">
         <video
+          ref={videoRef}
           className="love-tarot-bg__video"
           src={VIDEO_SRC}
           poster={VIDEO_POSTER}
@@ -104,14 +110,46 @@ export function KoLoveTarotExperience() {
         </section>
       ) : (
         <section className="love-tarot-result">
+          <div className="love-tarot-readout" aria-live="polite">
+            {activeCard && activePos ? (
+              <div className="love-tarot-readout__body" key={activeIndex}>
+                <p className="love-tarot-readout__position">
+                  <span className="love-tarot-readout__position-emoji">
+                    {activePos.emoji}
+                  </span>
+                  {activePos.label}
+                </p>
+                <p className="love-tarot-readout__name">
+                  <span className="love-tarot-readout__name-emoji">
+                    {activeCard.emoji}
+                  </span>
+                  {activeCard.name}
+                  <span className="love-tarot-readout__name-en">
+                    {activeCard.nameEn}
+                  </span>
+                </p>
+                <p className="love-tarot-readout__reading">
+                  {activeCard.reading[activePos.key]}
+                </p>
+              </div>
+            ) : (
+              <p className="love-tarot-readout__hint">
+                카드를 한 장씩 눌러 결과를 확인하세요.
+              </p>
+            )}
+          </div>
+
           <div className="love-tarot-cards">
             {cards.map((card, i) => {
               const pos = TAROT_POSITIONS[i];
               const isOpen = revealed[i];
+              const isActive = activeIndex === i;
               return (
                 <article
                   key={pos.key}
-                  className={`love-tarot-card${isOpen ? " is-open" : ""}`}
+                  className={`love-tarot-card${isOpen ? " is-open" : ""}${
+                    isActive ? " is-active" : ""
+                  }`}
                 >
                   <p className="love-tarot-card__position">
                     <span className="love-tarot-card__position-emoji">
@@ -124,7 +162,7 @@ export function KoLoveTarotExperience() {
                     type="button"
                     className="love-tarot-card__flip"
                     onClick={() => reveal(i)}
-                    aria-pressed={isOpen}
+                    aria-pressed={isActive}
                     aria-label={
                       isOpen
                         ? `${pos.label}: ${card.name}`
@@ -144,34 +182,12 @@ export function KoLoveTarotExperience() {
                       <span className="love-tarot-card__tap">탭하여 뒤집기</span>
                     ) : null}
                   </button>
-
-                  {isOpen ? (
-                    <div className="love-tarot-card__body">
-                      <p className="love-tarot-card__name">
-                        {card.name}
-                        <span className="love-tarot-card__name-en">
-                          {card.nameEn}
-                        </span>
-                      </p>
-                      <p className="love-tarot-card__reading">
-                        {card.reading[pos.key]}
-                      </p>
-                    </div>
-                  ) : null}
                 </article>
               );
             })}
           </div>
 
-          {!allRevealed ? (
-            <button
-              type="button"
-              className="btn love-tarot-revealall-btn"
-              onClick={revealAll}
-            >
-              카드 모두 열기
-            </button>
-          ) : (
+          {allRevealed ? (
             <div className="love-tarot-cta">
               <button
                 type="button"
@@ -181,7 +197,7 @@ export function KoLoveTarotExperience() {
                 다시 뽑기
               </button>
             </div>
-          )}
+          ) : null}
         </section>
       )}
 

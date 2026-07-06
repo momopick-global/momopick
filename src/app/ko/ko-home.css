@@ -3930,6 +3930,11 @@ html.today-video-lock body {
   padding-bottom: 0;
 }
 
+/* 연애운세 페이지에선 가로형 스크롤 진행바(핑크 라인)를 숨긴다 */
+.momopick-ko:has(.love-tarot-root) .ko-scroll-progress {
+  display: none;
+}
+
 .momopick-ko .love-tarot-root {
   position: relative;
   box-sizing: border-box;
@@ -3976,11 +3981,6 @@ html.today-video-lock body {
   height: 100%;
   object-fit: cover;
   transition: opacity 0.6s ease;
-}
-
-/* 카드 3장을 모두 열면 배경 영상은 사라지고, 어두운 배경색만 남긴다(가독성 유지) */
-.momopick-ko .love-tarot-root.is-revealed .love-tarot-bg__video {
-  opacity: 0;
 }
 
 .momopick-ko .love-tarot-bg__scrim {
@@ -4062,9 +4062,8 @@ html.today-video-lock body {
   padding: 6px 0 10px;
 }
 
-.momopick-ko .love-tarot-top__spacer,
-.momopick-ko .love-tarot-top .back-btn {
-  flex: 0 0 44px;
+.momopick-ko .love-tarot-top__spacer {
+  flex: 0 0 54px;
 }
 
 .momopick-ko .love-tarot-title {
@@ -4211,11 +4210,82 @@ html.today-video-lock body {
   }
 }
 
+/* 상단 결과 패널 — 카드 3장 레이아웃 전체 가로폭 사용 */
+.momopick-ko .love-tarot-readout {
+  width: 100%;
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(20, 12, 32, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.momopick-ko .love-tarot-readout__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.momopick-ko .love-tarot-readout__body {
+  width: 100%;
+  animation: love-tarot-fade 0.32s ease both;
+}
+
+.momopick-ko .love-tarot-readout__position {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffd9e6;
+}
+
+.momopick-ko .love-tarot-readout__position-emoji {
+  margin-right: 4px;
+}
+
+.momopick-ko .love-tarot-readout__name {
+  margin: 0 0 8px;
+  font-size: var(--fs-fluid-2);
+  font-weight: 700;
+  color: #fff;
+}
+
+.momopick-ko .love-tarot-readout__name-emoji {
+  margin-right: 4px;
+}
+
+.momopick-ko .love-tarot-readout__name-en {
+  margin-left: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.momopick-ko .love-tarot-readout__reading {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 34em;
+  margin-inline: auto;
+}
+
 .momopick-ko .love-tarot-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   width: 100%;
+}
+
+/* 현재 선택된(결과가 상단에 보이는) 카드 강조 */
+.momopick-ko .love-tarot-card.is-active .love-tarot-card__flip {
+  outline: 2px solid #ffd9e6;
+  outline-offset: 2px;
 }
 
 .momopick-ko .love-tarot-card {
@@ -4304,9 +4374,13 @@ html.today-video-lock body {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  font-size: var(--fs-fluid-2);
+  font-size: var(--fs-fluid-1);
   font-weight: 700;
   color: var(--ink);
+}
+
+.momopick-ko .love-tarot-card__name-emoji {
+  margin-right: 3px;
 }
 
 .momopick-ko .love-tarot-card__name-en {

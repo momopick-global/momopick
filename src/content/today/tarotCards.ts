@@ -26,6 +26,8 @@ export type TarotCard = {
   name: string;
   /** 영문 카드 이름 */
   nameEn: string;
+  /** 카드 이름과 연관된 이모지 */
+  emoji: string;
   /** 이미지 경로 (교체 가능) */
   image: string;
   /** 자리별 연애운세 해석 */
@@ -39,6 +41,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "00-the-fool",
     name: "바보",
     nameEn: "The Fool",
+    emoji: "🃏",
     image: `${IMG_BASE}/0.webp`,
     reading: {
       partner: "그 사람은 아직 마음을 정하지 못한 채, 설렘과 두려움 사이에서 당신을 바라보고 있어요. 계산보다 순수한 호감이 앞서는 시기예요.",
@@ -50,6 +53,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "01-the-magician",
     name: "마법사",
     nameEn: "The Magician",
+    emoji: "🎩",
     image: `${IMG_BASE}/1.webp`,
     reading: {
       partner: "상대는 당신에게 좋은 인상을 주려 은근히 노력하고 있어요. 대화를 이어갈 기회를 스스로 만들고 싶어 합니다.",
@@ -61,6 +65,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "02-the-high-priestess",
     name: "여사제",
     nameEn: "The High Priestess",
+    emoji: "🌙",
     image: `${IMG_BASE}/2.webp`,
     reading: {
       partner: "그 사람은 겉으로 드러내지 않지만 속으로 당신을 깊이 관찰하고 있어요. 말보다 마음이 앞서 있는 상태예요.",
@@ -72,6 +77,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "03-the-empress",
     name: "여황제",
     nameEn: "The Empress",
+    emoji: "👑",
     image: `${IMG_BASE}/3.webp`,
     reading: {
       partner: "상대는 당신 곁에서 편안함과 따뜻함을 느끼고 있어요. 함께하는 시간을 소중히 여기는 마음이 커지고 있어요.",
@@ -83,6 +89,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "04-the-emperor",
     name: "황제",
     nameEn: "The Emperor",
+    emoji: "🏛️",
     image: `${IMG_BASE}/4.webp`,
     reading: {
       partner: "그 사람은 당신과의 관계를 진지하고 안정적으로 만들고 싶어 해요. 책임감 있게 다가가려는 마음이 있어요.",
@@ -94,6 +101,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "05-the-hierophant",
     name: "교황",
     nameEn: "The Hierophant",
+    emoji: "⛪",
     image: `${IMG_BASE}/5.webp`,
     reading: {
       partner: "상대는 당신과 진솔하고 오래가는 인연을 그리고 있어요. 가벼운 만남보다 신뢰를 쌓고 싶어 합니다.",
@@ -105,6 +113,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "06-the-lovers",
     name: "연인",
     nameEn: "The Lovers",
+    emoji: "💑",
     image: `${IMG_BASE}/6.webp`,
     reading: {
       partner: "그 사람은 당신에게 진심으로 끌리고 있어요. 마음이 이미 당신을 향해 있는, 아주 좋은 신호예요.",
@@ -116,6 +125,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "07-the-chariot",
     name: "전차",
     nameEn: "The Chariot",
+    emoji: "🏇",
     image: `${IMG_BASE}/7.webp`,
     reading: {
       partner: "상대는 당신에게 다가가려는 의지가 강해요. 망설임을 딛고 관계를 진전시키려는 마음이 커지고 있어요.",
@@ -127,6 +137,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "08-strength",
     name: "힘",
     nameEn: "Strength",
+    emoji: "🦁",
     image: `${IMG_BASE}/8.webp`,
     reading: {
       partner: "그 사람은 부드럽지만 흔들리지 않는 마음으로 당신을 대하고 있어요. 서두르지 않고 진심을 지키고 있어요.",
@@ -138,6 +149,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "09-the-hermit",
     name: "은둔자",
     nameEn: "The Hermit",
+    emoji: "🏮",
     image: `${IMG_BASE}/9.webp`,
     reading: {
       partner: "상대는 지금 혼자만의 시간 속에서 마음을 정리하고 있어요. 무관심이 아니라 신중함에서 나온 거리예요.",
@@ -149,6 +161,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "10-wheel-of-fortune",
     name: "운명의 수레바퀴",
     nameEn: "Wheel of Fortune",
+    emoji: "🎡",
     image: `${IMG_BASE}/10.webp`,
     reading: {
       partner: "그 사람의 마음에 변화의 바람이 불고 있어요. 예상치 못한 계기로 당신을 다시 보게 될 수 있어요.",
@@ -160,6 +173,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "11-justice",
     name: "정의",
     nameEn: "Justice",
+    emoji: "⚖️",
     image: `${IMG_BASE}/11.webp`,
     reading: {
       partner: "상대는 당신과의 관계를 공정하고 솔직하게 대하고 싶어 해요. 진심만큼 돌려주려는 마음이 있어요.",
@@ -171,6 +185,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "12-the-hanged-man",
     name: "매달린 사람",
     nameEn: "The Hanged Man",
+    emoji: "🙃",
     image: `${IMG_BASE}/12.webp`,
     reading: {
       partner: "그 사람은 지금 마음을 결정하기 전 잠시 멈춰 있어요. 서두르지 않고 상황을 다르게 바라보는 중이에요.",
@@ -182,6 +197,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "13-death",
     name: "죽음",
     nameEn: "Death",
+    emoji: "💀",
     image: `${IMG_BASE}/13.webp`,
     reading: {
       partner: "상대의 마음속에서 낡은 감정이 정리되고 있어요. 끝처럼 보이지만 새로운 시작을 위한 변화예요.",
@@ -193,6 +209,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "14-temperance",
     name: "절제",
     nameEn: "Temperance",
+    emoji: "⚗️",
     image: `${IMG_BASE}/14.webp`,
     reading: {
       partner: "그 사람은 당신과 서서히, 균형 있게 가까워지고 싶어 해요. 무리하지 않는 편안한 속도를 원해요.",
@@ -204,6 +221,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "15-the-devil",
     name: "악마",
     nameEn: "The Devil",
+    emoji: "😈",
     image: `${IMG_BASE}/15.webp`,
     reading: {
       partner: "상대는 당신에게 강하게 끌리지만, 그 감정에 얽매여 솔직해지지 못하고 있을 수 있어요.",
@@ -215,6 +233,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "16-the-tower",
     name: "탑",
     nameEn: "The Tower",
+    emoji: "🗼",
     image: `${IMG_BASE}/16.webp`,
     reading: {
       partner: "그 사람의 마음에 예상 밖의 흔들림이 있어요. 갑작스러운 변화가 오히려 진심을 드러나게 할 수 있어요.",
@@ -226,6 +245,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "17-the-star",
     name: "별",
     nameEn: "The Star",
+    emoji: "⭐",
     image: `${IMG_BASE}/17.webp`,
     reading: {
       partner: "상대는 당신에게 잔잔하고 진실한 희망을 품고 있어요. 편안하게 마음을 열어가는 좋은 흐름이에요.",
@@ -237,6 +257,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "18-the-moon",
     name: "달",
     nameEn: "The Moon",
+    emoji: "🌕",
     image: `${IMG_BASE}/18.webp`,
     reading: {
       partner: "그 사람의 마음이 겉과 속이 조금 다를 수 있어요. 아직 드러내지 못한 감정이 숨어 있어요.",
@@ -248,6 +269,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "19-the-sun",
     name: "태양",
     nameEn: "The Sun",
+    emoji: "☀️",
     image: `${IMG_BASE}/19.webp`,
     reading: {
       partner: "상대는 당신과 함께 있을 때 진심으로 밝고 행복해해요. 마음을 숨기지 않고 드러내고 싶어 합니다.",
@@ -259,6 +281,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "20-judgement",
     name: "심판",
     nameEn: "Judgement",
+    emoji: "🎺",
     image: `${IMG_BASE}/20.webp`,
     reading: {
       partner: "그 사람은 지난 감정을 돌아보며 당신과의 관계를 다시 진지하게 생각하고 있어요.",
@@ -270,6 +293,7 @@ export const TAROT_CARDS: readonly TarotCard[] = [
     slug: "21-the-world",
     name: "세계",
     nameEn: "The World",
+    emoji: "🌍",
     image: `${IMG_BASE}/21.webp`,
     reading: {
       partner: "상대는 당신과의 관계에서 충만함과 완성된 만족을 느끼고 있어요. 함께하는 미래를 그리고 있어요.",
