@@ -45,6 +45,17 @@
   --fs-fluid-5: clamp(17px, 4.1vw, 21px);
   --fs-fluid-6: clamp(24px, 4vw, 30px);
   --fs-fluid-7: clamp(22px, 3.5vw, 28px);
+  /* 퀴즈 페이지 제목(h1) 전용 — 여기 값만 바꾸면 모든 퀴즈 제목 반영 */
+  --fs-quiz-title: 28px;
+  --fs-quiz-title-lg: 32px;
+  /* === GNB·푸터(크롬) 전용 글자 크기 — 콘텐츠 스케일과 독립 === */
+  --fs-nav-link: clamp(13px, 2.8vw, 15px);
+  --fs-nav-label: 12px;
+  --fs-nav-tab: 10px;
+  --fs-ft-base: 13px;
+  --fs-ft-icon: 15px;
+  --fs-ft-social: 12px;
+  --fs-ft-legal: 11px;
   --radius: 20px;
   --radius-sm: 14px;
   /* 메인 콘텐츠·히어로·헤더 내부 정렬 공통 최대 너비 (풀 해상도 기준) */
@@ -301,7 +312,7 @@
   gap: 8px;
   min-height: 48px;
   padding: 10px 12px;
-  font-size: clamp(13px, 2.8vw, 15px);
+  font-size: var(--fs-nav-link);
   font-weight: 600;
   line-height: 1.35;
   color: var(--text);
@@ -330,7 +341,7 @@
 .momopick-ko .hd-symbol-panel__label {
   display: block;
   padding: 12px 2px 10px;
-  font-size: 12px;
+  font-size: var(--fs-nav-label);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2091,7 +2102,7 @@
   padding-top: 24px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-ft-base);
 }
 
 .momopick-ko footer.ko-ft a {
@@ -2119,7 +2130,7 @@
   gap: 7px;
   padding: 10px 18px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: var(--fs-ft-base);
   font-weight: 700;
   letter-spacing: -0.01em;
   border: 1px solid var(--line);
@@ -2150,7 +2161,7 @@
 }
 
 .momopick-ko .ko-ft-action-btn__icon {
-  font-size: 15px;
+  font-size: var(--fs-ft-icon);
   line-height: 1;
 }
 
@@ -2175,7 +2186,7 @@
   border-radius: 999px;
   border: 1px solid var(--line);
   background: transparent;
-  font-size: 12px;
+  font-size: var(--fs-ft-social);
   font-weight: 600;
   color: var(--text);
   text-decoration: none !important;
@@ -2207,14 +2218,14 @@
 .momopick-ko .ko-ft-links span[aria-hidden] {
   color: var(--muted);
   opacity: 0.5;
-  font-size: 11px;
+  font-size: var(--fs-ft-legal);
 }
 
 .momopick-ko .ko-ft-legal {
   margin-top: 18px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
-  font-size: 11px;
+  font-size: var(--fs-ft-legal);
   line-height: 1.55;
   color: var(--muted);
   letter-spacing: -0.01em;
@@ -2236,7 +2247,7 @@
 
 .momopick-ko .ko-ft-legal__line--copy {
   margin-top: 10px;
-  font-size: 11px;
+  font-size: var(--fs-ft-legal);
   opacity: 0.9;
 }
 
@@ -2330,7 +2341,7 @@
 
 .momopick-ko .quiz-page-hd h1 {
   margin: 0 0 10px;
-  font-size: var(--fs-7xl);
+  font-size: var(--fs-quiz-title);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -2338,7 +2349,7 @@
 
 @media (min-width: 640px) {
   .momopick-ko .quiz-page-hd h1 {
-    font-size: var(--fs-9xl);
+    font-size: var(--fs-quiz-title-lg);
   }
 }
 
@@ -4730,7 +4741,7 @@ html.today-video-lock body {
   min-height: 48px;
   padding: 4px 4px 2px;
   border-radius: 12px;
-  font-size: 10px;
+  font-size: var(--fs-nav-tab);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.55);

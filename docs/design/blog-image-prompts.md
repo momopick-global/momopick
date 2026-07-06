@@ -108,6 +108,71 @@
 
 ---
 
+## 7. `confession-timing-guide` 💌 고백 타이밍, 언제가 진짜 적기일까 (love)
+
+- **파일명**: `confession-timing-guide-ko-cover.webp`
+- **컨셉**: 고백을 앞둔 망설임과 설렘. 폰을 든 채 말할까 말까 고민하는 표정, 하트+시계 모티프로 '타이밍' 뉘앙스.
+
+**EN prompt**
+
+> Soft pastel vector illustration, 1:1 square aspect ratio. A young person holding a phone close to their chest with a hopeful, slightly nervous smile, a small floating heart and a gentle clock motif suggesting timing, warm coral and blush-pink and soft lavender palette, tender anticipatory mood, clean simple background, flat modern illustration, centered. No text, no letters, no logo, no watermark, no real photo, not dark.
+
+**한글 메모**: 시계는 '타이밍' 은유로만 작게. 설렘 반, 망설임 반의 표정.
+
+---
+
+## 8. `habits-that-ruin-relationships` 💔 자꾸 연애를 망치는 습관 (love)
+
+- **파일명**: `habits-that-ruin-relationships-ko-cover.webp`
+- **컨셉**: 반복되는 패턴 자각. 살짝 풀린 실타래/엉킨 하트를 바라보는 차분한 표정. 무겁지 않게, 성찰 톤.
+
+**EN prompt**
+
+> Gentle pastel vector illustration, 1:1 square aspect ratio. A young person thoughtfully looking at a softly tangled heart-shaped thread in their hands, calm reflective expression (not sad, not dark), muted rose and dusty-pink and soft lavender palette, introspective but warm mood, clean minimal background, flat modern illustration, centered. No text, no letters, no logo, no watermark, no real photo, not dark, not gloomy.
+
+**한글 메모**: 슬픔·우울 아님 — '아, 이런 패턴이 있었네' 하는 담담한 자각. 엉킨 실=반복 습관 은유.
+
+---
+
+## 9. `signs-he-lost-interest` 🥶 "식었다"는 신호, 오해와 진짜 (love)
+
+- **파일명**: `signs-he-lost-interest-ko-cover.webp`
+- **컨셉**: 늦은 답장에 불안해지는 순간. 폰 화면을 보며 갸웃하는 표정, 물음표 말풍선. 차가움보다 '헷갈림' 톤.
+
+**EN prompt**
+
+> Soft pastel vector illustration, 1:1 square aspect ratio. A young person looking at a phone screen with a slightly puzzled, uncertain expression, a small question-mark chat bubble floating nearby, cool but soft blue and lavender and light-pink palette, gentle "confused, not sure" mood (not cold or scary), clean simple background, flat modern illustration, centered. No text, no letters, no logo, no watermark, no real photo, not dark.
+
+**한글 메모**: 차갑고 무서운 톤 금지 — '식은 건가? 오해인가?' 헷갈리는 뉘앙스. 파랑은 부드럽게만.
+
+---
+
+## 10. `why-cant-text-first` 📱 먼저 연락 못 하는 사람의 심리 (love)
+
+- **파일명**: `why-cant-text-first-ko-cover.webp`
+- **컨셉**: 메시지 창을 열었다 닫는 망설임. 폰 위에 손가락을 올린 채 고민하는 표정, 작은 말풍선. 공감 톤.
+
+**EN prompt**
+
+> Soft pastel vector illustration, 1:1 square aspect ratio. A young person hesitating with a finger hovering over a phone screen, shy and thoughtful expression, a small empty chat bubble floating above, warm lavender and peach and soft pink palette, relatable gentle mood, clean minimal background, flat modern illustration, centered. No text, no letters, no logo, no watermark, no real photo, not dark.
+
+**한글 메모**: 빈 말풍선 = '보낼까 말까'. 글자는 넣지 않음. 공감되는 부드러운 표정.
+
+---
+
+## 11. `planner-vs-spontaneous` 🗺️ 계획형 vs 즉흥형 (personality)
+
+- **파일명**: `planner-vs-spontaneous-ko-cover.webp`
+- **컨셉**: 두 성향의 대비. 한쪽은 체크리스트/지도, 다른 쪽은 자유로운 곡선/여행 가방. 대비를 밝고 재미있게.
+
+**EN prompt**
+
+> Playful pastel vector illustration, 1:1 square aspect ratio. A split-concept scene contrasting two styles: on one side a tidy checklist and map pins, on the other side a free wavy path and a small travel bag, one cheerful character in the middle, bright mint and lavender and warm pink palette, fun balanced mood, clean simple background, flat modern illustration, centered. No text, no letters, no logo, no watermark, no real photo, not dark.
+
+**한글 메모**: 체크리스트/지도 vs 자유 곡선의 대비만 시각적으로. 글자·숫자는 넣지 않음. 어느 쪽도 부정적으로 보이지 않게.
+
+---
+
 ## 참고
 
 - 퀴즈(썸네일/결과) 이미지의 더 강한 '다크 네온' 시리즈 스타일은 [../quiz-image-prompts.md](../quiz-image-prompts.md) 참고. **블로그 커버는 그보다 밝고 부드러운 톤**을 유지합니다.
