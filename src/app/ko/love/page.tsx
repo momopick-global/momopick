@@ -59,7 +59,7 @@ export default function KoLoveHubPage() {
           </nav>
           <BackButton />
 
-          <section className="section" aria-labelledby="hub-love-title">
+          <section className="section hub-page" aria-labelledby="hub-love-title">
             <div className="sec-hd">
               <h1 id="hub-love-title">💌 심층 테스트</h1>
             </div>

@@ -58,7 +58,7 @@ export default function KoPersonalityTestHubPage() {
           </nav>
           <BackButton />
 
-          <section className="section" aria-labelledby="ptest-title">
+          <section className="section hub-page" aria-labelledby="ptest-title">
             <div className="sec-hd">
               <h1 id="ptest-title">🧭 성향 테스트</h1>
             </div>

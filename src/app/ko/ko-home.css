@@ -1683,6 +1683,15 @@
   max-width: 680px;
 }
 
+/* 서브페이지(심층·원픽·성향) 헤더 간격 축소 — 기본값의 1/3 */
+.momopick-ko .hub-page {
+  margin-top: 12px; /* 뒤로가기 버튼 ↔ 서브페이지명 (기본 36px) */
+}
+
+.momopick-ko .hub-page > .sec-hd {
+  margin-bottom: 5px; /* 서브페이지명 ↔ 아래 문구 (기본 14px) */
+}
+
 .momopick-ko .tile-grid {
   display: grid;
   gap: 14px;
@@ -4141,7 +4150,8 @@ html.today-video-lock body {
 
 .momopick-ko .love-tarot-draw-btn {
   margin-top: 5px;
-  min-width: 220px;
+  width: 100%;
+  max-width: 360px;
   justify-content: center;
 }
 
@@ -4355,6 +4365,57 @@ html.today-video-lock body {
   backdrop-filter: blur(4px);
 }
 
+/* 카드 뒷면을 누를 때 터지는 작은 폭죽 효과 */
+.momopick-ko .love-tarot-burst {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.momopick-ko .love-tarot-burst i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: #ffd9e6;
+  opacity: 0;
+  animation: love-tarot-spark 0.62s ease-out forwards;
+}
+
+.momopick-ko .love-tarot-burst i:nth-child(3n + 1) {
+  background: #ff7fb0;
+}
+.momopick-ko .love-tarot-burst i:nth-child(3n + 2) {
+  background: #ffe9a8;
+}
+
+@keyframes love-tarot-spark {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--deg)) translateY(0) scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--deg)) translateY(-52px) scale(0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momopick-ko .love-tarot-burst {
+    display: none;
+  }
+}
+
 .momopick-ko .love-tarot-card__body {
   display: flex;
   flex-direction: column;
@@ -4408,6 +4469,12 @@ html.today-video-lock body {
   gap: 10px;
   width: 100%;
   max-width: 360px;
+  /* 버튼이 보이기 전에도 같은 높이를 차지해 레이아웃이 튀지 않게 함 */
+  visibility: hidden;
+}
+
+.momopick-ko .love-tarot-cta.is-visible {
+  visibility: visible;
 }
 
 .momopick-ko .love-tarot-cta .btn {

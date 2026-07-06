@@ -12,6 +12,9 @@ const CARD_BACK = "/images/today/tarot/card-back.webp";
 const VIDEO_SRC = "/images/today/tarot.mp4";
 const VIDEO_POSTER = "/images/today/tarot-first-frame.webp";
 
+/** 폭죽 파티클 방향(도) */
+const BURST_DEGS = [0, 45, 90, 135, 180, 225, 270, 315];
+
 type Phase = "intro" | "drawn";
 
 /** 덱에서 서로 다른 카드 3장을 무작위로 뽑는다. */
@@ -39,8 +42,8 @@ export function KoLoveTarotExperience() {
     setRevealed([false, false, false]);
     setActiveIndex(null);
     setPhase("drawn");
-    // 다시 뽑을 땐 배경 영상 재생 재개
-    void videoRef.current?.play().catch(() => {});
+    // 카드를 뽑으면 배경 영상은 그 자리에서 정지
+    videoRef.current?.pause();
   }, []);
 
   const reveal = useCallback((index: number) => {
@@ -51,8 +54,6 @@ export function KoLoveTarotExperience() {
       return next;
     });
     setActiveIndex(index);
-    // 카드를 누르면 배경 영상은 사라지지 않고 그 자리에서 정지
-    videoRef.current?.pause();
   }, []);
 
   const allRevealed = revealed.every(Boolean);
@@ -142,14 +143,12 @@ export function KoLoveTarotExperience() {
           <div className="love-tarot-cards">
             {cards.map((card, i) => {
               const pos = TAROT_POSITIONS[i];
-              const isOpen = revealed[i];
+              // 상단 결과에 보이는(활성) 카드만 앞면, 나머지는 뒷면
               const isActive = activeIndex === i;
               return (
                 <article
                   key={pos.key}
-                  className={`love-tarot-card${isOpen ? " is-open" : ""}${
-                    isActive ? " is-active" : ""
-                  }`}
+                  className={`love-tarot-card${isActive ? " is-open is-active" : ""}`}
                 >
                   <p className="love-tarot-card__position">
                     <span className="love-tarot-card__position-emoji">
@@ -164,40 +163,46 @@ export function KoLoveTarotExperience() {
                     onClick={() => reveal(i)}
                     aria-pressed={isActive}
                     aria-label={
-                      isOpen
+                      isActive
                         ? `${pos.label}: ${card.name}`
                         : `${pos.label} 카드 뒤집기`
                     }
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={isOpen ? card.image : CARD_BACK}
-                      alt={isOpen ? card.name : ""}
+                      src={isActive ? card.image : CARD_BACK}
+                      alt={isActive ? card.name : ""}
                       className="love-tarot-card__img"
                       width={600}
                       height={1000}
                       decoding="async"
                     />
-                    {!isOpen ? (
+                    {!isActive ? (
                       <span className="love-tarot-card__tap">탭하여 뒤집기</span>
-                    ) : null}
+                    ) : (
+                      <span className="love-tarot-burst" aria-hidden="true">
+                        {BURST_DEGS.map((d) => (
+                          <i
+                            key={d}
+                            style={
+                              { "--deg": `${d}deg` } as React.CSSProperties
+                            }
+                          />
+                        ))}
+                      </span>
+                    )}
                   </button>
                 </article>
               );
             })}
           </div>
 
-          {allRevealed ? (
-            <div className="love-tarot-cta">
-              <button
-                type="button"
-                className="btn primary"
-                onClick={startDraw}
-              >
-                다시 뽑기
-              </button>
-            </div>
-          ) : null}
+          {/* 버튼 공간을 항상 예약해 마지막 카드 오픈 시 레이아웃이 위로 튀지 않게 함 */}
+          <div className={`love-tarot-cta${allRevealed ? " is-visible" : ""}`}>
+            <button type="button" className="btn primary" onClick={startDraw}>
+              다시 뽑기
+            </button>
+          </div>
         </section>
       )}
 

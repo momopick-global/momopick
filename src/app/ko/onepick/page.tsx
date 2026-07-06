@@ -57,7 +57,7 @@ export default function KoOnepickPage() {
           </nav>
           <BackButton />
 
-          <section className="section" aria-labelledby="onepick-title">
+          <section className="section hub-page" aria-labelledby="onepick-title">
             <div className="sec-hd">
               <h1 id="onepick-title">🎯 원픽 테스트</h1>
             </div>
