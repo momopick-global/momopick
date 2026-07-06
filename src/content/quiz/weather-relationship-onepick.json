@@ -106,7 +106,7 @@
         "ko": "요즘 당신의 연애 기류는 맑음이에요. 큰 흔들림 없이 안정되고 서로에게 만족을 느끼는 시기일 수 있어요. 이런 때는 그 편안함을 당연하게 여기지 말고, 작은 고마움을 한 번씩 표현해 주면 맑은 날이 더 오래가요.",
         "en": ""
       },
-      "image": "/images/common/quiz-image-pending.webp"
+      "image": "/images/quiz/weather-relationship-onepick/result-1.webp"
     },
     "cloudy": {
       "emoji": "☁️",
@@ -123,7 +123,7 @@
         "ko": "요즘 당신의 연애 기류는 살짝 흐림일 수 있어요. 익숙해지며 설렘이 무뎌지거나, 마음이 조금 불확실해지는 시기죠. 이런 땐 크게 걱정하기보다, 함께 새로운 걸 해보거나 솔직한 대화를 나누면 흐림이 걷히기도 해요.",
         "en": ""
       },
-      "image": "/images/common/quiz-image-pending.webp"
+      "image": "/images/quiz/weather-relationship-onepick/result-2.webp"
     },
     "rain": {
       "emoji": "🌧️",
@@ -140,7 +140,7 @@
         "ko": "요즘 당신의 연애 기류는 비가 내리는 것 같을 수 있어요. 작은 서운함이나 상처로 마음이 촉촉해지는 시기죠. 이런 감정도 관계의 자연스러운 한 부분이에요. 비가 그치면 공기가 맑아지듯, 마음을 나누다 보면 한결 개운해질 거예요.",
         "en": ""
       },
-      "image": "/images/common/quiz-image-pending.webp"
+      "image": "/images/quiz/weather-relationship-onepick/result-3.webp"
     },
     "wind": {
       "emoji": "🍃",
@@ -157,7 +157,7 @@
         "ko": "요즘 당신의 연애 기류엔 바람이 불고 있어요. 새로운 설렘이나 변화의 조짐이 느껴지는 시기죠. 그 산뜻한 바람은 관계에 활력을 주기도 해요. 어디로 부는 바람인지 가만히 느껴보면, 지금 내 마음이 바라는 방향이 보일 거예요.",
         "en": ""
       },
-      "image": "/images/common/quiz-image-pending.webp"
+      "image": "/images/quiz/weather-relationship-onepick/result-4.webp"
     }
   },
   "blend": {

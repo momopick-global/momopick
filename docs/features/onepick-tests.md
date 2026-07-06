@@ -51,7 +51,7 @@ options: { label: SnackQuizText; key: string; image?: string }[]
 ## 5. 이미지 경로 규칙 (기존 규칙 그대로)
 
 - JSON에는 `/images/quiz/{slug}/…`로만 적고, 실제 파일은 `public/images/quiz/{slug}/{locale}/`에 둔다(`quizAssetUrl`이 연결).
-- 파일명 컨벤션: 썸네일 `thumb.webp` · 결과 `result-{key}.webp` (보기 이미지 쓸 경우 `option-{key}.webp`).
+- 파일명 컨벤션: 썸네일 `thumb.webp` · 결과 `result-{번호}.webp` (resultOrder 순서대로 `result-1`, `result-2`, … — 썸연애 퀴즈와 동일; 보기 이미지 쓸 경우 `option-{번호}.webp`).
 - 검증: `node tools/check-quiz-images.mjs` (경로에 적힌 파일이 실제로 있어야 통과).
 
 ## 6. 데이터 예시 (현재 샘플 `color-mood-onepick`)
@@ -96,7 +96,7 @@ options: { label: SnackQuizText; key: string; image?: string }[]
 
 - 보기 개수 = 결과 개수 (4~6, 서로 1:1). 보기 `key`와 결과 `resultKeys`/`results` 키를 반드시 일치시킨다.
 - `blend`는 원픽에서 동점이 안 생겨 안 쓰이지만 타입상 최소값만 채운다.
-- 보기를 **이미지 카드**로 쓰려면 각 보기에 `"image": "/images/quiz/{slug}/option-{key}.webp"`를 추가.
+- 보기를 **이미지 카드**로 쓰려면 각 보기에 `"image": "/images/quiz/{slug}/option-{번호}.webp"`를 추가.
 
 ## 7. 등록 절차 (일반 퀴즈와 동일)
 

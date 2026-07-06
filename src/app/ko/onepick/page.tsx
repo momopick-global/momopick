@@ -9,6 +9,14 @@ import { KoLoveQuizListView } from "@/components/ko/KoLoveQuizListView";
 
 const onepickAll = getKoOnePickQuizzesSorted("ko");
 
+// 허브 공유(OG) 이미지: 대표(최상위 우선순위) 원픽 테스트의 썸네일을 사용.
+// 실제 이미지가 없어(placeholder) 폴백이 필요하면 공용 OG를 쓴다.
+const featuredOnepick = onepickAll[0];
+const ogImageUrl =
+  featuredOnepick?.image && !featuredOnepick.image.includes("quiz-image-pending")
+    ? `https://momopick.com${featuredOnepick.image}`
+    : "https://momopick.com/og/main-og.webp";
+
 export const metadata: Metadata = {
   title: "원픽 테스트 | 모모픽",
   description:
@@ -22,10 +30,10 @@ export const metadata: Metadata = {
     url: "https://momopick.com/ko/onepick/",
     images: [
       {
-        url: "https://momopick.com/og/main-og.webp",
-        width: 1536,
-        height: 1024,
-        alt: "모모픽 — MBTI·연애·심리 테스트",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "모모픽 원픽 테스트",
       },
     ],
     locale: "ko_KR",
