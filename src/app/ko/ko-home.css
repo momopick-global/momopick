@@ -537,7 +537,7 @@
 .momopick-ko .cat-bar__inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 10px var(--layout-gutter) 10px;
+  padding: 5px var(--layout-gutter) 5px;
   display: flex;
   gap: 8px;
   overflow-x: auto;
@@ -569,6 +569,35 @@
   box-shadow: 0 2px 12px rgba(45, 30, 80, 0.04);
 }
 
+/* 메인 1뎁스 메뉴(카테고리 바) — 버튼 디자인 제거, 글자만 보이게 */
+.momopick-ko .cat-bar .chip--default {
+  padding: 3px 10px;
+  border: none;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: #111;
+  font-weight: 700;
+}
+
+.momopick-ko .cat-bar .chip--default:hover:not([aria-current="true"]) {
+  color: #000;
+  background: none;
+  border-color: transparent;
+}
+
+.momopick-ko .cat-bar .chip--default[aria-current="true"] {
+  background: none;
+  color: #000;
+}
+
+/* 2뎁스 메뉴(태그 바) — 글자색 검정 */
+.momopick-ko .tag-bar .chip--tag {
+  color: #111;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 /* GNB 바로 아래 태그 줄 (카테고리 바보다 한 단계 가볍게) */
 .momopick-ko .tag-bar {
   border-bottom: 1px solid var(--line);
@@ -578,7 +607,7 @@
 .momopick-ko .tag-bar__inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 8px var(--layout-gutter);
+  padding: 5px var(--layout-gutter);
   display: flex;
   gap: 6px;
   overflow-x: auto;
