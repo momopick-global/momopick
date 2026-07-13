@@ -4,9 +4,15 @@
 > 목적: `/ko/blog/` 글을 (1) AdSense thin-content 리스크 해소, (2) 퀴즈와 내부 링크로 연결해 SEO·회유(回遊) 강화하는 방향으로 확장.
 > 데이터: `src/content/blog/koSamplePosts.ts` · 작성법: [blog-writing-guide.md](./blog-writing-guide.md) · 기능 구조: [../features/blog.md](../features/blog.md)
 
-## 현황 요약 (2026-07-06 갱신)
+## 현황 요약 (2026-07-09 갱신)
 
-운영 중인 글은 8개. **전부 600자 이상(775~1,541자)으로 thin-content 길이 리스크는 해소됨.** 과거 220~320자였던 5개는 확장 완료. 이제 로드맵의 초점은 확장이 아니라 **P1 필러 글 신규 발행 + 연결 퀴즈로 내부 링크 강화**에 있다.
+**운영 중인 글 17편.** 길이 리스크 해소(대부분 600자+), **이미지 17편 전부 연결 완료**, 신규 글 전부 **자체 유형 렌즈** 적용.
+
+- 카테고리 분포: love 7 · personality 4 · story 3 · fun 2 · tarot 1
+- 남은 할 일: `new-quizzes-rhythm` 소폭 확장(584자)
+- 글별 상세 목록은 [../features/blog.md](../features/blog.md#운영-중인-글-17개-2026-07-09-확인) 참고 (중복 관리 방지)
+
+이제 로드맵의 초점은 **남은 후보(T1~T2 타로, F1·F3 원픽) 발행 + 유형 렌즈 유지**에 있다.
 
 | slug | 제목 | 카테고리 | 본문 | 상태 |
 |---|---|---|---|---|
@@ -50,7 +56,7 @@
 
 ## P1 — 카테고리별 필러 글 (신규)
 
-> ✅ 2026-07-06 발행: L1·L2·L3·L4·L5·P1 (총 6편). 전부 유형 렌즈 적용, 연결 퀴즈 실제 유형 인용. 남은 후보: P2~P4, T1~T2.
+> ✅ 발행: L1·L2·L3·L4·L5·P1·P2·P3(2026-07-06), P4(2026-07-09) — 총 9편. 전부 유형 렌즈 적용, 연결 퀴즈 실제 유형 인용. 남은 후보: T1~T2(타로), F1~F3(원픽·재미).
 
 ### 썸·연애 (love)
 
@@ -85,7 +91,7 @@
 | # | 제목안 | 연결 퀴즈 | 태그 |
 |---|---|---|---|
 | F1 | 원픽 테스트 200% 즐기는 법 | `color-mood-onepick`, `dessert-love-onepick`, `flower-charm-onepick` | 팁 |
-| F2 | 오늘 끌리는 색으로 보는 지금의 기분 | `color-mood-onepick`, `night-sky-mood-onepick` | 가이드 |
+| F2 | ✅ 발행(2026-07-09) 오늘 끌리는 색으로 보는 지금의 기분 → `color-mood-today` | `color-mood-onepick`, `night-sky-mood-onepick` | 가이드 |
 | F3 | 무인도에 딱 하나 가져간다면? — 선택으로 보는 가치관 | `island-value-onepick`, `travel-need-onepick` | 팁 |
 
 ---

@@ -64,8 +64,8 @@ export default function KoSavedPage() {
           </KoSavedRequireAuth>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

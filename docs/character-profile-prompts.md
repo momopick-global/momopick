@@ -3,85 +3,85 @@
 ## 스타일 기준
 
 - 참고 폴더: `/Users/xxxaskillofgodxxxgmail.com/Desktop/momo/momopick_자료/그림 스타일/`
-- 핵심 무드: 다크 퍼플, 블루, 마젠타 네온 / 고딕 로맨스 / 반짝이는 글로시 눈 / 유리 파편 / 그림자 / 감정 과장 / 귀엽지만 살짝 다크한 분위기
+- 핵심 무드: **귀엽고 사랑스러운** 한국형 애니 캐릭터 / **캐릭터마다 뚜렷한 패션 개성** / **머리색·눈색을 캐릭터별로 다양하게** / 반짝이는 글로시 큰 눈 / 감정 과장 / 발랄하되 살짝 무드 있는 분위기 (네온·글로우는 캐릭터 고유 색으로)
 - 사람 캐릭터와 동물 캐릭터가 같은 세계관 안에 있는 것처럼 보여야 합니다.
 - 동물은 단순한 장식이 아니라 각 감정 타입을 상징하는 `마스코트` 역할로 사용합니다.
 
 ## 공통 생성 규칙
 
 - 용도: 퀴즈 시리즈 전체에서 반복 사용할 고정 캐릭터 프로필 기준 이미지
-- 구도: 정사각형 1:1, 가슴 위까지 보이는 초상, 정면 또는 살짝 3/4 각도
-- 스타일: 참고 이미지와 같은 고퀄 한국형 애니메이션 일러스트, 고딕 네온 퀴즈 아트 스타일
-- 조명: 강한 네온 림라이트, 보라/파랑/핑크 계열의 광택 하이라이트
+- 구도: 정사각형 1:1, **얼굴을 크게 잡은 클로즈업(가슴 위)**, 정면 또는 살짝 3/4 각도
+- 스타일: 고퀄 한국형 애니메이션 일러스트, 귀엽고 개성 강한 캐릭터 디자인
+- 조명: 강한 네온 림라이트, **캐릭터 고유 색**의 광택 하이라이트 (보라 일변도 지양)
 - 배경: 단순 그라데이션이 아니라 빛 입자, 유리 조각, 하트 심볼, 그림자 기류가 있는 간결한 배경
 - 금지: 읽을 수 있는 글자, 워터마크, 로고, 너무 현실적인 사진풍
 - 목표: 10명의 사람 캐릭터와 5마리 동물 캐릭터가 서로 겹치지 않고 한눈에 구분될 것
 
 ## 공통 스타일 프롬프트
 
-- EN: `Square 1:1 character profile portrait, ultra-polished Korean anime illustration, dark gothic neon romance style, glossy oversized eyes, dramatic rim lighting, luminous purple blue and magenta glow, sparkling particles, fractured glass accents, cute but slightly dark emotional mood, richly detailed hair and accessories, clean centered portrait, no readable text, no watermark, no logo, same universe as a Korean viral psychology quiz thumbnail.`
-- KO: `정사각형 1:1 캐릭터 프로필 초상, 매우 정교한 한국형 애니메이션 일러스트, 다크 고딕 네온 로맨스 스타일, 반짝이는 큰 눈, 드라마틱한 림라이트, 빛나는 퍼플 블루 마젠타 글로우, 반짝이는 입자, 유리 파편 포인트, 귀엽지만 살짝 다크한 감정 무드, 디테일한 헤어와 액세서리, 중앙 정렬 초상, 읽을 수 있는 텍스트 없음, 워터마크 없음, 로고 없음, 한국형 바이럴 심리 퀴즈 썸네일과 같은 세계관.`
+- EN: `Square 1:1 character profile portrait, ultra-polished Korean anime illustration, very cute and lovable character design with strong personal fashion, big glossy sparkling eyes, close-up on the face, dramatic rim lighting, neon glow in the character's own signature color, sparkling particles, distinct hair color and eye color per character, richly detailed hair and fashion accessories, clean centered portrait, no readable text, no watermark, no logo, same universe as a Korean viral psychology quiz thumbnail.`
+- KO: `정사각형 1:1 캐릭터 프로필 초상, 매우 정교한 한국형 애니메이션 일러스트, 매우 귀엽고 사랑스러운 캐릭터 디자인, 뚜렷한 패션 개성, 반짝이는 큰 글로시 눈, 얼굴을 크게 잡은 클로즈업, 드라마틱한 림라이트, 캐릭터 고유 색의 네온 글로우, 반짝이는 입자, 캐릭터마다 다른 머리색과 눈색, 디테일한 헤어와 패션 액세서리, 중앙 정렬 초상, 읽을 수 있는 텍스트 없음, 워터마크 없음, 로고 없음, 한국형 바이럴 심리 퀴즈 썸네일과 같은 세계관.`
 
 ## 사람 캐릭터
 
 ### F1
 
-- EN: `A lovable Korean young woman with a soft round face, huge glowing violet-brown eyes, long dark plum wavy hair, heart hair clip, lace choker, holding a glossy heart pendant, tender but emotionally deep expression, purple-pink neon glow, tiny floating hearts and subtle mirror shard accents.`
-- KO: `부드러운 동그란 얼굴형, 커다랗게 빛나는 보랏빛 갈색 눈, 긴 다크 플럼 웨이브 헤어, 하트 헤어클립, 레이스 초커, 반짝이는 하트 펜던트를 든 사랑스러운 한국인 젊은 여성, 다정하지만 감정이 깊은 표정, 퍼플 핑크 네온 글로우, 작은 하트와 은은한 거울 파편 포인트.`
+- EN: `A super cute Korean young woman with a round adorable face, big sparkling warm amber eyes, soft wavy strawberry-pink hair, heart hairpin and a big ribbon, frilly blouse with a heart pendant, lovely pastel fashion, tender fluttering expression, warm coral-pink glow, tiny floating hearts.`
+- KO: `동그랗고 귀여운 얼굴, 크고 반짝이는 따뜻한 앰버 눈, 부드러운 웨이브의 딸기 핑크 헤어, 하트 헤어핀과 큼직한 리본, 프릴 블라우스에 하트 펜던트, 러블리한 파스텔 패션의 사랑스러운 한국인 젊은 여성, 다정하고 설레는 표정, 따뜻한 코랄 핑크 글로우, 작은 하트 반짝임.`
 - 동물 마스코트: `A1`
 
 ### F2
 
-- EN: `A calm intellectual Korean young woman with a slim oval face, cool violet eyes, sleek ink-black bob haircut, elegant ribbon earpiece, a small locked diary held near her chest, restrained mysterious expression, midnight blue and icy lavender neon, thin cracked-glass lines in the background.`
-- KO: `갸름한 타원형 얼굴, 차가운 바이올렛 눈빛, 매끈한 잉크 블랙 보브 헤어, 우아한 리본 이어장식, 작은 자물쇠 다이어리를 가슴 가까이에 든 차분한 한국인 젊은 여성, 절제된 미스터리 표정, 미드나이트 블루와 아이시 라벤더 네온, 배경에는 얇은 금 간 유리선 포인트.`
+- EN: `A cute composed Korean young woman with clear icy grey-blue eyes, sleek ink-navy bob, a beret and ribbon tie, chic preppy cardigan, intellectual tidy fashion, slightly prim adorable expression, icy-blue glow, small sparkles.`
+- KO: `단정하고 귀여운 얼굴, 또렷한 아이시 그레이블루 눈, 매끈한 잉크 네이비 보브 헤어, 베레모와 리본 타이, 세련된 프레피 카디건의 지적이고 차분한 패션의 한국인 젊은 여성, 살짝 새침하고 귀여운 표정, 아이시 블루 글로우, 작은 별 반짝임.`
 - 동물 마스코트: `A2`
 
 ### F3
 
-- EN: `A gentle Korean young woman with clear tearful lavender eyes, soft see-through bangs, long straight black hair with blue sheen, delicate silver cross-heart accessory, holding a tiny candle lantern, warm but lonely expression, moonlit indigo glow with floating dust sparkles.`
-- KO: `눈물 맺힌 듯 맑은 라벤더 눈, 부드러운 시스루 앞머리, 푸른 윤기가 도는 긴 흑발 생머리, 섬세한 실버 크로스 하트 장식, 작은 캔들 랜턴을 든 다정한 한국인 젊은 여성, 따뜻하지만 외로운 표정, 달빛 같은 인디고 글로우와 떠다니는 먼지 반짝임.`
+- EN: `A cute gentle Korean young woman with big dewy soft-lavender eyes, mint-green long hair with see-through bangs, star and cloud hairpins, cozy pastel knit cardigan, dreamy tender fashion, soft lovable expression, mint-lavender glow, floating star sparkles.`
+- KO: `말갛고 귀여운 얼굴, 크고 촉촉한 소프트 라벤더 눈, 시스루 앞머리의 민트 그린 롱 헤어, 별과 구름 헤어핀, 포근한 파스텔 니트 카디건의 몽환적이고 다정한 패션의 한국인 젊은 여성, 순하고 사랑스러운 표정, 민트 라벤더 글로우, 떠다니는 별 반짝임.`
 - 동물 마스코트: `A3`
 
 ### F4
 
-- EN: `A chic commanding Korean young woman with a sharp jawline, catlike amethyst eyes, sleek chestnut-black layered hair, black rose earrings, velvet off-shoulder gothic dress, cool dominant expression, wine-purple neon and dramatic shadow ribbons behind her.`
-- KO: `날카로운 턱선, 고양이 같은 자수정 눈매, 세련된 체스트넛 블랙 레이어드 헤어, 블랙 로즈 귀걸이, 벨벳 오프숄더 고딕 드레스를 입은 시크한 한국인 젊은 여성, 차갑고 주도적인 표정, 와인 퍼플 네온과 뒤로 흐르는 드라마틱한 그림자 리본.`
+- EN: `A chic yet cute Korean young woman with intense wine-red eyes, platinum-silver layered hair, gold choker and drop earrings, modern black-and-gold chic outfit, charismatic bold fashion, confident cute expression, deep-wine glow, glossy shard accents.`
+- KO: `도도하지만 귀여운 얼굴, 강렬한 와인 레드 눈, 플래티넘 실버 레이어드 헤어, 골드 초커와 드롭 이어링, 블랙에 골드 포인트를 준 모던 시크 룩의 카리스마 있는 패션의 한국인 젊은 여성, 자신감 있고 귀여운 표정, 딥 와인 글로우, 반짝이는 파편 포인트.`
 - 동물 마스코트: `A4`
 
 ### F5
 
-- EN: `A playful Korean young woman with sparkling magenta eyes, high twin-tail or lively ponytail silhouette, smoky cocoa-brown hair, star and heart hairpins, oversized hoodie with gothic cute details, cheeky grin, candy-magenta and violet neon with doodle-like glow symbols.`
-- KO: `반짝이는 마젠타 눈, 높은 트윈테일 또는 활기 있는 포니테일 실루엣, 스모키 코코아 브라운 헤어, 별과 하트 헤어핀, 고딕 큐트 디테일이 들어간 오버사이즈 후드티를 입은 장난기 많은 한국인 젊은 여성, 짓궂은 미소, 캔디 마젠타와 바이올렛 네온, 낙서 같은 빛 심볼 포인트.`
+- EN: `A bubbly cute Korean young woman with sparkling lime-green eyes, apricot-orange twin-tails, star and sticker hairpins, oversized graphic hoodie in poppy street fashion, cheeky bright grin, candy-color glow, doodle-like glow symbols.`
+- KO: `발랄하고 귀여운 얼굴, 반짝이는 라임 그린 눈, 애프리콧 오렌지 트윈테일 헤어, 별·스티커 헤어핀, 오버사이즈 그래픽 후디의 팝한 스트리트 패션의 장난기 많은 한국인 젊은 여성, 짓궂고 밝은 미소, 캔디 컬러 글로우, 낙서 같은 빛 심볼 포인트.`
 - 동물 마스코트: `A5`
 
 ### M1
 
-- EN: `A warm Korean young man with gentle luminous blue-violet eyes, soft black hair parted naturally, refined knit layered with a dark shirt, clean kind features, a quiet protective expression, moon-blue glow with subtle heart particles and soft shadow halos.`
-- KO: `부드럽게 빛나는 블루 바이올렛 눈, 자연스럽게 가른 부드러운 흑발, 어두운 셔츠 위에 정제된 니트를 레이어드한 따뜻한 한국인 젊은 남성, 깔끔하고 다정한 이목구비, 조용히 지켜주는 듯한 표정, 문블루 글로우와 작은 하트 입자, 부드러운 그림자 헤일로.`
+- EN: `A cute gentle-looking Korean young man with soft sky-blue eyes, natural ash-brown hair, cozy oversized knit with a muffler, warm homey fashion, calm tender smile, warm cream glow, tiny heart particles.`
+- KO: `순하고 귀여운 인상, 부드러운 소프트 스카이블루 눈, 자연스러운 애쉬 브라운 헤어, 포근한 오버사이즈 니트에 머플러를 두른 코지 패션의 따뜻한 한국인 젊은 남성, 잔잔하고 다정한 미소, 웜 크림 글로우, 작은 하트 입자.`
 - 동물 마스코트: `A3`
 
 ### M2
 
-- EN: `A bold Korean young man with intense crimson-violet eyes, styled dark brown hair, sharper face shape, chain accessory detail, fitted dark jacket, confident almost dangerous expression, hot magenta glow with broken-heart sparks and electric streaks.`
-- KO: `강렬한 크림슨 바이올렛 눈빛, 스타일링된 짙은 갈색 헤어, 더 선명한 얼굴선, 체인 액세서리 포인트, 어두운 재킷을 입은 존재감 큰 한국인 젊은 남성, 자신감 있고 살짝 위험해 보이는 표정, 핫 마젠타 글로우와 깨진 하트 스파크, 전기 같은 빛줄기.`
+- EN: `A bold yet cute Korean young man with deep-crimson eyes, styled crimson-red hair, chain necklace and ear cuff, leather-jacket rock-chic fashion, confident playful expression, hot-red glow, electric light streaks.`
+- KO: `또렷하고 강렬하지만 귀여운 인상, 딥 크림슨 눈, 스타일링된 크림슨 레드 헤어, 체인 목걸이와 이어커프, 레더 재킷의 락 시크 패션의 존재감 큰 한국인 젊은 남성, 자신감 있고 장난기 있는 표정, 핫 레드 글로우, 전기 같은 빛줄기.`
 - 동물 마스코트: `A4`
 
 ### M3
 
-- EN: `A friendly Korean young man with bright lavender eyes, slightly tousled black hair, casual hoodie under a jacket, approachable playful smile, vivid violet-blue neon, tiny floating stars and soft smoke puffs, cute but mischievous mood.`
-- KO: `밝은 라벤더 눈, 살짝 헝클어진 흑발, 재킷 안에 캐주얼 후드를 입은 친근한 한국인 젊은 남성, 다가가기 쉬운 장난스러운 미소, 선명한 바이올렛 블루 네온, 작은 별과 부드러운 연기 구름 포인트, 귀엽지만 장난기 있는 무드.`
+- EN: `A cheerful cute Korean young man with sparkling hazel eyes, slightly tousled honey-blond hair, cap and hoodie sporty-casual fashion, friendly bright smile, sunshine-yellow glow, small floating star accents.`
+- KO: `밝고 귀여운 인상, 반짝이는 헤이즐 눈, 살짝 헝클어진 허니 블론드 헤어, 캡모자와 후디의 스포티 캐주얼 패션의 친근한 한국인 젊은 남성, 다가가기 쉬운 환한 미소, 선샤인 옐로 글로우, 작은 별 포인트.`
 - 동물 마스코트: `A5`
 
 ### M4
 
-- EN: `A logical Korean young man with calm observant silver-violet eyes, tidy ash-brown hair, slim elegant silhouette, structured black cardigan, watch and key motif detail, composed strategic expression, steel blue and dark violet glow with geometric glass fragments.`
-- KO: `차분하고 관찰적인 실버 바이올렛 눈빛, 정돈된 애쉬브라운 헤어, 슬림하고 우아한 실루엣, 구조적인 블랙 가디건, 시계와 열쇠 모티프 포인트, 침착하고 전략적인 표정의 한국인 젊은 남성, 스틸 블루와 다크 바이올렛 글로우, 기하학적 유리 파편 배경.`
+- EN: `A calm cute Korean young man with clear steel-grey eyes, tidy dark-teal hair, thin glasses and minimal shirt-and-vest smart fashion with a watch, composed slightly aloof expression, cool-teal glow, geometric light accents.`
+- KO: `차분하고 귀여운 인상, 또렷한 스틸 그레이 눈, 정돈된 다크 틸 헤어, 얇은 안경과 미니멀 셔츠·베스트에 시계 포인트를 준 스마트 패션의 침착한 한국인 젊은 남성, 이지적이고 살짝 무심한 표정, 쿨 틸 글로우, 기하학적 빛 포인트.`
 - 동물 마스코트: `A2`
 
 ### M5
 
-- EN: `A mysterious Korean young man with strong brows, deep-set purple eyes, dark charcoal hair, slightly rough handsome features, high-collar black jacket, half of the face veiled in shadow, aloof enigmatic expression, smoky plum neon with bat-wing shadow shapes.`
-- KO: `진한 눈썹, 깊이감 있는 퍼플 눈매, 다크 차콜 헤어, 살짝 거친 분위기의 잘생긴 이목구비, 하이칼라 블랙 재킷, 얼굴 절반에 그림자가 드리운 미스터리한 한국인 젊은 남성, 무심하고 수수께끼 같은 표정, 스모키 플럼 네온과 박쥐 날개 같은 그림자 포인트.`
+- EN: `A cool cute Korean young man with deep-violet eyes, dark charcoal-purple hair with a colored streak in the bangs, high-neck dark outfit with a chain and a drop earring, moody stylish fashion, aloof languid expression, smoky-purple glow, shadow accents.`
+- KO: `쿨하고 귀여운 인상, 깊은 바이올렛 눈, 앞머리 한 갈래에 컬러 포인트를 준 다크 차콜 퍼플 헤어, 하이넥 다크 룩에 체인·드롭 이어링을 매치한 무드 있는 패션의 미스터리한 한국인 젊은 남성, 무심하고 나른한 표정, 스모키 퍼플 글로우, 그림자 포인트.`
 - 동물 마스코트: `A1`
 
 ## 동물 마스코트

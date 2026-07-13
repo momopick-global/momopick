@@ -111,8 +111,8 @@ export default function AngerStyleTestPage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

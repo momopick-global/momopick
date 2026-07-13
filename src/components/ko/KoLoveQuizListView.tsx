@@ -7,7 +7,7 @@ import type { KoHomeRailItem } from "@/lib/content/homeRail";
 
 const STORAGE_KEY = "momopick-ko-love-hub-view";
 
-type ViewMode = "grid" | "list";
+type ViewMode = "grid" | "list" | "rail";
 
 function IconGridCards() {
   return (
@@ -32,6 +32,16 @@ function IconListRows() {
   );
 }
 
+function IconRail() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="6" width="7" height="12" rx="1.5" fill="currentColor" opacity="0.92" />
+      <rect x="12" y="6" width="7" height="12" rx="1.5" fill="currentColor" opacity="0.55" />
+      <rect x="21" y="6" width="2" height="12" rx="1" fill="currentColor" opacity="0.3" />
+    </svg>
+  );
+}
+
 type Props = {
   items: KoHomeRailItem[];
 };
@@ -42,7 +52,7 @@ export function KoLoveQuizListView({ items }: Props) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw === "list" || raw === "grid") setView(raw);
+      if (raw === "list" || raw === "grid" || raw === "rail") setView(raw);
     } catch {
       /* ignore */
     }
@@ -80,6 +90,16 @@ export function KoLoveQuizListView({ items }: Props) {
           <IconListRows />
           <span className="sr-only">목록형 보기</span>
         </button>
+        <button
+          type="button"
+          className={`love-hub-view-btn${view === "rail" ? " is-active" : ""}`}
+          onClick={() => setMode("rail")}
+          aria-pressed={view === "rail"}
+          title="레일형"
+        >
+          <IconRail />
+          <span className="sr-only">레일형 보기</span>
+        </button>
       </div>
 
       {view === "grid" ? (
@@ -105,6 +125,39 @@ export function KoLoveQuizListView({ items }: Props) {
                 <small>{item.subtitleLine}</small>
               </div>
             </Link>
+          ))}
+        </div>
+      ) : view === "rail" ? (
+        <div className="rail" role="list">
+          {items.map((item, i) => (
+            <div
+              key={item.href}
+              className={`rail-card rail-card--${item.railTheme}`}
+              role="listitem"
+            >
+              <div className="rail-card__thumb">
+                <Link
+                  href={item.href}
+                  className="rail-card__thumb-link"
+                  aria-label={item.title}
+                >
+                  <QuizImageWithFallback
+                    src={item.image || "/images/banners/tile-love-01.webp"}
+                    alt=""
+                    width={480}
+                    height={480}
+                    loading={i < 4 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                </Link>
+              </div>
+              <Link href={item.href} className="rail-card__cap-link">
+                <div className="cap">
+                  <b>{item.title}</b>
+                  <small>{item.subtitleLine}</small>
+                </div>
+              </Link>
+            </div>
           ))}
         </div>
       ) : (

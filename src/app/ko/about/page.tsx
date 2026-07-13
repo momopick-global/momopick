@@ -64,8 +64,8 @@ export default function KoAboutPage() {
           </div>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

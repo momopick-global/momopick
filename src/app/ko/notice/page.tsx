@@ -100,8 +100,8 @@ export default function KoNoticePage() {
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

@@ -32,8 +32,8 @@
     "en": ""
   },
   "images": {
-    "thumbnail": "/images/common/quiz-image-pending.webp",
-    "og": "/images/common/quiz-image-pending.webp"
+    "thumbnail": "/images/quiz/travel-need-onepick/thumb.webp",
+    "og": "/images/quiz/travel-need-onepick/thumb.jpg"
   },
   "meta": {
     "description": {
@@ -55,7 +55,7 @@
       "ko": "🎯 원픽 테스트",
       "en": ""
     },
-    "image": "/images/common/quiz-image-pending.webp",
+    "image": "/images/quiz/travel-need-onepick/thumb.webp",
     "priority": 70
   },
   "resultKeys": [

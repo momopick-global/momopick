@@ -61,8 +61,8 @@ export default function KoBlogPage() {
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

@@ -84,8 +84,8 @@ export default function KoLoveHubPage() {
           </section>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

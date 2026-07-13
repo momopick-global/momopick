@@ -23,16 +23,18 @@ export function KoPageFooter({
 }: Props) {
   return (
     <footer className="ko-ft">
-      {variant === "quiz" ? (
-        <>
-          <div>
-            <Link href={moreHref}>{moreLabel}</Link>
-          </div>
-          <KoFooterLegal />
-        </>
-      ) : (
-        <KoFooterNav />
-      )}
+      <div className="ko-ft__inner">
+        {variant === "quiz" ? (
+          <>
+            <div>
+              <Link href={moreHref}>{moreLabel}</Link>
+            </div>
+            <KoFooterLegal />
+          </>
+        ) : (
+          <KoFooterNav />
+        )}
+      </div>
     </footer>
   );
 }

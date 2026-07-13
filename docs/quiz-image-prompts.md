@@ -164,7 +164,7 @@
 
 ### 4대 개선 원칙 (2026-07 반영 — 아래 공통 프롬프트에 이미 반영됨)
 
-1. **얼굴 크게**: 주인공 얼굴이 화면의 **55~70%**를 차지하는 클로즈업. 전신·원거리 구도 금지. (모바일 썸네일이 작아 얼굴이 작으면 안 보임)
+1. **얼굴 크게**: 주인공 얼굴이 화면의 **62~78%**를 차지하는 클로즈업. 전신·원거리 구도 금지. (모바일 썸네일이 작아 얼굴이 작으면 안 보임)
 2. **표정 과장 + 차별화**: 표정을 과장되게 연기하고, **퀴즈마다·결과마다 표정이 뚜렷이 달라야** 함. (현재 문제: 표정이 다 비슷함)
 3. **굵은 프레임 테두리**: 이미지 바깥을 굵은 프레임으로 둘러 안쪽 제목·글자(이미지 안에 직접 렌더) 가독성 확보.
 4. **퀴즈별 색·캐릭터 지정**: 보라 일변도 금지, 퀴즈 주제에 맞는 색. 주인공은 **퀴즈마다 다른 캐릭터를 명시 지정**(같은 여성 반복 금지) — 배정은 각 퀴즈 `캐릭터 배정표`, 시각 정의는 [character-profile-prompts.md](./character-profile-prompts.md).
@@ -179,11 +179,11 @@
 
 ### 공통 프롬프트 EN
 
-`Square 1:1 Korean viral psychology quiz illustration, ultra-polished anime artwork, glossy oversized eyes, highly expressive character acting, dramatic emotional storytelling, rich neon lighting, strong black-outline title-friendly composition, layered foreground and background details, symbolic props and emotional icons around the character, cute mascot-animal companion in the same world, social-media thumbnail impact, leave a large clean area at the top for a huge Korean headline, leave a clear rounded banner area at the bottom for a short conclusion line, allow extra space near the middle for a subtitle capsule, main character shown as a close-up with the face occupying 55–70% of the frame, the face as the clear focal point, a strongly exaggerated expression that reads instantly at thumbnail size and differs clearly per quiz and per result, avoid tiny full-body framing, a thick bold frame border around the whole image for overlay-text legibility, vibrant but controlled color harmony, crisp linework, soft airbrushed skin, sparkling particles, high contrast rim light, bright readable face lighting, lifted midtones, luminous skin highlights, strong separation between foreground and background, brighter highlight support behind headline, subtitle capsule, and bottom banner zones, clean readable text-zone contrast, avoid muddy shadows, avoid overly dark full-frame exposure, no watermark, no logo, no photorealism.`
+`Square 1:1 Korean viral psychology quiz illustration, ultra-polished anime artwork, glossy oversized eyes, highly expressive character acting, dramatic emotional storytelling, rich neon lighting, strong black-outline title-friendly composition, layered foreground and background details, symbolic props and emotional icons around the character, cute mascot-animal companion in the same world, social-media thumbnail impact, leave a large clean area at the top for a huge Korean headline, leave a clear rounded banner area at the bottom for a short conclusion line, allow extra space near the middle for a subtitle capsule, main character shown as a close-up with the face occupying 62–78% of the frame, the face as the clear focal point, a strongly exaggerated expression that reads instantly at thumbnail size and differs clearly per quiz and per result, avoid tiny full-body framing, a thick bold frame border around the whole image for overlay-text legibility, vibrant but controlled color harmony, crisp linework, soft airbrushed skin, sparkling particles, high contrast rim light, bright readable face lighting, lifted midtones, luminous skin highlights, strong separation between foreground and background, brighter highlight support behind headline, subtitle capsule, and bottom banner zones, clean readable text-zone contrast, avoid muddy shadows, avoid overly dark full-frame exposure, no watermark, no logo, no photorealism.`
 
 ### 공통 프롬프트 KO
 
-`정사각형 1:1 비율의 한국형 바이럴 심리 퀴즈 일러스트, 매우 정교한 애니메이션 아트워크, 반짝이는 큰 눈, 감정 표현이 매우 선명한 캐릭터 연기, 드라마틱한 감정 서사, 풍부한 네온 조명, 두꺼운 검은 외곽선의 제목이 잘 올라갈 수 있는 구도, 전경과 배경이 레이어드된 디테일, 캐릭터 주변의 상징 소품과 감정 아이콘, 같은 세계관 안의 귀여운 동물 마스코트 동반, SNS 썸네일처럼 강한 시선 끌기, 상단에는 매우 큰 한글 제목이 들어갈 넓고 깨끗한 여백, 하단에는 짧은 결론 문구가 들어갈 둥근 배너 영역, 중간에는 서브 문구 캡슐이 들어갈 자리 확보, 주인공 얼굴을 화면의 55~70%로 크게 잡은 클로즈업, 얼굴이 확실한 중심 초점이 되도록, 표정을 과장되게 연기해 썸네일 크기에서도 감정이 바로 읽히도록(퀴즈마다·결과마다 표정이 뚜렷이 다르게), 너무 멀리 잡힌 전신 구도 금지, 이미지 바깥을 굵은 프레임 테두리로 둘러 안쪽 텍스트 가독성 확보, 선명하지만 과하지 않은 색 조화, 또렷한 라인, 부드러운 에어브러시 피부 표현, 반짝이는 입자, 대비가 강한 림라이트, 얼굴과 손이 밝고 읽히는 조명, 중간 명도 확보, 피부 하이라이트 강화, 전경과 배경 분리 강화, 제목과 부제목과 하단 배너 뒤쪽의 밝은 하이라이트 보강, 글자 존이 또렷하게 읽히는 대비 확보, 탁한 검은 그림자와 과도한 전체 암부 금지, 워터마크 없음, 로고 없음, 지나치게 사실적인 사진풍 금지.`
+`정사각형 1:1 비율의 한국형 바이럴 심리 퀴즈 일러스트, 매우 정교한 애니메이션 아트워크, 반짝이는 큰 눈, 감정 표현이 매우 선명한 캐릭터 연기, 드라마틱한 감정 서사, 풍부한 네온 조명, 두꺼운 검은 외곽선의 제목이 잘 올라갈 수 있는 구도, 전경과 배경이 레이어드된 디테일, 캐릭터 주변의 상징 소품과 감정 아이콘, 같은 세계관 안의 귀여운 동물 마스코트 동반, SNS 썸네일처럼 강한 시선 끌기, 상단에는 매우 큰 한글 제목이 들어갈 넓고 깨끗한 여백, 하단에는 짧은 결론 문구가 들어갈 둥근 배너 영역, 중간에는 서브 문구 캡슐이 들어갈 자리 확보, 주인공 얼굴을 화면의 62~78%로 크게 잡은 클로즈업, 얼굴이 확실한 중심 초점이 되도록, 표정을 과장되게 연기해 썸네일 크기에서도 감정이 바로 읽히도록(퀴즈마다·결과마다 표정이 뚜렷이 다르게), 너무 멀리 잡힌 전신 구도 금지, 이미지 바깥을 굵은 프레임 테두리로 둘러 안쪽 텍스트 가독성 확보, 선명하지만 과하지 않은 색 조화, 또렷한 라인, 부드러운 에어브러시 피부 표현, 반짝이는 입자, 대비가 강한 림라이트, 얼굴과 손이 밝고 읽히는 조명, 중간 명도 확보, 피부 하이라이트 강화, 전경과 배경 분리 강화, 제목과 부제목과 하단 배너 뒤쪽의 밝은 하이라이트 보강, 글자 존이 또렷하게 읽히는 대비 확보, 탁한 검은 그림자와 과도한 전체 암부 금지, 워터마크 없음, 로고 없음, 지나치게 사실적인 사진풍 금지.`
 
 ### 다크 고딕 변형 공통 프롬프트 EN
 
@@ -462,10 +462,10 @@
 ### 결과 프롬프트 작성 템플릿
 
 - EN:
-  - `Result image for a Korean viral psychology quiz, one clear protagonist, one dominant emotional axis, one mascot-animal companion that reflects the same emotion, include readable Korean text as part of the finished result card, top result title text, short middle descriptor text or capsule, bottom concluding banner text, close-up framing with the face occupying 55–70% of the frame, make the face the first thing seen, an exaggerated expression for this result type that differs clearly from the other results and reads at thumbnail size, avoid tiny figures or overly distant full-body framing, a thick bold frame border around the whole card for text legibility, [result mood], [facial expression], [pose], [2-4 symbolic props], [color direction], [lighting mood], same character identity as the quiz thumbnail.`
+  - `Result image for a Korean viral psychology quiz, one clear protagonist, one dominant emotional axis, one mascot-animal companion that reflects the same emotion, include readable Korean text as part of the finished result card, top result title text, short middle descriptor text or capsule, bottom concluding banner text, close-up framing with the face occupying 62–78% of the frame, make the face the first thing seen, an exaggerated expression for this result type that differs clearly from the other results and reads at thumbnail size, avoid tiny figures or overly distant full-body framing, a thick bold frame border around the whole card for text legibility, [result mood], [facial expression], [pose], [2-4 symbolic props], [color direction], [lighting mood], same character identity as the quiz thumbnail.`
 
 - KO:
-  - `한국형 바이럴 심리 퀴즈 결과 카드, 한 명의 분명한 주인공, 하나의 지배적인 감정 축, 같은 감정을 반영하는 동물 마스코트 1마리, 결과 카드로 완성된 형태, 상단 결과명 텍스트 직접 포함, 중간의 짧은 설명 문구 또는 캡슐 포함, 하단 둥근 결론 배너 문구 포함, 얼굴을 화면의 55~70%로 크게 잡은 클로즈업 구도, 얼굴이 가장 먼저 보이게, 결과 타입 감정을 과장된 표정으로(결과마다 뚜렷이 다르게) 썸네일 크기에서도 또렷하게 읽히게, 너무 작거나 멀리 잡힌 전신 결과 카드 금지, 이미지 바깥을 굵은 프레임 테두리로 둘러 텍스트 가독성 확보, [결과 무드], [표정], [포즈], [상징 소품 2~4개], [색 방향], [조명 무드], 퀴즈 썸네일과 동일한 캐릭터 정체성 유지.`
+  - `한국형 바이럴 심리 퀴즈 결과 카드, 한 명의 분명한 주인공, 하나의 지배적인 감정 축, 같은 감정을 반영하는 동물 마스코트 1마리, 결과 카드로 완성된 형태, 상단 결과명 텍스트 직접 포함, 중간의 짧은 설명 문구 또는 캡슐 포함, 하단 둥근 결론 배너 문구 포함, 얼굴을 화면의 62~78%로 크게 잡은 클로즈업 구도, 얼굴이 가장 먼저 보이게, 결과 타입 감정을 과장된 표정으로(결과마다 뚜렷이 다르게) 썸네일 크기에서도 또렷하게 읽히게, 너무 작거나 멀리 잡힌 전신 결과 카드 금지, 이미지 바깥을 굵은 프레임 테두리로 둘러 텍스트 가독성 확보, [결과 무드], [표정], [포즈], [상징 소품 2~4개], [색 방향], [조명 무드], 퀴즈 썸네일과 동일한 캐릭터 정체성 유지.`
 
 ### 결과 이미지 텍스트 생성 규칙
 
@@ -1328,6 +1328,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `공감·균형·과해석이 상황마다 오가는 타입`
+- 하단 결론 문구: `예민함은 상황 따라 켜졌다 꺼진다`
 - 설명 방향: `공감, 균형, 과해석이 상황마다 섞여 나타나는 상태`
 - 대표 소품: `따뜻한 하트, 균형 아이콘, 소용돌이`
 - EN:
@@ -1463,6 +1465,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `경계·신뢰·쉽게 열림이 사람 따라 달라지는 타입`
+- 하단 결론 문구: `누구냐에 따라 믿음의 문이 다르게 열린다`
 - 설명 방향: `경계, 건강한 신뢰, 쉽게 열림이 사람과 상황에 따라 섞이는 상태`
 - 대표 소품: `잠긴 하트, 열린 하트, 반쯤 풀린 리본 자물쇠`
 - EN:
@@ -1598,6 +1602,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `통제·폭발·냉소가 상대와 상황에 따라 바뀌는 타입`
+- 하단 결론 문구: `숨은 얼굴은 하나가 아니다`
 - 설명 방향: `통제, 폭발, 냉소가 상황과 상대에 따라 섞이는 상태`
 - 대표 소품: `잠긴 하트, 불꽃 파편, 멀어진 그림자`
 - EN:
@@ -1868,6 +1874,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `사색·소비·방전이 컨디션 따라 바뀌는 타입`
+- 하단 결론 문구: `혼자의 모습도 그날 상태가 정한다`
 - 설명 방향: `사색, 소비, 방전이 컨디션과 날짜에 따라 섞이는 상태`
 - 대표 소품: `노트, 폰 화면, 희미한 램프`
 - EN:
@@ -2273,6 +2281,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `강함·회복·민감함이 상황마다 오가는 타입`
+- 하단 결론 문구: `단단함도 흔들림도 그날그날 다르다`
 - 설명 방향: `강함, 탄성, 민감함이 상황마다 섞이는 상태`
 - 대표 소품: `방패, 탄성 파동, 유리 파편`
 - EN:
@@ -2543,6 +2553,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `고수의 감각과 초보의 서툼이 함께 나오는 타입`
+- 하단 결론 문구: `잘하다가도 결정적일 때 서툴러진다`
 - 설명 방향: `고수의 감각, 매력형의 흔들림, 초보형의 서툼이 함께 섞이는 상태`
 - 대표 소품: `하트 게이지, 흔들리는 별선, 작은 물음표`
 - EN:
@@ -2813,6 +2825,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `참다 터지고, 바로 쏟고, 거리 두기가 상황 따라 섞이는 타입`
+- 하단 결론 문구: `화내는 방식은 그때그때 상황이 정한다`
 - 설명 방향: `쌓아두다 터짐, 바로 표현, 거리두기가 상황에 따라 섞이는 상태`
 - 대표 소품: `번개, 닫힌 말풍선, 금 간 유리`
 - EN:
@@ -2948,6 +2962,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `리더십·전략·서포트를 상황 따라 바꿔 쓰는 타입`
+- 하단 결론 문구: `자리에 맞춰 역할을 갈아 낀다`
 - 설명 방향: `리더십, 전략, 서포트가 상황마다 섞이는 상태`
 - 대표 소품: `전진 화살표, 나침반, 연결선`
 - EN:
@@ -3101,6 +3117,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `분석·공감·균형·직관이 다층으로 섞이는 타입`
+- 하단 결론 문구: `한 가지로 규정되지 않는 사람`
 - 설명 방향: `분석, 공감, 균형, 직관이 상황에 따라 다층적으로 섞이는 상태`
 - 대표 소품: `돋보기, 하트 파동, 균형선, 스파크선`
 - EN:
@@ -3258,6 +3276,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `밀당·직진·눈치·과해석이 상황마다 섞여 나오는 타입`
+- 하단 결론 문구: `정해진 하나가 없어 매번 다르게 흔들린다`
 - 설명 방향: `밀당, 직진, 눈치, 과해석이 상황마다 섞이는 상태`
 - 대표 소품: `점선 화살표, 빠른 하트, 작은 반응 아이콘, 소용돌이`
 - EN:
@@ -3409,6 +3429,12 @@
 - KO 짧은 버전:
   - `읽을 수 있는 한글 결과 카드, 장난형, 놀리듯 웃는 표정과 플러팅 에너지, 통통 튀는 하트와 활기찬 낙서 요소, 캔디 핑크와 바이올렛 글로우에 민트 포인트, 상단 "장난형", 중간 "장난처럼 굴지만 제일 티 나게 다가오는 타입", 하단 "웃기면서 다가오는 사람일수록 진심도 빠르다".`
 
+#### 복합형 참고
+
+- 결과명: `복합형`
+- 결과 설명 문구: `안정·집착·친구·장난 유형이 섞여 다가오는 타입`
+- 하단 결론 문구: `한 가지 방식으로 좋아하지 않는다`
+
 #### 캐릭터 배정표
 
 - 대표 이미지 주인공: `F1`
@@ -3539,6 +3565,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `상처회피·자존심·계산이 동시에 작동하는 타입`
+- 하단 결론 문구: `먼저 못 하는 이유가 하나가 아니다`
 - 설명 방향: `상처회피, 자존심, 계산이 동시에 작동하는 상태`
 - 대표 소품: `겹쳐진 하트, 시계, 물음표, 방패 모티프`
 - EN:
@@ -3674,6 +3702,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `무심·부담·과속이 상황마다 섞여 나오는 타입`
+- 하단 결론 문구: `식는 이유도 매번 같지 않다`
 - 설명 방향: `무심함, 부담, 과속이 상황에 따라 섞이는 상태`
 - 대표 소품: `사라지는 하트, 압박 파동, 빠른 시계`
 - EN:
@@ -3827,6 +3857,8 @@
 #### 복합형 참고
 
 - 결과명: `복합형`
+- 결과 설명 문구: `과몰입·무관심·회피·집착이 뒤섞여 반복되는 타입`
+- 하단 결론 문구: `습관 하나가 아니라 패턴이 엉켜 있다`
 - 설명 방향: `과몰입, 무관심, 회피, 집착이 함께 섞인 상태`
 - 대표 소품: `금 간 거울, 얽힌 하트, 사라지는 말풍선, 반복 알림`
 - EN:

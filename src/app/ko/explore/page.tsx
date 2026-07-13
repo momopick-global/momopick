@@ -59,8 +59,8 @@ export default function KoExplorePage() {
           <KoQuizSearch index={searchIndex} tags={quickTags} />
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

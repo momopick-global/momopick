@@ -193,8 +193,8 @@ export default function TermsOfServicePage() {
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

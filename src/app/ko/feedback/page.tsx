@@ -106,8 +106,8 @@ export default function KoFeedbackPage() {
           </div>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

@@ -11,35 +11,46 @@ import {
 } from "@/lib/content/homeRail";
 import { koSamplePosts } from "@/content/blog/koSamplePosts";
 import { BlogCarousel } from "@/components/ko/BlogCarousel";
+import { KakaoAdUnit } from "@/components/ko/KakaoAdUnit";
 
 const recentBlogPosts = koSamplePosts;
 const loveSectionQuizzes = getKoLoveQuizzesSorted("ko");
-/** 지금 뜨는 테스트 가로 레일 = 원픽(1문항) 우선순위 상위 (홈 레일용) */
-const homeRailKo = getKoOnePickQuizzesSorted("ko").slice(0, 5);
-/** 홈 심층 타일 = 우선순위 상위 8개만 (전체는 /ko/love/) */
-const homeLoveTilesKo = loveSectionQuizzes.slice(0, 8);
-/** 홈 원픽 타일 = 원픽(1문항) 상위 8개 (전체는 /ko/onepick/) */
-const homeOnepickTilesKo = getKoOnePickQuizzesSorted("ko").slice(0, 8);
+/** 홈 심층 레일 = 우선순위 상위 5개 (+ 전체보기 카드, 전체는 /ko/love/) */
+const homeLoveTilesKo = loveSectionQuizzes.slice(0, 5);
+/** 홈 원픽 레일 = 원픽(1문항) 상위 5개 (+ 전체보기 카드, 전체는 /ko/onepick/) */
+const homeOnepickTilesKo = getKoOnePickQuizzesSorted("ko").slice(0, 5);
 /** 홈 성향 타일 = 성향 허브(대표 테스트)와 동일하게 대표 1개만 */
 const PERSONALITY_SLUGS = ["personality-psychology-test"];
 const homePersonalityTilesKo = loveSectionQuizzes.filter((item) =>
   PERSONALITY_SLUGS.includes(item.slug),
 );
 
-/** 홈 타일 그리드 — 심층/원픽/성향 섹션이 공유하는 썸네일 카드 */
-function KoHomeTileGrid({ items, fallback }: { items: KoHomeRailItem[]; fallback: string }) {
+/** 홈 레일 — 심층/원픽/성향 섹션이 공유하는 가로 카드 레일 (구 '지금 뜨는 테스트' 스타일) */
+function KoHomeRail({
+  items,
+  fallback,
+  moreHref,
+}: {
+  items: KoHomeRailItem[];
+  fallback: string;
+  moreHref: string;
+}) {
   return (
-    <div className="tile-grid">
+    <div className="rail" role="list">
       {items.map((item, i) => (
-        <div key={item.href} className={`tile tile--${item.railTheme}`}>
-          <div className="thumb">
-            <Link href={item.href} className="tile-thumb-fill" aria-label={item.title}>
+        <div
+          key={item.href}
+          className={`rail-card rail-card--${item.railTheme}`}
+          role="listitem"
+        >
+          <div className="rail-card__thumb">
+            <Link href={item.href} className="rail-card__thumb-link" aria-label={item.title}>
               <QuizImageWithFallback
                 src={item.image || fallback}
                 alt=""
-                width={1024}
-                height={1024}
-                loading={i < 4 ? "eager" : "lazy"}
+                width={480}
+                height={480}
+                loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
               />
             </Link>
@@ -52,14 +63,27 @@ function KoHomeTileGrid({ items, fallback }: { items: KoHomeRailItem[]; fallback
               imageUrl={item.image || fallback}
             />
           </div>
-          <Link href={item.href} className="tile-body-link">
-            <div className="body">
+          <Link href={item.href} className="rail-card__cap-link">
+            <div className="cap">
               <b>{item.title}</b>
               <small>{item.subtitleLine}</small>
             </div>
           </Link>
         </div>
       ))}
+      <Link
+        href={moreHref}
+        className="rail-card rail-card--more"
+        role="listitem"
+        aria-label="전체보기"
+      >
+        <span className="rail-card__more">
+          <span className="rail-card__more-plus" aria-hidden="true">
+            +
+          </span>
+          <span className="rail-card__more-text">전체보기</span>
+        </span>
+      </Link>
     </div>
   );
 }
@@ -73,51 +97,6 @@ export default function KoHomePage() {
 
       <div className="wrap">
         <main>
-          <section className="rail-wrap" aria-labelledby="rail-title">
-            <div className="rail-head">
-              <h2 id="rail-title">✨ 지금 뜨는 테스트</h2>
-              <Link className="link-all" href="/ko/explore/">
-                전체보기
-              </Link>
-            </div>
-            <div className="rail" role="list">
-              {homeRailKo.map((item, i) => (
-                <div
-                  key={item.href}
-                  className={`rail-card rail-card--${item.railTheme}`}
-                  role="listitem"
-                >
-                  <div className="rail-card__thumb">
-                    <Link href={item.href} className="rail-card__thumb-link" aria-label={item.title}>
-                      <QuizImageWithFallback
-                        src={item.image || "/images/banners/rail-01.webp"}
-                        alt=""
-                        width={480}
-                        height={480}
-                        loading={i < 2 ? "eager" : "lazy"}
-                        decoding="async"
-                      />
-                    </Link>
-                    <KoHomeQuizThumbActions
-                      href={item.href}
-                      slug={item.slug}
-                      title={item.title}
-                      subtitleLine={item.subtitleLine}
-                      subtitleOnly={item.subtitleOnly}
-                      imageUrl={item.image || "/images/banners/rail-01.webp"}
-                    />
-                  </div>
-                  <Link href={item.href} className="rail-card__cap-link">
-                    <div className="cap">
-                      <b>{item.title}</b>
-                      <small>{item.subtitleLine}</small>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-
           <section className="section section--love" id="love" aria-labelledby="sec-love">
             <div className="sec-hd">
               <h2 id="sec-love">💌 심층 테스트, 일단 들어와 봐요</h2>
@@ -129,39 +108,11 @@ export default function KoHomePage() {
               우선순위가 높은 테스트만 대표로 골랐어요. 나머지는{" "}
               <Link href="/ko/love/">심층 테스트 허브</Link>에서 볼 수 있어요.
             </p>
-            <div className="tile-grid">
-              {homeLoveTilesKo.map((item, i) => (
-                <div key={item.href} className="tile tile--love">
-                  <div className="thumb">
-                    {i === 0 ? <span className="badge">HOT</span> : null}
-                    <Link href={item.href} className="tile-thumb-fill" aria-label={item.title}>
-                      <QuizImageWithFallback
-                        src={item.image || "/images/banners/tile-love-01.webp"}
-                        alt=""
-                        width={1024}
-                        height={1024}
-                        loading={i < 4 ? "eager" : "lazy"}
-                        decoding="async"
-                      />
-                    </Link>
-                    <KoHomeQuizThumbActions
-                      href={item.href}
-                      slug={item.slug}
-                      title={item.title}
-                      subtitleLine={item.subtitleLine}
-                      subtitleOnly={item.subtitleOnly}
-                      imageUrl={item.image || "/images/banners/tile-love-01.webp"}
-                    />
-                  </div>
-                  <Link href={item.href} className="tile-body-link">
-                    <div className="body">
-                      <b>{item.title}</b>
-                      <small>{item.subtitleLine}</small>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+            <KoHomeRail
+              items={homeLoveTilesKo}
+              fallback="/images/banners/tile-love-01.webp"
+              moreHref="/ko/love/"
+            />
           </section>
 
           <section className="section" id="onepick" aria-labelledby="sec-onepick">
@@ -175,8 +126,14 @@ export default function KoHomePage() {
               한 문항만 골라도 결과가 바로 나오는 가벼운 테스트예요. 나머지는{" "}
               <Link href="/ko/onepick/">원픽 테스트 허브</Link>에서 볼 수 있어요.
             </p>
-            <KoHomeTileGrid items={homeOnepickTilesKo} fallback="/images/banners/tile-love-01.webp" />
+            <KoHomeRail
+              items={homeOnepickTilesKo}
+              fallback="/images/banners/tile-love-01.webp"
+              moreHref="/ko/onepick/"
+            />
           </section>
+
+          <KakaoAdUnit />
 
           <section className="section section--personality" id="personality" aria-labelledby="sec-personality">
             <div className="sec-hd">
@@ -189,7 +146,11 @@ export default function KoHomePage() {
               성격·심리 반응을 가볍게 살펴보는 테스트예요. 나머지는{" "}
               <Link href="/ko/personality-test/">성향 테스트 허브</Link>에서 볼 수 있어요.
             </p>
-            <KoHomeTileGrid items={homePersonalityTilesKo} fallback="/images/banners/tile-mind-01.webp" />
+            <KoHomeRail
+              items={homePersonalityTilesKo}
+              fallback="/images/banners/tile-mind-01.webp"
+              moreHref="/ko/personality-test/"
+            />
           </section>
 
           {/* 당분간 비노출: 🧠 성격·심리, 오늘의 나는 누구?
@@ -478,8 +439,8 @@ export default function KoHomePage() {
           </section>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

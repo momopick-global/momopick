@@ -6,8 +6,10 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { KoBrandLogo } from "./KoBrandLogo";
 import { KO_POLICY_LINKS, KO_PRIMARY_NAV_LIVE, KO_SITE_NAV_LINKS } from "./koSiteNavLinks";
 
-/** 햄버거 '테스트' 섹션 — 공유 내비에서 홈(전체)만 제외 (홈은 로고로 이동) */
-const KO_TEST_CATEGORY_LINKS = KO_PRIMARY_NAV_LIVE.filter((item) => item.key !== "home");
+/** 햄버거 '테스트' 섹션 — 홈(로고로 이동) + 모모픽·블로그(사이트 링크 섹션에 별도 노출) 제외 */
+const KO_TEST_CATEGORY_LINKS = KO_PRIMARY_NAV_LIVE.filter(
+  (item) => !["home", "about", "blog"].includes(item.key),
+);
 
 export type KoHeaderSymbolMenuProps = {
   open: boolean;

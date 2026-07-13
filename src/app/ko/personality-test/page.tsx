@@ -115,8 +115,8 @@ export default function KoPersonalityTestHubPage() {
           </section>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

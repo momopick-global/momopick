@@ -110,8 +110,8 @@ export default function DatingExpertOrBeginnerPage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

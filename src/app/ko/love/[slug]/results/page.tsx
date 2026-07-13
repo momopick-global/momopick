@@ -156,8 +156,8 @@ export default async function KoLoveQuizAllResultsPage({
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

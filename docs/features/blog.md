@@ -4,22 +4,37 @@
 
 ## 개요
 
-7개 짧은 블로그 글. 콘텐츠는 `src/content/blog/koSamplePosts.ts`에 TypeScript 객체 배열로 작성.
+블로그 글 17편. 콘텐츠는 `src/content/blog/koSamplePosts.ts`에 TypeScript 객체 배열로 작성.
 
-## 운영 중인 글 (8개, 길이 2026-07-06 확인)
+## 운영 중인 글 (17개, 2026-07-09 확인)
 
-| slug | 제목 | 본문 길이 |
-|---|---|---|
-| `signs-som-turning-into-love` | 썸에서 연애로 넘어가는 신호 | ~1,541자 |
-| `what-is-tarot` | 🔮 타로 카드란 무엇인가? | ~1,271자 |
-| `why-som-always-ends-awkwardly` | 📌 썸이 항상 애매하게 끝나는 이유 | ~1,220자 |
-| `mbti-not-diagnosis` | MBTI·성향 퀴즈, 진단이 아니라는 걸 기억해 주세요 | ~1,118자 |
-| `snack-test-what` | 스낵 테스트가 뭐예요? | ~972자 |
-| `love-category-editor` | 연애 테스트, 웃으면서 보는 게 포인트 | ~972자 |
-| `share-result` | 테스트 결과, 친구에게 이렇게 공유해 보세요 | ~956자 |
-| `new-quizzes-rhythm` | 앞으로도 테스트는 꾸준히 늘어납니다 | ~775자 |
+본문 길이는 공백 제외 기준. 이미지는 `public/images/blog/<slug>-ko-cover.webp`.
 
-> ✅ 8개 글 전부 600자 이상(775~1,541자, 2026-07-06 확인). 과거 220~320자였던 5개(`snack-test-what`, `share-result`, `love-category-editor`, `new-quizzes-rhythm`, `mbti-not-diagnosis`)는 확장 완료 — thin-content 길이 리스크 해소.
+| slug | 카테고리 | 본문 | 이미지 |
+|---|---|---|---|
+| `signs-som-turning-into-love` | love | 1,579자 | ✅ |
+| `what-is-tarot` | tarot | 915자 | ✅ |
+| `mbti-not-diagnosis` | story | 850자 | ✅ |
+| `why-som-always-ends-awkwardly` | love | 821자 | ✅ |
+| `love-category-editor` | love | 720자 | ✅ |
+| `confession-timing-guide` | love | 713자 | ✅ |
+| `snack-test-what` | fun | 713자 | ✅ |
+| `share-result` | story | 704자 | ✅ |
+| `why-cant-text-first` | love | 681자 | ✅ |
+| `sensitivity-is-not-a-flaw` | personality | 677자 | ✅ |
+| `self-esteem-signs` | personality | 656자 | ✅ |
+| `color-mood-today` | fun | 636자 | ✅ |
+| `habits-that-ruin-relationships` | love | 628자 | ✅ |
+| `signs-he-lost-interest` | love | 626자 | ✅ |
+| `who-you-are-alone` | personality | 612자 | ✅ |
+| `planner-vs-spontaneous` | personality | 601자 | ✅ |
+| `new-quizzes-rhythm` | story | 584자 | ✅ |
+
+카테고리 분포: love 7 · personality 4 · story 3 · fun 2 · tarot 1
+
+> ✅ 이미지: **17편 전부 커버 연결 완료**(2026-07-09). 새 글 커버 프롬프트는 [../design/blog-image-prompts-copypaste.md](../design/blog-image-prompts-copypaste.md).
+> ✅ 독창성: 신규 글 전부 **자체 유형 렌즈** 적용(연결 퀴즈의 실제 결과 유형 인용). 원칙은 [../content/blog-writing-guide.md](../content/blog-writing-guide.md#독창성-원칙-가장-중요-) 참고.
+> ⚠️ `new-quizzes-rhythm` 584자로 600자 하한을 약간 밑돎 — 소폭 확장 권장.
 
 ## 구조
 

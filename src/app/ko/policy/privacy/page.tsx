@@ -254,8 +254,8 @@ export default function PrivacyPolicyPage() {
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

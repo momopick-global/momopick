@@ -131,8 +131,8 @@ export default function KoPartnershipPage() {
           </div>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

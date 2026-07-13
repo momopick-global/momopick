@@ -84,8 +84,8 @@ export default function DessertLoveOnepickPage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" moreHref="/ko/onepick/" moreLabel="다른 원픽 테스트 보기" />
       </div>
+      <KoPageFooter variant="quiz" moreHref="/ko/onepick/" moreLabel="다른 원픽 테스트 보기" />
     </>
   );
 }

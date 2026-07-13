@@ -111,8 +111,8 @@ export default function PlannerOrSpontaneousPage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

@@ -312,8 +312,8 @@ export default function KoFaqPage() {
           </div>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

@@ -97,8 +97,8 @@ export default function KoOnepickPage() {
           </section>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

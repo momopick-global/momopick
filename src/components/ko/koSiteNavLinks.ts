@@ -28,6 +28,8 @@ export const KO_PRIMARY_NAV: readonly KoPrimaryNavItem[] = [
   { key: "onepick", href: "/ko/onepick/", label: "원픽 테스트", chipLabel: "원픽", emoji: "🎯", live: true, matchPrefixes: ["/ko/onepick"] },
   { key: "personality-test", href: "/ko/personality-test/", label: "성향 모아보기", chipLabel: "성향", emoji: "🧠", live: true, matchPrefixes: ["/ko/personality-test"] },
   { key: "search", href: "/ko/explore/", label: "검색", chipLabel: "검색", emoji: "🔍", live: true, matchPrefixes: ["/ko/explore"] },
+  { key: "about", href: "/ko/about/", label: "모모픽", chipLabel: "모모픽", emoji: "🌟", live: true, matchPrefixes: ["/ko/about"] },
+  { key: "blog", href: "/ko/blog/", label: "블로그", chipLabel: "블로그", emoji: "📝", live: true, matchPrefixes: ["/ko/blog"] },
   // 태그는 메뉴(카테고리 바·햄버거)에서 숨김. 태그 페이지·필터 기능은 유지되며 태그 칩·퀴즈 태그로 진입한다.
   { key: "tag", href: "/ko/tag/", label: "태그", chipLabel: "태그", emoji: "🏷️", live: false, matchPrefixes: ["/ko/tag"] },
   // --- 준비 중(콘텐츠·라우트 생기면 live: true) ---

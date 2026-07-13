@@ -91,8 +91,8 @@ export default function PersonalityPsychologyTestPage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

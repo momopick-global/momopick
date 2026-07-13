@@ -158,8 +158,8 @@ export default async function KoBlogPostPage({ params }: { params: Promise<{ slu
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

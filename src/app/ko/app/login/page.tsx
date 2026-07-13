@@ -83,8 +83,8 @@ export default function KoLoginPage() {
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

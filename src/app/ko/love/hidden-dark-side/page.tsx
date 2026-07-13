@@ -111,8 +111,8 @@ export default function HiddenDarkSidePage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

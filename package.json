@@ -11,7 +11,7 @@
     "dev": "next dev -p 3040",
     "dev:turbo": "next dev -p 3040 --turbopack",
     "build": "next build",
-    "deploy:pages": "npm run build && npx wrangler pages deploy out",
+    "deploy:pages": "npm run build && npx wrangler pages deploy out --project-name momopick",
     "preview": "serve out -l 3040",
     "lint": "next lint",
     "lint:all": "eslint .",

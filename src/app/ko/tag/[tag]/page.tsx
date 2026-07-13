@@ -98,8 +98,8 @@ export default async function KoTagDetailPage({ params }: { params: Promise<{ ta
           )}
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

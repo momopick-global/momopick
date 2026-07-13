@@ -153,8 +153,8 @@ export default function DisclaimerPage() {
           </p>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

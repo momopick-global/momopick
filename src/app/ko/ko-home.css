@@ -133,7 +133,7 @@
   top: 0;
   /* 햄버거 슬라이드 패널(55)보다 위 — 심볼·닫기 버튼이 항상 클릭 가능 */
   z-index: 60;
-  background: rgba(244, 242, 251, 0.92);
+  background: #fff;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -508,7 +508,7 @@
 }
 
 .momopick-ko .cat-bar {
-  background: rgba(244, 242, 251, 0.94);
+  background: #fff;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -601,7 +601,7 @@
 /* GNB 바로 아래 태그 줄 (카테고리 바보다 한 단계 가볍게) */
 .momopick-ko .tag-bar {
   border-bottom: 1px solid var(--line);
-  background: rgba(244, 242, 251, 0.6);
+  background: #fff;
 }
 
 .momopick-ko .tag-bar__inner {
@@ -1595,6 +1595,36 @@
   position: relative;
 }
 
+/* 마지막 '전체보기' 카드 — 썸네일 대신 텍스트 (레일 stretch로 높이 자동 정렬) */
+.momopick-ko .rail-card--more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 160px;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+.momopick-ko .rail-card--more:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 12px 36px rgba(90, 103, 242, 0.28);
+}
+.momopick-ko .rail-card__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 800;
+}
+.momopick-ko .rail-card__more-plus {
+  font-size: 2rem;
+  line-height: 1;
+}
+.momopick-ko .rail-card__more-text {
+  font-size: var(--fs-md);
+}
+
 .momopick-ko .rail-card__thumb-link {
   display: block;
   text-decoration: none;
@@ -2311,12 +2341,20 @@
   margin-top: 0;
 }
 
+/* 헤더와 동일한 구조: .wrap 밖의 전체 폭 바 + 내부 캡 컨테이너 */
 .momopick-ko footer.ko-ft {
-  margin-top: 44px;
+  margin-top: 0;
   padding-top: 24px;
+  padding-bottom: 24px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: var(--fs-ft-base);
+  background: #fff;
+}
+.momopick-ko footer.ko-ft .ko-ft__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter);
 }
 
 .momopick-ko footer.ko-ft a {

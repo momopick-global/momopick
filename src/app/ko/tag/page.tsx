@@ -68,8 +68,8 @@ export default function KoTagPage() {
           </section>
         </main>
 
-        <KoPageFooter />
       </div>
+      <KoPageFooter />
     </>
   );
 }

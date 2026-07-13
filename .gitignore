@@ -10,3 +10,7 @@ node_modules/
 out/
 .open-next/
 .env*.local
+
+# Local tooling
+.claude/
+tsconfig.tsbuildinfo

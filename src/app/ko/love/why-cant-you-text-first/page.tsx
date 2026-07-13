@@ -111,8 +111,8 @@ export default function WhyCantYouTextFirstPage() {
           </section>
         </main>
 
-        <KoPageFooter variant="quiz" />
       </div>
+      <KoPageFooter variant="quiz" />
     </>
   );
 }

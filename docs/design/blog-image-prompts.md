@@ -1,7 +1,10 @@
-# Blog Image Prompts — 블로그 커버 이미지 프롬프트
+# Blog Image Prompts — 블로그 커버 이미지 프롬프트 (아카이브)
 
-> 작성 기준일: 2026-07-06
-> 대상: `/ko/blog/`에서 아직 대표 이미지가 없는 글 6개 (현재 `PENDING` fallback 사용)
+> ⚠️ **이 문서는 참고용 아카이브입니다.** 실제 사용은 → **[blog-image-prompts-copypaste.md](./blog-image-prompts-copypaste.md)** (재밌는 상황 + 제목 포함 · 복붙용)
+>
+> ✅ **상태(2026-07-09): 블로그 17편 전부 커버 이미지 연결 완료.** 새 글을 쓸 때만 복붙용 문서에서 프롬프트를 추가하면 됨.
+>
+> 작성 기준일: 2026-07-06 — 이미지 내 텍스트 없는 초기 버전. 이후 "제목 포함 + 재밌는 상황 일러스트"로 방향 전환됨.
 > 규격 근거: [image-guidelines.md](./image-guidelines.md)
 
 ## 공통 규격 (모든 블로그 커버 동일)
