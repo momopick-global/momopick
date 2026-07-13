@@ -1,0 +1,228 @@
+{
+  "id": "love-meme-exam-2",
+  "slug": "love-meme-exam-2",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "밈", "en": "meme" },
+    { "ko": "연애", "en": "love" },
+    { "ko": "모의고사", "en": "mock exam" }
+  ],
+  "title": { "ko": "연애 밈 모의고사 2탄", "en": "Love Meme Mock Exam Round 2" },
+  "subtitle": { "ko": "1탄이 쉬웠다고? 심화편이다", "en": "Round 1 was easy? Welcome to advanced class" },
+  "images": {
+    "thumbnail": "/images/quiz/love-meme-exam-2/thumb.webp",
+    "og": "/images/quiz/love-meme-exam-2/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "티키타카·그린라이트·철벽·잠수이별·ㅋ의 개수까지… 연애 밈 심화 10문항을 채점하는 모의고사 2탄",
+      "en": "Banter, green lights, ghosting, and the semantics of 'k' counts — round 2 of the dating-meme exam with 10 advanced questions"
+    },
+    "keywords": [
+      { "ko": "연애 밈 테스트 2탄", "en": "dating meme quiz round 2" },
+      { "ko": "밈 모의고사 심화", "en": "advanced meme mock exam" },
+      { "ko": "카톡 해석", "en": "text interpretation" }
+    ],
+    "ogTitle": { "ko": "연애 밈 모의고사 2탄", "en": "Love Meme Mock Exam Round 2" },
+    "ogDescription": {
+      "ko": "심화편 10문항. 1탄 만점자도 여기서 갈린다",
+      "en": "10 advanced questions. Even round-1 aces get separated here"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "💯 모의고사 2탄", "en": "💯 Mock Exam R2" },
+    "image": "/images/quiz/love-meme-exam-2/thumb.webp",
+    "priority": 88
+  },
+  "analytics": {
+    "eventKey": "love_meme_exam_2",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["love-meme-exam", "some-signal-reading-test", "kakao-reply-style"],
+  "grades": [
+    {
+      "min": 90,
+      "max": 100,
+      "title": { "ko": "밈 대학원생 🎓", "en": "Meme Grad Student 🎓" },
+      "desc": {
+        "ko": "밈을 쓰는 단계를 지나 밈을 연구하는 경지. 'ㅋ' 개수의 미세 온도차를 논문급으로 해설할 수 있어, 단톡방에서 각주 달린 답장을 보내는 타입입니다.",
+        "en": "Past using memes — you now study them. You can annotate the micro-temperature of each 'k' at thesis level, and your group-chat replies come with footnotes."
+      }
+    },
+    {
+      "min": 70,
+      "max": 89,
+      "title": { "ko": "밈 학부 수석", "en": "Top of the Meme Class" },
+      "desc": {
+        "ko": "심화편에서도 흔들리지 않는 상위권. 최신 밈 반영 속도가 빠르고 오독이 드뭅니다. 대학원 진학(=밈 계정 운영)을 진지하게 고민해도 될 성적.",
+        "en": "Unshaken even in the advanced round. Fast updates, rare misreads. Honestly, grades good enough to consider grad school — i.e., running a meme account."
+      }
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": { "ko": "교양 수강생", "en": "Elective-Course Student" },
+      "desc": {
+        "ko": "전공은 아니지만 학점은 챙기는 실속형. 굵직한 밈은 알고 미세 뉘앙스에서 감점되는 패턴입니다. 재밌어서 듣는 수업이니 그걸로 충분해요.",
+        "en": "Not your major, but you still collect the credits. You know the big memes and lose points on micro-nuance. You took this class for fun — and that's enough."
+      }
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": { "ko": "재수강 대상", "en": "Retake Required" },
+      "desc": {
+        "ko": "출석은 했는데 필기를 안 한 성적표. 밈이 눈앞을 지나갈 때 잡지 않은 대가입니다. 다행히 이 과목 재수강은 단톡방 정독으로 무료 제공됩니다.",
+        "en": "You attended but never took notes. This is the price of letting memes walk by uncaught. Good news: the retake is free — just actually read the group chat."
+      }
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": { "ko": "1탄부터 다시", "en": "Back to Round 1" },
+      "desc": {
+        "ko": "심화편은 아직 이릅니다. 선수 과목인 1탄부터 차근차근 이수하고 오세요. 참고로 1탄도 어렵다면… 그건 그것대로 희귀한 재능입니다.",
+        "en": "Advanced class can wait. Please complete the prerequisite — Round 1 — first. And if Round 1 is also hard… that's a rare talent in its own right."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "'티키타카'가 잘 된다는 것의 정확한 의미는?", "en": "What does having great 'tiki-taka' actually mean?" },
+      "options": [
+        { "label": { "ko": "주고받는 대화가 끊기지 않고 합이 잘 맞는 것", "en": "Back-and-forth banter that flows without dropping" }, "correct": true },
+        { "label": { "ko": "스페인 축구의 짧은 패스 전술 그 자체", "en": "Literally the Spanish short-passing football tactic" } },
+        { "label": { "ko": "탁구를 잘 친다는 뜻", "en": "Being good at table tennis" } },
+        { "label": { "ko": "둘 다 말이 없어서 조용한 상태", "en": "Both being silent, peacefully" } }
+      ],
+      "explanation": {
+        "ko": "어원은 진짜 축구 전술이 맞지만, 연애 사전에서는 '패스가 끊기면 그게 실점'이라는 뜻으로 진화했습니다.",
+        "en": "The etymology really is the football tactic — but in the dating dictionary it evolved to mean 'a dropped pass is a goal conceded'."
+      }
+    },
+    {
+      "prompt": { "ko": "다음 중 교과서적인 '그린라이트'로 판정되는 것은?", "en": "Which of these is a textbook 'green light'?" },
+      "options": [
+        { "label": { "ko": "상대가 먼저 다음 약속을 구체적 날짜로 제안함", "en": "They propose the next meetup first, with an actual date" }, "correct": true },
+        { "label": { "ko": "내 개그에 3초 늦게 웃어줌", "en": "They laugh at your joke, three seconds late" } },
+        { "label": { "ko": "신호등이 초록불로 바뀜", "en": "The traffic light turns green" } },
+        { "label": { "ko": "카톡 프로필 배경이 초록색임", "en": "Their profile background happens to be green" } }
+      ],
+      "explanation": {
+        "ko": "그린라이트의 3대 조건: 먼저, 구체적으로, 단둘이. 이 중 '먼저+구체적 날짜'는 거의 확정 판정입니다.",
+        "en": "The three pillars of a green light: they initiate, it's specific, it's just you two. 'Initiated + actual date' is close to a confirmed verdict."
+      }
+    },
+    {
+      "prompt": { "ko": "'철벽'을 친다는 것의 정확한 뜻은?", "en": "What does it mean to 'put up the iron wall'?" },
+      "options": [
+        { "label": { "ko": "다가오는 호감을 단호하게 차단하는 방어 기술", "en": "Firmly blocking incoming romantic advances" }, "correct": true },
+        { "label": { "ko": "집 방음 공사를 하는 것", "en": "Soundproofing your apartment" } },
+        { "label": { "ko": "헬스로 등근육을 벽처럼 만드는 것", "en": "Building back muscles into a literal wall" } },
+        { "label": { "ko": "중세 성벽 건축 양식의 하나", "en": "A style of medieval fortress architecture" } }
+      ],
+      "explanation": {
+        "ko": "철벽의 무서운 점: 본인은 방어한 줄도 모르는 '무의식 철벽'이 최고 등급이라는 것.",
+        "en": "The scariest tier is the 'unconscious iron wall' — maximum defense deployed without the defender even noticing."
+      }
+    },
+    {
+      "prompt": { "ko": "'잠수이별'이 악명 높은 이유는?", "en": "Why is 'submarine breakup' (ghosting out of a relationship) so notorious?" },
+      "options": [
+        { "label": { "ko": "통보 없이 연락 두절로 이별을 대신하기 때문", "en": "It replaces a breakup conversation with total radio silence" }, "correct": true },
+        { "label": { "ko": "스킨스쿠버 자격증이 필요하기 때문", "en": "It requires a scuba license" } },
+        { "label": { "ko": "이별 여행지가 항상 바다이기 때문", "en": "The breakup trip is always to the ocean" } },
+        { "label": { "ko": "이별 후 목욕탕에 오래 있기 때문", "en": "It involves very long baths afterward" } }
+      ],
+      "explanation": {
+        "ko": "심해로 사라진 쪽은 편하겠지만, 남은 쪽은 수색대 없이 실종 사건을 종결해야 합니다. 최소한의 매너: 통보.",
+        "en": "Comfortable for the one who dives; the one left behind must close a missing-person case with no search party. Minimum decency: say it's over."
+      }
+    },
+    {
+      "prompt": { "ko": "인간관계 용어 '손절'의 어원은?", "en": "Where does 'son-jeol' (cutting someone off) originally come from?" },
+      "options": [
+        { "label": { "ko": "주식에서 손해를 감수하고 파는 '손절매'", "en": "Stock trading — selling at a loss to stop the bleeding" }, "correct": true },
+        { "label": { "ko": "태권도의 손날 기술", "en": "The taekwondo knife-hand strike" } },
+        { "label": { "ko": "미용실에서 머리를 짧게 자르는 것", "en": "Getting a very short haircut" } },
+        { "label": { "ko": "악수를 거절하는 궁중 예법", "en": "A royal-court etiquette for refusing handshakes" } }
+      ],
+      "explanation": {
+        "ko": "손절매(損切賣)가 원조. 즉 손절이란 '이 관계는 더 들고 있을수록 손해'라는 투자 판단입니다.",
+        "en": "It comes from 'stop-loss selling'. Cutting someone off is literally an investment call: holding this position only deepens the loss."
+      }
+    },
+    {
+      "prompt": { "ko": "'읽씹'과 '안읽씹' 중 통상적으로 더 높은 단계의 기술로 분류되는 것과 그 이유는?", "en": "Between 'read-and-ignore' and 'unread-and-ignore', which is considered the higher-level technique, and why?" },
+      "options": [
+        { "label": { "ko": "안읽씹 — 읽고 싶은 욕구까지 참는 인내가 필요해서", "en": "Unread-ignore — it takes the discipline to resist even opening it" }, "correct": true },
+        { "label": { "ko": "읽씹 — 읽는 데 시간이 들어서", "en": "Read-ignore — reading takes time" } },
+        { "label": { "ko": "둘 다 인터넷 요금이 아까운 행동", "en": "Both are a waste of your data plan" } },
+        { "label": { "ko": "안읽씹 — 문해력이 부족하다는 뜻이라서", "en": "Unread-ignore — it means they can't read" } }
+      ],
+      "explanation": {
+        "ko": "미리보기로 다 읽고 숫자 1을 유지하는 하이브리드 기술자들도 있습니다. 그쪽은 이미 프로 리그.",
+        "en": "There's also the hybrid pro move: reading everything via preview while keeping the 'unread' badge intact. That's the professional league."
+      }
+    },
+    {
+      "prompt": { "ko": "답장으로 온 \"ㅋ\" 하나. 통상적인 온도 판정은?", "en": "The reply is a single 'k'. Standard temperature reading?" },
+      "options": [
+        { "label": { "ko": "냉소 내지 무성의 — ㅋㅋㅋ 이상과는 온도가 다름", "en": "Cold or dismissive — a whole different climate from 'kkk'" }, "correct": true },
+        { "label": { "ko": "너무 웃겨서 한 글자밖에 못 침", "en": "Too funny to type more than one letter" } },
+        { "label": { "ko": "자판의 ㅋ 키가 한 번만 눌리는 고장", "en": "The 'k' key is broken and only fires once" } },
+        { "label": { "ko": "데이터 절약 모드의 압축 표현", "en": "Data-saver mode compression" } }
+      ],
+      "explanation": {
+        "ko": "국제 공인 환산표: ㅋ=경고, ㅋㅋ=사무적, ㅋㅋㅋ=양호, ㅋㅋㅋㅋ+=진짜 웃김. 개수는 곧 온도입니다.",
+        "en": "The internationally recognized scale: k = warning, kk = business, kkk = healthy, kkkk+ = genuinely funny. The count is the temperature."
+      }
+    },
+    {
+      "prompt": { "ko": "이별 직후 상대의 프사가 '기본 이미지'로 바뀌었다. 밈 사전 기준 해석은?", "en": "Right after a breakup, their profile photo becomes the default blank avatar. Per the meme dictionary:" },
+      "options": [
+        { "label": { "ko": "심경 변화의 공개 선언 — 사실상 상중(喪中) 표시", "en": "A public declaration of emotional state — effectively a mourning notice" }, "correct": true },
+        { "label": { "ko": "사진첩 용량이 부족해진 것", "en": "They ran out of photo storage" } },
+        { "label": { "ko": "기본 이미지가 새로운 유행이라서", "en": "Blank avatars are the hot new trend" } },
+        { "label": { "ko": "프로필 사진 정책 위반으로 강제 삭제됨", "en": "Their photo was removed for policy violations" } }
+      ],
+      "explanation": {
+        "ko": "프사는 공식 성명 발표 채널입니다. 기본 이미지 = 검은 리본, 셀카 복귀 = 국정 정상화 선언.",
+        "en": "The profile photo is an official press channel. Blank avatar = black ribbon; the selfie's return = a declaration that normal operations have resumed."
+      }
+    },
+    {
+      "prompt": { "ko": "연락이 뜸해진 상대의 \"요즘 바빠\"에 대한 통상적 해석은?", "en": "They've gone quiet and say \"I've been really busy lately\". The standard interpretation?" },
+      "options": [
+        { "label": { "ko": "우선순위에서 밀렸다는 완곡 표현일 확률이 높음", "en": "Most likely a soft way of saying you slipped down the priority list" }, "correct": true },
+        { "label": { "ko": "국가 기밀 프로젝트에 투입된 것", "en": "They were recruited for a classified government project" } },
+        { "label": { "ko": "'바빠'라는 이름의 반려견을 입양함", "en": "They adopted a dog named 'Busy'" } },
+        { "label": { "ko": "말 그대로 벼 농사가 바쁜 철", "en": "It's literally rice-harvest season" } }
+      ],
+      "explanation": {
+        "ko": "진짜 바쁜 사람은 '바빠서 미안, 금요일엔 돼!'처럼 대안을 줍니다. 대안 없는 바쁨은 대체로 완곡어법.",
+        "en": "Genuinely busy people offer alternatives: 'Swamped, sorry — Friday works!'. Busyness without an alternative is usually a euphemism."
+      }
+    },
+    {
+      "prompt": { "ko": "\"다음에 밥 한번 먹자\"의 통상적 실현 확률에 가장 가까운 것은?", "en": "\"Let's grab a meal sometime.\" Closest to its usual realization rate?" },
+      "options": [
+        { "label": { "ko": "인사말에 가까움 — 날짜가 잡히기 전까지 확률 거의 0", "en": "Basically a greeting — near-zero odds until a date is set" }, "correct": true },
+        { "label": { "ko": "100% — 한국인은 밥 약속을 어기지 않음", "en": "100% — meal promises are legally binding here" } },
+        { "label": { "ko": "복권 1등보다 약간 높은 수준", "en": "Slightly better than winning the lottery" } },
+        { "label": { "ko": "밥솥 상태에 따라 변동됨", "en": "Depends on the rice cooker's condition" } }
+      ],
+      "explanation": {
+        "ko": "이 문장은 '안녕히 계세요'의 존댓말 확장팩입니다. 단, 그 자리에서 날짜가 나오면 즉시 진짜 약속으로 승격.",
+        "en": "This sentence is an expansion pack of 'goodbye'. But if a date appears on the spot, it instantly gets promoted to a real plan."
+      }
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 밈 심화 시험입니다. 'ㅋ' 하나 보냈다고 다 식은 건 아니에요. 표본은 언제나 넉넉하게.",
+    "en": "A just-for-fun advanced meme exam. One lone 'k' doesn't always mean it's over — always collect a healthy sample size."
+  }
+}

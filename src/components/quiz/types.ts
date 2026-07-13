@@ -26,6 +26,17 @@ export type SnackQuizResultShare = {
   image?: string;
 };
 
+/**
+ * 결과별 유형 궁합 (선택) — 같은 퀴즈의 다른 `resultKeys` 항목을 가리킨다.
+ * 결과 카드에 "나와 잘 맞는 유형 / 부딪히기 쉬운 유형" 2차 결과층으로 노출.
+ */
+export type SnackQuizResultCompat = {
+  /** 잘 맞는 유형의 결과 key */
+  best?: string;
+  /** 부딪히기 쉬운 유형의 결과 key */
+  worst?: string;
+};
+
 export type SnackQuizResult = {
   emoji: string;
   /** 로그·통계·추천용 결과 키 (선택, 보통 `resultKeys` 항목과 동일) */
@@ -36,6 +47,8 @@ export type SnackQuizResult = {
   /** 결과 화면 상단 이미지 (JSON 경로는 로케일 세그먼트 없이 `/images/quiz/{slug}/…`) */
   image?: string;
   share?: SnackQuizResultShare;
+  /** 유형 궁합 — 잘 맞는/부딪히기 쉬운 유형 (선택) */
+  compat?: SnackQuizResultCompat;
 };
 
 export type SnackQuizQuestion = {

@@ -124,6 +124,10 @@
           "en": "Lack of emotional expression makes people lose interest"
         },
         "image": "/images/quiz/when-men-lose-interest/result-1.webp"
+      },
+      "compat": {
+        "best": "too_fast",
+        "worst": "pressure"
       }
     },
     "pressure": {
@@ -152,6 +156,10 @@
           "en": "Emotional weight becomes too much too soon"
         },
         "image": "/images/quiz/when-men-lose-interest/result-2.webp"
+      },
+      "compat": {
+        "best": "indifferent",
+        "worst": "too_fast"
       }
     },
     "too_fast": {
@@ -180,6 +188,10 @@
           "en": "Moving too fast kills the attraction"
         },
         "image": "/images/quiz/when-men-lose-interest/result-3.webp"
+      },
+      "compat": {
+        "best": "indifferent",
+        "worst": "pressure"
       }
     }
   },

@@ -108,7 +108,11 @@
         "ko": "이런 타입은 관계에서 한 발 떨어져 상대와 상황을 찬찬히 바라보는 경향이 있어요. 성급하게 다가가기보다 신중하게 마음을 여는 편이죠. 그 관찰력이 오해를 줄이지만, 마음이 든 사람에겐 먼저 한 걸음 다가가 보는 것도 좋아요.",
         "en": ""
       },
-      "image": "/images/quiz/cafe-seat-onepick/result-1.webp"
+      "image": "/images/quiz/cafe-seat-onepick/result-1.webp",
+      "compat": {
+        "best": "center",
+        "worst": "bar"
+      }
     },
     "center": {
       "emoji": "🪑",
@@ -125,7 +129,11 @@
         "ko": "이런 타입은 관계에서 마음을 열고 사람들과 가까이 어울리는 경향이 있어요. 낯선 사이도 금세 편하게 만드는 힘이 있죠. 그 개방성이 큰 매력이지만, 가끔은 나만의 여백도 챙기면 관계가 더 오래 편안해져요.",
         "en": ""
       },
-      "image": "/images/quiz/cafe-seat-onepick/result-2.webp"
+      "image": "/images/quiz/cafe-seat-onepick/result-2.webp",
+      "compat": {
+        "best": "window",
+        "worst": "corner"
+      }
     },
     "corner": {
       "emoji": "🛋️",
@@ -142,7 +150,11 @@
         "ko": "이런 타입은 관계에서 안전하고 편안한 거리를 지키려는 경향이 있어요. 신뢰가 쌓이기 전엔 마음을 조심스레 열죠. 그 신중함이 나를 지켜주지만, 믿을 만한 사람에겐 조금 더 기대어도 관계가 따뜻해져요.",
         "en": ""
       },
-      "image": "/images/quiz/cafe-seat-onepick/result-3.webp"
+      "image": "/images/quiz/cafe-seat-onepick/result-3.webp",
+      "compat": {
+        "best": "window",
+        "worst": "center"
+      }
     },
     "door": {
       "emoji": "🚪",
@@ -159,7 +171,11 @@
         "ko": "이런 타입은 관계에서 완전히 몰입하기보다 나갈 수 있는 여지를 두는 경향이 있어요. 부담 없는 거리에서 편안함을 느끼죠. 그 유연함이 자유를 주지만, 마음이 통하는 사람 앞에선 한 번쯤 깊이 머물러 봐도 좋아요.",
         "en": ""
       },
-      "image": "/images/quiz/cafe-seat-onepick/result-4.webp"
+      "image": "/images/quiz/cafe-seat-onepick/result-4.webp",
+      "compat": {
+        "best": "center",
+        "worst": "bar"
+      }
     },
     "bar": {
       "emoji": "🍸",
@@ -176,7 +192,11 @@
         "ko": "이런 타입은 관계 속에서도 나만의 독립을 소중히 여기는 경향이 있어요. 혼자만의 시간에서 힘을 얻고, 기대기보다 스스로 서는 편이죠. 그 단단함이 강점이지만, 가끔은 곁을 내어주고 함께 기대는 것도 관계에 온기를 더해줘요.",
         "en": ""
       },
-      "image": "/images/quiz/cafe-seat-onepick/result-5.webp"
+      "image": "/images/quiz/cafe-seat-onepick/result-5.webp",
+      "compat": {
+        "best": "corner",
+        "worst": "center"
+      }
     }
   },
   "blend": {

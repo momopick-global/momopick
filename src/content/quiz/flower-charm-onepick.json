@@ -110,7 +110,11 @@
         "ko": "당신의 매력은 따뜻함이에요. 이런 타입은 함께 있으면 편안하고 기분이 좋아지는 분위기를 가진 경향이 있어요. 사람들이 자연스레 곁에 머물고 싶어 하죠. 그 온기를 스스로도 알아봐 주면, 매력이 더 환하게 빛나요.",
         "en": ""
       },
-      "image": "/images/quiz/flower-charm-onepick/result-1.webp"
+      "image": "/images/quiz/flower-charm-onepick/result-1.webp",
+      "compat": {
+        "best": "humor",
+        "worst": "mystery"
+      }
     },
     "humor": {
       "emoji": "🌼",
@@ -127,7 +131,11 @@
         "ko": "당신의 매력은 유머예요. 이런 타입은 분위기를 밝게 만들고 사람들을 웃게 하는 재치를 가진 경향이 있어요. 무거운 순간도 가볍게 풀어주죠. 그 경쾌함이 큰 매력이지만, 진지한 마음도 가끔은 솔직히 보여주면 더 깊이 통해요.",
         "en": ""
       },
-      "image": "/images/quiz/flower-charm-onepick/result-2.webp"
+      "image": "/images/quiz/flower-charm-onepick/result-2.webp",
+      "compat": {
+        "best": "passion",
+        "worst": "intellect"
+      }
     },
     "intellect": {
       "emoji": "💜",
@@ -144,7 +152,11 @@
         "ko": "당신의 매력은 지적인 깊이예요. 이런 타입은 생각이 깊고 대화를 나눌수록 매력이 드러나는 경향이 있어요. 차분한 통찰이 사람들의 호기심을 끌죠. 그 지성을 뽐내지 않아도 자연스레 전해지니, 편하게 당신다운 이야기를 들려주세요.",
         "en": ""
       },
-      "image": "/images/quiz/flower-charm-onepick/result-3.webp"
+      "image": "/images/quiz/flower-charm-onepick/result-3.webp",
+      "compat": {
+        "best": "mystery",
+        "worst": "humor"
+      }
     },
     "mystery": {
       "emoji": "🖤",
@@ -161,7 +173,11 @@
         "ko": "당신의 매력은 신비로움이에요. 이런 타입은 쉽게 속을 다 보여주지 않아 궁금증을 자아내는 분위기를 가진 경향이 있어요. 사람들이 더 알고 싶어 다가오죠. 그 여백이 매력이지만, 마음을 연 사람에겐 조금 더 보여줘도 관계가 깊어져요.",
         "en": ""
       },
-      "image": "/images/quiz/flower-charm-onepick/result-4.webp"
+      "image": "/images/quiz/flower-charm-onepick/result-4.webp",
+      "compat": {
+        "best": "intellect",
+        "worst": "passion"
+      }
     },
     "stability": {
       "emoji": "🤍",
@@ -178,7 +194,11 @@
         "ko": "당신의 매력은 안정감이에요. 이런 타입은 곁에 있으면 마음이 놓이고 신뢰가 가는 분위기를 가진 경향이 있어요. 요란하지 않아도 은은하게 오래 남죠. 그 차분한 매력이 큰 강점이니, 당신의 그 편안함을 자신 있게 여겨도 좋아요.",
         "en": ""
       },
-      "image": "/images/quiz/flower-charm-onepick/result-5.webp"
+      "image": "/images/quiz/flower-charm-onepick/result-5.webp",
+      "compat": {
+        "best": "warmth",
+        "worst": "passion"
+      }
     },
     "passion": {
       "emoji": "🌹",
@@ -195,7 +215,11 @@
         "ko": "당신의 매력은 열정이에요. 이런 타입은 생기와 에너지가 넘쳐 시선을 사로잡는 존재감을 가진 경향이 있어요. 좋아하는 것에 몰입하는 모습이 특히 빛나죠. 그 뜨거움이 큰 매력이니, 그대로의 당신을 마음껏 드러내 보세요.",
         "en": ""
       },
-      "image": "/images/quiz/flower-charm-onepick/result-6.webp"
+      "image": "/images/quiz/flower-charm-onepick/result-6.webp",
+      "compat": {
+        "best": "humor",
+        "worst": "stability"
+      }
     }
   },
   "blend": {

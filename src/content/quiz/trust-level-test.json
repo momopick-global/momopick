@@ -124,6 +124,10 @@
           "en": "You are careful with trust"
         },
         "image": "/images/quiz/trust-level-test/result-1.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "C"
       }
     },
     "B": {
@@ -152,6 +156,10 @@
           "en": "You balance trust well"
         },
         "image": "/images/quiz/trust-level-test/result-2.webp"
+      },
+      "compat": {
+        "best": "A",
+        "worst": "C"
       }
     },
     "C": {
@@ -180,6 +188,10 @@
           "en": "You trust easily"
         },
         "image": "/images/quiz/trust-level-test/result-3.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "A"
       }
     }
   },

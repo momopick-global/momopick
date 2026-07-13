@@ -1,0 +1,228 @@
+{
+  "id": "love-knowledge-certificate",
+  "slug": "love-knowledge-certificate",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "심리학", "en": "psychology" },
+    { "ko": "연애 상식", "en": "love science" },
+    { "ko": "검정시험", "en": "certification" }
+  ],
+  "title": { "ko": "연애 상식 검정시험", "en": "Love Science Certification" },
+  "subtitle": { "ko": "감이 아니라 과학으로 푸는 연애", "en": "Love, solved with science instead of vibes" },
+  "images": {
+    "thumbnail": "/images/quiz/love-knowledge-certificate/thumb.webp",
+    "og": "/images/quiz/love-knowledge-certificate/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "애착 유형·단순 노출 효과·흔들다리 효과… 심리학 근거가 있는 연애 상식 10문항 검정시험",
+      "en": "Attachment styles, mere exposure, the shaky bridge effect — a 10-question certification exam on psychology-backed love science"
+    },
+    "keywords": [
+      { "ko": "연애 심리학 테스트", "en": "love psychology quiz" },
+      { "ko": "연애 상식 시험", "en": "love science exam" },
+      { "ko": "애착 유형", "en": "attachment styles" }
+    ],
+    "ogTitle": { "ko": "연애 상식 검정시험", "en": "Love Science Certification" },
+    "ogDescription": {
+      "ko": "10문항 채점제. 나는 연애학 박사일까 휴학생일까",
+      "en": "10 questions, scored out of 100. PhD in love, or on academic leave?"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "🔬 검정시험", "en": "🔬 Certification" },
+    "image": "/images/quiz/love-knowledge-certificate/thumb.webp",
+    "priority": 85
+  },
+  "analytics": {
+    "eventKey": "love_knowledge_certificate",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["love-meme-exam", "emotional-sensitivity", "relationship-balance-test"],
+  "grades": [
+    {
+      "min": 90,
+      "max": 100,
+      "title": { "ko": "연애학 박사 🔬", "en": "PhD in Love Science 🔬" },
+      "desc": {
+        "ko": "감으로 연애하는 세상에서 근거로 연애하는 희귀 인재. 친구의 연애 고민에 '그건 오귀인이야'라고 답해서 미움받을 수 있으니, 지식은 처방전처럼 필요할 때만 꺼내세요.",
+        "en": "A rare talent who dates with evidence in a world running on vibes. Warning: answering a friend's love crisis with 'that's just misattribution' may cost you the friendship — dispense knowledge like prescriptions, only when needed."
+      }
+    },
+    {
+      "min": 70,
+      "max": 89,
+      "title": { "ko": "연구원", "en": "Research Fellow" },
+      "desc": {
+        "ko": "주요 이론은 정확히 알고, 헷갈리는 건 각주 수준. 이론과 실전의 갭만 메우면 박사 학위가 눈앞입니다. 실전 데이터 수집(=연애)은 본인 몫.",
+        "en": "You know the major theories cold; only the footnotes trip you up. Close the theory-practice gap and the doctorate is yours. Field data collection (actual dating) not included."
+      }
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": { "ko": "수강생", "en": "Enrolled Student" },
+      "desc": {
+        "ko": "중간고사는 통과한 성실한 수강생. 유명한 효과는 알지만 이름과 내용이 가끔 서로 바뀌어 저장돼 있습니다. 복습 한 바퀴면 연구원 승급 가능.",
+        "en": "A diligent student who'd pass the midterm. You know the famous effects, but the names and definitions occasionally swap places in storage. One review lap and you're a fellow."
+      }
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": { "ko": "청강생", "en": "Auditing Student" },
+      "desc": {
+        "ko": "수업은 듣는데 학점은 안 나오는 상태. 들어본 단어는 많은데 정의를 물으면 눈을 피하게 됩니다. 괜찮아요, 청강도 출석은 출석입니다.",
+        "en": "Attending lectures, earning no credits. You've heard all the words but avoid eye contact when asked for definitions. It's fine — auditing still counts as showing up."
+      }
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": { "ko": "휴학생", "en": "On Academic Leave" },
+      "desc": {
+        "ko": "연애학과에 적은 있으나 캠퍼스에서 목격된 적 없음. 하지만 이론 없이도 연애 잘하는 사람은 많습니다. 당신은 어쩌면 이론이 필요 없는 실전파일지도.",
+        "en": "Registered in the department, never seen on campus. But plenty of people love well with zero theory — you might just be a practitioner who never needed the textbook."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "성인 애착 이론의 대표적 3분류로 옳은 것은?", "en": "Which is the classic three-way classification in adult attachment theory?" },
+      "options": [
+        { "label": { "ko": "안정형 · 불안형 · 회피형", "en": "Secure, anxious, avoidant" }, "correct": true },
+        { "label": { "ko": "직진형 · 우회형 · 유턴형", "en": "Straight-ahead, detour, U-turn" } },
+        { "label": { "ko": "아침형 · 저녁형 · 새벽형", "en": "Morning type, evening type, 3 AM type" } },
+        { "label": { "ko": "츤데레형 · 얀데레형 · 쿨데레형", "en": "Tsundere, yandere, kuudere" } }
+      ],
+      "explanation": {
+        "ko": "4번은 애니 동아리 분류법입니다. 정답은 볼비의 애착 이론을 헤이잔·셰이버가 성인 연애에 적용한 안정·불안·회피 3유형.",
+        "en": "That last one is anime-club taxonomy. The real answer: secure, anxious, and avoidant — Bowlby's attachment theory, applied to adult romance by Hazan and Shaver."
+      }
+    },
+    {
+      "prompt": { "ko": "대화 중 상대의 자세나 말투를 은근히 따라 하면 호감이 올라간다. 이 현상의 이름은?", "en": "Subtly copying someone's posture or speech during conversation increases their liking of you. This is called:" },
+      "options": [
+        { "label": { "ko": "미러링 효과", "en": "The mirroring effect" }, "correct": true },
+        { "label": { "ko": "복사붙여넣기 효과", "en": "The copy-paste effect" } },
+        { "label": { "ko": "따라쟁이 증후군", "en": "Copycat syndrome" } },
+        { "label": { "ko": "거울아 거울아 효과", "en": "The magic-mirror-on-the-wall effect" } }
+      ],
+      "explanation": {
+        "ko": "학술적으로는 '카멜레온 효과'(차트랜드 & 바그, 1999)로도 불립니다. 단, 3초 딜레이 풀카피는 호감이 아니라 신고감.",
+        "en": "Academically also known as the 'chameleon effect' (Chartrand & Bargh, 1999). Note: full-body copying on a 3-second delay earns a restraining order, not rapport."
+      }
+    },
+    {
+      "prompt": { "ko": "자주 마주치기만 해도 호감이 올라가는 현상의 심리학 명칭은?", "en": "Liking someone more simply because you see them often — the psychological term is:" },
+      "options": [
+        { "label": { "ko": "단순 노출 효과", "en": "The mere exposure effect" }, "correct": true },
+        { "label": { "ko": "출석 점수 효과", "en": "The attendance-points effect" } },
+        { "label": { "ko": "동선 겹침의 저주", "en": "The curse of overlapping commutes" } },
+        { "label": { "ko": "와이파이 자동연결 효과", "en": "The auto-connect Wi-Fi effect" } }
+      ],
+      "explanation": {
+        "ko": "자용츠(Zajonc, 1968)의 고전 연구. 같은 강의실에 앉기만 해도 호감이 오른다는, 성실 출석러들의 과학적 희망입니다.",
+        "en": "Zajonc's classic 1968 finding. Just sitting in the same lecture hall raises liking — scientific hope for everyone with perfect attendance."
+      }
+    },
+    {
+      "prompt": { "ko": "흔들다리 위에서 만난 사람에게 더 끌리는 '흔들다리 효과'의 심리학적 원리는?", "en": "The 'shaky bridge effect' — feeling more attracted to someone you meet on a scary bridge. The mechanism is:" },
+      "options": [
+        { "label": { "ko": "공포로 인한 심장 두근거림을 상대에 대한 설렘으로 오귀인함", "en": "Misattributing fear-induced heart-pounding as attraction to the person" }, "correct": true },
+        { "label": { "ko": "높은 곳에서는 시력이 좋아져서 상대가 잘 보임", "en": "Altitude improves eyesight, so they literally look better" } },
+        { "label": { "ko": "다리가 흔들리면 손을 잡을 명분이 생겨서", "en": "A shaking bridge is a legal excuse to hold hands" } },
+        { "label": { "ko": "무서우면 아무나 좋아 보이는 생존 본능", "en": "Fear makes anyone look good — survival instinct" } }
+      ],
+      "explanation": {
+        "ko": "더튼과 아론(1974)의 실제 실험. 핵심 개념은 '각성의 오귀인'입니다. 그래서 첫 데이트로 놀이공원이 유리하다는 응용 이론이 나왔죠.",
+        "en": "Dutton and Aron's real 1974 experiment. The key concept: 'misattribution of arousal'. Hence the applied theory that amusement parks make great first dates."
+      }
+    },
+    {
+      "prompt": { "ko": "연구에 따르면 얼굴만 보고 첫인상이 형성되는 데 걸리는 시간은?", "en": "According to research, how long does it take to form a first impression from a face?" },
+      "options": [
+        { "label": { "ko": "약 0.1초", "en": "About 0.1 seconds" }, "correct": true },
+        { "label": { "ko": "약 30분 (식사 한 끼 분량)", "en": "About 30 minutes (one meal's worth)" } },
+        { "label": { "ko": "3일 밤낮", "en": "Three days and three nights" } },
+        { "label": { "ko": "상대 MBTI를 들을 때까지", "en": "However long it takes to hear their MBTI" } }
+      ],
+      "explanation": {
+        "ko": "윌리스와 토도로프(2006)의 연구: 노출 0.1초면 매력·신뢰도 판단이 끝나고, 더 오래 봐도 판단은 거의 안 바뀝니다. 소개팅 셔츠 고민이 과학적으로 정당한 이유.",
+        "en": "Willis and Todorov (2006): 0.1 seconds of exposure is enough to judge attractiveness and trustworthiness, and longer viewing barely changes the verdict. Your pre-date shirt crisis is scientifically justified."
+      }
+    },
+    {
+      "prompt": { "ko": "끝난 연애보다 애매하게 끝난 썸이 더 오래 기억에 남는 이유를 설명하는 심리학 개념은?", "en": "An ambiguous almost-relationship haunts you longer than a finished one. The psychological concept explaining this:" },
+      "options": [
+        { "label": { "ko": "자이가르닉 효과 — 미완성 과제가 더 잘 기억됨", "en": "The Zeigarnik effect — unfinished tasks are remembered better" }, "correct": true },
+        { "label": { "ko": "미련 보존의 법칙", "en": "The law of conservation of lingering feelings" } },
+        { "label": { "ko": "새벽 감성 리마인더 효과", "en": "The 2 AM reminder effect" } },
+        { "label": { "ko": "플레이리스트 알고리즘의 저주", "en": "The playlist algorithm's curse" } }
+      ],
+      "explanation": {
+        "ko": "자이가르닉(1927)이 식당 웨이터 관찰에서 발견한 효과. 뇌는 미완성 건을 '진행 중' 폴더에 보관합니다. 썸이 안 잊히는 건 당신 탓이 아니라 폴더 구조 탓.",
+        "en": "Zeigarnik discovered it in 1927 watching waiters' memory for open orders. The brain files unfinished business under 'in progress'. You can't forget that situationship because of the folder structure, not weakness."
+      }
+    },
+    {
+      "prompt": { "ko": "'반대 성향끼리 끌린다' vs '비슷한 사람끼리 잘된다'. 연구가 일관되게 지지하는 쪽은?", "en": "'Opposites attract' vs 'birds of a feather'. Which side does research consistently support?" },
+      "options": [
+        { "label": { "ko": "유사성 — 태도와 가치관이 비슷할수록 호감과 안정성이 높음", "en": "Similarity — matching attitudes and values predict liking and stability" }, "correct": true },
+        { "label": { "ko": "반대 성향 — 자석도 N극과 S극이 붙으니까", "en": "Opposites — magnets prove it, N pole meets S pole" } },
+        { "label": { "ko": "혈액형이 모든 것을 결정함", "en": "Blood type decides everything" } },
+        { "label": { "ko": "둘 다 아님, 통장 잔고의 유사성이 핵심", "en": "Neither — bank-balance similarity is the real factor" } }
+      ],
+      "explanation": {
+        "ko": "번(Byrne)의 유사성-매력 연구 이후 수십 년간 결론은 한결같습니다. 사람은 자석이 아니라서, 극이 아니라 취향이 맞아야 붙어 있습니다.",
+        "en": "Since Byrne's similarity-attraction studies, decades of research agree. Humans aren't magnets — it's shared tastes, not opposite poles, that keep two people stuck together."
+      }
+    },
+    {
+      "prompt": { "ko": "심리학에서 말하는 '적극적 경청'의 핵심은?", "en": "In psychology, the core of 'active listening' is:" },
+      "options": [
+        { "label": { "ko": "들은 내용을 자기 말로 되짚어주며 이해했는지 확인하는 것", "en": "Paraphrasing what you heard to confirm you understood" }, "correct": true },
+        { "label": { "ko": "\"응 그래서?\"를 최대한 빠르게 발사하는 것", "en": "Firing 'uh-huh, and?' at maximum speed" } },
+        { "label": { "ko": "고개를 분당 60회 이상 끄덕이는 것", "en": "Nodding at 60+ RPM" } },
+        { "label": { "ko": "상대 말이 끝나기 전에 해결책을 제시하는 것", "en": "Delivering the solution before they finish talking" } }
+      ],
+      "explanation": {
+        "ko": "칼 로저스가 정립한 개념으로, 핵심은 '반영과 재진술'입니다. 4번(해결책 선공)은 경청이 아니라 싸움의 시작으로 분류됩니다.",
+        "en": "A concept established by Carl Rogers — the essence is reflecting and restating. Option four (preemptive solutions) is classified not as listening but as the start of an argument."
+      }
+    },
+    {
+      "prompt": { "ko": "갈등 대화에서 권장되는 '나 전달법(I-message)'의 올바른 예시는?", "en": "Which is a correct example of the 'I-message' recommended for conflict conversations?" },
+      "options": [
+        { "label": { "ko": "\"연락이 없으면 나는 걱정되고 서운해\"", "en": "\"When I don't hear from you, I feel worried and hurt\"" }, "correct": true },
+        { "label": { "ko": "\"너는 항상 왜 그 모양이야?\"", "en": "\"Why are YOU always like this?\"" } },
+        { "label": { "ko": "\"나는 네가 잘못했다고 생각해, 나는!\"", "en": "\"I think YOU are wrong — see, I said 'I'!\"" } },
+        { "label": { "ko": "\"내가 화났다는 걸 맞혀봐\"", "en": "\"Guess why I'm angry\"" } }
+      ],
+      "explanation": {
+        "ko": "고든의 '나 전달법'은 비난 대신 내 감정과 상황을 주어로 말하는 기술. 3번처럼 '나는'으로 시작해도 내용이 '너 잘못'이면 그냥 너 전달법입니다.",
+        "en": "Gordon's I-message states your feeling and the situation instead of blaming. Starting with 'I' while the content is 'you're wrong' (option three) is just a you-message in a trench coat."
+      }
+    },
+    {
+      "prompt": { "ko": "장거리 연애 유지에 가장 중요하다고 연구들이 지목하는 요인은?", "en": "Which factor do studies point to as most critical for sustaining a long-distance relationship?" },
+      "options": [
+        { "label": { "ko": "규칙적이고 질 높은 소통과 상호 신뢰", "en": "Regular, high-quality communication and mutual trust" }, "correct": true },
+        { "label": { "ko": "비행기 마일리지 등급", "en": "Airline mileage status" } },
+        { "label": { "ko": "시차 계산 암산 능력", "en": "Mental time-zone arithmetic skills" } },
+        { "label": { "ko": "택배로 마음을 배송하는 물류 역량", "en": "Logistics capability for shipping feelings via parcel" } }
+      ],
+      "explanation": {
+        "ko": "장거리 연애 연구들의 공통 결론: 물리적 거리보다 소통의 질·신뢰·미래 계획 공유가 관계 만족도를 좌우합니다. 마일리지는 부차적 변수(있으면 좋음).",
+        "en": "The consistent finding across long-distance studies: communication quality, trust, and shared future plans predict satisfaction far better than kilometers. Mileage status is a secondary variable (nice to have)."
+      }
+    }
+  ],
+  "footnote": {
+    "ko": "실제 심리학 연구에 기반한 상식 시험이지만, 연애는 표본 크기 1의 과학이라 예외가 늘 있습니다. 재미로 응시해 주세요.",
+    "en": "Based on real psychology research — but love is a science with a sample size of one, so exceptions abound. Take the exam for fun."
+  }
+}

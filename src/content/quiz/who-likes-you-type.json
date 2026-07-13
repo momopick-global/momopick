@@ -116,8 +116,8 @@
         "en": "Quiet, steady, and sincerely into you"
       },
       "body": {
-        "ko": "이 사람은 감정을 크게 티내기보다 조용히 쌓아가는 편이다.\n괜히 들이대거나 분위기를 흔들기보다, 당신 곁에 자연스럽게 머무르며 신뢰를 만든다.\n눈에 띄게 표현하지 않아서 놓치기 쉽지만, 한번 마음이 생기면 꽤 오래 간다.\n작은 배려, 꾸준한 관심, 안정적인 태도가 이 사람의 신호다.\n화려하진 않아도 가장 건강하고 오래 가는 관계로 이어질 가능성이 높은 타입이다.",
-        "en": "This person doesn’t make a big show of their feelings.\nInstead, they stay close, build trust, and slowly grow attached.\nThey may be easy to miss because they are not loud about it, but once they like someone, it tends to last.\nSmall acts of care, consistency, and emotional steadiness are their signs.\nNot dramatic, but highly likely to lead to the healthiest and longest-lasting relationship."
+        "ko": "이 사람의 호감은 와이파이 같다. 눈에 안 보이다가 끊기고 나서야 존재를 알게 된다.\n크게 티 내는 대신 조용히 곁에 머물며 신뢰를 쌓는 타입이라, 화려한 이벤트는 없어도 한번 마음이 생기면 꽤 오래 간다. 작은 배려와 지치지 않는 꾸준함이 이 사람의 고백문이다.\n놓치기 쉽지만, 가장 건강하고 오래 가는 관계로 이어질 확률이 제일 높은 타입이기도 하다.\n지금도 그 사람은 당신이 지나가듯 말한 걸 기억해뒀다가, 다음 만남에 아무렇지 않게 챙겨올 준비를 하고 있다.",
+        "en": "This person's affection works like Wi-Fi: invisible until it disconnects, and only then do you realize it was there all along.\nInstead of grand gestures, they stay close, build trust, and quietly grow attached. Small acts of care and relentless consistency are their version of a confession.\nEasy to miss, but statistically your best shot at the healthiest, longest-lasting relationship.\nSomewhere out there, they are already remembering that thing you mentioned in passing — and planning to casually show up with it next time."
       },
       "image": "/images/quiz/who-likes-you-type/result-1.webp",
       "share": {
@@ -130,6 +130,10 @@
           "en": "A sincere type who likes you quietly and consistently"
         },
         "image": "/images/quiz/who-likes-you-type/result-1.webp"
+      },
+      "compat": {
+        "best": "friend",
+        "worst": "clingy"
       }
     },
     "clingy": {
@@ -144,8 +148,8 @@
         "en": "Intense, attached, and always seeking reassurance"
       },
       "body": {
-        "ko": "이 사람은 당신에게 마음이 생기면 감정의 크기가 빠르게 커진다.\n그만큼 표현도 적극적이고, 당신의 반응에 예민하게 흔들릴 가능성도 크다.\n자주 연락하고, 작은 변화에도 의미를 두고, 당신의 마음을 확실히 알고 싶어 한다.\n처음에는 열정적이고 확실해서 매력적으로 느껴질 수 있지만, 속도가 너무 빠르면 부담이 될 수도 있다.\n사랑을 숨기지 못하는 타입이지만, 동시에 불안도 크게 느끼는 스타일이다.",
-        "en": "Once this person develops feelings for you, they get emotionally invested very quickly.\nThey express interest strongly, but they are also highly sensitive to your reactions.\nThey text often, notice small changes, and want clear reassurance about how you feel.\nAt first, their intensity can feel passionate and exciting, but if the pace gets too fast, it may become overwhelming.\nThey are the type who cannot hide love, but also cannot easily hide insecurity."
+        "ko": "이 사람에게 당신은 즐겨찾기가 아니라 홈 화면이다.\n마음이 생기면 감정이 급팽창하는 타입이라 표현도 적극적이고, 당신의 답장 속도에 따라 하루 기분이 결정된다. 자주 연락하고, 프로필 변화 하나에도 의미를 두고, 당신의 마음을 실시간으로 확인하고 싶어 한다.\n처음엔 그 확실함이 설레지만 속도가 너무 빠르면 부담이 될 수 있으니, 페이스 조절만 되면 누구보다 뜨겁게 좋아해주는 사람이다.\n지금 이 순간에도 그 사람은 당신의 '읽음' 표시가 떴는지 채팅방을 새로고침하고 있을지 모른다.",
+        "en": "To this person, you are not a bookmark — you are the home screen.\nOnce they catch feelings, the emotions inflate fast: they text often, find meaning in your smallest profile change, and want a live feed of how you feel. Their entire mood can hinge on your reply speed.\nThat certainty is thrilling at first, and if the pace gets managed, nobody loves harder than they do.\nRight now, there is a decent chance they are refreshing the chat to see if your 'read' mark has appeared."
       },
       "image": "/images/quiz/who-likes-you-type/result-2.webp",
       "share": {
@@ -158,6 +162,10 @@
           "en": "A type that falls hard and constantly wants reassurance"
         },
         "image": "/images/quiz/who-likes-you-type/result-2.webp"
+      },
+      "compat": {
+        "best": "stable",
+        "worst": "playful"
       }
     },
     "friend": {
@@ -172,8 +180,8 @@
         "en": "Starts as a friend, then slowly becomes something more"
       },
       "body": {
-        "ko": "이 사람은 처음부터 연애 분위기를 만들기보다 편한 관계를 먼저 만든다.\n그래서 호감이 있어도 쉽게 티가 안 나고, 본인도 친구와 호감의 경계를 오래 두는 편이다.\n당신과 웃고 떠들고, 자주 함께 있고, 자연스럽게 가까워지는 과정 속에서 감정이 커진다.\n문제는 너무 편해서 오히려 연애 신호를 놓치기 쉽다는 점이다.\n하지만 한번 확실히 마음을 정하면, 억지스럽지 않고 오래 가는 관계가 될 가능성이 크다.",
-        "en": "This person usually builds comfort before romance.\nBecause of that, their feelings can be hard to notice, and even they may stay in the gray area between friendship and attraction for a while.\nTheir feelings grow through shared time, easy conversations, and natural closeness.\nThe tricky part is that the connection can feel so casual that the romantic signals get missed.\nStill, once they become sure about their feelings, the relationship can develop in a natural and lasting way."
+        "ko": "이 사람의 호감은 무이자 할부다. 티 안 나게 조금씩 쌓여서, 눈치챘을 땐 이미 총액이 상당하다.\n연애 분위기를 만들기 전에 편한 관계부터 만드는 타입이라, 본인도 우정과 호감의 경계에서 한참을 서성인다. 함께 웃고 떠드는 시간 속에서 감정이 커지는데, 문제는 너무 편해서 신호가 일상에 섞여버린다는 것.\n대신 한번 마음을 정하면 억지스럽지 않게 오래 가는 관계가 될 가능성이 크다.\n오늘도 그 사람은 '그냥 지나가던 길'이라며 당신 근처에 도착해 있다.",
+        "en": "This person's affection is an interest-free installment plan — it builds so quietly that by the time you notice, the balance is already substantial.\nThey build comfort before romance, so even they hover on the friendship-crush border for ages. The feelings grow through shared laughs and easy time together; the catch is that it all feels so casual the signals blend into the scenery.\nBut once they make up their mind, it tends to become the most natural, longest-lasting kind of relationship.\nToday, once again, they have arrived near you because they 'just happened to be passing by.'"
       },
       "image": "/images/quiz/who-likes-you-type/result-3.webp",
       "share": {
@@ -186,6 +194,10 @@
           "en": "A type that approaches like a friend but slowly falls deeper"
         },
         "image": "/images/quiz/who-likes-you-type/result-3.webp"
+      },
+      "compat": {
+        "best": "playful",
+        "worst": "clingy"
       }
     },
     "playful": {
@@ -200,8 +212,8 @@
         "en": "Teases you, jokes with you, and shows interest playfully"
       },
       "body": {
-        "ko": "이 사람은 감정을 정면으로 말하기보다 장난스럽게 표현하는 편이다.\n괜히 놀리고, 자주 말을 걸고, 반응을 끌어내며 당신과의 분위기를 만든다.\n겉으로는 가벼워 보일 수 있지만, 사실은 당신에게 관심이 있으니까 더 그러는 경우가 많다.\n문제는 진심이 장난 속에 숨어 있어서 오해받기 쉽다는 것.\n하지만 반복해서 다가오고 유독 당신에게만 유난히 반응한다면, 그건 꽤 분명한 호감 신호일 가능성이 크다.",
-        "en": "This person tends to show feelings indirectly through teasing and playful behavior.\nThey joke with you, keep conversations going, and try to get a reaction from you.\nOn the surface, they may seem light or unserious, but often that is exactly how they express interest.\nThe downside is that their sincerity can be hidden behind humor and get misunderstood.\nBut if they keep coming back, keep teasing you, and react to you more than anyone else, it is probably a very real sign of attraction."
+        "ko": "이 사람의 고백은 늘 개그로 포장돼서 배송된다. 문제는 포장이 너무 튼튼해서 내용물이 안 보인다는 것.\n감정을 정면으로 말하는 대신 놀리고, 말 걸고, 당신의 리액션을 수집하며 둘만의 분위기를 만든다. 겉으론 가벼워 보여도, 그 장난이 유독 당신에게만 집중된다면 그건 꽤 선명한 호감 신호다.\n진심이 장난 속에 숨어 있어 오해받기 쉽지만, 반복해서 다가온다면 확률은 거의 확정에 가깝다.\n오늘도 그 사람은 당신을 웃기는 데 성공하고, 뒤돌아서 조용히 주먹을 불끈 쥐었다.",
+        "en": "Their confession always ships gift-wrapped in jokes. The problem: the wrapping is so sturdy you cannot see what is inside.\nInstead of saying it straight, they tease you, start conversations, and collect your reactions like trading cards. It looks light and unserious — but if the jokes keep landing on you and only you, that is a remarkably clear signal.\nThe sincerity hides inside the humor and gets misread easily, yet if they keep coming back, the odds are basically settled.\nToday, once again, they made you laugh, turned around, and did a tiny victory fist pump."
       },
       "image": "/images/quiz/who-likes-you-type/result-4.webp",
       "share": {
@@ -214,6 +226,10 @@
           "en": "A playful type who shows attraction through teasing"
         },
         "image": "/images/quiz/who-likes-you-type/result-4.webp"
+      },
+      "compat": {
+        "best": "friend",
+        "worst": "stable"
       }
     }
   },
@@ -229,8 +245,8 @@
       "en": "A mixed attraction style that does not fit one type exactly"
     },
     "body": {
-      "ko": "당신을 좋아하는 사람은 한 가지 방식으로만 감정을 표현하지 않을 가능성이 크다.\n평소에는 친구처럼 편하게 다가오다가도, 어떤 순간에는 집착형처럼 강하게 반응하고, 또 어떤 순간에는 안정형처럼 조용히 챙길 수 있다.\n그래서 더 헷갈리고, 더 애매하게 느껴졌을 수 있다.\n이 경우 중요한 건 한 가지 행동이 아니라 반복되는 패턴이다.\n그 사람이 어떤 순간에 가장 솔직해지는지를 보면 진짜 마음의 방향이 보이기 시작한다.",
-      "en": "The person who likes you probably does not express feelings in just one way.\nThey may act like a friend most of the time, suddenly become intense in certain moments, and quietly show care in others.\nThat is exactly why they may have felt confusing or hard to read.\nIn this case, what matters is not one single action, but the pattern that repeats.\nWatch the moments when they become the most emotionally honest. That is where their real feelings show."
+      "ko": "이 사람의 호감 표현은 뷔페식이다. 오늘은 친구 코너, 내일은 직진 코너, 가끔은 조용한 배려 코너.\n한 가지 방식으로 고정되지 않는 사람이라, 당신이 그동안 유난히 헷갈렸다면 그건 정확하게 읽은 것이다. 이럴 땐 한 번의 행동이 아니라 반복되는 패턴을 봐야 한다. 어떤 순간에 가장 솔직해지는지가 진짜 마음의 좌표다.\n다음에 만나면 그 사람의 눈빛이 언제 달라지는지만 슬쩍 관찰해보자. 답은 생각보다 빨리 나온다.",
+      "en": "This person's affection is served buffet-style: friend-zone counter today, bold-move counter tomorrow, quiet-care counter on weekends.\nThey do not stick to one mode — so if you have been unusually confused, congratulations, you read it correctly. What matters is not any single action but the pattern that repeats; the moments they get most honest are the coordinates of their real feelings.\nNext time, just quietly watch when their eyes change. The answer arrives faster than you expect."
     },
     "image": "/images/quiz/who-likes-you-type/result-blend.webp",
     "share": {
@@ -254,29 +270,29 @@
       "options": [
         {
           "label": {
-            "ko": "편안하고 안정적인 분위기",
-            "en": "A calm and steady vibe"
+            "ko": "폭죽은 없는데 온돌처럼 은근히 따뜻해지는 기운",
+            "en": "No fireworks — just a steady, ondol-floor kind of warmth"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "은근히 집요한 관심",
-            "en": "A slightly intense and persistent focus"
+            "ko": "내 스토리 올린 지 3초 만에 하트 찍는 집요함",
+            "en": "A like lands on my story within three seconds of posting"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "그냥 친구 같은 편안함",
-            "en": "A very natural, friendly comfort"
+            "ko": "잠옷 차림을 보여줘도 될 것 같은 수상한 편안함",
+            "en": "Suspiciously comfortable — I could show up in pajamas"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "괜히 장난치고 반응을 유도함",
-            "en": "Teasing and trying to get a reaction"
+            "ko": "괜히 시비 걸어서 내 리액션을 수집해 감",
+            "en": "Picks tiny fake fights just to collect my reactions"
           },
           "key": "playful"
         }
@@ -290,29 +306,29 @@
       "options": [
         {
           "label": {
-            "ko": "조용히 챙기고 꾸준히 다가온다",
-            "en": "Quietly take care of you and stay consistent"
+            "ko": "비 오는 날 말없이 우산 하나 더 들고 나타난다",
+            "en": "Quietly shows up with an extra umbrella on rainy days"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "자주 연락하고 반응을 확인한다",
-            "en": "Text often and check your reactions"
+            "ko": "'자?'를 시간대별로 보내며 내 생존과 마음을 동시에 확인한다",
+            "en": "Sends 'you up?' on a schedule, checking my pulse and my feelings at once"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "친구처럼 계속 옆에 있다",
-            "en": "Stay around you like a close friend"
+            "ko": "용건 없이도 늘 옆에 있다, 근속 연수만 쌓이는 중",
+            "en": "Always around with zero agenda, quietly accruing seniority"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "놀리고 웃기면서 말을 건다",
-            "en": "Tease you and make jokes to talk to you"
+            "ko": "내 흑역사를 기억해뒀다가 최적의 타이밍에 방출한다",
+            "en": "Memorizes my embarrassing moments and deploys them with perfect timing"
           },
           "key": "playful"
         }
@@ -326,29 +342,29 @@
       "options": [
         {
           "label": {
-            "ko": "꾸준하지만 부담스럽지 않다",
-            "en": "Consistent but not overwhelming"
+            "ko": "매일 오는데 신기하게 한 번도 부담스러운 적이 없다",
+            "en": "Texts every day, yet somehow it never once feels like pressure"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "자주 오고 끊기면 신경 쓰인다",
-            "en": "Frequent, and you notice when it suddenly stops"
+            "ko": "5분만 조용해도 '무슨 일 있어?'가 도착한다",
+            "en": "Five quiet minutes and a 'is everything okay??' arrives"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "가볍고 편하게 이어진다",
-            "en": "Easy, casual, and comfortable"
+            "ko": "대화의 90%가 급식 메뉴급 일상인데 이상하게 안 끊긴다",
+            "en": "Ninety percent cafeteria-menu small talk, yet it never ends"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "쓸데없는 농담이 많다",
-            "en": "Full of random jokes and playful messages"
+            "ko": "정보량 0, 웃음 지분 100%인 카톡이 대부분",
+            "en": "Zero information, one hundred percent jokes"
           },
           "key": "playful"
         }
@@ -362,29 +378,29 @@
       "options": [
         {
           "label": {
-            "ko": "차분하고 오래 가는 느낌",
-            "en": "Calm and long-term"
+            "ko": "장작불 같다, 화력은 약한데 새벽까지 안 꺼진다",
+            "en": "Like a campfire log — low flame, but still burning at dawn"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "강하고 빠르게 가까워지는 느낌",
-            "en": "Strong and fast-moving"
+            "ko": "만난 지 2주 만에 우리 관계 시즌2를 기획하는 속도감",
+            "en": "Two weeks in and they are already drafting season two of us"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "친구 같은데 묘하게 더 챙겨주는 느낌",
-            "en": "Feels like friendship, but with extra care"
+            "ko": "친구라기엔 내 몫 디저트가 항상 하나 더 시켜져 있음",
+            "en": "Calls it friendship, but my dessert is always pre-ordered"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "장난 속에 관심이 숨어 있는 느낌",
-            "en": "Interest hidden inside playful teasing"
+            "ko": "장난 껍질을 까면 안에서 호감이 우수수 쏟아지는 느낌",
+            "en": "Peel the joke open and interest spills out like a piñata"
           },
           "key": "playful"
         }
@@ -398,29 +414,29 @@
       "options": [
         {
           "label": {
-            "ko": "티는 덜 내지만 태도가 살짝 달라진다",
-            "en": "They do not say much, but their attitude changes slightly"
+            "ko": "말은 없는데 그날따라 답장의 마침표가 단단해진다",
+            "en": "Says nothing, but that day the periods in their texts feel firmer"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "눈에 띄게 예민해지고 확인하려 한다",
-            "en": "They get visibly sensitive and want reassurance"
+            "ko": "'그 사람 누구야?'를 물음표 다섯 개 버전으로 보낸다",
+            "en": "Sends 'who was that?????' — five question marks, minimum"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "괜히 더 자주 곁에 있으려 한다",
-            "en": "They just stay around you more often"
+            "ko": "말없이 내 옆자리 점유율만 조용히 올린다",
+            "en": "Quietly raises their occupancy rate of the seat next to me"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "놀리는 방식으로 티낸다",
-            "en": "They show it through teasing"
+            "ko": "'오~ 인기 많으시네요?' 놀리는데 눈은 안 웃고 있다",
+            "en": "'Wow, someone's popular' — teasing tone, eyes not laughing"
           },
           "key": "playful"
         }
@@ -434,29 +450,29 @@
       "options": [
         {
           "label": {
-            "ko": "착하고 믿음직한 사람",
-            "en": "Kind and dependable"
+            "ko": "국밥 같은 사람, 유행은 안 타는데 실패도 없다",
+            "en": "The comfort-food type — never trendy, never a miss"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "한 번 빠지면 깊은 사람",
-            "en": "Someone who gets deeply attached"
+            "ko": "한 번 빠지면 잠수복 입고 심해까지 가는 사람",
+            "en": "Once they fall, they grab scuba gear and head for the deep sea"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "편하고 무해한 사람",
-            "en": "Comfortable and harmless"
+            "ko": "경계심이 0이 되는 무해함, 알고 보면 그게 전략",
+            "en": "So harmless your guard hits zero — which, in hindsight, was the strategy"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "밝고 장난기 많은 사람",
-            "en": "Bright and playful"
+            "ko": "분위기 담당인데 그 장난의 조준점은 늘 한 사람",
+            "en": "The designated mood-maker, whose jokes are always aimed at one person"
           },
           "key": "playful"
         }
@@ -470,29 +486,29 @@
       "options": [
         {
           "label": {
-            "ko": "꾸준히 행동으로 보여주는 것",
-            "en": "Showing care through steady actions"
+            "ko": "말보다 출석부, 행동으로 개근상 찍는 방식",
+            "en": "Less talk, more attendance — a perfect-attendance kind of love"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "확실하고 적극적으로 표현하는 것",
-            "en": "Being direct and intense"
+            "ko": "좋아하면 좋아한다고 공문을 발송하는 확실함",
+            "en": "If they like me, I want it announced like an official memo"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "친해지면서 자연스럽게 깊어지는 것",
-            "en": "Getting closer naturally over time"
+            "ko": "스며들듯 깊어져서 눈치챘을 땐 이미 못 빠져나오는 것",
+            "en": "Seeps in so naturally that by the time I notice, there is no exit"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "재미있고 설레게 다가오는 것",
-            "en": "Making things fun and exciting"
+            "ko": "웃기다가 갑자기 설레게 하는 기습 공격형",
+            "en": "Makes me laugh, then ambushes me with butterflies"
           },
           "key": "playful"
         }
@@ -506,29 +522,29 @@
       "options": [
         {
           "label": {
-            "ko": "조용한데 이상하게 오래 기억된다",
-            "en": "Quiet, but somehow unforgettable"
+            "ko": "조용했는데 이상하게 자기 전에 생각난다",
+            "en": "Quiet all day, yet somehow the last thought before I sleep"
           },
           "key": "stable"
         },
         {
           "label": {
-            "ko": "강렬하고 감정이 진하게 남는다",
-            "en": "Intense and emotionally strong"
+            "ko": "에스프레소 같다, 잔은 작은데 잔향이 하루 종일 간다",
+            "en": "Like espresso — small cup, aftertaste lasts all day"
           },
           "key": "clingy"
         },
         {
           "label": {
-            "ko": "편해서 늦게 눈치채게 된다",
-            "en": "So comfortable that you realize it late"
+            "ko": "너무 편해서 호감 감지 알람이 제일 늦게 울린다",
+            "en": "So comfortable my crush-detection alarm goes off last"
           },
           "key": "friend"
         },
         {
           "label": {
-            "ko": "웃기고 티 나게 다가온다",
-            "en": "Playful, obvious, and hard to ignore"
+            "ko": "본인은 숨긴다고 생각하는데 반경 10m가 다 안다",
+            "en": "Thinks they are being subtle; everyone within ten meters already knows"
           },
           "key": "playful"
         }

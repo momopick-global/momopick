@@ -126,6 +126,10 @@
           "en": "You look for meaning before reacting"
         },
         "image": "/images/quiz/personality-psychology-test/result-1.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "B"
       }
     },
     "B": {
@@ -154,6 +158,10 @@
           "en": "You feel people before judging them"
         },
         "image": "/images/quiz/personality-psychology-test/result-2.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "A"
       }
     },
     "C": {
@@ -182,6 +190,10 @@
           "en": "You balance logic and emotion by situation"
         },
         "image": "/images/quiz/personality-psychology-test/result-3.webp"
+      },
+      "compat": {
+        "best": "A",
+        "worst": "D"
       }
     },
     "D": {
@@ -210,6 +222,10 @@
           "en": "You sense fast and act quickly"
         },
         "image": "/images/quiz/personality-psychology-test/result-4.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "A"
       }
     }
   },

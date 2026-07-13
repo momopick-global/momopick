@@ -124,6 +124,10 @@
           "en": "You fall too fast and too deep"
         },
         "image": "/images/quiz/love-pattern-destroying-habit/result-1.webp"
+      },
+      "compat": {
+        "best": "clingy",
+        "worst": "indifferent"
       }
     },
     "indifferent": {
@@ -152,6 +156,10 @@
           "en": "You don’t show enough emotion"
         },
         "image": "/images/quiz/love-pattern-destroying-habit/result-2.webp"
+      },
+      "compat": {
+        "best": "avoidant",
+        "worst": "clingy"
       }
     },
     "avoidant": {
@@ -180,6 +188,10 @@
           "en": "You run from emotional discomfort"
         },
         "image": "/images/quiz/love-pattern-destroying-habit/result-3.webp"
+      },
+      "compat": {
+        "best": "indifferent",
+        "worst": "overinvested"
       }
     },
     "clingy": {
@@ -208,6 +220,10 @@
           "en": "You constantly need reassurance"
         },
         "image": "/images/quiz/love-pattern-destroying-habit/result-4.webp"
+      },
+      "compat": {
+        "best": "overinvested",
+        "worst": "avoidant"
       }
     }
   },

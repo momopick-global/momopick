@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { increaseQuizCount, initQuizCount } from "@/lib/quizStatsSupabase";
+import { tryMarkFunnelSent } from "@/lib/quizFunnel";
 
 /**
  * 퀴즈 인트로: 마운트 시 1회 fetch, 시작 버튼에서 increase 1회.
@@ -26,6 +27,8 @@ export function useQuizParticipantCount(quizId: string) {
       console.warn("[quiz_stats] registerStart skipped (isCounting)");
       return;
     }
+    // 페이지 로드당 1회만 집계 — 다시 하기 후 재시작 시 중복 +1 방지 (완료율 정합성)
+    if (!tryMarkFunnelSent(quizId)) return;
     isCountingRef.current = true;
     registerStartSeqRef.current += 1;
     const rsNo = registerStartSeqRef.current;

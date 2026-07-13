@@ -2,6 +2,7 @@ import type { PercentageQuizDefinition } from "@/components/quiz/percentageTypes
 import { pickQuizText } from "@/components/quiz/types";
 import { quizAssetUrl } from "@/lib/content/quizAssetUrl";
 import type { SnackQuizDefinition } from "@/components/quiz/types";
+import type { TriviaQuizDefinition } from "@/components/quiz/triviaTypes";
 import { koQuizCatalogForHome } from "@/content/quiz";
 import { quizPathSegment, snackQuizHref } from "./quizRoutes";
 import { koTagFromLabel } from "./koTagRegistry";
@@ -24,13 +25,13 @@ export type KoHomeRailItem = {
 
 const RAIL_THEMES = new Set(["love", "personality", "social", "style", "fun"]);
 
-function railThemeFrom(def: SnackQuizDefinition | PercentageQuizDefinition): string {
+function railThemeFrom(def: SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition): string {
   const t = def.card?.theme?.trim() || def.category?.trim() || "love";
   return RAIL_THEMES.has(t) ? t : "love";
 }
 
 function toRailItem(
-  def: SnackQuizDefinition | PercentageQuizDefinition,
+  def: SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition,
   locale: string,
 ): KoHomeRailItem {
   const cat = def.category?.trim() || "love";
@@ -68,7 +69,7 @@ export function getKoHomeRailSorted(locale: string): KoHomeRailItem[] {
     .sort((a, b) => b.priority - a.priority);
 }
 
-function isLoveCategory(def: SnackQuizDefinition | PercentageQuizDefinition): boolean {
+function isLoveCategory(def: SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition): boolean {
   return def.category?.trim() === "love";
 }
 
@@ -88,7 +89,7 @@ export function getKoLoveQuizzesSorted(locale: string): KoHomeRailItem[] {
  * 원픽 테스트 판별 — "1문항" 형식을 데이터에서 자동 판별한다.
  * 별도 `category`/플래그를 두지 않으므로, 문항이 1개인 퀴즈를 만들면 자동으로 원픽에 편입된다.
  */
-export function isOnePickQuiz(def: SnackQuizDefinition | PercentageQuizDefinition): boolean {
+export function isOnePickQuiz(def: SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition): boolean {
   return (def.questions?.length ?? 0) === 1;
 }
 
@@ -107,16 +108,50 @@ export function getKoLoveMoreQuizzes(locale: string, excludeHref: string, limit 
     .slice(0, limit);
 }
 
+/**
+ * 결과 화면 "이어서 해보기" — 퀴즈 JSON의 `related` slug를 우선 배치하고,
+ * 남는 자리는 기존 심층 테스트 상위 목록으로 채운다(중복·현재 퀴즈 제외).
+ * `related`가 없으면 `getKoLoveMoreQuizzes`와 동일하게 동작한다.
+ */
+export function getKoRelatedMoreQuizzes(
+  locale: string,
+  relatedSlugs: string[] | undefined,
+  excludeHref: string,
+  limit = 4,
+): KoHomeRailItem[] {
+  const out: KoHomeRailItem[] = [];
+  const seen = new Set<string>([excludeHref]);
+
+  for (const slug of relatedSlugs ?? []) {
+    if (out.length >= limit) break;
+    const def = koQuizCatalogForHome.find((d) => quizPathSegment(d) === slug.trim());
+    if (!def) continue;
+    const item = toRailItem(def, locale);
+    if (seen.has(item.href)) continue;
+    seen.add(item.href);
+    out.push(item);
+  }
+
+  for (const item of getKoLoveQuizzesSorted(locale)) {
+    if (out.length >= limit) break;
+    if (seen.has(item.href)) continue;
+    seen.add(item.href);
+    out.push(item);
+  }
+
+  return out;
+}
+
 /** 메뉴 그룹(구조) — 데이터로 자동 판별. 원픽(1문항) / 성향(card.theme=personality) / 심층(그 외). */
 export type KoMenuGroup = "onepick" | "personality" | "deep";
-export function menuGroupOf(def: SnackQuizDefinition | PercentageQuizDefinition): KoMenuGroup {
+export function menuGroupOf(def: SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition): KoMenuGroup {
   if ((def.questions?.length ?? 0) === 1) return "onepick";
   if (def.card?.theme?.trim() === "personality") return "personality";
   return "deep";
 }
 
 /** 퀴즈가 가진 캐노니컬 태그 slug 목록 (레지스트리로 정규화, 중복 제거) */
-export function canonicalTagSlugsOf(def: SnackQuizDefinition | PercentageQuizDefinition): string[] {
+export function canonicalTagSlugsOf(def: SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition): string[] {
   const out = new Set<string>();
   for (const raw of def.tags ?? []) {
     const t = koTagFromLabel(raw?.ko) ?? koTagFromLabel(raw?.en);

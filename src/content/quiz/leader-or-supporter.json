@@ -110,8 +110,8 @@
         "en": "You set direction and take the lead"
       },
       "body": {
-        "ko": "방향을 제시하고 팀을 이끄는 타입입니다. 책임감과 추진력이 강한 편입니다.\n프로젝트를 시작할 때 먼저 방향을 잡고, 문제가 생기면 바로 해결하려는 흐름이 나올 수 있어요.\n의사결정에서 결론을 내리고, 갈등에서는 결론을 이끄는 역할을 맡는 경우가 많습니다.\n일할 때 전체를 보고, 성과를 낼 때도 주도적으로 만드는 편입니다.\n앞에서 이끄는 자리가 더 편하게 느껴질 수 있어요.",
-        "en": "You lead, set direction, and take responsibility.\nYou may set direction first when a project starts and move fast when problems appear.\nIn decisions you make the call; in conflict you drive toward a conclusion.\nYou tend to see the big picture and lead outcomes.\nBeing up front may feel more natural than staying in the background."
+        "ko": "당신이 회의에서 조용하면 팀이 먼저 술렁인다. '오늘 무슨 일 있으신가?'\n방향을 잡고 밀어붙이는 추진력이 당신의 엔진이다. 회의가 산으로 갈 때 '자, 정리하면'이라는 한마디로 배를 돌려세우는 것도 대부분 당신 몫. 다만 가끔은 핸들을 놓고 조수석에 앉는 연습도 필요하다. 팀원들도 운전면허는 있다.\n오늘도 당신은 단톡방에 '그래서 결론은?'을 던져 3시간짜리 회의를 30분으로 압축했다.",
+        "en": "When you go quiet in a meeting, the team gets nervous first: \"is something wrong today?\"\nSetting direction and pushing forward is your engine. When a meeting drifts out to sea, the one-liner that turns the ship around — \"okay, to summarize\" — is usually yours too. Still, practice letting go of the wheel sometimes. Your teammates do have driver's licenses.\nToday, once again, you dropped a \"so, the conclusion?\" into the group chat and compressed a three-hour meeting into thirty minutes."
       },
       "image": "/images/quiz/leader-or-supporter/result-1.webp",
       "share": {
@@ -124,6 +124,10 @@
           "en": "You lead and take responsibility"
         },
         "image": "/images/quiz/leader-or-supporter/result-1.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "B"
       }
     },
     "B": {
@@ -138,8 +142,8 @@
         "en": "You read the flow and coordinate"
       },
       "body": {
-        "ko": "전체 흐름을 읽고 조율하는 타입입니다. 균형과 판단력이 뛰어납니다.\n문제가 생기면 원인을 분석하고, 의사결정에서는 여러 의견을 정리하거나 중간에서 다리를 놓는 역할이 잘 맞을 수 있어요.\n팀원과의 관계에서 조율자로 서고, 일할 때는 구조를 만드는 쪽에 강점이 있습니다.\n갈등에서는 중재하고, 성과는 전략적으로 설계하는 흐름이 나올 수 있어요.\n앞과 뒤 사이, 중간에서 균형을 잡는 자리가 편할 수 있습니다.",
-        "en": "You analyze and balance situations with strong judgment.\nWhen problems arise you dig into causes; in decisions you organize views or bridge sides.\nYou often mediate with teammates and build structure in how work gets done.\nIn conflict you mediate; with results you plan strategically.\nCoordinating from the middle may feel like your sweet spot."
+        "ko": "당신은 회의 시간에 말이 없는 게 아니다. 머릿속에서 시뮬레이션을 세 바퀴째 돌리는 중이다.\n흐름을 읽고 판을 짜는 게 당신의 특기. 리더가 '가자!'를 외칠 때 당신은 이미 지도와 우회로, 플랜 B까지 준비해 뒀다. 문제는 그 큰 그림이 당신 머릿속에만 있다는 것. 가끔은 중간 화면 공유도 필요하다.\n오늘도 당신은 다들 잊고 있던 리스크를 회의 종료 3분 전에 짚어내며 '역시…'라는 탄식을 받아냈다.",
+        "en": "You are not being quiet in meetings. You are running the simulation for the third lap in your head.\nReading the flow and designing the board is your specialty. By the time the leader shouts \"let's go!\", you already have the map, the detour, and Plan B ready. The only problem: that big picture lives exclusively in your head. An occasional mid-run screen share helps.\nToday, once again, you flagged the risk everyone forgot, three minutes before the meeting ended, and collected a chorus of \"of course you did.\""
       },
       "image": "/images/quiz/leader-or-supporter/result-2.webp",
       "share": {
@@ -152,6 +156,10 @@
           "en": "You analyze and coordinate"
         },
         "image": "/images/quiz/leader-or-supporter/result-2.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "A"
       }
     },
     "C": {
@@ -166,8 +174,8 @@
         "en": "You keep the team steady through support"
       },
       "body": {
-        "ko": "팀을 안정적으로 유지시키는 타입입니다. 배려와 협력이 강점입니다.\n프로젝트 시작 때 필요한 역할을 찾거나 분위기를 보며, 문제가 생기면 주변을 돕는 쪽으로 움직일 수 있어요.\n의사결정에서는 다른 사람 의견을 따르거나 중간을 선택하고, 팀원과는 도와주는·편한 동료 역할에 가깝습니다.\n실행을 돕고 요청받은 일에 집중하는 흐름, 갈등에서는 뒤에서 돕거나 피하는 선택도 나올 수 있어요.\n뒤에서 지원하거나 눈에 덜 띄는 자리가 더 편하게 느껴질 수 있습니다.",
-        "en": "You support others and keep the team stable.\nWhen projects start you find where you can help or read the room; when trouble hits you lift others up.\nIn decisions you may follow the group or pick the middle path; with teammates you are helpful and easy to work with.\nYou help execution, focus on assigned work, and in conflict you may support quietly or step back.\nSupporting from behind or staying low-key can feel most comfortable."
+        "ko": "당신이 하루 쉬면 팀은 그날 처음으로 프린터 사용법을 검색하게 된다.\n티는 안 나지만 팀이 굴러가는 건 8할이 당신 덕분이다. 분위기가 얼면 녹이고, 구멍이 나면 조용히 메운다. 다만 '아무거나 괜찮아요'가 습관이 되면 정작 당신이 원하는 게 묻힌다. 가끔은 당신 의견에도 마이크를 넘기자.\n오늘도 당신은 회의실 예약, 간식 리필, 어색한 침묵 수습까지 끝내고 '오늘 한 게 없네'라고 중얼거렸다.",
+        "en": "The day you take off is the day the team googles how to use the printer for the first time.\nIt never shows on paper, but 80% of why this team runs is you. When the mood freezes, you thaw it; when a gap opens, you quietly fill it. Just know that if \"anything works for me\" becomes a habit, what you actually want gets buried. Pass the mic to your own opinion once in a while.\nToday, once again, you booked the meeting room, restocked the snacks, defused an awkward silence — and muttered, \"I got nothing done today.\""
       },
       "image": "/images/quiz/leader-or-supporter/result-3.webp",
       "share": {
@@ -180,6 +188,10 @@
           "en": "You support and collaborate"
         },
         "image": "/images/quiz/leader-or-supporter/result-3.webp"
+      },
+      "compat": {
+        "best": "A",
+        "worst": "B"
       }
     }
   },
@@ -195,8 +207,8 @@
       "en": "A mix of lead, strategy, and support"
     },
     "body": {
-      "ko": "한 가지 역할로만 정의되지 않을 수 있어요.\n상황에 따라 앞에서 이끌기도 하고, 중간에서 조율하기도 하며, 뒤에서 돕기도 합니다.\n팀과 과제마다 다른 면이 나온다면 그건 자연스러운 일이에요.\n‘지금 내가 가장 자주 서는 위치’를 떠올려 보는 것도 도움이 됩니다.",
-      "en": "You may not fit one label.\nSometimes you lead, sometimes you coordinate, sometimes you support.\nDifferent sides can show depending on the team and task—that is normal.\nNoticing where you usually stand is a good start."
+      "ko": "당신의 포지션은 하나가 아니다. 팀 상황에 따라 리더 모드, 전략가 모드, 서포터 모드가 자동 전환된다.\n리더가 없으면 앞에 서고, 판이 꼬이면 정리하고, 다들 지치면 조용히 받쳐준다. 사실상 팀의 만능 교체 카드. 다만 어디서든 잘하다 보니 정작 본인이 제일 편한 자리를 놓치기 쉽다.\n오늘 내가 가장 자주 서 있던 자리를 떠올려보자. 거기가 지금의 당신 포지션이다.",
+      "en": "Your position refuses to stay fixed. Depending on the team, you auto-switch between leader mode, strategist mode, and supporter mode.\nNo leader? You step up. Board tangled? You untangle it. Everyone exhausted? You quietly hold things up. You are basically the team's all-purpose substitution card — the catch is that being good everywhere makes it easy to lose track of where you are most comfortable.\nThink about where you stood most often today. That spot is your current position."
     },
     "image": "/images/quiz/leader-or-supporter/thumb.webp",
     "share": {
@@ -220,29 +232,29 @@
       "options": [
         {
           "label": {
-            "ko": "방향을 먼저 잡는다",
-            "en": "Set direction first"
+            "ko": "일단 방향부터 잡는다, 지도 없이 출발은 못 참지",
+            "en": "Set the direction first — departing without a map? Unacceptable"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "전략을 고민한다",
-            "en": "Think about strategy"
+            "ko": "머릿속에서 전략 시뮬레이션을 세 바퀴 돌린다",
+            "en": "Run the strategy simulation three laps in my head"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "필요한 역할을 찾는다",
-            "en": "Find where I can help"
+            "ko": "빈자리 스캔 완료, 필요한 역할로 스르륵 들어간다",
+            "en": "Scan for gaps, then slide into whatever role is needed"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "분위기를 본다",
-            "en": "Observe first"
+            "ko": "일단 분위기 정찰부터, 나서는 건 그다음 문제",
+            "en": "Recon the room first — stepping up is a later problem"
           },
           "key": "C"
         }
@@ -256,29 +268,29 @@
       "options": [
         {
           "label": {
-            "ko": "바로 해결하려 한다",
-            "en": "Try to solve it immediately"
+            "ko": "고민할 시간에 이미 팔 걷고 해결 중이다",
+            "en": "While others deliberate, my sleeves are already rolled up"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "원인을 분석한다",
-            "en": "Analyze the cause"
+            "ko": "원인부터 해부한다, 범인을 알아야 재발도 막지",
+            "en": "Dissect the cause first — catch the culprit, prevent the sequel"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "도움을 준다",
-            "en": "Support others"
+            "ko": "멘붕 온 팀원 옆에 조용히 커피를 놓는다",
+            "en": "Quietly set a coffee next to the panicking teammate"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "상황을 지켜본다",
-            "en": "Wait and see"
+            "ko": "섣불리 안 움직인다, 판이 어떻게 도는지 먼저 본다",
+            "en": "No rash moves — I watch how the board turns first"
           },
           "key": "B"
         }
@@ -292,29 +304,29 @@
       "options": [
         {
           "label": {
-            "ko": "결정을 내린다",
-            "en": "Make the call"
+            "ko": "'그래서 결론은 이겁니다' 회의 종료 멘트 담당",
+            "en": "'So here's the call' — I own the meeting-ending line"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "여러 의견을 정리한다",
-            "en": "Organize opinions"
+            "ko": "의견 12개를 표로 정리해 3개로 압축한다",
+            "en": "Condense twelve opinions into a tidy table of three"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "다른 사람 의견을 따른다",
-            "en": "Follow others"
+            "ko": "다수결에 조용히 한 표를 보태는 평화주의자",
+            "en": "A pacifist quietly adding one vote to the majority"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "중간 역할을 한다",
-            "en": "Bridge opinions"
+            "ko": "양쪽 사이에 다리를 놓는다, 통행료는 안 받는다",
+            "en": "Build a bridge between both sides — no toll collected"
           },
           "key": "B"
         }
@@ -328,29 +340,29 @@
       "options": [
         {
           "label": {
-            "ko": "이끄는 역할",
-            "en": "Leading role"
+            "ko": "따라와, 길은 내가 안다 (사실 방금 정했다)",
+            "en": "Follow me, I know the way (decided it just now)"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "조율하는 역할",
-            "en": "Mediator role"
+            "ko": "이쪽 말 저쪽 말 번역하는 팀 공식 통역사",
+            "en": "The team's official interpreter between both camps"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "도와주는 역할",
-            "en": "Support role"
+            "ko": "부르기 전에 이미 옆에 와 있는 서포트 요정",
+            "en": "The support fairy who arrives before being called"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "편한 동료",
-            "en": "Easygoing member"
+            "ko": "존재감은 은은한데 호감도는 만렙인 동료",
+            "en": "Low profile, max-level likability teammate"
           },
           "key": "C"
         }

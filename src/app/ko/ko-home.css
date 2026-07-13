@@ -5683,3 +5683,308 @@ html.today-video-lock body {
     animation: none;
   }
 }
+
+/* ============================================================
+   결과 페이지 강화 (푸망 벤치마크 반영)
+   — 유형 궁합(2차 결과층) · 결과 만족도 피드백 · 퍼센트형 결과 갤러리
+   ============================================================ */
+
+/* 유형 궁합 — 결과 본문 아래 2차 결과층 */
+.momopick-ko .quiz-result-compat {
+  width: 100%;
+  max-width: 400px;
+  margin: 18px auto 6px;
+}
+
+.momopick-ko .quiz-result-compat__heading {
+  margin: 0 0 10px;
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted, #8a8f9d);
+  text-align: center;
+}
+
+.momopick-ko .quiz-result-compat__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.momopick-ko .quiz-result-compat__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 10px 12px;
+  border-radius: var(--radius-sm, 12px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.momopick-ko .quiz-result-compat__card--best {
+  border-color: rgba(240, 98, 146, 0.35);
+  background: rgba(240, 98, 146, 0.06);
+}
+
+.momopick-ko .quiz-result-compat__card--worst {
+  border-color: rgba(90, 103, 242, 0.28);
+  background: rgba(90, 103, 242, 0.05);
+}
+
+.momopick-ko .quiz-result-compat__label {
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  color: var(--muted, #8a8f9d);
+}
+
+.momopick-ko .quiz-result-compat__emoji {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.momopick-ko .quiz-result-compat__title {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.momopick-ko .quiz-result-compat__tagline {
+  font-size: var(--fs-xs);
+  color: var(--muted, #8a8f9d);
+  line-height: 1.4;
+}
+
+/* 결과 만족도 — 잘 맞아요 / 안 맞아요 */
+.momopick-ko .quiz-result-feedback {
+  width: 100%;
+  max-width: 400px;
+  margin: 4px auto 8px;
+  min-height: 34px;
+}
+
+.momopick-ko .quiz-result-feedback__prompt {
+  margin: 0 0 8px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--muted, #8a8f9d);
+  text-align: center;
+}
+
+.momopick-ko .quiz-result-feedback__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.momopick-ko .quiz-result-feedback__btn {
+  min-height: 42px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.momopick-ko .quiz-result-feedback__btn:hover {
+  transform: translateY(-1px);
+}
+
+.momopick-ko .quiz-result-feedback__btn--fit:hover {
+  border-color: rgba(240, 98, 146, 0.45);
+  background: rgba(240, 98, 146, 0.08);
+}
+
+.momopick-ko .quiz-result-feedback__btn--miss:hover {
+  border-color: rgba(90, 103, 242, 0.4);
+  background: rgba(90, 103, 242, 0.06);
+}
+
+.momopick-ko .quiz-result-feedback__thanks {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm, 12px);
+  background: rgba(90, 103, 242, 0.06);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+/* 퍼센트형 — 구간별 결과 갤러리 카드 */
+.momopick-ko .quiz-results-gallery-card--range {
+  padding-top: 22px;
+}
+
+.momopick-ko .quiz-results-gallery-range {
+  margin: 0 0 6px;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  text-align: center;
+  line-height: 1;
+}
+
+/* 유형 궁합 — 결과 썸네일 */
+.momopick-ko .quiz-result-compat__thumb {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 2px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.momopick-ko .quiz-result-compat__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   정답형(능력고사) 퀴즈 — TriviaQuiz
+   ============================================================ */
+
+.momopick-ko .quiz-trivia-statusbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.momopick-ko .quiz-step-label--trivia {
+  margin-bottom: 0;
+}
+
+.momopick-ko .quiz-trivia-live-score {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* 정답 공개 상태의 보기 */
+.momopick-ko .quiz-opt--trivia-correct {
+  border-color: rgba(46, 174, 96, 0.65) !important;
+  background: rgba(46, 174, 96, 0.1) !important;
+}
+
+.momopick-ko .quiz-opt--trivia-wrong {
+  border-color: rgba(235, 87, 87, 0.6) !important;
+  background: rgba(235, 87, 87, 0.08) !important;
+}
+
+.momopick-ko .quiz-opt--trivia-dim {
+  opacity: 0.45;
+}
+
+.momopick-ko .quiz-opt--trivia-correct:disabled,
+.momopick-ko .quiz-opt--trivia-wrong:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.momopick-ko .quiz-trivia-opt-mark {
+  margin-left: auto;
+  font-weight: 900;
+  font-size: var(--fs-lg);
+}
+
+.momopick-ko .quiz-opt--trivia-correct .quiz-trivia-opt-mark {
+  color: #2eae60;
+}
+
+.momopick-ko .quiz-opt--trivia-wrong .quiz-trivia-opt-mark {
+  color: #eb5757;
+}
+
+/* 정답 공개 패널 (배지 + 해설 + 다음 버튼) */
+.momopick-ko .quiz-trivia-reveal {
+  margin-top: 16px;
+  padding: 16px 14px;
+  border-radius: var(--radius-sm, 12px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: triviaRevealIn 0.22s ease-out;
+}
+
+.momopick-ko .quiz-trivia-reveal--correct {
+  border-color: rgba(46, 174, 96, 0.4);
+  background: rgba(46, 174, 96, 0.05);
+}
+
+.momopick-ko .quiz-trivia-reveal--wrong {
+  border-color: rgba(235, 87, 87, 0.35);
+  background: rgba(235, 87, 87, 0.04);
+}
+
+.momopick-ko .quiz-trivia-reveal__badge {
+  margin: 0 0 6px;
+  font-size: var(--fs-xl);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.momopick-ko .quiz-trivia-reveal--correct .quiz-trivia-reveal__badge {
+  color: #218a4c;
+}
+
+.momopick-ko .quiz-trivia-reveal--wrong .quiz-trivia-reveal__badge {
+  color: #d64545;
+}
+
+.momopick-ko .quiz-trivia-reveal__explanation {
+  margin: 0 0 12px;
+  font-size: var(--fs-sm);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.momopick-ko .quiz-trivia-next {
+  min-width: 60%;
+}
+
+@keyframes triviaRevealIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momopick-ko .quiz-trivia-reveal {
+    animation: none;
+  }
+}
+
+/* 결과 — "N점" 표기, 도발 문구 */
+.momopick-ko .quiz-result-score-suffix {
+  font-size: 0.5em;
+}
+
+.momopick-ko .quiz-result-challenge {
+  margin: 4px 0 0;
+  font-size: var(--fs-md, 15px);
+  font-weight: 800;
+  color: var(--accent);
+}

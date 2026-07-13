@@ -124,6 +124,10 @@
           "en": "You hold it in until it bursts"
         },
         "image": "/images/quiz/anger-style-test/result-1.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "C"
       }
     },
     "B": {
@@ -152,6 +156,10 @@
           "en": "You express anger directly"
         },
         "image": "/images/quiz/anger-style-test/result-2.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "A"
       }
     },
     "C": {
@@ -180,6 +188,10 @@
           "en": "You avoid conflict and distance yourself"
         },
         "image": "/images/quiz/anger-style-test/result-3.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "A"
       }
     }
   },

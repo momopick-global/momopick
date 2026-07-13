@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { KakaoSdkInit } from "@/components/KakaoSdkInit";
-import { InAppBrowserGuide } from "@/components/InAppBrowserGuide";
+// 인앱 브라우저(카톡·인스타 등) "외부 브라우저로 열기" 안내 팝업 — 임시 비활성화.
+// 다시 켜려면 아래 import와 <InAppBrowserGuide /> 주석을 해제하세요.
+// import { InAppBrowserGuide } from "@/components/InAppBrowserGuide";
 import "./globals.css";
 
 const ADSENSE_CLIENT = "ca-pub-2758905830381994";
@@ -42,7 +44,7 @@ export default function RootLayout({
       </head>
       <body>
         <KakaoSdkInit />
-        <InAppBrowserGuide />
+        {/* <InAppBrowserGuide /> */}
         {children}
       </body>
     </html>

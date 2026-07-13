@@ -1,0 +1,406 @@
+{
+  "id": "love-recap-2026h2",
+  "slug": "love-recap-2026h2",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "결산", "en": "recap" },
+    { "ko": "연애", "en": "love" },
+    { "ko": "하반기", "en": "H2" },
+    { "ko": "회고", "en": "retrospective" }
+  ],
+  "title": { "ko": "2026 하반기 연애 결산", "en": "2026 H2 Love Recap" },
+  "subtitle": { "ko": "올 하반기 네 연애 세포는 뭘 했나", "en": "What exactly did your romance cells do this half-year?" },
+  "images": {
+    "thumbnail": "/images/quiz/love-recap-2026h2/thumb.webp",
+    "og": "/images/quiz/love-recap-2026h2/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "설렘 결산부터 연말 모임 포지션까지, 8문항으로 정리하는 2026 하반기 연애 세포 활동 보고서.",
+      "en": "From butterfly audits to year-end party positioning — an 8-question activity report on your 2026 H2 romance cells."
+    },
+    "keywords": [
+      { "ko": "연애 결산", "en": "love recap" },
+      { "ko": "하반기 회고", "en": "half-year retrospective" },
+      { "ko": "연애 테스트", "en": "love quiz" }
+    ],
+    "ogTitle": { "ko": "2026 하반기 연애 결산", "en": "2026 H2 Love Recap" },
+    "ogDescription": {
+      "ko": "주인공이었나, 관객이었나, 아예 극장 밖이었나",
+      "en": "Were you the lead, the audience, or not even in the theater?"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "📊 하반기 결산", "en": "📊 H2 Recap" },
+    "image": "/images/quiz/love-recap-2026h2/thumb.webp",
+    "priority": 81
+  },
+  "resultKeys": ["main_character", "observer", "grinder", "hibernator"],
+  "resultOrder": ["main_character", "observer", "grinder", "hibernator"],
+  "logic": {
+    "type": "max-score",
+    "description": {
+      "ko": "8문항에서 가장 많이 고른 유형이 결과가 됩니다.",
+      "en": "Your most-picked type across 8 questions becomes your result."
+    },
+    "blendOnTie": true
+  },
+  "analytics": {
+    "eventKey": "love_recap_2026h2",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["pursuit-vs-reality", "true-self-alone", "night-sky-mood-onepick"],
+  "results": {
+    "main_character": {
+      "emoji": "🎬",
+      "scoreKey": "main_character",
+      "title": { "ko": "하반기 주인공형", "en": "Main Character of H2" },
+      "tagline": { "ko": "올 하반기 로맨스 장르의 원톱 주연", "en": "The undisputed lead of this half-year's romance genre" },
+      "body": {
+        "ko": "당신의 하반기는 편집 없이 내보내도 시청률이 나오는 분량이었습니다. 설렘, 밀당, 심쿵 이벤트가 실제로 '발생'한 흔치 않은 케이스죠. 이런 시기는 감정 소모도 큰 법이니, 연말엔 시즌 피날레를 서두르기보다 페이스 조절을 해보세요. 좋은 서사는 급전개보다 완급에서 나옵니다.",
+        "en": "Your half-year could air unedited and still pull ratings. Butterflies, push-and-pull, heart-attack moments — things actually *happened*, which is rarer than it sounds. Seasons like this burn emotional fuel fast, so instead of rushing the finale, pace yourself. Great storylines come from rhythm, not rushed plot twists."
+      },
+      "compat": { "best": "observer", "worst": "hibernator" }
+    },
+    "observer": {
+      "emoji": "🍿",
+      "scoreKey": "observer",
+      "title": { "ko": "관전 평론가형", "en": "The Love Critic" },
+      "tagline": { "ko": "남의 연애는 4K 화질로 시청하는 전문 관객", "en": "Watches everyone else's love life in 4K" },
+      "body": {
+        "ko": "본인 연애는 휴방인데 남의 연애 분석은 프로 데뷔가 가능한 수준. 하반기 동안 쌓은 관전 데이터가 상당합니다. 사실 관찰력은 연애에서 가장 저평가된 재능이에요 — 남의 시그널을 그렇게 잘 읽는 눈이면 내 시그널도 읽힙니다. 내년엔 평론가석에서 한 번쯤 무대로 내려와 보는 건 어때요?",
+        "en": "Your own love life is on hiatus, but your analysis of everyone else's is professional-grade. You've accumulated serious spectator data this half. Here's the thing: observation is the most underrated skill in dating — eyes that read other people's signals that well can read the ones aimed at you. Next year, consider stepping down from the critics' box onto the stage."
+      },
+      "compat": { "best": "main_character", "worst": "hibernator" }
+    },
+    "grinder": {
+      "emoji": "📈",
+      "scoreKey": "grinder",
+      "title": { "ko": "자기계발 몰빵형", "en": "The All-In Grinder" },
+      "tagline": { "ko": "연애 지분 0%, 성장 지분 100%의 포트폴리오", "en": "Portfolio allocation: love 0%, growth 100%" },
+      "body": {
+        "ko": "하반기 감정 예산을 전액 자기 자신에게 투자한 타입. 연애 세포는 조용했지만 통장, 체력, 커리어 세포는 만개했습니다. 이건 놀랍게도 연애 시장에서도 최고의 전략이에요 — 매력은 갓생의 부산물이니까요. 다만 일정표에 '사람 만나는 칸'을 한 칸만 남겨두세요. 복리는 관계에도 붙습니다.",
+        "en": "You invested this half-year's entire emotional budget in yourself. The romance cells stayed quiet, but your savings, stamina, and career cells are in full bloom. Ironically, this is also the strongest strategy in the dating market — attractiveness is a byproduct of a life well-run. Just leave one slot on the calendar for meeting people. Compound interest applies to relationships too."
+      },
+      "compat": { "best": "hibernator", "worst": "main_character" }
+    },
+    "hibernator": {
+      "emoji": "🐻",
+      "scoreKey": "hibernator",
+      "title": { "ko": "동면형", "en": "The Hibernator" },
+      "tagline": { "ko": "연애 세포가 이불 속에서 겨울잠 중", "en": "Romance cells currently asleep under a blanket" },
+      "body": {
+        "ko": "하반기 연애 활동 보고서: '특이사항 없음'. 하지만 곰이 동면하는 건 게을러서가 아니라 에너지를 아끼는 생존 전략이기 때문입니다. 억지 설렘보다 편안한 휴식이 나은 시즌도 있어요. 동면의 핵심은 '봄에 일어난다'는 것 — 알람만 꺼두지 마세요. 세포는 죽은 게 아니라 자는 중이니까요.",
+        "en": "H2 romance activity report: 'nothing to declare.' But remember — bears don't hibernate out of laziness; it's an energy-saving survival strategy. Some seasons, honest rest beats forced butterflies. The whole point of hibernation is waking up in spring, though — so don't switch off the alarm entirely. Your cells aren't dead. They're napping."
+      },
+      "compat": { "best": "grinder", "worst": "main_character" }
+    }
+  },
+  "blend": {
+    "emoji": "✨",
+    "scoreKey": "blend",
+    "title": { "ko": "복합 시즌형", "en": "The Mixed Season" },
+    "tagline": { "ko": "한 시즌 안에 여러 장르가 공존했던 하반기", "en": "A half-year where several genres ran at once" },
+    "body": {
+      "ko": "설렘도 있었고, 관전도 했고, 갓생도 살았던 옴니버스 시즌. 어느 하나로 요약되지 않는 하반기는 그만큼 밀도가 높았다는 뜻입니다. 내년엔 그중 제일 재밌었던 장르에 분량을 몰아줘 보세요.",
+      "en": "Some butterflies, some spectating, some grinding — an omnibus season. A half-year that resists a single label was a dense one. Next year, give the most fun genre the bigger share of screen time."
+    }
+  },
+  "questions": [
+    {
+      "prompt": {
+        "ko": "올 하반기, 가장 설렜던 순간은?",
+        "en": "Your most heart-fluttering moment this half-year?"
+      },
+      "options": [
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "그 사람한테 먼저 연락이 왔을 때 — 폰을 세 번 다시 봄",
+            "en": "When that person texted first — checked my phone three times to be sure"
+          }
+        },
+        {
+          "key": "observer",
+          "label": {
+            "ko": "친구의 썸이 급전개됐을 때 — 내 일보다 심장이 뜀",
+            "en": "When my friend's situationship escalated — my heart raced more than theirs"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "목표 달성 알림이 떴을 때 — 적금 만기가 곧 심쿵",
+            "en": "When the goal-achieved notification arrived — savings maturity IS butterflies"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "설렘…? 하반기에 심박수 오른 건 계단 오를 때뿐",
+            "en": "Butterflies…? The only elevated heart rate this half was from climbing stairs"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "카톡 목록에서 하반기에 제일 많이 대화한 상대는?",
+        "en": "Who tops your chat list for this half-year?"
+      },
+      "options": [
+        {
+          "key": "observer",
+          "label": {
+            "ko": "친구 연애 상황을 실시간 중계받는 단톡방",
+            "en": "The group chat broadcasting my friend's love life in real time"
+          }
+        },
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "썸인지 뭔지 애매한 바로 그 사람",
+            "en": "That one person — whatever it is we are"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "택배 알림봇, 그리고 '나에게 보내기'",
+            "en": "The delivery notification bot, and 'messages to myself'"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "스터디·운동 모임방 — 용건만 간단히, 감정은 사절",
+            "en": "The study/workout group chat — business only, feelings not accepted"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "하반기 주말, 주로 어떻게 보냈나?",
+        "en": "How did you mostly spend your weekends this half?"
+      },
+      "options": [
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "운동, 공부, 부업 — 주말이 평일보다 바쁨",
+            "en": "Workouts, studying, side hustle — weekends busier than weekdays"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "이불과 한 몸. 최대 이동 거리는 침대에서 냉장고까지",
+            "en": "One with the blanket. Maximum travel distance: bed to fridge"
+          }
+        },
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "약속, 모임, 소개팅 — 일정표에 빈칸이 없었음",
+            "en": "Dates, gatherings, setups — not a blank cell on the calendar"
+          }
+        },
+        {
+          "key": "observer",
+          "label": {
+            "ko": "연애 예능 정주행하며 남의 사랑에 전문가급 훈수",
+            "en": "Binging dating shows and coaching strangers' relationships like a pro"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "하반기에 '새로 만난 사람'을 결산하면?",
+        "en": "Auditing the 'new people' you met this half-year:"
+      },
+      "options": [
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "설레는 사람이 최소 한 명은 있었다",
+            "en": "At least one of them gave me actual butterflies"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "새로 만난 건 헬스 트레이너와 스터디원뿐",
+            "en": "New acquisitions: a gym trainer and study-group members"
+          }
+        },
+        {
+          "key": "observer",
+          "label": {
+            "ko": "직접 만난 사람보다 친구 연애사 속 등장인물을 더 많이 알게 됨",
+            "en": "I know more characters from my friends' love stories than people I actually met"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "배달 기사님과의 눈인사가 하반기 최다 접촉",
+            "en": "Nodding at the delivery driver was my peak human contact"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "하반기 연애 콘텐츠 소비 패턴은?",
+        "en": "Your romance-content consumption pattern this half?"
+      },
+      "options": [
+        {
+          "key": "observer",
+          "label": {
+            "ko": "연애 예능 전 시즌 정주행 + 커뮤니티 댓글까지 정독",
+            "en": "Every season of every dating show, plus a close reading of the comment sections"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "알고리즘에 떠도 스킵 — 자기계발 영상으로 직행",
+            "en": "Skip on sight — straight to the productivity videos"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "틀어놓고 잠듦. 커플의 결말은 아직도 모름",
+            "en": "Fell asleep with it playing. Still don't know how the couple ended up"
+          }
+        },
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "볼 시간이 없었음 — 내 연애가 더 재밌어서",
+            "en": "No time to watch — my own storyline was more entertaining"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "올해 남은 기간, 너의 계획은?",
+        "en": "Your plan for the rest of the year?"
+      },
+      "options": [
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "무사히 동면 유지. 봄에 깨워주세요",
+            "en": "Maintain hibernation safely. Wake me in spring"
+          }
+        },
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "연말 이벤트에서 뭔가 일어날 것 같은 강력한 예감",
+            "en": "A strong premonition that something happens at the year-end events"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "내년 목표 세팅 완료 — 연애는 KPI에 없음",
+            "en": "Next year's goals already set — romance is not a KPI"
+          }
+        },
+        {
+          "key": "observer",
+          "label": {
+            "ko": "친구들 연말 연애 드라마, 최전방 관람석 예약 완료",
+            "en": "Front-row seat reserved for my friends' year-end relationship drama"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "하반기 최대 감정 이벤트를 하나만 꼽으면?",
+        "en": "The single biggest emotional event of your half-year?"
+      },
+      "options": [
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "심쿵과 현타를 오간 그 사람과의 밀당 대서사",
+            "en": "The push-and-pull epic with that person — butterflies to reality checks and back"
+          }
+        },
+        {
+          "key": "observer",
+          "label": {
+            "ko": "친구 커플의 이별-재결합 2부작을 실시간 관람한 것",
+            "en": "Watching my friends' breakup-and-reunion two-parter live"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "굳이 꼽자면… 최애 드라마가 종영한 것",
+            "en": "If I must pick… my favorite show ending its run"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "목표 하나를 완수했을 때의 그 짜릿함",
+            "en": "The rush of crossing a goal off the list"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "ko": "연말 모임에서 너의 예상 포지션은?",
+        "en": "Your predicted position at the year-end gathering?"
+      },
+      "options": [
+        {
+          "key": "observer",
+          "label": {
+            "ko": "리액션 담당 — \"그래서 걔랑 어떻게 됐어?\"가 내 대사",
+            "en": "Reaction specialist — my line is \"so what happened with them??\""
+          }
+        },
+        {
+          "key": "main_character",
+          "label": {
+            "ko": "화제의 중심 — 근황 토크 지분 1위 확정",
+            "en": "Center of attention — largest shareholder of the catch-up talk"
+          }
+        },
+        {
+          "key": "grinder",
+          "label": {
+            "ko": "1차만 참석 후 내일 새벽 운동을 위해 칼퇴",
+            "en": "Round one only, then a sharp exit for tomorrow's dawn workout"
+          }
+        },
+        {
+          "key": "hibernator",
+          "label": {
+            "ko": "참석 여부 미정 (내부적으로는 이미 불참 확정)",
+            "en": "Attendance: undecided (internally: already confirmed absent)"
+          }
+        }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 결산 테스트예요. 어떤 하반기였든, 잘 보낸 시간입니다.",
+    "en": "A just-for-fun recap test. Whatever your half-year looked like, it was time well spent."
+  }
+}

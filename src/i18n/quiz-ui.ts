@@ -38,6 +38,34 @@ export type QuizUiStrings = {
   shareKakaoWideCta: string;
   shareFacebook: string;
   shareX: string;
+  /** 결과 만족도 위젯 — 질문 문구 */
+  feedbackPrompt: string;
+  /** 결과 만족도 — 긍정 버튼 */
+  feedbackFit: string;
+  /** 결과 만족도 — 부정 버튼 */
+  feedbackMiss: string;
+  /** 결과 만족도 — 응답 후 감사 문구 */
+  feedbackThanks: string;
+  /** 유형 궁합 섹션 제목 */
+  compatHeading: string;
+  /** 궁합 — 잘 맞는 유형 라벨 */
+  compatBest: string;
+  /** 궁합 — 부딪히기 쉬운 유형 라벨 */
+  compatWorst: string;
+  /** 정답형 — 정답 배지 */
+  triviaCorrect: string;
+  /** 정답형 — 오답 배지 */
+  triviaWrong: string;
+  /** 정답형 — 다음 문항 버튼 */
+  triviaNext: string;
+  /** 정답형 — 마지막 문항 후 결과 보기 버튼 */
+  triviaShowResult: string;
+  /** 정답형 — 진행 중 현재 점수 */
+  formatTriviaLiveScore: (score: number) => string;
+  /** 정답형 — 결과 점수 히어로 밑 정답 개수 */
+  formatTriviaCorrectLine: (correct: number, total: number) => string;
+  /** 정답형 — 공유용 도발 문구 */
+  formatTriviaChallenge: (score: number) => string;
 };
 
 export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
@@ -65,6 +93,20 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareKakaoWideCta: "친구에게 공유하기",
     shareFacebook: "페이스북으로 공유",
     shareX: "X로 공유",
+    feedbackPrompt: "이 결과, 잘 맞았나요?",
+    feedbackFit: "잘 맞아요",
+    feedbackMiss: "안 맞아요",
+    feedbackThanks: "의견 고마워요! 더 잘 맞는 결과를 만드는 데 쓸게요.",
+    compatHeading: "유형 궁합",
+    compatBest: "나와 잘 맞는 유형",
+    compatWorst: "부딪히기 쉬운 유형",
+    triviaCorrect: "정답! 🎯",
+    triviaWrong: "오답 😅",
+    triviaNext: "다음 문항",
+    triviaShowResult: "결과 보기",
+    formatTriviaLiveScore: (s) => `현재 ${s}점`,
+    formatTriviaCorrectLine: (c, t) => `${t}문항 중 ${c}개 정답`,
+    formatTriviaChallenge: (s) => `나는 ${s}점, 너는 몇 점?`,
   },
   en: {
     restart: "Try again",
@@ -90,6 +132,20 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareKakaoWideCta: "Share your result on KakaoTalk",
     shareFacebook: "Share on Facebook",
     shareX: "Share on X",
+    feedbackPrompt: "Did this result feel right?",
+    feedbackFit: "Spot on",
+    feedbackMiss: "Not really",
+    feedbackThanks: "Thanks! Your feedback helps us make better results.",
+    compatHeading: "Type chemistry",
+    compatBest: "Your best match",
+    compatWorst: "Likely to clash with",
+    triviaCorrect: "Correct! 🎯",
+    triviaWrong: "Nope 😅",
+    triviaNext: "Next question",
+    triviaShowResult: "See my score",
+    formatTriviaLiveScore: (s) => `Score: ${s}`,
+    formatTriviaCorrectLine: (c, t) => `${c} of ${t} correct`,
+    formatTriviaChallenge: (s) => `I scored ${s} — can you beat me?`,
   },
   ja: {
     restart: "もう一度",
@@ -115,6 +171,20 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareKakaoWideCta: "カカオトークで結果をシェア",
     shareFacebook: "Facebookでシェア",
     shareX: "Xでシェア",
+    feedbackPrompt: "この結果、当たっていましたか？",
+    feedbackFit: "当たってる",
+    feedbackMiss: "違うかも",
+    feedbackThanks: "ありがとうございます！より良い結果づくりに活かします。",
+    compatHeading: "タイプ相性",
+    compatBest: "相性のいいタイプ",
+    compatWorst: "ぶつかりやすいタイプ",
+    triviaCorrect: "正解！🎯",
+    triviaWrong: "残念 😅",
+    triviaNext: "次の問題",
+    triviaShowResult: "結果を見る",
+    formatTriviaLiveScore: (s) => `現在${s}点`,
+    formatTriviaCorrectLine: (c, t) => `${t}問中${c}問正解`,
+    formatTriviaChallenge: (s) => `私は${s}点、あなたは何点？`,
   },
   es: {
     restart: "Intentar de nuevo",
@@ -140,6 +210,20 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareKakaoWideCta: "Compartir resultado en KakaoTalk",
     shareFacebook: "Compartir en Facebook",
     shareX: "Compartir en X",
+    feedbackPrompt: "¿Te representa este resultado?",
+    feedbackFit: "Sí, mucho",
+    feedbackMiss: "No tanto",
+    feedbackThanks: "¡Gracias! Tu opinión nos ayuda a mejorar los resultados.",
+    compatHeading: "Química de tipos",
+    compatBest: "Tu mejor match",
+    compatWorst: "Con quien puedes chocar",
+    triviaCorrect: "¡Correcto! 🎯",
+    triviaWrong: "Fallaste 😅",
+    triviaNext: "Siguiente pregunta",
+    triviaShowResult: "Ver mi puntaje",
+    formatTriviaLiveScore: (s) => `Puntaje: ${s}`,
+    formatTriviaCorrectLine: (c, t) => `${c} de ${t} correctas`,
+    formatTriviaChallenge: (s) => `Saqué ${s} puntos, ¿me superas?`,
   },
   pt: {
     restart: "Tentar novamente",
@@ -165,6 +249,20 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareKakaoWideCta: "Compartilhar resultado no KakaoTalk",
     shareFacebook: "Compartilhar no Facebook",
     shareX: "Compartilhar no X",
+    feedbackPrompt: "Esse resultado combinou com você?",
+    feedbackFit: "Combinou",
+    feedbackMiss: "Nem tanto",
+    feedbackThanks: "Obrigado! Seu feedback ajuda a melhorar os resultados.",
+    compatHeading: "Química de tipos",
+    compatBest: "Seu melhor match",
+    compatWorst: "Com quem pode haver atrito",
+    triviaCorrect: "Acertou! 🎯",
+    triviaWrong: "Errou 😅",
+    triviaNext: "Próxima pergunta",
+    triviaShowResult: "Ver minha pontuação",
+    formatTriviaLiveScore: (s) => `Pontos: ${s}`,
+    formatTriviaCorrectLine: (c, t) => `${c} de ${t} corretas`,
+    formatTriviaChallenge: (s) => `Fiz ${s} pontos, consegue mais?`,
   },
   id: {
     restart: "Coba lagi",
@@ -190,6 +288,20 @@ export const QUIZ_UI: Record<QuizUiLocale, QuizUiStrings> = {
     shareKakaoWideCta: "Bagikan hasil ke KakaoTalk",
     shareFacebook: "Bagikan ke Facebook",
     shareX: "Bagikan ke X",
+    feedbackPrompt: "Apakah hasilnya cocok denganmu?",
+    feedbackFit: "Cocok banget",
+    feedbackMiss: "Kurang cocok",
+    feedbackThanks: "Terima kasih! Masukanmu membantu kami membuat hasil yang lebih pas.",
+    compatHeading: "Kecocokan tipe",
+    compatBest: "Tipe yang paling cocok",
+    compatWorst: "Tipe yang mudah berbenturan",
+    triviaCorrect: "Benar! 🎯",
+    triviaWrong: "Salah 😅",
+    triviaNext: "Pertanyaan berikutnya",
+    triviaShowResult: "Lihat skorku",
+    formatTriviaLiveScore: (s) => `Skor: ${s}`,
+    formatTriviaCorrectLine: (c, t) => `${c} dari ${t} benar`,
+    formatTriviaChallenge: (s) => `Skorku ${s}, bisa lebih tinggi?`,
   },
 };
 

@@ -126,6 +126,10 @@
           "en": "Your push-pull behavior often ruins timing"
         },
         "image": "/images/quiz/ambiguous-situationship-end/result-1.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "B"
       }
     },
     "B": {
@@ -154,6 +158,10 @@
           "en": "You move fast, which can overwhelm the other person"
         },
         "image": "/images/quiz/ambiguous-situationship-end/result-2.webp"
+      },
+      "compat": {
+        "best": "D",
+        "worst": "A"
       }
     },
     "C": {
@@ -182,6 +190,10 @@
           "en": "You hesitate too much, leading to unclear endings"
         },
         "image": "/images/quiz/ambiguous-situationship-end/result-3.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "D"
       }
     },
     "D": {
@@ -210,6 +222,10 @@
           "en": "You overanalyze and often end things yourself"
         },
         "image": "/images/quiz/ambiguous-situationship-end/result-4.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "A"
       }
     }
   },

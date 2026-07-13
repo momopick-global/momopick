@@ -124,6 +124,10 @@
           "en": "Strong empathy and emotional awareness"
         },
         "image": "/images/quiz/emotional-sensitivity/result-1.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "C"
       }
     },
     "B": {
@@ -152,6 +156,10 @@
           "en": "You regulate sensitivity well"
         },
         "image": "/images/quiz/emotional-sensitivity/result-2.webp"
+      },
+      "compat": {
+        "best": "A",
+        "worst": "C"
       }
     },
     "C": {
@@ -180,6 +188,10 @@
           "en": "You amplify and overanalyze emotional signals"
         },
         "image": "/images/quiz/emotional-sensitivity/result-3.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "A"
       }
     }
   },

@@ -37,8 +37,9 @@ export function SnackQuizIntroWithLiveCount({
         <button
           type="button"
           className="btn primary quiz-intro-start"
-          onClick={async () => {
-            await registerStart();
+          onClick={() => {
+            // 집계는 fire-and-forget — 네트워크 지연이 시작을 막지 않게
+            void registerStart();
             onStarted();
           }}
         >
@@ -51,9 +52,12 @@ export function SnackQuizIntroWithLiveCount({
       <div className="quiz-share-wrap quiz-share-wrap--intro">
         <QuizResultShare ui={ui} shareText={shareText} shareImageUrl={shareImageUrl} />
       </div>
-      <p id="user-count" className="quiz-intro-participants" aria-live="polite">
-        {ui.formatLiveParticipantLine(participantCount)}
-      </p>
+      {participantCount === 0 ? null : (
+        // 집계 행이 없어 0인 퀴즈는 "0명 참여"를 숨긴다 (역효과 방지)
+        <p id="user-count" className="quiz-intro-participants" aria-live="polite">
+          {ui.formatLiveParticipantLine(participantCount)}
+        </p>
+      )}
     </div>
   );
 }

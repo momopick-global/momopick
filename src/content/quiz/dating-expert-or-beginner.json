@@ -123,6 +123,10 @@
           "en": "You naturally understand relationships"
         },
         "image": "/images/quiz/dating-expert-or-beginner/result-1.webp"
+      },
+      "compat": {
+        "best": "charming",
+        "worst": "beginner"
       }
     },
     "charming": {
@@ -151,6 +155,10 @@
           "en": "You have charm, but still have room to grow"
         },
         "image": "/images/quiz/dating-expert-or-beginner/result-2.webp"
+      },
+      "compat": {
+        "best": "expert",
+        "worst": "beginner"
       }
     },
     "beginner": {
@@ -179,6 +187,10 @@
           "en": "Still figuring out how relationships work"
         },
         "image": "/images/quiz/dating-expert-or-beginner/result-3.webp"
+      },
+      "compat": {
+        "best": "charming",
+        "worst": "expert"
       }
     }
   },

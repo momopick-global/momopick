@@ -124,6 +124,10 @@
           "en": "You reflect deeply when alone"
         },
         "image": "/images/quiz/true-self-alone/result-1.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "C"
       }
     },
     "B": {
@@ -152,6 +156,10 @@
           "en": "You enjoy alone time through content and activities"
         },
         "image": "/images/quiz/true-self-alone/result-2.webp"
+      },
+      "compat": {
+        "best": "A",
+        "worst": "C"
       }
     },
     "C": {
@@ -180,6 +188,10 @@
           "en": "You tend to lose energy when alone too long"
         },
         "image": "/images/quiz/true-self-alone/result-3.webp"
+      },
+      "compat": {
+        "best": "A",
+        "worst": "B"
       }
     }
   },

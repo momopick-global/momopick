@@ -15,6 +15,8 @@ import { getQuizUiStrings, type QuizUiLocale, type QuizUiStrings } from "@/i18n/
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultLoadingScreen } from "./QuizResultLoadingScreen";
 import { QuizPackTags } from "./QuizPackTags";
+import { QuizIntroParticipantsLine } from "./QuizIntroParticipantsLine";
+import { trackQuizComplete, trackQuizStart } from "@/lib/quizFunnel";
 import {
   QuizResultShare,
   QuizResultShareIconRow,
@@ -22,6 +24,7 @@ import {
   QuizShareStatusHints,
 } from "./QuizResultShare";
 import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
+import { QuizResultFeedback } from "./QuizResultFeedback";
 import { useQuizResultShareModel } from "./useQuizResultShareModel";
 import { pickQuizText } from "./types";
 import {
@@ -120,6 +123,7 @@ function PercentageQuizDoneCard({
     quizStartUrl: quizPageHref,
     quizResultUrl,
     kakaoQuizResultShare: true,
+    funnelSlug: definition.slug,
   });
 
   const resultLineDraft = (() => {
@@ -219,6 +223,7 @@ function PercentageQuizDoneCard({
             </button>
           </div>
         </div>
+        <QuizResultFeedback quizSlug={definition.slug} ui={ui} />
         <p className="quiz-footnote">{pickQuizText(locale, footnote)}</p>
         <QuizShareKakaoWideButton model={shareModel} ui={ui} />
         <div className="quiz-result-share-hints">
@@ -226,7 +231,12 @@ function PercentageQuizDoneCard({
         </div>
       </div>
       {locale === "ko" && definition.category?.trim() === "love" ? (
-        <KoLoveHubMoreSection locale={locale} excludeHref={quizPageHref} placement="quiz" />
+        <KoLoveHubMoreSection
+          locale={locale}
+          excludeHref={quizPageHref}
+          placement="quiz"
+          relatedSlugs={definition.related}
+        />
       ) : null}
     </div>
   );
@@ -261,11 +271,12 @@ export function PercentageQuiz({
     [step, total],
   );
 
+  const quizId = definition.slug?.trim() || definition.id;
+
   const quizPageHref = useMemo(() => {
     const cat = definition.category?.trim() || "quiz";
-    const seg = definition.slug?.trim() || definition.id;
-    return `/${locale}/${cat}/${seg}/`;
-  }, [definition.category, definition.slug, definition.id, locale]);
+    return `/${locale}/${cat}/${quizId}/`;
+  }, [definition.category, quizId, locale]);
 
   /** 진행 중 공유 — 카카오·OG용 퀴즈 대표 커버(thumbnail 우선) */
   const quizShareCoverUrl = useMemo(() => {
@@ -349,6 +360,7 @@ export function PercentageQuiz({
         answerTimerRef.current = null;
         setTotalScore((s) => s + opt.score);
         if (step >= total - 1) {
+          trackQuizComplete(quizId);
           setResultPhase("loading");
         } else {
           setStep((x) => x + 1);
@@ -358,7 +370,7 @@ export function PercentageQuiz({
         setFillActive(false);
       }, ANSWER_FILL_MS);
     },
-    [answerBusy, questions, step, total],
+    [answerBusy, questions, step, total, quizId],
   );
 
   const restart = useCallback(() => {
@@ -421,6 +433,20 @@ export function PercentageQuiz({
     return (
       <div className="quiz-shell quiz-shell--intro">
         <div className="quiz-intro">
+          {/* 스낵 퀴즈 인트로와 동일한 배치: 시작 버튼 → 구분선 → 태그 → 안내 → 공유 → 참여 수 */}
+          <div className="quiz-intro-actions">
+            <button
+              type="button"
+              className="btn primary quiz-intro-start"
+              onClick={() => {
+                trackQuizStart(quizId);
+                setQuizStarted(true);
+              }}
+            >
+              {ui.startTest}
+            </button>
+          </div>
+          <hr className="quiz-divider" />
           <QuizPackTags tags={definition.tags} locale={locale} className="quiz-intro-tags" />
           <p className="quiz-intro-body">{ui.quizIntroBody(total)}</p>
           <div className="quiz-share-wrap quiz-share-wrap--intro">
@@ -430,11 +456,7 @@ export function PercentageQuiz({
               shareImageUrl={quizShareCoverUrl}
             />
           </div>
-          <div className="quiz-intro-actions">
-            <button type="button" className="btn primary quiz-intro-start" onClick={() => setQuizStarted(true)}>
-              {ui.startTest}
-            </button>
-          </div>
+          <QuizIntroParticipantsLine quizId={quizId} ui={ui} />
         </div>
       </div>
     );

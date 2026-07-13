@@ -1,0 +1,153 @@
+{
+  "id": "crush-overdrive-index",
+  "slug": "crush-overdrive-index",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "짝사랑", "en": "crush" },
+    { "ko": "과몰입", "en": "overdrive" },
+    { "ko": "연애", "en": "love" }
+  ],
+  "title": { "ko": "호감 과몰입 지수", "en": "Crush Overdrive Index" },
+  "subtitle": { "ko": "나 과몰입 아닌데… 진짜 아닐까?", "en": "I'm not obsessed… or am I?" },
+  "images": {
+    "thumbnail": "/images/quiz/crush-overdrive-index/thumb.webp",
+    "og": "/images/quiz/crush-overdrive-index/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "SNS 순찰부터 우연 기획까지, 좋아하는 사람이 생겼을 때 내 과몰입 정도를 %로 측정하는 테스트",
+      "en": "From feed patrols to engineered coincidences — measure exactly how deep into crush overdrive you've gone"
+    },
+    "keywords": [
+      { "ko": "짝사랑 테스트", "en": "crush test" },
+      { "ko": "과몰입 지수", "en": "overdrive index" },
+      { "ko": "호감 테스트", "en": "crush quiz" }
+    ],
+    "ogTitle": { "ko": "호감 과몰입 지수", "en": "Crush Overdrive Index" },
+    "ogDescription": {
+      "ko": "새로고침이 엄지 운동이 된 당신, 과몰입 몇 %인지 확인해보세요",
+      "en": "If refreshing their feed counts as cardio, it's time to check your percentage"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "🔥 과몰입 측정", "en": "🔥 Overdrive check" },
+    "image": "/images/quiz/crush-overdrive-index/thumb.webp",
+    "priority": 89
+  },
+  "analytics": {
+    "eventKey": "crush_overdrive_index",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["love-meme-exam", "who-likes-you-type", "love-pattern-destroying-habit"],
+  "resultDisplay": "percent",
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 39,
+      "title": { "ko": "안전 운행 중", "en": "Safe Driving Mode" },
+      "desc": {
+        "ko": "심장에 안전벨트 채우고 정속 주행 중인 모범 운전자. 감정 소모 없이 호감을 즐기는 페이스라 관계가 천천히 익어도 조급해지지 않는 타입입니다. 답장이 오면 좋고, 안 와도 오늘 저녁 메뉴 고민이 더 큽니다.",
+        "en": "A model driver cruising at the speed limit with your heart safely buckled in. You enjoy the crush without burning fuel, so you never panic when things simmer slowly. If they reply, great — if not, tonight's dinner menu is the bigger question."
+      }
+    },
+    {
+      "min": 40,
+      "max": 69,
+      "title": { "ko": "과몰입 경계 구역", "en": "Overdrive Border Zone" },
+      "desc": {
+        "ko": "겉은 평온, 속은 상황실 가동 중. 티는 안 내지만 상대의 말 한마디를 밤에 다시 재생하는, 가장 흔하고 가장 인간적인 단계입니다. 오늘도 '별 뜻 없겠지' 하면서 그 메시지를 세 번째 다시 읽는 중입니다.",
+        "en": "Calm on the surface, situation room fully staffed underneath. You don't show it, but you replay their one offhand comment at night — the most common and most human stage there is. Right now you're rereading that message a third time while insisting it means nothing."
+      }
+    },
+    {
+      "min": 70,
+      "max": 100,
+      "title": { "ko": "과몰입 만렙 (본인만 모름)", "en": "Max-Level Overdrive (Everyone Knows But You)" },
+      "desc": {
+        "ko": "본인 빼고 전원이 이미 알고 있는 공개 비밀. 몰입은 죄가 아니고 그만큼 진심이라는 뜻이니, 해석에 쓰는 에너지의 반만 표현에 써도 판이 바뀝니다. 지금도 '읽씹인가 안읽씹인가'를 감정 하나 없이 분석하는 척하고 있잖아요.",
+        "en": "An open secret to everyone except you. Overdrive isn't a crime — it means you're genuinely serious — and spending half your interpretation energy on actual expression would change the whole game. Even now you're 'objectively' analyzing whether that's a read-receipt ghost or an unread one."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "좋아하는 사람의 SNS, 하루에 몇 번 확인해?", "en": "How often do you check your crush's socials per day?" },
+      "options": [
+        { "label": { "ko": "새로고침이 엄지 근육 단련 루틴임", "en": "Refreshing their feed is my thumb's workout routine" }, "score": 3 },
+        { "label": { "ko": "아침저녁 정기 순찰 2회", "en": "Two scheduled patrols, morning and night" }, "score": 2 },
+        { "label": { "ko": "생각날 때 한 번쯤", "en": "Once, when it crosses my mind" }, "score": 1 },
+        { "label": { "ko": "SNS 안 함. 나는 디지털 자연인", "en": "No socials. I live off the digital grid" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "답장이 안 온다. 기다리는 동안 나는?", "en": "No reply yet. What do you do while waiting?" },
+      "options": [
+        { "label": { "ko": "데이터가 죽었나 싶어 비행기모드 껐다 켬", "en": "Toggle airplane mode in case the internet itself is broken" }, "score": 3 },
+        { "label": { "ko": "폰 뒤집어놓고 3분마다 다시 뒤집음", "en": "Flip my phone face-down, flip it back every 3 minutes" }, "score": 2 },
+        { "label": { "ko": "다른 거 하다가 슬쩍 확인", "en": "Do other stuff, sneak a peek now and then" }, "score": 1 },
+        { "label": { "ko": "폰 두고 내 할 일 함", "en": "Leave the phone and get on with my life" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "상대가 지나가듯 \"요즘 심심해\"라고 했다. 내 해석은?", "en": "They casually say \"I'm so bored lately.\" Your interpretation?" },
+      "options": [
+        { "label": { "ko": "나랑 놀자는 뜻. 이미 데이트 코스 3개 짜놨음", "en": "An invitation. I've already drafted three date itineraries" }, "score": 3 },
+        { "label": { "ko": "혹시 나한테 보내는 신호인가, 하루 종일 곱씹음", "en": "Possibly a signal meant for me — I chew on it all day" }, "score": 2 },
+        { "label": { "ko": "심심한가 보다 하고 넘김", "en": "Guess they're bored. Moving on" }, "score": 1 },
+        { "label": { "ko": "그런 말 들은 기억이 없음", "en": "I have no memory of them saying that" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "우연히 마주치고 싶을 때 나는?", "en": "When you want to 'accidentally' run into them, you..." },
+      "options": [
+        { "label": { "ko": "동선 지도 그려놓고 우연을 기획함. 사실상 영화감독", "en": "Map their routes and direct the coincidence. Basically a film director" }, "score": 3 },
+        { "label": { "ko": "상대 단골 카페 근처를 괜히 지나감", "en": "Happen to stroll past their favorite cafe" }, "score": 2 },
+        { "label": { "ko": "겹치는 모임이 있으면 참석함", "en": "Show up to gatherings we both might attend" }, "score": 1 },
+        { "label": { "ko": "우연은 우연에게 맡김", "en": "Leave coincidence to coincidence" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "상대 이름으로 알림이 떴을 때 내 심박수는?", "en": "A notification with their name pops up. Your heart rate?" },
+      "options": [
+        { "label": { "ko": "급상승. 스마트워치가 '운동 중이신가요?' 물어봄", "en": "Spikes so hard my watch asks if I've started a workout" }, "score": 3 },
+        { "label": { "ko": "심장이 한 번 크게 뜀", "en": "One big thump" }, "score": 2 },
+        { "label": { "ko": "오, 하고 열어봄", "en": "A pleasant 'oh' and I open it" }, "score": 1 },
+        { "label": { "ko": "나중에 몰아서 확인함", "en": "I'll check it later with the rest" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "친구들과의 대화에서 그 사람 얘기는?", "en": "How often does your crush come up with your friends?" },
+      "options": [
+        { "label": { "ko": "친구들이 '그 얘기 3분 경과' 타이머 돌리는 중", "en": "My friends run a timer: 'that topic again, 3 minutes in'" }, "score": 3 },
+        { "label": { "ko": "무슨 얘기를 해도 어떻게든 그쪽으로 흘러감", "en": "Every conversation somehow bends toward them" }, "score": 2 },
+        { "label": { "ko": "물어보면 대답하는 정도", "en": "Only if someone asks" }, "score": 1 },
+        { "label": { "ko": "친구들은 그 사람 존재도 모름", "en": "My friends don't know this person exists" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "상대의 옛 게시물, 어디까지 파봤어?", "en": "How deep have you excavated their old posts?" },
+      "options": [
+        { "label": { "ko": "3년 전 게시물까지 발굴. 좋아요 오발 사고가 무서워 손 떨며 스크롤", "en": "Down to posts from three years ago, scrolling with trembling hands to avoid a misfired like" }, "score": 3 },
+        { "label": { "ko": "몇 달 치는 정독함", "en": "A few months' worth, read thoroughly" }, "score": 2 },
+        { "label": { "ko": "최근 게시물 몇 개", "en": "Just the recent ones" }, "score": 1 },
+        { "label": { "ko": "프로필 사진 정도만 봄", "en": "Profile picture, and that's it" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "그 사람과 만나기로 한 전날 밤, 나는?", "en": "The night before meeting them, you..." },
+      "options": [
+        { "label": { "ko": "예상 질문 30개 뽑고 거울 리허설 완료, 새벽 4시 취침", "en": "Prepped 30 anticipated questions, ran a mirror rehearsal, asleep by 4 AM" }, "score": 3 },
+        { "label": { "ko": "옷 다 꺼내 입어보고 대화 주제 메모해둠", "en": "Tried on my whole closet and saved a list of talking points" }, "score": 2 },
+        { "label": { "ko": "내일 뭐 입지 잠깐 고민", "en": "Briefly wonder what to wear" }, "score": 1 },
+        { "label": { "ko": "평소처럼 잘 잠", "en": "Sleep like it's any other night" }, "score": 0 }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 테스트입니다. 과몰입은 죄가 아니라 진심의 다른 이름이에요.",
+    "en": "Just for fun. Overdrive isn't a flaw — it's another word for sincerity."
+  }
+}

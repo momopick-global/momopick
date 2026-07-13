@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { QuizImageWithFallback } from "@/components/quiz/QuizImageWithFallback";
-import { getKoLoveMoreQuizzes } from "@/lib/content/homeRail";
+import { getKoLoveMoreQuizzes, getKoRelatedMoreQuizzes } from "@/lib/content/homeRail";
 
 type Placement = "blog" | "quiz";
 
@@ -12,10 +12,20 @@ type Props = {
   excludeHref: string;
   limit?: number;
   placement: Placement;
+  /** 퀴즈 JSON `related` — 있으면 이 slug들을 목록 상단에 우선 배치 */
+  relatedSlugs?: string[];
 };
 
-export function KoLoveHubMoreSection({ locale, excludeHref, limit = 4, placement }: Props) {
-  const items = getKoLoveMoreQuizzes(locale, excludeHref, limit);
+export function KoLoveHubMoreSection({
+  locale,
+  excludeHref,
+  limit = 4,
+  placement,
+  relatedSlugs,
+}: Props) {
+  const items = relatedSlugs?.length
+    ? getKoRelatedMoreQuizzes(locale, relatedSlugs, excludeHref, limit)
+    : getKoLoveMoreQuizzes(locale, excludeHref, limit);
   if (items.length === 0) return null;
 
   const sectionClass = placement === "blog" ? "blog-quiz-promo__more" : "quiz-result-love-more";
@@ -34,7 +44,7 @@ export function KoLoveHubMoreSection({ locale, excludeHref, limit = 4, placement
     >
       <section className={sectionClass} aria-labelledby={headingId}>
         <h3 id={headingId} className={titleClass}>
-          다른 심층 테스트
+          {relatedSlugs?.length ? "이 테스트와 이어보기" : "다른 심층 테스트"}
         </h3>
         <p className={`${leadClass} ko-love-more__lead--end`}>
           <Link className="link-all" href={loveHubHref}>

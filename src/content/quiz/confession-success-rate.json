@@ -88,8 +88,8 @@
         "en": "Not the Right Time Yet"
       },
       "desc": {
-        "ko": "지금 고백하면 부담이 될 가능성이 높아요. 관계를 조금 더 쌓는 게 먼저입니다.",
-        "en": "Confessing now might feel overwhelming. Build more connection first."
+        "ko": "고백 폭탄은 잠시 안전핀을 꽂아둘 시간입니다. 아직 신호가 무르익지 않았을 뿐, 이 확률은 고정값이 아니라 같이 웃은 횟수만큼 올라가는 변동값이에요. 서두르지 않아도 괜찮으니, 지금은 대화 지분부터 천천히 늘려보세요.",
+        "en": "Keep the safety pin in that confession grenade for now. The signals just need more ripening — this number isn't fixed, it climbs with every laugh you share. There's no rush at all; start by slowly growing your share of the conversation."
       }
     },
     {
@@ -100,8 +100,8 @@
         "en": "Possible but Uncertain"
       },
       "desc": {
-        "ko": "타이밍이 나쁘진 않지만 확신도 부족해요. 조금 더 신호를 확인해보세요.",
-        "en": "The timing isn’t bad, but it's not solid either. Read the signals a bit more."
+        "ko": "지금 당신의 썸은 반숙 계란 상태, 뒤집기엔 살짝 이릅니다. 신호는 분명 있는데 확신이 부족한 구간이라, 다들 여기서 새벽 2시에 대화창을 위로 스크롤하죠. 티 나는 관심 한 스푼만 더 얹고, 상대의 반응을 지켜보세요.",
+        "en": "Your situationship is a soft-boiled egg — flip it now and things get messy. The signals are real but not yet solid, which is exactly the zone where everyone ends up scrolling the chat history at 2 a.m. Add one more spoonful of visible interest and watch how they respond."
       }
     },
     {
@@ -112,8 +112,8 @@
         "en": "Go for It"
       },
       "desc": {
-        "ko": "지금은 꽤 좋은 타이밍입니다. 너무 계산하지 말고 용기 내보세요.",
-        "en": "This is a great moment. Stop overthinking and go for it."
+        "ko": "이 정도 신호면 상대는 이미 예상 문제까지 뽑아놓고 시험지만 기다리는 중일지 몰라요. 확률이 이렇게 모였을 때 계산기를 더 두드리면 타이밍만 도망갑니다. 완벽한 멘트보다 진심 한 줄이 세니까, 이번 주 안에 용기 내보세요.",
+        "en": "With signals like these, they may have already guessed the exam questions and are just waiting for you to hand out the paper. When the odds stack up this high, extra math only lets the moment escape. One honest sentence beats a perfect script — go for it this week."
       }
     }
   ],
@@ -126,29 +126,29 @@
       "options": [
         {
           "label": {
-            "ko": "거의 매일 연락함",
-            "en": "We text almost every day"
+            "ko": "눈 뜨면 톡, 눈 감기 전에도 톡. 사실상 교대근무",
+            "en": "Texts from wake-up to lights-out. Basically shift work"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "가끔 연락함",
-            "en": "We talk occasionally"
+            "ko": "가끔 연락함. 대화는 끊겨도 흐름은 안 끊김",
+            "en": "We talk occasionally — the chat pauses, the vibe doesn't"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "내가 먼저 연락함",
-            "en": "I usually text first"
+            "ko": "먼저 연락 담당은 늘 나. 발신 전용 인간",
+            "en": "I'm the designated first-texter. Outgoing only"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "거의 안함",
-            "en": "We barely talk"
+            "ko": "마지막 대화가 화석 발굴 수준",
+            "en": "Our last chat is an archaeological find"
           },
           "score": 0
         }
@@ -162,29 +162,29 @@
       "options": [
         {
           "label": {
-            "ko": "빠르고 적극적",
-            "en": "Fast and engaged"
+            "ko": "보내기도 전에 답이 오는 느낌. 5G보다 빠름",
+            "en": "Replies land before I even hit send. Faster than 5G"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "보통",
-            "en": "Average"
+            "ko": "보통 속도. 사람답게 답장함",
+            "en": "Normal speed — replies like a functioning human"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "느리지만 답은 함",
-            "en": "Slow but replies"
+            "ko": "느리지만 오긴 옴. 일반배송(운송장 조회 불가)",
+            "en": "Slow but it arrives. Standard shipping, no tracking"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "읽씹 많음",
-            "en": "Often leaves me on read"
+            "ko": "읽씹 장인. 내 톡은 읽기 전용 콘텐츠",
+            "en": "Leaves me on read — my texts are read-only content"
           },
           "score": 0
         }
@@ -198,29 +198,29 @@
       "options": [
         {
           "label": {
-            "ko": "여러 번 있음",
-            "en": "Many times"
+            "ko": "여러 번. 둘만의 단골 코스까지 생김",
+            "en": "Many times — we even have a usual spot now"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "몇 번 있음",
-            "en": "A few times"
+            "ko": "몇 번 있음. 어색한 시기는 졸업함",
+            "en": "A few times. The awkward phase is behind us"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "한 번 있음",
-            "en": "Once"
+            "ko": "딱 한 번. 그날의 기억으로 아직 버티는 중",
+            "en": "Once. Still running on that day's memory"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "없음",
-            "en": "Never"
+            "ko": "없음. '단둘'은 아직 이론상으로만 존재",
+            "en": "Never. 'Just the two of us' exists only in theory"
           },
           "score": 0
         }
@@ -234,29 +234,29 @@
       "options": [
         {
           "label": {
-            "ko": "자주 있음",
-            "en": "Often"
+            "ko": "자주. 어느새 내 옆자리가 걔 지정석이 됨",
+            "en": "Often — the seat next to me is basically reserved for them"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "가끔 있음",
-            "en": "Sometimes"
+            "ko": "가끔. 예고 없이 훅 들어와서 심장 테스트함",
+            "en": "Sometimes — surprise approaches that double as cardio"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "거의 없음",
-            "en": "Rarely"
+            "ko": "거의 없음. 다가가는 건 대부분 내 쪽",
+            "en": "Rarely. Most of the approaching is done by me"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "전혀 없음",
-            "en": "Never"
+            "ko": "전혀. 다가옴 감지 센서에 기록 0건",
+            "en": "Never. My approach-detection sensor logs zero events"
           },
           "score": 0
         }
@@ -270,29 +270,29 @@
       "options": [
         {
           "label": {
-            "ko": "썸 느낌 있음",
-            "en": "Feels like flirting"
+            "ko": "이게 썸이 아니면 국어사전이 틀린 것",
+            "en": "If this isn't flirting, the dictionary is wrong"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "편한 친구 느낌",
-            "en": "Comfortable friendship"
+            "ko": "편한 친구 느낌. 근데 가끔 이상하게 두근거림",
+            "en": "Comfortable friendship — with occasional unexplained heartbeats"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "어색함",
-            "en": "A bit awkward"
+            "ko": "어색함. 침묵이 대화 지분의 절반",
+            "en": "Awkward. Silence owns half the conversation"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "형식적임",
-            "en": "Very formal"
+            "ko": "형식적. 거래처 메일 톤으로 대화함",
+            "en": "Formal. We talk in business-email tone"
           },
           "score": 0
         }
@@ -306,29 +306,29 @@
       "options": [
         {
           "label": {
-            "ko": "자주 있음",
-            "en": "Often"
+            "ko": "자주. 내 팬클럽 창립 멤버인가 싶음",
+            "en": "Often — like the founding member of my fan club"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "가끔 있음",
-            "en": "Sometimes"
+            "ko": "가끔. 근데 그 한 마디를 일주일 우려먹음",
+            "en": "Sometimes — and I replay that one compliment for a week"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "거의 없음",
-            "en": "Rarely"
+            "ko": "거의 없음. 있었어도 내가 못 알아챘을 확률",
+            "en": "Rarely — or maybe I just failed to detect it"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "없음",
-            "en": "Never"
+            "ko": "없음. 칭찬 게이지가 0에서 미동도 안 함",
+            "en": "Never. The compliment meter hasn't left zero"
           },
           "score": 0
         }
@@ -342,29 +342,29 @@
       "options": [
         {
           "label": {
-            "ko": "완전 솔로",
-            "en": "Completely single"
+            "ko": "완전 솔로. 심지어 본인이 솔로라고 광고하고 다님",
+            "en": "Completely single — and they advertise it"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "애매한 상태",
-            "en": "Complicated"
+            "ko": "애매함. 본인도 본인 상태를 모르는 듯",
+            "en": "Complicated — even they seem unsure of their own status"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "누군가 있음",
-            "en": "Seeing someone"
+            "ko": "누가 있는 것 같음... 못 본 척하는 중",
+            "en": "There seems to be someone... I'm pretending not to see it"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "확실히 연애중",
-            "en": "In a relationship"
+            "ko": "확실히 연애중. 프로필 사진이 커플샷임",
+            "en": "Definitely taken. Their profile pic is a couple shot"
           },
           "score": 0
         }
@@ -378,29 +378,29 @@
       "options": [
         {
           "label": {
-            "ko": "확신 있음",
-            "en": "Very confident"
+            "ko": "확신 100%. 고백 멘트 최종_진짜최종본까지 써둠",
+            "en": "Fully confident — the confession script is on its final_FINAL draft"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "가능성 있다고 느낌",
-            "en": "Feels possible"
+            "ko": "될 것 같은 촉이 옴. 근거는 없지만 촉이 강함",
+            "en": "I've got a hunch. No evidence, but it's a strong hunch"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "잘 모르겠음",
-            "en": "Not sure"
+            "ko": "모르겠음. 하루에 결론이 세 번 바뀜",
+            "en": "No idea — my conclusion changes three times a day"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "불안함",
-            "en": "Very unsure"
+            "ko": "불안함. 상상 속에서 이미 몇 번 차여봄",
+            "en": "Anxious. I've already been rejected in my imagination"
           },
           "score": 0
         }

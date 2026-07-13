@@ -128,6 +128,10 @@
           "en": "A type that fears emotional pain more than rejection itself"
         },
         "image": "/images/quiz/why-cant-you-text-first/result-1.webp"
+      },
+      "compat": {
+        "best": "calculated",
+        "worst": "prideful"
       }
     },
     "prideful": {
@@ -156,6 +160,10 @@
           "en": "A type whose pride moves before feelings do"
         },
         "image": "/images/quiz/why-cant-you-text-first/result-2.webp"
+      },
+      "compat": {
+        "best": "calculated",
+        "worst": "hurt_avoidant"
       }
     },
     "calculated": {
@@ -184,6 +192,10 @@
           "en": "A type that overthinks timing and misses the chance"
         },
         "image": "/images/quiz/why-cant-you-text-first/result-3.webp"
+      },
+      "compat": {
+        "best": "hurt_avoidant",
+        "worst": "prideful"
       }
     }
   },

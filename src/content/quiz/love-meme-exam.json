@@ -1,0 +1,228 @@
+{
+  "id": "love-meme-exam",
+  "slug": "love-meme-exam",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "밈", "en": "meme" },
+    { "ko": "연애", "en": "love" },
+    { "ko": "모의고사", "en": "mock exam" }
+  ],
+  "title": { "ko": "연애 밈 모의고사", "en": "Love Meme Mock Exam" },
+  "subtitle": { "ko": "너 요즘 단톡 해석 되니?", "en": "Can you decode modern dating slang?" },
+  "images": {
+    "thumbnail": "/images/quiz/love-meme-exam/thumb.webp",
+    "og": "/images/quiz/love-meme-exam/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "읽씹·어장·환승·그린라이트… 연애 밈 독해력을 10문항 시험으로 채점하는 모의고사",
+      "en": "Ghosting, breadcrumbing, green lights — a 10-question exam that scores your dating-slang literacy"
+    },
+    "keywords": [
+      { "ko": "연애 밈 테스트", "en": "dating meme quiz" },
+      { "ko": "밈 모의고사", "en": "meme mock exam" },
+      { "ko": "연애 신조어", "en": "dating slang" }
+    ],
+    "ogTitle": { "ko": "연애 밈 모의고사", "en": "Love Meme Mock Exam" },
+    "ogDescription": {
+      "ko": "10문항 채점제. 나는 몇 점? 친구랑 점수 대결 각",
+      "en": "10 questions, scored out of 100. Beat your friends' scores"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "💯 모의고사", "en": "💯 Mock Exam" },
+    "image": "/images/quiz/love-meme-exam/thumb.webp",
+    "priority": 93
+  },
+  "analytics": {
+    "eventKey": "love_meme_exam",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["who-likes-you-type", "ambiguous-situationship-end", "why-cant-you-text-first"],
+  "grades": [
+    {
+      "min": 90,
+      "max": 100,
+      "title": { "ko": "연애 밈 만렙 🎓", "en": "Meme Grandmaster 🎓" },
+      "desc": {
+        "ko": "단톡방 공식 통역사. 해석 안 되는 시그널이 없는 수준이라, 친구들이 캡처부터 들고 옵니다. 다만 너무 잘 읽어서 가끔 모르는 척이 필요할 뿐.",
+        "en": "The group chat's official interpreter. No signal escapes you — friends bring you screenshots first. Your only weakness: sometimes you have to pretend not to know."
+      }
+    },
+    {
+      "min": 70,
+      "max": 89,
+      "title": { "ko": "밈 고인물", "en": "Seasoned Meme Veteran" },
+      "desc": {
+        "ko": "웬만한 밈은 문맥 없이도 접수 완료. 가끔 최신판 업데이트가 하루 늦을 뿐, 실전 해석력은 이미 상위권입니다.",
+        "en": "You catch almost everything without context. Your patch updates run a day late at most — your real-world reading skills are top-tier."
+      }
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": { "ko": "눈치 수강생", "en": "Context-Clue Student" },
+      "desc": {
+        "ko": "밈 자체는 몰라도 분위기로 절반은 맞히는 타입. 감은 좋은데 어휘가 부족합니다. 단톡 정독 2주면 고인물 진입 가능.",
+        "en": "You guess half of it from vibes alone. Great instincts, limited vocabulary. Two weeks of group-chat immersion and you'll level up."
+      }
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": { "ko": "밈 입문반", "en": "Meme Beginner Class" },
+      "desc": {
+        "ko": "검색창이 절친인 단계. 대화 중간에 몰래 검색하는 그 3초, 다들 알고 있지만 귀엽게 봐주는 중입니다.",
+        "en": "The search bar is your best friend. Everyone notices that sneaky 3-second lookup mid-conversation — they just find it endearing."
+      }
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": { "ko": "청정구역 주민", "en": "Meme-Free Zone Resident" },
+      "desc": {
+        "ko": "밈 없이도 잘 사는 디지털 청정 지역 거주자. 오히려 레어 캐릭터라 신비주의 매력이 생깁니다. 단, 단톡 해석은 친구에게 맡기세요.",
+        "en": "You live happily in a meme-free zone. Honestly, that makes you the rare mysterious type. Just outsource your group-chat interpretation."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "'읽씹'의 정확한 뜻은?", "en": "What does it mean to 'leave someone on read'?" },
+      "options": [
+        { "label": { "ko": "읽고 나서 답장하지 않는 것", "en": "Reading a message and not replying" }, "correct": true },
+        { "label": { "ko": "읽지 않고 알림만 지우는 것", "en": "Clearing the notification without reading" } },
+        { "label": { "ko": "읽자마자 전화를 거는 것", "en": "Calling immediately after reading" } },
+        { "label": { "ko": "메시지를 몰래 캡처하는 것", "en": "Secretly screenshotting the message" } }
+      ],
+      "explanation": {
+        "ko": "안 읽고 버티는 건 '안읽씹'. 읽씹과는 급이 다른 고급 기술입니다.",
+        "en": "Not opening it at all is a whole different technique — a more advanced one."
+      }
+    },
+    {
+      "prompt": { "ko": "새벽 2시에 도착한 \"자니?\"의 통상적인 해석은?", "en": "A \"you up?\" text arrives at 2 AM. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "잠들었는지 진심으로 궁금함", "en": "Genuine curiosity about your sleep" } },
+        { "label": { "ko": "전 연인의 재접근 시그널", "en": "An ex attempting re-entry" }, "correct": true },
+        { "label": { "ko": "수면 패턴 연구 설문", "en": "A sleep-pattern research survey" } },
+        { "label": { "ko": "잘못 보낸 메시지", "en": "A misdirected message" } }
+      ],
+      "explanation": {
+        "ko": "시간대가 모든 걸 말해줍니다. 낮 2시였다면 얘기가 달랐어요.",
+        "en": "The timestamp says everything. At 2 PM, this would be a different question."
+      }
+    },
+    {
+      "prompt": { "ko": "'어장관리'를 가장 정확히 설명한 것은?", "en": "What best describes 'keeping someone in the fish tank' (breadcrumbing)?" },
+      "options": [
+        { "label": { "ko": "여러 명에게 애매한 호감을 흘리며 유지시키는 것", "en": "Feeding vague interest to several people to keep them around" }, "correct": true },
+        { "label": { "ko": "연락처를 주기적으로 정리하는 것", "en": "Regularly cleaning up your contact list" } },
+        { "label": { "ko": "물생활 취미", "en": "An aquarium hobby" } },
+        { "label": { "ko": "한 명에게만 집중하는 연애", "en": "Dating one person exclusively" } }
+      ],
+      "explanation": {
+        "ko": "어항 속 물고기는 본인이 물고기인 걸 모른다는 게 핵심 포인트.",
+        "en": "The key detail: the fish never knows it's in the tank."
+      }
+    },
+    {
+      "prompt": { "ko": "'환승이별'이 성립하는 조건은?", "en": "What makes a breakup a 'transfer breakup' (monkey-branching)?" },
+      "options": [
+        { "label": { "ko": "이별 후 1년 뒤 새 연애를 시작함", "en": "Starting a new relationship a year later" } },
+        { "label": { "ko": "헤어지기 전에 이미 다음 사람이 준비되어 있음", "en": "Having the next person lined up before breaking up" }, "correct": true },
+        { "label": { "ko": "대중교통에서 이별을 통보함", "en": "Breaking up on public transit" } },
+        { "label": { "ko": "친구의 소개로 새로 만남", "en": "Meeting someone new through a friend" } }
+      ],
+      "explanation": {
+        "ko": "환승은 갈아탈 차가 이미 플랫폼에 들어와 있어야 성립합니다.",
+        "en": "It's only a transfer if the next train is already at the platform."
+      }
+    },
+    {
+      "prompt": { "ko": "\"우리 무슨 사이야?\"에 \"좋은 사이지~\"라는 답. 밈 사전 기준 현재 상태는?", "en": "You ask \"what are we?\" and get \"we're good together~\". Per the meme dictionary, your status is:" },
+      "options": [
+        { "label": { "ko": "공식 연인", "en": "Officially dating" } },
+        { "label": { "ko": "애매모호 상태 (썸도 연애도 아님)", "en": "Situationship — not quite anything" }, "correct": true },
+        { "label": { "ko": "비즈니스 파트너", "en": "Business partners" } },
+        { "label": { "ko": "절교 직전", "en": "About to cut ties" } }
+      ],
+      "explanation": {
+        "ko": "정의를 회피하는 답변은, 그 자체가 이미 정의입니다.",
+        "en": "An answer that dodges the definition *is* the definition."
+      }
+    },
+    {
+      "prompt": { "ko": "'밀당'의 핵심 기술을 가장 정확히 설명한 것은?", "en": "What's the core technique of 'push-and-pull'?" },
+      "options": [
+        { "label": { "ko": "관심을 줬다 뺐다 하며 완급을 조절하는 것", "en": "Alternating attention on and off to control the pace" }, "correct": true },
+        { "label": { "ko": "헬스장에서 밀고 당기는 운동", "en": "Push and pull day at the gym" } },
+        { "label": { "ko": "문을 밀지 당길지 헷갈리는 것", "en": "Being confused by push/pull door signs" } },
+        { "label": { "ko": "가격을 깎는 흥정 기술", "en": "A price-haggling technique" } }
+      ],
+      "explanation": {
+        "ko": "과하면 밀당이 아니라 그냥 '연락 안 되는 사람'이 됩니다. 용량 용법 준수.",
+        "en": "Overdo it and you're not mysterious — you're just unreachable. Follow the dosage."
+      }
+    },
+    {
+      "prompt": { "ko": "'자만추'의 뜻은?", "en": "What does 'jamanchu' (자만추) mean?" },
+      "options": [
+        { "label": { "ko": "자연스러운 만남 추구", "en": "Preferring to meet someone naturally" }, "correct": true },
+        { "label": { "ko": "자기 만족 추구", "en": "Pursuing self-satisfaction" } },
+        { "label": { "ko": "자전거 동호회 만남 추천", "en": "Recommending cycling-club meetups" } },
+        { "label": { "ko": "자정 이후 만남 추진", "en": "Only meeting after midnight" } }
+      ],
+      "explanation": {
+        "ko": "반대편에는 '인만추'(인위적인 만남 추구)가 있습니다. 운명파 vs 소개팅파의 세계관 차이.",
+        "en": "Its counterpart is 'inmanchu' — actively engineered meetups. Team Fate vs Team Blind Date."
+      }
+    },
+    {
+      "prompt": { "ko": "'금사빠'는 어떤 사람일까?", "en": "What kind of person is a 'geumsappa' (금사빠)?" },
+      "options": [
+        { "label": { "ko": "금방 사랑에 빠지는 사람", "en": "Someone who falls in love instantly" }, "correct": true },
+        { "label": { "ko": "금요일에만 연애하는 사람", "en": "Someone who only dates on Fridays" } },
+        { "label": { "ko": "금전적 조건을 먼저 보는 사람", "en": "Someone who checks finances first" } },
+        { "label": { "ko": "금붕어처럼 3초 만에 잊는 사람", "en": "Someone with a goldfish memory" } }
+      ],
+      "explanation": {
+        "ko": "장점: 설렘 게이지 상시 만충. 단점: 쿨다운도 광속이라 본인도 못 따라감.",
+        "en": "Pro: the butterflies gauge is always full. Con: the cooldown is just as fast — even they can't keep up."
+      }
+    },
+    {
+      "prompt": { "ko": "'고백공격'이 '공격'으로 분류되는 이유는?", "en": "Why is a 'confession attack' classified as an attack?" },
+      "options": [
+        { "label": { "ko": "준비 안 된 상대에게 기습 고백해 관계를 얼려버리기 때문", "en": "It ambushes an unprepared person and freezes the relationship" }, "correct": true },
+        { "label": { "ko": "고백을 아주 큰 소리로 하기 때문", "en": "Because it's shouted very loudly" } },
+        { "label": { "ko": "여러 명에게 동시에 고백하기 때문", "en": "Because it targets several people at once" } },
+        { "label": { "ko": "편지 대신 문자로 고백하기 때문", "en": "Because it's sent by text instead of letter" } }
+      ],
+      "explanation": {
+        "ko": "타이밍 계산이 빠진 고백은 사랑이 아니라 기습입니다. 선전포고라도 하고 하세요.",
+        "en": "A confession without timing isn't romance — it's an ambush. At least declare war first."
+      }
+    },
+    {
+      "prompt": { "ko": "썸 상대의 답장 텀이 길어지고, 이모티콘이 사라지고, 답이 짧아졌다. 이 3종 세트의 통상적 해석은?", "en": "Their replies get slower, the emojis vanish, and answers get shorter. The standard reading of this combo?" },
+      "options": [
+        { "label": { "ko": "마음이 식는 중이라는 시그널", "en": "A cooling-off signal" }, "correct": true },
+        { "label": { "ko": "휴대폰 배터리 절약 모드", "en": "Phone battery-saver mode" } },
+        { "label": { "ko": "이모티콘 유료화에 대한 항의", "en": "A protest against paid emojis" } },
+        { "label": { "ko": "타자 실력이 퇴화하는 중", "en": "Their typing skills are degrading" } }
+      ],
+      "explanation": {
+        "ko": "텀·온도·길이가 동시에 줄면 대체로 겨울이 오고 있는 겁니다. 패딩 챙기세요.",
+        "en": "When frequency, warmth, and length all drop together, winter is coming. Pack a coat."
+      }
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 밈 상식 시험입니다. 점수가 낮아도 연애 능력과는 무관해요(진짜로).",
+    "en": "A just-for-fun meme literacy exam. A low score says nothing about your actual love life (really)."
+  }
+}

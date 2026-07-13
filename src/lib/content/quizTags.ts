@@ -1,5 +1,6 @@
 import type { SnackQuizDefinition } from "@/components/quiz/types";
 import type { PercentageQuizDefinition } from "@/components/quiz/percentageTypes";
+import type { TriviaQuizDefinition } from "@/components/quiz/triviaTypes";
 import { koQuizCatalogForHome } from "@/content/quiz";
 import { koTagFromLabel, koTagBySlug } from "./koTagRegistry";
 import { menuGroupOf, type KoMenuGroup } from "./homeRail";
@@ -14,7 +15,7 @@ export type KoQuizTag = {
   count: number;
 };
 
-type AnyQuizDef = SnackQuizDefinition | PercentageQuizDefinition;
+type AnyQuizDef = SnackQuizDefinition | PercentageQuizDefinition | TriviaQuizDefinition;
 
 /**
  * 퀴즈 카탈로그에서 **캐노니컬 태그**(레지스트리 기준)를 집계한다.

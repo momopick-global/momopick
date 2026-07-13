@@ -113,7 +113,11 @@
         "ko": "지금 당신은 하고 싶은 것도, 표현하고 싶은 것도 많은 상태예요. 에너지가 밖으로 향해 있어서 새로운 시작이나 고백처럼 용기가 필요한 일에 유리한 타이밍이에요. 다만 뜨거운 만큼 서두르기 쉬우니, 중요한 결정은 하루만 재워두고 보는 것도 좋아요.",
         "en": "You are full of energy and ready to express yourself. A good moment for bold moves — just sleep on the big decisions."
       },
-      "image": "/images/quiz/color-mood-onepick/result-1.webp"
+      "image": "/images/quiz/color-mood-onepick/result-1.webp",
+      "compat": {
+        "best": "yellow",
+        "worst": "blue"
+      }
     },
     "blue": {
       "emoji": "💙",
@@ -130,7 +134,11 @@
         "ko": "지금은 밖으로 나서기보다 안을 정돈하고 싶은 마음이 커요. 감정을 한 발 떨어져서 바라보는 힘이 있어, 복잡했던 문제의 실마리를 찾기 좋은 때예요. 혼자만의 시간을 조금 확보해 두면 마음이 훨씬 가벼워질 거예요.",
         "en": "You want to settle your inner world rather than push outward. A good time to untangle what felt complicated."
       },
-      "image": "/images/quiz/color-mood-onepick/result-2.webp"
+      "image": "/images/quiz/color-mood-onepick/result-2.webp",
+      "compat": {
+        "best": "green",
+        "worst": "red"
+      }
     },
     "yellow": {
       "emoji": "💛",
@@ -147,7 +155,11 @@
         "ko": "지금 당신은 무거운 것보다 가볍고 재미있는 걸 원하고 있어요. 사람들과 어울리거나 새로운 걸 시도할 때 특히 반짝이는 타이밍이에요. 너무 진지하게 굴 필요 없어요 — 지금의 가벼움이 오히려 좋은 인연과 기회를 불러와요.",
         "en": "You want lightness and play. A sparkling time to meet people and try new things."
       },
-      "image": "/images/quiz/color-mood-onepick/result-3.webp"
+      "image": "/images/quiz/color-mood-onepick/result-3.webp",
+      "compat": {
+        "best": "red",
+        "worst": "blue"
+      }
     },
     "green": {
       "emoji": "💚",
@@ -164,7 +176,11 @@
         "ko": "지금은 자극보다 안정과 편안함을 원하는 마음이 커요. 무리하지 않고 지금 가진 것을 돌보는 데서 만족을 느끼는 때예요. 관계에서도 급하게 밀어붙이기보다, 천천히 신뢰를 쌓아가는 방식이 당신에게 가장 잘 맞아요.",
         "en": "You value stability over stimulation. Satisfaction comes from tending what you already have."
       },
-      "image": "/images/quiz/color-mood-onepick/result-4.webp"
+      "image": "/images/quiz/color-mood-onepick/result-4.webp",
+      "compat": {
+        "best": "blue",
+        "worst": "red"
+      }
     }
   },
   "blend": {

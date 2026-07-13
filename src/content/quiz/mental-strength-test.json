@@ -124,6 +124,10 @@
           "en": "You recover quickly from stress and setbacks"
         },
         "image": "/images/quiz/mental-strength-test/result-1.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "C"
       }
     },
     "B": {
@@ -152,6 +156,10 @@
           "en": "You struggle but bounce back"
         },
         "image": "/images/quiz/mental-strength-test/result-2.webp"
+      },
+      "compat": {
+        "best": "C",
+        "worst": "A"
       }
     },
     "C": {
@@ -180,6 +188,10 @@
           "en": "You are sensitive to stress and stimuli"
         },
         "image": "/images/quiz/mental-strength-test/result-3.webp"
+      },
+      "compat": {
+        "best": "B",
+        "worst": "A"
       }
     }
   },

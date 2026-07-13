@@ -1,0 +1,153 @@
+{
+  "id": "breakup-resilience-test",
+  "slug": "breakup-resilience-test",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "이별", "en": "breakup" },
+    { "ko": "회복탄력성", "en": "resilience" },
+    { "ko": "심리", "en": "psychology" }
+  ],
+  "title": { "ko": "이별 회복탄력성 테스트", "en": "Breakup Resilience Test" },
+  "subtitle": { "ko": "무너지는 건 순간, 회복은 능력", "en": "Falling apart takes a moment. Recovery is a skill" },
+  "images": {
+    "thumbnail": "/images/quiz/breakup-resilience-test/thumb.webp",
+    "og": "/images/quiz/breakup-resilience-test/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "이별 후 첫 주말부터 다음 연애를 대하는 마음까지, 나의 회복 스타일과 탄력성을 %로 확인하는 테스트",
+      "en": "From the first weekend after a breakup to how you face the next chapter — measure your recovery style and resilience"
+    },
+    "keywords": [
+      { "ko": "이별 테스트", "en": "breakup test" },
+      { "ko": "회복탄력성", "en": "resilience" },
+      { "ko": "이별 극복", "en": "moving on" }
+    ],
+    "ogTitle": { "ko": "이별 회복탄력성 테스트", "en": "Breakup Resilience Test" },
+    "ogDescription": {
+      "ko": "나는 오뚝이형일까, 장기전형일까? 내 회복 스타일 확인하기",
+      "en": "Are you a bounce-back type or a slow healer? Find your recovery style"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "🌱 회복 체크", "en": "🌱 Recovery check" },
+    "image": "/images/quiz/breakup-resilience-test/thumb.webp",
+    "priority": 82
+  },
+  "analytics": {
+    "eventKey": "breakup_resilience_test",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["mental-strength-test", "self-esteem-level", "true-self-alone"],
+  "resultDisplay": "percent",
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 39,
+      "title": { "ko": "회복 장기전형 — 천천히, 그러나 확실하게", "en": "The Long-Haul Healer — Slowly but Surely" },
+      "desc": {
+        "ko": "마음의 재건축에 시간이 걸리는 대신, 한 번 다 지으면 튼튼한 타입. 깊이 사랑한 만큼 깊이 아픈 것은 고장이 아니라 정상 작동이며, 회복 속도는 사랑의 크기와 비례할 뿐 능력 부족이 아닙니다. 오늘은 잘 먹고 잘 자는 것 하나만 해내도 충분한 하루예요. 그거면 이미 회복 중입니다.",
+        "en": "Rebuilding takes you time — but what you rebuild stands strong. Hurting deeply after loving deeply isn't a malfunction, it's proof everything works; your pace reflects the size of the love, not a lack of ability. Today, eating well and sleeping well counts as a full victory. Do that, and you're already healing."
+      }
+    },
+    {
+      "min": 40,
+      "max": 69,
+      "title": { "ko": "리커버리 중급자 — 흔들려도 복구됨", "en": "Intermediate Recovery — Shaken, Not Broken" },
+      "desc": {
+        "ko": "새벽엔 흔들리고 아침엔 복구되는, 인간적인 진폭의 소유자. 감정을 억누르지 않으면서도 일상을 지켜내는 이 균형이 사실 회복탄력성의 정석에 가장 가깝습니다. 밤에 슬픈 노래를 듣다가도 다음 날 약속엔 제시간에 나가는 당신, 그게 바로 회복이 진행 중이라는 증거예요.",
+        "en": "You wobble at 2 AM and reboot by morning — a very human amplitude. Holding onto daily life without suppressing your feelings is, in fact, textbook resilience. You play sad songs at night and still show up on time the next day; that gap between the two is exactly what recovery in progress looks like."
+      }
+    },
+    {
+      "min": 70,
+      "max": 100,
+      "title": { "ko": "강철 회복탄력 — 오뚝이 그 자체", "en": "Steel Resilience — The Human Roly-Poly" },
+      "desc": {
+        "ko": "넘어진 자리에서 스트레칭까지 하고 일어나는 회복계의 오뚝이. 감정을 부정하는 게 아니라 소화하는 속도가 빠른 것이라, 다음 관계에서도 건강한 기반이 되어줍니다. 다만 강한 사람에게도 조용히 무너지는 밤은 오니까, 그런 날엔 씩씩한 척 대신 스스로에게도 위로 한 잔 건네주세요.",
+        "en": "You don't just get back up — you stretch on the way. This isn't denial; you simply digest emotions fast, and that becomes solid ground for whatever comes next. Still, even the strongest have quiet nights when things crack a little — on those nights, skip the brave face and pour yourself some of the kindness you give everyone else."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "이별 직후 첫 주말, 나는?", "en": "The first weekend after the breakup, you..." },
+      "options": [
+        { "label": { "ko": "몸을 움직임. 청소든 산책이든 일단 밖으로", "en": "Get moving — cleaning, walking, anything that isn't sitting still" }, "score": 3 },
+        { "label": { "ko": "친구 불러서 수다로 털어냄", "en": "Call a friend and talk it all out" }, "score": 2 },
+        { "label": { "ko": "이불 속에서 슬픈 노래 플레이리스트 정주행", "en": "Marathon the sad-songs playlist from under a blanket" }, "score": 1 },
+        { "label": { "ko": "배달앱 VIP 등극, 최장 이동 거리는 현관까지", "en": "Achieve VIP status on delivery apps; longest trip taken: the front door" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "헤어진 상대의 SNS는 어떻게 처리했어?", "en": "How did you handle your ex's social media?" },
+      "options": [
+        { "label": { "ko": "조용히 언팔로우. 내 타임라인은 내가 지킴", "en": "Quiet unfollow. My timeline, my sanctuary" }, "score": 3 },
+        { "label": { "ko": "차단은 안 했지만 들어가지 않음", "en": "Not blocked, just never visited" }, "score": 2 },
+        { "label": { "ko": "가끔 들어가서 확인하고 매번 후회함", "en": "Occasional check-ins, followed by instant regret" }, "score": 1 },
+        { "label": { "ko": "부계정 만들어서 잠입 관찰 수사 중", "en": "Created a burner account for undercover surveillance" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "둘이 자주 가던 장소를 지나갈 때 나는?", "en": "Passing by a place you two used to go, you..." },
+      "options": [
+        { "label": { "ko": "잠깐 생각나지만 그러려니 하고 지나감", "en": "Feel a brief flicker, nod at it, keep walking" }, "score": 3 },
+        { "label": { "ko": "마음이 출렁하지만 가던 길 감", "en": "The heart sways, but the feet stay on course" }, "score": 2 },
+        { "label": { "ko": "일부러 먼 길로 돌아감", "en": "Take the long way around, on purpose" }, "score": 1 },
+        { "label": { "ko": "그 동네를 지도에서 삭제, 반경 3km 출입금지 구역 선포", "en": "Deleted the neighborhood from my map and declared a 3km exclusion zone" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "친구들이 위로해줄 때 나는?", "en": "When friends try to comfort you, you..." },
+      "options": [
+        { "label": { "ko": "고맙게 받고, 힘든 건 힘들다고 솔직히 말함", "en": "Accept it gratefully and admit honestly when it hurts" }, "score": 3 },
+        { "label": { "ko": "듣다 보면 조금씩 나아짐", "en": "Feel a little lighter the longer they talk" }, "score": 2 },
+        { "label": { "ko": "괜찮은 척하느라 오히려 더 지침", "en": "Exhaust myself performing 'I'm fine'" }, "score": 1 },
+        { "label": { "ko": "'나 진짜 괜찮아' 40번 말한 뒤 노래방 3번째 곡에서 오열", "en": "Say 'I'm totally fine' forty times, then sob during song three at karaoke" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "이별 후 새로운 취미나 루틴은?", "en": "New hobbies or routines since the breakup?" },
+      "options": [
+        { "label": { "ko": "운동이든 배움이든 하나는 시작했음", "en": "Started at least one thing — a workout, a class, anything" }, "score": 3 },
+        { "label": { "ko": "미뤄둔 하고 싶은 일 리스트를 꺼내봄", "en": "Dug out my long-postponed 'someday' list" }, "score": 2 },
+        { "label": { "ko": "생각은 있는데 몸이 아직 안 움직임", "en": "The plans exist; the body hasn't signed the contract" }, "score": 1 },
+        { "label": { "ko": "신규 취미: 전 애인 MBTI 심층 논문 집필", "en": "New hobby: writing a dissertation on my ex's MBTI" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "문득 재회 생각이 들 때 나는?", "en": "When the thought 'maybe we should get back together' hits, you..." },
+      "options": [
+        { "label": { "ko": "헤어진 이유를 다시 떠올리고 조용히 접음", "en": "Replay the reasons it ended, and quietly fold the thought away" }, "score": 3 },
+        { "label": { "ko": "친구에게 말해서 현실 점검을 받음", "en": "Tell a friend and request an emergency reality check" }, "score": 2 },
+        { "label": { "ko": "프로필 사진을 하염없이 들여다봄", "en": "Stare at their profile picture indefinitely" }, "score": 1 },
+        { "label": { "ko": "새벽 2시에 '자니?' 초안 작성, 전송 직전 폰을 침대 반대편으로 투척", "en": "Draft a 2 AM 'you up?' text, then hurl the phone across the bed at the last second" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "다음 연애에 대한 지금 마음은?", "en": "How do you feel about your next relationship right now?" },
+      "options": [
+        { "label": { "ko": "인연이 오면 반갑게, 안 와도 내 삶은 그대로 좋음", "en": "If love comes, welcome; if not, my life is good as is" }, "score": 3 },
+        { "label": { "ko": "언젠가는. 지금은 나부터 챙기는 중", "en": "Someday — right now I'm taking care of me first" }, "score": 2 },
+        { "label": { "ko": "무섭지만 솔직히 외롭기도 함", "en": "Scared of it, but honestly a little lonely too" }, "score": 1 },
+        { "label": { "ko": "연애는 사치. 이제 내 반려는 화분 17개뿐", "en": "Romance is a luxury. My partners now are seventeen houseplants" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "혼자의 시간, 요즘 어떻게 쓰고 있어?", "en": "Your alone time these days — how is it spent?" },
+      "options": [
+        { "label": { "ko": "미뤄둔 나를 돌봄. 잠, 밥, 운동부터 다시 세팅", "en": "Tending to the self I'd postponed — sleep, meals, movement, reset" }, "score": 3 },
+        { "label": { "ko": "보고 싶던 것들 몰아 보면서 재충전", "en": "Recharging through a backlog of shows and books" }, "score": 2 },
+        { "label": { "ko": "혼자 있으면 자꾸 생각나서 일정을 꽉 채움", "en": "Booking every hour solid so the thoughts can't get in" }, "score": 1 },
+        { "label": { "ko": "새벽 3시 감성 스토리 업로드 후 아침 7시 긴급 삭제", "en": "Posting a 3 AM feelings story, emergency-deleting it by 7" }, "score": 0 }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미와 자기이해를 위한 테스트입니다. 회복의 속도는 사람마다 다르고, 느린 회복도 회복입니다.",
+    "en": "For fun and self-reflection. Everyone heals at their own pace — slow recovery is still recovery."
+  }
+}

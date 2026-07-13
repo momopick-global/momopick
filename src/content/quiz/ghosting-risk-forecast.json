@@ -1,0 +1,153 @@
+{
+  "id": "ghosting-risk-forecast",
+  "slug": "ghosting-risk-forecast",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "잠수", "en": "ghosting" },
+    { "ko": "연락", "en": "texting" },
+    { "ko": "연애", "en": "love" }
+  ],
+  "title": { "ko": "잠수 위험도 예보", "en": "Ghosting Risk Forecast" },
+  "subtitle": { "ko": "오늘의 연락 두절 확률을 알려드립니다", "en": "Today's forecast: your probability of going dark" },
+  "images": {
+    "thumbnail": "/images/quiz/ghosting-risk-forecast/thumb.webp",
+    "og": "/images/quiz/ghosting-risk-forecast/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "갈등 회피부터 999+ 안읽음까지, 내가 잠수 타는 사람일 확률을 일기예보처럼 알려주는 테스트",
+      "en": "From conflict-dodging to 999+ unread badges — a weather-forecast-style test of how likely you are to ghost"
+    },
+    "keywords": [
+      { "ko": "잠수 테스트", "en": "ghosting test" },
+      { "ko": "연락 두절", "en": "going dark" },
+      { "ko": "회피형", "en": "avoidant style" }
+    ],
+    "ogTitle": { "ko": "잠수 위험도 예보", "en": "Ghosting Risk Forecast" },
+    "ogDescription": {
+      "ko": "쾌청? 잠수 주의보? 태풍 경보? 내 연락 두절 확률 지금 확인",
+      "en": "Clear skies, ghosting advisory, or full storm warning? Check your forecast now"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "🌊 잠수 예보", "en": "🌊 Ghosting forecast" },
+    "image": "/images/quiz/ghosting-risk-forecast/thumb.webp",
+    "priority": 87
+  },
+  "analytics": {
+    "eventKey": "ghosting_risk_forecast",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["why-cant-you-text-first", "kakao-reply-style", "love-pattern-destroying-habit"],
+  "resultDisplay": "percent",
+  "resultRanges": [
+    {
+      "min": 0,
+      "max": 39,
+      "title": { "ko": "쾌청 — 연락 두절 확률 낮음", "en": "Clear Skies — Low Ghosting Probability" },
+      "desc": {
+        "ko": "오늘도 통신 상태 양호, 전국이 맑겠습니다. 부담스러워도 일단 답하는 타입이라 주변 사람들이 관계에서 불안해할 일이 거의 없는 안정 기류입니다. 오늘도 '자기 전에 답장 정리'가 루틴인 사람, 바로 당신입니다.",
+        "en": "Signal strength: excellent, with clear skies nationwide. You reply even when it feels heavy, so the people around you rarely wonder where they stand — a genuinely stable weather system. You're the person whose nightly routine includes 'clear the reply backlog before bed.'"
+      }
+    },
+    {
+      "min": 40,
+      "max": 69,
+      "title": { "ko": "구름 조금 — 간헐적 잠수 주의보", "en": "Partly Cloudy — Intermittent Ghosting Advisory" },
+      "desc": {
+        "ko": "대체로 맑으나 국지적으로 잠수 소나기가 내리겠습니다. 잠수 의도는 없는데 에너지가 떨어지면 답장부터 밀리는 유형으로, '나중에 답해야지'가 최대 리스크 요인입니다. 오늘도 밀린 답장 하나가 사흘째 마음 한구석에서 비구름으로 떠 있죠.",
+        "en": "Mostly clear, with scattered ghosting showers in localized areas. You never mean to vanish — replies just pile up when your battery runs low, and 'I'll answer later' is your single biggest risk factor. Somewhere in your mind, one overdue reply has been hanging like a rain cloud for three days now."
+      }
+    },
+    {
+      "min": 70,
+      "max": 100,
+      "title": { "ko": "태풍 경보 — 지인들 실종신고 준비 중", "en": "Storm Warning — Friends Drafting a Missing-Person Report" },
+      "desc": {
+        "ko": "초대형 잠수 태풍이 북상 중이며, 지인들은 이미 수색대를 꾸렸습니다. 부담을 느끼면 회피부터 나가는 패턴인데, '지금은 여유가 없어' 한 줄만 미리 보내도 태풍이 열대저압부로 약해집니다. 오늘도 999+ 알림 배지를 배경화면처럼 여기며 폰을 뒤집어놓고 있진 않나요.",
+        "en": "A super-typhoon of silence is moving up the coast, and your friends have already assembled a search party. Your pattern is avoidance-first under pressure — but one advance text like 'I need some quiet time' downgrades the typhoon to a mild depression. Be honest: your 999+ badge is basically wallpaper, and your phone is face-down right now."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "연락이 부담스럽게 느껴질 때 나는?", "en": "When replying starts to feel like a burden, you..." },
+      "options": [
+        { "label": { "ko": "폰이 무서워서 서랍에 넣고 봉인함", "en": "Seal the phone in a drawer like a cursed artifact" }, "score": 3 },
+        { "label": { "ko": "'나중에 답해야지' 하고 그대로 잊음", "en": "Think 'I'll reply later' and promptly forget" }, "score": 2 },
+        { "label": { "ko": "짧게라도 일단 답하고 나중에 제대로 함", "en": "Send something short now, follow up properly later" }, "score": 1 },
+        { "label": { "ko": "부담돼도 그 자리에서 답함", "en": "Reply on the spot, burden or not" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "갈등이 생겼다. 첫 행동은?", "en": "A conflict breaks out. Your first move?" },
+      "options": [
+        { "label": { "ko": "일단 잠수. 물속이 세상에서 제일 조용함", "en": "Dive immediately. It's so peaceful underwater" }, "score": 3 },
+        { "label": { "ko": "상대가 먼저 연락해주기를 기다림", "en": "Wait for them to reach out first" }, "score": 2 },
+        { "label": { "ko": "하루 정도 마음 정리하고 얘기 꺼냄", "en": "Take a day to sort my head, then bring it up" }, "score": 1 },
+        { "label": { "ko": "바로 대화를 시도함", "en": "Try to talk it out right away" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "답장을 미루다가 타이밍을 놓쳤다. 나는?", "en": "You put off a reply and now it feels too late. You..." },
+      "options": [
+        { "label": { "ko": "답장은 3일 묵혀야 맛이 든다는 신념으로 숙성 지속", "en": "Keep aging it — replies need three days to develop flavor" }, "score": 3 },
+        { "label": { "ko": "너무 늦은 것 같아 더 미룸 (악순환 개장)", "en": "It's so late now that I delay it more (the cycle begins)" }, "score": 2 },
+        { "label": { "ko": "다음 날 아침 사과와 함께 답장", "en": "Reply next morning with an apology attached" }, "score": 1 },
+        { "label": { "ko": "'늦었지만' 붙이고 지금이라도 보냄", "en": "Send it now with a 'sorry this is late'" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "약속 전날 밤, 솔직한 내 기분은?", "en": "The night before plans, your honest mood is..." },
+      "options": [
+        { "label": { "ko": "취소 문자 초안 3종을 써놓고 저장해둠", "en": "Three cancellation-text drafts written and saved, just in case" }, "score": 3 },
+        { "label": { "ko": "'내일 비 안 오나' 하고 하늘부터 확인함", "en": "Checking the sky, hoping for cancellation-grade rain" }, "score": 2 },
+        { "label": { "ko": "좋긴 한데 살짝 귀찮음", "en": "Looking forward to it, mildly can't-be-bothered" }, "score": 1 },
+        { "label": { "ko": "설렘. 내일 뭐 먹을지부터 검색함", "en": "Excited — already googling what we should eat" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "관계를 정리해야 할 때 나의 방식은?", "en": "When a relationship needs to end, your method is..." },
+      "options": [
+        { "label": { "ko": "증발. 목격담만 남는 도시전설이 됨", "en": "Evaporate. Become an urban legend known only through sightings" }, "score": 3 },
+        { "label": { "ko": "답장 텀을 점점 늘리며 페이드아웃", "en": "Stretch the reply gaps until I fade to black" }, "score": 2 },
+        { "label": { "ko": "통화나 긴 메시지로 이유를 설명함", "en": "Explain properly over a call or a long message" }, "score": 1 },
+        { "label": { "ko": "만나서 직접 얘기함", "en": "Say it face to face" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "지금 내 메신저 안읽음 숫자 상태는?", "en": "The current state of your unread message count?" },
+      "options": [
+        { "label": { "ko": "999+. 이건 숫자가 아니라 문화유산임", "en": "999+. At this point it's not a number, it's heritage" }, "score": 3 },
+        { "label": { "ko": "세 자리. 배지 보는 걸 포기한 지 오래", "en": "Triple digits — I stopped looking at the badge long ago" }, "score": 2 },
+        { "label": { "ko": "한 자리 수는 유지함", "en": "Kept under ten, always" }, "score": 1 },
+        { "label": { "ko": "0. 안읽음이 있으면 잠이 안 옴", "en": "Zero. Unread badges keep me up at night" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "혼자만의 시간이 필요할 때, 통보 방식은?", "en": "You need alone time. How do you announce it?" },
+      "options": [
+        { "label": { "ko": "통보 없음. 프로필 사진만 조용히 바다 사진으로 바뀜", "en": "No announcement. My profile picture just quietly becomes the ocean" }, "score": 3 },
+        { "label": { "ko": "말없이 조용해지고 알아서 눈치채길 기대함", "en": "Go silent and hope everyone takes the hint" }, "score": 2 },
+        { "label": { "ko": "'요즘 좀 바빠' 정도로 짧게 알림", "en": "A brief 'kinda busy these days' heads-up" }, "score": 1 },
+        { "label": { "ko": "'며칠 조용히 있을게' 미리 말해둠", "en": "Tell people in advance: 'I'll be quiet for a few days'" }, "score": 0 }
+      ]
+    },
+    {
+      "prompt": { "ko": "미안한 마음, 어떻게 표현해?", "en": "How do you express that you're sorry?" },
+      "options": [
+        { "label": { "ko": "미안할수록 더 깊이 잠수함. 죄송함의 수압", "en": "The sorrier I am, the deeper I dive. Guilt has water pressure" }, "score": 3 },
+        { "label": { "ko": "사과 대신 평소보다 잘해주는 걸로 퉁침", "en": "Skip the apology, act extra nice and call it even" }, "score": 2 },
+        { "label": { "ko": "사과하고 맛있는 것도 사줌", "en": "Apologize and buy them something delicious" }, "score": 1 },
+        { "label": { "ko": "뭐가 미안한지 말로 정확히 사과함", "en": "Say exactly what I'm sorry for, out loud" }, "score": 0 }
+      ]
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 예보입니다. 실제 잠수 전에는 '나중에 얘기하자' 한 줄이면 태풍도 지나갑니다.",
+    "en": "A just-for-fun forecast. One line — 'let's talk later' — turns any typhoon into a passing shower."
+  }
+}

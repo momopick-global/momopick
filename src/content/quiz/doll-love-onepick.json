@@ -106,7 +106,11 @@
         "ko": "지금 당신은 포근하고 안정된 사랑을 바라고 있는지도 몰라요. 이런 타입은 곁에 있다는 편안함과 깊은 친밀감에서 사랑을 느끼는 경향이 있어요. 든든한 관계가 큰 힘이 되죠. 그 안정 위에 가끔 설렘을 더하면 사랑이 더 풍성해져요.",
         "en": ""
       },
-      "image": "/images/quiz/doll-love-onepick/result-1.webp"
+      "image": "/images/quiz/doll-love-onepick/result-1.webp",
+      "compat": {
+        "best": "puppy",
+        "worst": "bunny"
+      }
     },
     "bunny": {
       "emoji": "🐰",
@@ -123,7 +127,11 @@
         "ko": "지금 당신은 두근거리고 생기 넘치는 사랑을 바라고 있는지도 몰라요. 이런 타입은 설렘과 열정에서 사랑을 크게 느끼는 경향이 있어요. 함께 반짝이는 순간이 소중하죠. 그 에너지에 잔잔한 신뢰가 더해지면 오래도록 설렐 수 있어요.",
         "en": ""
       },
-      "image": "/images/quiz/doll-love-onepick/result-2.webp"
+      "image": "/images/quiz/doll-love-onepick/result-2.webp",
+      "compat": {
+        "best": "cat",
+        "worst": "bear"
+      }
     },
     "puppy": {
       "emoji": "🐶",
@@ -140,7 +148,11 @@
         "ko": "지금 당신은 서로 곁을 지켜주는 다정한 사랑을 바라고 있는지도 몰라요. 이런 타입은 함께하는 시간과 변함없는 애정에서 사랑을 느끼는 경향이 있어요. 든든한 동반자 같은 관계를 그리죠. 그 헌신 속에서 나를 챙기는 것도 잊지 마세요.",
         "en": ""
       },
-      "image": "/images/quiz/doll-love-onepick/result-3.webp"
+      "image": "/images/quiz/doll-love-onepick/result-3.webp",
+      "compat": {
+        "best": "bear",
+        "worst": "cat"
+      }
     },
     "cat": {
       "emoji": "🐱",
@@ -157,7 +169,11 @@
         "ko": "지금 당신은 서로의 자유를 존중하는 사랑을 바라고 있는지도 몰라요. 이런 타입은 적당한 거리와 각자의 시간이 있는 관계에서 편안함을 느끼는 경향이 있어요. 붙어 있지 않아도 통하는 사이를 좋아하죠. 그 여백 속에 가끔의 다가감이 더해지면 사랑이 더 깊어져요.",
         "en": ""
       },
-      "image": "/images/quiz/doll-love-onepick/result-4.webp"
+      "image": "/images/quiz/doll-love-onepick/result-4.webp",
+      "compat": {
+        "best": "bunny",
+        "worst": "puppy"
+      }
     }
   },
   "blend": {

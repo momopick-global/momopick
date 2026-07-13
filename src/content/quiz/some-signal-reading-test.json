@@ -1,0 +1,228 @@
+{
+  "id": "some-signal-reading-test",
+  "slug": "some-signal-reading-test",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "썸", "en": "flirting" },
+    { "ko": "시그널", "en": "signals" },
+    { "ko": "독해 평가", "en": "reading test" }
+  ],
+  "title": { "ko": "썸 시그널 독해 평가", "en": "Flirt Signal Reading Test" },
+  "subtitle": { "ko": "이거 그린라이트 맞아? 채점해 준다", "en": "Is that a green light? Let's grade you" },
+  "images": {
+    "thumbnail": "/images/quiz/some-signal-reading-test/thumb.webp",
+    "og": "/images/quiz/some-signal-reading-test/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "옛 게시물 좋아요, \"너랑 있으면 편해\", 새벽 감성 전화… 썸 시그널 10문항을 채점하는 독해 평가",
+      "en": "Old-post likes, \"I feel so comfortable with you\", 2 AM calls — a 10-question test grading your flirt-signal literacy"
+    },
+    "keywords": [
+      { "ko": "썸 테스트", "en": "flirting quiz" },
+      { "ko": "그린라이트", "en": "green light" },
+      { "ko": "썸 시그널", "en": "flirt signals" }
+    ],
+    "ogTitle": { "ko": "썸 시그널 독해 평가", "en": "Flirt Signal Reading Test" },
+    "ogDescription": {
+      "ko": "10문항 채점제. 나는 시그널 판독기일까, 직진밖에 모를까",
+      "en": "10 questions, scored out of 100. Signal decoder or hopeless straight-liner?"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "📡 독해 평가", "en": "📡 Reading Test" },
+    "image": "/images/quiz/some-signal-reading-test/thumb.webp",
+    "priority": 91
+  },
+  "analytics": {
+    "eventKey": "some_signal_reading_test",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["love-meme-exam", "ambiguous-situationship-end", "who-likes-you-type"],
+  "grades": [
+    {
+      "min": 90,
+      "max": 100,
+      "title": { "ko": "시그널 판독기 📡", "en": "Signal Decoder 📡" },
+      "desc": {
+        "ko": "좋아요 하나에서 온도·습도·풍향까지 읽어내는 인간 레이더. 친구들의 썸 판독 의뢰가 끊이지 않아 사실상 무허가 상담소를 운영 중입니다.",
+        "en": "A human radar who reads temperature, humidity, and wind direction from a single like. Friends' consultation requests never stop — you're basically running an unlicensed clinic."
+      }
+    },
+    {
+      "min": 70,
+      "max": 89,
+      "title": { "ko": "독해 상급자", "en": "Advanced Reader" },
+      "desc": {
+        "ko": "웬만한 시그널은 오차 범위 안에서 접수합니다. 가끔 희망회로가 살짝 개입하는 것만 조심하면 판독기 승급이 코앞이에요.",
+        "en": "You catch most signals within the margin of error. Watch out for occasional wishful-thinking interference and the decoder rank is yours."
+      }
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": { "ko": "행간 견습생", "en": "Between-the-Lines Apprentice" },
+      "desc": {
+        "ko": "글자는 읽는데 행간은 절반쯤 놓치는 단계. 감은 있으니 사례 연구(=친구 연애 관전)만 좀 더 하면 상급반 진입 가능합니다.",
+        "en": "You read the words but miss half the subtext. The instincts are there — a bit more case study (watching your friends' love lives) and you'll level up."
+      }
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": { "ko": "직진밖에 모름", "en": "Full Throttle Only" },
+      "desc": {
+        "ko": "시그널이고 뭐고 일단 직진하는 타입. 해석에 쓸 에너지를 실행에 쓰는 스타일이라 오히려 성공하는 경우가 있다는 게 학계의 미스터리입니다.",
+        "en": "Signals? You just floor it. You spend interpretation energy on action instead — and somehow it occasionally works, which baffles researchers."
+      }
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": { "ko": "시그널? 먹는 건가", "en": "Signal? Is That Edible?" },
+      "desc": {
+        "ko": "상대가 봉화를 올리고 북을 쳐도 '오늘 날씨 좋네' 하고 지나가는 청정 감도. 대신 그 무해함이 매력이라, 상대가 결국 직접 고백하게 됩니다.",
+        "en": "They could light beacons and bang drums and you'd say 'nice weather today'. But that harmlessness is your charm — eventually they just confess directly."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": { "ko": "상대가 내 3년 전 게시물까지 내려가 좋아요를 눌렀다. 이 시그널의 통상적 해석은?", "en": "They scrolled down and liked your post from three years ago. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "내 피드를 정주행했다는 관심의 증거", "en": "Proof they binge-scrolled your entire feed" }, "correct": true },
+        { "label": { "ko": "단순한 손가락 미끄러짐", "en": "A simple finger slip" } },
+        { "label": { "ko": "3년 전 알고리즘이 이제 도착함", "en": "The algorithm from 2023 finally arrived" } },
+        { "label": { "ko": "고고학 전공자의 직업병", "en": "An archaeology major's occupational habit" } }
+      ],
+      "explanation": {
+        "ko": "3년 치 스크롤은 손가락 실수로 불가능한 거리입니다. 그건 탐사였어요.",
+        "en": "Three years of scrolling is not a distance a finger slips. That was an expedition."
+      }
+    },
+    {
+      "prompt": { "ko": "\"너랑 있으면 편해\"라는 말의 밈 사전 기준 해석은?", "en": "\"I feel so comfortable with you.\" Per the meme dictionary, this means:" },
+      "options": [
+        { "label": { "ko": "호감일 수도, 친구 확정일 수도 있는 50:50 문장", "en": "A 50:50 sentence — could be interest, could be friend-zone confirmation" }, "correct": true },
+        { "label": { "ko": "무조건 청혼 직전 단계", "en": "Definitely one step before a proposal" } },
+        { "label": { "ko": "소파가 푹신하다는 뜻", "en": "A comment about how soft your couch is" } },
+        { "label": { "ko": "정전기가 안 난다는 과학적 관찰", "en": "A scientific observation about static electricity" } }
+      ],
+      "explanation": {
+        "ko": "'편해'는 단독으로 판독 불가. 눈빛·빈도·단둘 여부와 교차 검증해야 하는 대표적 중의문입니다.",
+        "en": "'Comfortable' can't be decoded alone. It's the classic ambiguous line — cross-check with eye contact, frequency, and whether you're alone together."
+      }
+    },
+    {
+      "prompt": { "ko": "내 카톡엔 답이 없는데 스토리는 방금 올라왔다. 통상적 해석은?", "en": "No reply to your message, but they just posted a story. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "내 답장이 우선순위에서 밀렸다는 시그널", "en": "A signal that your reply is low on their priority list" }, "correct": true },
+        { "label": { "ko": "스토리 앱과 메신저 앱이 서로 다른 폰에 있음", "en": "Their story app and chat app are on separate phones" } },
+        { "label": { "ko": "답장을 스토리로 대신하는 신개념 소통", "en": "A new communication style: replying via story" } },
+        { "label": { "ko": "엄지가 스토리 전용 근육이라 어쩔 수 없음", "en": "Their thumb only has story-posting muscles" } }
+      ],
+      "explanation": {
+        "ko": "폰은 손에 있었습니다. 마음이 없었을 뿐. 다만 하루 이틀은 진짜 바쁠 수도 있으니 표본을 더 모으세요.",
+        "en": "The phone was in their hand; the intent wasn't. That said, one day could be genuine busyness — collect a larger sample."
+      }
+    },
+    {
+      "prompt": { "ko": "\"단둘이 밥 먹자\"와 \"언제 다 같이 보자\"의 결정적 차이는?", "en": "\"Let's grab dinner, just us\" vs \"we should all hang out sometime\". The decisive difference?" },
+      "options": [
+        { "label": { "ko": "단둘이는 데이트 후보, 다 같이는 안전거리 확보", "en": "Just-us is a date candidate; all-of-us is safety-distance maintenance" }, "correct": true },
+        { "label": { "ko": "차이 없음, 밥은 다 같은 밥", "en": "No difference — food is food" } },
+        { "label": { "ko": "단둘이가 더치페이 확률이 높음", "en": "Just-us has a higher chance of splitting the bill" } },
+        { "label": { "ko": "다 같이 만나면 반찬이 더 다양함", "en": "Group dinners have a wider variety of side dishes" } }
+      ],
+      "explanation": {
+        "ko": "인원수는 거리 조절 장치입니다. 'n명'이 붙는 순간 좌석 배치부터 마음 배치까지 달라져요.",
+        "en": "Headcount is a distance-control device. The moment 'everyone' enters the sentence, both the seating chart and the feelings chart change."
+      }
+    },
+    {
+      "prompt": { "ko": "\"나 이상형이 딱 너 같은 스타일이야\"의 통상적 해석은?", "en": "\"My ideal type is exactly your style.\" The standard reading?" },
+      "options": [
+        { "label": { "ko": "사실상 돌려 말한 호감 고백", "en": "A confession of interest, thinly disguised" }, "correct": true },
+        { "label": { "ko": "패션 스타일에 대한 순수 칭찬", "en": "A pure compliment about your outfit" } },
+        { "label": { "ko": "통계 조사 중이라는 뜻", "en": "They're conducting a demographic survey" } },
+        { "label": { "ko": "너 '같은' 스타일이지 너는 아니라는 정밀 화법", "en": "Precision phrasing: someone LIKE you, not you" } }
+      ],
+      "explanation": {
+        "ko": "4번을 고른 당신, 상처가 있군요. 통상적으로는 '너 어때?'의 예고편이 맞습니다.",
+        "en": "If you picked the last one — you've been hurt before. Conventionally, this is the trailer for 'so… what about you?'"
+      }
+    },
+    {
+      "prompt": { "ko": "데이트처럼 놀고 헤어질 때 \"조심히 들어가~\" 이후 연락 없음. 통상적 해석은?", "en": "Great hangout, then \"get home safe~\" and total silence afterward. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "예의는 있지만 애프터 의지는 약하다는 시그널", "en": "Polite, but the follow-up motivation is weak" }, "correct": true },
+        { "label": { "ko": "집 도착 확인 전까지 말을 아끼는 중", "en": "Withholding words until your arrival is confirmed" } },
+        { "label": { "ko": "귀가 안전 캠페인 홍보대사", "en": "They're an ambassador for the Safe Commute Campaign" } },
+        { "label": { "ko": "충전기를 잃어버려 3일째 폰이 꺼져 있음", "en": "They lost their charger and the phone's been dead for three days" } }
+      ],
+      "explanation": {
+        "ko": "진짜 애프터 의지는 '잘 들어갔어?' 카톡으로 옵니다. 인사만 있고 확인이 없으면 온도를 의심하세요.",
+        "en": "Real follow-up intent arrives as a 'did you get home okay?' text. A farewell without a check-in is a temperature warning."
+      }
+    },
+    {
+      "prompt": { "ko": "지나가듯 말한 내 생일을 상대가 기억하고 먼저 축하해줬다. 통상적 해석은?", "en": "You mentioned your birthday once in passing — they remembered and reached out first. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "나에 대한 정보가 저장·관리되고 있다는 상위권 시그널", "en": "Top-tier signal: your info is being saved and maintained" }, "correct": true },
+        { "label": { "ko": "카카오톡 알림이 대신 기억해준 것일 수도", "en": "The app's birthday notification did the remembering" } },
+        { "label": { "ko": "모든 지인의 생일을 외우는 암기왕", "en": "They're a memory champion who knows everyone's birthday" } },
+        { "label": { "ko": "케이크 지분을 노린 큰 그림", "en": "A long con for a slice of cake" } }
+      ],
+      "explanation": {
+        "ko": "알림 가능성은 있지만, '지나가듯 말한 걸' 기억했다면 수동 저장입니다. 수동 저장은 관심입니다.",
+        "en": "Sure, apps notify. But remembering something you said in passing means it was saved manually — and manual saves mean interest."
+      }
+    },
+    {
+      "prompt": { "ko": "\"우리 나중에 거기 같이 가자\"(날짜 없음, 예약 없음). 통상적 해석은?", "en": "\"We should totally go there together sometime\" — no date, no booking. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "호감은 있으나 아직 구속력 없는 구두 계약", "en": "Interest exists, but it's a non-binding verbal agreement" }, "correct": true },
+        { "label": { "ko": "법적 효력이 있는 정식 약속", "en": "A legally enforceable formal commitment" } },
+        { "label": { "ko": "여행사 직원의 영업 멘트", "en": "A travel agent's sales pitch" } },
+        { "label": { "ko": "'나중에'라는 이름의 새로운 지명", "en": "'Sometime' is actually a place name" } }
+      ],
+      "explanation": {
+        "ko": "'나중에'는 날짜가 잡히는 순간 그린라이트로 승격됩니다. 승격 전까지는 예쁜 말일 뿐이에요.",
+        "en": "'Sometime' gets promoted to a green light the moment a date is set. Until then, it's just a lovely sentence."
+      }
+    },
+    {
+      "prompt": { "ko": "정성 들여 보낸 장문 카톡에 이모티콘 하나만 돌아왔다. 통상적 해석은?", "en": "You sent a heartfelt paragraph; a single sticker came back. Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "대화 연장 의지가 낮다는 저온 시그널", "en": "A low-temperature signal: minimal will to extend the conversation" }, "correct": true },
+        { "label": { "ko": "이모티콘이 천 마디 말보다 깊다는 뜻", "en": "A sticker is worth a thousand words" } },
+        { "label": { "ko": "유료 이모티콘이라 본전을 뽑는 중", "en": "They paid for that sticker pack and need their money's worth" } },
+        { "label": { "ko": "한글 자판이 고장 나서 그림만 보낼 수 있음", "en": "Their keyboard broke, leaving only pictures" } }
+      ],
+      "explanation": {
+        "ko": "장문에는 최소 질문 하나가 돌아와야 대화가 삽니다. 물음표 없는 답장은 대화 종료 버튼이에요.",
+        "en": "A long message deserves at least one question back. A reply with no question mark is an end-conversation button."
+      }
+    },
+    {
+      "prompt": { "ko": "새벽 1시, \"목소리 듣고 싶어서\"라며 전화가 왔다. 통상적 해석은?", "en": "A 1 AM call: \"I just wanted to hear your voice.\" Standard interpretation?" },
+      "options": [
+        { "label": { "ko": "이성 필터가 꺼진 시간의 진심 유출 가능성 높음", "en": "High probability of genuine feelings leaking out after the rational filter shuts off" }, "correct": true },
+        { "label": { "ko": "새벽 라디오 DJ 오디션 연습", "en": "Practicing for a late-night radio DJ audition" } },
+        { "label": { "ko": "성대 상태 점검을 부탁한 것", "en": "Asking you to inspect their vocal cords" } },
+        { "label": { "ko": "알람 대신 걸어달라는 모닝콜 예약", "en": "Booking you as their human alarm clock" } }
+      ],
+      "explanation": {
+        "ko": "새벽 감성은 진심의 유출이지만, 아침에도 같은 온도인지가 최종 판정 기준입니다. 아침 답장을 확인하세요.",
+        "en": "2 AM sincerity is real leakage — but the final verdict is whether the temperature holds in the morning. Check the daylight follow-up."
+      }
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 시그널 독해 평가입니다. 진짜 마음은 표본 하나로 판정하지 말고, 직접 물어보는 게 최고 정확도예요.",
+    "en": "A just-for-fun signal-reading test. Never judge real feelings from one data point — asking directly is still the most accurate method."
+  }
+}

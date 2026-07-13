@@ -14,7 +14,9 @@ import { getQuizUiStrings, type QuizUiLocale, type QuizUiStrings } from "@/i18n/
 import { QuizImageWithFallback } from "./QuizImageWithFallback";
 import { QuizResultLoadingScreen } from "./QuizResultLoadingScreen";
 import { QuizPackTags } from "./QuizPackTags";
+import { QuizIntroParticipantsLine } from "./QuizIntroParticipantsLine";
 import { SnackQuizIntroWithLiveCount } from "./SnackQuizIntroWithLiveCount";
+import { trackQuizComplete, trackQuizStart } from "@/lib/quizFunnel";
 import {
   QuizResultShare,
   QuizResultShareIconRow,
@@ -22,6 +24,8 @@ import {
   QuizShareStatusHints,
 } from "./QuizResultShare";
 import { QuizSaveToVaultButton } from "./QuizSaveToVaultButton";
+import { QuizResultCompat } from "./QuizResultCompat";
+import { QuizResultFeedback } from "./QuizResultFeedback";
 import { pickQuizText, type SnackQuizDefinition } from "./types";
 import { useQuizResultShareModel } from "./useQuizResultShareModel";
 import { KoLoveHubMoreSection } from "@/components/ko/KoLoveHubMoreSection";
@@ -101,6 +105,7 @@ function SnackQuizDoneCard({
     quizStartUrl: quizPageHref,
     quizResultUrl,
     kakaoQuizResultShare: true,
+    funnelSlug: definition.slug,
   });
 
   return (
@@ -154,6 +159,12 @@ function SnackQuizDoneCard({
         <p className="quiz-result-body">
           {isBlend ? pickQuizText(locale, blend.body) : pickQuizText(locale, single?.body)}
         </p>
+        <QuizResultCompat
+          definition={definition}
+          resultKey={singleKey}
+          locale={locale}
+          ui={ui}
+        />
         <div className="quiz-share quiz-share--result-top">
           <QuizResultShareIconRow model={shareModel} ui={ui} />
         </div>
@@ -187,6 +198,7 @@ function SnackQuizDoneCard({
             </button>
           </div>
         </div>
+        <QuizResultFeedback quizSlug={definition.slug} ui={ui} />
         <p className="quiz-footnote">{pickQuizText(locale, footnote)}</p>
         <QuizShareKakaoWideButton model={shareModel} ui={ui} />
         <div className="quiz-result-share-hints">
@@ -194,7 +206,12 @@ function SnackQuizDoneCard({
         </div>
       </div>
       {locale === "ko" && definition.category?.trim() === "love" ? (
-        <KoLoveHubMoreSection locale={locale} excludeHref={quizPageHref} placement="quiz" />
+        <KoLoveHubMoreSection
+          locale={locale}
+          excludeHref={quizPageHref}
+          placement="quiz"
+          relatedSlugs={definition.related}
+        />
       ) : null}
     </div>
   );
@@ -203,14 +220,14 @@ function SnackQuizDoneCard({
 export function SnackQuiz({
   definition,
   locale = "ko",
-  trackParticipantCount = false,
+  trackParticipantCount = true,
 }: {
   definition: SnackQuizDefinition;
   /** 고정 UI(다시 하기·질문 n/t) 언어. 라우트 세그먼트와 맞출 것 */
   locale?: QuizUiLocale;
   /**
-   * true일 때만 Supabase `quiz_stats` 조회·시작 시 +1 및 `#user-count` 표시.
-   * 특정 랜딩(예: ambiguous-situationship-end)에서만 켭니다.
+   * Supabase `quiz_stats` 조회·시작 시 +1 및 `#user-count` 표시.
+   * 기본 켜짐(사회적 증거 — 참여 수 0이면 자동 숨김). 끌 때만 false 전달.
    */
   trackParticipantCount?: boolean;
 }) {
@@ -237,11 +254,12 @@ export function SnackQuiz({
     [step, total],
   );
 
+  const quizId = definition.slug?.trim() || definition.id;
+
   const quizPageHref = useMemo(() => {
     const cat = definition.category?.trim() || "quiz";
-    const seg = definition.slug?.trim() || definition.id;
-    return `/${locale}/${cat}/${seg}/`;
-  }, [definition.category, definition.slug, definition.id, locale]);
+    return `/${locale}/${cat}/${quizId}/`;
+  }, [definition.category, quizId, locale]);
 
   const resultsGalleryHref = useMemo(() => `${quizPageHref}results/`, [quizPageHref]);
 
@@ -334,6 +352,9 @@ export function SnackQuiz({
         answerTimerRef.current = null;
         setCounts((prev) => ({ ...prev, [key]: (prev[key] ?? 0) + 1 }));
         if (step >= total - 1) {
+          // 원픽(1문항)은 인트로가 없어 응답 순간이 곧 시작 — 시작·완료를 함께 집계
+          if (total === 1) trackQuizStart(quizId);
+          trackQuizComplete(quizId);
           setResultPhase("loading");
         } else {
           setStep((s) => s + 1);
@@ -343,7 +364,7 @@ export function SnackQuiz({
         setFillActive(false);
       }, ANSWER_FILL_MS);
     },
-    [answerBusy, resultKeys, step, total],
+    [answerBusy, resultKeys, step, total, quizId],
   );
 
   const restart = useCallback(() => {
@@ -403,7 +424,6 @@ export function SnackQuiz({
   }
 
   if (showIntro) {
-    const quizId = definition.slug?.trim() || definition.id;
     return (
       <div className="quiz-shell quiz-shell--intro">
         {trackParticipantCount ? (
@@ -519,6 +539,7 @@ export function SnackQuiz({
           <div className="quiz-share-wrap quiz-share-wrap--intro">
             <QuizResultShare ui={ui} shareText={introShareText} shareImageUrl={quizShareCoverUrl} />
           </div>
+          {trackParticipantCount ? <QuizIntroParticipantsLine quizId={quizId} ui={ui} /> : null}
         </>
       ) : null}
     </div>

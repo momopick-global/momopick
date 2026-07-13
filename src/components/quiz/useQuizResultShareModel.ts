@@ -9,6 +9,7 @@ import {
   parseShareTextForKakaoFeed,
   pathForKakaoMessageTemplate,
 } from "@/lib/kakaoShareFeed";
+import { trackQuizShare } from "@/lib/quizFunnel";
 
 /** 퀴즈 결과 전용 카카오 커스텀 템플릿 ID (버튼 2개) */
 const KAKAO_QUIZ_RESULT_TEMPLATE_ID = 131878;
@@ -23,6 +24,8 @@ export type UseQuizResultShareModelParams = {
   quizStartUrl?: string;
   quizResultUrl?: string;
   kakaoQuizResultShare?: boolean;
+  /** 지정 시 공유 클릭을 `quiz_stats` `{slug}__share` 행에 집계 (결과 카드에서만 전달) */
+  funnelSlug?: string;
 };
 
 export function useQuizResultShareModel({
@@ -31,6 +34,7 @@ export function useQuizResultShareModel({
   quizStartUrl,
   quizResultUrl,
   kakaoQuizResultShare = false,
+  funnelSlug,
 }: UseQuizResultShareModelParams) {
   const [pageUrl, setPageUrl] = useState("");
   const [linkCopiedNotice, setLinkCopiedNotice] = useState(false);
@@ -51,6 +55,7 @@ export function useQuizResultShareModel({
 
   const handleCopy = useCallback(() => {
     if (!resolvedPageUrl) return;
+    if (funnelSlug) trackQuizShare(funnelSlug);
     setKakaoFallback(null);
     void navigator.clipboard.writeText(resolvedPageUrl).then(
       () => {
@@ -59,10 +64,11 @@ export function useQuizResultShareModel({
       },
       () => window.prompt("아래 링크를 복사해 주세요", resolvedPageUrl),
     );
-  }, [resolvedPageUrl]);
+  }, [resolvedPageUrl, funnelSlug]);
 
   const openKakao = useCallback(() => {
     if (typeof window === "undefined" || !canUseShareLinks) return;
+    if (funnelSlug) trackQuizShare(funnelSlug);
     setLinkCopiedNotice(false);
     setKakaoFallback(null);
     const hrefAtClick = window.location.href;
@@ -267,20 +273,22 @@ export function useQuizResultShareModel({
       console.error("[Momopick][Kakao] openKakao unexpected error", e);
       fallbackCopy();
     }
-  }, [canUseShareLinks, shareText, shareImageUrl, kakaoQuizResultShare, quizStartUrl, quizResultUrl]);
+  }, [canUseShareLinks, shareText, shareImageUrl, kakaoQuizResultShare, quizStartUrl, quizResultUrl, funnelSlug]);
 
   const openFacebook = useCallback(() => {
     if (!resolvedPageUrl) return;
+    if (funnelSlug) trackQuizShare(funnelSlug);
     const u = encodeURIComponent(resolvedPageUrl);
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${u}`, "_blank", "noopener,noreferrer");
-  }, [resolvedPageUrl]);
+  }, [resolvedPageUrl, funnelSlug]);
 
   const openX = useCallback(() => {
     if (!resolvedPageUrl) return;
+    if (funnelSlug) trackQuizShare(funnelSlug);
     const u = encodeURIComponent(resolvedPageUrl);
     const t = encodeURIComponent(shareText);
     window.open(`https://twitter.com/intent/tweet?text=${t}&url=${u}`, "_blank", "noopener,noreferrer");
-  }, [resolvedPageUrl, shareText]);
+  }, [resolvedPageUrl, shareText, funnelSlug]);
 
   return {
     handleCopy,

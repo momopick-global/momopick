@@ -1,0 +1,469 @@
+{
+  "id": "solo-survival-exam",
+  "slug": "solo-survival-exam",
+  "locales": ["ko", "en"],
+  "category": "love",
+  "tags": [
+    { "ko": "솔로", "en": "single" },
+    { "ko": "평가", "en": "assessment" },
+    { "ko": "연말", "en": "year-end" },
+    { "ko": "생존", "en": "survival" }
+  ],
+  "title": { "ko": "솔로 생존 평가", "en": "Single Survival Assessment" },
+  "subtitle": { "ko": "연말이 두렵지 않은 자, 몇 점인지 증명하라", "en": "Not afraid of the holidays? Prove your score" },
+  "images": {
+    "thumbnail": "/images/quiz/solo-survival-exam/thumb.webp",
+    "og": "/images/quiz/solo-survival-exam/thumb.jpg"
+  },
+  "meta": {
+    "description": {
+      "ko": "혼밥 레벨부터 명절 방어술까지, 솔로 라이프 생존 능력을 10문항으로 채점하는 평가 시험.",
+      "en": "From solo-dining levels to holiday-question defense, a 10-question exam that scores your single-life survival skills."
+    },
+    "keywords": [
+      { "ko": "솔로 테스트", "en": "single life quiz" },
+      { "ko": "혼밥 레벨", "en": "solo dining level" },
+      { "ko": "연말 솔로", "en": "single holidays" }
+    ],
+    "ogTitle": { "ko": "솔로 생존 평가", "en": "Single Survival Assessment" },
+    "ogDescription": {
+      "ko": "10문항 채점제. 1인 고깃집 가능자만 만점 가능",
+      "en": "10 questions, scored out of 100. Only solo-BBQ veterans reach the top"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": { "ko": "💯 생존 평가", "en": "💯 Survival Exam" },
+    "image": "/images/quiz/solo-survival-exam/thumb.webp",
+    "priority": 83
+  },
+  "analytics": {
+    "eventKey": "solo_survival_exam",
+    "contentGroup": "love",
+    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+  },
+  "related": ["love-meme-exam", "true-self-alone", "dessert-love-onepick"],
+  "grades": [
+    {
+      "min": 90,
+      "max": 100,
+      "title": { "ko": "솔로 마스터 — 혼자가 아니라 자유 🏆", "en": "Solo Master — Not Alone, Just Free 🏆" },
+      "desc": {
+        "ko": "당신에게 솔로는 상태가 아니라 라이프스타일입니다. 12월 24일에도 스케줄의 주도권은 당신에게 있고, 1인 고깃집 불판 앞에서도 흔들림이 없죠. 연애를 못 하는 게 아니라 지금의 자유를 만끽 중인 것뿐 — 다들 그걸 알고 부러워합니다.",
+        "en": "For you, being single isn't a status — it's a lifestyle. Even on December 24th, you own your schedule, and you don't flinch at a solo BBQ grill. You're not failing at dating; you're savoring your freedom, and everyone secretly envies it."
+      }
+    },
+    {
+      "min": 70,
+      "max": 89,
+      "title": { "ko": "생존 전문가", "en": "Survival Specialist" },
+      "desc": {
+        "ko": "웬만한 커플 시즌 공격은 자동 방어되는 레벨. 명절 질문도, 부케 상황도 매뉴얼이 이미 몸에 배어 있습니다. 가끔 SNS 커플 사진에 1초 흔들리지만, 그 1초가 인간적인 매력 포인트예요.",
+        "en": "Most couple-season attacks bounce right off you. Holiday interrogations, bouquet situations — the manual is muscle memory by now. You wobble for one second at couple photos on social media, and that one second is what makes you charmingly human."
+      }
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": { "ko": "적응 진행 중", "en": "Adaptation In Progress" },
+      "desc": {
+        "ko": "혼자의 즐거움을 절반쯤 발견한 단계. 혼밥은 되는데 혼고기는 아직이고, 연말 계획표에 빈칸이 좀 있습니다. 좋은 소식: 이 시험의 오답 해설이 곧 생존 매뉴얼입니다. 정독하면 다음 시즌엔 전문가 승급.",
+        "en": "You've discovered about half the joy of solo life. Solo lunch: yes. Solo BBQ: not yet. Your year-end calendar has a few blank cells. Good news: the answer explanations in this exam are literally the survival manual. Study them and you'll rank up by next season."
+      }
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": { "ko": "커플 콘텐츠에 취약", "en": "Vulnerable to Couple Content" },
+      "desc": {
+        "ko": "크리스마스 광고 하나에 마음이 3일 흔들리는 타입. 하지만 그건 약점이 아니라 감수성이 살아있다는 증거예요. 다만 알고리즘 재교육과 혼밥 레벨업 훈련은 시급합니다. 당신의 연말은 당신이 지켜야 하니까요.",
+        "en": "One Christmas ad can shake you for three days. That's not weakness — it's proof your sensitivity is alive and well. Still, algorithm retraining and solo-dining drills are urgently recommended. Your holidays deserve a defender: you."
+      }
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": { "ko": "연애 세포만 살아있음", "en": "Only the Romance Cells Survived" },
+      "desc": {
+        "ko": "생존 기술은 0에 수렴하지만 연애 세포는 만렙인 상태. 사실 이 시험에서 가장 사랑스러운 성적표입니다. 혼자를 못 견디는 게 아니라 함께가 잘 어울리는 사람인 거죠. 그래도 싱글라이더 제도 정도는 알아두세요 — 언젠가 줄이 급할 때 씁니다.",
+        "en": "Survival skills near zero, romance cells at max level — honestly the most lovable report card in this exam. You're not bad at being alone; you're just built for togetherness. Still, learn about single-rider lines. Someday you'll be in a hurry, and you'll thank us."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": {
+        "ko": "12월 24일 저녁, 단톡방에 \"뭐 해?\" 폭격이 예상된다. 노련한 솔로의 공식 일정은?",
+        "en": "December 24th, evening. The group chat's \"whatcha doing?\" bombardment is incoming. The seasoned single's official schedule?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "미리 예약해 둔 '나 혼자 풀코스' — 최애 음식, 최애 콘텐츠, 방해 금지 모드",
+            "en": "The pre-booked 'solo full course' — favorite food, favorite show, do-not-disturb mode"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "급하게 아무 모임이나 잡아서 자리를 채운다",
+            "en": "Frantically join literally any gathering to fill the slot"
+          }
+        },
+        {
+          "label": {
+            "ko": "24일 오후 6시부터 26일 아침까지 예방적 겨울잠에 돌입한다",
+            "en": "Enter preventive hibernation from 6 PM on the 24th until the morning of the 26th"
+          }
+        },
+        {
+          "label": {
+            "ko": "번화가 한복판에서 지나가는 커플들과 눈싸움을 신청한다",
+            "en": "Stand downtown challenging passing couples to staring contests"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "고수는 24일을 피하지 않고 '예약'합니다. 그날 제일 좋은 것들을 자신에게 배정하는 게 프로의 스케줄링.",
+        "en": "Veterans don't dodge the 24th — they book it. Assigning the best things to yourself is professional scheduling."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "커플 2쌍 사이에 낀 5인 모임. 고수 솔로의 포지션은?",
+        "en": "A five-person gathering: two couples and you. The expert single's position?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "화제 선정권을 쥔 분위기 지휘자 — 판의 주도권은 홀수가 갖는다",
+            "en": "The conversation conductor holding topic-selection rights — the odd one out runs the table"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "조용히 휴대폰만 보다가 1차에서 조용히 귀가한다",
+            "en": "Quietly scroll your phone, then quietly leave after round one"
+          }
+        },
+        {
+          "label": {
+            "ko": "화장실 간다고 하고 그대로 퇴장, 단톡에 \"미안 급한 일\"",
+            "en": "Say you're going to the restroom, vanish, then text \"sorry, emergency\""
+          }
+        },
+        {
+          "label": {
+            "ko": "일부러 커플 사이사이에 앉아 물리적 분리를 시도한다",
+            "en": "Deliberately sit between each couple to enforce physical separation"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "커플은 서로 눈치 보느라 화제를 못 던집니다. 홀수 한 명이 마이크를 잡는 순간 모임의 지배자가 되죠.",
+        "en": "Couples are too busy reading each other to steer the conversation. The moment the odd one grabs the mic, they rule the room."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "\"너는 연애 안 해?\" 질문이 날아왔다. 방어술의 정석은?",
+        "en": "\"So why aren't you dating?\" incoming. The textbook defense?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "\"좋은 사람 있으면 소개해줘\" — 공을 즉시 상대 코트로 반사",
+            "en": "\"Know anyone good? Introduce me\" — instantly volley the ball back to their court"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "\"요즘 바빠서…\"라며 시선을 창밖으로 돌린다",
+            "en": "\"I've just been busy…\" while gazing out the window"
+          }
+        },
+        {
+          "label": {
+            "ko": "지난 연애사를 슬라이드 40장 분량으로 브리핑하기 시작한다",
+            "en": "Launch into a 40-slide briefing on your entire dating history"
+          }
+        },
+        {
+          "label": {
+            "ko": "\"어, 너는 왜 그 머리를 했어?\"로 맞불을 놓는다",
+            "en": "Counterattack with \"and why did you choose that haircut?\""
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "질문을 부탁으로 바꾸면 상대가 갑자기 바빠집니다. 소개 책임이 생기는 순간 그 질문은 다시 안 나와요.",
+        "en": "Turn the question into a favor and watch them suddenly get very busy. Once they owe you an introduction, that question never returns."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "국제(비공식) 혼밥 레벨 기준, 최상위 단계는?",
+        "en": "By the (unofficial) international solo-dining standard, the highest level is?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "1인 고깃집 — 불판을 독점하고 굽기부터 가위질까지 풀 오퍼레이션",
+            "en": "Solo Korean BBQ — monopolizing the grill, running the full operation from flipping to scissoring"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "패밀리 레스토랑에 혼자 입장하기",
+            "en": "Walking into a family restaurant alone"
+          }
+        },
+        {
+          "label": {
+            "ko": "편의점 컵라면을 집까지 가져와서 먹기",
+            "en": "Carrying a convenience-store cup ramen all the way home to eat it"
+          }
+        },
+        {
+          "label": {
+            "ko": "모르는 사람 결혼식 뷔페에 혼자 잠입하기",
+            "en": "Infiltrating a stranger's wedding buffet solo"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "굽기, 가위질, 불 조절, 상추쌈까지 전부 1인 오퍼레이션. 혼밥계의 에베레스트로 공인된 코스입니다.",
+        "en": "Grilling, cutting, heat control, lettuce wraps — all a one-person operation. Officially recognized as the Everest of solo dining."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "결혼식에서 부케 받을 사람을 찾는 시선이 일제히 나에게 쏠렸다. 프로의 대처는?",
+        "en": "At a wedding, every head turns to you when they're looking for a bouquet catcher. The pro's move?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "당당히 받아 온다 — 부케는 그냥 예쁜 꽃이고, '6개월 규정'은 민간 설화다",
+            "en": "Catch it proudly — a bouquet is just pretty flowers, and the 'six-month rule' is folklore"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "정중히 사양하고 옆의 다른 하객을 슬쩍 추천한다",
+            "en": "Politely decline and subtly nominate the guest next to you"
+          }
+        },
+        {
+          "label": {
+            "ko": "부케가 날아오는 순간 매트릭스처럼 상체를 꺾어 회피한다",
+            "en": "Dodge the incoming bouquet with a full Matrix backbend"
+          }
+        },
+        {
+          "label": {
+            "ko": "받자마자 중고 거래 앱에 '부케 급처, 오늘만 반값' 등록",
+            "en": "Catch it and immediately list it on a resale app: 'Bouquet, must go today, half price'"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "'6개월 안에 결혼' 조항은 어떤 공식 규정집에도 없습니다. 꽃은 죄가 없고, 공짜 꽃다발은 이득입니다.",
+        "en": "The 'married within six months' clause appears in no official rulebook. The flowers are innocent, and free flowers are a win."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "연말 SNS가 커플 사진으로 도배되기 시작했다. 멘탈 관리의 정석은?",
+        "en": "Year-end social media is wall-to-wall couple photos. The textbook mental-health protocol?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "알고리즘 재교육 — 강아지·맛집·풍경을 연타해 피드 생태계를 갈아엎는다",
+            "en": "Algorithm retraining — spam-like puppies, food, and landscapes until the feed ecosystem is rebuilt"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "앱을 삭제했다가 3시간 만에 재설치한다",
+            "en": "Delete the app, then reinstall it three hours later"
+          }
+        },
+        {
+          "label": {
+            "ko": "모든 커플 사진에 '축하해~♡'를 남기며 성인군자에 빙의한다",
+            "en": "Comment 'so happy for you~♡' on every couple photo in full saint mode"
+          }
+        },
+        {
+          "label": {
+            "ko": "혼자서 더 행복해 보이는 사진을 찍기 위해 삼각대부터 결제한다",
+            "en": "Purchase a tripod to stage photos of yourself looking happier alone"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "알고리즘에는 죄가 없고 학습만 있을 뿐. 강아지 3일이면 피드가 강아지 왕국으로 재건됩니다.",
+        "en": "The algorithm isn't malicious — it just learns. Three days of puppies and your feed becomes a puppy kingdom."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "혼자 여행의 가장 검증된 장점은?",
+        "en": "The most verified advantage of traveling alone?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "일정 전권 — 협상 없이 내 취향 100%로 채워지는 유일한 여행",
+            "en": "Full itinerary authority — the only trip that's 100% your taste, zero negotiation"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "숙소비가 절약된다",
+            "en": "You save money on accommodation"
+          }
+        },
+        {
+          "label": {
+            "ko": "사진 부탁할 사람이 없어 셀카 실력이 국가대표급으로 성장한다",
+            "en": "With no one to take your photo, your selfie skills reach national-team level"
+          }
+        },
+        {
+          "label": {
+            "ko": "싸울 상대가 없어 여행 중 무패 기록을 유지한다",
+            "en": "No travel companion means an undefeated record in trip arguments"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "함정 주의 — 1인 여행은 오히려 숙소비가 더 나옵니다. 진짜 장점은 기상 시간을 아무와도 협상하지 않는 것.",
+        "en": "Watch the trap — solo rooms usually cost more per person. The real perk is never negotiating your wake-up time with anyone."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "명절, 친척 어른의 \"만나는 사람은 있고?\" 공격. 고단수의 응수는?",
+        "en": "Family holiday. A relative fires the classic: \"So, seeing anyone?\" The high-level response?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "\"요즘 제 일이 너무 재밌어서요\" + 근황 브리핑으로 화제를 강제 전환",
+            "en": "\"Honestly, work is so exciting right now\" + a life-update briefing that hijacks the topic"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "\"네, 곧 소개해 드릴게요\"라고 일단 둘러댄다",
+            "en": "\"Yes, I'll introduce them soon\" — buy time with a teaser"
+          }
+        },
+        {
+          "label": {
+            "ko": "\"그나저나 사촌 형은요?\"라며 어그로를 옆 테이블로 토스한다",
+            "en": "\"Speaking of which, what about my cousin?\" — toss the aggro to the next table"
+          }
+        },
+        {
+          "label": {
+            "ko": "\"어머니, 전 부치는 것 좀 도울게요!\" 하고 주방으로 전력 질주한다",
+            "en": "\"Let me help with the pancakes!\" and sprint to the kitchen at full speed"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "거짓 예고편은 다음 명절에 시즌2 질문으로 돌아옵니다. 화제 전환이 유일하게 후폭풍 없는 정석 방어.",
+        "en": "A fake trailer guarantees a season-two question next holiday. Topic redirection is the only defense with no aftershocks."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "2인승만 있는 놀이기구 앞, 우리 일행은 홀수다. 베테랑의 선택은?",
+        "en": "A two-seater ride, and your group is an odd number. The veteran's choice?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "\"저 싱글라이더요\" — 대기 줄을 스킵하는 싱글라이더 제도의 당당한 수혜자가 된다",
+            "en": "\"Single rider here\" — proudly claim the queue-skipping single-rider lane"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "이번 기구는 포기하고 벤치에서 일행의 짐을 지킨다",
+            "en": "Skip this ride and guard everyone's bags on a bench"
+          }
+        },
+        {
+          "label": {
+            "ko": "옆자리 낯선 사람과 급속도로 절친이 되어 하차 후 연락처를 교환한다",
+            "en": "Speed-bond with the stranger next to you and exchange numbers after the ride"
+          }
+        },
+        {
+          "label": {
+            "ko": "인형 뽑기에서 인형을 획득해 옆자리에 앉힌다",
+            "en": "Win a plushie from the claw machine and buckle it into the seat beside you"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "싱글라이더는 페널티가 아니라 패스트트랙입니다. 놀이공원이 공식 인증한 솔로 특권이에요.",
+        "en": "Single rider isn't a penalty — it's a fast track. An officially theme-park-certified solo privilege."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "배달 최소 주문금액이 2,000원 모자란다. 장인의 기술은?",
+        "en": "Your delivery order is 2,000 won short of the minimum. The artisan's technique?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "내일의 나를 위한 사이드 추가 — 모자란 금액을 '미래 식량 투자'로 전환한다",
+            "en": "Add a side dish for tomorrow's you — convert the shortfall into a 'future food investment'"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "배달비가 더 나와도 최소금액 낮은 다른 가게로 갈아탄다",
+            "en": "Switch to a shop with a lower minimum, even if the delivery fee ends up higher"
+          }
+        },
+        {
+          "label": {
+            "ko": "요청사항에 \"사장님, 2,000원어치 응원 메시지 부탁드립니다\"라고 적는다",
+            "en": "Write in the order notes: \"Chef, please include 2,000 won worth of words of encouragement\""
+          }
+        },
+        {
+          "label": {
+            "ko": "콜라 6캔을 추가해 방구석 탄산 저수지를 구축한다",
+            "en": "Add six cans of cola and establish a bedroom carbonation reservoir"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "고수는 최소 주문금액을 벌금이 아니라 내일 점심의 선구매로 처리합니다. 같은 돈, 다른 회계 처리.",
+        "en": "Veterans book the minimum-order gap not as a fine but as pre-purchasing tomorrow's lunch. Same money, superior accounting."
+      }
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 생존 평가입니다. 점수와 무관하게 혼자의 시간은 그 자체로 훌륭해요.",
+    "en": "A just-for-fun survival assessment. Whatever your score, time on your own is excellent all by itself."
+  }
+}
