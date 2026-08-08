@@ -14,14 +14,6 @@ type KakaoFeedShare = {
   buttons?: { title: string; link: KakaoFeedLink }[];
 };
 
-type KakaoAuthToken = {
-  access_token: string;
-  token_type: string;
-  refresh_token: string;
-  expires_in: number;
-  scope: string;
-};
-
 type KakaoUserProfile = {
   nickname?: string;
   profile_image_url?: string;

@@ -19,6 +19,12 @@ const eslintConfig = [
     ],
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      // 정적 export(output: "export")라 next/image 최적화 서버가 없음 — <img> 사용이 의도된 선택
+      "@next/next/no-img-element": "off",
+    },
+  },
 ];
 
 export default eslintConfig;

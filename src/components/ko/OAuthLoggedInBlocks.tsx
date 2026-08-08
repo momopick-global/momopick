@@ -50,7 +50,7 @@ export function KakaoLoggedInOAuthBlock({
     <div className="oauth-wrap">
       <div className="oauth-status oauth-status--welcome" role="status">
         {kakaoImg ? (
-          // eslint-disable-next-line @next/next/no-img-element -- 카카오 프로필 URL
+           
           <img src={kakaoImg} alt="" width={36} height={36} className="oauth-status__avatar" />
         ) : null}
         <span className="oauth-status__greet">
@@ -84,7 +84,7 @@ export function SupabaseLoggedInOAuthBlock({
     <div className="oauth-wrap">
       <div className="oauth-status oauth-status--welcome" role="status">
         {avatar ? (
-          // eslint-disable-next-line @next/next/no-img-element
+           
           <img src={avatar} alt="" width={36} height={36} className="oauth-status__avatar" />
         ) : null}
         <span className="oauth-status__greet">

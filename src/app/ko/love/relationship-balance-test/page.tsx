@@ -25,25 +25,6 @@ const subtitleLine = pickQuizText(pageLocale, pack.subtitle);
 const qCount = pack.questions?.length ?? 0;
 const kicker = pickQuizText(pageLocale, pack.card?.kicker) || "⚖️ 관계 밸런스";
 
-/** JSON-LD Article 스키마 — Google 구조화 데이터 */
-function buildArticleJsonLd(opts: { title: string; description: string; url: string; image?: string }) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: opts.title,
-    description: opts.description,
-    url: opts.url,
-    image: opts.image ?? "https://momopick.com/og/main-og.webp",
-    publisher: {
-      "@type": "Organization",
-      name: "Momopick",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://momopick.com/images/brand/momopick_symbol.webp",
-      },
-    },
-  };
-}
 
 export const metadata: Metadata = {
   title: pageTitle,

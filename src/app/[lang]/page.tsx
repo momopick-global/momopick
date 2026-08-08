@@ -27,7 +27,7 @@ export default function LocalePlaceholderPage() {
         background: "#f4f2fb",
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-head-element */}
+      { }
       <meta httpEquiv="refresh" content="0; url=/ko/" />
       {/* biome-ignore lint: redirect fallback */}
       <script

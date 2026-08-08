@@ -136,7 +136,7 @@ export function KoSavedVaultList() {
             </div>
             {item.imageUrl ? (
               <div className="ko-vault-card__visual">
-                {/* eslint-disable-next-line @next/next/no-img-element -- 동적 저장 URL */}
+                { }
                 <img src={item.imageUrl} alt="" width={80} height={80} className="ko-vault-card__img" />
               </div>
             ) : (

@@ -65,7 +65,6 @@ const readJson = (p, fallback) => {
     return fallback;
   }
 };
-const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2) + "\n");
 
 function runTool(args) {
   return new Promise((resolve) => {

@@ -168,7 +168,7 @@ export function KoLoveTarotExperience() {
                         : `${pos.label} 카드 뒤집기`
                     }
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    { }
                     <img
                       src={isActive ? card.image : CARD_BACK}
                       alt={isActive ? card.name : ""}
