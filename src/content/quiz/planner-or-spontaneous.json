@@ -93,8 +93,8 @@
         "en": "70% Spontaneous"
       },
       "desc": {
-        "ko": "즉흥적인 선택을 즐기는 타입입니다. 자유롭고 유연한 성향입니다.",
-        "en": "You prefer spontaneity and flexibility."
+        "ko": "당신의 인생 계획서는 백지입니다. 대신 백지라서 뭐든 그릴 수 있죠. 계획 없는 하루가 불안하기는커녕 신나는 타입이라, 한 시간 전에 잡힌 약속이 제일 재밌는 사람이에요. 그 유연함은 진짜 재능이니, 중요한 마감 몇 개만 알람으로 박아두면 무적입니다.",
+        "en": "Your life plan is a blank page — which means you can draw anything on it. A day without a schedule excites you instead of scaring you, and the best hangouts are always the ones that materialize an hour beforehand. That flexibility is a genuine talent; pin alarms on a few key deadlines and you're unstoppable."
       }
     },
     {
@@ -105,8 +105,8 @@
         "en": "Balanced Type"
       },
       "desc": {
-        "ko": "상황에 따라 계획과 즉흥을 적절히 조절하는 타입입니다.",
-        "en": "You balance planning and spontaneity."
+        "ko": "계획표는 있는데 연필로 씁니다. 지우개는 항상 대기 중이죠. 큰 틀은 잡되 상황이 바뀌면 미련 없이 노선을 갈아타는, 계획형과 즉흥형이 서로 탐내는 하이브리드예요. 그 유연한 뼈대만 유지하면 어떤 판에서도 살아남습니다.",
+        "en": "You keep a schedule — written in pencil, eraser on permanent standby. You sketch the big picture but pivot without regret when things change: the hybrid that both planners and free spirits secretly envy. Keep that flexible framework and you'll thrive on any board."
       }
     },
     {
@@ -117,8 +117,8 @@
         "en": "80% Planner"
       },
       "desc": {
-        "ko": "당신은 계획을 세우는 것을 중요하게 생각하는 타입입니다. 안정과 예측을 선호합니다.",
-        "en": "You strongly prefer planning and structure."
+        "ko": "여행 전날 밤, 엑셀에 '자유시간(14:00~15:30)'을 적어본 적 있는 당신. 예측 가능한 하루가 주는 안정감을 아는 사람이고, 그래서 주변 사람들은 당신만 믿고 따라갑니다. 다만 계획이 틀어져도 세상은 안 무너지니 가끔은 지도 없이 걸어보세요. 의외로 거기에 맛집이 있습니다.",
+        "en": "You have, at least once, scheduled 'free time (2:00-3:30 PM)' in a spreadsheet the night before a trip. You know the calm a predictable day brings, and everyone around you happily follows your lead because of it. Just remember the world survives a broken plan — wander off the map sometimes. That's usually where the best restaurants are."
       }
     }
   ],
@@ -131,29 +131,29 @@
       "options": [
         {
           "label": {
-            "ko": "일정표부터 만든다",
-            "en": "Make a schedule first"
+            "ko": "출발 전 분 단위 일정표 완성. 엑셀 셀 병합까지 마침",
+            "en": "Minute-by-minute itinerary done — with merged cells in the spreadsheet"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "대략만 정한다",
-            "en": "Plan roughly"
+            "ko": "숙소랑 첫날 코스만 잡고 나머지는 여백의 미",
+            "en": "Book the hotel, plan day one, leave the rest as white space"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "가서 결정한다",
-            "en": "Decide on the spot"
+            "ko": "공항 가는 길에 숙소 검색 시작",
+            "en": "Start searching for a hotel on the way to the airport"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "상황 따라 움직인다",
-            "en": "Go with the flow"
+            "ko": "발길 닿는 대로. 길을 잃는 게 곧 코스",
+            "en": "Wherever my feet go — getting lost is the itinerary"
           },
           "score": 0
         }
@@ -167,29 +167,29 @@
       "options": [
         {
           "label": {
-            "ko": "미리 날짜 확정",
-            "en": "Fix date early"
+            "ko": "3주 전에 날짜 박제. 변경 시 서면 통보 요망",
+            "en": "Date locked three weeks out. Changes require written notice"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "대충 잡는다",
-            "en": "Set loosely"
+            "ko": "'다음 주 중에 보자' 정도로 느슨하게",
+            "en": "A loose 'sometime next week' works for me"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "그때그때",
-            "en": "Decide later"
+            "ko": "'너 지금 뭐 해?'가 나의 공식 약속 멘트",
+            "en": "'What are you doing right now?' is my official invitation format"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "상대에 맞춘다",
-            "en": "Follow others"
+            "ko": "상대가 정하면 나는 출석하는 평화주의자",
+            "en": "A peacekeeper — whatever date they pick, I show up"
           },
           "score": 2
         }
@@ -203,29 +203,29 @@
       "options": [
         {
           "label": {
-            "ko": "계획 세우고 실행",
-            "en": "Plan then act"
+            "ko": "투두리스트 없인 손가락도 안 움직임",
+            "en": "Without a to-do list, not even my fingers move"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "대충 흐름대로",
-            "en": "Go with flow"
+            "ko": "큰 줄기만 잡고 흐름 타면서 처리",
+            "en": "Sketch the outline, then ride the flow"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "마감 직전에 몰아서",
-            "en": "Last-minute rush"
+            "ko": "마감 1시간 전, 초능력 각성 타임",
+            "en": "One hour before deadline: superpowers activate"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "상황 보며 조절",
-            "en": "Adjust as needed"
+            "ko": "상황 봐가며 유연하게 완급 조절",
+            "en": "Read the situation and shift gears as needed"
           },
           "score": 2
         }
@@ -239,29 +239,29 @@
       "options": [
         {
           "label": {
-            "ko": "스트레스 받는다",
-            "en": "Get stressed"
+            "ko": "플랜B가 무너지면 식은땀 흘리며 플랜C 개봉",
+            "en": "When plan B collapses, I unseal plan C in a cold sweat"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "적응한다",
-            "en": "Adapt"
+            "ko": "잠깐 당황하고 곧 노선 수정",
+            "en": "A brief flinch, then reroute"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "오히려 좋다",
-            "en": "Like it"
+            "ko": "오히려 좋아. 예정에 없던 게 제일 재밌음",
+            "en": "Even better — unplanned things are the fun ones"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "크게 신경 안 쓴다",
-            "en": "Don't mind"
+            "ko": "변수? 내 인생 자체가 변수라 구분이 안 됨",
+            "en": "A variable? My whole life is variables — I can't tell them apart"
           },
           "score": 0
         }
@@ -275,29 +275,29 @@
       "options": [
         {
           "label": {
-            "ko": "계획대로 움직임",
-            "en": "Follow schedule"
+            "ko": "기상부터 취침까지 타임블록으로 설계",
+            "en": "Wake-up to bedtime, engineered in time blocks"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "대충 계획 있음",
-            "en": "Loose plan"
+            "ko": "오전에 두어 개만 정해두고 나머지는 즉석",
+            "en": "Two things planned by morning, the rest improvised"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "그날 느낌대로",
-            "en": "By mood"
+            "ko": "눈 떠서 하늘 보고 오늘의 테마 결정",
+            "en": "Wake up, check the sky, choose today's theme"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "즉흥적 선택",
-            "en": "Spontaneous"
+            "ko": "'계획'이라는 단어가 내 사전에 없음",
+            "en": "The word 'plan' isn't in my dictionary"
           },
           "score": 0
         }
@@ -311,29 +311,29 @@
       "options": [
         {
           "label": {
-            "ko": "우선순위 정함",
-            "en": "Set priorities"
+            "ko": "우선순위 매기고 예상 소요시간까지 배정",
+            "en": "Rank by priority, assign a time estimate to each"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "하나씩 처리",
-            "en": "Do one by one"
+            "ko": "눈앞의 것부터 하나씩 차분하게 격파",
+            "en": "Take them down calmly, one by one"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "아무거나 먼저",
-            "en": "Random order"
+            "ko": "제일 만만해 보이는 것부터 랜덤 착수",
+            "en": "Start with whatever looks easiest, in random order"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "급한 것만 한다",
-            "en": "Only urgent tasks"
+            "ko": "불난 곳만 끄러 다니는 소방관 모드",
+            "en": "Firefighter mode — I only run to whatever's currently burning"
           },
           "score": 0
         }
@@ -347,29 +347,29 @@
       "options": [
         {
           "label": {
-            "ko": "미리 리스트 작성",
-            "en": "Make a list"
+            "ko": "리스트 작성, 최저가 비교, 리뷰 200개 정독 완료",
+            "en": "List written, prices compared, two hundred reviews read"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "대충 정해놓음",
-            "en": "Rough idea"
+            "ko": "살 것만 대충 정해두고 출발",
+            "en": "A rough idea of what I need, then off I go"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "가서 결정",
-            "en": "Decide there"
+            "ko": "매장에서 눈 마주친 애로 결정",
+            "en": "Whatever makes eye contact with me in the store wins"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "충동 구매",
-            "en": "Impulse buy"
+            "ko": "결제는 즉흥, 내용물은 택배 오는 날 확인",
+            "en": "Checkout is impulse — I find out what I bought on delivery day"
           },
           "score": 0
         }
@@ -383,29 +383,29 @@
       "options": [
         {
           "label": {
-            "ko": "철저한 계획형",
-            "en": "Strict planner"
+            "ko": "철저한 계획형. 계획을 세우기 위한 계획도 있음",
+            "en": "A hard planner — I have plans for making plans"
           },
           "score": 3
         },
         {
           "label": {
-            "ko": "유연한 계획형",
-            "en": "Flexible planner"
+            "ko": "유연한 계획형. 뼈대는 계획, 살은 즉흥",
+            "en": "A flexible planner: structured bones, improvised flesh"
           },
           "score": 2
         },
         {
           "label": {
-            "ko": "완전 즉흥형",
-            "en": "Fully spontaneous"
+            "ko": "완전 즉흥형. 내일의 나야, 뒷일을 부탁해",
+            "en": "Fully spontaneous. Tomorrow's me, I leave the rest to you"
           },
           "score": 0
         },
         {
           "label": {
-            "ko": "상황형 인간",
-            "en": "Situational"
+            "ko": "상황형. 결정은 그날의 나에게 위임함",
+            "en": "Situational — decisions delegated to whoever I am that day"
           },
           "score": 2
         }

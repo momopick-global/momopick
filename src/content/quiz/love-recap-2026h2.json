@@ -1,16 +1,37 @@
 {
   "id": "love-recap-2026h2",
   "slug": "love-recap-2026h2",
-  "locales": ["ko", "en"],
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "결산", "en": "recap" },
-    { "ko": "연애", "en": "love" },
-    { "ko": "하반기", "en": "H2" },
-    { "ko": "회고", "en": "retrospective" }
+    {
+      "ko": "결산",
+      "en": "recap"
+    },
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "하반기",
+      "en": "H2"
+    },
+    {
+      "ko": "회고",
+      "en": "retrospective"
+    }
   ],
-  "title": { "ko": "2026 하반기 연애 결산", "en": "2026 H2 Love Recap" },
-  "subtitle": { "ko": "올 하반기 네 연애 세포는 뭘 했나", "en": "What exactly did your romance cells do this half-year?" },
+  "title": {
+    "ko": "2026 하반기 연애 결산",
+    "en": "2026 H2 Love Recap"
+  },
+  "subtitle": {
+    "ko": "올 하반기 네 연애 세포는 뭘 했나",
+    "en": "What exactly did your romance cells do this half-year?"
+  },
   "images": {
     "thumbnail": "/images/quiz/love-recap-2026h2/thumb.webp",
     "og": "/images/quiz/love-recap-2026h2/thumb.jpg"
@@ -21,11 +42,23 @@
       "en": "From butterfly audits to year-end party positioning — an 8-question activity report on your 2026 H2 romance cells."
     },
     "keywords": [
-      { "ko": "연애 결산", "en": "love recap" },
-      { "ko": "하반기 회고", "en": "half-year retrospective" },
-      { "ko": "연애 테스트", "en": "love quiz" }
+      {
+        "ko": "연애 결산",
+        "en": "love recap"
+      },
+      {
+        "ko": "하반기 회고",
+        "en": "half-year retrospective"
+      },
+      {
+        "ko": "연애 테스트",
+        "en": "love quiz"
+      }
     ],
-    "ogTitle": { "ko": "2026 하반기 연애 결산", "en": "2026 H2 Love Recap" },
+    "ogTitle": {
+      "ko": "2026 하반기 연애 결산",
+      "en": "2026 H2 Love Recap"
+    },
     "ogDescription": {
       "ko": "주인공이었나, 관객이었나, 아예 극장 밖이었나",
       "en": "Were you the lead, the audience, or not even in the theater?"
@@ -33,12 +66,25 @@
   },
   "card": {
     "theme": "love",
-    "kicker": { "ko": "📊 하반기 결산", "en": "📊 H2 Recap" },
+    "kicker": {
+      "ko": "📊 하반기 결산",
+      "en": "📊 H2 Recap"
+    },
     "image": "/images/quiz/love-recap-2026h2/thumb.webp",
     "priority": 81
   },
-  "resultKeys": ["main_character", "observer", "grinder", "hibernator"],
-  "resultOrder": ["main_character", "observer", "grinder", "hibernator"],
+  "resultKeys": [
+    "main_character",
+    "observer",
+    "grinder",
+    "hibernator"
+  ],
+  "resultOrder": [
+    "main_character",
+    "observer",
+    "grinder",
+    "hibernator"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -50,64 +96,119 @@
   "analytics": {
     "eventKey": "love_recap_2026h2",
     "contentGroup": "love",
-    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
   },
-  "related": ["pursuit-vs-reality", "true-self-alone", "night-sky-mood-onepick"],
+  "related": [
+    "pursuit-vs-reality",
+    "true-self-alone",
+    "night-sky-mood-onepick"
+  ],
   "results": {
     "main_character": {
       "emoji": "🎬",
       "scoreKey": "main_character",
-      "title": { "ko": "하반기 주인공형", "en": "Main Character of H2" },
-      "tagline": { "ko": "올 하반기 로맨스 장르의 원톱 주연", "en": "The undisputed lead of this half-year's romance genre" },
+      "title": {
+        "ko": "하반기 주인공형",
+        "en": "Main Character of H2"
+      },
+      "tagline": {
+        "ko": "올 하반기 로맨스 장르의 원톱 주연",
+        "en": "The undisputed lead of this half-year's romance genre"
+      },
       "body": {
         "ko": "당신의 하반기는 편집 없이 내보내도 시청률이 나오는 분량이었습니다. 설렘, 밀당, 심쿵 이벤트가 실제로 '발생'한 흔치 않은 케이스죠. 이런 시기는 감정 소모도 큰 법이니, 연말엔 시즌 피날레를 서두르기보다 페이스 조절을 해보세요. 좋은 서사는 급전개보다 완급에서 나옵니다.",
         "en": "Your half-year could air unedited and still pull ratings. Butterflies, push-and-pull, heart-attack moments — things actually *happened*, which is rarer than it sounds. Seasons like this burn emotional fuel fast, so instead of rushing the finale, pace yourself. Great storylines come from rhythm, not rushed plot twists."
       },
-      "compat": { "best": "observer", "worst": "hibernator" }
+      "compat": {
+        "best": "observer",
+        "worst": "hibernator"
+      },
+      "image": "/images/quiz/love-recap-2026h2/result-1.webp"
     },
     "observer": {
       "emoji": "🍿",
       "scoreKey": "observer",
-      "title": { "ko": "관전 평론가형", "en": "The Love Critic" },
-      "tagline": { "ko": "남의 연애는 4K 화질로 시청하는 전문 관객", "en": "Watches everyone else's love life in 4K" },
+      "title": {
+        "ko": "관전 평론가형",
+        "en": "The Love Critic"
+      },
+      "tagline": {
+        "ko": "남의 연애는 4K 화질로 시청하는 전문 관객",
+        "en": "Watches everyone else's love life in 4K"
+      },
       "body": {
         "ko": "본인 연애는 휴방인데 남의 연애 분석은 프로 데뷔가 가능한 수준. 하반기 동안 쌓은 관전 데이터가 상당합니다. 사실 관찰력은 연애에서 가장 저평가된 재능이에요 — 남의 시그널을 그렇게 잘 읽는 눈이면 내 시그널도 읽힙니다. 내년엔 평론가석에서 한 번쯤 무대로 내려와 보는 건 어때요?",
         "en": "Your own love life is on hiatus, but your analysis of everyone else's is professional-grade. You've accumulated serious spectator data this half. Here's the thing: observation is the most underrated skill in dating — eyes that read other people's signals that well can read the ones aimed at you. Next year, consider stepping down from the critics' box onto the stage."
       },
-      "compat": { "best": "main_character", "worst": "hibernator" }
+      "compat": {
+        "best": "main_character",
+        "worst": "hibernator"
+      },
+      "image": "/images/quiz/love-recap-2026h2/result-2.webp"
     },
     "grinder": {
       "emoji": "📈",
       "scoreKey": "grinder",
-      "title": { "ko": "자기계발 몰빵형", "en": "The All-In Grinder" },
-      "tagline": { "ko": "연애 지분 0%, 성장 지분 100%의 포트폴리오", "en": "Portfolio allocation: love 0%, growth 100%" },
+      "title": {
+        "ko": "자기계발 몰빵형",
+        "en": "The All-In Grinder"
+      },
+      "tagline": {
+        "ko": "연애 지분 0%, 성장 지분 100%의 포트폴리오",
+        "en": "Portfolio allocation: love 0%, growth 100%"
+      },
       "body": {
         "ko": "하반기 감정 예산을 전액 자기 자신에게 투자한 타입. 연애 세포는 조용했지만 통장, 체력, 커리어 세포는 만개했습니다. 이건 놀랍게도 연애 시장에서도 최고의 전략이에요 — 매력은 갓생의 부산물이니까요. 다만 일정표에 '사람 만나는 칸'을 한 칸만 남겨두세요. 복리는 관계에도 붙습니다.",
         "en": "You invested this half-year's entire emotional budget in yourself. The romance cells stayed quiet, but your savings, stamina, and career cells are in full bloom. Ironically, this is also the strongest strategy in the dating market — attractiveness is a byproduct of a life well-run. Just leave one slot on the calendar for meeting people. Compound interest applies to relationships too."
       },
-      "compat": { "best": "hibernator", "worst": "main_character" }
+      "compat": {
+        "best": "hibernator",
+        "worst": "main_character"
+      },
+      "image": "/images/quiz/love-recap-2026h2/result-3.webp"
     },
     "hibernator": {
       "emoji": "🐻",
       "scoreKey": "hibernator",
-      "title": { "ko": "동면형", "en": "The Hibernator" },
-      "tagline": { "ko": "연애 세포가 이불 속에서 겨울잠 중", "en": "Romance cells currently asleep under a blanket" },
+      "title": {
+        "ko": "동면형",
+        "en": "The Hibernator"
+      },
+      "tagline": {
+        "ko": "연애 세포가 이불 속에서 겨울잠 중",
+        "en": "Romance cells currently asleep under a blanket"
+      },
       "body": {
         "ko": "하반기 연애 활동 보고서: '특이사항 없음'. 하지만 곰이 동면하는 건 게을러서가 아니라 에너지를 아끼는 생존 전략이기 때문입니다. 억지 설렘보다 편안한 휴식이 나은 시즌도 있어요. 동면의 핵심은 '봄에 일어난다'는 것 — 알람만 꺼두지 마세요. 세포는 죽은 게 아니라 자는 중이니까요.",
         "en": "H2 romance activity report: 'nothing to declare.' But remember — bears don't hibernate out of laziness; it's an energy-saving survival strategy. Some seasons, honest rest beats forced butterflies. The whole point of hibernation is waking up in spring, though — so don't switch off the alarm entirely. Your cells aren't dead. They're napping."
       },
-      "compat": { "best": "grinder", "worst": "main_character" }
+      "compat": {
+        "best": "grinder",
+        "worst": "main_character"
+      },
+      "image": "/images/quiz/love-recap-2026h2/result-4.webp"
     }
   },
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
-    "title": { "ko": "복합 시즌형", "en": "The Mixed Season" },
-    "tagline": { "ko": "한 시즌 안에 여러 장르가 공존했던 하반기", "en": "A half-year where several genres ran at once" },
+    "title": {
+      "ko": "복합 시즌형",
+      "en": "The Mixed Season"
+    },
+    "tagline": {
+      "ko": "한 시즌 안에 여러 장르가 공존했던 하반기",
+      "en": "A half-year where several genres ran at once"
+    },
     "body": {
       "ko": "설렘도 있었고, 관전도 했고, 갓생도 살았던 옴니버스 시즌. 어느 하나로 요약되지 않는 하반기는 그만큼 밀도가 높았다는 뜻입니다. 내년엔 그중 제일 재밌었던 장르에 분량을 몰아줘 보세요.",
       "en": "Some butterflies, some spectating, some grinding — an omnibus season. A half-year that resists a single label was a dense one. Next year, give the most fun genre the bigger share of screen time."
-    }
+    },
+    "image": "/images/quiz/love-recap-2026h2/result-blend.webp"
   },
   "questions": [
     {

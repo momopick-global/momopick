@@ -1,15 +1,33 @@
 {
   "id": "first-dm-simulation",
   "slug": "first-dm-simulation",
-  "locales": ["ko", "en"],
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "DM", "en": "DM" },
-    { "ko": "썸", "en": "flirting" },
-    { "ko": "시뮬레이션", "en": "simulation" }
+    {
+      "ko": "DM",
+      "en": "DM"
+    },
+    {
+      "ko": "썸",
+      "en": "flirting"
+    },
+    {
+      "ko": "시뮬레이션",
+      "en": "simulation"
+    }
   ],
-  "title": { "ko": "첫 DM 시뮬레이션", "en": "First DM Simulation" },
-  "subtitle": { "ko": "그 사람에게 첫 DM, 너라면 어떻게 보내?", "en": "Their profile is right there. How would you slide in?" },
+  "title": {
+    "ko": "첫 DM 시뮬레이션",
+    "en": "First DM Simulation"
+  },
+  "subtitle": {
+    "ko": "그 사람에게 첫 DM, 너라면 어떻게 보내?",
+    "en": "Their profile is right there. How would you slide in?"
+  },
   "images": {
     "thumbnail": "/images/quiz/first-dm-simulation/thumb.webp",
     "og": "/images/quiz/first-dm-simulation/thumb.jpg"
@@ -20,11 +38,23 @@
       "en": "From spotting them to setting a date — an 8-question DM roleplay that reveals your flirting type: sniper, novelist, chameleon, or ghost writer"
     },
     "keywords": [
-      { "ko": "DM 테스트", "en": "DM test" },
-      { "ko": "썸 시뮬레이션", "en": "flirting simulation" },
-      { "ko": "연애 성향", "en": "dating style" }
+      {
+        "ko": "DM 테스트",
+        "en": "DM test"
+      },
+      {
+        "ko": "썸 시뮬레이션",
+        "en": "flirting simulation"
+      },
+      {
+        "ko": "연애 성향",
+        "en": "dating style"
+      }
     ],
-    "ogTitle": { "ko": "첫 DM 시뮬레이션", "en": "First DM Simulation" },
+    "ogTitle": {
+      "ko": "첫 DM 시뮬레이션",
+      "en": "First DM Simulation"
+    },
     "ogDescription": {
       "ko": "첫 DM부터 약속 잡기까지 풀코스 상황극. 너의 어필 유형은?",
       "en": "A full roleplay from first DM to first date. What's your approach type?"
@@ -32,144 +62,423 @@
   },
   "card": {
     "theme": "love",
-    "kicker": { "ko": "📩 DM 상황극", "en": "📩 DM Roleplay" },
+    "kicker": {
+      "ko": "📩 DM 상황극",
+      "en": "📩 DM Roleplay"
+    },
     "image": "/images/quiz/first-dm-simulation/thumb.webp",
     "priority": 86
   },
   "analytics": {
     "eventKey": "first_dm_simulation",
     "contentGroup": "love",
-    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
   },
-  "related": ["kakao-reply-style", "ambiguous-situationship-end", "confession-success-rate"],
-  "resultKeys": ["sniper", "novelist", "chameleon", "ghost_writer"],
+  "related": [
+    "kakao-reply-style",
+    "ambiguous-situationship-end",
+    "confession-success-rate"
+  ],
+  "resultKeys": [
+    "sniper",
+    "novelist",
+    "chameleon",
+    "ghost_writer"
+  ],
   "results": {
     "sniper": {
       "emoji": "🎯",
       "scoreKey": "sniper",
-      "title": { "ko": "원샷 저격수형", "en": "One-Shot Sniper" },
-      "tagline": { "ko": "한 줄로 조준하고 한 발로 끝내는 사람", "en": "One line to aim, one shot to land" },
+      "title": {
+        "ko": "원샷 저격수형",
+        "en": "One-Shot Sniper"
+      },
+      "tagline": {
+        "ko": "한 줄로 조준하고 한 발로 끝내는 사람",
+        "en": "One line to aim, one shot to land"
+      },
       "body": {
         "ko": "당신의 DM은 군더더기가 없다. 조준, 발사, 명중. 상대가 정신 차리면 이미 대화가 시작돼 있다.\n망설임 없는 직진은 최고의 무기지만, 속도전에 익숙해진 나머지 상대의 템포를 놓칠 때가 있다. 상대에게도 장전할 시간이 필요하다는 걸 기억하자. 훅 들어오는 매력과 훅 부담스러운 건 종이 한 장 차이다.\n그래도 시작조차 못 하는 사람이 태반인 세상에서, 쏘는 사람만이 명중할 자격을 얻는다.\n오늘도 당신은 '이번 주 금요일 어때요'를 보내놓고 태연하게 다른 일을 하고 있다.",
         "en": "Your DMs carry zero excess weight. Aim, fire, hit. By the time they recover, the conversation has already started.\nFearless directness is your best weapon, but living in fast-forward means sometimes missing the other person's tempo. Remember: they need time to reload too. The line between charmingly bold and suddenly overwhelming is paper thin.\nStill, in a world where most people never even start, only those who shoot get the right to hit.\nToday, once again, you sent \"how about Friday?\" and calmly went back to whatever you were doing."
       },
-      "compat": { "best": "chameleon", "worst": "ghost_writer" }
+      "compat": {
+        "best": "chameleon",
+        "worst": "ghost_writer"
+      },
+      "image": "/images/quiz/first-dm-simulation/result-1.webp"
     },
     "novelist": {
       "emoji": "📜",
       "scoreKey": "novelist",
-      "title": { "ko": "장문 소설가형", "en": "Longform Novelist" },
-      "tagline": { "ko": "첫 DM이 이미 단편소설 분량인 사람", "en": "Your first DM already qualifies as a short story" },
+      "title": {
+        "ko": "장문 소설가형",
+        "en": "Longform Novelist"
+      },
+      "tagline": {
+        "ko": "첫 DM이 이미 단편소설 분량인 사람",
+        "en": "Your first DM already qualifies as a short story"
+      },
       "body": {
         "ko": "당신의 DM에는 기승전결이 있다. 상대는 답장을 하는 게 아니라 독후감을 쓰게 된다.\n정성과 진심만큼은 전 유형 중 최상위. 문제는 정보량이 상대의 처리 용량을 초과할 때가 있다는 것이다. 서사는 아껴뒀다가 만나서 풀어도 늦지 않다. DM은 예고편, 본편은 실물로.\n당신의 장문을 끝까지 읽고 그만큼 길게 답하는 사람이 나타난다면, 그 사람은 놓치지 말자. 독자가 아니라 공동 집필자다.\n오늘도 당신은 다섯 문단짜리 DM을 퇴고하며 '너무 기나' 하고 두 문단을 지웠다가 다시 붙였다.",
         "en": "Your DMs have a beginning, development, twist, and conclusion. People do not reply — they write book reports.\nIn sincerity and effort, you rank first among all types. The problem: your information output sometimes exceeds the reader's processing capacity. Save the saga and tell it in person — the DM is the trailer, not the feature film.\nIf someone ever reads your full message and replies at equal length, do not let them go. That is not a reader. That is a co-author.\nToday, once again, you proofread a five-paragraph DM, muttered \"too long?\", deleted two paragraphs, and pasted them right back."
       },
-      "compat": { "best": "ghost_writer", "worst": "sniper" }
+      "compat": {
+        "best": "ghost_writer",
+        "worst": "sniper"
+      },
+      "image": "/images/quiz/first-dm-simulation/result-2.webp"
     },
     "chameleon": {
       "emoji": "🦎",
       "scoreKey": "chameleon",
-      "title": { "ko": "텐션 카멜레온형", "en": "Vibe Chameleon" },
-      "tagline": { "ko": "상대 텐션에 맞춰 실시간 변색하는 사람", "en": "Color-shifts to match their energy in real time" },
+      "title": {
+        "ko": "텐션 카멜레온형",
+        "en": "Vibe Chameleon"
+      },
+      "tagline": {
+        "ko": "상대 텐션에 맞춰 실시간 변색하는 사람",
+        "en": "Color-shifts to match their energy in real time"
+      },
       "body": {
         "ko": "당신은 상대의 말투, 이모지 개수, ㅋ의 길이까지 스캔해서 완벽하게 동기화한다. 사실상 대화계의 보호색이다.\n이 맞춤형 어필 덕에 상대는 늘 '나랑 잘 통한다'고 느낀다. 강력한 재능이지만, 맞추기만 하다 보면 정작 당신의 원래 색을 상대가 영영 모를 수 있다. 관계가 깊어지려면 언젠가 본색 공개 이벤트가 필요하다.\n먼저 좋아하는 걸 하나쯤 툭 던져보자. 그 색을 예뻐해 주는 사람이 진짜다.\n오늘도 당신은 상대가 느낌표를 쓰기에 조용히 마침표를 지우고 느낌표로 교체했다.",
         "en": "You scan their tone, emoji count, even the length of their \"lol\" — then sync perfectly. You are essentially conversational camouflage.\nThanks to this tailored approach, everyone feels like you just get them. It is a real superpower, but if you only ever match, they may never learn your original color. For a relationship to deepen, a true-colors reveal has to happen eventually.\nTry tossing out one genuine preference first. Whoever finds that color beautiful is the real one.\nToday, once again, you noticed they use exclamation marks, so you quietly deleted your period and swapped it in."
       },
-      "compat": { "best": "sniper", "worst": "novelist" }
+      "compat": {
+        "best": "sniper",
+        "worst": "novelist"
+      },
+      "image": "/images/quiz/first-dm-simulation/result-3.webp"
     },
     "ghost_writer": {
       "emoji": "👻",
       "scoreKey": "ghost_writer",
-      "title": { "ko": "보내기 직전 삭제형", "en": "Delete-Before-Send Ghost" },
-      "tagline": { "ko": "명작을 쓰고 발행은 안 하는 사람", "en": "Writes masterpieces, publishes none of them" },
+      "title": {
+        "ko": "보내기 직전 삭제형",
+        "en": "Delete-Before-Send Ghost"
+      },
+      "tagline": {
+        "ko": "명작을 쓰고 발행은 안 하는 사람",
+        "en": "Writes masterpieces, publishes none of them"
+      },
       "body": {
         "ko": "당신의 임시저장함에는 세상에 나오지 못한 명문들이 잠들어 있다. 상대는 그 존재조차 모른다.\n신중함은 실수를 줄여주지만, 전송되지 않은 DM의 성공 확률은 정확히 0%다. 당신이 백스페이스를 누르는 동안 누군가는 오타 섞인 한 줄로 그 사람과 약속을 잡는다. 완성도보다 발송이 먼저다.\n비법은 하나, '보내도 세상이 안 무너진다'를 열 번쯤 실험으로 확인하는 것. 정말 안 무너진다.\n오늘도 당신은 완벽한 첫인사를 완성하고, 소리 없이 전체 선택, 삭제를 눌렀다.",
         "en": "Your drafts folder holds masterpieces the world will never see. The other person does not even know they exist.\nCaution prevents mistakes, but an unsent DM has a success rate of exactly 0%. While you hover over backspace, someone else lands a date with one typo-ridden line. Shipping beats polishing.\nThere is one cure: run the experiment \"sending it will not end the world\" about ten times. It genuinely will not.\nToday, once again, you perfected the ideal opener, then silently pressed select-all and delete."
       },
-      "compat": { "best": "sniper", "worst": "novelist" }
+      "compat": {
+        "best": "sniper",
+        "worst": "novelist"
+      },
+      "image": "/images/quiz/first-dm-simulation/result-4.webp"
     }
   },
   "blend": {
     "emoji": "🎬",
     "scoreKey": "blend",
-    "title": { "ko": "멀티 시나리오형", "en": "Multi-Scenario Type" },
-    "tagline": { "ko": "상황마다 다른 대본을 꺼내는 사람", "en": "A different script for every scene" },
+    "title": {
+      "ko": "멀티 시나리오형",
+      "en": "Multi-Scenario Type"
+    },
+    "tagline": {
+      "ko": "상황마다 다른 대본을 꺼내는 사람",
+      "en": "A different script for every scene"
+    },
     "body": {
       "ko": "당신의 DM 전략은 하나로 고정되지 않는다. 어떤 날은 저격수처럼 한 줄을 쏘고, 어떤 날은 소설을 쓰고, 어떤 날은 쓰고 지운다.\n이건 우유부단이 아니라 레퍼토리다. 상대와 상황을 읽고 대본을 갈아끼우는 능력은 아무나 갖는 게 아니다. 다만 진짜 중요한 사람 앞에서는 전략이 아니라 본심이 이긴다는 것만 기억하자.\n어떤 대본을 골라도 결말을 만드는 버튼은 결국 '전송' 하나다.",
       "en": "Your DM strategy refuses to settle on one mode. Some days you fire a sniper's single line, some days you write a novel, some days you draft and delete.\nThat is not indecision — that is repertoire. Reading the person and the moment, then swapping scripts, is a genuinely rare skill. Just remember: in front of someone who truly matters, sincerity beats strategy every time.\nWhichever script you choose, only one button writes the ending — and it is labeled 'send.'"
-    }
+    },
+    "image": "/images/quiz/first-dm-simulation/result-blend.webp"
   },
   "questions": [
     {
-      "prompt": { "ko": "알고리즘이 그 사람 계정을 띄웠다. 첫 행동은?", "en": "The algorithm just served you their profile. First move?" },
+      "prompt": {
+        "ko": "알고리즘이 그 사람 계정을 띄웠다. 첫 행동은?",
+        "en": "The algorithm just served you their profile. First move?"
+      },
       "options": [
-        { "label": { "ko": "최신 게시물에 좋아요 하나를 정확히 저격해 존재감을 심는다", "en": "Land one precise like on their latest post to plant my existence" }, "key": "sniper" },
-        { "label": { "ko": "게시물 3년 치 정독, 이 사람의 서사부터 파악한다", "en": "Read three years of posts — I need their full backstory first" }, "key": "novelist" },
-        { "label": { "ko": "그 사람 피드 톤을 분석해 내 프로필부터 손본다", "en": "Analyze their feed's aesthetic and renovate my own profile first" }, "key": "chameleon" },
-        { "label": { "ko": "팔로우를 눌렀다 취소했다 눌렀다 취소한다", "en": "Follow, unfollow, follow, unfollow" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "최신 게시물에 좋아요 하나를 정확히 저격해 존재감을 심는다",
+            "en": "Land one precise like on their latest post to plant my existence"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "게시물 3년 치 정독, 이 사람의 서사부터 파악한다",
+            "en": "Read three years of posts — I need their full backstory first"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "그 사람 피드 톤을 분석해 내 프로필부터 손본다",
+            "en": "Analyze their feed's aesthetic and renovate my own profile first"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "팔로우를 눌렀다 취소했다 눌렀다 취소한다",
+            "en": "Follow, unfollow, follow, unfollow"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "첫 DM 작성 화면. 뭐라고 쓸까?", "en": "The DM box is open. What do you type?" },
+      "prompt": {
+        "ko": "첫 DM 작성 화면. 뭐라고 쓸까?",
+        "en": "The DM box is open. What do you type?"
+      },
       "options": [
-        { "label": { "ko": "'그 카페 어디예요?' 용건 한 줄, 미끼는 짧을수록 강하다", "en": "'Where's that cafe?' One line — the shorter the bait, the stronger the bite" }, "key": "sniper" },
-        { "label": { "ko": "'안녕하세요'로 시작하는 5문단, 자기소개서인지 DM인지", "en": "Five paragraphs opening with 'Hello' — is it a DM or a cover letter?" }, "key": "novelist" },
-        { "label": { "ko": "상대 말투를 미리 벤치마킹한 맞춤형 첫인사", "en": "A custom opener pre-calibrated to match their exact tone" }, "key": "chameleon" },
-        { "label": { "ko": "완벽한 문장 완성, 전체 삭제, 재작성, 또 삭제", "en": "Perfect sentence complete. Delete all. Rewrite. Delete again" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "'그 카페 어디예요?' 용건 한 줄, 미끼는 짧을수록 강하다",
+            "en": "'Where's that cafe?' One line — the shorter the bait, the stronger the bite"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "'안녕하세요'로 시작하는 5문단, 자기소개서인지 DM인지",
+            "en": "Five paragraphs opening with 'Hello' — is it a DM or a cover letter?"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "상대 말투를 미리 벤치마킹한 맞춤형 첫인사",
+            "en": "A custom opener pre-calibrated to match their exact tone"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "완벽한 문장 완성, 전체 삭제, 재작성, 또 삭제",
+            "en": "Perfect sentence complete. Delete all. Rewrite. Delete again"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "드디어 전송 버튼 앞. 당신은?", "en": "Your finger hovers over the send button. You…" },
+      "prompt": {
+        "ko": "드디어 전송 버튼 앞. 당신은?",
+        "en": "Your finger hovers over the send button. You…"
+      },
       "options": [
-        { "label": { "ko": "고민 3초, 전송, 바로 다음 작전 구상", "en": "Three seconds of thought, send, on to planning the next operation" }, "key": "sniper" },
-        { "label": { "ko": "오타 검수 3회에 문단 재배치까지 마치고 발송", "en": "Three rounds of proofreading, one paragraph reshuffle, then release" }, "key": "novelist" },
-        { "label": { "ko": "친구에게 스크린샷 보내 톤 검사를 통과한 뒤 전송", "en": "Screenshot to a friend for a vibe check — send only after approval" }, "key": "chameleon" },
-        { "label": { "ko": "새벽 감성으로 보내고 아침에 '메시지 삭제 방법' 검색", "en": "Send it in 2 AM courage, then google 'how to unsend DM' at dawn" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "고민 3초, 전송, 바로 다음 작전 구상",
+            "en": "Three seconds of thought, send, on to planning the next operation"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "오타 검수 3회에 문단 재배치까지 마치고 발송",
+            "en": "Three rounds of proofreading, one paragraph reshuffle, then release"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "친구에게 스크린샷 보내 톤 검사를 통과한 뒤 전송",
+            "en": "Screenshot to a friend for a vibe check — send only after approval"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "새벽 감성으로 보내고 아침에 '메시지 삭제 방법' 검색",
+            "en": "Send it in 2 AM courage, then google 'how to unsend DM' at dawn"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "답장이 왔다! 첫 리액션은?", "en": "They replied! Your first reaction?" },
+      "prompt": {
+        "ko": "답장이 왔다! 첫 리액션은?",
+        "en": "They replied! Your first reaction?"
+      },
       "options": [
-        { "label": { "ko": "바로 다음 질문 투척, 대화 주도권부터 확보한다", "en": "Fire the next question immediately — seize control of the conversation" }, "key": "sniper" },
-        { "label": { "ko": "한 줄 답장에 해석 리포트 작성, 'ㅋ가 2개면 호감인가'", "en": "Draft an analysis report on their one line: 'two lols — is that interest?'" }, "key": "novelist" },
-        { "label": { "ko": "상대 텐션 스캔 완료, 이모지 개수까지 맞춰 회신한다", "en": "Vibe scan complete — reply with a matching emoji count, exactly" }, "key": "chameleon" },
-        { "label": { "ko": "답장이 왔다는 사실에 심장 정지, 30분간 화면만 본다", "en": "Cardiac arrest at the mere reply — stare at the screen for 30 minutes" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "바로 다음 질문 투척, 대화 주도권부터 확보한다",
+            "en": "Fire the next question immediately — seize control of the conversation"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "한 줄 답장에 해석 리포트 작성, 'ㅋ가 2개면 호감인가'",
+            "en": "Draft an analysis report on their one line: 'two lols — is that interest?'"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "상대 텐션 스캔 완료, 이모지 개수까지 맞춰 회신한다",
+            "en": "Vibe scan complete — reply with a matching emoji count, exactly"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "답장이 왔다는 사실에 심장 정지, 30분간 화면만 본다",
+            "en": "Cardiac arrest at the mere reply — stare at the screen for 30 minutes"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "대화가 이어지고 있다. 당신의 채팅 스타일은?", "en": "The conversation is flowing. Your chatting style?" },
+      "prompt": {
+        "ko": "대화가 이어지고 있다. 당신의 채팅 스타일은?",
+        "en": "The conversation is flowing. Your chatting style?"
+      },
       "options": [
-        { "label": { "ko": "짧고 굵게, 궁금하게 만들고 빠진다", "en": "Short and sharp — leave them curious, then vanish" }, "key": "sniper" },
-        { "label": { "ko": "TMI 대방출, 어느새 내 인생사 3부작 연재 중", "en": "Full TMI mode — somehow I'm serializing my life story in three parts" }, "key": "novelist" },
-        { "label": { "ko": "상대가 ㅋㅋ면 나도 ㅋㅋ, 하이텐션이면 나도 풀악셀", "en": "They send 'lol', I send 'lol'; they go high-energy, I floor it too" }, "key": "chameleon" },
-        { "label": { "ko": "할 말 다 써놓고 절반만 전송, 나머지는 임시저장", "en": "Write everything, send half, archive the rest in drafts" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "짧고 굵게, 궁금하게 만들고 빠진다",
+            "en": "Short and sharp — leave them curious, then vanish"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "TMI 대방출, 어느새 내 인생사 3부작 연재 중",
+            "en": "Full TMI mode — somehow I'm serializing my life story in three parts"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "상대가 ㅋㅋ면 나도 ㅋㅋ, 하이텐션이면 나도 풀악셀",
+            "en": "They send 'lol', I send 'lol'; they go high-energy, I floor it too"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "할 말 다 써놓고 절반만 전송, 나머지는 임시저장",
+            "en": "Write everything, send half, archive the rest in drafts"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "그 사람이 스토리에 음식 사진을 올렸다. 기회다!", "en": "They posted a food photo to their story. This is your chance!" },
+      "prompt": {
+        "ko": "그 사람이 스토리에 음식 사진을 올렸다. 기회다!",
+        "en": "They posted a food photo to their story. This is your chance!"
+      },
       "options": [
-        { "label": { "ko": "'여기 알아요, 근데 옆집이 더 맛있어요' 훅 치고 들어간다", "en": "'I know that place — the one next door is better though.' Straight in" }, "key": "sniper" },
-        { "label": { "ko": "그 메뉴의 유래와 내 원픽 맛집 리스트를 공유한다", "en": "Share the dish's origin story plus my personally ranked restaurant list" }, "key": "novelist" },
-        { "label": { "ko": "상대가 불꽃 이모지면 나도 불꽃으로 응답한다", "en": "They used the fire emoji, so fire emoji it is" }, "key": "chameleon" },
-        { "label": { "ko": "답장 쓰다가 '스토커 같나' 싶어 하트만 남긴다", "en": "Draft a reply, worry it sounds stalkerish, leave just a heart" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "'여기 알아요, 근데 옆집이 더 맛있어요' 훅 치고 들어간다",
+            "en": "'I know that place — the one next door is better though.' Straight in"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "그 메뉴의 유래와 내 원픽 맛집 리스트를 공유한다",
+            "en": "Share the dish's origin story plus my personally ranked restaurant list"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "상대가 불꽃 이모지면 나도 불꽃으로 응답한다",
+            "en": "They used the fire emoji, so fire emoji it is"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "답장 쓰다가 '스토커 같나' 싶어 하트만 남긴다",
+            "en": "Draft a reply, worry it sounds stalkerish, leave just a heart"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "대화가 무르익었다. 약속을 잡는다면?", "en": "Things are going well. Time to suggest meeting up. How?" },
+      "prompt": {
+        "ko": "대화가 무르익었다. 약속을 잡는다면?",
+        "en": "Things are going well. Time to suggest meeting up. How?"
+      },
       "options": [
-        { "label": { "ko": "'이번 주 금요일 7시 어때요' 좌표를 정확히 찍는다", "en": "'Friday, 7 PM?' — drop the exact coordinates" }, "key": "sniper" },
-        { "label": { "ko": "만나면 하고 싶은 것 리스트를 A안 B안 C안으로 발송", "en": "Send a full itinerary of options: Plan A, Plan B, and Plan C" }, "key": "novelist" },
-        { "label": { "ko": "'언제 시간 되세요?' 상대 스케줄에 풀 맞춤 모드", "en": "'Whenever works for you!' — full sync with their schedule" }, "key": "chameleon" },
-        { "label": { "ko": "'언제 한번 봬요' 쓰고 '한번'이 부담일까 봐 삭제한다", "en": "Type 'we should meet sometime,' then delete it in case 'sometime' is too much" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "'이번 주 금요일 7시 어때요' 좌표를 정확히 찍는다",
+            "en": "'Friday, 7 PM?' — drop the exact coordinates"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "만나면 하고 싶은 것 리스트를 A안 B안 C안으로 발송",
+            "en": "Send a full itinerary of options: Plan A, Plan B, and Plan C"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "'언제 시간 되세요?' 상대 스케줄에 풀 맞춤 모드",
+            "en": "'Whenever works for you!' — full sync with their schedule"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "'언제 한번 봬요' 쓰고 '한번'이 부담일까 봐 삭제한다",
+            "en": "Type 'we should meet sometime,' then delete it in case 'sometime' is too much"
+          },
+          "key": "ghost_writer"
+        }
       ]
     },
     {
-      "prompt": { "ko": "약속 성사! 첫 만남 전날 밤, 당신은?", "en": "The date is set! The night before, you are…" },
+      "prompt": {
+        "ko": "약속 성사! 첫 만남 전날 밤, 당신은?",
+        "en": "The date is set! The night before, you are…"
+      },
       "options": [
-        { "label": { "ko": "코스 3개 사전답사 완료, 이미 이긴 게임이다", "en": "Three-course route pre-scouted in person — the game is already won" }, "key": "sniper" },
-        { "label": { "ko": "예상 대화 주제 20개 메모, 침묵은 허용하지 않는다", "en": "Twenty conversation topics memo'd — silence will not be tolerated" }, "key": "novelist" },
-        { "label": { "ko": "옷 5벌 놓고 '그 사람 스타일엔 뭐가 맞지' 패션쇼 중", "en": "Five outfits laid out, hosting a solo fashion show: 'which fits their style?'" }, "key": "chameleon" },
-        { "label": { "ko": "'컨디션이 안 좋아서…' 취소 문자를 써놨다 지운다", "en": "Draft the 'not feeling great, sorry…' cancellation text, then erase it" }, "key": "ghost_writer" }
+        {
+          "label": {
+            "ko": "코스 3개 사전답사 완료, 이미 이긴 게임이다",
+            "en": "Three-course route pre-scouted in person — the game is already won"
+          },
+          "key": "sniper"
+        },
+        {
+          "label": {
+            "ko": "예상 대화 주제 20개 메모, 침묵은 허용하지 않는다",
+            "en": "Twenty conversation topics memo'd — silence will not be tolerated"
+          },
+          "key": "novelist"
+        },
+        {
+          "label": {
+            "ko": "옷 5벌 놓고 '그 사람 스타일엔 뭐가 맞지' 패션쇼 중",
+            "en": "Five outfits laid out, hosting a solo fashion show: 'which fits their style?'"
+          },
+          "key": "chameleon"
+        },
+        {
+          "label": {
+            "ko": "'컨디션이 안 좋아서…' 취소 문자를 써놨다 지운다",
+            "en": "Draft the 'not feeling great, sorry…' cancellation text, then erase it"
+          },
+          "key": "ghost_writer"
+        }
       ]
     }
   ],

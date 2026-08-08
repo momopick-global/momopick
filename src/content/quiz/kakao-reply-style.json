@@ -1,15 +1,33 @@
 {
   "id": "kakao-reply-style",
   "slug": "kakao-reply-style",
-  "locales": ["ko", "en"],
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "카톡", "en": "texting" },
-    { "ko": "연애", "en": "love" },
-    { "ko": "성향", "en": "personality" }
+    {
+      "ko": "카톡",
+      "en": "texting"
+    },
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    }
   ],
-  "title": { "ko": "카톡 답장 유형 테스트", "en": "Chat Reply Style Test" },
-  "subtitle": { "ko": "네 답장 습관, 생각보다 다 보인다", "en": "Your reply habits say more than you think" },
+  "title": {
+    "ko": "카톡 답장 유형 테스트",
+    "en": "Chat Reply Style Test"
+  },
+  "subtitle": {
+    "ko": "네 답장 습관, 생각보다 다 보인다",
+    "en": "Your reply habits say more than you think"
+  },
   "images": {
     "thumbnail": "/images/quiz/kakao-reply-style/thumb.webp",
     "og": "/images/quiz/kakao-reply-style/thumb.jpg"
@@ -20,11 +38,23 @@
       "en": "Flash replier, three-day ager, emoji bomber, or dry texter — find your chat reply type in 8 questions"
     },
     "keywords": [
-      { "ko": "카톡 답장 테스트", "en": "reply style test" },
-      { "ko": "카톡 유형", "en": "texting type" },
-      { "ko": "연락 성향", "en": "texting habits" }
+      {
+        "ko": "카톡 답장 테스트",
+        "en": "reply style test"
+      },
+      {
+        "ko": "카톡 유형",
+        "en": "texting type"
+      },
+      {
+        "ko": "연락 성향",
+        "en": "texting habits"
+      }
     ],
-    "ogTitle": { "ko": "카톡 답장 유형 테스트", "en": "Chat Reply Style Test" },
+    "ogTitle": {
+      "ko": "카톡 답장 유형 테스트",
+      "en": "Chat Reply Style Test"
+    },
     "ogDescription": {
       "ko": "너 혹시 읽고 3일 묵히는 타입? 내 답장 유형 확인하고 친구랑 비교하기",
       "en": "Do you age your replies for three days? Find your type and compare with friends"
@@ -32,144 +62,423 @@
   },
   "card": {
     "theme": "love",
-    "kicker": { "ko": "💬 답장 성향 테스트", "en": "💬 Reply Style Test" },
+    "kicker": {
+      "ko": "💬 답장 성향 테스트",
+      "en": "💬 Reply Style Test"
+    },
     "image": "/images/quiz/kakao-reply-style/thumb.webp",
     "priority": 92
   },
   "analytics": {
     "eventKey": "kakao_reply_style",
     "contentGroup": "love",
-    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
   },
-  "related": ["love-meme-exam", "why-cant-you-text-first", "emotional-sensitivity"],
-  "resultKeys": ["flash", "aged", "emoji_bomber", "dry"],
+  "related": [
+    "love-meme-exam",
+    "why-cant-you-text-first",
+    "emotional-sensitivity"
+  ],
+  "resultKeys": [
+    "flash",
+    "aged",
+    "emoji_bomber",
+    "dry"
+  ],
   "results": {
     "flash": {
       "emoji": "⚡",
       "scoreKey": "flash",
-      "title": { "ko": "광속답장형", "en": "Flash Replier" },
-      "tagline": { "ko": "읽음 표시와 답장이 동시에 뜨는 사람", "en": "The read receipt and the reply arrive at the same time" },
+      "title": {
+        "ko": "광속답장형",
+        "en": "Flash Replier"
+      },
+      "tagline": {
+        "ko": "읽음 표시와 답장이 동시에 뜨는 사람",
+        "en": "The read receipt and the reply arrive at the same time"
+      },
       "body": {
         "ko": "당신의 답장 속도는 통신사 기술력의 한계를 시험하고 있다.\n상대는 편하고 고맙지만, 문제는 당신이 준 속도가 기준이 되어버린다는 것. 상대의 답장이 10분만 늦어도 혼자 소설을 쓰기 시작한다.\n빠른 답장은 성의의 표현이지만, 가끔은 나를 위해 폰을 내려놓는 연습도 필요하다.\n오늘도 당신은 엘리베이터에서 지하 주차장 진입 직전, 신호가 끊기기 전에 전송 버튼을 누르는 데 성공했다.",
         "en": "Your reply speed is stress-testing the limits of telecom technology.\nPeople love how responsive you are — the problem is that your speed becomes the standard, so when their reply is ten minutes late, you start writing a whole novel in your head.\nFast replies show you care, but sometimes putting the phone down is a skill worth practicing too.\nToday, once again, you hit send in the elevator half a second before the signal died in the parking garage."
       },
-      "compat": { "best": "emoji_bomber", "worst": "aged" }
+      "compat": {
+        "best": "emoji_bomber",
+        "worst": "aged"
+      },
+      "image": "/images/quiz/kakao-reply-style/result-1.webp"
     },
     "aged": {
       "emoji": "🍷",
       "scoreKey": "aged",
-      "title": { "ko": "3일숙성형", "en": "Three-Day Ager" },
-      "tagline": { "ko": "답장은 와인, 묵힐수록 깊어진다고 믿는 사람", "en": "Replies are like wine — better with age, allegedly" },
+      "title": {
+        "ko": "3일숙성형",
+        "en": "Three-Day Ager"
+      },
+      "tagline": {
+        "ko": "답장은 와인, 묵힐수록 깊어진다고 믿는 사람",
+        "en": "Replies are like wine — better with age, allegedly"
+      },
       "body": {
         "ko": "당신에게 답장이란 즉석식품이 아니라 발효식품이다.\n읽씹이 아니다. 마음속으로는 이미 세 번쯤 답했다. 다만 손가락이 동참하지 않았을 뿐. 상대는 그 사실을 모른다는 게 유일한 문제다.\n느린 답장이 여유로 보일 때도 있지만, 좋아하는 사람에게만큼은 숙성 기간을 줄여보자. 와인은 기다려주지만 사람은 떠난다.\n오늘도 당신은 '어 이거 답장했어야 했는데'라며 일주일 전 메시지를 발굴하고 조용히 화면을 닫았다.",
         "en": "To you, a reply is not instant food — it is a fermented delicacy.\nIt is not ghosting. In your head, you already answered three times. Your fingers just never joined in. The only issue: the other person has no way of knowing that.\nA slow reply can look effortlessly cool, but for the person you actually like, consider shortening the aging process. Wine waits. People do not.\nToday, once again, you excavated a week-old message, whispered \"oh, I meant to reply to this,\" and quietly closed the app."
       },
-      "compat": { "best": "dry", "worst": "flash" }
+      "compat": {
+        "best": "dry",
+        "worst": "flash"
+      },
+      "image": "/images/quiz/kakao-reply-style/result-2.webp"
     },
     "emoji_bomber": {
       "emoji": "💣",
       "scoreKey": "emoji_bomber",
-      "title": { "ko": "이모티콘폭격형", "en": "Emoji Bomber" },
-      "tagline": { "ko": "문장보다 이모티콘이 먼저 나가는 사람", "en": "The emoji leaves the launchpad before the sentence does" },
+      "title": {
+        "ko": "이모티콘폭격형",
+        "en": "Emoji Bomber"
+      },
+      "tagline": {
+        "ko": "문장보다 이모티콘이 먼저 나가는 사람",
+        "en": "The emoji leaves the launchpad before the sentence does"
+      },
       "body": {
         "ko": "당신의 채팅창은 텍스트보다 이모티콘 지분이 높다. 사실상 그림책이다.\n감정 표현이 풍부해서 대화가 늘 유쾌하지만, 정작 중요한 말을 해야 할 때도 이모티콘 뒤에 숨는 경향이 있다. 귀여운 곰이 대신 사과하고, 우는 토끼가 대신 서운해한다.\n가끔은 이모티콘 없이 문장으로 마음을 말해보자. 의외로 그 한 줄이 이모티콘 백 개보다 강하다.\n오늘도 당신은 신규 이모티콘을 결제하며 '이건 실전용이야'라고 스스로를 설득했다.",
         "en": "Your chat window has a higher emoji ratio than text. It is basically a picture book.\nYour expressiveness keeps every conversation fun, but when it is time to say something that matters, you tend to hide behind the stickers. A cute bear apologizes for you; a crying rabbit sulks on your behalf.\nOnce in a while, try saying it in plain words. One honest sentence hits harder than a hundred emojis.\nToday, once again, you bought a new sticker pack and told yourself, \"this one is for practical use.\""
       },
-      "compat": { "best": "flash", "worst": "dry" }
+      "compat": {
+        "best": "flash",
+        "worst": "dry"
+      },
+      "image": "/images/quiz/kakao-reply-style/result-3.webp"
     },
     "dry": {
       "emoji": "🗿",
       "scoreKey": "dry",
-      "title": { "ko": "단답장인형", "en": "Dry Texting Master" },
-      "tagline": { "ko": "ㅇㅇ 두 글자에 모든 서사를 담는 사람", "en": "An entire saga compressed into a single 'k'" },
+      "title": {
+        "ko": "단답장인형",
+        "en": "Dry Texting Master"
+      },
+      "tagline": {
+        "ko": "ㅇㅇ 두 글자에 모든 서사를 담는 사람",
+        "en": "An entire saga compressed into a single 'k'"
+      },
       "body": {
         "ko": "당신의 답장은 압축률이 지나치게 뛰어나다. 상대는 매번 압축을 풀다가 지친다.\n악의는 없다. 오히려 효율의 극치다. 하지만 'ㅇㅇ'과 '응 알겠어!'의 온도 차이를 상대는 크게 느낀다는 걸 기억하자. 특히 썸 단계에서 단답은 관심 없음으로 오역되기 쉽다.\n글자 수를 두 배로만 늘려도 인간관계 만족도가 눈에 띄게 올라간다는 게 주변인들의 증언이다.\n오늘도 당신은 장문의 안부 인사에 '잘 지냄'으로 화답하며 통신비를 아꼈다.",
         "en": "Your replies have an absurdly high compression ratio. People get tired just unzipping them.\nThere is no malice — it is peak efficiency. But remember: the temperature gap between \"k\" and \"yes, got it!\" feels enormous on the receiving end. In the flirting stage especially, dry texts get mistranslated as zero interest.\nWitnesses report that simply doubling your character count noticeably improves your relationships.\nToday, once again, you answered a heartfelt three-paragraph check-in with \"doing fine\" and saved on data."
       },
-      "compat": { "best": "aged", "worst": "emoji_bomber" }
+      "compat": {
+        "best": "aged",
+        "worst": "emoji_bomber"
+      },
+      "image": "/images/quiz/kakao-reply-style/result-4.webp"
     }
   },
   "blend": {
     "emoji": "🎭",
     "scoreKey": "blend",
-    "title": { "ko": "상대맞춤 변속형", "en": "Adaptive Shifter" },
-    "tagline": { "ko": "상대가 누구냐에 따라 답장 기어가 바뀌는 사람", "en": "Your reply gear shifts depending on who is texting" },
+    "title": {
+      "ko": "상대맞춤 변속형",
+      "en": "Adaptive Shifter"
+    },
+    "tagline": {
+      "ko": "상대가 누구냐에 따라 답장 기어가 바뀌는 사람",
+      "en": "Your reply gear shifts depending on who is texting"
+    },
     "body": {
       "ko": "당신의 답장 유형은 하나로 고정되지 않는다. 상대와 상황에 따라 광속과 숙성 사이를 자유롭게 오간다.\n좋아하는 사람에겐 광속, 단체 공지엔 침묵, 친한 친구에겐 이모티콘 폭격. 사실 가장 사회성 높은 형태지만, 본인의 진짜 마음은 답장 속도에 다 드러난다는 게 함정이다.\n당신이 누구에게 제일 빨리 답하는지 확인해보자. 그게 당신의 진심 순위표다.",
       "en": "Your reply style refuses to be pinned down. You shift freely between light speed and slow fermentation depending on who is on the other end.\nLight speed for your crush, radio silence for group announcements, emoji carpet-bombing for your best friend. It is arguably the most socially fluent style — the catch is that your reply speed leaks your true feelings every time.\nCheck who gets your fastest replies. That is your honest ranking of who matters."
-    }
+    },
+    "image": "/images/quiz/kakao-reply-style/result-blend.webp"
   },
   "questions": [
     {
-      "prompt": { "ko": "단톡 알림이 100개 쌓였다. 당신의 대처는?", "en": "100 unread messages pile up in the group chat. Your move?" },
+      "prompt": {
+        "ko": "단톡 알림이 100개 쌓였다. 당신의 대처는?",
+        "en": "100 unread messages pile up in the group chat. Your move?"
+      },
       "options": [
-        { "label": { "ko": "쌓일 틈이 없다, 이미 실시간으로 다 읽고 답했다", "en": "Pile up? I already read and replied to all of them live" }, "key": "flash" },
-        { "label": { "ko": "100개? 아직 덜 익었다, 200개쯤 되면 연다", "en": "Only 100? Not ripe yet — I open it at 200" }, "key": "aged" },
-        { "label": { "ko": "일단 이모티콘 하나 던져서 생존 신고부터", "en": "Toss in one emoji as proof of life first" }, "key": "emoji_bomber" },
-        { "label": { "ko": "'ㅇㅇ' 하나로 100개를 일괄 정리한다", "en": "Settle all 100 with a single 'k'" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "쌓일 틈이 없다, 이미 실시간으로 다 읽고 답했다",
+            "en": "Pile up? I already read and replied to all of them live"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "100개? 아직 덜 익었다, 200개쯤 되면 연다",
+            "en": "Only 100? Not ripe yet — I open it at 200"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "일단 이모티콘 하나 던져서 생존 신고부터",
+            "en": "Toss in one emoji as proof of life first"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "'ㅇㅇ' 하나로 100개를 일괄 정리한다",
+            "en": "Settle all 100 with a single 'k'"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "좋아하는 사람에게 카톡이 왔다. 첫 반응은?", "en": "Your crush just texted you. First reaction?" },
+      "prompt": {
+        "ko": "좋아하는 사람에게 카톡이 왔다. 첫 반응은?",
+        "en": "Your crush just texted you. First reaction?"
+      },
       "options": [
-        { "label": { "ko": "알림 뜨자마자 광클, 0.3초 만에 읽음 표시", "en": "Instant tap — read receipt up in 0.3 seconds" }, "key": "flash" },
-        { "label": { "ko": "좋아할수록 뜸을 들인다, 세 시간은 기본 숙성", "en": "The more I like them, the longer I age it — three hours minimum" }, "key": "aged" },
-        { "label": { "ko": "설렘을 이모티콘 5연발로 표현한다", "en": "Express the butterflies with a five-emoji salvo" }, "key": "emoji_bomber" },
-        { "label": { "ko": "'ㅇㅋ'… 아 이게 아닌데 (이미 전송됨)", "en": "'k'… wait, that's not what I meant (already sent)" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "알림 뜨자마자 광클, 0.3초 만에 읽음 표시",
+            "en": "Instant tap — read receipt up in 0.3 seconds"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "좋아할수록 뜸을 들인다, 세 시간은 기본 숙성",
+            "en": "The more I like them, the longer I age it — three hours minimum"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "설렘을 이모티콘 5연발로 표현한다",
+            "en": "Express the butterflies with a five-emoji salvo"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "'ㅇㅋ'… 아 이게 아닌데 (이미 전송됨)",
+            "en": "'k'… wait, that's not what I meant (already sent)"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "\"뭐해?\"라는 카톡을 받았다. 당신의 답은?", "en": "You get a \"what are you up to?\" text. Your reply?" },
+      "prompt": {
+        "ko": "\"뭐해?\"라는 카톡을 받았다. 당신의 답은?",
+        "en": "You get a \"what are you up to?\" text. Your reply?"
+      },
       "options": [
-        { "label": { "ko": "받자마자 답장, 전송 속도가 곧 진심이다", "en": "Reply on arrival — send speed equals sincerity" }, "key": "flash" },
-        { "label": { "ko": "3일 뒤에 알려준다, 그땐 나도 내가 뭘 했는지 궁금하다", "en": "I'll answer in three days, when even I wonder what I was doing" }, "key": "aged" },
-        { "label": { "ko": "지금 상태를 이모티콘 조합으로 브리핑한다", "en": "Deliver a full status briefing in emoji form" }, "key": "emoji_bomber" },
-        { "label": { "ko": "'있어' (두 글자로 존재 증명 완료)", "en": "'here' (existence confirmed in one word)" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "받자마자 답장, 전송 속도가 곧 진심이다",
+            "en": "Reply on arrival — send speed equals sincerity"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "3일 뒤에 알려준다, 그땐 나도 내가 뭘 했는지 궁금하다",
+            "en": "I'll answer in three days, when even I wonder what I was doing"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "지금 상태를 이모티콘 조합으로 브리핑한다",
+            "en": "Deliver a full status briefing in emoji form"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "'있어' (두 글자로 존재 증명 완료)",
+            "en": "'here' (existence confirmed in one word)"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "뭐라고 답해야 할지 애매한 질문이 왔다. 어떻게 하지?", "en": "A question arrives that you have no idea how to answer. What now?" },
+      "prompt": {
+        "ko": "뭐라고 답해야 할지 애매한 질문이 왔다. 어떻게 하지?",
+        "en": "A question arrives that you have no idea how to answer. What now?"
+      },
       "options": [
-        { "label": { "ko": "일단 즉답부터 하고 수습은 나중에 한다", "en": "Fire off an instant answer, do damage control later" }, "key": "flash" },
-        { "label": { "ko": "답을 고르다가 질문의 유통기한이 지나버린다", "en": "Deliberate so long the question passes its expiry date" }, "key": "aged" },
-        { "label": { "ko": "물음표 이모티콘으로 질문을 정중히 반사한다", "en": "Politely deflect it back with a question-mark emoji" }, "key": "emoji_bomber" },
-        { "label": { "ko": "'글쎄' (해석은 상대의 몫)", "en": "'hmm' (interpretation is their job)" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "일단 즉답부터 하고 수습은 나중에 한다",
+            "en": "Fire off an instant answer, do damage control later"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "답을 고르다가 질문의 유통기한이 지나버린다",
+            "en": "Deliberate so long the question passes its expiry date"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "물음표 이모티콘으로 질문을 정중히 반사한다",
+            "en": "Politely deflect it back with a question-mark emoji"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "'글쎄' (해석은 상대의 몫)",
+            "en": "'hmm' (interpretation is their job)"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "답장하기 너무 귀찮은 날, 당신의 선택은?", "en": "It's one of those days when replying feels impossible. You choose to…" },
+      "prompt": {
+        "ko": "답장하기 너무 귀찮은 날, 당신의 선택은?",
+        "en": "It's one of those days when replying feels impossible. You choose to…"
+      },
       "options": [
-        { "label": { "ko": "귀찮음도 광속 처리, '지금 귀찮아'라고 바로 답한다", "en": "Process the laziness at light speed: reply 'too lazy rn' instantly" }, "key": "flash" },
-        { "label": { "ko": "지금이 바로 숙성 타이밍, 메시지를 마음의 냉장고에 넣는다", "en": "Perfect aging window — into the mental fridge it goes" }, "key": "aged" },
-        { "label": { "ko": "말 대신 이모티콘 하나로 퉁친다", "en": "Settle the whole thing with one sticker, zero words" }, "key": "emoji_bomber" },
-        { "label": { "ko": "'ㅇ' (오늘의 에너지는 여기까지)", "en": "'k' (that's all the energy I have today)" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "귀찮음도 광속 처리, '지금 귀찮아'라고 바로 답한다",
+            "en": "Process the laziness at light speed: reply 'too lazy rn' instantly"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "지금이 바로 숙성 타이밍, 메시지를 마음의 냉장고에 넣는다",
+            "en": "Perfect aging window — into the mental fridge it goes"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "말 대신 이모티콘 하나로 퉁친다",
+            "en": "Settle the whole thing with one sticker, zero words"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "'ㅇ' (오늘의 에너지는 여기까지)",
+            "en": "'k' (that's all the energy I have today)"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "당신의 이모티콘 사용 빈도는?", "en": "How often do you actually use emojis?" },
+      "prompt": {
+        "ko": "당신의 이모티콘 사용 빈도는?",
+        "en": "How often do you actually use emojis?"
+      },
       "options": [
-        { "label": { "ko": "타자가 더 빠르다, 이모티콘 고를 시간에 세 문장 보낸다", "en": "Typing is faster — I send three sentences in the time it takes to pick one" }, "key": "flash" },
-        { "label": { "ko": "고르다 보면 유행이 지나 있어서 결국 못 보낸다", "en": "By the time I pick one, it's already out of style, so I never send it" }, "key": "aged" },
-        { "label": { "ko": "문장보다 많다, 월급 일부가 이모티콘샵으로 간다", "en": "More emojis than words — a slice of my paycheck goes to the sticker shop" }, "key": "emoji_bomber" },
-        { "label": { "ko": "기본 이모지 하나를 3년째 돌려쓰는 중", "en": "Been recycling the same default emoji for three years" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "타자가 더 빠르다, 이모티콘 고를 시간에 세 문장 보낸다",
+            "en": "Typing is faster — I send three sentences in the time it takes to pick one"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "고르다 보면 유행이 지나 있어서 결국 못 보낸다",
+            "en": "By the time I pick one, it's already out of style, so I never send it"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "문장보다 많다, 월급 일부가 이모티콘샵으로 간다",
+            "en": "More emojis than words — a slice of my paycheck goes to the sticker shop"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "기본 이모지 하나를 3년째 돌려쓰는 중",
+            "en": "Been recycling the same default emoji for three years"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "읽고 답장 안 한 적이 있다면, 그 이유는?", "en": "You left someone on read. What actually happened?" },
+      "prompt": {
+        "ko": "읽고 답장 안 한 적이 있다면, 그 이유는?",
+        "en": "You left someone on read. What actually happened?"
+      },
       "options": [
-        { "label": { "ko": "그럴 리 없다, 읽씹은 내 사전에 없는 단어다", "en": "Impossible — 'left on read' is not in my dictionary" }, "key": "flash" },
-        { "label": { "ko": "답장은 와인과 같아서 3일은 묵혀야 맛이 든다", "en": "Replies are like wine — three days of aging brings out the flavor" }, "key": "aged" },
-        { "label": { "ko": "보낼 이모티콘 고르다가 30분 지나 타이밍을 놓쳤다", "en": "Spent 30 minutes choosing the perfect sticker and missed the window" }, "key": "emoji_bomber" },
-        { "label": { "ko": "마음속으로는 답했다, 텔레파시가 전송 실패했을 뿐", "en": "I did reply — in my head. The telepathy just failed to deliver" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "그럴 리 없다, 읽씹은 내 사전에 없는 단어다",
+            "en": "Impossible — 'left on read' is not in my dictionary"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "답장은 와인과 같아서 3일은 묵혀야 맛이 든다",
+            "en": "Replies are like wine — three days of aging brings out the flavor"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "보낼 이모티콘 고르다가 30분 지나 타이밍을 놓쳤다",
+            "en": "Spent 30 minutes choosing the perfect sticker and missed the window"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "마음속으로는 답했다, 텔레파시가 전송 실패했을 뿐",
+            "en": "I did reply — in my head. The telepathy just failed to deliver"
+          },
+          "key": "dry"
+        }
       ]
     },
     {
-      "prompt": { "ko": "전화 vs 문자, 당신의 진영은?", "en": "Calls vs texts — which side are you on?" },
+      "prompt": {
+        "ko": "전화 vs 문자, 당신의 진영은?",
+        "en": "Calls vs texts — which side are you on?"
+      },
       "options": [
-        { "label": { "ko": "문자 기다릴 시간에 전화 건다, 벨 1초 만에 받는다", "en": "Why wait for a text? I call — and pick up within one ring" }, "key": "flash" },
-        { "label": { "ko": "부재중 확인은 3일 뒤, '어 전화했었네?'", "en": "I notice missed calls three days later: 'oh, you called?'" }, "key": "aged" },
-        { "label": { "ko": "전화 대신 이모티콘 릴레이로 통화 분위기를 낸다", "en": "Skip the call — an emoji relay recreates the phone-call vibe" }, "key": "emoji_bomber" },
-        { "label": { "ko": "둘 다 부담, 용건은 세 단어 안에 끝낸다", "en": "Both are too much — any business gets settled in three words" }, "key": "dry" }
+        {
+          "label": {
+            "ko": "문자 기다릴 시간에 전화 건다, 벨 1초 만에 받는다",
+            "en": "Why wait for a text? I call — and pick up within one ring"
+          },
+          "key": "flash"
+        },
+        {
+          "label": {
+            "ko": "부재중 확인은 3일 뒤, '어 전화했었네?'",
+            "en": "I notice missed calls three days later: 'oh, you called?'"
+          },
+          "key": "aged"
+        },
+        {
+          "label": {
+            "ko": "전화 대신 이모티콘 릴레이로 통화 분위기를 낸다",
+            "en": "Skip the call — an emoji relay recreates the phone-call vibe"
+          },
+          "key": "emoji_bomber"
+        },
+        {
+          "label": {
+            "ko": "둘 다 부담, 용건은 세 단어 안에 끝낸다",
+            "en": "Both are too much — any business gets settled in three words"
+          },
+          "key": "dry"
+        }
       ]
     }
   ],

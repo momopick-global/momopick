@@ -1,0 +1,523 @@
+{
+  "id": "love-report-card-2026",
+  "slug": "love-report-card-2026",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "category": "love",
+  "tags": [
+    {
+      "ko": "연말결산",
+      "en": "year-end"
+    },
+    {
+      "ko": "연애",
+      "en": "love"
+    },
+    {
+      "ko": "성적표",
+      "en": "report card"
+    }
+  ],
+  "title": {
+    "ko": "연말 연애 리캡 2026 — 올해 내 연애 성적표",
+    "en": "2026 Love Recap — Your Year-End Report Card"
+  },
+  "subtitle": {
+    "ko": "양심에 손 얹고 자가채점, 올해 연애 학점 나갑니다",
+    "en": "Hand on heart, self-graded — your love GPA for 2026 is in"
+  },
+  "images": {
+    "thumbnail": "/images/common/quiz-image-pending.webp"
+  },
+  "meta": {
+    "description": {
+      "ko": "올해 나의 연애, 몇 점이었을까? 설렘·실행력·회복력까지 10문항 양심 자가채점으로 받아보는 2026 연말 연애 성적표",
+      "en": "How did your love life score this year? A 10-question honest self-exam for your 2026 year-end love report card"
+    },
+    "keywords": [
+      {
+        "ko": "연말 연애 결산",
+        "en": "year-end love recap"
+      },
+      {
+        "ko": "연애 성적표",
+        "en": "love report card"
+      },
+      {
+        "ko": "2026 결산 테스트",
+        "en": "2026 recap test"
+      }
+    ],
+    "ogTitle": {
+      "ko": "올해 내 연애 성적표 📋",
+      "en": "Your 2026 Love Report Card 📋"
+    },
+    "ogDescription": {
+      "ko": "양심 자가채점 10문항. 올해 연애 학점, 확인할 용기 있어?",
+      "en": "10 honest questions. Brave enough to see your love GPA?"
+    }
+  },
+  "card": {
+    "theme": "love",
+    "kicker": {
+      "ko": "📋 연말 결산",
+      "en": "📋 Year-End Recap"
+    },
+    "image": "/images/common/quiz-image-pending.webp",
+    "priority": 86
+  },
+  "analytics": {
+    "eventKey": "love_report_card_2026",
+    "contentGroup": "love",
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
+  },
+  "related": [
+    "love-recap-2026h2",
+    "love-knowledge-certificate",
+    "solo-survival-exam"
+  ],
+  "grades": [
+    {
+      "min": 90,
+      "max": 100,
+      "title": {
+        "ko": "올해의 연애 대상 🏆",
+        "en": "Love Life of the Year 🏆"
+      },
+      "desc": {
+        "ko": "설렘, 실행, 회복까지 전 과목 만점권. 올해 당신의 연애 세포는 야근을 했습니다. 내년 목표는 딱 하나 — 이 페이스 유지하되, 폰 배터리도 좀 아껴주세요.",
+        "en": "Top marks across butterflies, action, and recovery. Your love cells worked overtime this year. One goal for next year: keep the pace, but maybe spare your phone battery."
+      }
+    },
+    {
+      "min": 70,
+      "max": 89,
+      "title": {
+        "ko": "우수 이수자 🎖️",
+        "en": "Honor Roll 🎖️"
+      },
+      "desc": {
+        "ko": "굵직한 순간마다 도망치지 않고 출석 도장을 찍었네요. 몇 번의 망설임만 아니었으면 대상감. 내년엔 '보내지 못한 메시지' 폴더를 조금만 더 비워봅시다.",
+        "en": "You showed up for the big moments instead of running. A few hesitations away from the grand prize. Next year, let's empty the 'unsent messages' folder a little more."
+      }
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "title": {
+        "ko": "성실 수강생 📚",
+        "en": "Diligent Student 📚"
+      },
+      "desc": {
+        "ko": "마음은 늘 강의실에 있었는데 실습 참여가 아쉬웠던 한 해. 출석 점수는 챙겼으니 낙제는 아닙니다. 내년 수강신청 땐 '먼저 연락하기' 과목을 담아보세요.",
+        "en": "Your heart attended every lecture; the lab participation was the issue. Attendance points secured — no failing here. For next year's enrollment, consider the 'Text First' elective."
+      }
+    },
+    {
+      "min": 30,
+      "max": 49,
+      "title": {
+        "ko": "명예 청강생 🪑",
+        "en": "Honorary Auditor 🪑"
+      },
+      "desc": {
+        "ko": "남의 연애는 박사급으로 분석했는데 내 연애는 강의실 밖이었죠. 괜찮아요, 청강으로 쌓은 이론이 어디 가지 않습니다. 내년엔 실습 한 번만 신청해봅시다.",
+        "en": "You analyzed everyone else's love life at PhD level while yours stayed outside the classroom. It's fine — audited theory never expires. Next year, sign up for just one lab session."
+      }
+    },
+    {
+      "min": 0,
+      "max": 29,
+      "title": {
+        "ko": "마음의 방학 🏖️",
+        "en": "Sabbatical of the Heart 🏖️"
+      },
+      "desc": {
+        "ko": "올해는 연애 과목 휴학계를 낸 해였네요. 그것도 선택입니다 — 방학 동안 체력(자존감) 충전 잘 하셨다면 그게 최고 학점이에요. 복학 시기는 본인이 정하는 겁니다.",
+        "en": "You filed for a leave of absence from love this year. That's a valid choice — if you spent the break recharging your self-esteem, that's the highest grade there is. Re-enrollment date: entirely up to you."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "prompt": {
+        "ko": "1교시 [설렘 실기] 올해 심장이 3초 이상 빨라진 상대가 있었다.",
+        "en": "Period 1 [Butterflies Lab] Someone made your heart race for 3+ seconds this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "있었다 — 그 순간 아직 저장되어 있음",
+            "en": "Yes — that moment is still saved in memory"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "연예인/2D는 포함되나요?",
+            "en": "Do celebrities/2D count?"
+          }
+        },
+        {
+          "label": {
+            "ko": "심장은 러닝할 때만 빨라졌다",
+            "en": "My heart only raced while jogging"
+          }
+        },
+        {
+          "label": {
+            "ko": "기억이 안 나면 없는 거겠죠",
+            "en": "If I can't remember, it didn't happen"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "설렘 과목은 출석만 해도 절반입니다. 연예인 항목을 골랐다면… 교양 선택으로는 인정.",
+        "en": "In Butterflies class, showing up is half the grade. If you picked celebrities… fine, that counts as a liberal-arts elective."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "2교시 [실행력] 올해 먼저 연락하거나 먼저 만나자고 한 적이 있다.",
+        "en": "Period 2 [Initiative] You texted first or asked to meet first this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "있다 — 보내기 전에 3번 고쳐 썼지만 보냈다",
+            "en": "Yes — rewrote it three times, but I sent it"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "답장 속도로 마음을 표현했다",
+            "en": "I expressed my feelings through reply speed"
+          }
+        },
+        {
+          "label": {
+            "ko": "상대가 먼저 하길 기도했다",
+            "en": "I prayed they'd go first"
+          }
+        },
+        {
+          "label": {
+            "ko": "임시저장함에 초안 12개 있음",
+            "en": "Twelve drafts in my unsent folder"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "3번 고쳐 쓴 흔적은 감점이 아니라 가산점입니다. 12개의 초안은… 내년 이월 가능.",
+        "en": "Rewriting three times isn't a deduction — it's extra credit. The twelve drafts… can roll over to next year."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "3교시 [독해] 올해 상대의 시그널을 제때 알아챈 적이 있다.",
+        "en": "Period 3 [Reading Comprehension] You caught someone's signal in time this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "있다 — 눈치채고 움직이기까지 했다",
+            "en": "Yes — noticed it AND acted on it"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "석 달 뒤 이불 속에서 알아챘다",
+            "en": "Realized it three months later, under my blanket"
+          }
+        },
+        {
+          "label": {
+            "ko": "친구가 정리해준 뒤에야 이해했다",
+            "en": "Only understood after my friend explained it"
+          }
+        },
+        {
+          "label": {
+            "ko": "시그널이 왔다는 것 자체가 금시초문",
+            "en": "Wait, there were signals?"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "독해는 타이밍 과목입니다. 이불 속 독해는 복습이지 수업 참여가 아니에요.",
+        "en": "Reading comprehension is a timing course. Blanket-based analysis is review, not class participation."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "4교시 [표현] 올해 좋아하는 마음을 어떤 형태로든 표현했다.",
+        "en": "Period 4 [Expression] You expressed your feelings in some form this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "말이든 행동이든 직접 전달했다",
+            "en": "Delivered it directly — words or actions"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "스토리 좋아요를 평소보다 0.3초 빠르게 눌렀다",
+            "en": "Liked their story 0.3 seconds faster than usual"
+          }
+        },
+        {
+          "label": {
+            "ko": "노래 가사로 우회 전달 시도",
+            "en": "Attempted delivery via song lyrics"
+          }
+        },
+        {
+          "label": {
+            "ko": "표현은 마음속 금고에 안전하게 보관 중",
+            "en": "Feelings stored safely in my internal vault"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "0.3초 빠른 좋아요, 유의미한 데이터지만 상대 수신함엔 도착하지 않습니다.",
+        "en": "The 0.3-second-faster like is statistically significant — but it never reaches their inbox."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "5교시 [체험학습] 올해 데이트(비슷한 것 포함)를 해봤다.",
+        "en": "Period 5 [Field Trip] You went on a date (or something like one) this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "했다 — 둘 다 그게 데이트인 걸 알았다",
+            "en": "Yes — and both of us knew it was a date"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "했는데 데이트였는지는 아직 논쟁 중",
+            "en": "Went on one, but its date-status is still disputed"
+          }
+        },
+        {
+          "label": {
+            "ko": "단체 모임에서 옆자리 앉기 성공",
+            "en": "Successfully sat next to them at a group hangout"
+          }
+        },
+        {
+          "label": {
+            "ko": "체험학습은 유튜브 브이로그로 대체",
+            "en": "Substituted the field trip with YouTube vlogs"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "'둘 다 알았다'가 핵심 채점 기준입니다. 한쪽만 알았다면 그건 출장이에요.",
+        "en": "'Both of us knew' is the key grading criterion. If only one knew, that was a business trip."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "6교시 [회복탄력성] 올해 마음이 다쳤을 때, 나를 잘 돌봤다.",
+        "en": "Period 6 [Resilience] When your heart took a hit this year, you took care of yourself."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "울 건 울고, 먹을 건 먹고, 다시 일어났다",
+            "en": "Cried what needed crying, ate what needed eating, got back up"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "새벽 감성 플레이리스트에 2주 거주",
+            "en": "Lived in a 3 AM playlist for two weeks"
+          }
+        },
+        {
+          "label": {
+            "ko": "아무렇지 않은 척 스킬 만렙 달성",
+            "en": "Maxed out my 'I'm totally fine' skill tree"
+          }
+        },
+        {
+          "label": {
+            "ko": "다칠 일 자체를 원천 차단했다",
+            "en": "Prevented all damage by preventing all contact"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "회복탄력성 과목의 정답은 화려한 극복이 아니라 '잘 먹고 잘 자기'입니다. 새벽 플레이리스트는 2주까진 정상 커리큘럼.",
+        "en": "The right answer in Resilience isn't a glamorous comeback — it's eating and sleeping well. Two weeks of 3 AM playlists is within the standard curriculum."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "7교시 [인간관계론] 올해 연애 문제로 친구에게 상담한 총 시간은?",
+        "en": "Period 7 [Human Relations] Total hours spent consulting friends about love this year?"
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "적당히 했고, 친구 고민도 그만큼 들어줬다",
+            "en": "A reasonable amount — and I listened to theirs just as much"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "친구가 내 연애사 논문 쓸 수 있는 수준",
+            "en": "Enough for my friend to publish a dissertation on my love life"
+          }
+        },
+        {
+          "label": {
+            "ko": "상담은 안 하고 혼자 시뮬레이션 300회",
+            "en": "No consultations — just 300 solo simulations"
+          }
+        },
+        {
+          "label": {
+            "ko": "상담할 소재 자체가 없었다",
+            "en": "There was no case material to consult about"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "상담은 주고받아야 학점이 나옵니다. 논문 수준 제공자는 친구에게 밥 한 끼 사세요.",
+        "en": "Consulting only earns credits when it goes both ways. Dissertation-level providers: buy your friend dinner."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "8교시 [자기이해] 올해 '내가 연애에서 원하는 것'을 하나라도 새로 알게 됐다.",
+        "en": "Period 8 [Self-Study] You learned at least one new thing about what you want in love this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "알게 됐다 — 그게 올해 최대 수확",
+            "en": "I did — and it was the year's biggest harvest"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "원하는 건 아는데 만나질 못함",
+            "en": "I know what I want; it just doesn't exist nearby"
+          }
+        },
+        {
+          "label": {
+            "ko": "테스트 결과로만 27번 확인함",
+            "en": "Confirmed it 27 times via personality tests only"
+          }
+        },
+        {
+          "label": {
+            "ko": "생각하면 복잡해져서 보류",
+            "en": "Thinking about it got complicated, so — postponed"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "자기이해는 연애 전 과목의 선수과목입니다. 테스트 27번도 훌륭한 예습이에요. (여기서 28번째를 하고 계시네요.)",
+        "en": "Self-study is the prerequisite for every love course. 27 personality tests is excellent prep. (You're on your 28th right now.)"
+      }
+    },
+    {
+      "prompt": {
+        "ko": "9교시 [용기] 올해 결과가 불확실한데도 마음을 걸어본 적이 있다.",
+        "en": "Period 9 [Courage] You put your heart on the line despite uncertain odds this year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "있다 — 결과와 무관하게 후회 없음",
+            "en": "Yes — zero regrets, whatever the outcome"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "성공 확률 90% 이상일 때만 시도",
+            "en": "Only attempted at 90%+ success probability"
+          }
+        },
+        {
+          "label": {
+            "ko": "마음을 걸기 전에 마음이 접혔다",
+            "en": "Folded before the bet was placed"
+          }
+        },
+        {
+          "label": {
+            "ko": "올해는 관망 포지션 유지",
+            "en": "Held an observer position all year"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "용기 과목은 결과가 아니라 시도로 채점합니다. 차인 것도 출석 인정, 도망친 것만 결석 처리.",
+        "en": "Courage is graded on attempts, not outcomes. Getting rejected counts as attendance; only running away is marked absent."
+      }
+    },
+    {
+      "prompt": {
+        "ko": "10교시 [기말고사] 지금, 내년의 연애가 조금은 기대된다.",
+        "en": "Final Exam: Right now, you're at least a little excited about love next year."
+      },
+      "options": [
+        {
+          "label": {
+            "ko": "기대된다 — 뭐가 됐든 궁금하다",
+            "en": "I am — whatever comes, I'm curious"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "ko": "기대 반, 방어기제 반",
+            "en": "Half excitement, half defense mechanism"
+          }
+        },
+        {
+          "label": {
+            "ko": "기대 안 하는 게 안전하다고 배웠다",
+            "en": "I've learned that expecting nothing is safer"
+          }
+        },
+        {
+          "label": {
+            "ko": "내년 걱정은 내년의 내가",
+            "en": "Next year's problem belongs to next year's me"
+          }
+        }
+      ],
+      "explanation": {
+        "ko": "기말고사 정답은 사실 다 정답입니다. 다만 '조금 궁금하다'는 마음이 내년 수강신청의 시작이에요.",
+        "en": "Honestly, every answer passes the final. But 'a little curious' is how next year's enrollment begins."
+      }
+    }
+  ],
+  "footnote": {
+    "ko": "재미로 보는 연말 결산이에요. 학점이 어떻든, 올해를 살아낸 것 자체가 이수 완료입니다.",
+    "en": "A just-for-fun year-end recap. Whatever your GPA, surviving this year counts as course completion."
+  }
+}

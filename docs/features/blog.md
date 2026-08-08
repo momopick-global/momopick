@@ -6,7 +6,7 @@
 
 블로그 글 17편. 콘텐츠는 `src/content/blog/koSamplePosts.ts`에 TypeScript 객체 배열로 작성.
 
-## 운영 중인 글 (17개, 2026-07-09 확인)
+## 운영 중인 글 (18개, 2026-07-09 확인)
 
 본문 길이는 공백 제외 기준. 이미지는 `public/images/blog/<slug>-ko-cover.webp`.
 
@@ -23,6 +23,7 @@
 | `why-cant-text-first` | love | 681자 | ✅ |
 | `sensitivity-is-not-a-flaw` | personality | 677자 | ✅ |
 | `self-esteem-signs` | personality | 656자 | ✅ |
+| `island-one-pick-values` | fun | 709자 | ⚠️ PENDING |
 | `color-mood-today` | fun | 636자 | ✅ |
 | `habits-that-ruin-relationships` | love | 628자 | ✅ |
 | `signs-he-lost-interest` | love | 626자 | ✅ |
@@ -30,9 +31,9 @@
 | `planner-vs-spontaneous` | personality | 601자 | ✅ |
 | `new-quizzes-rhythm` | story | 584자 | ✅ |
 
-카테고리 분포: love 7 · personality 4 · story 3 · fun 2 · tarot 1
+카테고리 분포: love 7 · personality 4 · fun 3 · story 3 · tarot 1
 
-> ✅ 이미지: **17편 전부 커버 연결 완료**(2026-07-09). 새 글 커버 프롬프트는 [../design/blog-image-prompts-copypaste.md](../design/blog-image-prompts-copypaste.md).
+> ✅ 이미지: 18편 중 17편 연결 완료. `island-one-pick-values` 1편만 커버 필요 → [../design/blog-image-prompts-copypaste.md](../design/blog-image-prompts-copypaste.md) 16번 프롬프트.
 > ✅ 독창성: 신규 글 전부 **자체 유형 렌즈** 적용(연결 퀴즈의 실제 결과 유형 인용). 원칙은 [../content/blog-writing-guide.md](../content/blog-writing-guide.md#독창성-원칙-가장-중요-) 참고.
 > ⚠️ `new-quizzes-rhythm` 584자로 600자 하한을 약간 밑돎 — 소폭 확장 권장.
 

@@ -45,6 +45,7 @@ import lovePatternDestroyingHabit from "./love-pattern-destroying-habit.json";
 import whoLikesYouType from "./who-likes-you-type.json";
 import whenMenLoseInterest from "./when-men-lose-interest.json";
 import whyCantYouTextFirst from "./why-cant-you-text-first.json";
+import loveReportCard2026 from "./love-report-card-2026.json";
 
 /** 빌드 시 번들에 포함. 문구는 JSON 내 `{ ko, en }`로 관리 (언어별 하위 폴더 불필요) */
 export const quizWhoLikesYouType = whoLikesYouType as SnackQuizDefinition;
@@ -125,6 +126,8 @@ export const quizCrushOverdriveIndex = crushOverdriveIndex as PercentageQuizDefi
 export const quizGhostingRiskForecast = ghostingRiskForecast as PercentageQuizDefinition;
 export const quizBreakupResilienceTest = breakupResilienceTest as PercentageQuizDefinition;
 
+export const quizLoveReportCard2026 = loveReportCard2026 as TriviaQuizDefinition;
+
 /** 스낵 퀴즈(최다득표형) — 결과 이미지 갤러리·`/ko/love/[slug]/results/` 라우트용 */
 export const snackQuizDefinitionsCatalog: SnackQuizDefinition[] = [
   quizColorMoodOnepick,
@@ -163,6 +166,7 @@ export const snackQuizDefinitionsCatalog: SnackQuizDefinition[] = [
 
 /** 정답형 퀴즈 카탈로그 — `/ko/love/[slug]/results/` 등급 갤러리용 */
 export const triviaQuizDefinitionsCatalog: TriviaQuizDefinition[] = [
+  quizLoveReportCard2026,
   quizLoveMemeExam,
   quizSomeSignalReadingTest,
   quizLoveMemeExam2,
@@ -192,6 +196,7 @@ export const koQuizCatalogForHome: (
   | PercentageQuizDefinition
   | TriviaQuizDefinition
 )[] = [
+  quizLoveReportCard2026,
   quizLoveMemeExam,
   quizKakaoReplyStyle,
   quizPursuitVsReality,

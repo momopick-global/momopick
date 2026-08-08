@@ -1,15 +1,33 @@
 {
   "id": "pursuit-vs-reality",
   "slug": "pursuit-vs-reality",
-  "locales": ["ko", "en"],
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "추구미", "en": "ideal self" },
-    { "ko": "현실", "en": "reality" },
-    { "ko": "성향", "en": "personality" }
+    {
+      "ko": "추구미",
+      "en": "ideal self"
+    },
+    {
+      "ko": "현실",
+      "en": "reality"
+    },
+    {
+      "ko": "성향",
+      "en": "personality"
+    }
   ],
-  "title": { "ko": "추구미 vs 현실미 선택전", "en": "Dream Me vs Real Me Showdown" },
-  "subtitle": { "ko": "머릿속의 나는 완벽한데, 현실의 나는 왜", "en": "The me in my head is flawless — so what happened out here" },
+  "title": {
+    "ko": "추구미 vs 현실미 선택전",
+    "en": "Dream Me vs Real Me Showdown"
+  },
+  "subtitle": {
+    "ko": "머릿속의 나는 완벽한데, 현실의 나는 왜",
+    "en": "The me in my head is flawless — so what happened out here"
+  },
   "images": {
     "thumbnail": "/images/quiz/pursuit-vs-reality/thumb.webp",
     "og": "/images/quiz/pursuit-vs-reality/thumb.jpg"
@@ -20,11 +38,23 @@
       "en": "Pure visionary, tightrope master, reality settler, or cosmic planner in bed — find where you stand between dream and reality in 8 questions"
     },
     "keywords": [
-      { "ko": "추구미 테스트", "en": "ideal self test" },
-      { "ko": "현실 자아", "en": "real self" },
-      { "ko": "성향 테스트", "en": "personality quiz" }
+      {
+        "ko": "추구미 테스트",
+        "en": "ideal self test"
+      },
+      {
+        "ko": "현실 자아",
+        "en": "real self"
+      },
+      {
+        "ko": "성향 테스트",
+        "en": "personality quiz"
+      }
     ],
-    "ogTitle": { "ko": "추구미 vs 현실미 선택전", "en": "Dream Me vs Real Me Showdown" },
+    "ogTitle": {
+      "ko": "추구미 vs 현실미 선택전",
+      "en": "Dream Me vs Real Me Showdown"
+    },
     "ogDescription": {
       "ko": "다이어리는 갓생, 침대는 진실. 이상과 현실 사이 내 진짜 좌표는?",
       "en": "The planner says grind, the bed says truth. Where do you really stand?"
@@ -32,144 +62,423 @@
   },
   "card": {
     "theme": "love",
-    "kicker": { "ko": "✨ 자아 밸런스 테스트", "en": "✨ Self Balance Test" },
+    "kicker": {
+      "ko": "✨ 자아 밸런스 테스트",
+      "en": "✨ Self Balance Test"
+    },
     "image": "/images/quiz/pursuit-vs-reality/thumb.webp",
     "priority": 90
   },
   "analytics": {
     "eventKey": "pursuit_vs_reality",
     "contentGroup": "love",
-    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
   },
-  "related": ["kakao-reply-style", "true-self-alone", "personality-psychology-test"],
-  "resultKeys": ["visionary", "balancer", "realist", "chaos"],
+  "related": [
+    "kakao-reply-style",
+    "true-self-alone",
+    "personality-psychology-test"
+  ],
+  "resultKeys": [
+    "visionary",
+    "balancer",
+    "realist",
+    "chaos"
+  ],
   "results": {
     "visionary": {
       "emoji": "✨",
       "scoreKey": "visionary",
-      "title": { "ko": "추구미 순도 100%형", "en": "Pure Visionary" },
-      "tagline": { "ko": "머릿속 세계관은 이미 완공, 현실은 착공 예정", "en": "The dream world is fully built — reality is still breaking ground" },
+      "title": {
+        "ko": "추구미 순도 100%형",
+        "en": "Pure Visionary"
+      },
+      "tagline": {
+        "ko": "머릿속 세계관은 이미 완공, 현실은 착공 예정",
+        "en": "The dream world is fully built — reality is still breaking ground"
+      },
       "body": {
         "ko": "당신의 상상 속 자아는 이미 갓생 다큐멘터리 주인공이다. 촬영만 안 들어갔을 뿐.\n이상이 높다는 건 방향 감각이 있다는 뜻이다. 문제는 현실의 나에게 너무 가혹한 기준을 들이대며 자책 루프에 빠지기 쉽다는 것. 추구미는 채찍이 아니라 나침반으로 쓸 때 제일 강하다.\n오늘 할 수 있는 가장 작은 한 조각부터 실행하면, 그 세계관은 픽션에서 논픽션으로 넘어오기 시작한다.\n오늘도 당신은 미라클모닝 브이로그를 새벽 2시에 시청하며 내일의 나를 예약했다.",
         "en": "Your imaginary self is already the star of a productivity documentary. Filming just has not started yet.\nHigh ideals mean you have a sense of direction. The trap is holding your real self to impossible standards and spiraling into self-blame. An ideal self works best as a compass, not a whip.\nStart with the smallest piece you can actually do today, and that fictional universe begins crossing over into nonfiction.\nTonight, once again, you watched a 5 AM morning-routine vlog at 2 AM and booked tomorrow's new you."
       },
-      "compat": { "best": "balancer", "worst": "realist" }
+      "compat": {
+        "best": "balancer",
+        "worst": "realist"
+      },
+      "image": "/images/quiz/pursuit-vs-reality/result-1.webp"
     },
     "balancer": {
       "emoji": "⚖️",
       "scoreKey": "balancer",
-      "title": { "ko": "줄타기 장인형", "en": "Tightrope Master" },
-      "tagline": { "ko": "이상과 현실 사이에서 오늘도 정확히 반반", "en": "Perfectly split between dream and reality, every single day" },
+      "title": {
+        "ko": "줄타기 장인형",
+        "en": "Tightrope Master"
+      },
+      "tagline": {
+        "ko": "이상과 현실 사이에서 오늘도 정확히 반반",
+        "en": "Perfectly split between dream and reality, every single day"
+      },
       "body": {
         "ko": "당신은 추구미와 현실미 사이에 외줄을 걸고 그 위에서 사는 사람이다. 심지어 안 떨어진다.\n지킬 수 있는 만큼만 계획하고, 무리다 싶으면 바로 손절하는 감각이 탁월하다. 덕분에 자책도 적고 번아웃도 드물다. 다만 가끔은 안전한 절반에만 머물러서, 진짜 원하는 큰 그림을 시도조차 안 해봤을 수 있다.\n1년에 한 번쯤은 계산 없이 추구미 쪽으로 몸을 던져보자. 줄타기 장인은 떨어져도 잘 구른다.\n오늘도 당신은 장바구니에서 예쁜 옷과 무난한 옷을 저울질하다 무난한 쪽을 결제하고 만족했다.",
         "en": "You live on a tightrope strung between your dream self and your real self — and somehow you never fall.\nYou plan only what you can keep and cut losses the moment something feels like too much. That means little self-blame and rare burnout. The catch: staying on the safe half may mean you have never even attempted the big picture you actually want.\nOnce a year, leap toward the dream side without doing the math. A tightrope master knows how to land.\nToday, once again, you weighed the gorgeous jacket against the sensible one, bought the sensible one, and felt genuinely fine about it."
       },
-      "compat": { "best": "realist", "worst": "chaos" }
+      "compat": {
+        "best": "realist",
+        "worst": "chaos"
+      },
+      "image": "/images/quiz/pursuit-vs-reality/result-2.webp"
     },
     "realist": {
       "emoji": "🏠",
       "scoreKey": "realist",
-      "title": { "ko": "현실 정착민형", "en": "Reality Settler" },
-      "tagline": { "ko": "추구미? 나는 이미 나에 정착했다", "en": "Dream self? I already settled down as myself" },
+      "title": {
+        "ko": "현실 정착민형",
+        "en": "Reality Settler"
+      },
+      "tagline": {
+        "ko": "추구미? 나는 이미 나에 정착했다",
+        "en": "Dream self? I already settled down as myself"
+      },
       "body": {
         "ko": "남들이 추구미를 찾아 유목할 때, 당신은 현실에 집을 짓고 정착을 끝냈다.\n검증된 것만 선택하는 당신의 삶은 실패 확률이 낮고 에너지 효율이 높다. 남들의 갓생 열풍에도 흔들리지 않는 멘탈은 사실 희귀 자원이다. 다만 '어차피 안 변해'가 방어막을 넘어 감옥이 되지 않는지는 가끔 점검이 필요하다.\n정착민의 진짜 강점은 기반이 튼튼하다는 것. 그 기반 위에서라면 작은 모험 하나쯤은 무너질 걱정 없이 시도할 수 있다.\n오늘도 당신은 늘 가던 식당에서 늘 먹던 메뉴를 시키며 완벽한 하루를 완성했다.",
         "en": "While everyone else roams in search of their ideal self, you built a house in reality and finished settling long ago.\nChoosing only what is proven, your life runs low-risk and energy-efficient. Staying unshaken by the productivity craze is honestly a rare superpower. Just check now and then that \"people don't change anyway\" is still a shield and not a cell.\nA settler's real strength is a solid foundation — sturdy enough that one small adventure will not bring anything down.\nToday, once again, you ordered your usual dish at your usual place and completed a perfect day."
       },
-      "compat": { "best": "balancer", "worst": "visionary" }
+      "compat": {
+        "best": "balancer",
+        "worst": "visionary"
+      },
+      "image": "/images/quiz/pursuit-vs-reality/result-3.webp"
     },
     "chaos": {
       "emoji": "🛏️",
       "scoreKey": "chaos",
-      "title": { "ko": "계획은 우주 실행은 침대형", "en": "Cosmic Planner, Bedridden Executor" },
-      "tagline": { "ko": "설계도는 NASA급, 시공은 이불 안에서", "en": "Blueprints worthy of NASA, construction site: under the blanket" },
+      "title": {
+        "ko": "계획은 우주 실행은 침대형",
+        "en": "Cosmic Planner, Bedridden Executor"
+      },
+      "tagline": {
+        "ko": "설계도는 NASA급, 시공은 이불 안에서",
+        "en": "Blueprints worthy of NASA, construction site: under the blanket"
+      },
       "body": {
         "ko": "당신의 계획서만 모으면 인류가 화성에 간다. 문제는 발사대가 침대라는 것.\n상상력과 의욕은 최상위권인데, 실행 게이지가 계획 단계에서 이미 소진되는 타입이다. 사실 계획 자체가 즐거워서 세우는 거라면 그것도 훌륭한 취미다. 다만 정말 이루고 싶은 게 있다면, 계획을 10분의 1 크기로 줄이는 게 답이다.\n'운동 등록'이 아니라 '운동복 입기'까지만 목표로 잡으면, 몸은 의외로 그다음까지 가준다.\n오늘도 당신은 완벽한 내일 일정을 짜다가 새벽 3시가 되어 내일의 첫 일정을 삭제했다.",
         "en": "Collect all your plans and humanity could reach Mars. The only problem: the launchpad is your bed.\nYour imagination and drive are elite — your execution gauge just runs out during the planning phase. Honestly, if planning itself is the fun part, that is a legitimate hobby. But for the things you truly want, the answer is shrinking the plan to one-tenth its size.\nMake the goal \"put on gym clothes\" instead of \"join a gym,\" and your body will surprisingly carry you the rest of the way.\nTonight, once again, you perfected tomorrow's schedule until 3 AM and then deleted tomorrow's first item."
       },
-      "compat": { "best": "realist", "worst": "visionary" }
+      "compat": {
+        "best": "realist",
+        "worst": "visionary"
+      },
+      "image": "/images/quiz/pursuit-vs-reality/result-4.webp"
     }
   },
   "blend": {
     "emoji": "🌗",
     "scoreKey": "blend",
-    "title": { "ko": "자아 시분할형", "en": "Split-Shift Self" },
-    "tagline": { "ko": "월요일엔 추구미, 금요일엔 현실미로 사는 사람", "en": "Dream self on Mondays, real self by Friday" },
+    "title": {
+      "ko": "자아 시분할형",
+      "en": "Split-Shift Self"
+    },
+    "tagline": {
+      "ko": "월요일엔 추구미, 금요일엔 현실미로 사는 사람",
+      "en": "Dream self on Mondays, real self by Friday"
+    },
     "body": {
       "ko": "당신 안에는 추구미와 현실미가 교대 근무 중이다. 어느 쪽도 완전히 이기지 못했고, 그래서 오히려 균형이 잡힌다.\n의욕이 차오르는 날엔 비전보드를 만들고, 방전된 날엔 침대와 한 몸이 된다. 중요한 건 이 낙차를 실패로 읽지 않는 것. 리듬이 있는 사람은 오래 간다.\n당신의 추구미가 유독 자주 출근하는 요일을 찾아보자. 그 요일에 중요한 일을 배치하면 인생 난이도가 한 단계 내려간다.",
       "en": "Inside you, the dream self and the real self work alternating shifts. Neither has fully won — which is exactly why you stay balanced.\nOn motivated days you build vision boards; on drained days you merge with the mattress. The key is not reading that swing as failure. People with rhythm last the longest.\nFind the weekday your dream self clocks in most often, schedule the important stuff there, and life drops a difficulty level."
-    }
+    },
+    "image": "/images/quiz/pursuit-vs-reality/result-blend.webp"
   },
   "questions": [
     {
-      "prompt": { "ko": "주말 오전 9시, 알람이 울린다. 당신은?", "en": "Saturday, 9 AM, the alarm goes off. You…" },
+      "prompt": {
+        "ko": "주말 오전 9시, 알람이 울린다. 당신은?",
+        "en": "Saturday, 9 AM, the alarm goes off. You…"
+      },
       "options": [
-        { "label": { "ko": "당연히 기상, 갓생 브이로그의 주인공은 나다", "en": "Up instantly — I'm the main character of a morning-routine vlog" }, "key": "visionary" },
-        { "label": { "ko": "눈은 뜨되 침대에서 오늘 계획만 세운다, 절반의 성공", "en": "Eyes open, still in bed, planning the day — half a victory" }, "key": "balancer" },
-        { "label": { "ko": "주말에 9시 알람을 왜 맞춰? 애초에 없다", "en": "A 9 AM alarm on a weekend? It was never set" }, "key": "realist" },
-        { "label": { "ko": "알람 5개를 전부 끄고 오후 1시에 '오늘 뭐 하려 했더라'", "en": "Dismiss all five alarms, wake at 1 PM: 'wait, what was today's plan?'" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "당연히 기상, 갓생 브이로그의 주인공은 나다",
+            "en": "Up instantly — I'm the main character of a morning-routine vlog"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "눈은 뜨되 침대에서 오늘 계획만 세운다, 절반의 성공",
+            "en": "Eyes open, still in bed, planning the day — half a victory"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "주말에 9시 알람을 왜 맞춰? 애초에 없다",
+            "en": "A 9 AM alarm on a weekend? It was never set"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "알람 5개를 전부 끄고 오후 1시에 '오늘 뭐 하려 했더라'",
+            "en": "Dismiss all five alarms, wake at 1 PM: 'wait, what was today's plan?'"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "새 다이어리를 샀다. 첫 페이지에 무슨 일이 벌어질까?", "en": "You bought a new planner. What happens on page one?" },
+      "prompt": {
+        "ko": "새 다이어리를 샀다. 첫 페이지에 무슨 일이 벌어질까?",
+        "en": "You bought a new planner. What happens on page one?"
+      },
       "options": [
-        { "label": { "ko": "3색 형광펜 먼슬리 플랜에 '올해의 나' 선언문까지 완성", "en": "Three-color monthly spread, plus a 'This Year's Me' manifesto" }, "key": "visionary" },
-        { "label": { "ko": "이번 주 계획만 적는다, 지킬 수 있는 만큼만", "en": "Just this week's plan — only what I can actually keep" }, "key": "balancer" },
-        { "label": { "ko": "안 산다, 1월 3일까지만 쓰게 될 걸 이미 안다", "en": "I don't buy one. I already know it dies by January 3rd" }, "key": "realist" },
-        { "label": { "ko": "첫 줄 글씨체가 망해서 새 다이어리를 하나 더 산다", "en": "First line's handwriting is ruined, so I buy a second planner" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "3색 형광펜 먼슬리 플랜에 '올해의 나' 선언문까지 완성",
+            "en": "Three-color monthly spread, plus a 'This Year's Me' manifesto"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "이번 주 계획만 적는다, 지킬 수 있는 만큼만",
+            "en": "Just this week's plan — only what I can actually keep"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "안 산다, 1월 3일까지만 쓰게 될 걸 이미 안다",
+            "en": "I don't buy one. I already know it dies by January 3rd"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "첫 줄 글씨체가 망해서 새 다이어리를 하나 더 산다",
+            "en": "First line's handwriting is ruined, so I buy a second planner"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "운동을 시작하기로 했다. 그 후의 전개는?", "en": "You decided to start working out. How does it unfold?" },
+      "prompt": {
+        "ko": "운동을 시작하기로 했다. 그 후의 전개는?",
+        "en": "You decided to start working out. How does it unfold?"
+      },
       "options": [
-        { "label": { "ko": "운동복 풀세트에 프로틴까지 완비, 몸은 다음 문제", "en": "Full gym outfit and protein powder secured — the body comes later" }, "key": "visionary" },
-        { "label": { "ko": "주 2회만 목표로 잡는다, 소박하지만 진짜 간다", "en": "Twice a week, modest but I actually show up" }, "key": "balancer" },
-        { "label": { "ko": "등록 안 한다, 집 앞 산책이 곧 나의 헬스장", "en": "No membership — the walk around my block is my gym" }, "key": "realist" },
-        { "label": { "ko": "3개월 등록에 출석 2회, 헬스장 최대 후원자 등극", "en": "Three-month membership, two visits — the gym's biggest donor" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "운동복 풀세트에 프로틴까지 완비, 몸은 다음 문제",
+            "en": "Full gym outfit and protein powder secured — the body comes later"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "주 2회만 목표로 잡는다, 소박하지만 진짜 간다",
+            "en": "Twice a week, modest but I actually show up"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "등록 안 한다, 집 앞 산책이 곧 나의 헬스장",
+            "en": "No membership — the walk around my block is my gym"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "3개월 등록에 출석 2회, 헬스장 최대 후원자 등극",
+            "en": "Three-month membership, two visits — the gym's biggest donor"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "쇼핑 앱 장바구니 속 옷들의 스타일은?", "en": "What's sitting in your shopping cart right now?" },
+      "prompt": {
+        "ko": "쇼핑 앱 장바구니 속 옷들의 스타일은?",
+        "en": "What's sitting in your shopping cart right now?"
+      },
       "options": [
-        { "label": { "ko": "파리 출장 가는 사람의 셋업, 출장 갈 일은 없음", "en": "A full Paris-business-trip look. There is no business trip" }, "key": "visionary" },
-        { "label": { "ko": "예쁜 거 하나 무난한 거 하나, 결제는 무난한 쪽만", "en": "One gorgeous piece, one safe piece — only the safe one gets bought" }, "key": "balancer" },
-        { "label": { "ko": "입던 후드티와 같은 색 재구매, 검증된 것만 산다", "en": "The same hoodie in the same color again. Proven goods only" }, "key": "realist" },
-        { "label": { "ko": "장바구니 47개 결제 0개, 그 사이 세일 종료", "en": "47 items in the cart, zero checked out — and the sale just ended" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "파리 출장 가는 사람의 셋업, 출장 갈 일은 없음",
+            "en": "A full Paris-business-trip look. There is no business trip"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "예쁜 거 하나 무난한 거 하나, 결제는 무난한 쪽만",
+            "en": "One gorgeous piece, one safe piece — only the safe one gets bought"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "입던 후드티와 같은 색 재구매, 검증된 것만 산다",
+            "en": "The same hoodie in the same color again. Proven goods only"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "장바구니 47개 결제 0개, 그 사이 세일 종료",
+            "en": "47 items in the cart, zero checked out — and the sale just ended"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "SNS 속 나와 실제 나의 관계는?", "en": "How do your social media self and your actual self get along?" },
+      "prompt": {
+        "ko": "SNS 속 나와 실제 나의 관계는?",
+        "en": "How do your social media self and your actual self get along?"
+      },
       "options": [
-        { "label": { "ko": "피드는 이미 추구미 완성형, 현실이 따라오는 중 (도착 미정)", "en": "The feed is the finished dream — reality is en route (ETA unknown)" }, "key": "visionary" },
-        { "label": { "ko": "잘 나온 컷은 피드에, 현실 셀카는 스토리에", "en": "Best shots on the feed, unfiltered selfies in the stories" }, "key": "balancer" },
-        { "label": { "ko": "안 올린다, 내 일상은 나만 알면 된다", "en": "I don't post. My life is on a need-to-know basis" }, "key": "realist" },
-        { "label": { "ko": "올리려고 200장 찍고 고르다가 잠든다", "en": "Take 200 photos to post, fall asleep mid-selection" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "피드는 이미 추구미 완성형, 현실이 따라오는 중 (도착 미정)",
+            "en": "The feed is the finished dream — reality is en route (ETA unknown)"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "잘 나온 컷은 피드에, 현실 셀카는 스토리에",
+            "en": "Best shots on the feed, unfiltered selfies in the stories"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "안 올린다, 내 일상은 나만 알면 된다",
+            "en": "I don't post. My life is on a need-to-know basis"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "올리려고 200장 찍고 고르다가 잠든다",
+            "en": "Take 200 photos to post, fall asleep mid-selection"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "자기계발 영상을 다 봤다. 다음 행동은?", "en": "You just finished a self-improvement video. Next move?" },
+      "prompt": {
+        "ko": "자기계발 영상을 다 봤다. 다음 행동은?",
+        "en": "You just finished a self-improvement video. Next move?"
+      },
       "options": [
-        { "label": { "ko": "노트 필기 후 인생 계획 전면 개편, 오늘부터 새 사람", "en": "Take notes, overhaul my entire life plan — new person starting today" }, "key": "visionary" },
-        { "label": { "ko": "딱 하나만 골라 실천하고 나머지는 저장", "en": "Pick exactly one tip to try, save the rest for later" }, "key": "balancer" },
-        { "label": { "ko": "'저 사람이니까 되는 거지' 하고 하던 거 마저 한다", "en": "'That works for them, not me' — and back to what I was doing" }, "key": "realist" },
-        { "label": { "ko": "동기부여 만렙 상태로 다음 영상 자동재생 3시간", "en": "Motivation maxed out — autoplay carries me through three more hours" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "노트 필기 후 인생 계획 전면 개편, 오늘부터 새 사람",
+            "en": "Take notes, overhaul my entire life plan — new person starting today"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "딱 하나만 골라 실천하고 나머지는 저장",
+            "en": "Pick exactly one tip to try, save the rest for later"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "'저 사람이니까 되는 거지' 하고 하던 거 마저 한다",
+            "en": "'That works for them, not me' — and back to what I was doing"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "동기부여 만렙 상태로 다음 영상 자동재생 3시간",
+            "en": "Motivation maxed out — autoplay carries me through three more hours"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "미용실에서 \"어떻게 해드릴까요?\" 당신의 답은?", "en": "The hairdresser asks, \"What are we doing today?\" You say…" },
+      "prompt": {
+        "ko": "미용실에서 \"어떻게 해드릴까요?\" 당신의 답은?",
+        "en": "The hairdresser asks, \"What are we doing today?\" You say…"
+      },
       "options": [
-        { "label": { "ko": "연예인 사진을 내밀며 '이렇게요' (두상 차이는 미용사의 몫)", "en": "Show a celebrity photo: 'this, please' (skull shape is the stylist's problem)" }, "key": "visionary" },
-        { "label": { "ko": "사진은 보여주되 '제 얼굴에 맞게 적당히요'", "en": "Show the photo but add 'adjusted to my face, within reason'" }, "key": "balancer" },
-        { "label": { "ko": "'늘 하던 대로요', 10년째 같은 머리", "en": "'The usual' — the same cut for ten years running" }, "key": "realist" },
-        { "label": { "ko": "'알아서 해주세요' 하고 결과를 보고 3일 앓는다", "en": "'Surprise me,' then grieve the result for three days" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "연예인 사진을 내밀며 '이렇게요' (두상 차이는 미용사의 몫)",
+            "en": "Show a celebrity photo: 'this, please' (skull shape is the stylist's problem)"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "사진은 보여주되 '제 얼굴에 맞게 적당히요'",
+            "en": "Show the photo but add 'adjusted to my face, within reason'"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "'늘 하던 대로요', 10년째 같은 머리",
+            "en": "'The usual' — the same cut for ten years running"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "'알아서 해주세요' 하고 결과를 보고 3일 앓는다",
+            "en": "'Surprise me,' then grieve the result for three days"
+          },
+          "key": "chaos"
+        }
       ]
     },
     {
-      "prompt": { "ko": "새해 목표를 세운다면?", "en": "Time for New Year's resolutions. Yours look like…" },
+      "prompt": {
+        "ko": "새해 목표를 세운다면?",
+        "en": "Time for New Year's resolutions. Yours look like…"
+      },
       "options": [
-        { "label": { "ko": "목표 12개, 분기별 로드맵에 비전보드까지 제작", "en": "Twelve goals, quarterly roadmap, and a hand-made vision board" }, "key": "visionary" },
-        { "label": { "ko": "작년에 실제로 지킨 것만 추려서 딱 3개", "en": "Only three — filtered down to what I actually kept last year" }, "key": "balancer" },
-        { "label": { "ko": "새해라고 뭘 하나, 어제의 나로 계속 산다", "en": "New year, same me — and honestly, that's the plan" }, "key": "realist" },
-        { "label": { "ko": "1월 1일에 세우고 1월 2일에 잊고 12월에 발견한다", "en": "Written January 1st, forgotten January 2nd, rediscovered in December" }, "key": "chaos" }
+        {
+          "label": {
+            "ko": "목표 12개, 분기별 로드맵에 비전보드까지 제작",
+            "en": "Twelve goals, quarterly roadmap, and a hand-made vision board"
+          },
+          "key": "visionary"
+        },
+        {
+          "label": {
+            "ko": "작년에 실제로 지킨 것만 추려서 딱 3개",
+            "en": "Only three — filtered down to what I actually kept last year"
+          },
+          "key": "balancer"
+        },
+        {
+          "label": {
+            "ko": "새해라고 뭘 하나, 어제의 나로 계속 산다",
+            "en": "New year, same me — and honestly, that's the plan"
+          },
+          "key": "realist"
+        },
+        {
+          "label": {
+            "ko": "1월 1일에 세우고 1월 2일에 잊고 12월에 발견한다",
+            "en": "Written January 1st, forgotten January 2nd, rediscovered in December"
+          },
+          "key": "chaos"
+        }
       ]
     }
   ],

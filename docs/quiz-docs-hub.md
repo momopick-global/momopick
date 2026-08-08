@@ -20,9 +20,12 @@
   - 퀴즈별 프롬프트 템플릿
 
 - [character-profile-prompts.md](/Users/xxxaskillofgodxxxgmail.com/Desktop/momo/momopick/docs/character-profile-prompts.md)
-  - 고정 사람 캐릭터 10명
-  - 동물 마스코트 10마리
-  - 캐릭터별 프로필 프롬프트
+  - 퀴즈 형식별 캐릭터 세트 4종
+    - 모모 캐스트 (심층 테스트): 사람 10명 + 마스코트 10마리
+    - 모모 아카데미 (정답 퀴즈): T1~T4
+    - 모모 미니 (원픽): P1~P4
+    - 모모 스낵 (유형 테스트): S1~S4
+  - 캐릭터별 프로필 프롬프트 (EN/KO)
 
 ### 제목/결과 목차
 

@@ -15,7 +15,12 @@
     "preview": "serve out -l 3040",
     "lint": "next lint",
     "lint:all": "eslint .",
-    "check:quiz-images": "node tools/check-quiz-images.mjs"
+    "check:quiz-images": "node tools/check-quiz-images.mjs",
+    "images": "node tools/process-images.mjs && node tools/check-quiz-images.mjs",
+    "images:dry": "node tools/process-images.mjs --dry",
+    "quiz:list": "node tools/register-quiz.mjs --list",
+    "quiz:register": "node tools/register-quiz.mjs",
+    "admin": "node tools/admin-server.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",

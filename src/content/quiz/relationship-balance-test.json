@@ -88,8 +88,8 @@
         "en": "Soft Role (80%)"
       },
       "desc": {
-        "ko": "관계에서 상대에게 많이 맞추는 편입니다. 감정적으로 더 투자하는 쪽일 가능성이 높아요.",
-        "en": "You tend to adapt and invest more emotionally in the relationship."
+        "ko": "이 연애의 고객센터는 연중무휴, 상담원은 언제나 당신입니다. 더 많이 맞추는 쪽이 지는 게 아니라, 마음을 표현할 줄 아는 쪽일 뿐이에요. 다만 맞춰주는 만큼 내 마음도 한 번씩 챙겨달라고 말해보세요. 그건 요구가 아니라 당신의 권리니까요.",
+        "en": "This relationship's customer-service desk is open 24/7, and the agent on duty is always you. Caring more doesn't mean losing — it just means you're the one who knows how to show it. Still, ask for your share of the care once in a while; that's not a demand, it's your right."
       }
     },
     {
@@ -100,8 +100,8 @@
         "en": "Balanced"
       },
       "desc": {
-        "ko": "서로 비슷한 위치에서 관계를 유지하는 건강한 균형 상태입니다.",
-        "en": "You maintain a healthy balance in the relationship."
+        "ko": "저울에 올려봤는데 바늘이 한가운데서 미동도 없네요. 이 정도면 국가공인 밸런스입니다. 주고받음이 자연스러운 관계는 생각보다 드물고, 그건 두 사람이 꾸준히 조율해온 결과예요. 지금처럼 서로의 눈치가 아니라 마음을 읽는 연애, 오래오래 가져가세요.",
+        "en": "We put your relationship on the scale and the needle didn't even twitch — that's certification-grade balance. A relationship where give and take flow naturally is rarer than you'd think, and you two built it through steady tuning. Keep reading each other's hearts instead of each other's moods."
       }
     },
     {
@@ -112,8 +112,8 @@
         "en": "Dominant Role (70%)"
       },
       "desc": {
-        "ko": "관계를 주도하는 쪽에 가까운 타입입니다. 선택권과 여유가 있는 편입니다.",
-        "en": "You tend to lead and have more control in the relationship."
+        "ko": "이 관계의 리모컨은 대체로 당신 손에 있습니다. 채널 선택권 보유자시네요. 여유 있는 연애는 좋지만, 상대의 배려가 기본 옵션처럼 느껴지기 시작하면 그게 위험 신호예요. 가끔은 리모컨을 건네보세요. 상대가 고른 채널도 의외로 재미있습니다.",
+        "en": "The remote control of this relationship mostly lives in your hand — you hold the channel rights. Dating from the comfy seat is nice, but the moment their effort starts feeling like a default setting, that's a warning light. Hand over the remote sometimes; the channels they pick are surprisingly good."
       }
     }
   ],
@@ -126,29 +126,29 @@
       "options": [
         {
           "label": {
-            "ko": "내가 주도",
-            "en": "I take the lead"
+            "ko": "코스 기획, 예약, 동선까지 전부 내 작품",
+            "en": "Course, reservations, route — the whole itinerary is my work"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "서로 번갈아",
-            "en": "We take turns"
+            "ko": "이번 주는 나, 다음 주는 상대. 공동 정권",
+            "en": "My week, their week — a coalition government"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "상대가 더 많이",
-            "en": "They do more"
+            "ko": "상대가 짜면 나는 별점 리뷰만 담당",
+            "en": "They plan, I just leave the star rating"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "거의 상대가 함",
-            "en": "They do everything"
+            "ko": "당일에 목적지를 통보받는 VIP 승객",
+            "en": "A VIP passenger who learns the destination on the day"
           },
           "score": 0
         }
@@ -162,29 +162,29 @@
       "options": [
         {
           "label": {
-            "ko": "내가 더 적게 함",
-            "en": "I text less"
+            "ko": "나는 답장 전담. 대화 개시 버튼은 상대 부서 소관",
+            "en": "I'm the replier — the 'start chat' button belongs to their department"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "비슷함",
-            "en": "About equal"
+            "ko": "핑퐁이 잘 됨. 랠리 유지율 50:50",
+            "en": "Solid ping-pong — rally maintained at a clean 50:50"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "내가 더 많이 함",
-            "en": "I text more"
+            "ko": "내가 좀 더 보내는 편. 통계는 부정 못 함",
+            "en": "I send a bit more. The statistics don't lie"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "거의 내가 먼저",
-            "en": "I always text first"
+            "ko": "선톡 점유율 99%. 사실상 단독 공급자",
+            "en": "A 99% market share of first texts. Sole supplier, basically"
           },
           "score": 0
         }
@@ -198,29 +198,29 @@
       "options": [
         {
           "label": {
-            "ko": "상대가 먼저",
-            "en": "They do"
+            "ko": "버티면 상대가 옴. 여러 번 검증된 공식",
+            "en": "If I hold out, they come to me. A well-tested formula"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "서로 비슷",
-            "en": "About equal"
+            "ko": "그날 기분 덜 상한 쪽이 먼저 감",
+            "en": "Whoever's less bruised that day makes the first move"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "내가 더 자주",
-            "en": "I usually do"
+            "ko": "대체로 나. 정적을 30분 이상 못 견딤",
+            "en": "Usually me — I can't survive more than thirty minutes of silence"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "거의 항상 나",
-            "en": "Always me"
+            "ko": "사과문 초안이 항상 내 메모장에 대기 중",
+            "en": "An apology draft is permanently on standby in my notes app"
           },
           "score": 0
         }
@@ -234,29 +234,29 @@
       "options": [
         {
           "label": {
-            "ko": "내 의견이 반영됨",
-            "en": "My opinion leads"
+            "ko": "최종 결재 도장은 내 손에 있음",
+            "en": "The final stamp of approval lives in my hand"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "서로 조율",
-            "en": "We compromise"
+            "ko": "회의 후 합의. 우리 관계엔 민주주의가 작동함",
+            "en": "We deliberate, then agree — this relationship has a working democracy"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "상대 의견 위주",
-            "en": "Mostly theirs"
+            "ko": "'너 하고 싶은 거 해' 전문 성우",
+            "en": "Professional voice actor for the line 'whatever you want'"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "내 의견 거의 없음",
-            "en": "I rarely matter"
+            "ko": "내 의견은 참고자료. 채택 여부는 별개 문제",
+            "en": "My opinion is filed as reference material — adoption not guaranteed"
           },
           "score": 0
         }
@@ -270,29 +270,29 @@
       "options": [
         {
           "label": {
-            "ko": "상대가 더 많이",
-            "en": "They do more"
+            "ko": "받는 게 일상. 기념일마다 서프라이즈 수신함이 참",
+            "en": "Receiving is routine — my anniversary surprise inbox stays full"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "비슷함",
-            "en": "About equal"
+            "ko": "주고받음이 핑퐁처럼 오감",
+            "en": "Gifts fly both ways like a good rally"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "내가 더 많이",
-            "en": "I do more"
+            "ko": "내 위시리스트보다 상대 위시리스트를 더 잘 앎",
+            "en": "I know their wishlist better than my own"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "거의 내가 함",
-            "en": "Mostly me"
+            "ko": "이벤트 기획팀장 겸 예산 담당 겸 현장 인력",
+            "en": "Head of event planning, budget owner, and the entire crew"
           },
           "score": 0
         }
@@ -306,29 +306,29 @@
       "options": [
         {
           "label": {
-            "ko": "상대가 더 신경씀",
-            "en": "They care more"
+            "ko": "질투는 상대의 업무. 나는 보고만 받음",
+            "en": "Jealousy is their department — I just receive the reports"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "비슷함",
-            "en": "Equal"
+            "ko": "둘 다 적당히 삐지고 적당히 풀림",
+            "en": "We both sulk a little and recover a little"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "내가 더 예민",
-            "en": "I’m more sensitive"
+            "ko": "상대의 '좋아요' 목록까지 확인하는 건 나임",
+            "en": "I'm the one auditing their likes list"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "내가 더 집착함",
-            "en": "I get clingy"
+            "ko": "상대 폰 화면만 켜져도 심장이 철렁함",
+            "en": "Even their phone screen lighting up makes my heart drop"
           },
           "score": 0
         }
@@ -342,29 +342,29 @@
       "options": [
         {
           "label": {
-            "ko": "여유 있음",
-            "en": "Relaxed"
+            "ko": "여유만만. 등받이에 기대서 연애 중",
+            "en": "Fully reclined — I date from the comfort seat"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "안정적",
-            "en": "Stable"
+            "ko": "잔잔한 호수. 가끔 물결, 대체로 평화",
+            "en": "A calm lake — the occasional ripple, mostly peace"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "조금 불안",
-            "en": "A bit anxious"
+            "ko": "읽씹 한 번에 3시간짜리 생각 회로 가동",
+            "en": "One unanswered 'read' powers three hours of overthinking"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "많이 불안",
-            "en": "Very anxious"
+            "ko": "매일이 심장 조마조마 서바이벌 생방송",
+            "en": "Every day is a live heart-pounding survival show"
           },
           "score": 0
         }
@@ -378,29 +378,29 @@
       "options": [
         {
           "label": {
-            "ko": "거의 안 맞춤",
-            "en": "Rarely adjust"
+            "ko": "내 취향이 곧 이 연애의 기본 설정값",
+            "en": "My preferences are the default settings of this relationship"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "적당히 맞춤",
-            "en": "Sometimes adjust"
+            "ko": "반반. 메뉴도 일정도 사이좋게 지분 분할",
+            "en": "Fifty-fifty — menus and schedules split like fair shares"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "많이 맞춤",
-            "en": "Adjust a lot"
+            "ko": "메뉴, 영화, 일정 대부분 상대 기준으로 세팅",
+            "en": "Menus, movies, schedules — mostly set to their preferences"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "거의 맞춰줌",
-            "en": "Always adjust"
+            "ko": "내 취향 찾으러 갔다가 상대 취향만 발견함",
+            "en": "Went looking for my own taste and found only theirs"
           },
           "score": 0
         }

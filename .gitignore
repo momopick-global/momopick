@@ -14,3 +14,6 @@ out/
 # Local tooling
 .claude/
 tsconfig.tsbuildinfo
+
+# 이미지 drop 작업 폴더 (원본은 커밋하지 않음)
+drop/

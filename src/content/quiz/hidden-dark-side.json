@@ -232,29 +232,29 @@
       "options": [
         {
           "label": {
-            "ko": "속으로 쌓아둔다",
-            "en": "Bottle it up"
+            "ko": "일단 저장, 감정 창고에 차곡차곡 적재한다",
+            "en": "Save it — stacked neatly in the feelings warehouse"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "한 번에 터뜨린다",
-            "en": "Explode all at once"
+            "ko": "예고편 없이 본편 개봉, 주변은 각자 대피",
+            "en": "Skip the trailer, premiere the eruption — everyone evacuate"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "냉정하게 선 긋는다",
-            "en": "Cut people off calmly"
+            "ko": "실내 온도 2도 하향 조정 후 조용히 선 긋기",
+            "en": "Lower the room temperature two degrees, then draw the line"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "아무렇지 않은 척한다",
-            "en": "Pretend I’m fine"
+            "ko": "'아 진짜 괜찮아' (속으로 회의록 작성 중)",
+            "en": "'No really, I'm fine' (internal meeting minutes in progress)"
           },
           "key": "A"
         }
@@ -268,29 +268,29 @@
       "options": [
         {
           "label": {
-            "ko": "기억해둔다",
-            "en": "Remember it"
+            "ko": "마음속 장부에 날짜와 시간까지 기록 완료",
+            "en": "Logged in the mental ledger — date and timestamp included"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "바로 반응한다",
-            "en": "React immediately"
+            "ko": "0.5초 만에 현장 대응팀 출동",
+            "en": "On-site response team deployed in 0.5 seconds"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "거리 둔다",
-            "en": "Create distance"
+            "ko": "오늘부로 안전거리 반경 2미터 확보",
+            "en": "Safety perimeter of two meters, effective today"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "겉으로 웃는다",
-            "en": "Smile it off"
+            "ko": "미소는 유지, 내부에선 긴급회의 소집",
+            "en": "The smile holds while an emergency meeting convenes inside"
           },
           "key": "A"
         }
@@ -304,29 +304,29 @@
       "options": [
         {
           "label": {
-            "ko": "참다가 한 번에 터짐",
-            "en": "Hold it in then explode"
+            "ko": "참을 인 세 번 쓰고 네 번째에 화산 개장",
+            "en": "Write 'patience' three times, open the volcano on the fourth"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "아예 피한다",
-            "en": "Avoid it completely"
+            "ko": "갈등 감지 즉시 그 자리에서 증발",
+            "en": "Conflict detected — evaporating on the spot"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "속으로 계속 생각함",
-            "en": "Overthink internally"
+            "ko": "표정은 평화, 머릿속은 24시간 상황실 가동",
+            "en": "Face at peace, situation room running 24/7 upstairs"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "상대 차단",
-            "en": "Cut them off"
+            "ko": "차단 버튼이 곧 나의 평화 협정",
+            "en": "The block button is my idea of a peace treaty"
           },
           "key": "C"
         }
@@ -340,29 +340,29 @@
       "options": [
         {
           "label": {
-            "ko": "혼자 끙끙 앓는다",
-            "en": "Suffer alone"
+            "ko": "이불 속 1인 세미나 개최, 주제는 '아까 그 말'",
+            "en": "Solo seminar under the blanket, topic: 'that thing they said'"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "감정 폭발",
-            "en": "React strongly"
+            "ko": "즉시 분화, 지질 조사는 나중에",
+            "en": "Erupt now, run the geological survey later"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "거리 둔다",
-            "en": "Pull away"
+            "ko": "조용히 냉장 모드 전환, 답장 간격 3배 상향",
+            "en": "Quietly switch to fridge mode — reply interval tripled"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "무시하려 한다",
-            "en": "Try to ignore it"
+            "ko": "'별거 아니야'라며 마음속엔 별거로 저장",
+            "en": "Say 'it's nothing' while filing it under 'definitely something'"
           },
           "key": "A"
         }
@@ -376,29 +376,29 @@
       "options": [
         {
           "label": {
-            "ko": "겉으로는 괜찮은 척",
-            "en": "Act nice outside"
+            "ko": "겉은 미소, 속은 심사위원석",
+            "en": "Smiling outside, judging panel inside"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "싫으면 바로 티냄",
-            "en": "Show dislike instantly"
+            "ko": "표정이 실시간 자막이라 숨길 수가 없다",
+            "en": "My face runs live subtitles — hiding is not an option"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "조용히 거리 둔다",
-            "en": "Distance quietly"
+            "ko": "티 안 나게 페이드아웃, 눈치채면 이미 늦음",
+            "en": "A quiet fade-out — by the time you notice, it's done"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "속으로 평가함",
-            "en": "Judge internally"
+            "ko": "내부 평가 시스템 가동, 결과는 비공개",
+            "en": "Internal review system running — results confidential"
           },
           "key": "A"
         }
@@ -412,29 +412,29 @@
       "options": [
         {
           "label": {
-            "ko": "혼자 쌓는다",
-            "en": "Keep it inside"
+            "ko": "감정 창고 재고만 증가, 출고 내역 없음",
+            "en": "Warehouse inventory keeps growing — zero shipments out"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "분노로 표출",
-            "en": "Release anger"
+            "ko": "그날의 스트레스는 그날 분화가 원칙",
+            "en": "Today's stress erupts today — house rule"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "사람 피함",
-            "en": "Avoid people"
+            "ko": "인간 알레르기 발동, 잠수함 모드 진입",
+            "en": "Human allergy activated — submarine mode engaged"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "겉으로 괜찮은 척",
-            "en": "Act fine"
+            "ko": "'괜찮아요' 자동재생, 내부엔 경고등 점등",
+            "en": "'I'm fine' on autoplay while warning lights blink inside"
           },
           "key": "A"
         }
@@ -448,29 +448,29 @@
       "options": [
         {
           "label": {
-            "ko": "속으로 오래 끌고 감",
-            "en": "Hold onto it"
+            "ko": "마음속 미제사건 파일로 장기 보관",
+            "en": "Archived as a cold case in my heart — indefinitely"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "한 번에 정리",
-            "en": "End it dramatically"
+            "ko": "시원하게 하루 만에 최종화까지 방영",
+            "en": "Airing the entire finale in a single day"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "조용히 끊는다",
-            "en": "Fade away"
+            "ko": "공지 없이 서비스 조용히 종료",
+            "en": "Service quietly discontinued — no announcement posted"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "겉으로 아무렇지 않음",
-            "en": "Act unaffected"
+            "ko": "겉은 정상 영업, 내부는 재고 정리 중",
+            "en": "Business as usual out front, inventory clearing in the back"
           },
           "key": "A"
         }
@@ -484,29 +484,29 @@
       "options": [
         {
           "label": {
-            "ko": "겉과 속이 다름",
-            "en": "Different inside"
+            "ko": "겉은 공식 계정, 속은 비공개 계정",
+            "en": "Public account outside, private account within"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "감정 기복이 큼",
-            "en": "Emotionally intense"
+            "ko": "감정 그래프가 롤러코스터 설계도 수준",
+            "en": "My mood graph doubles as a roller-coaster blueprint"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "차갑고 거리 있음",
-            "en": "Cold and distant"
+            "ko": "기본 설정은 냉장, 해동은 소수에게만",
+            "en": "Default setting: refrigerated — defrosting for a select few"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "표현을 잘 안함",
-            "en": "Hard to express"
+            "ko": "말은 아끼고 생각은 적립 중",
+            "en": "Words on a budget, thoughts on a savings plan"
           },
           "key": "A"
         }

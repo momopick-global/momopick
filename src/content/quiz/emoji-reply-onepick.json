@@ -1,16 +1,37 @@
 {
   "id": "emoji-reply-onepick",
   "slug": "emoji-reply-onepick",
-  "locales": ["ko", "en"],
+  "locales": [
+    "ko",
+    "en"
+  ],
   "category": "love",
   "tags": [
-    { "ko": "원픽", "en": "one-pick" },
-    { "ko": "이모지", "en": "emoji" },
-    { "ko": "답장", "en": "reply" },
-    { "ko": "연애", "en": "love" }
+    {
+      "ko": "원픽",
+      "en": "one-pick"
+    },
+    {
+      "ko": "이모지",
+      "en": "emoji"
+    },
+    {
+      "ko": "답장",
+      "en": "reply"
+    },
+    {
+      "ko": "연애",
+      "en": "love"
+    }
   ],
-  "title": { "ko": "이모지 하나로 보는 답장 스타일", "en": "Your Reply Style in One Emoji" },
-  "subtitle": { "ko": "상대가 ❤️ 하나만 보냈다. 너의 답은?", "en": "They sent a single ❤️. What's your move?" },
+  "title": {
+    "ko": "이모지 하나로 보는 답장 스타일",
+    "en": "Your Reply Style in One Emoji"
+  },
+  "subtitle": {
+    "ko": "상대가 ❤️ 하나만 보냈다. 너의 답은?",
+    "en": "They sent a single ❤️. What's your move?"
+  },
   "images": {
     "thumbnail": "/images/quiz/emoji-reply-onepick/thumb.webp",
     "og": "/images/quiz/emoji-reply-onepick/thumb.jpg"
@@ -21,11 +42,23 @@
       "en": "One reply to a single ❤️ reveals your entire texting personality — a one-pick test."
     },
     "keywords": [
-      { "ko": "답장 스타일 테스트", "en": "reply style test" },
-      { "ko": "이모지 심리테스트", "en": "emoji personality quiz" },
-      { "ko": "카톡 답장", "en": "texting style" }
+      {
+        "ko": "답장 스타일 테스트",
+        "en": "reply style test"
+      },
+      {
+        "ko": "이모지 심리테스트",
+        "en": "emoji personality quiz"
+      },
+      {
+        "ko": "카톡 답장",
+        "en": "texting style"
+      }
     ],
-    "ogTitle": { "ko": "이모지 하나로 보는 답장 스타일", "en": "Your Reply Style in One Emoji" },
+    "ogTitle": {
+      "ko": "이모지 하나로 보는 답장 스타일",
+      "en": "Your Reply Style in One Emoji"
+    },
     "ogDescription": {
       "ko": "❤️ 하나 받고 3시간 고민한 적 있다면 입장하세요",
       "en": "If a single ❤️ has ever cost you 3 hours of analysis, come in"
@@ -33,12 +66,27 @@
   },
   "card": {
     "theme": "love",
-    "kicker": { "ko": "🎯 원픽 테스트", "en": "🎯 One-Pick Test" },
+    "kicker": {
+      "ko": "🎯 원픽 테스트",
+      "en": "🎯 One-Pick Test"
+    },
     "image": "/images/quiz/emoji-reply-onepick/thumb.webp",
     "priority": 84
   },
-  "resultKeys": ["mirror", "interviewer", "overthinker", "comedian", "minimalist"],
-  "resultOrder": ["mirror", "interviewer", "overthinker", "comedian", "minimalist"],
+  "resultKeys": [
+    "mirror",
+    "interviewer",
+    "overthinker",
+    "comedian",
+    "minimalist"
+  ],
+  "resultOrder": [
+    "mirror",
+    "interviewer",
+    "overthinker",
+    "comedian",
+    "minimalist"
+  ],
   "logic": {
     "type": "max-score",
     "description": {
@@ -50,75 +98,140 @@
   "analytics": {
     "eventKey": "emoji_reply_onepick",
     "contentGroup": "love",
-    "funnel": { "start": "quiz_start", "complete": "quiz_complete", "share": "quiz_share" }
+    "funnel": {
+      "start": "quiz_start",
+      "complete": "quiz_complete",
+      "share": "quiz_share"
+    }
   },
-  "related": ["emoji-crush-onepick", "kakao-reply-style", "color-mood-onepick"],
+  "related": [
+    "emoji-crush-onepick",
+    "kakao-reply-style",
+    "color-mood-onepick"
+  ],
   "results": {
     "mirror": {
       "emoji": "🪞",
       "scoreKey": "mirror",
-      "title": { "ko": "미러링 반사형", "en": "The Mirror Reflex" },
-      "tagline": { "ko": "받은 만큼 돌려주는 등가교환의 장인", "en": "A master of the exact-change emotional economy" },
+      "title": {
+        "ko": "미러링 반사형",
+        "en": "The Mirror Reflex"
+      },
+      "tagline": {
+        "ko": "받은 만큼 돌려주는 등가교환의 장인",
+        "en": "A master of the exact-change emotional economy"
+      },
       "body": {
         "ko": "❤️에는 ❤️. 거울은 고민하지 않습니다. 이런 타입은 상대의 온도를 그대로 맞춰주는 능력이 탁월해서 대화가 늘 편안해요. 실제로 미러링은 호감을 쌓는 검증된 기술이기도 하죠. 다만 가끔은 거울 밖으로 나와 먼저 온도를 1도 올려보세요 — 관계가 다음 단계로 넘어가는 건 그 순간입니다.",
         "en": "❤️ in, ❤️ out. Mirrors don't deliberate. You're brilliant at matching the other person's temperature, which makes every conversation feel safe. Mirroring is genuinely a proven rapport technique. But once in a while, step out of the mirror and raise the temperature by one degree first — that's the moment relationships level up."
       },
-      "compat": { "best": "comedian", "worst": "interviewer" }
+      "compat": {
+        "best": "comedian",
+        "worst": "interviewer"
+      },
+      "image": "/images/quiz/emoji-reply-onepick/result-1.webp"
     },
     "interviewer": {
       "emoji": "🔍",
       "scoreKey": "interviewer",
-      "title": { "ko": "취조형", "en": "The Interrogator" },
-      "tagline": { "ko": "하트 한 개에서 진술서를 받아내는 타입", "en": "Extracts a full written statement from one heart" },
+      "title": {
+        "ko": "취조형",
+        "en": "The Interrogator"
+      },
+      "tagline": {
+        "ko": "하트 한 개에서 진술서를 받아내는 타입",
+        "en": "Extracts a full written statement from one heart"
+      },
       "body": {
         "ko": "\"이게 무슨 의미야?\"는 사실 세상에서 가장 용감한 질문입니다. 이런 타입은 애매함을 견디지 못하고 확실한 걸 원해요. 덕분에 어장에 갇힐 확률은 전 유형 중 최저치죠. 다만 상대가 진술을 준비할 시간도 좀 주세요 — 하트는 가끔 그냥 하트일 때도 있으니까요.",
         "en": "\"What does this mean?\" is secretly the bravest question in the world. You can't stand ambiguity and you want things defined. As a result, your odds of getting stuck in someone's maybe-pile are the lowest of any type. Just give the witness time to prepare their statement — sometimes a heart is just a heart."
       },
-      "compat": { "best": "mirror", "worst": "minimalist" }
+      "compat": {
+        "best": "mirror",
+        "worst": "minimalist"
+      },
+      "image": "/images/quiz/emoji-reply-onepick/result-2.webp"
     },
     "overthinker": {
       "emoji": "🌀",
       "scoreKey": "overthinker",
-      "title": { "ko": "과해석 시뮬레이션형", "en": "The Overthink Simulator" },
-      "tagline": { "ko": "하트 하나로 시나리오 47개를 돌리는 타입", "en": "Runs 47 scenarios off a single heart" },
+      "title": {
+        "ko": "과해석 시뮬레이션형",
+        "en": "The Overthink Simulator"
+      },
+      "tagline": {
+        "ko": "하트 하나로 시나리오 47개를 돌리는 타입",
+        "en": "Runs 47 scenarios off a single heart"
+      },
       "body": {
         "ko": "답장은 아직인데 머릿속 회의는 벌써 3차 회의 중. 이런 타입은 상대의 말을 허투루 넘기지 않는 섬세한 관찰자예요. 그 정성은 진짜 강점입니다. 다만 심리학적으로도 상대는 내 답장을 나만큼 오래 기다리지 않아요 — 시뮬레이션 3개째에서 끊고 전송 버튼을 누르는 연습을 해보세요.",
         "en": "The reply isn't sent yet, but the committee in your head is on its third meeting. You're a fine-grained observer who never takes a message lightly — that care is a real strength. But psychology agrees: the other person isn't waiting as intensely as you think. Practice cutting yourself off at scenario three and hitting send."
       },
-      "compat": { "best": "mirror", "worst": "minimalist" }
+      "compat": {
+        "best": "mirror",
+        "worst": "minimalist"
+      },
+      "image": "/images/quiz/emoji-reply-onepick/result-3.webp"
     },
     "comedian": {
       "emoji": "🤡",
       "scoreKey": "comedian",
-      "title": { "ko": "개그 승부형", "en": "The Comedy Duelist" },
-      "tagline": { "ko": "설렘의 순간에도 웃음을 포기 못 하는 타입", "en": "Refuses to drop the bit, even mid-butterflies" },
+      "title": {
+        "ko": "개그 승부형",
+        "en": "The Comedy Duelist"
+      },
+      "tagline": {
+        "ko": "설렘의 순간에도 웃음을 포기 못 하는 타입",
+        "en": "Refuses to drop the bit, even mid-butterflies"
+      },
       "body": {
         "ko": "하트를 받았는데 왜 짤 폴더부터 여는 걸까요. 이런 타입에게 대화는 승부고, 웃기면 이긴 겁니다. 실제로 유머 코드가 맞는 상대와는 최강의 케미를 자랑하죠. 다만 가끔은 짤 대신 진심을 보내보세요 — 웃긴 사람의 진지한 한마디는 파괴력이 두 배니까요.",
         "en": "You received a heart and somehow opened your meme folder first. For you, conversation is a duel, and making them laugh means winning. With someone who shares your humor, your chemistry is genuinely unbeatable. But occasionally send sincerity instead of a meme — a funny person being serious hits twice as hard."
       },
-      "compat": { "best": "mirror", "worst": "interviewer" }
+      "compat": {
+        "best": "mirror",
+        "worst": "interviewer"
+      },
+      "image": "/images/quiz/emoji-reply-onepick/result-4.webp"
     },
     "minimalist": {
       "emoji": "🗿",
       "scoreKey": "minimalist",
-      "title": { "ko": "미니멀형", "en": "The Minimalist" },
-      "tagline": { "ko": "자음 두 개로 모든 걸 끝내는 효율의 화신", "en": "Ends entire conversations with two characters" },
+      "title": {
+        "ko": "미니멀형",
+        "en": "The Minimalist"
+      },
+      "tagline": {
+        "ko": "자음 두 개로 모든 걸 끝내는 효율의 화신",
+        "en": "Ends entire conversations with two characters"
+      },
       "body": {
         "ko": "\"ㅇㅇ\". 이 두 글자에 우주가 담겨 있다고 믿는 타입입니다. 감정 표현에 서툰 게 아니라, 표현의 압축률이 남다른 것뿐이에요. 이런 담백함은 오히려 신비주의 매력이 되기도 하죠. 다만 상대는 압축 해제 프로그램이 없다는 걸 기억하세요 — 열 번에 한 번은 문장으로, 스무 번에 한 번은 이모지도 붙여봅시다.",
         "en": "\"k.\" — you believe an entire universe fits in one character. You're not bad at expressing feelings; your compression ratio is just extraordinary. That dryness can even read as mysterious charm. Just remember the other person doesn't have your decompression software — once in ten times, try a full sentence. Once in twenty, even an emoji."
       },
-      "compat": { "best": "comedian", "worst": "interviewer" }
+      "compat": {
+        "best": "comedian",
+        "worst": "interviewer"
+      },
+      "image": "/images/quiz/emoji-reply-onepick/result-5.webp"
     }
   },
   "blend": {
     "emoji": "✨",
     "scoreKey": "blend",
-    "title": { "ko": "복합형", "en": "Blend Type" },
-    "tagline": { "ko": "여러 답장 스타일이 공존하는 타입", "en": "Multiple reply styles coexist in you" },
+    "title": {
+      "ko": "복합형",
+      "en": "Blend Type"
+    },
+    "tagline": {
+      "ko": "여러 답장 스타일이 공존하는 타입",
+      "en": "Multiple reply styles coexist in you"
+    },
     "body": {
       "ko": "상황에 따라 거울이 됐다가 탐정이 됐다가 하는 멀티 플레이어. 상대에 맞춰 답장 모드를 전환하는 유연함이 강점이에요.",
       "en": "A multi-player who shifts between mirror and detective depending on the situation. Your strength is switching reply modes to match the person."
-    }
+    },
+    "image": "/images/quiz/emoji-reply-onepick/result-blend.webp"
   },
   "questions": [
     {

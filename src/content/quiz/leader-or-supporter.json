@@ -376,29 +376,29 @@
       "options": [
         {
           "label": {
-            "ko": "전체를 본다",
-            "en": "See the big picture"
+            "ko": "큰 그림 담당, 붓은 팀원들 손에 쥐여준다",
+            "en": "Big-picture department — the brushes go into teammates' hands"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "구조를 만든다",
-            "en": "Build structure"
+            "ko": "설계도부터 그린다, 뼈대 없는 일은 착공 불가",
+            "en": "Blueprint first — no skeleton, no groundbreaking"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "실행을 돕는다",
-            "en": "Help execution"
+            "ko": "말 끝나기도 전에 이미 절반쯤 해뒀다",
+            "en": "Half of it was done before the sentence ended"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "요청받은 일 중심",
-            "en": "Do assigned tasks"
+            "ko": "시킨 일은 칼같이, 안 시킨 일은 신중하게",
+            "en": "Assigned tasks: instantly. Unassigned: let's not be hasty"
           },
           "key": "C"
         }
@@ -412,29 +412,29 @@
       "options": [
         {
           "label": {
-            "ko": "결론을 낸다",
-            "en": "Drive a conclusion"
+            "ko": "'자, 결론 갑니다' 심판봉을 먼저 두드린다",
+            "en": "'Okay, verdict incoming' — my gavel drops first"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "중재한다",
-            "en": "Mediate"
+            "ko": "양쪽 말을 통역하다 보면 어느새 평화협정 체결",
+            "en": "Interpret both sides until a peace treaty signs itself"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "뒤에서 돕는다",
-            "en": "Support quietly"
+            "ko": "조용히 간식을 돌려 전장의 전투력을 낮춘다",
+            "en": "Quietly hand out snacks to lower the battlefield's combat power"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "피한다",
-            "en": "Avoid it"
+            "ko": "화장실 간다 하고 상황 종료까지 잠수한다",
+            "en": "Announce a bathroom break and submerge until it blows over"
           },
           "key": "C"
         }
@@ -448,29 +448,29 @@
       "options": [
         {
           "label": {
-            "ko": "주도적으로 만든다",
-            "en": "Lead the result"
+            "ko": "깃발 꽂고 선두 돌격, 성과는 내가 견인한다",
+            "en": "Plant the flag and charge — I tow the results myself"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "전략적으로 만든다",
-            "en": "Plan strategically"
+            "ko": "이기는 판을 먼저 설계한다, 성과는 계산된 결말",
+            "en": "Design the winning board first — the result is a calculated ending"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "도와서 만든다",
-            "en": "Support the result"
+            "ko": "MVP 옆엔 늘 어시스트왕인 내가 있었다",
+            "en": "Next to every MVP stood me, the assist king"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "팀에 따라간다",
-            "en": "Follow the team"
+            "ko": "팀이 가는 곳이 내 목적지, 내비는 팀에 맡긴다",
+            "en": "Wherever the team goes is my destination — they hold the GPS"
           },
           "key": "C"
         }
@@ -484,29 +484,29 @@
       "options": [
         {
           "label": {
-            "ko": "앞에서 이끄는 자리",
-            "en": "Leading upfront"
+            "ko": "맨 앞자리, 마이크가 자꾸 내 손에 와 있다",
+            "en": "Front and center — the mic keeps ending up in my hand"
           },
           "key": "A"
         },
         {
           "label": {
-            "ko": "중간에서 조율",
-            "en": "Coordinating"
+            "ko": "가운데 관제탑, 전파는 전부 나를 거쳐 간다",
+            "en": "The control tower in the middle — every signal routes through me"
           },
           "key": "B"
         },
         {
           "label": {
-            "ko": "뒤에서 지원",
-            "en": "Supporting behind"
+            "ko": "무대 뒤 스태프석, 박수는 됐고 공연이나 돌리자",
+            "en": "Backstage crew seat — skip the applause, keep the show running"
           },
           "key": "C"
         },
         {
           "label": {
-            "ko": "눈에 안 띄는 자리",
-            "en": "Staying low-key"
+            "ko": "구석 자리 전세 냈다, 존재감은 미니멀리즘",
+            "en": "Permanent lease on the corner seat — minimalist presence"
           },
           "key": "C"
         }

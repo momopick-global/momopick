@@ -99,8 +99,8 @@
         "en": "Emotional (80%)"
       },
       "desc": {
-        "ko": "감정과 직관을 중심으로 세상을 바라보는 타입입니다.",
-        "en": "You rely heavily on emotions and intuition."
+        "ko": "당신의 심장은 상근직, 뇌는 프리랜서다. 감정과 직관이 판단의 메인 엔진이라 공감 능력은 상위권이지만, 가끔 기분이 결재 라인을 통째로 건너뛴다는 게 함정.",
+        "en": "Your heart works full-time; your brain freelances. Emotion and intuition are your main engine — top-tier empathy included — though your mood occasionally skips the entire approval chain."
       }
     },
     {
@@ -111,8 +111,8 @@
         "en": "Balanced"
       },
       "desc": {
-        "ko": "이성과 감정을 상황에 맞게 사용하는 균형 잡힌 타입입니다.",
-        "en": "You balance logic and emotion effectively."
+        "ko": "뇌와 심장이 주 2회 정기 회의를 여는 타입. 상황 따라 논리와 감정을 골라 쓰는 유연함이 강점인데, 가끔 둘이 합의를 못 보면 결정이 다음 주로 밀린다.",
+        "en": "Your brain and heart hold twice-weekly standing meetings. Switching between logic and feeling to fit the situation is your strength — though when the two can't reach consensus, decisions get pushed to next week."
       }
     },
     {
@@ -123,8 +123,8 @@
         "en": "Logical (75%)"
       },
       "desc": {
-        "ko": "논리와 분석을 기반으로 판단하는 이성 중심 타입입니다.",
-        "en": "You make decisions based on logic and analysis."
+        "ko": "당신의 머릿속엔 24시간 가동되는 분석실이 있다. 논리와 근거로 판단하는 믿음직한 타입이지만, 위로가 필요한 사람에게 해결책 3종 세트부터 내미는 순간이 있다는 게 함정.",
+        "en": "There's an analysis lab in your head running 24/7. You judge on logic and evidence — thoroughly dependable — though you do occasionally hand a three-pack of solutions to someone who just wanted a hug."
       }
     }
   ],
@@ -137,29 +137,29 @@
       "options": [
         {
           "label": {
-            "ko": "감정보다 논리를 본다",
-            "en": "Focus on logic over feelings"
+            "ko": "감정은 잠시 로그아웃, 논리부터 부팅한다",
+            "en": "Feelings log out for a moment — logic boots first"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "상황에 따라 다름",
-            "en": "Depends on the situation"
+            "ko": "상황 봐서 뇌와 심장 중 당번을 정한다",
+            "en": "Depending on the situation, brain or heart takes the shift"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "사람의 감정을 먼저 본다",
-            "en": "Consider emotions first"
+            "ko": "일단 사람 마음부터 살핀다, 해결은 그다음",
+            "en": "Check how people feel first — solutions come after"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "감정에 크게 좌우된다",
-            "en": "Heavily driven by feelings"
+            "ko": "그날 기분이 곧 해결 방식이다",
+            "en": "That day's mood IS the solution method"
           },
           "score": 0
         }
@@ -173,29 +173,29 @@
       "options": [
         {
           "label": {
-            "ko": "팩트로 이야기함",
-            "en": "Talk with facts"
+            "ko": "팩트를 출력해 조목조목 브리핑한다",
+            "en": "Print out the facts and brief them point by point"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "조율하려 노력",
-            "en": "Try to balance"
+            "ko": "양쪽 온도를 재가며 중간 지점을 찾는다",
+            "en": "Take both sides' temperature and find the midpoint"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "상대 감정을 고려",
-            "en": "Consider their feelings"
+            "ko": "맞는 말보다 상대 기분이 먼저 신경 쓰인다",
+            "en": "Their feelings weigh more than being right"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "감정적으로 반응",
-            "en": "React emotionally"
+            "ko": "목소리보다 눈물이 먼저 발언권을 얻는다",
+            "en": "Tears get the floor before my voice does"
           },
           "score": 0
         }
@@ -209,29 +209,29 @@
       "options": [
         {
           "label": {
-            "ko": "근거와 데이터 중심",
-            "en": "Use data and logic"
+            "ko": "엑셀부터 켜서 장단점 비교표를 만든다",
+            "en": "Open a spreadsheet and build the pros-and-cons table first"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "반반 고려",
-            "en": "Balance both"
+            "ko": "데이터 반, 촉 반으로 절충안을 낸다",
+            "en": "Half data, half gut — settle in the middle"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "느낌을 따른다",
-            "en": "Follow intuition"
+            "ko": "느낌이 '이거다' 하면 그쪽으로 기운다",
+            "en": "When the feeling says 'this one,' I lean that way"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "기분에 따라 결정",
-            "en": "Decide by mood"
+            "ko": "그날 기분이 최종 결재 도장을 찍는다",
+            "en": "The day's mood stamps the final approval"
           },
           "score": 0
         }
@@ -245,29 +245,29 @@
       "options": [
         {
           "label": {
-            "ko": "해결책 제시",
-            "en": "Give solutions"
+            "ko": "위로 30초 후 해결책 3종 세트를 발표한다",
+            "en": "Thirty seconds of comfort, then present the three-pack of solutions"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "공감 + 조언",
-            "en": "Empathize and advise"
+            "ko": "일단 공감하고, 타이밍 봐서 조언을 얹는다",
+            "en": "Empathize first, then slide in advice when the timing's right"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "공감 위주",
-            "en": "Mostly empathize"
+            "ko": "'헐 진짜? 어떡해'가 자동으로 나온다",
+            "en": "'Oh no, seriously?' comes out on autopilot"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "같이 감정에 빠짐",
-            "en": "Feel it deeply together"
+            "ko": "이야기 듣다가 내가 먼저 운다",
+            "en": "I start crying before they finish the story"
           },
           "score": 0
         }
@@ -281,29 +281,29 @@
       "options": [
         {
           "label": {
-            "ko": "현실적으로 판단",
-            "en": "Think realistically"
+            "ko": "설레는 와중에도 현실 조건을 검토한다",
+            "en": "Even mid-butterflies, I review the practical terms"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "균형 잡으려 함",
-            "en": "Try to balance"
+            "ko": "마음 반, 계산기 반으로 균형을 잡는다",
+            "en": "Half heart, half calculator — keeping the balance"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "감정에 충실",
-            "en": "Follow emotions"
+            "ko": "마음이 시키는 대로 간다, 머리는 조언만 한다",
+            "en": "The heart drives; the head only offers commentary"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "완전 감정형",
-            "en": "Purely emotional"
+            "ko": "이성 지분 0%, 심장이 단독 경영한다",
+            "en": "Logic owns 0% — the heart runs a sole proprietorship"
           },
           "score": 0
         }
@@ -317,29 +317,29 @@
       "options": [
         {
           "label": {
-            "ko": "원인 분석",
-            "en": "Analyze causes"
+            "ko": "원인을 표로 정리하면 이미 반은 풀린 기분",
+            "en": "Charting the causes already feels like half the fix"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "정리하려 노력",
-            "en": "Try to organize"
+            "ko": "일단 정리부터, 감정은 정리 후에 배분한다",
+            "en": "Organize first — emotions get allocated afterward"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "감정에 집중",
-            "en": "Focus on feelings"
+            "ko": "지금 내 기분이 어떤지부터 들여다본다",
+            "en": "First I look inward at how I actually feel"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "감정 폭발",
-            "en": "Get overwhelmed"
+            "ko": "감정 댐이 방류를 시작한다, 주변 대피 권고",
+            "en": "The emotional dam starts releasing — evacuation advised nearby"
           },
           "score": 0
         }
@@ -353,29 +353,29 @@
       "options": [
         {
           "label": {
-            "ko": "행동과 결과",
-            "en": "By actions and results"
+            "ko": "말보다 행동, 행동보다 결과 기록지",
+            "en": "Actions over words, and the results log over actions"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "전체적인 느낌",
-            "en": "Overall impression"
+            "ko": "겪어본 시간을 종합해 전체 평점을 낸다",
+            "en": "Synthesize the time spent together into an overall rating"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "감정적 연결",
-            "en": "Emotional connection"
+            "ko": "나랑 통했는가, 마음의 주파수가 기준이다",
+            "en": "Did we click — the heart's frequency is the metric"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "첫 느낌",
-            "en": "First feeling"
+            "ko": "첫 3초의 느낌이 평생 간다",
+            "en": "The first three seconds decide it for life"
           },
           "score": 0
         }
@@ -389,29 +389,29 @@
       "options": [
         {
           "label": {
-            "ko": "논리적으로 설명",
-            "en": "Explain logically"
+            "ko": "근거 1번부터 3번까지 목차를 잡고 설명한다",
+            "en": "Explain with a table of contents: reasons one through three"
           },
           "score": 15
         },
         {
           "label": {
-            "ko": "적당히 설명",
-            "en": "Explain moderately"
+            "ko": "핵심만 적당히, 너무 깊게는 안 들어간다",
+            "en": "Just the essentials — no deep dives"
           },
           "score": 10
         },
         {
           "label": {
-            "ko": "감정 중심 설명",
-            "en": "Explain emotionally"
+            "ko": "'그게 마음이 편해서'가 주된 근거다",
+            "en": "'It just felt right for my heart' is the main evidence"
           },
           "score": 5
         },
         {
           "label": {
-            "ko": "그냥 느낌이라 말함",
-            "en": "Just say it felt right"
+            "ko": "'느낌 왔어' 한마디로 브리핑 종료",
+            "en": "'I got a feeling' — end of briefing"
           },
           "score": 0
         }

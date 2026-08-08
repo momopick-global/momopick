@@ -131,6 +131,13 @@ Pastel flat vector illustration, 1:1 square. A fun upbeat scene: a cheerful char
 Pastel flat vector illustration, 1:1 square. A fun playful scene: a cheerful young person standing in front of four big floating color swatches (red, blue, yellow, green) and instinctively reaching for one, small sparkles and a tiny 3-second timer beside them, bright multi-pastel palette on a clean background, light curious mood. Add a bold Korean title "오늘 끌리는 색은?" on a soft cream panel at the bottom, with a small English subtitle "Your mood in one color" beneath it in a light rounded font. Text clearly legible and correctly spelled, only these two text lines. No other text, no logo, no watermark, no real photo, not dark.
 ```
 
+### 16. 🏝️ 무인도에 딱 하나 가져간다면? ⬅️ 신규 (이미지 필요)
+파일명: `island-one-pick-values-ko-cover.webp`
+
+```
+Pastel flat vector illustration, 1:1 square. A fun scene: a cheerful young person standing on a tiny desert island with one small palm tree, happily choosing between five floating items around them — a cozy blanket, a firework, a walkie-talkie with a letter, a compass, and a little sprout, gentle turquoise sea and warm sand and soft pastel sky, playful curious mood, clean background. Add a bold Korean title "무인도에 딱 하나 가져간다면?" on a soft cream panel at the bottom, with a small English subtitle "What you'd take says a lot" beneath it in a light rounded font. Text clearly legible and correctly spelled, only these two text lines. No other text, no logo, no watermark, no real photo, not dark.
+```
+
 ---
 
 ## 이미 이미지 있는 글 (프롬프트 불필요)
